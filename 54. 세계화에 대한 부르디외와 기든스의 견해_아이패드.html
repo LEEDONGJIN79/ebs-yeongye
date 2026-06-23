@@ -1,0 +1,988 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>세계화를 보는 두 사회학자 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>세계화를 보는 두 사회학자 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 우리가 입는 옷, 보는 영상, 먹는 음식 가운데 외국에서 온 것이 얼마나 많은지 떠올려 본 적 있나요? 어느 나라에서 만든 휴대폰을 들고, 다른 나라에서 만든 앱으로 또 다른 나라의 영상을 보는 일이 너무 자연스러워졌죠. 이렇게 나라와 나라 사이의 경계가 옅어지고 사람·물자·정보·문화가 지구 전체를 넘나드는 흐름을 <strong>세계화</strong>라고 부릅니다.</p>
+<p>그런데 같은 현상을 보고도 학자에 따라 평가가 사뭇 다릅니다. 이 단원에서는 세계화를 바라본 두 사회학자, <strong>부르디외</strong>와 <strong>기든스</strong>의 생각을 만납니다.</p>
+<p>먼저 <strong>부르디외</strong>는 세계화를 다소 차갑게 봅니다. 그는 사람이 가진 힘을 '자본'이라고 부르는데, 돈만이 아니라 <strong>인맥(사회 자본)</strong>, <strong>배움과 교양(문화 자본)</strong>, 그리고 남들이 알아주는 <strong>명예나 권위(상징 자본)</strong>까지 모두 자본이라고 봐요. 부르디외가 보기에 세계화는 이미 자본을 많이 가진 쪽이 자기 우위를 더 굳히려는 '전략'입니다. 더 무서운 건, 사람들이 그 불평등을 <em>불공평하다고 느끼지도 못한 채</em> 자연스러운 것으로 받아들이게 만든다는 점이에요. 이렇게 눈에 보이지 않게 작동하는 지배를 그는 <strong>상징 폭력</strong>이라 불렀고, 우리 몸에 밴 무의식적 습성을 <strong>아비투스</strong>라고 했습니다. "서구 문화가 더 고상해 보인다"는 느낌이 어느새 당연해지는 것, 그게 바로 아비투스가 작동하는 모습이죠.</p>
+<p>반대로 <strong>기든스</strong>는 세계화를 '근대성'이 지구 전체로 퍼져 나간 결과로 봅니다. 옛날에는 시간과 장소가 딱 붙어 있었지만(해 그림자로 시각을 알던 것처럼), 이제는 전 세계가 같은 표준 시간을 쓰고, 우리 삶이 특정 장소에 매이지 않게 되었다고 해요. 기든스는 세계화가 핵·전쟁 같은 '<strong>제조된 위험</strong>'을 키우기도 하지만, 동시에 가난한 나라에도 기회를 주는 양면을 지녔다고 봅니다. 그래서 그는 시장에 다 맡기지도, 국가가 다 떠안지도 않는 '<strong>제3의 길</strong>'을 제안했어요. 가난한 사람에게 돈을 쥐여 주기보다 <em>스스로 일어설 힘(교육·역량)</em>을 길러 주자는 생각입니다.</p>
+<blockquote>
+<p>한마디로: <strong>부르디외는 "세계화 = 보이지 않는 지배"라며 불평등을 걱정</strong>하고, <strong>기든스는 "세계화 = 근대성의 확장"이라며 위험과 기회를 함께</strong> 봅니다. 이 단원은 같은 현상을 정반대로 진단한 두 시선을 나란히 놓고, 그 논리를 차근차근 따라가는 데 목표가 있습니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>세계화를 보는 두 사회학자의 시선</strong>이 있습니다. 같은 현상을 부르디외는 '지배의 심화'로, 기든스는 '근대성의 확장'으로 읽습니다. 세 세트는 그 시선이 부딪치고 갈라지는 서로 다른 국면을 다룹니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>세계화를 보는 두 시선 (부르디외 ↔ 기든스)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>부르디외의 자본·상징 폭력·아비투스와 기든스의 근대성·제조된 위험을 나란히 놓고, 두 사람이 세계화를 <em>왜 다르게 진단하는지</em> 그 뿌리를 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>세계화가 가져온 긍정적 통합·기회와 그 이면의 불평등이라는 <em>양면</em>을 살피고, 그 역설을 메우려는 보완의 논리를 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>세계화에 맞서는 대응 전략이 어떻게 변해 왔는지, 그리고 기든스의 '제3의 길'을 둘러싼 <em>서로 다른 입장의 대립</em>을 짚습니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 세계화라는 한 현상을 두 학자가 어떤 개념으로 붙잡았고, 그 진단이 어디서 만나고 어디서 갈라지는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>사회 활동에서 다양한 이윤을 확보하는 자원이자 타인에 대한 영향력의 근원이 되는 자본은 여러 형태로 존재한다. 부르디외는 자본을 돈이나 돈으로 즉각 바꿀 수 있는 경제 자본, 학연·지연 등 사회적 관계망인 사회 자본, 개인이 지닌 지식·기술·교양인 문화 자본, 그리고 소유한 자본이 세간의 인정을 받을 때 발생하는 상징 자본으로 나눈다. 상징 자본은 명예나 권위처럼 보이지 않는 가치가 자본으로서 힘을 발휘하는 것이다. 어떤 자본이든 그것이 세간의 인정을 받으면 상징 자본으로 전환되어 더 큰 영향력을 낳는데, 부르디외는 이러한 상징 자본이 개인 사이에서뿐 아니라 국가 간의 관계에도 작용하여 불평등한 국제 질서를 형성할 수 있다고 본다. 특정 국가의 언어나 문화가 더 우월한 것으로 인정받으면, 그 인정 자체가 그 국가에 보이지 않는 힘을 실어 준다는 것이다. 부르디외는 세계화를 기득권 세력이 지배력을 유지·확장하기 위해 수행하는 전략으로 보고, 세계화로 자본을 바탕으로 한 세력 간 위계가 강화되어 불평등 구조가 심화된다고 본다.</p>
+<p>그는 상징 폭력과 아비투스로 자본과 세계화에 관한 생각을 드러낸다. 상징 폭력은 지배층의 질서를 피지배층이 자발적으로 받아들이게 만드는 비가시적·비물리적 폭력이다. 아비투스는 개인이 사회에서 겪은 것이 몸에 배어 형성된 무의식적 습성으로, 세계를 지각하는 데 큰 영향을 미친다. 부르디외는 아비투스와 사회 구조가 서로 영향을 주고받는다고 보아, 기득권 세력이 언론·교육을 활용한 상징 폭력으로 사람들의 아비투스에 작용함으로써 자신들에게 유리하게 사회 구조를 ⓐ<u>빚어낸다</u>고 본다. 이로써 자본의 불평등은 더욱 심화된다. 아비투스는 사회 구조의 산물이면서 동시에 그 구조를 다시 만들어 내는 힘이기도 하다. 사람들이 시장의 자율을 중시하는 논리를 바람직하게 여기거나 서구의 문화를 고상하게 여기는 것은, 무의식적 습성에 의해 지배 질서가 ㉠<u>재생산</u>되도록 돕는 것이다. 이때 사람들은 자신의 선택이 자유로운 판단이라고 믿지만, 그 판단의 기준 자체가 이미 지배 질서에 의해 형성된 것이다. 그래서 그는 상징 폭력에 의해 사람들이 세계화를 지배를 위한 통합이 아니라 협동과 조화를 위한 통합으로 받아들이게 되고, 이를 통해 무제한적 착취가 ⓑ<u>이루어진다</u>고 본다.</p>
+<p><strong>(나)</strong></p>
+<p>기든스는 세계화를 근대성의 확장으로 정의한다. 근대성은 신과 관습 중심의 전통적 질서에서 개인의 자유, 합리성, 과학 중심의 질서로 변화하는 것이다. 그는 일상적 삶이라는 미시적 차원에서 전통 사회와 근대 사회를 비교하여 세계화를 이해한다. 과거에는 시간 측정을 위해 해의 그림자처럼 자연물과 관련한 공간이 필요했으나 이제는 특정 공간의 시간이 아닌 표준화된 지구적 시간을 사용한다는 점에서 시간과 공간이 분리되었다. 또한 그는 삶의 영역이 특정한 물리적 공간에 ⓒ<u>매이지</u> 않게 되었다고 본다. 이러한 장소 귀속 탈피로 인해 사회적 관계가 지역적 상호 작용의 맥락에서 벗어나 넓은 공간에 걸쳐 새롭게 ⓓ<u>짜인다</u>는 것이다. 멀리 떨어진 사람들이 같은 시간에 같은 정보를 공유하며 관계를 맺는 일이 가능해진 것은, 시간과 공간이 분리되고 삶이 장소에서 풀려난 결과이다.</p>
+<p>기든스는 근대 사회의 큰 특징을 ㉡<u>제조된 위험</u>이라 보고 이를 외부적 위험과 구분한다. 외부적 위험은 자연재해처럼 인간의 행위와 무관하게 외부에서 주어지는, 통제하기 어려운 위험이다. 반면 제조된 위험은 인간이 인위적으로 만든 환경에 의한 위험으로, 어떻게 대응하느냐에 따라 부를 창출할 수도, 재앙을 맞을 수도 있다. 민주주의에 토대한 국민 국가 체제가 보편화되면서 각국이 영토와 주권을 보호하기 위해 군사력을 경쟁하여 핵무기·전쟁의 위험이 생기고, 분업에 따르는 자본주의 경제 체제로 수많은 나라가 서로 영향을 주고받게 되면서 특정 나라의 위기가 다른 나라로 전이될 수 있게 된 것이 그 예이다. 외부적 위험과 달리 제조된 위험은 인간의 대응 방식에 그 결과가 달려 있으므로, 위험을 어떻게 관리하느냐가 중요한 과제가 된다. 그러나 기든스는 이러한 변화에 긍정적 측면도 있다고 본다. 세계화로 정치 민주화가 촉진되어 독재에서 벗어나는 국가가 늘고, 서구의 부유한 국가가 아닌 다른 국가들도 경제 세계화를 통해 이익을 ⓔ<u>거두어</u> 국가를 부강하게 만들 기회를 얻는다는 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생이 정리한 내용이다. ㉮와 ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+(가)는 자본의 여러 형태를 제시한 후, 세계화를 기득권의 지배 전략으로 보아 〔 ㉮ 〕을/를 통해 불평등이 심화된다고 설명하고 있다. 그리고 (나)는 세계화를 근대성의 확장으로 보아 시간과 공간이 분리되는 양상을 설명하고, 근대 사회의 위험을 외부적 위험과 〔 ㉯ 〕(으)로 나누어 그 양면성을 제시하고 있다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 아비투스에 작용하는 상징 폭력 — ㉯: 제조된 위험</li>
+<li>② ㉮: 아비투스에 작용하는 상징 폭력 — ㉯: 표준화된 지구적 시간</li>
+<li>③ ㉮: 경제 자본의 직접적 분배 — ㉯: 제조된 위험</li>
+<li>④ ㉮: 경제 자본의 직접적 분배 — ㉯: 외부에서 주어지는 위험</li>
+<li>⑤ ㉮: 국가 권력의 강화 — ㉯: 표준화된 지구적 시간</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>1번 — 정답 ①</strong>
+(가)·(나)의 큰 흐름을 빈칸으로 묻는 문항이에요. ㉮ 자리는 (가)에서 불평등이 <em>심화되는 경로</em>를 넣어야 하죠. (가) 2문단은 기득권이 언론·교육을 활용한 <strong>상징 폭력으로 사람들의 아비투스에 작용</strong>해 지배 질서를 재생산한다고 했으니, "아비투스에 작용하는 상징 폭력"이 맞아요. ㉯ 자리는 (나)가 위험을 외부적 위험과 무엇으로 나누었는지를 넣어야 하는데, (나) 2문단은 외부적 위험과 <strong>제조된 위험</strong>으로 나눴습니다. 그래서 ①이 정답이에요. ③·④의 '경제 자본의 직접적 분배'는 (가)가 말한 불평등 심화의 경로가 아니고, ②·⑤의 '표준화된 지구적 시간'은 위험의 한 종류가 아니라 시간·공간 분리의 사례라 ㉯에 들어갈 수 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 상징 자본은 소유한 자본이 세간의 인정을 받을 때 발생한다.</li>
+<li>② 부르디외는 세계화를 기득권 세력의 지배 전략으로 이해한다.</li>
+<li>③ 상징 폭력은 피지배층이 지배 질서를 자발적으로 받아들이게 만든다.</li>
+<li>④ 아비투스는 개인의 경험이 몸에 배어 형성된 무의식적 습성이다.</li>
+<li>⑤ 부르디외는 상징 자본이 국가 간 관계에는 작용하지 않는다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong>
+(가)의 세부 내용을 확인하는 문항입니다. 1문단은 상징 자본이 "국가 간의 관계에도 작용하여 불평등한 국제 질서를 형성할 수 있다"고 분명히 밝혔어요. 그러니 "국가 간 관계에는 작용하지 않는다"고 한 ⑤가 글과 어긋나 정답입니다. ①은 상징 자본의 정의, ②는 세계화에 대한 부르디외의 기본 관점, ③은 상징 폭력의 정의, ④는 아비투스의 정의 그대로라 모두 적절해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>(나)의 관점에서 ㉡을 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉡은 인간의 행위와 무관하게 외부에서 주어지므로 통제하기 어렵다.</li>
+<li>② ㉡은 대응 방식에 따라 부를 창출할 수도 재앙이 될 수도 있다.</li>
+<li>③ ㉡은 표준화된 지구적 시간의 사용으로 인해 사라지게 된다.</li>
+<li>④ ㉡은 자연재해처럼 인간이 통제하기 어려운 위험을 가리킨다.</li>
+<li>⑤ ㉡은 전통 사회에서 근대 사회로의 변화를 가로막는 요인이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>3번 — 정답 ②</strong>
+㉡'제조된 위험'을 (나)의 설명대로 이해했는지 묻는 문항이에요. (나) 2문단은 제조된 위험을 "어떻게 대응하느냐에 따라 부를 창출할 수도, 재앙을 맞을 수도 있다"고 했으니 ②가 정답입니다. ①·④는 <em>외부적 위험</em>의 설명을 제조된 위험에 잘못 붙인 것이고(제조된 위험은 인간이 만든 환경에서 비롯됨), ③·⑤는 지문에 근거가 없는 진술이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 사람들의 무의식적 습성이 상징 폭력에 의해 지배 질서에 유리하게 형성되기 때문이다.</li>
+<li>② 경제 자본이 돈으로 즉각 전환되어 세력 간 위계를 직접 결정하기 때문이다.</li>
+<li>③ 표준화된 지구적 시간의 사용으로 사회적 관계가 재구성되기 때문이다.</li>
+<li>④ 국가 권력이 약화되어 공공 서비스가 축소되기 때문이다.</li>
+<li>⑤ 상징 자본이 명예나 권위와 같은 보이지 않는 가치로 존재하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong>
+㉠'재생산'이 일어나는 <em>이유</em>를 묻습니다. (가) 2문단은 사람들이 무의식적 습성(아비투스)에 의해 지배 질서가 재생산되도록 돕는다고 했고, 그 아비투스는 기득권의 <strong>상징 폭력</strong>이 만든 것이었죠. 그러므로 "무의식적 습성이 상징 폭력에 의해 지배 질서에 유리하게 형성되기 때문"이라는 ①이 정답이에요. ②·⑤는 자본의 종류에 관한 설명일 뿐 재생산의 이유가 아니고, ③은 (나)의 내용, ④는 (가)에 나오긴 하나 재생산의 직접적 원인은 아닙니다.</p>
+<p><strong>5번 [3점] — 정답 ⑤</strong>
+두 학자의 개념을 〈보기〉 상황에 적용하는 문항이에요. ⑤를 보면, '경쟁에서 밀려나는 위험'을 <em>외부적 위험</em>이라 했는데, 외부적 위험은 (나)에서 자연재해처럼 인간 행위와 무관하게 주어지는 것을 말해요. 교육 시장 개방은 인간이 만든 환경이므로 이는 외부적 위험이 아니라 <em>제조된 위험</em>에 해당합니다. 게다가 외부적 위험은 <em>기든스</em>의 개념이지 부르디외의 개념도 아니어서, '부르디외라면 외부적 위험으로 보겠군'이라는 진술 자체가 어긋나요. 그래서 ⑤가 정답입니다. ①은 상징 자본, ②는 상징 폭력·아비투스, ③은 세계화의 긍정적 기회, ④는 제조된 위험에 정확히 대응해 모두 적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉의 상황을 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 지역에서, 한 다국적 교육 기업이 운영하는 국제 학교가 인기를 끌었다. 학부모들은 이 학교에서 쓰는 외국어와 서구식 교양을 익혀야 좋은 삶을 살 수 있다고 자연스럽게 믿었고, 그곳 졸업장은 그 자체로 사람들의 부러움을 샀다. 한편 같은 지역의 한 중소국은 이 교육 시장이 열리면서 자국 학생들도 국제적 자격을 얻어 외국 기업에 취업할 기회를 새로 얻게 되었으나, 동시에 자국 교육 기관들이 이 기업과의 경쟁에서 밀려나 일자리가 줄어드는 위험도 함께 떠안게 되었다.</p>
+</blockquote>
+<ul>
+<li>① 부르디외라면, 졸업장이 그 자체로 부러움을 사는 것은 상징 자본이 작용한 결과로 보겠군.</li>
+<li>② 부르디외라면, 서구식 교양을 익혀야 한다는 학부모들의 믿음은 상징 폭력이 아비투스에 작용한 것으로 보겠군.</li>
+<li>③ 기든스라면, 자국 학생이 국제적 자격으로 취업 기회를 얻는 것은 세계화의 긍정적 측면으로 보겠군.</li>
+<li>④ 기든스라면, 교육 시장이 열리며 함께 떠안게 된 위험은 인위적 환경에서 비롯된 제조된 위험으로 보겠군.</li>
+<li>⑤ 부르디외라면, 자국 교육 기관이 경쟁에서 밀려나는 것은 외부에서 주어지는 외부적 위험으로 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ의 단어와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그는 진흙을 반죽하여 항아리를 정성껏 <strong>빚어냈다</strong>.</li>
+<li>② ⓑ: 두 회사의 합병은 물밑에서 은밀히 <strong>이루어졌다</strong>.</li>
+<li>③ ⓒ: 그는 밧줄로 짐을 짐칸에 단단히 <strong>매어</strong> 두었다.</li>
+<li>④ ⓓ: 그 천은 가는 실로 촘촘하게 <strong>짜여</strong> 매우 질기다.</li>
+<li>⑤ ⓔ: 농부들이 들판에서 잘 익은 벼를 <strong>거두어</strong> 갔다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>6번 — 정답 ②</strong>
+같은 단어라도 문맥에 따라 뜻이 달라지죠. ⓑ'이루어지다'는 <em>어떤 일이 성사되거나 실현되다</em>라는 뜻으로, "무제한적 착취가 이루어진다"는 곧 착취가 <em>행해진다</em>는 의미예요. ②의 "합병이 은밀히 이루어졌다"도 <em>어떤 일이 성사되다</em>라는 같은 뜻이므로 ②가 정답입니다. ①의 '빚어내다'는 흙으로 <em>물건을 만들어 내다</em>이지만 ⓐ는 사회 구조를 <em>형성해 내다</em>라는 비유적 의미라 결이 다르고, ③의 '매다'는 끈으로 <em>묶다</em>이지만 ⓒ는 공간에 <em>한정·구속되다</em>라는 뜻이며, ④의 '짜이다'는 실로 직물이 <em>엮이다</em>이지만 ⓓ는 관계가 <em>조직되다</em>라는 뜻이고, ⑤의 '거두다'는 곡식을 <em>수확하다</em>이지만 ⓔ는 이익을 <em>얻다</em>라는 뜻이라 모두 문맥상 의미가 어긋납니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상징 자본</strong>: 명예·권위처럼 <em>남들이 인정해 줄 때</em> 비로소 힘을 갖는 보이지 않는 자본.</li>
+<li><strong>상징 폭력</strong>: 때리거나 빼앗지 않고도, 지배 질서를 <em>스스로 옳다고 믿게</em> 만드는 보이지 않는 폭력.</li>
+<li><strong>아비투스</strong>: 오래 겪다 보니 몸에 밴, 나도 모르게 세상을 보는 <em>무의식적 습성</em>.</li>
+<li><strong>제조된 위험</strong>: 자연이 준 게 아니라 <em>사람이 만든 환경</em>에서 생긴 위험(핵·금융 위기 등).</li>
+<li><strong>외부적 위험</strong>: 자연재해처럼 사람의 행위와 <em>무관하게</em> 바깥에서 닥치는 위험.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>부르디외 (가)</th>
+<th>기든스 (나)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>세계화란?</td>
+<td>기득권의 <strong>지배 전략</strong></td>
+<td><strong>근대성</strong>의 확장</td>
+</tr>
+<tr>
+<td>핵심 개념</td>
+<td>자본·상징 폭력·아비투스</td>
+<td>시간·공간 분리, 제조된 위험</td>
+</tr>
+<tr>
+<td>평가</td>
+<td>불평등 심화(부정)</td>
+<td>위험과 기회의 <strong>양면</strong></td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>부르디외가 말한 네 가지 자본은 무엇인가요? — <em>경제·사회·문화·상징 자본.</em></div></div>
+<div class='qa-item'><div class='qa-q'>제조된 위험과 외부적 위험을 가르는 기준은 무엇인가요? — <em>그 위험이 인간이 만든 환경에서 비롯되었는지, 인간 행위와 무관하게 외부에서 주어졌는지.</em></div></div>
+<div class='qa-item'><div class='qa-q'>기든스가 본 세계화의 '긍정적 측면' 두 가지는? — <em>정치 민주화의 촉진, 비서구 국가의 경제적 기회 획득.</em></div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>심리 철학에서 동일론은 의식이 뇌의 물질적 상태와 동일하다고 ⓐ본다. 이와 달리 기능주의는 의식은 기능이며, 서로 다른 물질에서 같은 기능이 구현될 수 있다고 주장한다. 이때 기능이란 어떤 입력이 주어졌을 때 특정한 출력을 내놓는 함수적 역할로 정의되며, 함수적 역할의 일치는 입력과 출력의 쌍이 일치함을 의미한다. 실리콘 칩으로 구성된 로봇이 찔림이라는 입력에 대해 고통을 출력으로 내놓는 기능을 가진다면, 로봇과 우리는 같은 의식을 가진다는 것이다. 이처럼 기능주의는 의식을 구현하는 물질이 무엇인지는 중요하지 않다고 본다.</p>
+<p>설(Searle)은 기능주의를 반박하는 사고 실험을 제시한다. ‘중국어 방’ 안에 중국어를 모르는 한 사람만 있다고 하자. 그는 중국어로 된 입력이 들어오면 정해진 규칙에 따라 중국어로 된 출력을 내놓는다. 설에 의하면 방 안의 사람은 중국어 사용자와 함수적 역할이 같지만 중국어를 아는 것은 아니다. 기능이 같으면서 의식은 다른 사례가 있다는 것이다.</p>
+<p>동일론, 기능주의, 설은 모두 의식에 대한 논의를 의식을 구현하는 몸의 내부로만 한정하고 있다. 하지만 의식의 하나인 ‘인지’ 즉 ‘무언가를 알게 됨’은 몸 바깥에서 ⓑ일어나는 일과 맞물려 벌어진다. 기억나지 않는 정보를 노트북에 저장된 파일을 열람하여 확인하는 것이 한 예이다. 로랜즈의 확장 인지 이론은 이를 설명하는 이론이다.</p>
+<p>그에 ⓒ따르면 인지 과정은 주체에게 ‘심적 상태’가 생겨나게 하는 과정이다. 기억이나 믿음이 심적 상태의 예이다. 심적 상태는 어떤 것에도 의존함이 없이 주체에게 의미를 나타낸다. 예를 들어, 무언가를 기억하는 사람은 자기의 기억이 무엇인지 ⓓ알아보기 위해 아무것에도 의존할 필요가 없다. 이와 달리 ‘파생적 상태’는 주체의 해석에 의존해서만 또는 사회적 합의에 의존해서만 의미를 나타내는 상태로 정의된다. 앞의 예에서 노트북에 저장된 정보는 전자적 신호가 나열된 상태로서 파생적 상태이다. 주체에 의해 열람된 후에도 노트북의 정보는 여전히 파생적 상태이다. 하지만 열람 후 주체에게는 기억이 생겨난다. 로랜즈에게 인지 과정은 파생적 상태가 심적 상태로 변환되는 과정이 아니라, 파생적 상태를 조작함으로써 심적 상태를 생겨나게 하는 과정이다. 심적 상태가 주체의 몸 외부로 확장되는 것이 아니라, 심적 상태를 생겨나게 하는 인지 과정이 확장되는 것이다. 이러한 ㉠확장된 인지 과정은 인지 주체의 것일 때에만, 다시 말해 환경의 변화를 탐지하고 그에 맞춰 행위를 조절하는 주체와 통합되어 있을 때에만 성립할 수 있다. 즉 로랜즈에게 주체 없는 인지란 있을 수 없다. 확장 인지 이론은 의식의 문제를 몸 안으로 한정하지 않고 바깥으로까지 넓혀 설명한다는 의의를 지닌다.</p>
+<p>(나)</p>
+<p>일반적으로 ‘지각’이란 몸의 감각 기관을 통해 사물에 대해 아는 것을 의미한다. 이러한 지각을 분석할 때 두 가지 사실에 직면한다. 첫째, 그 사물과 내 몸은 물질세계에 있다. 둘째, 그 사물에 대한 나의 의식은 물질세계가 아닌 다른 세계에 있다. 즉 몸으로서의 나는 사물과 같은 세계에 속하는 동시에 의식으로서의 나는 사물과 다른 세계에 속한다.</p>
+<p>이에 대한 객관주의 철학의 입장은 두 가지로 나뉜다. 의식을 포함한 모든 것을 물질로 환원하여 의식은 물질에 불과하다고 주장하거나, 의식을 물질과 구분되는 독자적 실체로 규정함으로써 의식과 물질의 본질적 차이를 주장한다. 전자에 의하면 지각은 사물로부터의 감각 자극에 따른 주체의 물질적 반응으로 이해되며, 후자에 의하면 지각은 감각된 사물에 대한 주체 즉 의식의 판단으로 이해된다. 이처럼 양자 모두 주체와 대상의 분리를 전제하고 지각을 이해한다. 주체와 대상은 지각 이전에 이미 확정되어 각각 존재한다는 것이다.</p>
+<p>하지만 지각은 주체와 대상이 각자로서 존재하기 이전에 나타나는 얽힘의 체험이다. 예를 들어 다른 사람과 손이 맞닿을 때 내가 누군가의 손을 ⓔ만지는 동시에 나의 손 역시 누군가에 의해 만져진다. 감각하는 것이 동시에 감각되는 것이 되는 얽힘의 순간에, 나는 나와 대상을 확연히 구분한다. 지각이라는 얽힘의 작용이 있어야 주체와 대상이 분리될 수 있다. 다시 말해 주체와 대상은 지각이 일어난 이후 비로소 확정된다. 따라서 ㉡지각과 감각은 서로 구분되지 않는다.</p>
+<p>지각은 물질적 반응이나 의식의 판단이 아니라, 내 몸의 체험이다. 지각은 나의 몸에 의해 이루어지는 것이고, 지각이 이루어지게 하는 것은 모두 나의 몸이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생이 정리한 내용이다. ㉮와 ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학생이 정리한 내용]</span></strong> (원문: 상자, ㉮·㉯ 자리는 빈칸)
+(가)는 기능주의를 소개한 후 〔 ㉮ 〕은/는 같지 않다는 설(Searle)의 비판을 제시하고 있다. 그리고 인지 과정이 몸 바깥으로까지 확장된다고 주장하는 확장 인지 이론을 설명하고 있다. (나)는 인지 중에서도 감각 기관을 통한 인지, 즉 지각을 주제로 하고 있다. (나)는 지각에 대한 객관주의 철학의 입장을 비판하고, 〔 ㉯ 〕으로서의 지각을 주장하고 있다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 의식과 함수적 역할 — ㉯: 내 몸의 체험</li>
+<li>② ㉮: 의식과 함수적 역할 — ㉯: 물질적 반응</li>
+<li>③ ㉮: 의식과 뇌의 상태 — ㉯: 의식의 판단</li>
+<li>④ ㉮: 의식과 뇌의 상태 — ㉯: 내 몸의 체험</li>
+<li>⑤ ㉮: 입력과 출력 — ㉯: 의식의 판단</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>12번 — 정답 ①</strong><br />
+설은 ‘중국어 방’ 사고 실험으로 기능(함수적 역할)이 같으면서 의식은 다른 사례가 있음을 보여 기능주의를 반박했으므로, ㉮에는 ‘의식과 함수적 역할’이 들어간다. (나)의 필자는 지각이 물질적 반응이나 의식의 판단이 아니라 ‘내 몸의 체험’이라고 주장하므로 ㉯에는 ‘내 몸의 체험’이 들어간다. ‘의식과 뇌의 상태’가 같다는 것은 설의 비판 대상이 아닌 동일론의 주장이고, ‘물질적 반응’·‘의식의 판단’은 (나)가 비판하는 객관주의 철학의 이해 방식이다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①70.6% ②3.9% ③7.0% ④14.9% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동일론자들은 뇌가 존재하지 않으면 의식도 존재하지 않는다고 볼 것이다.</li>
+<li>② 설(Searle)은 ‘중국어 방’ 안의 사람과 중국어를 아는 사람의 의식이 다르다고 볼 것이다.</li>
+<li>③ 로랜즈는 기억이 주체의 몸 바깥으로 확장될 수 있다고 볼 것이다.</li>
+<li>④ 로랜즈는 인지 과정이 파생적 상태를 조작하는 과정을 포함한다고 볼 것이다.</li>
+<li>⑤ 로랜즈는 노트북에 저장된 정보가 그 자체로는 심적 상태가 아니라고 볼 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong><br />
+(가) 4문단에서 로랜즈는 기억 같은 심적 상태가 몸 외부로 확장되는 것이 아니라, 심적 상태를 생겨나게 하는 <strong>인지 과정</strong>이 확장된다고 보았으므로 ③이 적절하지 않다. 동일론은 의식=뇌의 물질적 상태(①), 설은 기능이 같아도 의식은 다를 수 있음(②), 로랜즈의 인지 과정은 파생적 상태를 조작해 심적 상태를 생겨나게 하는 과정(④), 노트북의 정보는 열람 후에도 여전히 파생적 상태(⑤).</p>
+<p><em>선택률</em> — 응시 98,578명 — ①5.1% ②4.6% ③68.7% ④9.8% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>(나)의 필자의 관점에서 ㉠을 평가한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 확장된 인지 과정이 인지 주체의 것일 때에만 성립할 수 있다는 주장은, 지각 이전에 확정된 주체를 전제한 것이므로 타당하지 않다.</li>
+<li>② 확장된 인지 과정이 인지 주체의 것일 때에만 성립할 수 있다는 주장은, 의식이 세계를 구성하는 독자적 실체라고 규정하는 것이므로 타당하다.</li>
+<li>③ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 의식은 물질에 불과하다고 본 것이므로 타당하다.</li>
+<li>④ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 외부 세계에 대한 지각이 이루어질 수 없다고 보는 것이므로 타당하지 않다.</li>
+<li>⑤ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 주체와 대상의 분리를 통해서만 지각이 이루어질 수 있다고 보는 것이므로 타당하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>14번 — 정답 ①</strong><br />
+(나)의 필자는 주체와 대상이 지각(얽힘의 작용) 이후에 비로소 확정된다고 본다. 그런데 ㉠은 인지 주체의 것일 때에만 확장된 인지 과정이 성립한다고 하여(주체 없는 인지란 없음) 인지 이전에 확정된 주체를 전제하므로, (나)의 관점에서는 타당하지 않다고 평가된다(①). ②·③은 (나)가 비판하는 객관주의 철학의 입장을 근거로 타당하다고 본 것이어서 부적절하고, ④는 로랜즈가 외부 세계 인지가 가능하다는 입장이라는 점과 어긋나며, ⑤는 (나)의 관점(분리 이전의 얽힘)과 반대이다.</p>
+<p><em>선택률</em> — 응시 98,596명 — ①44.6% ②10.7% ③14.2% ④14.6% ⑤15.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>㉡의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 감각과 지각 모두 물질세계에서 이루어지기 때문에</li>
+<li>② 감각하는 것이 동시에 감각되는 것이 되는 얽힘의 작용이 지각이기 때문에</li>
+<li>③ 지각은 몸에 의해 이루어지지만 감각은 몸에 의해 이루어지지 않기 때문에</li>
+<li>④ 지각은 의식으로서의 주체가 외부의 대상을 감각하여 판단한 결과이기 때문에</li>
+<li>⑤ 주체와 대상이 분리되기 이전에 감각과 지각이 분리된 채로 존재하기 때문에</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong><br />
+(나) 3문단에서 지각은 감각하는 것이 동시에 감각되는 것이 되는 ‘얽힘’의 체험이며, 이 얽힘의 작용이 곧 지각이므로 지각과 감각은 구분되지 않는다(②). ①은 객관주의 철학(물질 환원)의 시각이고, ③은 감각·지각 모두 몸에 의해 이루어진다는 (나)의 서술과 어긋나며, ④는 의식의 판단으로 보는 객관주의의 이해이고, ⑤는 분리 이전에 얽혀 있다는 (나)의 논지와 반대이다.</p>
+<p><em>선택률</em> — 응시 98,576명 — ①2.2% ②73.9% ③7.6% ④10.5% ⑤5.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉의 상황을 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+빛이 완전히 차단된 암실에 A와 B 두 명의 사람이 있다. A는 막대기로 주변을 더듬어 사물의 위치를 파악한다. 막대기 사용에 익숙한 A는 사물에 부딪친 막대기의 진동을 통해 사물의 위치를 파악할 수 있다. B는 초음파 센서로 탐지한 사물의 위치 정보를 ‘뇌-컴퓨터 인터페이스(BCI)’를 사용하여 전달받는다. 이를 통해 B는 사물의 위치를 파악할 수 있다. BCI는 사람의 뇌에 컴퓨터를 연결하여 외부 정보를 뇌에 전달할 수 있는 기술이다.</p>
+</blockquote>
+<ul>
+<li>① (가)의 기능주의에 따르면, A와 B가 암실 내 동일한 사물의 위치를 묻는 질문에 동일한 대답을 내놓는 경우 이때 둘의 의식은 차이가 없겠군.</li>
+<li>② (가)의 확장 인지 이론에 따르면, BCI로 암실 내 사물의 위치를 파악하는 것이 B의 인지 과정인 경우 B에게 사물의 위치에 대한 심적 상태가 생겨나겠군.</li>
+<li>③ (가)의 확장 인지 이론에 따르면, 암실 내 사물에 부딪친 막대기의 진동이 A의 해석에 의존해서만 의미를 나타내는 경우 그 진동 상태는 파생적 상태가 아니겠군.</li>
+<li>④ (나)에서 몸에 의한 지각을 주장하는 입장에 따르면, 막대기에 의해 A가 사물의 위치를 지각하는 경우 막대기는 A의 몸의 일부라고 할 수 있겠군.</li>
+<li>⑤ (나)에서 의식을 물질로 환원하는 입장에 따르면, BCI를 통해 입력된 정보로부터 B의 지각이 일어난 경우 BCI를 통해 들어온 자극에 따른 B의 물질적 반응이 일어난 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>16번 — 정답 ③</strong><br />
+(가) 4문단에서 파생적 상태는 ‘주체의 해석에 의존해서만 또는 사회적 합의에 의존해서만 의미를 나타내는 상태’로 정의된다. 막대기의 진동이 A의 해석에 의존해서만 의미를 나타낸다면 그 진동 상태는 바로 파생적 상태이므로, 파생적 상태가 아니라고 한 ③이 적절하지 않다. ①은 입력·출력 쌍이 일치하면 같은 의식이라는 기능주의, ②는 인지 과정이 심적 상태를 생겨나게 한다는 확장 인지 이론, ④는 지각이 이루어지게 하는 것은 모두 나의 몸이라는 (나)의 주장, ⑤는 감각 자극에 따른 물질적 반응이라는 물질 환원 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①5.2% ②7.2% ③62.2% ④14.3% ⑤12.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 단어와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그간의 사정을 봐서 그를 용서해 주었다.</li>
+<li>② ⓑ: 이사 후에 가난하던 살림살이가 일어났다.</li>
+<li>③ ⓒ: 개발에 따른 자연 훼손 문제가 심각해졌다.</li>
+<li>④ ⓓ: 단어의 뜻을 알아보기 위해 사전을 펼쳤다.</li>
+<li>⑤ ⓔ: 그는 컴퓨터 프로그램을 제법 만질 줄 안다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓓ ‘알아보다’는 ‘조사하거나 살펴보다’의 뜻으로 ④의 ‘알아보다’와 같다. ① ⓐ는 ‘평가하다’, ④의 예문은 ‘형편을 헤아리다’. ② ⓑ는 ‘어떤 일이 생기다’, 예문은 ‘약하던 것이 성하여지다’. ③ ⓒ는 ‘기준 따위에 의거하다’, 예문은 ‘다른 일과 더불어 일어나다’. ⑤ ⓔ는 ‘손을 대어 주무르거나 쥐다’, 예문은 ‘물건을 다루어 쓰다’로 의미가 다르다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①2.5% ②1.2% ③6.2% ④86.7% ⑤2.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>세계화는 한 사회의 변화가 다른 사회로 빠르게 번지게 함으로써, 자본주의 경제 체제 아래 수많은 나라가 서로 영향을 주고받게 만든다. 분업의 원리에 따르는 경제 체제에서는 특정 나라의 경제 위기가 다른 나라로 전이될 수 있는데, 기든스는 이러한 위험이 인간이 만든 환경에서 비롯된 것이라는 점에 주목한다. 그래서 그는 세계화가 인위적 환경에서 비롯된 위험을 키우는 동시에, 어떻게 대응하느냐에 따라 부를 ⓐ<u>낳는</u> 기회가 될 수 있다고 본다. 위험과 기회가 같은 변화의 양면이라는 것이다. 그는 세계화가 정치 민주화를 촉진하여 독재 체제에서 벗어나는 국가를 늘리고, 서구의 부유한 국가가 아닌 국가들에도 경제적 이익을 얻을 기회를 준다는 점에서 긍정적 측면이 있다고 진단한다.</p>
+<p>그러나 기든스는 이러한 기회가 저절로 실현되지는 않는다고 본다. 세계화의 흐름 속에서 사람들의 요구는 분배나 해방보다 삶의 질이나 다양성으로 옮겨 갔으므로, 이에 맞추어 위험에 대응하는 새로운 국가의 길이 필요하다는 것이다. 그는 시장의 자유를 극대화하는 노선이나 개인의 복지를 최우선으로 삼는 노선이 아닌 ㉠<u>제3의 길</u>을 제시한다. 이는 국가가 물질적 지원보다 인적 자본에 대한 투자를 중시하여, 취약 계층에게 직접 돈을 주기보다 교육을 통해 그들이 스스로 성찰하고 상황에 대처하는 역량을 기르도록 돕는 길이다. 당장의 결핍을 메우는 데 그치지 않고 사람들이 변화하는 환경에 스스로 적응할 힘을 기르도록 한다는 점에서, 이 길은 위험에 대한 예방적 대응의 성격을 띤다.</p>
+<p>기든스는 이러한 방향을 뒷받침할 재원을 마련하기 위해, 정부가 경제의 주도권을 쥐고 공기업의 비중이 높은 체제 대신, 시장과 정부, 민간 기업과 공기업이 균형을 이루어 공익과 시장 경제가 함께 활성화되는 신혼합 경제 체제를 도입해야 한다고 본다. 정부의 주도와 시장의 자율 중 어느 한쪽에만 기대지 않고 둘의 균형에서 재원을 마련한다는 발상은, 제3의 길이 두 노선 사이의 절충이 아니라 그 둘을 넘어서는 자리를 겨냥함을 보여 준다. 그는 이렇게 마련한 재원으로 예방적 복지를 실시함으로써, 물질적 풍요를 앞세우던 길이 아니라 정신적 가치의 고양을 통해 행복을 추구하는 삶의 정치를 실현하는 국가, 곧 사회 투자 국가로 나아가야 한다고 ⓑ<u>주장한다</u>.</p>
+<p><strong>(나)</strong></p>
+<p>세계화의 긍정적 가능성에 대한 기대와 달리, 부르디외는 세계화가 기득권 세력의 지배 전략으로 작동하여 오히려 불평등을 심화한다고 본다. 강대국과 다국적 기업 등의 기득권 세력은 시장에서의 자유 경쟁을 ⓒ<u>부추겨</u> 국가의 역할을 축소하는데, 이로 인해 저소득층에 대한 경제적 지원이 줄어 그들이 불안정한 환경에 놓인다는 것이다. 시장의 자율이 강조될수록 국가가 책임지던 몫이 줄어들고, 그 자리를 메울 안전망이 사라진 사람들이 위험을 고스란히 떠안게 된다. 그래서 그는 세계화로 국가 권력이 약화되어 복지 제도가 축소되는 것을 우려하며 공공 서비스를 확대해야 한다고 본다.</p>
+<p>부르디외가 보기에 더 큰 문제는, 사람들이 이러한 지배의 구조를 지배로 ⓓ<u>여기지</u> 못한다는 데 있다. 상징 폭력에 의해 사람들은 세계화를 지배를 위한 통합이 아니라 협동과 조화를 위한 통합으로 받아들이게 되고, 그 결과 불평등은 자연스러운 질서로 둔갑한다. 지배가 지배로 드러나지 않는 한 그에 맞설 동력도 생기지 않는다. 이 때문에 그는 ㉡<u>세계화의 숨은 본질에 대한 깨달음</u>이 저항의 출발점이 된다고 보아, 시민 교육을 통해 사람들이 세계화의 본질을 깨닫게 해야 한다고 주장한다.</p>
+<p>나아가 부르디외는 일반 시민까지 포함하는 ㉢<u>국제주의 연대를 조직하는 방안</u>을 제시한다. 시장에서의 경쟁을 부추기고 복지를 축소하여 불평등을 심화하는 논리는 국경을 넘어 작동하므로, 이에 맞서는 저항 또한 한 나라 안에 머물러서는 충분하지 않다고 보았기 때문이다. 그는 이러한 연대가 기득권의 논리에 ⓔ<u>맞서는</u> 힘이 될 수 있다고 본다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(가)와 (나)의 서술 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 세계화에 대응하는 방안을 제시하고 그 방안이 추구하는 지향점을 밝히고 있다.</li>
+<li>② (가)와 (나)는 모두 세계화의 개념을 시대순으로 정의한 뒤 그 개념의 변천 과정을 추적하고 있다.</li>
+<li>③ (가)는 (나)와 달리 세계화를 비판하는 학자들의 견해를 차례로 소개하며 그 한계를 지적하고 있다.</li>
+<li>④ (나)는 (가)와 달리 세계화의 긍정적 측면과 부정적 측면을 대등하게 제시하고 절충안을 모색하고 있다.</li>
+<li>⑤ (가)는 세계화의 원인을, (나)는 세계화의 결과를 각각 통계 자료를 들어 분석하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+두 글의 서술 방식을 견주는 문항이에요. (가)는 기든스의 '제3의 길'과 '사회 투자 국가'라는 대응 방안을, (나)는 부르디외의 '시민 교육'과 '국제주의 연대'라는 대응 방안을 제시하고, 두 글 모두 그 방안이 무엇을 지향하는지(삶의 정치 / 저항)를 밝히고 있죠. 그러니 ①이 정답입니다. ②의 시대순 정의·변천 추적, ⑤의 통계 자료 분석은 두 글에 없고, ③은 (가)가 비판 학자들을 소개하지 않으며, ④의 '긍정·부정 대등 제시 후 절충안'은 (나)가 아니라 오히려 (가)에 가까운 서술이라 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 세계화는 한 사회의 변화가 다른 사회로 번지게 하는 양상을 띤다.</li>
+<li>② 기든스는 세계화가 정치 민주화를 촉진하는 측면이 있다고 본다.</li>
+<li>③ 제3의 길은 취약 계층에게 직접적인 금전 지원을 우선하는 노선이다.</li>
+<li>④ 사회 투자 국가는 정신적 가치의 고양을 통한 행복 추구를 지향한다.</li>
+<li>⑤ 신혼합 경제 체제는 시장과 정부, 민간 기업과 공기업의 균형을 추구한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>8번 — 정답 ③</strong>
+(가)의 세부 내용을 확인하는 문항이에요. (가) 2문단은 제3의 길이 "취약 계층에게 직접 돈을 주기보다 교육을 통해 역량을 기르도록 돕는 길"이라고 했죠. 그러니 "직접적인 금전 지원을 우선하는 노선"이라고 한 ③이 글과 정반대라 정답입니다. ①은 1문단, ②는 1문단, ④는 3문단, ⑤는 3문단의 내용 그대로라 모두 적절해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>(나)를 참고할 때, ㉢과 같은 방안이 제시된 배경을 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 시장 경쟁을 부추기고 복지를 축소하는 논리가 한 나라 안에만 머물지 않고 국경을 넘어 작동하기 때문이다.</li>
+<li>② 한 나라 안의 저항만으로는 국경을 넘어 작동하는 지배의 논리에 충분히 맞서기 어렵다고 보았기 때문이다.</li>
+<li>③ 일반 시민까지 저항의 주체로 끌어들여야 기득권의 논리에 맞설 힘을 키울 수 있다고 보았기 때문이다.</li>
+<li>④ 세계화로 약화된 국가 권력을 강화하여 다국적 기업의 시장 진입을 원천적으로 봉쇄해야 하기 때문이다.</li>
+<li>⑤ 불평등을 심화하는 논리에 대항하려면 저항의 범위를 국제적 차원으로 넓힐 필요가 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong>
+㉢'국제주의 연대를 조직하는 방안'이 <em>왜</em> 제시되었는지 그 배경을 (나)에서 추론하는 문항입니다. (나) 3문단은 불평등을 심화하는 논리가 "국경을 넘어 작동하므로 저항도 한 나라 안에 머물러서는 충분하지 않다"고 했어요. ①·②·③·⑤는 모두 이 맥락(국경을 넘는 논리 → 국제적 연대 필요)에 닿아 있어 적절합니다. 반면 ④는 '국가 권력을 강화하여 다국적 기업의 시장 진입을 원천 봉쇄'한다는 내용인데, (나)에는 그런 주장이 없고 부르디외의 방안은 <em>연대를 통한 저항</em>이지 국가 권력 강화가 아니므로 ④가 정답이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>(가)와 (나)를 참고하여 ㉠과 ㉡을 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 시장의 자유를 극대화하는 데 목적을 두고, ㉡은 복지 제도의 축소를 정당화하는 데 목적을 둔다.</li>
+<li>② ㉠은 인적 자본에 대한 투자로 위험에 대응하려 하고, ㉡은 지배의 본질에 대한 자각으로 저항의 토대를 마련하려 한다.</li>
+<li>③ ㉠은 국가의 역할을 축소하는 전략이고, ㉡은 국가 간의 위계를 강화하는 전략이다.</li>
+<li>④ ㉠은 물질적 풍요의 실현을 최종 목표로 삼고, ㉡은 협동과 조화를 위한 통합을 최종 목표로 삼는다.</li>
+<li>⑤ ㉠과 ㉡은 모두 기득권 세력의 상징 폭력을 강화하는 수단으로 기능한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+㉠'제3의 길'과 ㉡'세계화의 숨은 본질에 대한 깨달음'을 두 글에 비추어 이해하는 문항이에요. (가)에서 제3의 길은 <em>인적 자본 투자로 위험에 대응</em>하는 길이고, (나)에서 ㉡은 <em>지배의 본질을 자각해 저항의 바탕을 마련</em>하는 것이죠. 이를 정확히 짚은 ②가 정답입니다. ①은 ㉠을 시장 자유 극대화로(제3의 길은 그 노선을 <em>거부</em>함) 잘못 보았고, ③·④·⑤는 두 개념의 목적을 지문과 어긋나게 뒤섞은 진술이에요.</p>
+<p><strong>11번 [3점] — 정답 ⑤</strong>
+세 사람의 견해를 두 학자의 개념에 연결하는 문항이에요. ⑤를 보면, 병이 말한 '교육에 투자하는 편이 낫다'는 내용은 (가)에서 <em>기든스의 제3의 길</em>(직접 지원 대신 교육·역량 투자)에 해당하지, (나)에서 <em>부르디외</em>가 제시한 '국제주의 연대의 조직'과는 거리가 멉니다. 학자와 방안을 맞바꿔 연결했으므로 ⑤가 정답이에요. ①·②는 갑의 말을 기든스의 긍정적 진단(정치 민주화·비서구 기회)에, ③·④는 을의 말을 부르디외의 진단(복지 축소·상징 폭력에 의한 둔갑)에 정확히 연결해 모두 적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 세계화에 대한 가상의 견해를 재구성한 것이다. (가)와 (나)를 읽은 학생이 〈보기〉에 대해 보인 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦갑: 우리나라가 세계 시장에 문을 열면서 독재에서 벗어나 선거 제도가 자리 잡았고, 작은 기업들도 해외에 물건을 팔아 새로운 기회를 얻었다. 다만 그 변화가 모두에게 고르게 돌아간 것은 아니었다.
+◦을: 시장 경쟁이 치열해지자 정부는 복지 예산을 줄였고, 형편이 어려운 사람들은 더 불안정해졌다. 그런데도 많은 이들은 이런 흐름을 어쩔 수 없는 자연스러운 변화로 받아들였다.
+◦병: 그래서 나는 어려운 사람들에게 당장 돈을 나눠 주기보다, 그들이 스스로 일어설 역량을 기르도록 교육에 투자하는 편이 낫다고 본다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 말한 '선거 제도가 자리 잡은 것'은, (가)에서 기든스가 세계화의 긍정적 측면으로 든 정치 민주화의 촉진에 해당하겠군.</li>
+<li>② 갑이 말한 '작은 기업들이 새 기회를 얻은 것'은, (가)에서 기든스가 비서구 국가도 경제적 이익을 얻을 수 있다고 본 것과 통하겠군.</li>
+<li>③ 을이 말한 '복지 예산이 줄어든 것'은, (나)에서 부르디외가 국가의 역할 축소로 저소득층의 지원이 줄어든다고 본 것과 통하겠군.</li>
+<li>④ 을이 말한 '자연스러운 변화로 받아들인 것'은, (나)에서 부르디외가 상징 폭력으로 불평등이 자연스러운 질서로 둔갑한다고 본 것과 통하겠군.</li>
+<li>⑤ 병이 말한 '교육에 투자하는 편이 낫다는 것'은, (나)에서 부르디외가 제시한 국제주의 연대의 조직에 해당하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 창출(創出)하는</li>
+<li>② ⓑ: 역설(力說)한다</li>
+<li>③ ⓒ: 조장(助長)하여</li>
+<li>④ ⓓ: 인지(認知)하지</li>
+<li>⑤ ⓔ: 부응(副應)하는</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong>
+ⓔ'맞서는'은 기득권의 논리에 <em>대항하는</em>이라는 뜻이에요. 그런데 ⑤'부응하는'은 <em>요구나 기대에 좇아 응한다</em>는 뜻이라 의미가 정반대라서 바꿔 쓸 수 없으므로 ⑤가 정답입니다. ①'창출하는'(부를 낳다), ②'역설한다'(주장한다), ③'조장하여'(부추기다), ④'인지하지'(여기지·알아차리지)는 각각 ⓐ·ⓑ·ⓒ·ⓓ의 문맥 의미에 알맞게 대응해요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>제3의 길</strong>: 시장에 다 맡기지도, 국가가 다 떠안지도 않고, <em>교육·역량 투자</em>로 사람을 일으켜 세우는 길.</li>
+<li><strong>사회 투자 국가</strong>: 돈을 <em>나눠 주기</em>보다 사람에게 <em>투자</em>해 스스로 대처하게 돕는 나라.</li>
+<li><strong>신혼합 경제</strong>: 시장·정부, 민간·공기업이 <em>균형</em>을 이루는 경제 체제.</li>
+<li><strong>시민 교육 / 국제주의 연대</strong>: 부르디외가 제시한 저항 방법 — <em>본질을 깨닫게</em> 하고, 국경을 넘어 <em>함께 맞서게</em> 하는 것.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>갈래</th>
+<th>진단(문제)</th>
+<th>대응(보완)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기든스 (가)</td>
+<td>세계화의 위험과 기회의 양면</td>
+<td>제3의 길 → 사회 투자 국가·신혼합 경제</td>
+</tr>
+<tr>
+<td>부르디외 (나)</td>
+<td>국가 약화·복지 축소·불평등 심화</td>
+<td>시민 교육 → 국제주의 연대</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>제3의 길이 '직접 지원'보다 강조하는 것은 무엇인가요? — <em>교육을 통한 역량 강화(인적 자본 투자).</em></div></div>
+<div class='qa-item'><div class='qa-q'>부르디외가 저항의 <em>출발점</em>으로 본 것은? — <em>세계화의 숨은 본질에 대한 깨달음(시민 교육).</em></div></div>
+<div class='qa-item'><div class='qa-q'>두 학자의 대응 방안이 겨냥하는 공통의 문제는? — <em>세계화가 낳은(또는 심화한) 위험과 불평등.</em></div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 6월 [16~21]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>한국, 중국 등 동아시아 사회에서 오랫동안 유지되었던 과거제는 세습적 권리와 무관하게 능력주의적인 시험을 통해 관료를 선발하는 제도라는 점에서 합리성을 갖추고 있었다. 정부의 관직을 ⓐ두고 정기적으로 시행되는 공개 시험인 과거제가 도입되어, 높은 지위를 얻기 위해서는 신분이나 추천보다 시험 성적이 더욱 중요해졌다.</p>
+<p>명확하고 합리적인 기준에 따른 관료 선발 제도라는 공정성을 바탕으로 과거제는 보다 많은 사람들에게 사회적 지위 획득의 기회를 줌으로써 개방성을 제고하여 사회적 유동성 역시 증대시켰다. 응시 자격에 일부 제한이 있었다 하더라도, 비교적 공정한 제도였음은 부정하기 어렵다. 시험 과정에서 ㉠익명성의 확보를 위한 여러 가지 장치를 도입한 것도 공정성 강화를 위한 노력을 보여 준다.</p>
+<p>과거제는 여러 가지 사회적 효과를 가져왔는데, 특히 학습에 강력한 동기를 제공함으로써 교육의 확대와 지식의 보급에 크게 기여했다. 그 결과 통치에 참여할 능력을 갖춘 지식인 집단이 폭넓게 형성되었다. 시험에 필요한 고전과 유교 경전이 주가 되는 학습의 내용은 도덕적인 가치 기준에 대한 광범위한 공유를 이끌어 냈다. 또한 최종 단계까지 통과하지 못한 사람들에게도 국가가 여러 특권을 부여하고 그들이 지방 사회에 기여하도록 하여 경쟁적 선발 제도가 가져올 수 있는 부작용을 완화하고자 노력했다.</p>
+<p>동아시아에서 과거제가 천 년이 넘게 시행된 것은 과거제의 합리성이 사회적 안정에 기여했음을 보여 준다. 과거제는 왕조의 교체와 같은 변화에도 불구하고 동질적인 엘리트층의 연속성을 가져왔다. 그리고 이러한 연속성은 관료 선발 과정뿐 아니라 관료제에 기초한 통치의 안정성에도 기여했다.</p>
+<p>과거제를 장기간 유지한 것은 세계적으로 드문 현상이었다. 과거제에 대한 정보는 선교사들을 통해 유럽에 전해져 많은 관심을 불러일으켰다. 일군의 유럽 계몽사상가들은 학자의 지식이 귀족의 세습적 지위보다 우위에 있는 체제를 정치적인 합리성을 갖춘 것으로 보았다. 이러한 관심은 사상적 동향뿐 아니라 실질적인 사회 제도에까지 영향을 미쳐서, 관료 선발에 시험을 통한 경쟁이 도입되기도 했다.</p>
+<p><strong>(나)</strong></p>
+<p>조선 후기의 대표적인 관료 선발 제도 개혁론인 유형원의 공거제 구상은 능력주의적, 결과주의적 인재 선발의 약점을 극복하려는 의도와 함께 신분적 세습의 문제점도 의식한 것이었다. 중국에서는 17세기 무렵 관료 선발에서 세습과 같은 봉건적인 요소를 부분적으로 재도입하려는 개혁론이 등장했다. 고염무는 관료제의 상층에는 능력주의적 제도를 유지하되, ㉮지방관인 지현들은 어느 정도의 검증 기간을 거친 이후 그 지위를 평생 유지시켜 주고 세습의 길까지 열어 놓는 방안을 제안했다. 황종희는 지방의 관료가 자체적으로 관리를 초빙해서 시험한 후에 추천하는 '벽소'와 같은 옛 제도를 ⓑ되살리는 방법으로 과거제를 보완하자고 주장했다.</p>
+<p>이러한 개혁론은 갑작스럽게 등장한 것이 아니었다. 과거제를 시행했던 국가들에서는 수백 년에 ⓒ걸쳐 과거제를 개선하라는 압력이 있었다. 시험 방식이 가져오는 부작용들은 과거제의 중요한 문제였다. 치열한 경쟁은 학문에 대한 깊이 있는 학습이 아니라 합격만을 목적으로 하는 형식적 학습을 하게 만들었고, 많은 인재들이 수험 생활에 장기간 ⓓ매달리면서 재능을 낭비하는 현상도 낳았다. 또한 학습 능력 이외의 인성이나 실무 능력을 평가할 수 없다는 이유로 시험의 ㉡익명성에 대한 회의도 있었다.</p>
+<p>과거제의 부작용에 대한 인식은 과거제를 통해 임용된 관리들의 활동에 대한 비판적 시각으로 연결되었다. 능력주의적 태도는 시험뿐 아니라 관리의 업무에 대한 평가에도 적용되었다. 세습적이지 않으면서 몇 년의 임기마다 다른 지역으로 이동하는 관리들은 승진을 위해서 빨리 성과를 낼 필요가 있었기에, 지역 사회를 위해 장기적인 전망을 가지고 정책을 추진하기보다 가시적이고 단기적인 결과만을 중시하는 부작용을 가져왔다. 개인적 동기가 공공성과 상충되는 현상이 나타났던 것이다. 공동체 의식의 약화 역시 과거제의 부정적 결과로 인식되었다. 과거제 출신의 관리들이 공동체에 대한 소속감이 낮고 출세 지향적이기 때문에 세습 엘리트나 지역에서 천거된 관리에 비해 공동체에 대한 충성심이 약했던 것이다.</p>
+<p>과거제가 지속되는 시기 내내 과거제 이전에 대한 향수가 존재했던 것은 그 외의 정치 체제를 상상하기 ⓔ어려웠던 상황에서, 사적이고 정서적인 관계에서 볼 수 있는 소속감과 충성심을 과거제로 확보하기 어렵다는 판단 때문이었다. 봉건적 요소를 도입하여 과거제를 보완하자는 주장은 단순히 복고적인 것이 아니었다. 합리적인 제도가 가져온 역설적 상황을 역사적 경험과 주어진 사상적 자원을 활용하여 보완하고자 하는 시도였다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>(가)와 (나)의 서술 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나) 모두 특정 제도가 사회에 미친 영향을 인과적으로 서술하고 있다.</li>
+<li>② (가)와 (나) 모두 특정 제도를 분석하는 두 가지 이론을 구분하여 소개하고 있다.</li>
+<li>③ (가)는 (나)와 달리 구체적 사상가들의 견해를 언급하며 특정 제도에 대한 관점을 드러내고 있다.</li>
+<li>④ (나)는 (가)와 달리 특정 제도에 대한 선호와 비판의 근거들을 비교하면서 특정 제도의 특징을 제시하고 있다.</li>
+<li>⑤ (가)는 특정 제도의 발전을 통시적으로, (나)는 특정 제도에 대한 학자들의 상반된 입장을 공시적으로 언급하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,585명 — ①78.7% ②1.5% ③1.7% ④10.0% ⑤4.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>(가)의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 시험을 통한 관료 선발 제도는 동아시아뿐만 아니라 유럽에서도 실시되었다.</li>
+<li>② 과거제는 폭넓은 지식인 집단을 형성하여 관료제에 기초한 통치에 기여했다.</li>
+<li>③ 과거 시험의 최종 단계까지 통과하지 못한 사람도 국가로부터 혜택을 받을 수 있었다.</li>
+<li>④ 경쟁을 바탕으로 한 과거제는 더 많은 사람들이 지방의 관료에 의해 초빙될 기회를 주었다.</li>
+<li>⑤ 귀족의 지위보다 학자의 지식이 우위에 있는 체제가 합리적이라고 여긴 계몽사상가들이 있었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,588명 — ①20.9% ②4.2% ③2.0% ④69.5% ⑤1.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p>(나)를 참고할 때, ㉮와 같은 제안이 등장하게 된 배경을 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 과거제로 등용된 관리들이 근무지를 자주 바꾸게 되어 근무지에 대한 소속감이 약했기 때문이었을 것이다.</li>
+<li>② 과거제로 등용된 관리들의 봉건적 요소에 대한 지향이 공공성과 상충되는 세태로 나타났기 때문이었을 것이다.</li>
+<li>③ 과거제로 선발한 관료들은 세습 엘리트에 비해 개인적 동기가 강해서 공동체 의식이 높지 않았기 때문이었을 것이다.</li>
+<li>④ 과거제를 통해 배출된 관료들이 출세 지향적이어서 장기적 안목보다는 근시안적인 결과에 치중했기 때문이었을 것이다.</li>
+<li>⑤ 과거제가 낳은 능력주의적 태도로 인해 관리들이 승진을 위해 가시적인 성과만을 내려는 경향이 강해졌기 때문이었을 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>18번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,588명 — ①9.8% ②74.2% ③7.8% ④2.8% ⑤3.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>(가)와 (나)를 참고하여 ㉠과 ㉡을 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 모든 사람에게 응시 기회를 보장했지만, ㉡은 결과주의의 지나친 확산에서 비롯되었다.</li>
+<li>② ㉠은 정치적 변화에도 사회적 안정을 보장했지만, ㉡은 대대로 관직을 물려받는 문제에서 비롯되었다.</li>
+<li>③ ㉠은 지역 공동체의 전체 이익을 증진시켰지만, ㉡은 지나친 경쟁이 유발한 국가 전체의 비효율성에서 비롯되었다.</li>
+<li>④ ㉠은 사회적 지위 획득의 기회를 확대하는 데 기여했지만, ㉡은 관리 선발 시 됨됨이 검증의 곤란함에서 비롯되었다.</li>
+<li>⑤ ㉠은 관료들이 지닌 도덕적 가치 기준의 다양성을 확대했지만, ㉡은 사적이고 정서적인 관계 확보의 어려움에서 비롯되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>19번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,589명 — ①4.8% ②1.5% ③4.1% ④83.6% ⑤1.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 과거제에 대한 조선 시대 선비들의 견해를 재구성한 것이다. (가)와 (나)를 읽은 학생이 〈보기〉에 대해 보인 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦갑: 변변치 못한 집안 출신이라 차별받는 것에 불만이 있는 사람들이 많았는데, 과거를 통해 관직을 얻으면서 불만이 많이 해소되어 사회적 갈등이 완화된 것은 바람직하다.
+◦을: 과거제를 통해 조선 사회에 유교적 가치가 광범위하게 자리를 잡아 좋다. 그런데 많은 선비들이 오랜 시간 과거를 준비하느라 자신의 뛰어난 능력을 펼치지 못한다는 점이 안타깝다.
+◦병: 요즘 과거 시험 준비를 위해 나오는 책들을 보면 시험에 자주 나왔던 내용만 정리되어 있어서 학습의 깊이가 없으니 문제이다. 그래도 과거제 덕분에 더 많은 사람들이 공부를 하려는 생각을 가지게 된 것은 다행이라고 생각한다.</p>
+</blockquote>
+<ul>
+<li>① '갑'이 과거제로 인해 사회적 유동성이 증가했다는 점을 긍정적으로 본 것은, 능력주의에 따른 공정성과 개방성이라는 시험의 성격에 주목한 것이겠군.</li>
+<li>② '을'이 과거제로 인해 많은 선비들이 재능을 낭비한다는 점을 부정적으로 본 것은, 치열한 경쟁을 유발하는 시험의 성격에 주목한 것이겠군.</li>
+<li>③ '을'이 과거제로 인해 사회의 도덕적 가치 기준에 대한 광범위한 공유가 가능해졌다는 점을 긍정적으로 본 것은, 고전과 유교 경전 위주의 시험 내용에 주목한 것이겠군.</li>
+<li>④ '병'이 과거제로 인해 심화된 공부를 하기 어렵다는 점을 부정적으로 본 것은, 형식적인 학습을 유발한 시험 방식에 주목한 것이겠군.</li>
+<li>⑤ '병'이 과거제로 인해 교육에 대한 동기가 강화되었다는 점을 긍정적으로 본 것은, 실무 능력을 중심으로 평가하는 시험 방식에 주목한 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>20번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,587명 — ①1.5% ②5.0% ③6.3% ④3.7% ⑤80.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ의 단어와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그가 열쇠를 방 안에 두고 문을 잠가 버렸다.</li>
+<li>② ⓑ: 우리는 그 당시의 행복했던 기억을 되살렸다.</li>
+<li>③ ⓒ: 협곡 사이에 구름다리가 멋지게 걸쳐 있었다.</li>
+<li>④ ⓓ: 사소한 일에만 매달리면 중요한 것을 놓친다.</li>
+<li>⑤ ⓔ: 형편이 어려울수록 모두가 힘을 합쳐야 한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>21번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,588명 — ①1.3% ②3.6% ③1.2% ④89.6% ⑤2.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>부르디외는 세계화를 기득권 세력이 지배력을 유지·확장하기 위해 수행하는 전략으로 본다. 그는 자본을 돈으로 즉각 바꿀 수 있는 경제 자본, 학연·지연 같은 관계망인 사회 자본, 지식·교양인 문화 자본, 그리고 소유한 자본이 세간의 인정을 받을 때 발생하는 상징 자본으로 나눈다. 세계화는 이미 많은 자본을 가진 쪽에 더 유리하게 작동하므로, 그 흐름 속에서 자본을 바탕으로 한 세력 간 위계가 강화되어 불평등 구조가 심화된다는 것이 그의 진단이다. 자본의 격차가 곧 영향력의 격차로 이어지고, 그 영향력이 다시 더 많은 자본을 끌어모으기 때문이다.</p>
+<p>부르디외가 이 지배를 설명하기 위해 끌어들인 개념이 &lt;상징 폭력&gt;이다. 상징 폭력은 지배층의 질서를 피지배층이 자발적으로 받아들이게 만드는 비가시적·비물리적 폭력으로, 사람들의 몸에 밴 무의식적 습성인 아비투스에 작용한다. 기득권 세력은 언론·교육을 통한 상징 폭력으로 사람들의 아비투스를 형성하고, 그 결과 사람들은 세계화를 지배를 위한 통합이 아니라 협동과 조화를 위한 통합으로 받아들이게 된다. 이렇게 지배가 지배로 인식되지 않을 때 불평등은 자연스러운 질서로 굳어진다.</p>
+<p>그래서 부르디외는 저항의 출발점을 ‘깨달음’에 둔다. 그는 시민 교육을 통해 사람들이 세계화의 숨은 본질을 자각하게 해야 한다고 보았다. 상징 폭력이 비가시적인 만큼, 그것을 드러내어 ‘보이게’ 만드는 일이 저항의 첫걸음이라는 것이다. 나아가 그는 일반 시민까지 포함하는 ㉠<u>국제주의 연대</u>를 조직하고자 하였다. 불평등을 심화하는 논리가 국경을 넘어 작동하는 이상, 그에 맞서는 저항 역시 국경을 넘어야 한다고 보았기 때문이다. 이처럼 부르디외의 처방은 사람들의 인식을 바꾸고 그 인식을 국제적 연대로 묶어 내는 데 초점을 둔다.</p>
+<p><strong>(나)</strong></p>
+<p>세계화가 인위적 환경에서 비롯된 위험을 키운다고 보는 점에서는 여러 입장이 일치하지만, 그 위험에 어떻게 대응할 것인가를 두고는 견해가 갈린다. 한 입장은 시장의 자유를 극대화하는 데서 길을 찾는다. 국가의 개입을 줄이고 시장의 자율에 맡기면 자원이 효율적으로 배분되어 위험에 유연하게 대응할 수 있다는 것이다. 이 입장에서 국가의 과도한 개입은 오히려 시장의 활력을 떨어뜨려 위험을 키우는 요인으로 간주된다. 다른 입장은 개인의 복지를 최우선으로 삼는 데서 길을 찾는다. 국가가 적극적으로 개입하여 취약 계층에게 물질적 지원을 ⓐ<u>베풀어야</u> 위험으로부터 사람들을 보호할 수 있다는 것이다. 이 입장은 시장에 맡겨 두면 약자가 보호받지 못한다고 보아, 국가의 책임을 강조한다.</p>
+<p>㉡<u>기든스</u>는 이 두 길을 모두 경계하며 제3의 길을 제시한다. 그는 시장의 자유를 극대화하는 길이 불평등과 불안정을 키우고, 개인의 복지를 최우선으로 삼는 길이 국가의 재정 부담을 키우면서도 사람들의 자립 역량을 길러 주지는 못한다고 보았다. 한쪽은 약자를 시장에 내맡기고, 다른 한쪽은 약자를 지원에 의존하게 만든다는 점에서 두 길 모두 한계를 지닌다는 것이다. 그가 보기에 세계화의 흐름 속에서 사람들의 요구는 분배나 해방보다 삶의 질이나 다양성으로 옮겨 갔다. 따라서 국가는 취약 계층에게 직접 돈을 주기보다, 교육을 통해 그들이 스스로 성찰하고 상황에 대처하는 역량을 기르도록 도와야 한다. 지원의 목표가 결핍의 보충에서 자립의 지원으로 바뀌는 셈이다. 이것이 물질적 지원보다 인적 자본에 대한 투자를 중시하는 사회 투자 국가의 길이다.</p>
+<p>기든스는 이러한 길을 뒷받침할 재원을, 정부가 경제의 주도권을 쥐고 공기업의 비중이 높은 체제가 아니라, 시장과 정부, 민간 기업과 공기업이 균형을 이루는 신혼합 경제 체제에서 마련하고자 한다. 그는 이렇게 마련한 재원으로 예방적 복지를 실시함으로써, 생산력 증대를 통한 물질적 풍요를 앞세우던 정치가 아니라 정신적 가치의 고양을 통해 행복을 추구하는 ‘삶의 정치’를 실현하려 하였다. 곧 그는 시장에 모든 것을 맡기는 길과 국가가 모든 것을 떠안는 길 사이에서, 둘 어느 쪽으로도 환원되지 않는 제3의 자리를 마련하려 한 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가)에서 부르디외는 세계화로 자본을 바탕으로 한 세력 간 위계가 강화된다고 본다.</li>
+<li>② (가)에서 상징 폭력은 사람들의 무의식적 습성인 아비투스에 작용한다.</li>
+<li>③ (나)에서 시장의 자유를 극대화하려는 입장은 국가의 개입을 줄이는 데서 길을 찾는다.</li>
+<li>④ (나)에서 기든스는 개인의 복지를 최우선으로 삼는 길이 자립 역량을 길러 준다고 본다.</li>
+<li>⑤ (나)에서 사회 투자 국가는 물질적 지원보다 인적 자본에 대한 투자를 중시한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong>
+두 글의 내용을 두루 확인하는 문항이에요. (나)에서 기든스는 개인의 복지를 최우선으로 삼는 길이 "국가의 재정 부담을 키우면서도 사람들의 자립 역량을 길러 주지는 못한다"고 보았죠. 그러니 그 길이 "자립 역량을 길러 준다"고 한 ④는 정반대라 정답입니다. ①·②는 (가), ③·⑤는 (나)의 내용 그대로라 모두 적절해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>&lt;상징 폭력&gt;에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 지배층의 질서를 피지배층이 자발적으로 받아들이게 만든다.</li>
+<li>② 눈에 보이지 않고 물리적 강제를 동반하지 않는 방식으로 작동한다.</li>
+<li>③ 사람들이 세계화를 협동과 조화를 위한 통합으로 받아들이게 한다.</li>
+<li>④ 그것을 자각하게 하는 일이 부르디외가 본 저항의 출발점이 된다.</li>
+<li>⑤ 기득권 세력이 피지배층을 물리적으로 강제하기 위해 동원하는 수단이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong>
+네모로 표시된 &lt;상징 폭력&gt;을 정확히 이해했는지 묻습니다. (가)에서 상징 폭력은 <em>비가시적·비물리적</em> 폭력으로, 무의식적 습성에 작용해 사람들이 지배를 지배로 느끼지 못하게 만드는 것이었죠. 그런데 ⑤는 "피지배층을 <em>물리적으로 강제</em>하기 위해" 동원한다고 했는데, 이는 상징 폭력이 <em>물리적 강제를 동반하지 않는다는</em> 정의와 정면으로 어긋나므로 정답입니다. ①은 정의, ②는 비가시성, ③은 작동 결과, ④는 저항의 출발점이라는 본문 내용에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>(나)에서 '시장의 자유를 극대화하려는 입장'과 '기든스'가 모두 동의할 수 있는 진술로 가장 적절한 것은?</p>
+<ul>
+<li>① 세계화가 키우는 위험에 대응하는 길을 모색할 필요가 있다.</li>
+<li>② 국가의 개입을 줄이고 시장의 자율에 맡기는 것이 최선의 길이다.</li>
+<li>③ 취약 계층에 대한 직접적인 물질적 지원을 무엇보다 우선해야 한다.</li>
+<li>④ 시장과 정부, 민간 기업과 공기업이 균형을 이루는 체제가 필요하다.</li>
+<li>⑤ 사람들의 요구가 분배보다 삶의 질로 옮겨 간 점에 주목해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>15번 — 정답 ①</strong>
+두 입장이 <em>모두 동의할</em> 진술을 고르는 문항이에요. (나) 1문단은 "세계화가 위험을 키운다고 보는 점에서는 여러 입장이 일치하지만, 대응 방법을 두고 견해가 갈린다"고 했죠. 곧 <em>위험에 대응하는 길을 모색할 필요</em>가 있다는 데는 시장 자유 극대화 입장도, 기든스도 함께 동의합니다. 그래서 ①이 정답이에요. ②는 시장 자유 입장만, ③은 복지 최우선 입장만, ④·⑤는 기든스만 동의할 내용이라 '모두 동의'에는 맞지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 상징 폭력을 강화하는 수단이고, ㉡은 물질적 풍요를 최종 목표로 삼는 길이다.</li>
+<li>② ㉠은 인식의 변화를 국경 너머로 묶어 내려 하고, ㉡은 시장과 국가 어느 쪽으로도 환원되지 않는 자리를 마련하려 한다.</li>
+<li>③ ㉠은 국가의 재정 부담을 줄이는 데 목적을 두고, ㉡은 국가의 개입을 원천적으로 배제하는 데 목적을 둔다.</li>
+<li>④ ㉠은 한 나라 안의 저항으로 충분하다고 보고, ㉡은 시장의 자유를 극대화하려 한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 취약 계층에 대한 직접적인 금전 지원을 핵심 수단으로 삼는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong>
+㉠'국제주의 연대'와 ㉡'기든스'를 정확히 이해했는지 묻습니다. ㉠은 (가)에서 <em>사람들의 인식 변화를 국경 너머로 묶어 내는</em> 저항이고, ㉡의 기든스는 (나)에서 <em>시장과 국가 어느 쪽으로도 환원되지 않는 제3의 자리</em>를 마련하려 했죠. 이를 정확히 짚은 ②가 정답이에요. ①·③·④·⑤는 두 대상의 목적·수단을 지문과 어긋나게 뒤섞었습니다.</p>
+<p><strong>17번 [3점] — 정답 ③</strong>
+두 학자의 개념을 〈보기〉 사례에 적용하는 문항이에요. ③을 보면, A국이 '매달 일정 금액을 지급한 정책'을 <em>제3의 길</em>이라 했는데, 제3의 길은 직접 금전 지원이 아니라 <em>교육·역량 투자</em>를 중시하는 길이죠. 매달 돈을 주는 정책은 오히려 기든스가 비판한 '개인의 복지를 최우선으로 삼는 길'에 가깝습니다. 따라서 ③이 정답이에요. ①·②는 부르디외의 시민 교육·국제주의 연대에, ④·⑤는 기든스의 진단·처방에 정확히 대응해 모두 적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉에 대해 보인 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+A국 정부는 세계 시장 개방 이후 빈부 격차가 커지자, 저소득층에게 매달 일정 금액을 지급하는 정책을 오랫동안 시행해 왔다. 그런데도 빈곤에서 벗어나는 사람은 좀처럼 늘지 않았고, 재정 부담만 커졌다. 한편 시민 단체들은 이 격차가 개방을 주도한 강대국과 다국적 기업의 이익을 위한 것임을 알리는 강연을 여러 나라의 단체들과 함께 열어, 시민들이 그 구조를 깨닫고 국경을 넘어 함께 목소리를 내도록 이끌었다.</p>
+</blockquote>
+<ul>
+<li>① 부르디외라면, 시민 단체가 격차의 배후를 알리는 강연을 연 것은 세계화의 숨은 본질을 깨닫게 하려는 시도로 보겠군.</li>
+<li>② 부르디외라면, 여러 나라 단체들이 함께 목소리를 낸 것은 국경을 넘어 작동하는 논리에 맞서는 연대로 보겠군.</li>
+<li>③ 기든스라면, A국이 매달 일정 금액을 지급한 정책은 인적 자본에 대한 투자를 중시하는 제3의 길에 해당한다고 보겠군.</li>
+<li>④ 기든스라면, 빈곤 탈출이 늘지 않고 재정 부담만 커진 것은 개인의 복지를 최우선으로 삼는 길의 한계를 보여 준다고 보겠군.</li>
+<li>⑤ 기든스라면, 사람들이 스스로 일어설 역량을 기르도록 교육에 투자하는 편이 A국의 정책보다 낫다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 제공(提供)해야</li>
+<li>② 답습(踏襲)해야</li>
+<li>③ 부과(賦課)해야</li>
+<li>④ 발산(發散)해야</li>
+<li>⑤ 위임(委任)해야</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>18번 — 정답 ①</strong>
+ⓐ'베풀어야'는 취약 계층에게 물질적 지원을 <em>주어야</em>라는 뜻이므로, <em>내주어 도움이 되게 하다</em>라는 ①'제공해야'로 자연스럽게 바꿀 수 있어 정답입니다. ②'답습해야'(그대로 따르다), ③'부과해야'(의무·세금 따위를 매기다), ④'발산해야'(밖으로 내뿜다), ⑤'위임해야'(맡기다)는 모두 '지원을 베풀다'의 의미와 어긋나요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상징 폭력</strong>: 때리거나 빼앗지 않고도, 지배를 <em>지배로 느끼지 못하게</em> 만드는 보이지 않는 힘.</li>
+<li><strong>국제주의 연대</strong>: 국경을 넘어 작동하는 논리에 맞서, <em>시민들이 국경을 넘어 함께</em> 저항하도록 묶는 것.</li>
+<li><strong>제3의 길</strong>: 시장에 다 맡기는 길과 국가가 다 떠안는 길, 그 <em>어느 쪽도 아닌 세 번째 자리</em>.</li>
+<li><strong>삶의 정치</strong>: 물질적 풍요가 아니라 <em>정신적 가치와 삶의 질</em>에서 행복을 찾는 정치.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 세계화의 위험에 맞서는 세 길 (나)</div>
+<table>
+<thead>
+<tr>
+<th>길</th>
+<th>핵심</th>
+<th>기든스의 평가</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시장 자유 극대화</td>
+<td>국가 개입↓, 시장 자율</td>
+<td>불평등·불안정을 키움</td>
+</tr>
+<tr>
+<td>개인 복지 최우선</td>
+<td>국가 개입↑, 직접 지원</td>
+<td>재정 부담↑, 자립 역량 미흡</td>
+</tr>
+<tr>
+<td>제3의 길(기든스)</td>
+<td>인적 자본 투자·신혼합 경제</td>
+<td>두 길의 한계를 넘는 자리</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>(나)의 세 입장이 <em>공통으로</em> 인정하는 것은? — <em>세계화가 인위적 환경에서 비롯된 위험을 키운다는 점.</em></div></div>
+<div class='qa-item'><div class='qa-q'>기든스가 '개인 복지 최우선' 노선에서 본 한계 두 가지는? — <em>국가 재정 부담 증가, 자립 역량을 길러 주지 못함.</em></div></div>
+<div class='qa-item'><div class='qa-q'>부르디외가 저항을 <em>국제적</em> 차원으로 넓힌 까닭은? — <em>불평등을 심화하는 논리가 국경을 넘어 작동하기 때문.</em></div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 수능 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>서양의 과학과 기술, 천주교의 수용을 반대했던 이항로를 비롯한 척사파의 주장은 개항 이후에도 지속되었지만, <span class="boxmark">[개화]</span>는 거스를 수 없는 대세로 자리 잡았다. 개물성무(開物成務)와 화민성속(化民成俗)의 앞 글자를 딴 개화는 개항 이전에는 통치자의 통치 행위로서 변화하는 세상에 대한 지식 확장과 피통치자에 대한 교화를 의미했다.</p>
+<p>개항 이후 서양 문명에 대한 긍정적 인식이 확산되면서 서양 문명의 수용을 뜻하는 개화 개념이 자리 잡았다. 임오군란 이후, 고종은 자강 정책을 추진하면서 반(反)서양 정서의 교정을 위해 『한성순보』를 발간했다. 이 신문의 개화 개념은 서양 기술과 제도의 도입을 통한 인지의 발달과 풍속의 진보를 뜻했다. 이 개념에는 인민이 국가의 독립 주권의 소중함을 깨닫는 의식의 변화가 내포되었고, 통치자의 입장에서 수용 가능한 문명의 장점을 받아들여 국가의 진보를 달성한다는 의미도 담겼다.</p>
+<p>개화당의 한 인사가 제시한 개화 개념은 성문화된 규정에 따른 대민 정치에서의 법적 처리 절차 실현 등 서양 근대 국가의 통치 방식으로의 변화를 내포하는 것이었다. 그는 개화 실행 주체를 여전히 왕으로 생각했고, 개화 실행 주체로서 왕의 역할이 사라진 것은 갑신정변에서였다. 풍속의 진보와 통치 방식 변화라는 의미를 내포한 갑신정변의 개화 개념은 통치권에 대한 도전으로뿐 아니라 개인의 사욕을 위한 것으로 표상되었다. 이후 개화 개념은 국가 구성원을 조직하고 동원하기 위해 부정적 이미지에서 벗어나야 했고, 유길준은 『서유견문』을 저술하며 개화 개념에 덧씌워진 부정적 이미지를 떼어 내고자 했다. 이후 간행된 『대한매일신보』 등의 개화 개념은 국가 구성원 전체를 실행 주체로 하여 근대 국가 주권을 향해 그들을 조직하고 동원하는 것을 의미했다.</p>
+<p>을사늑약 이후, 개화 논의는 문명에 대한 본격적인 논의로 이어졌다. 대한 자강회의 주요 인사들은 서양 근대 문명을 수용하여 근대 국가를 건설하고자, 앞서 문명화를 이룬 일본의 지도를 받아야 한다고 보았다. 이들은 서양 근대 문명의 주체를 주체 인식의 준거로 삼았기 때문에 민족 주체성을 간과했다. 이러한 상황에서 박은식은 ㉠근대 국가 건설과 새로운 주체의 형성에 주목하여 문명에 대한 견해를 제시했다. 그의 기본 전략은 문명의 물질적 측면인 과학은 서양으로부터 수용하되, 문명의 정신적 측면인 철학은 유학을 혁신하여 재구성하는 것이었다. 그는 생존과 편리 증진을 위해 과학 연구가 시급하지만, 가치관 정립과 인격 수양을 위해 철학 또한 필수적이라고 보았다. 자국 철학 전통의 정립이라는 당시 동아시아의 사상적 흐름 속에서 그가 제시한 근대 주체는 과학적ㆍ철학적 인식의 주체이자 실천적 도덕 수양의 주체로서의 성격을 띠는 것이었다.</p>
+<p>(나)</p>
+<p>중국이 서양의 과학과 기술에 전면적인 관심을 기울인 때는 아편 전쟁 이후였다. 전쟁 패배에 따른 위기감은 반세기에 걸쳐 근대화의 추진과 함께 의욕적인 기술 수용으로 이어졌지만, 청일 전쟁의 패배는 기술 수용만으로는 부족하다는 인식을 낳았다. 이에 따라 20세기 초반 진정한 근대를 이루기 위해 기술 배후에서 작용하는 과학 정신을 사회 전체에 이식하려는 시도가 구체화되었다.</p>
+<p>옌푸는 국가 간에 벌어지는 약육강식의 경쟁을 부각하고, 경쟁에서 승리하려면 기술뿐 아니라 국민의 정신적 자질이 뒷받침되어야 한다고 보았다. 정신적 자질 중 과학적 사유 능력이 가장 중요하다고 파악한 그에게 과학 정신이 전제되지 않은 정치적 변혁은 뿌리내릴 수 없는 것이었다. 그는 인과 실증의 방법에 근거한 근대 학문 전체를 과학이라 파악하고, 과학을 습득하여 전통 학문의 폐단에서 벗어나야 한다고 주장했다. 그의 입장은 1910년대 후반 신문화 운동을 주도한 천두슈에게 이어졌다.</p>
+<p>천두슈를 비롯한 신문화 운동의 지식인들은 ㉡과학의 근거 위에서만 민주 정치의 실현이 가능하다고 주장했다. 중국이 달성해야 할 신문화는 과학 및 과학의 방법에 근거한 문화라 보고, 신문화를 이루기 위해 전통문화 전반에 대해 철저한 부정과 비판을 시도했다. 사상이나 철학이 과학의 방법을 이용하지 않으면 공상(空想)에 ⓐ그칠 뿐이라고 주장한 천두슈는 사회와 인간의 삶에 대한 연구도 과학의 연구 방법을 이용해야 한다고 보았다. 그는 제1차 세계 대전의 비극은 과학을 이용해 저지른 죄악의 결과일 뿐 과학 자체의 죄악이 아니라고 주장하며 과학에 대한 자신의 생각을 지속했다.</p>
+<p>한편, 제1차 세계 대전 이후 유럽을 시찰했던 장쥔마이는 통제되지 않은 과학이 불러온 역작용을 목도한 후, 과학이 어떻게 발달하든 그것이 인생관의 문제를 해결할 수는 없다며 서양 근대 문명을 비판했다. 근대 과학 문명에서 초래된 사상적 위기가 주체의 책임 부재에서 비롯된 것이라는 주장에 동의했던 그는 과학적 방법을 부정하지 않았지만, 인생관의 문제에는 과학적 방법이 적용될 수 없다고 지적했다. 그는 인생관을 과학과 별개로 파악했고, 과학만능주의에 기초한 신문화 운동에 의해 부정된 중국 전통 가치관의 수호를 내세웠다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가) : 서양 과학과 기술의 국내 유입을 반대하는 주장이 개항 이후에도 이어졌다.</li>
+<li>② (가) : 유학을 혁신하여 철학으로 재구성하는 것이 필요하다는 견해가 을사늑약 이후에 제기되었다.</li>
+<li>③ (나) : 진정한 근대를 이루려면 기술 수용의 차원을 넘어서야 한다는 인식이 등장하였다.</li>
+<li>④ (나) : 과학 정신이 사회에 자리 잡으려면 정치적 변혁이 선행되어야 한다는 주장이 제기되었다.</li>
+<li>⑤ (나) : 근대 과학 문명에 대한 비판적 인식을 바탕으로 전통 가치관에 주목하는 견해가 제시되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong><br />
+(나) 2문단에서 옌푸는 과학 정신이 전제되지 않은 정치적 변혁은 뿌리내릴 수 없다고 보았다. 이는 정치적 변혁이 아니라 과학 정신이 선행되어야 한다는 주장이므로 ④는 적절하지 않다. ①은 (가) 1문단(척사파), ②는 (가) 4문단(박은식), ③은 (나) 1문단(청일 전쟁 패배 후 인식), ⑤는 (나) 4문단(장쥔마이)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,586명 — ①8.4% ②3.8% ③5.1% ④70.1% ⑤13.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[개화]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 개항 이전의 개화 개념은 백성을 다스리는 통치자로서의 역할과 관련 있었다.</li>
+<li>② 『한성순보』의 개화 개념은 서양 기술과 제도의 선별적 수용을 통한 국가 진보의 의미를 포함하였다.</li>
+<li>③ 『한성순보』와 개화당의 한 인사의 개화 개념은 통치권자인 왕을 개화의 실행 주체로 상정하였다.</li>
+<li>④ 개화의 실행 주체로 왕에게 역할을 부여하지 않은 갑신정변의 개화 개념은 통치권에 대한 도전으로 이해되었다.</li>
+<li>⑤ 『대한매일신보』의 발간에 이르러서야 국가의 주권과 결부한 개화 개념이 제기되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong><br />
+(가) 2문단에서 그보다 앞서 발간된 『한성순보』의 개화 개념에 이미 '인민이 국가의 독립 주권의 소중함을 깨닫는 의식의 변화'가 내포되어 있었으므로, 『대한매일신보』 발간에 이르러서야 주권과 결부한 개념이 제기되었다는 ⑤는 적절하지 않다. ①은 1문단, ②·③은 2~3문단(통치자 입장의 수용 가능한 장점 수용, 개화당 인사의 왕 주체 상정), ④는 3문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,585명 — ①4.2% ②14.9% ③10.5% ④7.0% ⑤64.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(나)의 '천두슈'와 '장쥔마이'가 모두 동의할 수 있는 진술로 가장 적절한 것은?</p>
+<ul>
+<li>① 전통 사상은 과학 및 과학 정신과 양립할 수 없는 관계에 놓여 있다.</li>
+<li>② 전통 사상의 폐단은 과학 정신이 뿌리내리지 못한 사회 체질에서 비롯된 것이다.</li>
+<li>③ 과학을 이용하는 과정에서 문제가 발생했다고 해도 과학적 방법을 부정할 수 없다.</li>
+<li>④ 서양의 과학 정신을 전면적으로 도입하면 당면한 국가의 위기를 충분히 극복할 수 있다.</li>
+<li>⑤ 국가의 위기는 과학적 방법으로 사상을 재구성할 필요가 있다는 인식이 부재한 데에서 비롯된 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>6번 — 정답 ③</strong><br />
+천두슈는 제1차 세계 대전의 비극이 과학을 이용해 저지른 죄악의 결과일 뿐 과학 자체의 죄악이 아니라고 했고, 장쥔마이도 서양 근대 문명을 비판하면서도 과학적 방법 자체는 부정하지 않았다. 따라서 ③에 둘 다 동의할 수 있다. ①·②·④·⑤는 천두슈는 동의할 수 있으나 전통 가치관 수호를 내세운 장쥔마이는 동의할 수 없는 진술이다.</p>
+<p><em>선택률</em> — 응시 98,586명 — ①7.4% ②5.8% ③70.0% ④6.8% ⑤10.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 인격의 수양을 동반하는 근대 주체의 정립에, ㉡은 전통적 사유 방식에 기반을 둔 신문화의 달성에 동의하는 입장이다.</li>
+<li>② ㉠은 주체 인식의 준거가 서양 근대 문명의 주체라는 인식에, ㉡은 철학이 과학의 방법에 근거할 수 없다는 생각에 반대하는 입장이다.</li>
+<li>③ ㉠은 생존과 편리 증진을 위한 과학 연구의 시급성을, ㉡은 과학의 방법에 영향 받지 않는 사상이나 철학을 부인하는 입장이다.</li>
+<li>④ ㉠은 앞서 근대 문명을 이룬 국가를 추종하는 태도를, ㉡은 전쟁의 폐해가 과학을 오용한 자들의 탓이라는 주장을 비판하는 입장이다.</li>
+<li>⑤ ㉠은 과학과 철학이 문명의 두 축을 이루는 학문이라는 견해에, ㉡은 철학보다 과학이 우위임을 인정할 수 없다는 견해에 동의하는 입장이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong><br />
+㉠(박은식)은 서양 근대 문명의 주체를 주체 인식의 준거로 삼아 민족 주체성을 간과한 대한 자강회 인사들과 달리 자국 철학 전통의 정립을 지향했으므로, 그 인식에 반대하는 입장이다. ㉡(천두슈)은 사상이나 철학이 과학의 방법을 이용하지 않으면 공상에 그칠 뿐이라 했으므로 '철학이 과학의 방법에 근거할 수 없다'는 생각에 반대한다. 따라서 ②가 적절하다. 최다 오답 ③은 ㉠ 쪽이 틀렸다 — 박은식은 과학 연구의 시급성을 인정했으므로 이를 '부인'하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,902명 — ①6.0% ②31.0% ③31.9% ④11.2% ⑤19.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 이해한 학생이 〈보기〉에 대해 보인 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+A 마을은 가난했지만 전통문화와 공동체적 삶을 중시하며 이웃 마을들과 조화롭게 살아왔다. 오래전, 정부는 마을의 경제 발전을 목표로 서양의 생산 기술을 도입하는 정책을 시행했다. 마을 사람들은 정책의 필요성에 공감하면서도 자신들이 발전을 이뤄 낼 수 있다는 확신이 부족했다. 이에 정부는 마을 사람들을 독려하기 위해 마을의 역량으로 달성할 수 있는 미래상을 지속해서 홍보했다. 이후 마을은 물질적 풍요를 누리게 되었지만 경제적 이권을 두고 이웃 마을들과 경쟁하며 갈등하게 되었다. 격화된 경쟁에서 A 마을은 새로운 기술의 수용만을 우선시했고, 과거에 중시되었던 협력과 나눔의 인생관은 낡은 관념이 되었다. 젊은이들에게 전통문화는 서양 문화에 비해 열등한 것으로 여겨졌다.</p>
+</blockquote>
+<ul>
+<li>① (가)에서 『한성순보』를 간행한 취지는 서양에 대한 반감을 줄이는 데에 있다는 점에서, 〈보기〉에서 정부가 서양의 생산 기술 도입으로 변화하게 될 마을을 홍보한 취지와 부합하겠군.</li>
+<li>② (가)에서 개화당의 한 인사의 개화 개념에 내포된 개화의 지향점은 통치 방식의 변화와 관련 있다는 점에서, 〈보기〉에서 정부가 서양의 생산 기술을 도입하며 내세운 목표와 다르겠군.</li>
+<li>③ (가)에서 박은식은 과학과 구별되는 철학의 중요성을 강조했으므로, 〈보기〉에서 젊은이들의 자문화에 대한 인식 변화는 가치관 정립을 위한 철학이 부재했기 때문이라고 보겠군.</li>
+<li>④ (나)에서 옌푸는 경쟁에서 승리하기 위한 조건으로 기술과 정신적 자질을 강조했으므로, 〈보기〉에서 마을이 기술의 수용만을 중시하면 마을 간 경쟁에서 승리할 수 없다고 보겠군.</li>
+<li>⑤ (나)에서 장쥔마이는 과학적 방법의 한계를 지적했으므로, 〈보기〉에서 마을이 과거에 중시했던 인생관이 더 이상 유효하지 않게 된 문제는 과학적 방법으로 해결할 수 없다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong><br />
+『한성순보』 발간 취지는 반(反)서양 정서의 교정이다. 반면 〈보기〉의 정부 홍보는 정책 필요성에 이미 공감하는 마을 사람들에게 발전을 이뤄 낼 수 있다는 확신을 심어 주기 위한 것이므로 두 취지는 부합하지 않는다. 따라서 ①이 적절하지 않다. ② 개화당 인사의 지향점(통치 방식 변화)은 〈보기〉 정부의 목표(경제 발전)와 다르고, ③ 박은식의 철학 중시, ④ 옌푸의 정신적 자질 강조, ⑤ 장쥔마이의 과학적 방법 한계 지적과 각각 부합한다. 전 선지 선택률이 13~25%에 걸친 최고난도 문항.</p>
+<p><em>선택률</em> — 응시 98,648명 — ①21.5% ②24.7% ③14.8% ④24.9% ⑤13.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 다행히 비는 그사이에 <u>그쳐</u> 있었다.</li>
+<li>② 우리 학교는 이번에 16강에 <u>그쳤다</u>.</li>
+<li>③ 아이 울음이 좀처럼 <u>그치지</u> 않았다.</li>
+<li>④ 그는 만류에도 말을 <u>그치지</u> 않았다.</li>
+<li>⑤ 저 사람들은 불평이 <u>그칠</u> 날이 없다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong><br />
+'공상에 그칠'과 '16강에 그쳤다'의 '그치다'는 모두 '더 이상의 진전이 없이 어떤 상태에 머무르다'의 의미다. ①·③·④·⑤는 '계속되던 일이나 움직임이 멈추거나 끝나다'의 의미다.</p>
+<p><em>선택률</em> — 응시 98,597명 — ①1.3% ②84.9% ③0.9% ④2.3% ⑤11.3%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>세계화를 보는 두 사회학자 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='세계화를 보는 두 사회학자 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

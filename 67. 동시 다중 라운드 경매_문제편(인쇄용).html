@@ -1,0 +1,476 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>주파수 경매와 동시 다중 라운드 경매 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.07pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 중고 거래 앱에서 인기 있는 물건이 올라오면 "선착순"이 아니라 "더 비싸게 부르는 사람에게 팝니다" 하고 가격 경쟁이 붙는 걸 본 적 있죠? 그게 바로 <strong>경매</strong>예요. 파는 사람은 가장 높은 값을 부른 사람에게 물건을 넘기고, 사는 사람들은 서로 값을 올려 가며 경쟁하죠. 그런데 만약 파는 물건이 "휴대폰으로 통화할 때 쓰는 전파의 길", 즉 <strong>통신주파수</strong>라면 어떨까요?</p>
+<p>휴대폰, 와이파이, 라디오는 모두 눈에 보이지 않는 <strong>주파수 대역</strong>을 나눠 쓰며 작동합니다. 이 주파수는 한정된 자원이라 아무나 마음대로 쓸 수 없고, 나라가 통신 회사들에게 "이 대역은 너희가 써라" 하고 나눠 줘야 해요. 문제는 <strong>어떻게 나눠 주느냐</strong>입니다. 옛날 미국은 두 가지 방법을 써 봤어요. 하나는 <strong>심사</strong> — 회사들이 사업 계획서를 내면 평가단이 가장 잘할 것 같은 회사를 고르는 방식인데, 변호사·로비스트가 서로 우기느라 몇 년씩 걸렸어요. 다른 하나는 <strong>제비뽑기</strong> — 빠르긴 했지만, 통신 사업을 할 생각도 없는 사람들이 "당첨되면 비싸게 되팔자"며 몰려들어 투기판이 됐죠.</p>
+<p>그래서 등장한 것이 <strong>경매</strong>입니다. 경매로 주파수를 팔면 두 가지를 한꺼번에 노릴 수 있어요. <strong>사업을 잘할 회사에게 자원이 돌아가게 하는 것</strong>(효율적 분배), 그리고 <strong>나라의 수입을 크게 늘리는 것</strong>(수입 극대화)이죠. 그런데 "그냥 기존 경매 방식을 쓰면 되잖아?" 싶지만, 그게 그리 간단하지 않았어요. 1989년 뉴질랜드가 먼저 해 봤는데, 모두가 한 번에 봉투에 입찰가를 적어 내고 끝내는 방식이라 <strong>남이 얼마를 적었는지 전혀 모른 채</strong> 값을 불러야 했고, 결국 낙찰자가 운에 좌우되고 나라 수입도 형편없이 적었습니다.</p>
+<p>이 실패를 보고 경제학자들이 새로 설계한 것이 <strong>동시 다중 라운드 경매(SMRA)</strong>예요. 여러 주파수를 <strong>동시에</strong>, 그러나 <strong>여러 차례(라운드)에 걸쳐</strong> 입찰하게 하고, 매 라운드마다 현재 최고가를 공개해 다음 라운드에 다시 올려 부를 기회를 주는 방식이죠. 이렇게 하면 입찰자들이 서로의 가격 정보를 보며 점점 제값을 찾아가게 됩니다.</p>
+<blockquote>
+<p>한마디로: <strong>주파수 경매는 "심사·제비뽑기의 실패를 넘어 자원을 제대로 분배하고 수입도 늘리려는" 제도</strong>이고, 그 핵심 설계가 정보를 공개하며 여러 번 값을 올려 가는 <strong>동시 다중 라운드 경매</strong>예요. 이 단원은 그 등장 배경과 작동 원리, 방식들 사이의 장단점을 차근차근 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>주파수를 나눠 주는 방법의 진화</strong>가 있습니다. 어떻게 시작해 무엇 때문에 흔들리고 새 방법으로 넘어갔는지(흐름), 한 방식 안에 어떤 긴장이 숨어 있는지(쟁점), 그리고 방식마다 무엇이 좋고 나쁜지(장단점)를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>주파수를 나눠 주는 방법 (심사 → 제비뽑기 → 경매)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>심사에서 제비뽑기로, 다시 경매로 넘어간 <em>흐름</em>을 따라가며, 경매가 노리는 두 목표(효율적 분배·수입 극대화)가 서로 <em>맞물려 긴장</em>을 이루는 모습을 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>입찰 정보를 <em>감추느냐 공개하느냐</em>에 따라 결과가 어떻게 갈리는지, 봉인 입찰과 공개 입찰을 규율하는 <em>규칙</em>들을 견주며 쟁점을 도출합니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>동시 다중 라운드 경매가 <em>무엇이 좋고 무엇이 위험한지</em> 양면으로 따져 보고, 그 약점을 메우려는 <em>보완 장치</em>(입찰 자격 규칙·활동 규칙 등)를 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 왜 주파수를 경매로 팔게 되었는지, 그 경매가 어떤 긴장을 안고 있는지, 그리고 가장 발전된 방식이 무엇을 얻고 무엇을 보완해야 하는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>무선 통신에 대한 수요가 늘면서 정부는 한정된 통신주파수 대역을 통신 사업자에게 나누어 주어야 하는 과제를 안게 되었다. 주파수는 무한정 늘릴 수 없는 자원이므로, 누구에게 어떤 절차로 사용 권리를 줄지가 통신 산업의 발전을 좌우하는 문제가 된다. 이 분배 방식은 심사에서 제비뽑기로, 다시 경매로 변천해 왔다. 심사 방식은 사업자들이 제출한 사업 계획서를 평가자가 검토하여 무선 통신 사업을 가장 잘 운영할 사업자를 선정하고 그에게 주파수를 할당하는 방식이다. 이 방식은 운영 능력이 검증된 사업자를 고를 수 있다는 점에서 합리적으로 보였다. 그러나 사업자들이 고용한 법률가와 로비스트가 저마다 자기 계획이 최선이라고 주장하면서 평가와 이의 제기 절차가 길어져 할당까지 수년이 걸리기도 하였다. 게다가 평가가 주관적 판단에 의존하는 만큼, 선정 결과를 둘러싼 분쟁이 끊이지 않아 주파수를 제때 활용하기 어려웠다.</p>
+<p>심사 방식으로 수많은 주파수를 신속히 할당하기 어려워지자, 의회는 제비뽑기로 주파수를 나누는 데 동의하였다. 제비뽑기는 추첨으로 사업자를 정하므로 할당에 드는 시간과 노력을 크게 줄였다. 그러나 ㉠심사 없이 추첨만으로 할당된 주파수가 재판매될 수 있었던 탓에, 통신 사업을 운영할 뜻이 없는 사람들까지 추첨에 참여하였고 투기를 목적으로 한 참여자가 다수 주파수를 차지하였다. 운영 능력을 따지지 않은 채 운에 맡겨 분배한 결과, 주파수가 그것을 가장 잘 쓸 사업자에게 돌아가지 못한 것이다. 그 결과 실제 사업자들은 투기꾼에게서 주파수 사용 권리를 사들이느라 어려운 협상을 거쳐야 했고, 사용권자가 지역적으로 파편화되어 전국망 사업자가 나타나기 어려운 상황이 빚어졌다.</p>
+<p>이러한 문제를 풀기 위해 정부는 경매로 주파수를 판매하기로 하였다. ㉡주파수 경매가 이루려는 목적은 크게 두 가지이다. 하나는 무선 통신 사업을 잘 운영할 수 있는 사업자에게 주파수를 효율적으로 분배하는 것이고, 다른 하나는 정부 수입을 극대화하는 것이다. 구매자를 위한 효율적 분배와 판매자를 위한 최대 수입은 기존 경매 이론도 추구한 목표였으므로, 얼핏 기존 경매 방식을 쓰면 쉽게 풀릴 문제로 보이기도 하였다.</p>
+<p>그러나 한 나라가 앞서 시행한 주파수 경매는 기존 경매 방식이 주파수 경매에 적절하지 못함을 드러냈다. ㉢이 경매는 사업자들이 여러 주파수에 동시에 입찰하되 각 주파수에서 가장 높은 가격을 적어 낸 사업자가 그 주파수를 차지하고, 모든 입찰을 단 한 번에 받아 각 주파수의 최고가 입찰자를 한꺼번에 낙찰자로 결정하는 방식이었다. 입찰이 한 번으로 끝나 다른 사업자가 어떤 주파수에 얼마를 적어 냈는지 알 수 없었으므로, 사업자들은 각 주파수의 가치에 맞는 적절한 입찰을 하기 어려웠다. 그 결과 낙찰자가 운에 좌우되는 경우가 많았고, 낙찰가가 예상보다 낮아 정부 수입도 기대에 못 미쳤다.</p>
+<p>이 실패는 경매의 두 목적이 서로 맞물려 있음을 보여 준다. 입찰 정보가 감추어지면 사업자는 제값을 못 매겨 자원이 엉뚱한 곳으로 가고, 그렇게 낮게 매겨진 값은 곧 정부 수입의 감소로 이어진다. 효율적 분배가 어그러지면 수입 극대화도 함께 어그러지는 것이다. 두 목적이 한 방향으로 함께 움직이는 것은 입찰가가 결국 사업자가 매긴 주파수의 가치를 반영하기 때문이다. 사업자가 가치를 제대로 가늠해 입찰하면 자원도 제자리를 찾고 그 값이 수입으로 모이지만, 가치를 가늠할 정보가 없으면 두 결과가 함께 무너진다. 그래서 두 목적을 함께 달성하려면 입찰 과정에서 사업자들이 서로의 가격 정보를 점차 파악하며 가치를 가늠해 갈 수 있도록 경매 자체를 새로 설계할 필요가 있었고, 이것이 이후 등장한 새 경매 방식의 출발점이 되었다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 심사 방식에서 주파수 할당까지 오랜 시간이 걸린 까닭은 무엇인가?</li>
+<li>② 제비뽑기 방식이 심사 방식에 비해 가진 이점은 무엇인가?</li>
+<li>③ 정부가 주파수 경매로 이루려 한 목적은 무엇인가?</li>
+<li>④ 경매로 분배된 주파수의 재판매를 정부가 어떤 절차로 승인하는가?</li>
+<li>⑤ 입찰을 한 번에 끝낸 경매에서 낙찰가가 낮아진 까닭은 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 심사 방식은 사업 운영 능력이 검증된 사업자를 고를 수 있다는 점에서 채택되었을 것이다.</li>
+<li>② 주파수 사용권자가 지역적으로 파편화될수록 전국망 사업자가 나타나기 쉬워졌을 것이다.</li>
+<li>③ 사업자가 다른 사업자의 입찰 정보를 알수록 주파수의 가치에 맞는 입찰을 하기 쉬워질 것이다.</li>
+<li>④ 입찰을 한 번에 끝낸 경매에서 낙찰가가 낮으면 정부 수입은 그만큼 줄어들었을 것이다.</li>
+<li>⑤ 제비뽑기 방식에서 주파수의 재판매가 금지되었다면 투기 목적의 참여는 줄었을 것이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>㉠~㉢에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 제비뽑기 방식이 빠르다는 이점에도 새로운 문제를 낳은 원인에 해당한다.</li>
+<li>② ㉡은 구매자를 위한 목표와 판매자를 위한 목표를 함께 포함한다.</li>
+<li>③ ㉡의 두 목적은 서로 맞물려 있어 한쪽이 어그러지면 다른 쪽도 어그러질 수 있다.</li>
+<li>④ ㉢에서 낙찰자가 운에 좌우된 것은 입찰 정보가 공개되지 않았기 때문이다.</li>
+<li>⑤ ㉢은 입찰을 여러 차례 받아 사업자들이 서로의 가격 정보를 파악하도록 한 방식이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 정부가 인접한 세 지역의 주파수 대역 P, Q, R를 판매하려 한다. 갑·을·병 세 사업자는 전국망을 갖추려면 세 대역을 모두 확보해야 가치가 크고, 일부만 얻으면 가치가 급격히 떨어진다고 판단한다. 정부는 두 가지 방안을 검토한다. 첫째 방안은 세 대역의 입찰을 한 번에 받아 각 대역의 최고가 입찰자를 동시에 낙찰자로 정하는 것이고, 둘째 방안은 세 대역을 동시에 내놓되 여러 차례에 걸쳐 입찰을 받으며 매 차례 현재 최고가를 공개해 다음 차례에 다시 올려 부를 수 있게 하는 것이다.</p>
+</blockquote>
+<ul>
+<li>① 첫째 방안에서는 갑이 다른 사업자가 P에 적어 낸 값을 보고 Q에 올려 부를 수 있겠군.</li>
+<li>② 첫째 방안에서는 세 대역을 모두 확보하려는 사업자가 각 대역의 적절한 입찰가를 가늠하기 쉽겠군.</li>
+<li>③ 둘째 방안에서는 매 차례 공개되는 최고가를 보고 사업자가 입찰가를 조정할 수 있겠군.</li>
+<li>④ 둘째 방안은 첫째 방안과 달리 입찰을 한 번만 받아 낙찰자를 한꺼번에 결정하겠군.</li>
+<li>⑤ 두 방안 모두 낙찰가가 운에 좌우되어 정부 수입이 기대에 못 미치겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 수능 [10~13]</div>
+<div class='passage exam-ps'><p>기축 통화는 국제 거래에 결제 수단으로 통용되고 환율 결정에 기준이 되는 통화이다. 1960년 트리핀 교수는 브레턴우즈 체제에서의 기축 통화인 달러화의 구조적 모순을 지적했다. 한 국가의 재화와 서비스의 수출입 간 차이인 경상 수지는 수입이 수출을 초과하면 적자이고, 수출이 수입을 초과하면 흑자이다. 그는 "미국이 경상 수지 적자를 허용하지 않아 국제 유동성 공급이 중단되면 세계 경제는 크게 위축될 것"이라면서도 "반면 적자 상태가 지속돼 달러화가 과잉 공급되면 준비 자산으로서의 신뢰도가 저하되고 고정 환율 제도도 붕괴될 것"이라고 말했다.</p>
+<p>이러한 트리핀 딜레마는 국제 유동성 확보와 달러화의 신뢰도 간의 문제이다. 국제 유동성이란 국제적으로 보편적인 통용력을 갖는 지불 수단을 말하는데, ㉠금 본위 체제에서는 금이 국제 유동성의 역할을 했으며, 각 국가의 통화 가치는 정해진 양의 금의 가치에 고정되었다. 이에 따라 국가 간 통화의 교환 비율인 환율은 자동적으로 결정되었다. 이후 ㉡브레턴우즈 체제에서는 국제 유동성으로 달러화가 추가되어 '금 환 본위제'가 되었다. 1944년에 성립된 이 체제는 미국의 중앙은행에 '금 태환 조항'에 따라 금 1온스와 35달러를 언제나 맞교환해 주어야 한다는 의무를 지게 했다. 다른 국가들은 달러화에 대한 자국 통화의 가치를 고정했고, 달러화로만 금을 매입할 수 있었다. 환율은 경상 수지의 구조적 불균형이 있는 예외적인 경우를 제외하면 ±1% 내에서의 변동만을 허용했다. 이에 따라 기축 통화인 달러화를 제외한 다른 통화들 간 환율인 교차 환율은 자동적으로 결정되었다.</p>
+<p>1970년대 초에 미국은 경상 수지 적자가 누적되기 시작하고 달러화가 과잉 공급되어 미국의 금 준비량이 급감했다. 이에 따라 미국은 달러화의 금 태환 의무를 더 이상 감당할 수 없는 상황에 도달했다. 이를 해결할 수 있는 방법은 달러화의 가치를 내리는 평가 절하, 또는 달러화에 대한 여타국 통화의 환율을 하락시켜 그 가치를 올리는 평가 절상이었다. 하지만 브레턴우즈 체제하에서 달러화의 평가 절하는 규정상 불가능했고, 당시 대규모 대미 무역 흑자 상태였던 독일, 일본 등 주요국들은 평가 절상에 나서려고 하지 않았다. 이 상황이 유지되기 어려울 것이라는 전망으로 독일의 마르크화와 일본의 엔화에 대한 투기적 수요가 증가했고, 결국 환율의 변동 압력은 더욱 커질 수밖에 없었다. 이러한 상황에서 각국은 보유한 달러화를 대규모로 금으로 바꾸기를 원했다. 미국은 결국 1971년 달러화의 금 태환 정지를 선언한 닉슨 쇼크를 단행했고, 브레턴우즈 체제는 붕괴되었다.</p>
+<p>그러나 붕괴 이후에도 달러화의 기축 통화 역할은 계속되었다. 그 이유로 규모의 경제를 생각할 수 있다. 세계의 모든 국가에서 ㉢어떠한 기축 통화도 없이 각각 다른 통화가 사용되는 경우 두 국가를 짝짓는 경우의 수만큼 환율의 가짓수가 생긴다. 그러나 하나의 기축 통화를 중심으로 외환 거래를 하면 비용을 절감하고 규모의 경제를 달성할 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 브레턴우즈 체제 붕괴 이후에도 달러화가 기축 통화로서 역할을 할 수 있었던 이유는 무엇인가?</li>
+<li>② 브레턴우즈 체제 붕괴 이후의 세계 경제 위축에 대해 트리핀은 어떤 전망을 했는가?</li>
+<li>③ 브레턴우즈 체제에서 미국 중앙은행은 어떤 의무를 수행해야 했는가?</li>
+<li>④ 브레턴우즈 체제에서 국제 유동성의 역할을 한 것은 무엇인가?</li>
+<li>⑤ 브레턴우즈 체제에서 달러화 신뢰도 하락의 원인은 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 닉슨 쇼크가 단행된 이후 달러화의 고평가 문제를 해결할 수 있는 달러화의 평가 절하가 가능해졌다.</li>
+<li>② 브레턴우즈 체제에서 마르크화와 엔화의 투기적 수요가 증가한 것은 이들 통화의 평가 절상을 예상했기 때문이다.</li>
+<li>③ 금의 생산량 증가를 통한 국제 유동성 공급량의 증가는 트리핀 딜레마 상황을 완화하는 한 가지 방법이 될 수 있다.</li>
+<li>④ 트리핀 딜레마는 달러화를 통한 국제 유동성 공급을 중단할 수도 없고 공급량을 무한정 늘릴 수도 없는 상황을 말한다.</li>
+<li>⑤ 브레턴우즈 체제에서 마르크화가 달러화에 대해 평가 절상되면, 같은 금액의 마르크화로 구입 가능한 금의 양은 감소한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>미국을 포함한 세 국가가 존재하고 각각 다른 통화를 사용할 때, ㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서 자동적으로 결정되는 환율의 가짓수는 금에 자국 통화의 가치를 고정한 국가 수보다 하나 적다.</li>
+<li>② ㉡이 붕괴된 이후에도 여전히 달러화가 기축 통화라면 ㉡에 비해 교차 환율의 가짓수는 적어진다.</li>
+<li>③ ㉢에서 국가 수가 하나씩 증가할 때마다 환율의 전체 가짓수도 하나씩 증가한다.</li>
+<li>④ ㉠에서 ㉡으로 바뀌면 자동적으로 결정되는 환율의 가짓수가 많아진다.</li>
+<li>⑤ ㉡에서 교차 환율의 가짓수는 ㉢에서 생기는 환율의 가짓수보다 적다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+브레턴우즈 체제가 붕괴된 이후 두 차례의 석유 가격 급등을 겪으면서 기축 통화국인 A국의 금리는 인상되었고 통화 공급은 감소했다. 여기에 A국 정부의 소득세 감면과 군비 증대는 A국의 금리를 인상시켰으며, 높은 금리로 인해 대량으로 외국 자본이 유입되었다. A국은 이로 인한 상황을 해소하기 위한 국제적 합의를 주도하여, 서로 교역을 하며 각각 다른 통화를 사용하는 세 국가 A, B, C는 외환 시장에 대한 개입을 합의했다. 이로 인해 A국 통화에 대한 B국 통화와 C국 통화의 환율은 각각 50%, 30% 하락했다.</p>
+</blockquote>
+<ul>
+<li>① A국의 금리 인상과 통화 공급 감소로 인해 A국 통화의 신뢰도가 낮아진 것은 외국 자본이 대량으로 유입되었기 때문이겠군.</li>
+<li>② 국제적 합의로 인한 A국 통화에 대한 B국 통화의 환율 하락으로 국제 유동성 공급량이 증가하여 A국 통화의 가치가 상승했겠군.</li>
+<li>③ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국 통화의 환율과 B국 통화에 대한 C국 통화의 환율은 모두 하락했겠군.</li>
+<li>④ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국과 C국 통화의 환율이 하락하여, B국에 대한 C국의 경상 수지는 개선되었겠군.</li>
+<li>⑤ 다른 모든 조건이 변하지 않았다면, A국의 소득세 감면과 군비 증대로 A국의 경상 수지가 악화되며, 그 완화 방안 중 하나는 A국 통화에 대한 B국 통화의 환율을 상승시키는 것이겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>주파수 경매는 한정된 통신주파수를 사업자에게 나누어 주는 방식으로, 두 가지 목적을 함께 추구한다. 하나는 무선 통신 사업을 잘 운영할 사업자에게 주파수를 효율적으로 분배하는 것이고, 다른 하나는 정부 수입을 극대화하는 것이다. 경매에서 사업자가 부르는 입찰가는 그 사업자가 매긴 주파수의 가치를 드러내므로, 사업자들이 각 주파수의 가치를 제대로 가늠해 입찰할수록 두 목적은 함께 달성되기 쉽다. 그런데 입찰 정보를 어떻게 다루느냐에 따라 사업자가 가치를 가늠하는 정도가 달라지고, 경매를 규율하는 규칙도 달라진다.</p>
+<p>입찰 방식은 입찰 정보의 공개 여부에 따라 봉인 입찰과 공개 입찰로 나뉜다. ㉠봉인 입찰은 모든 사업자가 입찰가를 봉투에 적어 한 번에 제출하고, 그 입찰을 한꺼번에 받아 각 주파수의 최고가 입찰자를 동시에 낙찰자로 정하는 방식이다. 이 방식에서는 다른 사업자가 무엇에 얼마를 적어 냈는지 알 수 없으므로, 사업자는 상대의 평가를 참고하지 못한 채 입찰가를 정해야 한다. 반면 ㉡공개 입찰은 주파수를 동시에 내놓되 여러 차례에 걸쳐 입찰을 받으며, 매 차례가 끝날 때마다 현재 최고가를 공개해 다음 차례에 더 높은 값을 부를 수 있게 하는 방식이다. 이 방식에서는 사업자가 공개된 최고가를 보고 자신의 평가를 견주어 입찰가를 조정해 갈 수 있다.</p>
+<p>봉인 입찰에서는 사업자가 상대의 평가를 모르므로 입찰가가 운에 좌우되기 쉽다. 사업자는 상대가 낮게 적어 낼 것이라 짐작하면 자신도 값을 낮추어 적어 내려 하는데, 모두가 이렇게 행동하면 낙찰가가 가치보다 한참 낮아진다. 이때 가치를 너무 낮게 매긴 사업자가 우연히 낙찰을 받으면 자원이 그 주파수를 잘 쓸 사업자에게 가지 못하고, 그렇게 낮게 매겨진 값은 곧 정부 수입의 감소로 이어진다. 그래서 봉인 입찰을 규율하는 규칙은 사업자가 가치를 정직하게 드러내도록 유도하는 데 초점을 둔다. 그 한 가지가 ㉮차순위 가격 규칙으로, 일부 주파수 경매에서 실제로 채택된 바 있다. 이는 최고가를 적어 낸 사업자를 낙찰자로 하되 그가 실제로 내는 값은 자신의 입찰가가 아니라 두 번째로 높은 입찰가로 정하는 규칙이다. 이 규칙에서는 입찰가를 높여도 실제 지불액이 둘째 입찰가에 묶이므로, 사업자가 가치를 부풀리거나 낮추지 않고 그대로 적어 내는 것이 유리해진다. 값을 낮추면 낙찰 기회만 잃을 뿐 지불액은 줄지 않고, 값을 부풀려도 손해 볼 위험만 커지기 때문이다.</p>
+<p>공개 입찰을 규율하는 규칙은 여러 차례의 입찰이 질서 있게 이어지도록 하는 데 초점을 둔다. ㉯활동 규칙은 사업자가 일정 수준 이상으로 입찰에 참여하지 않으면 다음 차례의 입찰 자격을 줄이는 규칙으로, 사업자가 끝까지 관망만 하다가 막판에 끼어드는 것을 막아 입찰이 늘어지지 않게 한다. ㉰입찰 증분 규칙은 한 차례에서 다음 차례로 넘어갈 때 최소한 얼마 이상 값을 올려야 하는지를 정한 규칙으로, 너무 작은 폭으로 값을 올리며 시간을 끄는 것을 막는다. 이러한 규칙들은 사업자들이 여러 차례에 걸쳐 서로의 평가를 확인하며 입찰가를 수렴시켜 가도록 돕는다.</p>
+<p>봉인 입찰과 공개 입찰은 정보를 다루는 방식이 다른 만큼 어울리는 상황도 다르다. 사업자들이 각 주파수를 따로 평가할 수 있는 단순한 상황에서는 봉인 입찰로도 정직한 입찰을 끌어낼 수 있다. 그러나 여러 주파수를 묶어야 가치가 커지는 복잡한 상황에서는, 사업자가 다른 주파수의 낙찰 가능성을 살펴 가며 입찰해야 하므로 정보를 점차 공개하는 공개 입찰이 더 적합하다. 한 주파수를 놓치면 나머지 주파수의 가치까지 달라지는 까닭에, 사업자는 다른 주파수의 진행 상황을 본 뒤에야 자신의 입찰가를 정할 수 있기 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 매 차례가 끝날 때마다 현재 최고가를 사업자들에게 공개한다.</li>
+<li>② 사업자가 다른 사업자의 입찰가를 참고하여 자신의 입찰가를 조정한다.</li>
+<li>③ 모든 사업자의 입찰을 한꺼번에 받아 각 주파수의 낙찰자를 동시에 정한다.</li>
+<li>④ 여러 차례에 걸쳐 입찰을 받으며 입찰가를 점차 수렴시켜 간다.</li>
+<li>⑤ 입찰에 참여하지 않은 사업자의 다음 차례 입찰 자격을 줄인다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 경매에서 사업자가 부르는 입찰가는 그 사업자가 매긴 주파수의 가치를 드러낸다.</li>
+<li>② 봉인 입찰에서는 사업자가 상대의 평가를 참고하지 못한 채 입찰가를 정해야 한다.</li>
+<li>③ 차순위 가격 규칙에서 낙찰자가 실제로 내는 값은 자신의 입찰가가 아니라 둘째로 높은 입찰가이다.</li>
+<li>④ 여러 주파수를 묶어야 가치가 커지는 복잡한 상황에서는 봉인 입찰이 공개 입찰보다 더 적합하다.</li>
+<li>⑤ 입찰 증분 규칙은 사업자가 너무 작은 폭으로 값을 올리며 시간을 끄는 것을 막는다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> ㉡과 관련하여 ㉯와 ㉰의 취지에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 사업자들이 매 차례 적극적으로 입찰에 참여하여 입찰이 신속히 마무리된 원인이 입찰 참여 수준을 강제한 규칙과 무관하다면, ㉯의 취지는 강화되겠군.</li>
+<li>② 사업자가 막판까지 관망하다 끼어들어 입찰이 늘어진 사례가 입찰 자격을 제한하는 규칙이 없는 경매에서 자주 나타난다면, ㉯의 취지는 약화되겠군.</li>
+<li>③ 사업자들이 값을 아주 조금씩만 올리며 여러 차례를 끌어 경매가 길어진 경우가 값을 올리는 최소 폭을 정한 경매에서 줄어든다면, ㉰의 취지는 강화되겠군.</li>
+<li>④ 값을 올리는 최소 폭을 정해 두어도 경매가 길어지는 정도가 그 규칙이 없을 때와 다르지 않다면, ㉰의 취지는 강화되겠군.</li>
+<li>⑤ 사업자가 관망만 하다 막판에 끼어드는 일이 입찰 참여 수준을 강제해도 줄지 않는다면, ㉯의 취지는 강화되겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>㉮~㉰에 따라 〈보기〉에 대한 평가를 검토한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아래는 어떤 주파수 경매에서 사업자 갑·을·병이 보인 행동을 정리한 것이다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>갑</th>
+<th>을</th>
+<th>병</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>입찰 방식</td>
+<td>봉인 입찰</td>
+<td>공개 입찰</td>
+<td>공개 입찰</td>
+</tr>
+<tr>
+<td>1차 입찰가</td>
+<td>P에 100</td>
+<td>80</td>
+<td>관망(입찰 없음)</td>
+</tr>
+<tr>
+<td>2차 입찰가</td>
+<td>—</td>
+<td>81</td>
+<td>95</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>낙찰(둘째로 높은 입찰가 90)</td>
+<td>진행</td>
+<td>진행</td>
+</tr>
+</tbody>
+</table>
+<p>※ 규칙 — 최소 인상 폭 5 / 1차 미참여 시 2차 자격 제한</p>
+</blockquote>
+<ul>
+<li>① 봉인 입찰로 진행된 갑의 경우, ㉮에 따르면 갑이 실제로 내는 값은 자신이 적어 낸 100이 아니라 둘째로 높은 90이 되겠군.</li>
+<li>② ㉮가 적용되면 갑은 주파수의 가치를 부풀리거나 낮추기보다 그대로 적어 내는 것이 유리하겠군.</li>
+<li>③ 1차에 80, 2차에 81을 적어 낸 을의 행동은 ㉰의 최소 인상 폭 5를 충족하지 못하므로 ㉰에 어긋나겠군.</li>
+<li>④ 1차에 관망하다 2차에 처음 입찰한 병의 행동은 ㉯에 따라 2차 입찰 자격이 제한되는 대상이 되겠군.</li>
+<li>⑤ 을이 한 차례에 값을 5만큼 올렸다면 ㉯에 어긋나 다음 차례의 입찰 자격을 잃겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 수능 [4~7]</div>
+<div class='passage exam-ps'><p>㉠경마식 보도는 경마 중계를 하듯 지지율 변화나 득표율 예측 등을 집중 보도하는 선거 방송의 한 방식이다. 경마식 보도는 선거일이 가까워질수록 증가한다. 새롭고 재미있는 정보를 원하는 시청자들의 요구에 부응하고, 방송사로서도 매일 새로운 뉴스를 제공하는 방편이 될 수 있기 때문이다. 경마식 보도는 선거와 정치에 무관심한 유권자들의 선거 참여, 정치 참여를 독려하는 장점이 있다. 하지만 흥미를 돋우는 데 치중하는 경마식 보도는 선거의 주요 의제를 도외시하고 경쟁 결과에 초점을 맞춰 선거의 공정성을 저해할 수 있다.</p>
+<p>경마식 보도의 문제점을 줄이려는 조치가 있다. ㉮「공직선거법」의 규정에 따르면, 당선인을 예상케 하는 여론조사를 실시하는 것은 언제든지 가능하지만, 그 결과의 보도는 선거일 6일 전부터 투표 마감 시각까지 금지된다. 이러한 규정이 국민의 알 권리와 언론의 자유를 침해하는지에 대해 헌법재판소는 신뢰할 수 있는 여론조사 결과라 하더라도 선거일에 임박해 보도하면 선거에 영향을 끼칠 수 있다며 합헌 결정을 내렸다. 「공직선거법」에 근거를 둔 ㉯「선거방송심의에 관한 특별규정」은 유권자에게 영향을 줄 수 있는 사실의 왜곡 보도를 금지하고, 여론조사 결과가 오차 범위 내에 있을 때에 이를 밝히지 않은 채로 서열이나 우열을 나타내는 보도도 금지하고 있다. 언론 단체의 ㉰「선거여론조사보도준칙」은 표본 오차를 감안하여 여론조사 결과를 정확하게 보도하도록 요구한다. 지지율 차이가 오차 범위 내에 있을 때 “경합”이라는 표현은 무방하지만 서열화하거나 “오차 범위 내에서 앞섰다.”라는 표현처럼 우열을 나타내어 보도할 수 없다는 것이다.</p>
+<p>경마식 보도로부터 드러난 선거 방송의 한계를 보완하는 방책 중 하나로 선거 방송 토론회가 활용될 수 있다. 이 토론회를 통해 후보자 간 정책과 자질 등의 차이가 드러날 수 있는데, 현실적인 이유로 초청 대상자는 한정된다. ㉡「공직선거법」의 선거 방송 토론회 규정은 5인 이상의 국회의원을 가진 정당이나 직전 선거에서 3% 이상 득표한 정당이 추천한 후보자, 또는 언론기관의 여론조사 결과 평균 지지율이 5% 이상인 후보자 등을 초청 기준으로 제시하고 있다. 다만 초청 대상이 아닌 후보자들을 위해 별도의 토론회 개최가 가능하고 시간이나 횟수를 다르게 할 수 있다.</p>
+<p>이러한 규정이 선거 운동의 기회균등 원칙을 침해하는지에 대해 헌법재판소는 위헌이 아니라고 결정했다. ⓐ다수 의견은 방송 토론회의 효율적 운영을 고려할 때 초청 대상 후보자 수가 너무 많으면 제한된 시간 안에 심층적인 토론이 이루어지기 어렵고, 유권자들도 관심이 큰 후보자들의 정책 및 자질을 직접 비교하기 어렵다는 점을 지적하며, 이 규정은 합리적 제한이라고 보았다. 반면 ⓑ소수 의견은 이 규정이 가장 효과적인 선거 운동의 기회를 일부 후보자에게서 박탈하며, 유권자에게도 모든 후보자를 동시에 비교하지 못하게 하고, 초청 대상 후보자 토론회에 참여한 후보자와 그렇지 못한 후보자를 차별적으로 인식하게 만든다고 지적하였다. 이 규정을 소수 정당이나 정치 신인 등에 대한 자의적이고 차별적인 침해라고 본 것이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 기간의 후반기에 비해 전반기에 더 많다.</li>
+<li>② 시청자와 방송사의 상반된 이해관계가 반영된다.</li>
+<li>③ 당선자 예측과 관련된 정보의 전파에 초점을 맞추지 않는다.</li>
+<li>④ 선거의 핵심 의제에 관한 후보자의 입장을 다룬 보도를 중시한다.</li>
+<li>⑤ 정치에 관심이 없던 유권자들이 선거에 관심을 갖도록 북돋운다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 신뢰할 수 있는 여론조사의 결과를 보도하더라도 선거의 공정성을 위협할 수 있다.</li>
+<li>② 정당의 추천을 받지 못해도 선거 방송의 초청 대상 후보자 토론회에 참여할 수 있다.</li>
+<li>③ 국민의 알 권리와 언론의 자유가 서로 충돌하는지의 문제를 헌법재판소에서 논의한 적이 있다.</li>
+<li>④ 선거일에 당선인 예측 선거 여론조사를 실시하고 투표 마감 시각 이후에 그 결과를 보도할 수 있다.</li>
+<li>⑤ 「공직선거법」에는 선거 운동의 기회가 모든 후보자에게 균등하게 배분되지 못하도록 할 가능성이 있는 규정이 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span><span class="pts">[3점]</span> ㉡과 관련하여 ⓐ와 ⓑ의 입장에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 방송 초청 대상 후보자 토론회에서 후보자들이 심층적인 토론을 하지 못한 원인이 시간의 제한이나 참여한 후보자의 수와 관계가 없다면 ⓐ의 입장은 강화되겠군.</li>
+<li>② 주요 후보자의 정책이 가진 치명적 허점을 지적하고 좋은 대안을 제시해 유명해진 정치 신인이 선거 방송 초청 대상 후보자 토론회에 초청받지 못한다면 ⓐ의 입장은 약화되겠군.</li>
+<li>③ 선거 방송 초청 대상 후보자 토론회에 참여할 적정 토론자의 수를 제한하는 기준이 국민의 합의에 의해 결정되었기 때문에 자의적인 것이 아니라고 한다면 ⓑ의 입장은 강화되겠군.</li>
+<li>④ 어떤 후보자가 지지율이 낮은 후보자 간의 별도 토론회에서 뛰어난 정치 역량을 보여 주었음에도 그 토론회에 참여했다는 이유만으로 지지율이 떨어진다면 ⓑ의 입장은 약화되겠군.</li>
+<li>⑤ 유권자들이 뛰어난 역량을 가진 소수 정당 후보자를 주요 후보자들과 동시에 비교할 수 있는 가장 효율적인 방법이 선거 방송 초청 대상 후보자 토론회라면 ⓑ의 입장은 약화되겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>㉮～㉰에 따라 〈보기〉에 대한 언론 보도를 평가한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 ○○방송사의 의뢰로 △△여론조사 기관에서 세 차례 실시한 당선인 예측 여론조사 결과의 일부이다. (세 조사 모두 신뢰 수준 95%, 오차 범위 8.8%P임.)</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>1차 조사</th>
+<th>2차 조사</th>
+<th>3차 조사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조사일</td>
+<td>선거일 15일 전</td>
+<td>선거일 10일 전</td>
+<td>선거일 5일 전</td>
+</tr>
+<tr>
+<td>조사 결과 — A 후보</td>
+<td>42%</td>
+<td>38%</td>
+<td>39%</td>
+</tr>
+<tr>
+<td>조사 결과 — B 후보</td>
+<td>32%</td>
+<td>37%</td>
+<td>38%</td>
+</tr>
+<tr>
+<td>조사 결과 — C 후보</td>
+<td>18%</td>
+<td>17%</td>
+<td>17%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① 1차 조사 결과를 선거일 14일 전에 “A 후보, 10%P 이상의 차이로 B 후보와 C 후보에 우세”라고 보도하는 것은 ㉯와 ㉰ 중 어느 것에도 위배되지 않겠군.</li>
+<li>② 2차 조사 결과를 선거일 9일 전에 “A 후보는 B 후보에 조금 앞서고, C 후보는 3위”라고 보도하는 것은 ㉯에 위배되지만, ㉰에 위배되지 않겠군.</li>
+<li>③ 3차 조사 결과를 선거일 4일 전에 “A 후보는 오차 범위 내에서 1위”라고 보도하는 것은 ㉮와 ㉰에 모두 위배되겠군.</li>
+<li>④ 1차 조사 결과를 선거일 14일 전에 “A 후보 1위, B 후보 2위, C 후보 3위”라고 보도하는 것은 ㉯에 위배되지 않고, 2차 조사 결과를 선거일 9일 전에 같은 표현으로 보도하는 것은 ㉰에 위배되겠군.</li>
+<li>⑤ 2차 조사 결과를 선거일 9일 전에 “B 후보, A 후보와 오차 범위 내 경합”이라고 보도하는 것은 ㉰에 위배되지 않고, 3차 조사 결과를 선거일 4일 전에 같은 표현으로 보도하는 것은 ㉮에 위배되겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>여러 통신주파수를 한꺼번에 팔 때, 입찰을 단 한 번에 받아 낙찰자를 동시에 정하는 방식은 사업자가 다른 주파수의 입찰 정보를 알 수 없어 가치에 맞는 입찰을 하기 어렵다는 한계가 있다. 이 한계를 보완하려고 설계된 것이 동시 다중 라운드 경매이다. 이는 여러 주파수를 동시에 경매에 부치되, 입찰을 여러 라운드에 걸쳐 진행하고 매 라운드가 끝날 때마다 각 주파수의 현재 최고가를 공개하는 방식이다.</p>
+<p>동시 다중 라운드 경매에서 사업자는 매 라운드에 원하는 주파수에 입찰하고, 라운드가 끝나면 공개된 최고가를 보고 다음 라운드에 더 높은 값을 부를지 정한다. 한 라운드에서 어떤 주파수의 최고가 입찰자가 된 사업자는 다음 라운드에서 다른 사업자가 더 높은 값을 부르기 전까지는 잠정적 낙찰자의 지위를 유지한다. 따라서 사업자는 자신이 잠정적으로 차지한 주파수와 빼앗긴 주파수를 라운드마다 확인하며 입찰 전략을 다시 짤 수 있다. 새로운 최고가가 더 나오지 않아 모든 주파수에서 입찰이 멈추면 경매가 종료되고, 그 시점의 최고가 입찰자가 각 주파수의 낙찰자가 된다. 라운드를 거듭하며 정보가 쌓이므로 사업자는 주파수의 가치를 점차 정확히 가늠할 수 있다.</p>
+<p>이 방식은 여러 장점을 지닌다. 매 라운드 최고가가 공개되므로 사업자는 다른 사업자의 평가를 참고해 입찰가를 조정할 수 있고, 그 결과 주파수의 가치에 가까운 값으로 낙찰가가 수렴해 효율적 분배에 유리하다. 한 번에 끝내는 봉인 입찰에서는 가치를 잘못 매긴 사업자가 그대로 낙찰을 받거나 놓치지만, 여러 라운드를 거치는 이 방식에서는 잘못 매긴 값이 다음 라운드의 더 높은 입찰에 밀려 걸러지므로, 결국 그 주파수를 가장 잘 쓸 사업자에게 자원이 돌아갈 가능성이 커진다. 또한 여러 주파수를 묶어야 가치가 커지는 사업자는 다른 주파수의 낙찰 가능성을 살펴 가며 입찰할 수 있어, 원하는 주파수 묶음을 확보하기에도 유리하다. 한 주파수의 낙찰이 어려워지면 사업자는 라운드 도중에 다른 주파수로 입찰을 옮겨 묶음을 다시 구성할 수 있기 때문이다. 가격이 충분히 드러나는 만큼 낙찰가가 가치에 못 미치게 낮아질 일이 적어, 정부 수입이 지나치게 낮아질 위험도 줄어든다.</p>
+<p>그러나 이 방식에도 위험이 있다. 라운드가 거듭되는 동안 사업자들이 서로의 입찰을 신호로 주고받으며 경쟁을 피하는 담합이 일어날 수 있다. 매 라운드 최고가가 공개되는 까닭에, 사업자들은 특정 입찰가의 끝자리를 신호로 삼아 서로 영역을 나누고 경쟁을 자제하기로 암묵적으로 합의할 수 있는 것이다. 또 자금력이 큰 사업자가 여러 주파수를 한꺼번에 노려 다른 사업자를 밀어내는 독식이 나타날 수 있다. 정보가 쌓일수록 자금력의 차이가 그대로 드러나, 자금이 부족한 사업자는 일찍 입찰을 포기하게 되기 때문이다. 게다가 매 라운드를 거치는 동안 경매가 길어져 시간과 비용이 늘기도 한다. 이러한 위험을 줄이려고 보완 장치가 함께 설계된다.</p>
+<p>활동 규칙은 사업자가 매 라운드 일정 수준 이상으로 입찰에 참여하지 않으면 다음 라운드의 입찰 자격을 줄이는 규칙이다. 이는 사업자가 관망만 하다 막판에 끼어들어 경매가 늘어지는 것을 막고, 라운드마다 진지한 입찰이 이어지도록 한다. 관망을 막으면 사업자들이 자신의 평가를 일찍 드러내게 되어, 담합을 위한 신호를 주고받을 여지도 함께 줄어든다. 입찰 한도 규칙은 한 사업자가 확보할 수 있는 주파수의 양에 상한을 두는 규칙으로, 자금력이 큰 사업자의 독식을 막아 여러 사업자에게 주파수가 고루 돌아가게 한다. 이러한 보완 장치를 통해 동시 다중 라운드 경매는 효율적 분배와 수입 극대화라는 두 목적을 함께 달성하는 방식으로 자리 잡았다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대상의 개념과 장단점을 제시하고 보완책을 소개한다.</li>
+<li>② 대립하는 두 이론을 비교하여 그 우열을 가린다.</li>
+<li>③ 하나의 사례를 분석하여 일반 원리를 도출한다.</li>
+<li>④ 대상이 발전해 온 과정을 시대순으로 나열한다.</li>
+<li>⑤ 문제 해결의 여러 방안을 두고 상반된 입장을 대비한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>동시 다중 라운드 경매에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 여러 주파수를 동시에 경매에 부치되 입찰을 여러 라운드에 걸쳐 진행한다.</li>
+<li>② 매 라운드가 끝날 때마다 각 주파수의 현재 최고가를 사업자들에게 공개한다.</li>
+<li>③ 새로운 최고가가 더 나오지 않아 입찰이 멈추면 경매가 종료된다.</li>
+<li>④ 라운드를 거듭할수록 사업자가 주파수의 가치를 점차 정확히 가늠할 수 있다.</li>
+<li>⑤ 매 라운드의 최고가를 감추어 사업자가 상대의 평가를 알 수 없게 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 활동 규칙이 없다면 사업자가 막판까지 관망하다 끼어들어 경매가 늘어질 수 있다.</li>
+<li>② 입찰 한도 규칙은 자금력이 큰 사업자가 여러 주파수를 독식하는 것을 막는 데 기여한다.</li>
+<li>③ 매 라운드 최고가가 공개되면 사업자는 다른 사업자의 평가를 참고해 입찰가를 조정할 수 있다.</li>
+<li>④ 라운드가 거듭될수록 사업자들이 서로의 입찰을 신호로 주고받아 담합할 위험은 사라진다.</li>
+<li>⑤ 여러 주파수를 묶어야 가치가 커지는 사업자는 다른 주파수의 낙찰 가능성을 살피며 입찰할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑: 이번 주파수 경매는 여러 대역을 동시에 내놓고 라운드를 거듭하던데, 자금이 넉넉한 큰 회사가 여러 대역을 다 가져가 버릴까 걱정이야.
+을: 그래서 한 회사가 가져갈 수 있는 대역의 양에 상한을 두었다고 하더라고. 덕분에 우리 같은 중소 사업자도 대역을 확보할 길이 생긴 셈이지.
+갑: 그런데 우리가 이번 라운드를 그냥 쉬면서 다음에 한꺼번에 입찰하면 어떨까?
+을: 그건 곤란해. 매 라운드 일정 수준 이상 참여하지 않으면 다음 라운드 입찰 자격이 줄어든다고 했거든.</p>
+</blockquote>
+<ul>
+<li>① 을의 첫 번째 말에 나온 상한은 활동 규칙에 해당하여 경매가 늘어지는 것을 막겠군.</li>
+<li>② 갑이 걱정하는 큰 회사의 독식은 입찰 한도 규칙으로 줄일 수 있겠군.</li>
+<li>③ 을의 두 번째 말에 나온 자격 제한은 입찰 한도 규칙에 따른 것이겠군.</li>
+<li>④ 갑이 제안한 대로 라운드를 쉬어도 다음 라운드의 입찰 자격에는 영향이 없겠군.</li>
+<li>⑤ 동시 다중 라운드 경매에서는 매 라운드의 최고가가 공개되지 않아 담합이 일어날 수 없겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2025학년도 6월 [4~7]</div>
+<div class='passage exam-ps'><p>정당과 같은 정치 조직이 민주적 방식과 절차로 운영되어야 하는 것은 당연하다. 그런데 민주적 운영 체제를 갖추었으면서도 실제로는 일부 소수에게 권력이 집중되어 있는 경우도 적지 않다. 조직 운영에서 보이는 이러한 현상을 흔히 과두제라 한다. 이는 정치 조직에서뿐만 아니라 기업 경영에서도 나타난다.</p>
+<p>모든 주주가 경영진을 이루어 상호 협력 관계를 기반으로 기업을 운영하며 의사 결정권도 균등하게 행사하는 경우에 이를 '공동체적 경영'이라 부르기도 한다. 이런 기업에서 경영진은 모두 업무와 관련하여 전문성을 가지며, 경영 수익에 관련된 중요한 사항은 주주들이 공동으로 결정한다. 그러나 기업의 규모가 성장하고 사업이 다양해지면, 소수의 의사 결정에 따른 수직적 경영으로 효율성을 지향하는 '과두제적 경영'으로 나아가는 일도 있다.</p>
+<p><span class="boxmark">[과두제적 경영]</span>은 소수의 경영자로 이루어진 경영진이 강한 결속력을 가지면서 실질적 권한과 정보를 독점하며 기업을 운영하는 것을 말한다. 이런 체제는 전문성과 경험을 갖춘 경영진을 중심으로 안정적 경영권이 확보될 수 있도록 하여, 기업 전략을 장기적으로 수립하고, 이에 맞춰 과감하고 지속적인 투자를 할 수 있어서 첨단 핵심 기술의 개발에도 유리한 면이 있다. 그리고 기업과 경영진 간의 높은 일체성은 위기 상황에서 신속한 의사 결정으로 효율적인 대처를 하는 데 도움을 주기도 한다.</p>
+<p>그런데 대체로 주주의 수가 많으면 개별 주주의 결정권은 약하고, 소수의 경영진이 기업을 장악하는 힘은 크다. 이를 이용하여 정보와 권한이 집중된 소수의 경영진이 사익에 치중하면 다수 주주의 이익이 침해되는 폐해가 나타날 수 있다. 경영 성과를 실제보다 부풀려 투자를 유치한 뒤 주주들에게 회복하기 어려운 손해를 입히는 경우도 있으며, 기업 운영에 중대한 영향을 미치는 주요 정보들을 은폐하거나 경영 상황을 조작하여 발표함으로써 결과적으로 기업의 가치에 심각한 타격을 주는 사례도 종종 보게 된다.</p>
+<p>이러한 문제점을 완화하기 위해 기업이 경영자와 계약을 체결하여 급여 이외의 경제적 이익을 동기로 부여하는 방안이 있다. 예를 들면, 일정 수량의 주식을 계약 시에 정한 가격으로 미래에 매수할 수 있도록 하는 스톡옵션의 권리를 경영자에게 부여하는 방식이 있다. 이 권리를 행사할지 말지는 자유이고, 경영자는 매수 시점을 유리하게 선택할 수 있다. 또 아직 우리나라에 도입되지는 않았지만, 기업의 주식 가치가 목표치 이상으로 올랐을 때 경영자가 그에 상응하는 보상을 받는 주식 평가 보상권의 방식도 있다.</p>
+<p>기업 경영의 건전성을 확보하기 위해 마련된 공적 제도들은 과두제적 경영의 폐해를 방지하는 기능도 한다. 기업의 주식 가치에 영향을 미칠 수 있는 정보 제공을 법적으로 의무화한 경영 공시 제도는 경영 투명성을 높이려는 것이다. 이를 통해 경영진과 주주들 간 정보 격차가 줄어들 수 있다. 기업의 이사회에 외부 인사를 이사로 참여시키도록 하는 사외 이사 제도는 독단적인 의사 결정을 견제함으로써 폐쇄적 경영으로 인한 정보와 권한의 집중을 억제하는 효과를 거둘 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대상의 개념과 장단점을 제시하고 보완책을 소개한다.</li>
+<li>② 유사한 원리들을 분석하고 이를 하나의 이론으로 통합한다.</li>
+<li>③ 대립하는 유형을 들어 이론적 근거의 변천 과정을 설명한다.</li>
+<li>④ 가설을 세우고 그에 대해 현실적인 사례를 들어 가며 검토한다.</li>
+<li>⑤ 문제 상황의 근본 원인을 진단하고 해결책에 대한 상반된 입장을 해설한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span><span class="boxmark">[과두제적 경영]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 소수의 경영진이 내린 의사 결정이 수직적으로 집행되는 효율성을 추구한다.</li>
+<li>② 강한 결속력을 가진 소수의 경영자로 경영진을 이루어 경영권 유지에 강점이 있다.</li>
+<li>③ 경영권이 안정되어 중요 기술 개발에 적극적인 투자를 계속하는 데에 유리하다는 장점이 있다.</li>
+<li>④ 경영진이 투자자의 유입을 유도하기 위하여 경영 성과를 부풀릴 위험성이 있어 이에 대비할 필요가 있다.</li>
+<li>⑤ 경영진과 다수 주주 사이의 이해가 일치하는 경우에는 그렇지 않은 경우보다 기업 가치가 훼손될 위험성이 높아진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 스톡옵션의 권리를 가진 경영자는 주식 가격이 미리 정해 놓은 것보다 하락하더라도 손실을 입지 않을 수 있다.</li>
+<li>② 스톡옵션은 경영자의 성과 보상에 미래의 주식 가치가 관련된다는 점에서 주식 평가 보상권과 차이가 있다.</li>
+<li>③ 경영 공시는 주주가 기업 경영 상황을 파악하여 기업 가치를 평가하는 데 유용한 제도가 될 수 있다.</li>
+<li>④ 사외 이사 제도는 기업의 의사 결정에 외부 인사를 참여시켜 경영의 개방성을 높일 수 있는 제도라 평가할 수 있다.</li>
+<li>⑤ 경영 공시 제도와 사외 이사 제도는 기업의 중요 정보에 대한 경영진의 독점을 완화할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+X사는 정밀 부품 분야에서 독보적인 기술을 장기간 보유하여 발전시켜 온 기업으로서 시장 점유율도 높다. 원래 X사의 주주들은 모두 함께 경영진이 되어 중요 사항에 대하여 동등한 결정권을 보유하였으나, 기업이 성장하면서 효율성 증진을 위하여 소수의 주주만으로 경영진을 구성하였다. 경영진은 주기적으로 다른 주주들로 교체되어 전체 주주는 기업의 경영 상태를 파악할 수 있으며, 경영 이익의 분배와 같은 주요 사항은 전체 주주가 공동으로 의결한다. X사의 주주 A와 B는 회사의 진로에 관하여 다음과 같은 대화를 나누었다.</p>
+<p>A: 최근 치열해진 경쟁에 대응하려면, 경영진의 구성원을 변동시키지 않고 경영 결정권도 경영진이 전적으로 행사하도록 하는 게 좋겠습니다.
+B: 시장 점유율도 잘 유지되고 있고 우리 주주들의 전문성도 탁월하니, 예전처럼 회사를 운영한다고 하더라도 문제없을 듯합니다.</p>
+</blockquote>
+<ul>
+<li>① X사는 주주들 사이의 평등성이 강하여 과도한 정보 격차나 권한 집중과 같은 폐해를 보이지 않는다.</li>
+<li>② X사는 현재 경영진이 고정되는 구조로 바뀌었지만 주주가 실적에 대한 이익 분배를 결정할 수 있기 때문에 수직적 경영의 부작용은 나타나지 않는다.</li>
+<li>③ A는 결속력이 강한 소수의 경영진을 중심으로 운영되는 경영 방식을 현행대로 유지하여야 시장의 점유율을 지킬 수 있다고 보는 입장이다.</li>
+<li>④ B는 수평적인 의사 결정 구조로의 전환을 최소한으로 하여 효율적 경영을 유지해야 한다고 보는 입장이다.</li>
+<li>⑤ A와 B는 현재 X사가 경험과 전문성을 바탕으로 안정적인 과두제적 경영을 하고 있다는 전제에서 논의를 한다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

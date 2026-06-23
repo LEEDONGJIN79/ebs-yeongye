@@ -1,0 +1,1034 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>정치란 무엇인가 — 바디우와 랑시에르 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>정치란 무엇인가 — 바디우와 랑시에르 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분은 "정치"라는 말을 들으면 무엇이 떠오르나요? 아마 선거에서 누구를 뽑을지, 어느 정당이 이겼는지, 새 법이 어떻게 바뀌었는지 같은 것이 먼저 생각날 거예요. 그런데 여기 나오는 두 철학자 <strong>알랭 바디우</strong>와 <strong>자크 랑시에르</strong>는 우리에게 조금 놀라운 말을 합니다. "좋은 지도자를 뽑고 제도를 손보는 것만으로는 <em>진짜 정치</em>가 아니다"라는 거예요. 그럼 진짜 정치는 무엇일까요? 두 사람은 서로 다른 길로 이 질문에 답합니다.</p>
+<p>먼저 <strong>바디우</strong>의 이야기를 일상으로 풀어 볼게요. 평소엔 아무 일 없이 굴러가던 학교에, 어느 날 누구도 예상 못 한 <em>사건</em>이 터졌다고 해 봅시다. 너무 새롭고 충격적이라 기존의 말로는 설명이 안 되고, 잠깐 번쩍였다가 사라져 버려요. 그런데 그 사건에 <em>이름</em>이 붙고, 사람들이 "이게 그 사건과 관련 있나?" 하고 하나하나 따져 보며(이걸 <strong>탐색</strong>이라 해요) 충실하게 행동하다 보면, 거기서 학교의 <em>참모습</em>이 드러나는 새로운 질서가 만들어집니다. 바디우는 이렇게 <strong>사건에 충실한 것들이 모여 만들어지는 참모습</strong>을 <em>진리</em>라고 부르고, 사회를 근본부터 바꾸는 이 과정을 정치라고 봐요. 여기서 "진리"는 거짓말의 반대가 아니라, <em>겉으로 드러난 사실들 너머에 있는 본질</em>이라는 뜻이에요.</p>
+<p>이번엔 <strong>랑시에르</strong>예요. 그는 사회가 늘 "누구의 목소리는 들리고 누구의 목소리는 안 들리는지"를 미리 정해 둔다고 봅니다. 교실에서 어떤 친구의 말은 의견으로 대접받고 어떤 친구의 말은 그냥 소음 취급당하는 일, 본 적 있죠? 랑시에르는 이렇게 <em>무엇이 보이고 들리고 문제로 여겨지는지를 나누어 놓은 틀</em>을 <strong>감각적인 것의 분할</strong>이라 부릅니다. 그리고 그동안 "말할 자격이 없다"고 여겨지던 사람들이 갑자기 목소리를 내며 "우리 말도 의미가 있다"고 들고일어나는 순간 — 그 <strong>불화</strong>의 순간이 바로 정치라고 해요. 이때 보이지 않던 사람들이 새로운 주체로 떠오르고, 평등이 다시 짜입니다.</p>
+<blockquote>
+<p>한마디로: <strong>바디우는 "예측 못 한 <em>사건</em>에 충실해서 사회의 참모습(진리)을 만드는 것"이 정치</strong>라 보고, <strong>랑시에르는 "안 들리던 사람들이 목소리를 내는 <em>불화</em>로 누가 보이고 들리는지의 틀을 깨는 것"이 정치</strong>라 봅니다. 두 사람 모두 "정치는 제도 손보기가 아니라 <em>질서 자체를 흔드는 일</em>"이라는 데는 손을 맞잡지만, 그 흔드는 방식과 초점이 서로 달라요. 이 단원은 그 닮음과 다름을 차근차근 들여다봅니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>"정치란 무엇인가"라는 한 물음에 대한 바디우와 랑시에르의 서로 다른 대답</strong>이 있습니다. 두 철학을 그냥 나란히 외우는 게 아니라, <em>어디서 닮고 어디서 갈라지는지</em>를 세 가지 각도에서 들여다봐요.</p></div>
+<div class='umap'>
+<div class='umap-center'>"정치란 무엇인가" — 바디우와 랑시에르</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>바디우의 <em>사건·이름·탐색·진리</em>와 랑시에르의 <em>감각적인 것의 분할·불화</em>를 (가)·(나)로 나란히 놓고, <strong>한 철학자의 핵심 주장을 다른 철학자의 눈으로 평가</strong>하면 어떻게 보이는지를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>바디우의 정치철학을 (가)에서 그의 논리대로 충실히 세운 뒤, (나)에서 랑시에르의 관점이 <strong>"바디우는 자기 출발점과 어긋난다"고 되받아치는</strong> 비판의 결을 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>바디우·랑시에르에 또 한 사람의 정치철학을 더해, <strong>'평등'이라는 한 쟁점을 두고 여러 입장이 어떻게 같고 다른지</strong>를 지도처럼 정리하며 견줍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 두 철학이 정치를 <em>어떻게 새로 정의하는지</em>, 그 정의들이 <em>어디서 맞물리고 어디서 갈라서는지</em>가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>현대 철학자 알랭 바디우는 정치를 철학이 추구하는 진리 탐구의 한 절차로 ⓐ<u>간주한다</u>. 그는 더 나은 세상은 좋은 지도자를 선출하거나 제도를 개선하는 것만으로 오지 않는다고 본다. 정치 제도나 법체계는 사회 구조의 영향을 받으므로, 사회 구조 자체가 달라지지 않는 한 그 구조 안의 개선은 궁극적 변화를 이끌어 내지 못한다는 것이다. 따라서 그가 말하는 정치는 사회 구조 자체를 근본에서 바꾸는 일이다.</p>
+<p>바디우에 따르면 그러한 변화는 ‘사건’에서 비롯된다. 사건이란 기존 질서를 벗어나기에 기존의 언어로는 설명할 수 없는 독특한 일이며, 사회의 규율과 질서를 뒤흔들 만큼 큰 충격을 주는 일이다. 사건은 존재하는 것이 아니라 발생하는 것이어서, 사회의 특정 지점에서 잠시 나타났다 사라지며, 미리 계획하거나 예측할 수 없는 우연한 일이다. 사라져 버리는 사건은 사회 안에 적어도 하나의 자국을 ⓑ<u>남기는데</u>, 그 자국이 사건의 ‘이름’이다. 이름은 사건의 독특함을 사회 속에서 이어 가려는 씨앗이 된다.</p>
+<p>사회 구성원들은 사건의 이름을 근간으로 제도나 행위, 표현 등이 사건과 관련이 있는지를 하나하나 ⓒ<u>따져</u> 본다. 자신이 마주치는 것들이 사건의 충격을 이어 갈 수 있는 것인지를 판단하는 이 과정을 바디우는 ‘탐색’이라 부른다. 그리고 탐색의 결과로 사건에 충실한 요소들이 모인 집합체를 ‘진리’라 일컫는다. 여기서 진리는 언어와 사실이 일치함을 뜻하는 일반적 개념이 아니라, 개개의 사실을 넘어서는 본질, 곧 한 사회의 참모습을 드러내는 실체를 가리킨다. 진리는 거짓의 반대가 아니라 사실들 너머의 본질인 것이다.</p>
+<p>이로부터 바디우는 정치의 성립 조건을 분명히 한다. ㉠진리는 사건에 충실한 주체가 있을 때에만 성립하며, 그 주체에 앞서 미리 주어지지 않는다. 사건은 그것에 충실한 주체의 탐색을 거쳐야 비로소 진리로 이어지므로, 충실한 주체가 없다면 사건은 자국만 남긴 채 ⓓ<u>흩어진다</u>. 따라서 바디우에게 정치란 사건에 충실한 주체가 기존 체제를 벗어나는 새로움을 일구어, 사회를 근본적으로 변화시키는 일련의 과정이다.</p>
+<p><strong>(나)</strong></p>
+<p>현대 철학자 자크 랑시에르는 정치를 국가 운영이나 제도 설계의 영역으로 보지 않는다. 그는 사회가 질서와 배분을 통해 구성되며, 그 질서가 구성원 각자의 역할을 미리 규정한다고 본다. 그가 ⓔ보기에 사회의 분할은 자연스러워 보이지만 실은 제도화된 권력관계의 산물이다.</p>
+<p>랑시에르는 이러한 기존의 사회 질서를 ‘감각적인 것의 분할’이라 부른다. 이것은 사회가 시각적으로 어떻게 배열되어 있는지를 뜻하지 않는다. 누구의 목소리가 들리고 무엇이 문제로 인식되며 어떤 것이 가치 있게 여겨지는지를 결정하는 전체적인 인식 구조를 가리킨다. 이 구조 안에서 말하는 자와 침묵하는 자, 행동할 수 있는 자와 그렇지 못한 자 사이의 구분이 제도화된다.</p>
+<p>이 분할 구조를 깨뜨리는 것이 정치이며, 그 방식이 ‘불화’이다. 불화는 단순한 의견 차이가 아니다. 그것은 ‘말할 수 없는 자들’이 목소리를 내고 그 목소리가 의미 있고 영향력 있음을 드러내는 순간이다. 이를 통해 감각적인 것의 분할에 균열이 생기고, 이전에는 보이지 않던 것들이 보이게 되며, 새로운 주체가 출현한다. 이러한 불화는 예측하거나 통제할 수 있는 방식으로 일어나지 않으며, 권력관계에서 배제되었던 이들이 기존 질서에 의문을 제기하고 스스로를 정치적 주체로 호명할 때 발생한다.</p>
+<p>여기서 한 가지가 분명해진다. ㉡랑시에르에게 정치의 주체는 불화에 앞서 미리 존재하지 않고, 불화가 일어난 이후에야 비로소 출현한다. 배제되어 있던 자들은 목소리를 내기 전에는 정치의 무대에 주체로 등록되어 있지 않으며, 불화의 순간 스스로를 주체로 호명함으로써 비로소 주체가 된다. 그러므로 랑시에르에게 사회의 발전은 제도나 기술의 향상이 아니라, 불화를 통해 누가 보이고 들리는지의 분할을 다시 짜고 평등을 재구성하는 과정에 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생이 정리한 내용이다. ㉮와 ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학생의 정리]</span></strong>
+(가)의 바디우와 (나)의 랑시에르는 모두 정치를 제도 개선과 구별되는, 기존 질서를 흔드는 일로 본다. 다만 바디우는 그 흔듦의 계기를 예측할 수 없이 발생하는 ( ㉮ )(으)로 보고, 그것에 충실한 주체의 탐색을 거쳐 사회의 참모습인 진리가 만들어진다고 한다. 한편 랑시에르는 그 흔듦이 ‘말할 수 없는 자들’의 ( ㉯ )(으)로 일어나며, 이를 통해 누가 보이고 들리는지를 정해 둔 분할에 균열이 생긴다고 한다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 사건 / ㉯: 불화</li>
+<li>② ㉮: 이름 / ㉯: 불화</li>
+<li>③ ㉮: 사건 / ㉯: 탐색</li>
+<li>④ ㉮: 진리 / ㉯: 분할</li>
+<li>⑤ ㉮: 이름 / ㉯: 분할</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>1번 — 정답 ①</strong>
+두 철학자를 나란히 압축한 정리 글의 빈칸을 채우는 문항이에요. ㉮ 자리는 바디우가 본 "예측할 수 없이 발생하는" 흔듦의 계기인데, (가) 2문단에서 이것을 바로 <em>사건</em>이라 했죠(이름은 사건이 남긴 자국이지 계기 자체가 아니에요). ㉯ 자리는 랑시에르가 본 ‘말할 수 없는 자들’의 행위인데, (나) 3문단에서 이를 <em>불화</em>라 했습니다. 그래서 사건·불화의 ①이 정답이에요. ‘이름’(②⑤)이나 ‘진리’(④)는 흔듦의 계기가 아니라 그 결과·자국이고, ‘탐색’(③)은 바디우의 판단 과정이지 랑시에르의 행위가 아니며, ‘분할’(④⑤)은 깨뜨려질 대상이지 깨뜨리는 행위가 아니라 어긋나요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 바디우는 제도의 개선만으로는 사회 구조의 근본적 변화에 이르지 못한다고 본다.</li>
+<li>② 진리는 언어와 사실이 일치하는지를 가려 거짓을 가려내는 일을 가리킨다.</li>
+<li>③ 이름은 사건의 독특함을 사회 속에서 이어 가려는 씨앗의 구실을 한다.</li>
+<li>④ 탐색은 마주치는 것들이 사건의 충격을 이어 갈 수 있는지를 판단하는 과정이다.</li>
+<li>⑤ 사건은 미리 예측할 수 없이 발생하며 사회에 자국을 남긴 뒤 사라진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+(가)만 보고 푸는 일치 문항입니다. 3문단에서 바디우의 진리는 "언어와 사실이 일치함을 뜻하는 일반적 개념이 아니라" 사실들 너머의 본질이라고 분명히 못 박았어요. 그런데 ②는 진리를 "언어와 사실이 일치하는지를 가려 거짓을 가려내는 일"이라 했으니, 바디우가 부정한 바로 그 일반적 개념을 그의 진리로 둔갑시킨 셈이라 적절하지 않아 정답입니다. ①은 1문단, ③·④·⑤는 2문단에 그대로 부합하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>(나)의 랑시에르의 관점에서 ㉠을 평가한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 사건에 충실한 주체를 진리 성립의 발판으로 삼는데, 정치적 주체는 기존 질서가 흔들리는 불화 이후에야 출현하므로 ㉠은 그 주체가 어떻게 출현하는지를 설명하지 못해 타당하지 않다.</li>
+<li>② ㉠은 사건을 우연한 것으로 보는데, 분할의 균열은 예측할 수 있는 방식으로 일어나므로 타당하지 않다.</li>
+<li>③ ㉠은 진리를 사실들 너머의 본질로 보는데, 정치는 제도의 설계에서 완성되므로 타당하지 않다.</li>
+<li>④ ㉠은 주체의 충실함을 강조하는데, 주체는 분할을 그대로 받아들일 때 비로소 정치에 참여하므로 타당하다.</li>
+<li>⑤ ㉠은 사회 구조의 변화를 추구하는데, 변화는 침묵하는 자와 말하는 자의 구분을 유지할 때 가능하므로 타당하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>3번 — 정답 ①</strong>
+㉠은 "진리는 사건에 충실한 주체가 있을 때에만 성립한다"라고 하여, <em>사건에 충실한 주체</em>를 진리(정치)가 서는 발판으로 깔아 둡니다. 그런데 (나)의 랑시에르는 ㉡에서 "주체는 불화에 앞서 미리 존재하지 않고 불화 이후에야 출현한다"라고 봐요. 곧 랑시에르의 눈에는, 바디우가 충실한 주체를 진리의 발판으로 삼으면서도 <em>그 주체 자체가 어떻게 생겨나는지</em>—기존 질서(분할)가 흔들리는 불화의 순간에야 비로소 출현한다는 점—는 설명하지 못한 것으로 비칩니다. 그래서 "정치적 주체는 불화 이후에야 출현하므로 ㉠은 주체의 출현을 설명하지 못한다"는 근거로 ㉠을 부정하는 ①이 정답입니다. ②는 랑시에르도 불화를 "예측할 수 없다"고 했으니 거꾸로고, ③의 "정치는 제도 설계에서 완성"은 두 철학자 모두 부정하는 내용이며, ④⑤는 "분할을 그대로 받아들일 때"·"구분을 유지할 때"라고 하여 랑시에르의 핵심(분할을 <em>깨뜨림</em>)과 정반대라 평가의 방향이 어긋나요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉡의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 정치의 주체가 제도화된 권력관계에 의해 미리 역할을 부여받기 때문이다.</li>
+<li>② 감각적인 것의 분할이 사회가 시각적으로 배열되는 방식을 그대로 반영하기 때문이다.</li>
+<li>③ 배제되었던 자들이 불화의 순간 스스로를 정치적 주체로 호명함으로써 비로소 주체가 되기 때문이다.</li>
+<li>④ 불화가 의견의 차이를 조정하여 합의에 이르는 과정을 통해 일어나기 때문이다.</li>
+<li>⑤ 사회의 발전이 제도와 기술의 향상에 의해 점진적으로 이루어지기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+㉡은 "정치의 주체가 불화 이후에야 출현한다"는 주장이고, 그 이유는 바로 뒤 문장에 있어요. 배제되어 있던 자들은 목소리를 내기 전에는 주체로 등록되어 있지 않다가, "불화의 순간 스스로를 주체로 호명함으로써 비로소 주체가 된다"고 했죠. 따라서 그 호명에서 이유를 찾은 ③이 정답입니다. ① "미리 역할을 부여받기 때문"은 ㉡과 정반대 결론을 낳고, ②는 분할을 "시각적 배열"로 오해한 것으로 (나) 2문단이 부정한 내용이며, ④ "합의에 이르는 과정"은 불화가 단순한 의견 차이가 아니라는 서술과 어긋나고, ⑤는 랑시에르가 부정한 "제도·기술의 향상"이라 이유가 될 수 없어요.</p>
+<p><strong>5번 [3점] — 정답 ⑤</strong>
+〈보기〉에는 바디우식 장면(‘광장의 밤’이라는 이름 붙이기 → 이어지는지 따지기)과 랑시에르식 장면(발언권 없던 이들의 외침 → 발언할 수 있는 이들로 인정)이 함께 들어 있어요. ⑤는 "사건의 이름이 <em>탐색에 앞서 진리로 완성</em>된다"고 했는데, (가)에 따르면 진리는 이름을 근간으로 한 <em>탐색의 결과</em>로 만들어지는 집합체이지 탐색에 앞서 완성되는 것이 아니에요. 순서를 뒤집었으므로 적절하지 않아 정답입니다. ①은 이름(자국), ②는 탐색, ③은 분할의 작동, ④는 불화로 인한 균열에 각각 정확히 대응하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉의 상황을 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 도시에서, 그동안 아무도 문제 삼지 않던 일이 우연한 계기로 크게 불거졌다. 한 무리의 시민들은 이 일을 ‘광장의 밤’이라 이름 붙이고, 이후 벌어지는 여러 모임과 발언이 그 일과 이어지는지를 하나하나 따져 가며 활동을 이어 갔다. 한편 그동안 도시의 공식 회의에서 발언권이 없던 이들은 같은 시기 거리로 나와, “우리의 말도 들려야 한다”라고 외치며 자신들을 회의에 끼워 달라고 요구하였다. 이전까지 그들의 외침은 소음으로만 취급되었으나, 이 외침 이후 도시의 사람들은 그들을 발언할 수 있는 이들로 여기기 시작했다.</p>
+</blockquote>
+<ul>
+<li>① 시민들이 그 일에 ‘광장의 밤’이라는 이름을 붙인 것은, 바디우의 관점에서 사라진 사건의 독특함을 이어 가려는 자국에 해당하겠군.</li>
+<li>② 모임과 발언이 그 일과 이어지는지를 따져 간 것은, 바디우의 관점에서 사건에 충실한지를 판단하는 탐색에 해당하겠군.</li>
+<li>③ 발언권이 없던 이들의 외침이 소음으로 취급된 것은, 랑시에르의 관점에서 누가 말할 수 있는지를 정해 둔 분할이 작동한 것이겠군.</li>
+<li>④ 그들의 외침을 통해 사람들이 그들을 발언할 수 있는 이들로 여기게 된 것은, 랑시에르의 관점에서 불화로 분할에 균열이 생긴 것이겠군.</li>
+<li>⑤ 그 일이 우연한 계기로 불거진 것은, 바디우의 관점에서 사건의 이름이 탐색에 앞서 진리로 완성된 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 간주한다 → 파악(把握)한다</li>
+<li>② ⓑ: 남기는데 → 각인(刻印)하는데</li>
+<li>③ ⓒ: 따져 → 검토(檢討)하여</li>
+<li>④ ⓓ: 흩어진다 → 산일(散逸)된다</li>
+<li>⑤ ⓔ: 보기에 → 목격(目擊)하기에</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+ⓔ ‘보기에’는 <em>판단하거나 여기기에</em>라는 뜻으로 쓰였어요. 그런데 ‘목격(目擊)하다’는 <em>눈으로 직접 보다</em>라는 뜻이라, 권력관계를 눈앞에서 본다는 말이 되어 문맥의 ‘여기다·판단하다’와 호응하지 않으므로 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘간주한다(그렇다고 여긴다)’는 정치를 어떤 것으로 ‘파악한다’와 자연스럽게 통하고, ② ‘남기는데→각인(刻印)하는데(자국을 새겨 두는데)’, ③ ‘따져→검토하여’, ④ ‘흩어진다→산일된다’도 문맥상 무리 없이 바꿔 쓸 수 있어요. 그래서 다섯 중 ⑤만 어긋납니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>사건 / 이름 (바디우)</strong>: <em>사건</em>은 예측 못 하게 발생해 질서를 뒤흔들고 사라지는 독특한 일, <em>이름</em>은 그 사건이 사회에 남긴 자국으로 사건을 이어 가는 씨앗.</li>
+<li><strong>탐색 / 진리 (바디우)</strong>: <em>탐색</em>은 마주친 것들이 사건에 충실한지 따지는 판단, <em>진리</em>는 충실한 요소들이 모인 집합체이자 사회의 참모습(거짓의 반대가 아님).</li>
+<li><strong>감각적인 것의 분할 / 불화 (랑시에르)</strong>: <em>분할</em>은 누구의 목소리가 들리고 무엇이 문제로 여겨지는지를 정해 둔 인식 구조, <em>불화</em>는 ‘말할 수 없는 자들’이 목소리를 내어 그 분할에 균열을 내는 정치적 순간.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>바디우</th>
+<th>랑시에르</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정치란</td>
+<td>사건에 충실해 사회의 참모습(진리)을 일구는 과정</td>
+<td>불화로 분할을 깨뜨려 평등을 다시 짜는 과정</td>
+</tr>
+<tr>
+<td>흔듦의 계기</td>
+<td>예측 못 할 <em>사건</em></td>
+<td>‘말할 수 없는 자들’의 <em>불화</em></td>
+</tr>
+<tr>
+<td>주체는</td>
+<td>사건에 충실한 주체(㉠)</td>
+<td>불화 이후에야 출현(㉡)</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>정치는 제도 손보기가 아니라 <em>질서 자체를 흔드는 일</em></td>
+<td>(좌동)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 사람은 "정치는 질서를 흔드는 일"이라는 데서 만나지만, <em>주체가 언제 있느냐</em>에서 갈라져요. 바디우는 충실한 주체가 먼저 있어야 진리가 서고, 랑시에르는 흔듦(불화)이 먼저 일어나야 주체가 생긴다고 봅니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>바디우에게 ‘진리’는 왜 거짓의 반대가 아닌가요?</div><div class='qa-a'>진리는 언어와 사실의 일치가 아니라, 사실들 너머에 있는 사회의 참모습(본질)을 가리키기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>랑시에르의 ‘불화’는 단순한 의견 차이와 어떻게 다른가요?</div><div class='qa-a'>불화는 ‘말할 수 없는 자들’이 목소리를 내어 그 목소리의 의미와 영향력을 드러내며 분할 자체에 균열을 내는 순간이라는 점에서 다릅니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 철학자가 ‘정치의 주체’를 보는 시점은 어떻게 다른가요?</div><div class='qa-a'>바디우는 사건에 충실한 주체가 <em>먼저</em> 있어야 진리가 성립한다고 보고, 랑시에르는 주체가 불화 <em>이후에</em> 비로소 출현한다고 봅니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>심리 철학에서 동일론은 의식이 뇌의 물질적 상태와 동일하다고 ⓐ본다. 이와 달리 기능주의는 의식은 기능이며, 서로 다른 물질에서 같은 기능이 구현될 수 있다고 주장한다. 이때 기능이란 어떤 입력이 주어졌을 때 특정한 출력을 내놓는 함수적 역할로 정의되며, 함수적 역할의 일치는 입력과 출력의 쌍이 일치함을 의미한다. 실리콘 칩으로 구성된 로봇이 찔림이라는 입력에 대해 고통을 출력으로 내놓는 기능을 가진다면, 로봇과 우리는 같은 의식을 가진다는 것이다. 이처럼 기능주의는 의식을 구현하는 물질이 무엇인지는 중요하지 않다고 본다.</p>
+<p>설(Searle)은 기능주의를 반박하는 사고 실험을 제시한다. ‘중국어 방’ 안에 중국어를 모르는 한 사람만 있다고 하자. 그는 중국어로 된 입력이 들어오면 정해진 규칙에 따라 중국어로 된 출력을 내놓는다. 설에 의하면 방 안의 사람은 중국어 사용자와 함수적 역할이 같지만 중국어를 아는 것은 아니다. 기능이 같으면서 의식은 다른 사례가 있다는 것이다.</p>
+<p>동일론, 기능주의, 설은 모두 의식에 대한 논의를 의식을 구현하는 몸의 내부로만 한정하고 있다. 하지만 의식의 하나인 ‘인지’ 즉 ‘무언가를 알게 됨’은 몸 바깥에서 ⓑ일어나는 일과 맞물려 벌어진다. 기억나지 않는 정보를 노트북에 저장된 파일을 열람하여 확인하는 것이 한 예이다. 로랜즈의 확장 인지 이론은 이를 설명하는 이론이다.</p>
+<p>그에 ⓒ따르면 인지 과정은 주체에게 ‘심적 상태’가 생겨나게 하는 과정이다. 기억이나 믿음이 심적 상태의 예이다. 심적 상태는 어떤 것에도 의존함이 없이 주체에게 의미를 나타낸다. 예를 들어, 무언가를 기억하는 사람은 자기의 기억이 무엇인지 ⓓ알아보기 위해 아무것에도 의존할 필요가 없다. 이와 달리 ‘파생적 상태’는 주체의 해석에 의존해서만 또는 사회적 합의에 의존해서만 의미를 나타내는 상태로 정의된다. 앞의 예에서 노트북에 저장된 정보는 전자적 신호가 나열된 상태로서 파생적 상태이다. 주체에 의해 열람된 후에도 노트북의 정보는 여전히 파생적 상태이다. 하지만 열람 후 주체에게는 기억이 생겨난다. 로랜즈에게 인지 과정은 파생적 상태가 심적 상태로 변환되는 과정이 아니라, 파생적 상태를 조작함으로써 심적 상태를 생겨나게 하는 과정이다. 심적 상태가 주체의 몸 외부로 확장되는 것이 아니라, 심적 상태를 생겨나게 하는 인지 과정이 확장되는 것이다. 이러한 ㉠확장된 인지 과정은 인지 주체의 것일 때에만, 다시 말해 환경의 변화를 탐지하고 그에 맞춰 행위를 조절하는 주체와 통합되어 있을 때에만 성립할 수 있다. 즉 로랜즈에게 주체 없는 인지란 있을 수 없다. 확장 인지 이론은 의식의 문제를 몸 안으로 한정하지 않고 바깥으로까지 넓혀 설명한다는 의의를 지닌다.</p>
+<p>(나)</p>
+<p>일반적으로 ‘지각’이란 몸의 감각 기관을 통해 사물에 대해 아는 것을 의미한다. 이러한 지각을 분석할 때 두 가지 사실에 직면한다. 첫째, 그 사물과 내 몸은 물질세계에 있다. 둘째, 그 사물에 대한 나의 의식은 물질세계가 아닌 다른 세계에 있다. 즉 몸으로서의 나는 사물과 같은 세계에 속하는 동시에 의식으로서의 나는 사물과 다른 세계에 속한다.</p>
+<p>이에 대한 객관주의 철학의 입장은 두 가지로 나뉜다. 의식을 포함한 모든 것을 물질로 환원하여 의식은 물질에 불과하다고 주장하거나, 의식을 물질과 구분되는 독자적 실체로 규정함으로써 의식과 물질의 본질적 차이를 주장한다. 전자에 의하면 지각은 사물로부터의 감각 자극에 따른 주체의 물질적 반응으로 이해되며, 후자에 의하면 지각은 감각된 사물에 대한 주체 즉 의식의 판단으로 이해된다. 이처럼 양자 모두 주체와 대상의 분리를 전제하고 지각을 이해한다. 주체와 대상은 지각 이전에 이미 확정되어 각각 존재한다는 것이다.</p>
+<p>하지만 지각은 주체와 대상이 각자로서 존재하기 이전에 나타나는 얽힘의 체험이다. 예를 들어 다른 사람과 손이 맞닿을 때 내가 누군가의 손을 ⓔ만지는 동시에 나의 손 역시 누군가에 의해 만져진다. 감각하는 것이 동시에 감각되는 것이 되는 얽힘의 순간에, 나는 나와 대상을 확연히 구분한다. 지각이라는 얽힘의 작용이 있어야 주체와 대상이 분리될 수 있다. 다시 말해 주체와 대상은 지각이 일어난 이후 비로소 확정된다. 따라서 ㉡지각과 감각은 서로 구분되지 않는다.</p>
+<p>지각은 물질적 반응이나 의식의 판단이 아니라, 내 몸의 체험이다. 지각은 나의 몸에 의해 이루어지는 것이고, 지각이 이루어지게 하는 것은 모두 나의 몸이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생이 정리한 내용이다. ㉮와 ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학생이 정리한 내용]</span></strong> (원문: 상자, ㉮·㉯ 자리는 빈칸)
+(가)는 기능주의를 소개한 후 〔 ㉮ 〕은/는 같지 않다는 설(Searle)의 비판을 제시하고 있다. 그리고 인지 과정이 몸 바깥으로까지 확장된다고 주장하는 확장 인지 이론을 설명하고 있다. (나)는 인지 중에서도 감각 기관을 통한 인지, 즉 지각을 주제로 하고 있다. (나)는 지각에 대한 객관주의 철학의 입장을 비판하고, 〔 ㉯ 〕으로서의 지각을 주장하고 있다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 의식과 함수적 역할 — ㉯: 내 몸의 체험</li>
+<li>② ㉮: 의식과 함수적 역할 — ㉯: 물질적 반응</li>
+<li>③ ㉮: 의식과 뇌의 상태 — ㉯: 의식의 판단</li>
+<li>④ ㉮: 의식과 뇌의 상태 — ㉯: 내 몸의 체험</li>
+<li>⑤ ㉮: 입력과 출력 — ㉯: 의식의 판단</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>12번 — 정답 ①</strong><br />
+설은 ‘중국어 방’ 사고 실험으로 기능(함수적 역할)이 같으면서 의식은 다른 사례가 있음을 보여 기능주의를 반박했으므로, ㉮에는 ‘의식과 함수적 역할’이 들어간다. (나)의 필자는 지각이 물질적 반응이나 의식의 판단이 아니라 ‘내 몸의 체험’이라고 주장하므로 ㉯에는 ‘내 몸의 체험’이 들어간다. ‘의식과 뇌의 상태’가 같다는 것은 설의 비판 대상이 아닌 동일론의 주장이고, ‘물질적 반응’·‘의식의 판단’은 (나)가 비판하는 객관주의 철학의 이해 방식이다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①70.6% ②3.9% ③7.0% ④14.9% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동일론자들은 뇌가 존재하지 않으면 의식도 존재하지 않는다고 볼 것이다.</li>
+<li>② 설(Searle)은 ‘중국어 방’ 안의 사람과 중국어를 아는 사람의 의식이 다르다고 볼 것이다.</li>
+<li>③ 로랜즈는 기억이 주체의 몸 바깥으로 확장될 수 있다고 볼 것이다.</li>
+<li>④ 로랜즈는 인지 과정이 파생적 상태를 조작하는 과정을 포함한다고 볼 것이다.</li>
+<li>⑤ 로랜즈는 노트북에 저장된 정보가 그 자체로는 심적 상태가 아니라고 볼 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong><br />
+(가) 4문단에서 로랜즈는 기억 같은 심적 상태가 몸 외부로 확장되는 것이 아니라, 심적 상태를 생겨나게 하는 <strong>인지 과정</strong>이 확장된다고 보았으므로 ③이 적절하지 않다. 동일론은 의식=뇌의 물질적 상태(①), 설은 기능이 같아도 의식은 다를 수 있음(②), 로랜즈의 인지 과정은 파생적 상태를 조작해 심적 상태를 생겨나게 하는 과정(④), 노트북의 정보는 열람 후에도 여전히 파생적 상태(⑤).</p>
+<p><em>선택률</em> — 응시 98,578명 — ①5.1% ②4.6% ③68.7% ④9.8% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>(나)의 필자의 관점에서 ㉠을 평가한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 확장된 인지 과정이 인지 주체의 것일 때에만 성립할 수 있다는 주장은, 지각 이전에 확정된 주체를 전제한 것이므로 타당하지 않다.</li>
+<li>② 확장된 인지 과정이 인지 주체의 것일 때에만 성립할 수 있다는 주장은, 의식이 세계를 구성하는 독자적 실체라고 규정하는 것이므로 타당하다.</li>
+<li>③ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 의식은 물질에 불과하다고 본 것이므로 타당하다.</li>
+<li>④ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 외부 세계에 대한 지각이 이루어질 수 없다고 보는 것이므로 타당하지 않다.</li>
+<li>⑤ 주체와 통합된 경우에만 확장된 인지 과정이 성립할 수 있다는 주장은, 주체와 대상의 분리를 통해서만 지각이 이루어질 수 있다고 보는 것이므로 타당하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>14번 — 정답 ①</strong><br />
+(나)의 필자는 주체와 대상이 지각(얽힘의 작용) 이후에 비로소 확정된다고 본다. 그런데 ㉠은 인지 주체의 것일 때에만 확장된 인지 과정이 성립한다고 하여(주체 없는 인지란 없음) 인지 이전에 확정된 주체를 전제하므로, (나)의 관점에서는 타당하지 않다고 평가된다(①). ②·③은 (나)가 비판하는 객관주의 철학의 입장을 근거로 타당하다고 본 것이어서 부적절하고, ④는 로랜즈가 외부 세계 인지가 가능하다는 입장이라는 점과 어긋나며, ⑤는 (나)의 관점(분리 이전의 얽힘)과 반대이다.</p>
+<p><em>선택률</em> — 응시 98,596명 — ①44.6% ②10.7% ③14.2% ④14.6% ⑤15.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>㉡의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 감각과 지각 모두 물질세계에서 이루어지기 때문에</li>
+<li>② 감각하는 것이 동시에 감각되는 것이 되는 얽힘의 작용이 지각이기 때문에</li>
+<li>③ 지각은 몸에 의해 이루어지지만 감각은 몸에 의해 이루어지지 않기 때문에</li>
+<li>④ 지각은 의식으로서의 주체가 외부의 대상을 감각하여 판단한 결과이기 때문에</li>
+<li>⑤ 주체와 대상이 분리되기 이전에 감각과 지각이 분리된 채로 존재하기 때문에</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong><br />
+(나) 3문단에서 지각은 감각하는 것이 동시에 감각되는 것이 되는 ‘얽힘’의 체험이며, 이 얽힘의 작용이 곧 지각이므로 지각과 감각은 구분되지 않는다(②). ①은 객관주의 철학(물질 환원)의 시각이고, ③은 감각·지각 모두 몸에 의해 이루어진다는 (나)의 서술과 어긋나며, ④는 의식의 판단으로 보는 객관주의의 이해이고, ⑤는 분리 이전에 얽혀 있다는 (나)의 논지와 반대이다.</p>
+<p><em>선택률</em> — 응시 98,576명 — ①2.2% ②73.9% ③7.6% ④10.5% ⑤5.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉의 상황을 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+빛이 완전히 차단된 암실에 A와 B 두 명의 사람이 있다. A는 막대기로 주변을 더듬어 사물의 위치를 파악한다. 막대기 사용에 익숙한 A는 사물에 부딪친 막대기의 진동을 통해 사물의 위치를 파악할 수 있다. B는 초음파 센서로 탐지한 사물의 위치 정보를 ‘뇌-컴퓨터 인터페이스(BCI)’를 사용하여 전달받는다. 이를 통해 B는 사물의 위치를 파악할 수 있다. BCI는 사람의 뇌에 컴퓨터를 연결하여 외부 정보를 뇌에 전달할 수 있는 기술이다.</p>
+</blockquote>
+<ul>
+<li>① (가)의 기능주의에 따르면, A와 B가 암실 내 동일한 사물의 위치를 묻는 질문에 동일한 대답을 내놓는 경우 이때 둘의 의식은 차이가 없겠군.</li>
+<li>② (가)의 확장 인지 이론에 따르면, BCI로 암실 내 사물의 위치를 파악하는 것이 B의 인지 과정인 경우 B에게 사물의 위치에 대한 심적 상태가 생겨나겠군.</li>
+<li>③ (가)의 확장 인지 이론에 따르면, 암실 내 사물에 부딪친 막대기의 진동이 A의 해석에 의존해서만 의미를 나타내는 경우 그 진동 상태는 파생적 상태가 아니겠군.</li>
+<li>④ (나)에서 몸에 의한 지각을 주장하는 입장에 따르면, 막대기에 의해 A가 사물의 위치를 지각하는 경우 막대기는 A의 몸의 일부라고 할 수 있겠군.</li>
+<li>⑤ (나)에서 의식을 물질로 환원하는 입장에 따르면, BCI를 통해 입력된 정보로부터 B의 지각이 일어난 경우 BCI를 통해 들어온 자극에 따른 B의 물질적 반응이 일어난 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>16번 — 정답 ③</strong><br />
+(가) 4문단에서 파생적 상태는 ‘주체의 해석에 의존해서만 또는 사회적 합의에 의존해서만 의미를 나타내는 상태’로 정의된다. 막대기의 진동이 A의 해석에 의존해서만 의미를 나타낸다면 그 진동 상태는 바로 파생적 상태이므로, 파생적 상태가 아니라고 한 ③이 적절하지 않다. ①은 입력·출력 쌍이 일치하면 같은 의식이라는 기능주의, ②는 인지 과정이 심적 상태를 생겨나게 한다는 확장 인지 이론, ④는 지각이 이루어지게 하는 것은 모두 나의 몸이라는 (나)의 주장, ⑤는 감각 자극에 따른 물질적 반응이라는 물질 환원 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①5.2% ②7.2% ③62.2% ④14.3% ⑤12.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 단어와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그간의 사정을 봐서 그를 용서해 주었다.</li>
+<li>② ⓑ: 이사 후에 가난하던 살림살이가 일어났다.</li>
+<li>③ ⓒ: 개발에 따른 자연 훼손 문제가 심각해졌다.</li>
+<li>④ ⓓ: 단어의 뜻을 알아보기 위해 사전을 펼쳤다.</li>
+<li>⑤ ⓔ: 그는 컴퓨터 프로그램을 제법 만질 줄 안다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓓ ‘알아보다’는 ‘조사하거나 살펴보다’의 뜻으로 ④의 ‘알아보다’와 같다. ① ⓐ는 ‘평가하다’, ④의 예문은 ‘형편을 헤아리다’. ② ⓑ는 ‘어떤 일이 생기다’, 예문은 ‘약하던 것이 성하여지다’. ③ ⓒ는 ‘기준 따위에 의거하다’, 예문은 ‘다른 일과 더불어 일어나다’. ⑤ ⓔ는 ‘손을 대어 주무르거나 쥐다’, 예문은 ‘물건을 다루어 쓰다’로 의미가 다르다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①2.5% ②1.2% ③6.2% ④86.7% ⑤2.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>알랭 바디우는 정치를 철학이 추구하는 진리 탐구의 여러 절차 가운데 하나로 본다. 그에 따르면 진리는 미리 주어져 있는 것이 아니라 일정한 절차를 거쳐 ⓐ만들어진다. 그 절차의 출발점은 ㉠‘사건 → 이름 → 탐색 → 진리’라는 일반적 구조이다. 예측할 수 없이 발생해 기존 질서를 뒤흔드는 사건이 자국으로서 이름을 남기면, 사람들은 마주치는 것들이 그 사건에 충실한지를 따지는 탐색을 거쳐, 충실한 요소들의 집합체인 진리를 일구어 낸다. 이 구조는 어느 한 영역에만 국한되지 않고 진리가 생산되는 모든 영역에 공통으로 적용된다.</p>
+<p>바디우는 이 구조가 적용되는 진리 생산의 영역을 네모 안에 ［정치ㆍ예술ㆍ과학ㆍ사랑］으로 ⓑ나눈다. 네 영역은 사건에 충실해 진리를 만든다는 점에서 동일한 구조를 공유하지만, 진리가 생산되는 방식에서는 서로 구별된다. 정치는 집단이 기존 사회 구조를 벗어나는 새로움을 함께 일구는 영역이고, 예술은 감각의 형식을 새로 빚는 영역이며, 과학은 새로운 법칙을 정초하는 영역이고, 사랑은 둘의 만남에서 세계를 다시 구성하는 영역이다. 이처럼 동일한 진리 절차가 영역마다 다른 방식으로 실현된다.</p>
+<p>영역에 따라 진리 절차의 작동 범위도 달라진다. 예술의 진리는 그것을 빚은 작품과 그것을 감각하는 이들 사이에서, 과학의 진리는 그 법칙을 다루는 이들 사이에서, 사랑의 진리는 만난 두 사람 사이에서 주로 실현된다. 이에 비해 정치의 진리는 한 집단 전체가 공유하던 질서 자체를 겨냥하므로, 그 충실성의 활동이 사회 구성원 전반에 미친다. 바디우는 같은 사건이라도 그것이 흔드는 질서의 폭이 영역마다 다르며, 정치에서 그 폭이 가장 넓다고 본다. 어떤 영역의 진리는 한정된 관계 안에 머물지만, 정치의 진리는 사회 구조의 분배 자체를 다시 묻기 때문이다.</p>
+<p>여기서 이 글은 바디우의 체계를 정치가 가장 폭넓게 실현되는 영역으로 보아, 네 영역 사이에 ㉡위계를 두는 것으로 정리한다. 정치는 집단 전체가 사회 구조 자체의 변화를 겨냥한다는 점에서, 개인이나 둘의 차원에 머무는 다른 영역보다 진리 절차가 가장 폭넓고 근본적으로 실현되는 영역으로 자리매김된다. 그리하여 바디우의 체계에서 정치는 진리가 생산되는 여러 영역 가운데 사회 구조의 근본적 변화에 가장 가까이 ⓒ닿는 영역으로 위치 지어진다.</p>
+<p><strong>(나)</strong></p>
+<p>자크 랑시에르는 바디우와 마찬가지로 정치를 제도 운영과 구별되는, 기존 질서를 흔드는 일로 본다. 그러나 그는 바디우의 체계가 그 자신이 내세운 출발점과 어긋난다고 ⓓ여긴다. 정치를 진정 정치이게 하는 것은 누구나 말할 자격에서 동등하다는 평등의 전제인데, 바디우의 위계는 바로 그 전제를 배반한다는 것이다.</p>
+<p>랑시에르가 보기에, 진리 절차가 영역마다 다른 방식으로 실현된다는 (가)의 서술까지는 받아들일 만하다. 문제는 그 영역들에 높낮이를 매기는 위계의 단계에서 생긴다. 영역에 위계를 두는 순간, 어떤 목소리는 더 근본적인 것으로, 어떤 목소리는 덜 근본적인 것으로 미리 분할된다. 이는 누구의 목소리가 더 들릴 만한지를 사전에 정해 두는 ‘감각적인 것의 분할’과 다르지 않으며, 분할을 깨뜨리는 일을 정치라 한 자신의 출발점과 정면으로 충돌한다.</p>
+<p>랑시에르는 그 충돌이 바디우의 출발점에서 곧장 따라 나온다고 본다. 바디우가 진리 절차를 모든 영역에 똑같이 적용한 것은, 사건에 충실한 주체라면 어느 영역에서든 동등하게 진리에 참여할 수 있다는 전제를 깔고 있었기 때문이다. 그런데 그 전제가 옳다면 영역들 사이에 높낮이를 둘 근거 또한 사라진다. 어느 영역의 목소리를 ‘덜 근본적인 것’으로 미리 밀어내는 일은, 누구나 동등하게 참여할 수 있다는 처음의 전제를 스스로 거두어들이는 셈이기 때문이다. 랑시에르가 보기에 위계는 평등의 전제 위에 세워질 수 없는 것을 그 위에 세운 자기모순이다.</p>
+<p>따라서 랑시에르는 바디우의 체계에 한 가지가 빠져 있다고 ⓔ본다. 위계를 세우는 대신, 그동안 ‘덜 근본적인 것’으로 밀려나 있던 영역과 목소리가 평등한 자격으로 되돌아오는 단계가 더해져야 한다는 것이다. 그래야 비로소 분할을 다시 짜는 불화의 정치가 완성된다. 랑시에르는 바디우가 정치의 변혁적 힘을 누구보다 깊이 통찰했음을 인정하면서도, 그 통찰이 위계의 도입으로 자기 발밑을 허무는 데로 나아간 점을 아쉬워한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 특정 철학적 구조를 바탕으로 정치가 지닌 위상을 제시하고 있다.</li>
+<li>② (가)는 정치의 역사적 변천을 서술하고, (나)는 그 변천의 동력을 분석하고 있다.</li>
+<li>③ (가)는 여러 정치 제도를 비교하고, (나)는 그 가운데 가장 효율적인 제도를 선택하고 있다.</li>
+<li>④ (가)는 정치에 대한 통념을 옹호하고, (나)는 그 통념을 사례를 들어 보강하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두 정치를 제도 설계의 영역으로 규정하고 그 절차를 단계화하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+(가)와 (나)의 성격을 함께 묻는 문항이에요. (가)는 바디우의 진리 절차라는 <em>철학적 구조</em>를 바탕으로 정치가 다른 영역들 위에 놓인다는 위상을 제시하고, (나)는 랑시에르가 <em>평등이라는 전제</em>를 바탕으로 그 위상 매기기를 비판하며 정치의 자리를 다시 묻습니다. 둘 다 특정 철학적 구조 위에서 정치의 위상을 다루므로 ①이 정답이에요. ②의 ‘역사적 변천’, ③의 ‘제도 비교·선택’, ④의 ‘통념 옹호·보강’은 두 글 어디에도 없고, ⑤는 두 철학자가 한목소리로 부정하는 "정치=제도 설계"라 적절하지 않아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 바디우의 생각으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 진리는 미리 주어져 있는 것이 아니라 일정한 절차를 거쳐 만들어진다.</li>
+<li>② 사건이 남긴 이름을 근간으로 탐색이 이루어진다.</li>
+<li>③ 정치ㆍ예술ㆍ과학ㆍ사랑은 진리 절차의 구조를 공유한다.</li>
+<li>④ 네 영역은 진리가 생산되는 방식까지 모든 면에서 서로 동일하다.</li>
+<li>⑤ 정치는 사회 구조 자체의 변화를 겨냥하는 영역으로 자리매김된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>8번 — 정답 ④</strong>
+(가)만 보고 푸는 일치 문항입니다. 2문단에서 네 영역은 "진리를 만든다는 점에서 동일한 구조를 공유하지만, 진리가 생산되는 방식에서는 서로 구별된다"라고 했어요. 그런데 ④는 "생산되는 방식까지 <em>모든 면에서</em> 동일하다"라고 했으니, 지문이 분명히 구별된다고 한 부분을 동일하다고 뒤집은 셈이라 적절하지 않아 정답입니다. ①은 1문단, ②는 1문단(이름→탐색), ③은 2문단(구조 공유), ⑤는 3문단(정치의 자리매김)에 각각 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>(가)에 따라 ［정치ㆍ예술ㆍ과학ㆍ사랑］의 영역을 적용한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 화가가 이전에 없던 색채의 형식을 빚어 감각을 새롭게 한 것은 예술의 영역에 해당한다.</li>
+<li>② 연구자가 기존 이론으로 설명되지 않던 현상에서 새로운 법칙을 정초한 것은 과학의 영역에 해당한다.</li>
+<li>③ 두 사람이 만나 서로의 세계를 다시 구성하게 된 것은 사랑의 영역에 해당한다.</li>
+<li>④ 시민 집단이 기존 사회 구조를 벗어나는 새로움을 함께 일군 것은 정치의 영역에 해당한다.</li>
+<li>⑤ 한 개인이 자신에게 이미 주어진 역할을 충실히 반복하여 수행한 것은 정치의 영역에 해당한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong>
+2문단의 네 영역 정의를 사례에 적용하는 문항이에요. 정치는 "집단이 기존 사회 구조를 벗어나는 새로움을 함께 일구는 영역"이라고 했죠. 그런데 ⑤는 "이미 주어진 역할을 충실히 <em>반복</em>하여 수행한 것"을 정치라 했는데, 이는 기존 구조를 벗어나는 새로움과 정반대(오히려 구조를 그대로 따르는 일)라서 정치의 영역에 해당한다는 판정이 적절하지 않아 정답입니다. ①(예술)·②(과학)·③(사랑)·④(정치)는 각 영역의 정의에 정확히 들어맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>(나)의 글쓴이의 관점에서 ㉠과 ㉡에 대한 바디우의 이론을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 진리가 생산되는 모든 영역에 공통으로 적용되는 구조라는 점에서 받아들일 만하다.</li>
+<li>② ㉡은 영역들 사이에 높낮이를 매긴다는 점에서 평등의 전제와 충돌한다.</li>
+<li>③ ㉡과 달리 ㉠은 영역들에 위계를 매겨 어떤 목소리를 덜 근본적인 것으로 밀어낸다.</li>
+<li>④ ㉠과 달리 ㉡은 분할을 깨뜨린다는 출발점과 어긋나는 지점이다.</li>
+<li>⑤ ㉡은 어떤 목소리를 더 근본적인 것으로 미리 정해 둔다는 점에서 분할과 다르지 않다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+㉠(진리 절차의 일반 구조)과 ㉡(영역들의 위계)을 (나)의 관점에서 갈라 보는 문항입니다. (나)는 ㉠은 받아들일 만하다고 하면서, <em>위계를 두는 ㉡에서</em> 평등의 전제와 충돌이 생긴다고 봐요. 그런데 ③은 "㉡과 달리 <em>㉠이</em> 위계를 매겨 어떤 목소리를 밀어낸다"라고 하여, 위계를 매기는 주체를 ㉡이 아니라 ㉠으로 뒤바꿨으니 적절하지 않아 정답입니다. ①은 ㉠을 받아들임, ②·④·⑤는 ㉡이 평등·분할과 충돌하는 지점을 각각 정확히 짚은 적절한 분석이에요.</p>
+<p><strong>11번 [3점] — 정답 ①</strong>
+〈보기〉에서 바디우는 "정치를 다른 영역들 위에 두었다"라고 자기 위계를 밝히고, 랑시에르는 그것을 "선생님의 기본 전제와 함께 놓고 보면…"이라며 빈칸 ㉮로 받습니다. (나)에 따르면 바디우의 기본 전제는 <em>평등</em>인데, 정치를 맨 위에 두면 누구의 목소리가 더 근본적인지를 미리 정하는 분할이 들어서 그 전제와 어긋나죠. 그 모순을 정확히 언어화한 ①이 정답입니다. ②는 "정치가 사회 구조 변화를 겨냥한다"는 규정 자체를 부정하는데 이는 랑시에르도 인정하는 바라 과하고, ③은 ‘구조 공유’ 전제까지 부정해 (나)가 받아들인 ㉠을 뒤엎으며, ④는 위계가 본질에 영향을 주지 않는다고 하여 (나)의 비판 자체를 무력화하고, ⑤는 바디우의 위계 논리를 그대로 따라간 것이라 <em>비판</em>이 되지 못해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 바디우와 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>바디우</strong>: 정치는 집단이 사회 구조 자체의 변화를 겨냥한다는 점에서, 진리가 생산되는 여러 영역 가운데 가장 폭넓게 실현되는 영역입니다. 그래서 저는 정치를 다른 영역들 위에 두었습니다.
+<strong>(나)의 글쓴이</strong>: 그 말씀과 선생님의 기본 전제를 함께 놓고 보면, ( ㉮ )는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 정치를 가장 위에 두는 순간, 누구의 목소리가 더 근본적인지를 미리 정해 두는 분할이 들어서므로, 평등을 전제한 선생님의 출발점과 어긋난다</li>
+<li>② 정치가 사회 구조의 변화를 겨냥한다는 규정은 옳지 않으므로, 정치를 다른 영역들 아래에 두어야 한다</li>
+<li>③ 네 영역이 진리 절차의 구조를 공유한다는 전제부터 잘못이므로, 영역들을 하나로 합쳐야 한다</li>
+<li>④ 위계는 진리 절차와 무관하므로, 영역들의 높낮이는 정치의 본질에 아무런 영향을 주지 않는다</li>
+<li>⑤ 정치가 집단의 영역이라는 점에서, 개인의 영역인 예술보다 진리에서 멀어진다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 만들어진다 → 산출(産出)된다</li>
+<li>② ⓑ: 나눈다 → 구분(區分)한다</li>
+<li>③ ⓒ: 닿는 → 도달(到達)하는</li>
+<li>④ ⓓ: 여긴다 → 간주(看做)한다</li>
+<li>⑤ ⓔ: 본다 → 방관(傍觀)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong>
+ⓔ ‘본다’는 <em>그렇게 판단한다·여긴다</em>라는 뜻으로 쓰였어요. 그런데 ‘방관(傍觀)하다’는 <em>직접 관여하지 않고 곁에서 지켜보기만 하다</em>라는 뜻이라, 랑시에르가 바디우 체계를 적극적으로 <em>판단</em>하는 문맥과 정반대로 어긋나므로 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘만들어진다→산출된다’, ② ‘나눈다→구분한다’, ③ ‘닿는→도달하는’, ④ ‘여긴다→간주한다’는 모두 문맥상 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>진리 절차 (바디우)</strong>: 사건 → 이름 → 탐색 → 진리로 이어지는, 진리가 만들어지는 일반적 구조. 정치·예술·과학·사랑 모든 영역에 공통.</li>
+<li><strong>영역의 위계 (바디우)</strong>: 네 영역이 같은 구조를 공유하되, 바디우가 정치를 사회 구조 변화에 가장 가까운 영역으로 맨 위에 둔 높낮이.</li>
+<li><strong>평등의 전제 (랑시에르)</strong>: 누구나 말할 자격에서 동등하다는 정치의 출발점. 랑시에르는 이 전제로 바디우의 위계를 비판함.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>(가) 바디우 — 세우기</th>
+<th>(나) 랑시에르 — 되받기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>진리 절차의 구조(㉠)</td>
+<td>모든 영역에 공통으로 적용</td>
+<td>받아들일 만함</td>
+</tr>
+<tr>
+<td>영역의 위계(㉡)</td>
+<td>정치를 맨 위에 둠</td>
+<td>평등의 전제와 충돌</td>
+</tr>
+<tr>
+<td>정치의 자리</td>
+<td>가장 근본적인 영역</td>
+<td>위계는 분할이므로 다시 짜야 함</td>
+</tr>
+<tr>
+<td>빠진 단계</td>
+<td>—</td>
+<td>밀려난 목소리가 평등하게 돌아오는 단계</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>(가)는 바디우를 그의 논리대로 <em>충실히 세우고</em>, (나)는 바로 그 논리(평등)의 잣대로 바디우의 결론(위계)을 <em>되칩니다</em>. 같은 출발점에서 출발해 결론이 갈리는 게 이 비판의 묘미예요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>바디우의 네 영역은 무엇을 공유하고 무엇에서 갈리나요?</div><div class='qa-a'>진리 절차의 구조(사건→이름→탐색→진리)는 공유하되, 진리가 생산되는 방식에서 서로 구별됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>랑시에르는 바디우의 ㉠과 ㉡ 중 무엇을 문제 삼나요?</div><div class='qa-a'>㉠(공통 구조)은 받아들이되, ㉡(영역의 위계)이 평등의 전제와 충돌한다고 비판합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>랑시에르가 바디우 체계에 더해야 한다고 본 단계는 무엇인가요?</div><div class='qa-a'>위계로 밀려나 있던 영역과 목소리가 평등한 자격으로 되돌아오는 단계입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 수능 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>㉠정립-반정립-종합. 변증법의 논리적 구조를 일컫는 말이다. 변증법에 따라 철학적 논증을 수행한 인물로는 단연 헤겔이 거명된다. 변증법은 대등한 위상을 지니는 세 범주의 병렬이 아니라, 대립적인 두 범주가 조화로운 통일을 이루어 가는 수렴적 상향성을 구조적 특징으로 한다. 헤겔에게서 변증법은 논증의 방식임을 넘어, 논증 대상 자체의 존재 방식이기도 하다. 즉 세계의 근원적 질서인 '이념'의 내적 구조도, 이념이 시ㆍ공간적 현실로서 드러나는 방식도 변증법적이기에, 이념과 현실은 하나의 체계를 이루며, 이 두 차원의 원리를 밝히는 철학적 논증도 변증법적 체계성을 ⓐ지녀야 한다.</p>
+<p>헤겔은 미학도 철저히 변증법적으로 구성된 체계 안에서 다루고자 한다. 그에게서 미학의 대상인 예술은 종교, 철학과 마찬가지로 '절대정신'의 한 형태이다. 절대정신은 절대적 진리인 '이념'을 인식하는 인간 정신의 영역을 ⓑ가리킨다. 예술ㆍ종교ㆍ철학은 절대적 진리를 동일한 내용으로 하며, 다만 인식 형식의 차이에 따라 구분된다. 절대정신의 세 형태에 각각 대응하는 형식은 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>이다. '직관'은 주어진 물질적 대상을 감각적으로 지각하는 지성이고, '표상'은 물질적 대상의 유무와 무관하게 내면에서 심상을 떠올리는 지성이며, '사유'는 대상을 개념을 통해 파악하는 순수한 논리적 지성이다. 이에 세 형태는 각각 '직관하는 절대정신', '표상하는 절대정신', '사유하는 절대정신'으로 규정된다. 헤겔에 따르면 직관의 외면성과 표상의 내면성은 사유에서 종합되고, 이에 맞춰 예술의 객관성과 종교의 주관성은 철학에서 종합된다.</p>
+<p>형식 간의 차이로 인해 내용의 인식 수준에는 중대한 차이가 발생한다. 헤겔에게서 절대정신의 내용인 절대적 진리는 본질적으로 논리적이고 이성적인 것이다. 이러한 내용을 예술은 직관하고 종교는 표상하며 철학은 사유하기에, 이 세 형태 간에는 단계적 등급이 매겨진다. 즉 예술은 초보 단계의, 종교는 성장 단계의, 철학은 완숙 단계의 절대정신이다. 이에 따라 ㉡예술-종교-철학 순의 진행에서 명실상부한 절대정신은 최고의 지성에 의거하는 것, 즉 철학뿐이며, 예술이 절대정신으로 기능할 수 있는 것은 인류의 보편적 지성이 미발달된 머나먼 과거로 한정된다.</p>
+<p>(나)</p>
+<p>변증법의 매력은 '종합'에 있다. 종합의 범주는 두 대립적 범주 중 하나의 일방적 승리로 ⓒ끝나도 안 되고, 두 범주의 고유한 본질적 규정이 소멸되는 중화 상태로 나타나도 안 된다. 종합은 양자의 본질적 규정이 유기적 조화를 이루어 질적으로 고양된 최상의 범주가 생성됨으로써 성립하는 것이다.</p>
+<p>헤겔이 강조한 변증법의 탁월성도 바로 이것이다. 그러기에 변증법의 원칙에 최적화된 엄밀하고도 정합적인 학문 체계를 조탁하는 것이 바로 그의 철학적 기획이 아니었던가. 그런데 그가 내놓은 성과물들은 과연 그 기획을 어떤 흠결도 없이 완수한 것으로 평가될 수 있을까? 미학에 관한 한 '그렇다'는 답변은 쉽지 않을 것이다. 지성의 형식을 직관-표상-사유 순으로 구성하고 이에 맞춰 절대정신을 예술-종교-철학 순으로 편성한 전략은 외관상으로는 변증법 모델에 따른 전형적 구성으로 보인다. 그러나 실질적 내용을 ⓓ보면 직관으로부터 사유에 이르는 과정에서는 외면성이 점차 지워지고 내면성이 점증적으로 강화ㆍ완성되고 있음이, 예술로부터 철학에 이르는 과정에서는 객관성이 점차 지워지고 주관성이 점증적으로 강화ㆍ완성되고 있음이 확연히 드러날 뿐, 진정한 변증법적 종합은 ⓔ이루어지지 않는다. 직관의 외면성 및 예술의 객관성의 본질은 무엇보다도 감각적 지각성인데, 이러한 핵심 요소가 그가 말하는 종합의 단계에서는 완전히 소거되고 만다.</p>
+<p>변증법에 충실하려면 헤겔은 철학에서 성취된 완전한 주관성이 재객관화되는 단계의 절대정신을 추가했어야 할 것이다. 예술은 '철학 이후'의 자리를 차지할 수 있는 유력한 후보이다. 실제로 많은 예술 작품은 '사유'를 매개로 해서만 설명되지 않는가. 게다가 이는 누구보다도 풍부한 예술적 체험을 한 헤겔 스스로가 잘 알고 있지 않은가. 이 때문에 방법과 철학 체계 간의 이러한 불일치는 더욱 아쉬움을 준다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 특정한 철학적 방법에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하고 있다.</li>
+<li>② (가)와 (나)는 모두 특정한 철학적 방법에 대한 상반된 평가를 바탕으로 더 설득력 있는 미학 이론을 모색하고 있다.</li>
+<li>③ (가)와 달리 (나)는 특정한 철학적 방법의 시대적 한계를 지적하고 이에 맞서는 혁신적 방법을 제안하고 있다.</li>
+<li>④ (가)와 달리 (나)는 특정한 철학적 방법에서 파생된 미학 이론을 바탕으로 예술 장르를 범주적으로 유형화하고 있다.</li>
+<li>⑤ (나)와 달리 (가)는 특정한 철학적 방법의 통시적인 변화 과정을 적용하여 철학사를 단계적으로 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong><br />
+(가)는 변증법에 기반한 헤겔 미학에서 예술이 초보 단계의 절대정신으로 평가됨을 설명하고, (나)는 변증법에 충실하면 예술이 '철학 이후'의 자리를 차지할 수 있다고 본다. 두 글 모두 변증법(특정한 철학적 방법)에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하므로 ①이 적절하다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①48.1% ②12.0% ③25.8% ④8.6% ⑤5.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 헤겔의 생각으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 예술ㆍ종교ㆍ철학 간에는 인식 내용의 동일성과 인식 형식의 상이성이 존재한다.</li>
+<li>② 세계의 근원적 질서와 시ㆍ공간적 현실은 하나의 변증법적 체계를 이룬다.</li>
+<li>③ 절대정신의 세 가지 형태는 지성의 세 가지 형식이 인식하는 대상이다.</li>
+<li>④ 변증법은 철학적 논증의 방법이자 논증 대상의 존재 방식이다.</li>
+<li>⑤ 절대정신의 내용은 본질적으로 논리적이고 이성적인 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+예술·종교·철학은 직관·표상·사유라는 인식 형식의 차이에 따라 구분되는 절대정신의 세 형태이지, 지성의 세 형식이 '인식하는 대상'이 아니다. 세 형태가 인식하는 대상(내용)은 절대적 진리인 '이념'이다. 따라서 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,555명 — ①14.7% ②12.1% ③54.8% ④9.3% ⑤9.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)에 따라 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>의 개념을 적용한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 먼 타향에서 밤하늘의 별들을 바라보는 것은 직관을 통해, 같은 곳에서 고향의 하늘을 상기하는 것은 표상을 통해 이루어지겠군.</li>
+<li>② 타임머신을 타고 미래로 가는 자신의 모습을 상상하는 것과, 그 후 판타지 영화의 장면을 떠올려 보는 것은 모두 표상을 통해 이루어지겠군.</li>
+<li>③ 초현실적 세계가 묘사된 그림을 보는 것은 직관을 통해, 그 작품을 상상력 개념에 의거한 이론에 따라 분석하는 것은 사유를 통해 이루어지겠군.</li>
+<li>④ 예술의 새로운 개념을 설정하는 것은 사유를 통해, 이를 바탕으로 새로운 감각을 일깨우는 작품의 창작을 기획하는 것은 직관을 통해 이루어지겠군.</li>
+<li>⑤ 도덕적 배려의 대상을 생물학적 상이성 개념에 따라 규정하는 것과, 이에 맞서 감수성 소유 여부를 새로운 기준으로 제시하는 것은 모두 사유를 통해 이루어지겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+직관은 '주어진 물질적 대상을 감각적으로 지각하는 지성'이다. 새로운 감각을 일깨우는 작품의 창작을 '기획'하는 것은 주어진 물질적 대상을 감각적으로 지각하는 일이 아니므로 직관에 해당하지 않는다. 따라서 ④가 잘못된 적용이다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①4.0% ②6.7% ③9.4% ④69.3% ⑤10.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(나)의 글쓴이의 관점에서 ㉠과 ㉡에 대한 헤겔의 이론을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠과 ㉡ 모두에서 첫 번째와 두 번째의 범주는 서로 대립한다.</li>
+<li>② ㉠과 ㉡ 모두에서 두 번째와 세 번째 범주 간에는 수준상의 차이가 존재한다.</li>
+<li>③ ㉠과 달리 ㉡에서는 범주 간 이행에서 첫 번째 범주의 특성이 갈수록 강해진다.</li>
+<li>④ ㉡과 달리 ㉠에서는 세 번째 범주에서 첫 번째와 두 번째 범주의 조화로운 통일이 이루어진다.</li>
+<li>⑤ ㉡과 달리 ㉠에서는 범주 간 이행에서 수렴적 상향성이 드러난다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong><br />
+(나)의 글쓴이는 예술-종교-철학(㉡)의 이행에서 첫 번째 범주(예술)의 본질인 객관성(감각적 지각성)이 점차 지워진다고 보았다. 즉 ㉡에서 첫 번째 범주의 특성은 갈수록 '약해'지므로, 갈수록 강해진다고 한 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①9.9% ②12.2% ③52.2% ④14.8% ⑤10.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 헤겔과 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>헤겔:</strong> 괴테와 실러의 문학 작품을 읽을 때 놓치지 않아야 할 점이 있네. 이 두 천재도 인생의 완숙기에 이르러서야 비로소 최고의 지성적 통찰을 진정한 예술미로 승화시킬 수 있었네. 그에 비해 초기의 작품들은 미적으로 세련되지 못해 결코 수준급이라 할 수 없었는데, 이는 그들이 아직 지적으로 미성숙했기 때문이었네.
+<strong>(나)의 글쓴이:</strong> 방금 그 말씀과 선생님의 기본 논증 방법을 연결하면 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 이론에서는 대립적 범주들의 종합을 이루어야 하는 세 번째 단계가 현실에서는 그 범주들을 중화한다</li>
+<li>② 이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다</li>
+<li>③ 이론에서는 반정립 단계에 위치하는 예술이 현실에서는 정립 단계에 있는 것으로 나타난다</li>
+<li>④ 이론에서는 객관성을 본질로 하는 예술이 현실에서는 객관성이 사라진 주관성을 지닌다</li>
+<li>⑤ 이론에서는 절대정신으로 규정되는 예술이 현실에서는 진리의 인식을 수행할 수 없다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+헤겔의 이론에서 예술은 직관(외면성)에 대응하는 초보 단계의 절대정신이다. 그런데 〈보기〉에서 헤겔은 괴테와 실러가 완숙기의 '최고의 지성적 통찰'을 진정한 예술미로 승화시켰다고 말한다. 이는 사유(내면성)를 바탕으로 한 예술이 현실에 존재함을 인정한 것이므로, 이론과 연결하면 '이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다'(②)는 말이 된다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①10.9% ②33.4% ③12.1% ④30.8% ⑤13.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 소지(所持)하여야</li>
+<li>② ⓑ: 포착(捕捉)한다</li>
+<li>③ ⓒ: 귀결(歸結)되어도</li>
+<li>④ ⓓ: 간주(看做)하면</li>
+<li>⑤ ⓔ: 결성(結成)되지</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong><br />
+'귀결되다'는 '어떤 결말이나 결과에 이르게 되다'라는 뜻으로, ⓒ'끝나도'와 바꾸어 쓰기에 적절하다(③).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.4% ②3.4% ③67.3% ④3.1% ⑤17.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>알랭 바디우는 정치를 진리가 생산되는 한 절차로 보며, 그 핵심에 ‘평등’을 ⓐ놓는다. 그가 말하는 평등은 모두에게 같은 몫을 나눠 준다는 분배의 결과가 아니다. 그것은 사건에 충실한 주체라면 누구든 진리의 과정에 똑같이 참여할 수 있다는, 진리 절차의 출발에 깔린 전제이다.</p>
+<p>바디우에 따르면 평등은 제도가 보장해 주는 것이 아니라 사건을 통해 선언되는 것이다. 예측할 수 없이 발생한 사건이 기존 질서를 뒤흔들면, 그동안 몫이 없던 이들도 그 사건에 충실한 주체로 나설 수 있다. 이때 평등은 “모두는 본래 평등하다”라는 사실의 확인이 아니라, 사건에 충실한 활동을 통해 비로소 현실에 새겨지는 선언으로서 작동한다.</p>
+<p>바디우가 평등을 사건과 묶는 데에는 까닭이 있다. 사건이 일어나기 전의 질서는 누구에게 어떤 몫이 돌아갈지를 이미 정해 두고 있어서, 그 안에서는 몫이 없는 이들의 평등이 드러날 자리가 없다. 평등을 단지 “모두는 평등하다”라는 원칙으로 선언하는 데 그친다면, 그 원칙은 기존 질서가 나눠 둔 몫을 건드리지 못한 채 말로만 머문다. 바디우가 보기에 평등이 현실이 되는 것은, 사건에 충실한 주체들이 정해진 몫의 경계를 실제로 넘어설 때뿐이다. 그러므로 평등은 선언되는 순간마다 매번 새로 입증되어야 하는 것이지, 한번 보장되면 유지되는 상태가 아니다.</p>
+<p>그러므로 바디우에게 평등은 정치의 목표라기보다 정치의 출발점이자 검증의 기준이다. 어떤 활동이 진정한 정치인지는, 그것이 사건에 충실하여 평등을 실제로 선언하고 있는가로 가려진다. 사회 구조의 근본적 변화를 겨냥하지 않은 채 기존의 몫을 조정하는 데 그치는 활동은, 평등을 선언하지 못하므로 바디우가 말하는 정치에 이르지 못한다.</p>
+<p>결국 바디우는 평등을 진리에 대한 충실성의 문제로 끌어온다. 평등은 합의로 도달하는 상태도, 제도로 관리되는 균형도 아니며, 사건에 충실한 주체들의 활동 속에서만 현실이 되는 원리이다. 이 점에서 그의 평등론은 정치를 사회 구조 자체의 변화와 단단히 묶는다.</p>
+<p><strong>(나)</strong></p>
+<p>평등을 정치의 중심에 둔다는 점에서 바디우와 뜻을 같이하면서도, 평등이 정치 속에서 어떻게 작동하는지를 두고 현대 정치철학자들의 견해는 갈린다.</p>
+<p>먼저 합의를 중시하는 입장이 있다. 이들은 서로 다른 이해가 충돌할 때, 공적인 토론과 심의를 통해 누구나 동의할 수 있는 합리적 합의에 이르는 것이 정치라고 본다. 평등은 모든 참여자가 토론에서 동등한 발언 기회를 보장받는 절차적 조건으로 이해되며, 정치의 목표는 갈등을 합의로 해소하는 데 있다. 이 입장에서 갈등은 합리적 토론으로 다스려져야 할 일시적 상태이며, 충분히 공정한 절차가 갖추어지면 이성을 지닌 참여자들은 결국 공통의 결론에 이를 수 있다고 여겨진다. 그러나 이러한 견해는 합의에 이르지 못하는 갈등을 정치의 미완성으로 보아, 합의의 틀 밖에 놓인 목소리를 다루지 못한다는 한계를 안는다.</p>
+<p>이에 맞서 자크 랑시에르는 정치를 합의가 아니라 ‘불화’로 본다. 그는 사회가 누구의 목소리가 들리고 무엇이 문제로 인식되는지를 미리 나눠 둔다고 보고, 이 나눔을 ‘감각적인 것의 분할’이라 부른다. 그가 보기에 ㉠평등은 합의의 절차로 보장되는 것이 아니라, ‘말할 수 없는 자들’이 목소리를 내어 분할에 균열을 내는 불화의 순간에 비로소 검증된다. 합의를 앞세우는 정치는 오히려 기존의 분할을 그대로 굳혀 평등을 가린다는 것이 그의 비판이다.</p>
+<p>샹탈 무페는 또 다른 길을 낸다. 그는 이해와 가치의 충돌, 곧 적대가 사회에서 사라질 수 없다고 본다. 그가 보기에 ㉡정치의 과제는 적대를 합의로 없애는 것도, 분할을 단숨에 허무는 것도 아니라, 적을 ‘없애야 할 상대’가 아니라 ‘권리를 인정받는 경쟁자’로 바꾸어 갈등이 평등한 자격으로 계속 겨루게 하는 것이다. 무페는 합의로 갈등을 봉합하려는 시도가 오히려 적대를 위험한 형태로 되돌린다고 보아, 갈등을 길들이되 없애지 않는 ‘경합’의 질서를 평등의 조건으로 삼는다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 평등의 역사적 기원을 추적하고, (나)는 그 기원에 대한 반론을 소개하고 있다.</li>
+<li>② (가)는 한 사상가의 평등론을 심화하여 제시하고, (나)는 평등의 작동을 둘러싼 여러 사상가의 견해를 나란히 제시하고 있다.</li>
+<li>③ (가)는 여러 평등론을 비교하고, (나)는 그중 하나를 선택하여 옹호하고 있다.</li>
+<li>④ (가)와 (나)는 모두 평등을 제도적으로 보장하는 방안을 단계별로 제시하고 있다.</li>
+<li>⑤ (가)는 평등에 대한 통념을 옹호하고, (나)는 그 통념의 현실적 사례를 분석하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>13번 — 정답 ②</strong>
+(가)와 (나)의 짜임을 묻는 문항이에요. (가)는 <em>바디우 한 사람</em>의 평등론을 네 문단에 걸쳐 깊이 파고들고, (나)는 평등이 정치에서 어떻게 작동하는지를 두고 합의 중시 입장·랑시에르·무페 <em>여러 사상가</em>의 견해를 나란히 펼칩니다. 그래서 ②가 정답이에요. ①의 ‘역사적 기원 추적’, ③의 ‘(가)에서 여러 평등론 비교’, ④의 ‘제도 보장 방안 단계별 제시’, ⑤의 ‘통념 옹호·사례 분석’은 두 글의 실제 전개와 맞지 않아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 바디우의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 평등은 모두에게 같은 몫을 나눠 주는 분배의 결과를 가리킨다.</li>
+<li>② 평등은 제도가 보장하는 것이 아니라 사건을 통해 선언되는 것이다.</li>
+<li>③ 사건에 충실한 주체라면 누구든 진리의 과정에 참여할 수 있다.</li>
+<li>④ 평등은 정치의 출발점이자 정치를 가려내는 검증의 기준이 된다.</li>
+<li>⑤ 기존의 몫을 조정하는 데 그치는 활동은 평등을 선언하지 못한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>14번 — 정답 ①</strong>
+(가)만 보고 푸는 일치 문항입니다. 1문단에서 바디우의 평등은 "모두에게 같은 몫을 나눠 준다는 분배의 결과가 <em>아니다</em>"라고 분명히 했어요. 그런데 ①은 바로 그 분배의 결과를 바디우의 평등이라 했으니, 지문이 부정한 내용을 긍정으로 뒤집어 적절하지 않아 정답입니다. ②는 2문단, ③은 1·2문단, ④는 3문단, ⑤는 3문단에 각각 부합하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉡은 적대를 합의로 완전히 없애는 것을 정치의 과제로 삼는다.</li>
+<li>② ㉠은 평등이 분할을 그대로 유지함으로써 확인된다고 보는 견해이다.</li>
+<li>③ ㉠은 평등이 합의의 절차로 보장된다고 보는 입장을 비판하는 근거가 된다.</li>
+<li>④ ㉡은 갈등을 봉합할수록 평등이 더 잘 보장된다고 보는 견해이다.</li>
+<li>⑤ ㉠과 ㉡은 모두 평등이 토론에서의 동등한 발언 기회로 완성된다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>15번 — 정답 ③</strong>
+㉠은 랑시에르의 평등관("합의의 절차로 보장되는 것이 아니라 불화의 순간에 검증된다")이에요. 이는 곧 <em>합의 절차로 평등이 보장된다고 보는 입장</em>을 정면으로 받아치는 근거가 되므로 ③이 정답입니다. ②는 랑시에르가 분할을 <em>깨뜨림</em>으로 평등을 검증한다고 했으니 "분할을 유지함으로써"는 정반대고, ①④는 무페가 적대를 <em>없애지 않고</em> 경쟁으로 전환해 유지한다고 본 것과 어긋나며, ⑤는 ㉠㉡ 모두 합의 중시 입장(동등한 발언 기회로 완성)과 거리를 두므로 틀려요.</p>
+<p><strong>16번 [3점] — 정답 ④</strong>
+랑시에르와 무페 두 입장을 ㄱ~ㄹ 진술에 대입해 칸을 채우는 문항이에요. ㄱ(갈등을 합의로 해소)은 합의 중시 입장의 주장이라 <em>랑시에르도 무페도 동의하지 않습니다</em>(랑시에르는 합의가 분할을 굳힌다고 비판, 무페는 합의가 적대를 위험하게 되돌린다고 봄). 그래서 "둘 다 ㄱ에 동의하지 않는다"는 ④가 정답입니다. ①은 랑시에르가 ㄱ에 동의한다고 하여 틀렸고, ②는 랑시에르가 ㄴ(분할에 균열=평등 검증)에 <em>동의</em>하므로 틀렸으며, ③은 무페가 ㄷ(충돌은 사라질 수 없다)에 <em>동의</em>하므로 틀렸고, ⑤는 ㄹ(적대를 경쟁으로 전환·유지)이 <em>무페</em>의 입장이지 랑시에르의 입장은 아니라서 "모두 동의"가 성립하지 않아요.</p>
+<p><strong>17번 [3점] — 정답 ⑤</strong>
+〈보기〉의 비판자는 "평등을 예외적 사건·불화에 묶지 말고 <em>제도의 점진적 개선</em>으로 일상에 뿌리내리라"고 주장해요. 이 잣대를 (가)·(나)의 사상가에게 대 보는 문항입니다. ⑤는 랑시에르가 "합의를 통한 갈등 해소를 정치로 본다"라고 했는데, 랑시에르는 오히려 합의를 비판하고 <em>불화</em>를 정치로 보았으므로 전제부터 틀렸고, 따라서 그 평가는 성립할 수 없어 적절하지 않아 정답입니다. ①(바디우=사건에 묶음), ②(랑시에르=불화의 순간에 묶음), ③(무페=갈등 관리로 가둠), ④(바디우=몫 조정 활동 배제)는 모두 비판자의 잣대에 비추어 각 사상가를 정확히 짚은 적절한 평가예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (나)의 랑시에르와 무페의 입장에서 다음의 ㄱ~ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>［판단할 진술］</strong>
+ㄱ. 정치의 목표는 갈등을 합의로 해소하는 데 있다.
+ㄴ. 기존의 분할에 균열을 내는 일이 평등의 검증과 관련된다.
+ㄷ. 사회에서 이해와 가치의 충돌은 끝내 사라질 수 없다.
+ㄹ. 적대는 경쟁자들 사이의 겨룸으로 전환되어 유지될 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 랑시에르는 ㄱ에 동의하겠지만, 무페는 ㄱ에 동의하지 않겠군.</li>
+<li>② 랑시에르는 ㄴ에 동의하지 않겠지만, 무페는 ㄴ에 동의하겠군.</li>
+<li>③ 랑시에르는 ㄷ에 동의하겠지만, 무페는 ㄷ에 동의하지 않겠군.</li>
+<li>④ 랑시에르와 무페는 모두 ㄱ에 동의하지 않겠군.</li>
+<li>⑤ 랑시에르와 무페는 모두 ㄹ에 동의하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉를 참고할 때, (가), (나)의 사상가에 대한 ‘비판자’의 평가로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 비판자는 평등을 정치의 출발에 두는 입장들이 평등을 너무 드물고 예외적인 사건이나 순간에 묶어 둔다고 본다. 그가 보기에 평등은 충격적인 사건이나 일시적인 불화에서만 빛나는 것이 아니라, 일상의 제도와 절차를 꾸준히 다듬어 가는 가운데 조금씩 넓혀 가는 것이다. 그는 갈등을 길들여 유지하려는 시도조차 평등을 ‘관리의 대상’으로 가둘 위험이 있다고 지적하며, 평등은 제도의 점진적 개선을 통해 일상에 뿌리내려야 한다고 주장한다.</p>
+</blockquote>
+<ul>
+<li>① 바디우에 대해, 평등을 사건에 충실한 주체의 활동에 묶어 둠으로써 평등을 예외적인 순간에 가둔다고 평가하겠군.</li>
+<li>② 랑시에르에 대해, 평등을 불화의 순간에 검증되는 것으로 봄으로써 평등을 일시적인 것에 묶어 둔다고 평가하겠군.</li>
+<li>③ 무페에 대해, 갈등을 길들여 유지하려 함으로써 평등을 관리의 대상으로 가둘 수 있다고 평가하겠군.</li>
+<li>④ 바디우에 대해, 기존의 몫을 조정하는 활동을 정치에서 배제함으로써 제도의 점진적 개선을 평등에서 멀리한다고 평가하겠군.</li>
+<li>⑤ 랑시에르에 대해, 합의를 통한 갈등 해소를 정치로 봄으로써 평등을 제도의 점진적 개선과 동일시한다고 평가하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 그는 책상 위에 화분을 놓았다.</li>
+<li>② 우리는 토론의 기준을 평등에 놓고 논의를 시작했다.</li>
+<li>③ 어머니는 잠든 아이를 자리에 살며시 놓았다.</li>
+<li>④ 그는 마음을 놓고 한참을 쉬었다.</li>
+<li>⑤ 인부들이 다리를 새로 놓았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>18번 — 정답 ②</strong>
+ⓐ ‘놓는다’는 1문단에서 "평등을 (정치의 핵심에) 놓는다", 곧 <em>어떤 것을 기준·바탕으로 삼아 둔다</em>는 뜻으로 쓰였어요. 같은 의미로 쓰인 것은 "토론의 기준을 평등에 놓고"의 ②입니다. ①(화분을 놓다)·③(아이를 자리에 놓다)·⑤(다리를 놓다)는 <em>물건을 어떤 자리에 두거나 설치하다</em>라는 물리적 의미이고, ④(마음을 놓다)는 <em>긴장을 풀다</em>라는 관용적 의미라 ⓐ와 다르므로 ②가 정답이에요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>선언으로서의 평등 (바디우)</strong>: 미리 주어진 사실이 아니라, 사건에 충실한 주체의 활동을 통해 현실에 새겨지는 평등. 정치의 출발점이자 검증 기준.</li>
+<li><strong>불화로 검증되는 평등 (랑시에르)</strong>: 합의 절차로 보장되는 것이 아니라, ‘말할 수 없는 자들’이 분할에 균열을 내는 불화의 순간에 드러나는 평등.</li>
+<li><strong>경합적 질서 (무페)</strong>: 적대를 없애지 않고 적을 경쟁자로 바꾸어, 갈등이 평등한 자격으로 계속 겨루게 하는 정치의 질서.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>합의 중시 입장</th>
+<th>랑시에르</th>
+<th>무페</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정치의 핵심</td>
+<td>합리적 합의</td>
+<td>불화</td>
+<td>경합(길들인 갈등)</td>
+</tr>
+<tr>
+<td>갈등을</td>
+<td>합의로 해소</td>
+<td>분할에 균열을 냄</td>
+<td>경쟁으로 전환·유지</td>
+</tr>
+<tr>
+<td>평등은</td>
+<td>동등한 발언 절차</td>
+<td>불화의 순간에 검증</td>
+<td>경합의 질서에서 보장</td>
+</tr>
+<tr>
+<td>충돌은 사라지나</td>
+<td>합의로 해소됨</td>
+<td>(분할의 산물)</td>
+<td>사라질 수 없음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>셋 다 평등을 정치의 중심에 두지만, <em>갈등을 어떻게 다루느냐</em>에서 갈라져요. 합의 입장은 없애려 하고, 랑시에르는 균열을 내려 하고, 무페는 길들여 유지하려 합니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>바디우에게 평등이 ‘선언’이라는 말은 무슨 뜻인가요?</div><div class='qa-a'>평등이 미리 주어진 사실의 확인이 아니라, 사건에 충실한 활동을 통해 비로소 현실에 새겨지는 것이라는 뜻입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>랑시에르가 합의 중시 입장을 비판하는 까닭은?</div><div class='qa-a'>합의를 앞세우면 기존의 분할이 그대로 굳어져 오히려 평등이 가려진다고 보기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>무페가 적대를 ‘없애지 않는’ 까닭은?</div><div class='qa-a'>적대는 사회에서 사라질 수 없으며, 합의로 봉합하려는 시도가 오히려 적대를 위험한 형태로 되돌린다고 보기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>『한비자』는 중국 전국 시대의 한비자가 제시한 사상이 ⓐ담긴 저작이다. 여러 나라가 패권을 다투던 혼란기를 맞아 엄격한 법치를 통해 부국강병을 꾀한 한비자는 『노자』에 대한 해석을 통해 자신의 법치 사상을 뒷받침했고, 이러한 면모는 『한비자』의 「해로」, 「유로」 등에서 확인할 수 있다.</p>
+<p>『노자』에서 ‘도(道)’는 만물 생성의 근원으로 묘사된다. 도를 천지 만물의 존재와 본질의 근거라고 본 한비자의 이해도 이와 다르지 않다. 그는 자연과 인간 사회의 모든 현상은 도의 영향을 받지 않을 수 없다고 보고, 인간 사회의 일은 도에 따라 제대로 행했는가의 여부에 따라 그 성패가 드러나는 것이라고 이해했다.</p>
+<p>한비자는 『노자』에 제시된 영구불변하는 도의 항상성에 대해 도가 천지와 더불어 영원히 존재한다는 것을 의미하는 것이지, 도가 모습과 이치를 일정하게 유지하는 것은 아니라고 이해했다. 그리고 도는 형체가 없을 뿐 아니라 일정하게 고정되어 있지 않기 때문에 때와 상황에 따라 유연하게 변화하는 것이라고 파악했다. 도가 가변성을 가지고 있어야 도가 일정한 곳에만 있지 않게 되고, 그래야만 도가 모든 사물의 존재와 본질의 근거가 될 수 있다고 파악한 것이다. 그는 도가 가변적이기 때문에 통치술도 고정되어서는 안 된다고 주장했다.</p>
+<p>한편, 한비자는 도를 구체적인 사물과 사건에 내재한 개별 법칙의 통합으로 보고, 『노자』의 도에 시비 판단의 근거라는 새로운 의미를 부여했다. 항상 존재하는 도는 개별 법칙을 포괄하기 때문에 다양한 개별 사건의 시비를 판단하는 기준이 될 수 있고, 이러한 도에 근거해서 입법해야 다양한 사건을 판단할 수 있다고 본 것이다. 이러한 이해를 바탕으로 그는 만족을 모르는 인간의 욕망을 사회 혼란의 원인으로 지목한 『노자』의 견해에 동의하면서도, 『노자』에서처럼 욕망을 없애야 한다고 주장하지 않고 인간은 욕망을 필연적으로 가질 수밖에 없음을 지적하며 욕망을 제어하기 위해 법이 필요하다고 강조했다.</p>
+<p><strong>(나)</strong></p>
+<p>유학자들은 도를 인간 삶의 올바른 길을 의미하는 것이라고 보았다. 중국 송나라 이후, 유학자들은 이러한 유학의 도를 기반으로 현상 세계 너머의 근원으로서 도가의 도에 주목하여 『노자』 주석을 전개했다.</p>
+<p>혼란기를 거친 송나라 초기에 중앙집권화가 추진된 이후 정치적 갈등이 드러나면서 개혁의 분위기가 조성됐다. 이러한 분위기하에서 유학자이자 개혁 사상가인 왕안석은 『노자주』를 저술했다. 그는 『노자』의 도를 만물의 물질적 근원인 ‘기(氣)’라고 파악하고, 현상 세계에 앞서 존재하는 기의 작용에 의해 사물이 형성된다고 보았다. 그는 기가 시시각각 변화하듯 현상 세계도 변화한다고 이해했다. 인위적인 것을 제거해야만 도가 드러나고 인간 사회가 안정된다는 『노자』를 비판한 그는 자연과 달리 인간 사회의 안정을 위해서는 제도와 규범의 제정과 같은 인간의 적극적인 개입이 필요하다고 주장했다. 지혜와 덕이 뛰어난 사람이 제정한 사회 제도와 규범도 현실 사회의 변화에 따라 새롭게 해야 한다고 주장한 것이다. 『노자』의 이상 정치가 실현되려면 유학 이념이 실질적 수단으로 사용되어야 한다고 주장하는 등 왕안석은 『노자』를 유학의 실천적 측면과 결부하여 이해했다.</p>
+<p>송 이후 원나라에 이르러 성행하던 도교는 유학과 불교 등을 받아들여 체계화되었지만, 오징에게는 주술적인 종교에 불과했다. ㉠유학자의 입장에서 그는 잘못된 가르침을 펴는 도교에 사람들이 빠지는 것을 경계했다. 그는 도교의 시조로 간주된 노자의 가르침이 공자의 학문과 크게 다르지 않음을 밝히고자 『도덕진경주』를 저술했다. 그는 도와 유학 이념을 관련짓는 구절을 추가하는 등 『노자』의 일부 내용을 바꾸고 기존 구성 체제를 재편했다. 『노자』의 도를 근원적인 불변하는 도로 본 그는 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 이해했다. 이런 관점에서 그는 유학의 인의예지가 도의 쇠퇴 때문에 나타난 것이라는 『노자』와 달리 도가 현실화하여 드러난 것으로 해석하고, 인간이 마땅히 따라야 할 사회 규범과 사회 질서 체계도 도가 현실화한 결과로 파악했다.</p>
+<p>원이 쇠퇴하고 명나라가 들어선 이후 유학과 도가 등 여러 사상이 합류하는 사조가 무르익는 가운데, 유학자인 설혜는 자신의 ㉡학문적 소신에 따라 『노자』를 주석한 『노자집해』를 저술했다. 그는 공자도 존중했던 스승이 노자이므로 노자 사상에 대한 오해를 불식해야 한다고 보았다. 그는 기존의 주석서가 『노자』의 진정한 의미를 제대로 밝히지 못했기 때문에 유학자들이 노자 사상을 이단으로 치부했다고 파악한 것이다. 다양한 경전을 인용하여 『노자』를 해석하면서 그는 『노자』의 도를 인간의 도덕 본성과 그것의 근거인 천명으로 이해하고, 본성과 천명의 이치를 탐구한다는 점에서 노자 사상과 유학이 다르지 않다고 보았다. 또한 그는 『노자』에서 인의 등을 비판한 것은 도덕을 근본으로 삼게 하기 위한 충고라고 파악했다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 『한비자』의 철학사적 의의를 설명하고 『한비자』와 『노자』의 사회적 파급력을 비교하고 있다.</li>
+<li>② (가)는 한비자가 추구한 이상적인 사회를 소개하고 그 실현을 위해 『노자』를 수용한 입장의 한계를 설명하고 있다.</li>
+<li>③ (나)는 특정 개념을 중심으로 『노자』에 대한 여러 학자의 견해를 시간의 흐름에 따라 제시하고 있다.</li>
+<li>④ (나)는 여러 유학자가 『노자』를 해석한 의도를 각각 제시하고 그 차이로 인해 발생한 학자 간의 이견을 절충하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 『노자』에 대해 다양한 시각에서 제시된 비판이 심화되는 과정을 구체적 사례와 함께 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong><br />
+(나)는 ‘도’라는 특정 개념을 중심으로 송나라 왕안석 → 원나라 오징 → 명나라 설혜의 『노자』 해석을 시간의 흐름에 따라 제시한다. ①은 사회적 파급력 비교가 없고, ④는 학자 간 이견을 절충하지 않으며, ⑤는 (가)가 한비자의 견해만 제시하므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,626명 — ①3.3% ②4.8% ③77.8% ④6.6% ⑤7.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 한비자의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사건의 시비에 따라 달라지는 도에 근거하여 법이 제정되어야 한다.</li>
+<li>② 인간은 무엇을 가지거나 누리고자 하는 마음에서 벗어날 수 없다.</li>
+<li>③ 도는 고정된 모습 없이 때와 형편에 따라 변화하며 영원히 존재한다.</li>
+<li>④ 인간 사회의 흥망성쇠는 사람이 도에 따라 올바르게 행하였는가의 여부에 좌우되는 것이다.</li>
+<li>⑤ 도는 만물의 근원이면서 동시에 현실 사회의 개별 사물과 사건에 내재한 법칙을 포괄하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+4문단에서 한비자는 항상 존재하는 도가 개별 법칙을 포괄하기에 다양한 개별 사건의 시비를 판단하는 ‘기준’이 된다고 보았다. 도가 사건의 시비에 따라 달라지는 것이 아니므로 ①이 부적절하다. ②는 욕망의 필연성(4문단), ③은 도의 가변성과 항상성(3문단), ④는 성패가 도에 따라 행했는가에 좌우됨(2문단), ⑤는 2·4문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,624명 — ①51.6% ②6.6% ③7.2% ④18.4% ⑤16.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 유학 덕목의 등장을 긍정적으로 평가한 『노자』의 견해를 수용하는, ㉡은 유학 덕목에 대한 『노자』의 비판에 담긴 긍정적 의도를 밝히려는 것으로 표출되었다.</li>
+<li>② ㉠은 유학에 유입되고 있는 주술성을 제거하는, ㉡은 노자 사상이 탐구하는 대상에 대한 이해를 근거로 노자 사상과 유학의 공통점을 제시하려는 것으로 표출되었다.</li>
+<li>③ ㉠은 유학의 가르침을 차용한 종교가 사람들을 현혹하는 상황에 대응하는, ㉡은 『노자』를 해석한 경전들을 참고하여 유학 이론의 독창성을 밝히려는 것으로 표출되었다.</li>
+<li>④ ㉠은 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인하는, ㉡은 유학에서 이단으로 치부하는 사상의 진의를 밝혀 오해를 바로잡으려는 것으로 표출되었다.</li>
+<li>⑤ ㉠은 특정 종교에서 추앙하는 사상가와 유학 이론의 관련성을 제시하는, ㉡은 유학의 사상적 우위를 입증하여 다른 학문을 통합할 수 있는 근거를 제시하려는 것으로 표출되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+㉠(오징)은 노자의 가르침이 공자의 학문과 다르지 않음을 밝히고 인의예지·사회 규범을 도의 현실화로 해석했으므로, 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인한 것이다. ㉡(설혜)은 이단으로 치부된 노자 사상의 진정한 의미를 밝혀 오해를 불식하고자 했다. ②는 주술성이 유학에 유입된 것이 아니고, ⑤는 설혜가 유학의 사상적 우위를 입증하려 한 것이 아니어서 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,620명 — ①5.3% ②26.1% ③10.0% ④47.9% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>(나)의 왕안석과 오징의 입장에서 다음의 ㄱ～ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p>ㄱ. 도는 만물을 통해 드러나는 것이지 만물에 앞서서 존재하는 것은 아니다.
+ㄴ. 인간 사회의 규범은 이치를 내재한 근원적 존재인 도가 현실에 드러난 것이다.
+ㄷ. 도는 현상 세계의 너머에만 머물러 있지 않고 세상일과 유기적으로 관련되는 것이다.
+ㄹ. 도가 변화하듯이 현상 세계가 변하니, 현실 사회의 변화에 따라 인간 사회의 규범도 변해야 한다.</p>
+</blockquote>
+<ul>
+<li>① 왕안석은 ㄱ에 동의하지 않고 ㄴ에 동의하겠군.</li>
+<li>② 왕안석은 ㄴ과 ㄹ에 동의하겠군.</li>
+<li>③ 왕안석은 ㄷ에 동의하고 ㄹ에 동의하지 않겠군.</li>
+<li>④ 오징은 ㄱ과 ㄹ에 동의하지 않겠군.</li>
+<li>⑤ 오징은 ㄴ에 동의하고 ㄷ에 동의하지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong><br />
+오징은 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 보므로 ㄱ(도가 만물에 앞서 존재하지 않음)에 동의하지 않고, 도를 근원적인 불변하는 도로 보므로 ㄹ(도의 변화)에도 동의하지 않는다. 왕안석은 기(도)가 현상 세계에 앞서 존재한다고 보아 ㄱ에 동의하지 않고, 규범은 인간의 적극적 개입으로 제정된다고 보아 ㄴ에 동의하지 않으며, ㄹ에는 동의한다.</p>
+<p><em>선택률</em> — 응시 98,649명 — ①11.1% ②22.0% ③10.5% ④34.8% ⑤21.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉를 참고할 때, (가), (나)의 사상가에 대한 왕부지의 평가로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+청나라 초기의 유학자 왕부지는 『노자』의 본래 뜻을 드러내어 노자 사상을 비판하고자 『노자연』을 저술했다. 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하고자 했던 그는 기존의 『노자』 주석서가 노자 사상이 아닌 사상을 기준으로 삼았기 때문에 『노자』뿐만 아니라 주석자의 사상마저 왜곡했다고 비판했다. 『노자』에서 아무런 행동을 하지 않아도 천하가 다스려진다고 한 것 등을 비판한 그는, 『노자』에서처럼 단순히 인간의 이기적 욕망을 없애는 것이 아니라 사회 질서 유지를 위해 유학 규범을 활용해야 한다고 강조했다.</p>
+</blockquote>
+<ul>
+<li>① 왕부지는 인간의 욕망에 대한 『노자』의 대응 방식을 부정적으로 보았으므로, (가)의 한비자가 『노자』와 달리 사회에 대한 인위적 개입이 필요하다고 한 것에 대해서는 수긍하겠군.</li>
+<li>② 왕부지는 『노자』에 제시된 소극적인 삶의 태도를 부정적으로 보았으므로, (나)의 왕안석이 사회 제도에 대한 『노자』의 견해를 비판하며 유학 이념의 활용을 주장한 것은 긍정하겠군.</li>
+<li>③ 왕부지는 『노자』의 본래 뜻을 파악해야 한다고 보았으므로, (나)의 오징이 『노자』를 주석하면서 자신의 이해에 따라 원문의 구성과 내용을 수정한 것이 잘못이라고 보겠군.</li>
+<li>④ 왕부지는 주석자가 유학을 기준으로 『노자』를 이해하면 주석자의 사상도 왜곡된다고 보았으므로, (나)의 오징이 유학의 인의예지를 『노자』의 도가 현실화한 것으로 본 것을 비판하겠군.</li>
+<li>⑤ 왕부지는 『노자』에 담긴 비현실성을 드러내야 한다고 보았으므로, (나)의 설혜가 기존의 『노자』 주석서들을 비판하며 드러낸 학문적 입장이 유학의 실용적 가치를 부각한다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+설혜의 학문적 입장은 노자 사상과 유학이 다르지 않음을 밝혀 노자 사상에 대한 오해를 불식하려는 것으로, 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하려 한 왕부지의 시각과 대비된다. 따라서 ⑤가 부적절하다. ①~④는 각각 욕망 제어를 위한 법의 필요(한비자), 유학 이념의 실질적 수단화(왕안석), 원문 수정(오징), 유학 기준의 해석(오징)에 대한 왕부지의 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,629명 — ①6.5% ②9.0% ③19.6% ④21.2% ⑤43.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 과일이 접시에 예쁘게 담겨 있다.</li>
+<li>② 상자에 탁구공이 가득 담겨 있다.</li>
+<li>③ 시원한 계곡물에 수박이 담겨 있다.</li>
+<li>④ 화폭에 봄 경치가 그대로 담겨 있다.</li>
+<li>⑤ 매실이 설탕물에 한 달째 담겨 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓐ ‘담긴’은 ‘어떤 내용이나 사상이 그림, 글, 말 따위 속에 포함되거나 반영되다’의 의미로, ④의 ‘화폭에 봄 경치가 담겨 있다’와 같다. ①·②는 그릇 따위에 넣어지다, ③은 액체 속에 넣어지다, ⑤는 익거나 삭도록 보관되다의 의미이다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.4% ②0.6% ③1.0% ④95.0% ⑤2.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>정치란 무엇인가 — 바디우와 랑시에르 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='정치란 무엇인가 — 바디우와 랑시에르 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

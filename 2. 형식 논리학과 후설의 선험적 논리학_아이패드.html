@@ -1,0 +1,782 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>형식 논리학과 현상학 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>형식 논리학과 현상학 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, "말이 된다"와 "사실이다"는 같은 뜻일까요? 곰곰이 생각해 보면 둘은 다릅니다. 친구가 "용이 불을 뿜으면 마을이 불타고, 용이 불을 뿜었으니, 마을이 불탔다"라고 말했다고 해 봅시다. 용은 실제로 없으니 앞부분은 거짓이지만, <strong>말의 짜임새만 보면 흠잡을 데가 없죠.</strong> 앞이 맞다면 뒤가 따라 나오게 되어 있으니까요. 이렇게 <strong>내용이 참이냐 거짓이냐는 잠시 제쳐 두고, 생각의 뼈대(구조)가 어긋나지 않는지만 따지는 학문</strong>이 바로 형식 논리학입니다.</p>
+<p>형식 논리학이 가장 싫어하는 것은 <strong>모순</strong>입니다. "A이다"와 "A가 아니다"를 한꺼번에 인정하면 그 체계는 무너져 버리거든요. 그래서 형식 논리학은 모순을 배제하는 무모순성을 추론 판정의 중요한 조건으로 삼습니다. 다만 <strong>모순이 없다는 사실만으로 모든 추론이 곧바로 타당해지는 것은 아닙니다.</strong> 형식 논리학에서 '타당하다'는 말은 "전제가 참이라면 결론이 거짓일 수 없다"는 형식의 관계가 성립한다는 뜻이에요. 곧 '내용이 진짜다'가 아니라 '짜임새가 어긋나지 않았다'는 뜻이죠. 마치 레고 설명서대로 블록을 끼웠는지만 보는 것과 비슷합니다. 설명서대로 끼웠으면, 만든 게 용이든 우주선이든 '조립은 올바르다'고 하는 거죠.</p>
+<p>그런데 여기서 한 철학자가 손을 듭니다. 바로 <strong>후설</strong>입니다. 후설은 이렇게 묻습니다. "그런데 우리는 <strong>왜</strong> 모순을 피해야만 옳다고 느끼는 거죠? 그 규칙 자체는 어디서 온 건가요?" 형식 논리학은 규칙을 '쓰는' 법은 알려 주지만, 그 규칙이 '왜 옳은지'는 설명해 주지 못한다는 겁니다. 후설은 그 답을, 우리 머릿속에서 직접 대상의 본질을 꿰뚫어 보는 마음의 작용, 곧 <strong>직관</strong>에서 찾았어요. 이렇게 논리 규칙이 어떻게 가능한지 그 밑바닥을 캐묻는 학문을 <strong>선험적 논리학</strong>, 즉 '논리의 논리학'이라고 부릅니다.</p>
+<blockquote>
+<p>한마디로: <strong>형식 논리학은 "규칙을 지켰는가"를 따지고, 후설의 선험적 논리학은 "그 규칙은 왜 옳은가"를 따집니다.</strong> 앞엣것이 '문법 검사기'라면 뒤엣것은 '문법이 왜 문법인지'를 묻는 셈이지요.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>두 개의 논리학</strong>이 마주 서 있습니다. 하나는 생각의 구조만 따지는 형식 논리학, 다른 하나는 그 논리의 토대를 캐묻는 후설의 선험적 논리학이에요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>형식 논리학  (후설의 비판)▶  선험적 논리학<small>"규칙을 지켰는가"                "그 규칙은 왜 옳은가"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>형식 논리학(입장 A)과 후설의 선험적 논리학(입장 B)이 어떻게 갈라서는지, 그 대립과 비판의 큰 구도를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>형식 논리학의 안쪽을 들여다봅니다. 명제 논리와 술어 논리가 어떻게 다른지, '무모순성'과 '타당성'이 정확히 무엇을 뜻하는지 따집니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>후설 쪽으로 깊이 들어갑니다. '직관'이 무엇이고, 기호를 다루는 인식과 본질을 직접 보는 인식이 어떻게 구별되는지 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 두 논리학이 무엇을 겨누는지, 그리고 왜 후설이 형식 논리학만으로는 부족하다고 보았는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>㉠<u>형식 논리학</u>은 추론이 타당한지를 그 내용이 아니라 구조에 의해 판정한다. 형식 논리학에서 추론의 타당성은 전제가 참이라고 가정했을 때 결론이 거짓일 수 없는 형식적 관계로 판정되며, 이때 전제와 결론이 모순 없이 연결되는 무모순성은 그 판단에서 중요한 조건으로 작용한다. 다만 모순이 없다는 사실만으로 모든 추론이 곧바로 타당해지는 것은 아니다. 그리고 전제의 내용이 실제로 참인지 거짓인지는 판정에 관여하지 않는다. 설령 전제가 거짓이라 해도 그 안에서 모순 없이 결론이 도출되면 그 추론은 타당하다고 ⓐ<u>간주된다</u>. 형식 논리학은 ‘A이다.’와 ‘A가 아니다.’가 한 체계 안에서 동시에 성립하지 않는 한, 그 체계가 무모순성을 ⓑ<u>지닌다</u>고 본다. 따라서 형식 논리학은 추론의 짜임새가 규칙을 어겼는지만을 검토하며, 그 규칙 자체가 어떤 근거에서 옳은지는 묻지 않는다.</p>
+<p>㉡<u>후설의 선험적 논리학</u>은 바로 이 지점에서 형식 논리학과 갈라선다. 후설은 형식 논리학이 모순을 배제하는 규칙을 쓸 줄은 알지만, 우리가 왜 모순을 배제해야만 타당하다고 느끼는지에 대한 근거는 ⓒ<u>제시하지</u> 못한다고 본다. 가령 ‘세 변으로 이루어진 도형은 세 변을 가진다.’라는 명제를 우리가 의심 없이 참으로 받아들일 때, 형식 논리학은 그 명제가 규칙에 어긋나지 않는다는 점만을 확인한다. 그러나 후설은 우리가 그 명제를 참으로 받아들이는 활동 자체가 어떻게 가능한지를 묻는다. 후설에 따르면 논리의 규칙은 경험에서 귀납적으로 얻어진 것이 아니라, 의미를 구성하고 판단을 가능하게 하는 의식의 선험적 구조에서 비롯된다. 그는 이 의식의 작용을 직관이라 부르며, 직관은 언어나 기호의 매개 없이 의식이 대상의 본질을 직접 파악하는 행위라고 ⓓ<u>규정한다</u>. 그러므로 후설은 모든 참된 인식이 이러한 직관에 근거해야 한다고 주장한다.</p>
+<p>후설은 형식 논리학을 폐기하려는 것이 아니라, 형식 논리학이 이미 전제하고 있는 조건을 해명하려 한다. 형식 논리학은 모순율과 같은 규칙을 출발점으로 삼아 추론의 타당성을 판정하지만, 그 규칙이 어떻게 우리에게 자명한 것으로 ⓔ<u>주어지는지</u>는 다루지 않는다. 후설은 이 자명함이 의식의 직관적 활동을 통해 구성된다고 본다. 이런 점에서 선험적 논리학은 형식 논리학이 딛고 선 토대를 되묻는 ‘논리의 논리학’이라 할 수 있다. 다만 후설의 선험적 논리학은 의식의 직관이라는 내적 활동에 인식의 근거를 두므로, 그 직관의 보편성을 어떻게 보장할 수 있느냐는 물음에 답해야 하는 과제를 안는다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 ‘아니요’라고 답변할 질문은?</p>
+<ul>
+<li>① 추론의 타당성을 판정하는 데 모순의 유무가 관련되는가?</li>
+<li>② 추론의 타당성은 전제 내용의 실제 참·거짓에 의해 결정되는가?</li>
+<li>③ 우리가 어떤 명제를 참으로 받아들이는 일은 의식의 활동인가?</li>
+<li>④ 추론의 짜임새가 규칙을 어겼는지를 검토하는 일이 가능한가?</li>
+<li>⑤ 모순을 배제하는 규칙은 추론을 판정하는 데 동원될 수 있는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+㉠ 형식 논리학은 "전제의 내용이 실제로 참인지 거짓인지는 판정에 관여하지 않는다"라고 했으니, 타당성이 전제 내용의 참·거짓으로 결정되느냐는 물음에 '아니요'라고 답합니다. ㉡ 후설 역시 타당성을 의식의 활동에서 찾을 뿐, 전제 내용의 실제 참·거짓으로 결정된다고 보지 않으므로 '아니요'라고 답하죠. 그래서 둘 다 '아니요'인 ②가 정답입니다. ①은 둘 다 '예'(모순의 유무는 둘 다 따집니다), ③은 후설이 '예', ④는 형식 논리학이 '예', ⑤도 둘 다 '예'라서 모두 '아니요' 짝이 아니에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 형식 논리학은 전제가 거짓인 추론은 그 짜임새와 무관하게 타당하지 않다고 본다.</li>
+<li>② 형식 논리학은 한 체계가 모순을 품지 않는 한 그 체계에 무모순성이 있다고 본다.</li>
+<li>③ 후설은 논리의 규칙이 여러 경험을 일반화하여 귀납적으로 얻어진다고 본다.</li>
+<li>④ 후설은 직관이 언어와 기호를 매개로 대상의 본질에 다가가는 행위라고 본다.</li>
+<li>⑤ 후설은 형식 논리학의 규칙 전체를 폐기하고 새 규칙으로 대체하려 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+"‘A이다.’와 ‘A가 아니다.’가 한 체계 안에서 동시에 성립하지 않는 한, 그 체계가 무모순성을 지닌다"라는 1문단 문장을 바르게 풀어 쓴 ②가 정답입니다. ① 형식 논리학은 전제가 거짓이어도 짜임새가 맞으면 타당하다고 봅니다(방향이 뒤집힘). ③ 후설은 "경험에서 귀납적으로 얻어진 것이 아니라"고 분명히 반대로 말합니다. ④ 직관은 "언어나 기호의 매개 없이" 본질을 파악하는 행위입니다(정반대). ⑤ 후설은 "폐기하려는 것이 아니라" 토대를 해명하려 했습니다.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+후설(㉡)의 입장은 '논리의 자명함은 의식의 직관적 활동으로 구성된다'는 것이지, '경험적 관찰로 사후에 확증된다'는 것이 아닙니다. ⑤는 후설이 명백히 거부하는 귀납·경험주의로 그를 설명했으니 평가로 적절하지 않아 정답입니다. ①~④는 모두 '규칙을 쓰는 데 머무는 형식 논리학의 한계'와 '직관적·선험적 구성'이라는 후설의 틀에 들어맞습니다. 특히 ②는 무모순성을 인정하는 일조차 그 규칙이 왜 자명한지가 의식의 직관적 활동을 통해 해명되어야 한다고 본 후설의 관점을 정확히 적용한 매력적인 선지예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 ㉡의 입장에서 ⓐ~ⓔ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ는 추론의 짜임새만으로 내려지는 판정이어서, 그 판정이 왜 정당한지의 근거는 따로 해명되어야 한다고 보겠군.</li>
+<li>② ⓑ를 인정하는 일도 결국 무모순성의 규칙이 왜 자명한지가 의식의 직관적 활동을 통해 해명되어야 한다고 보겠군.</li>
+<li>③ ⓒ가 이루어지지 못하는 까닭은 형식 논리학이 규칙을 쓰는 데만 머물기 때문이라고 보겠군.</li>
+<li>④ ⓓ가 가리키는 행위는 경험의 누적이 아니라 의식의 선험적 구조에서 비롯된다고 보겠군.</li>
+<li>⑤ ⓔ가 가능한 까닭은 규칙의 자명함이 경험적 관찰을 통해 사후에 확증되기 때문이라고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 ㉡에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 형식 논리학의 규칙을 쓰면서 동시에 그 규칙의 근거를 묻는 일은 양립할 수 없다.</li>
+<li>② 모순을 배제하는 규칙은 추론의 타당성을 판정하는 데 실제로 동원되지 못한다.</li>
+<li>③ 의식이 대상의 본질을 직접 파악한다고 하나, 그 직관이 사람마다 어긋나지 않는다는 보장을 제시하지 못하였다.</li>
+<li>④ 논리의 규칙이 경험에서 비롯된다고 보면서도 그 경험의 내용을 구체적으로 밝히지 못하였다.</li>
+<li>⑤ 형식 논리학이 전제의 참·거짓을 따지지 않는다는 점을 끝내 인정하지 못하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+비판하기 문항입니다. 지문 끝에 "직관의 보편성을 어떻게 보장할 수 있느냐는 물음에 답해야 하는 과제를 안는다"라는 비판 예고문이 깔려 있죠. 이를 정면으로 찌른 ③이 정답입니다. ① 후설은 '쓰는 일'과 '근거를 묻는 일'을 양립시키려 했으니 사실과 어긋난 비판입니다. ②⑤는 지문 내용 자체를 부정하는 잘못된 전제이고, ④는 후설이 "경험에서 비롯된다"고 본 적이 없으므로 그의 주장을 잘못 옮긴 것입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 여겨진다</li>
+<li>② ⓑ: 갖춘다</li>
+<li>③ ⓒ: 내놓지</li>
+<li>④ ⓓ: 명시한다</li>
+<li>⑤ ⓔ: 베풀어지는지</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+ⓔ '주어지다'는 '저절로 갖추어져 있다'는 뜻인데, '베풀어지다'는 누군가가 은혜·도움을 내려 준다는 뜻이라 맥락이 어긋납니다. 그래서 바꿔 쓰기에 적절하지 않은 ⑤가 정답이에요. ① 간주된다→여겨진다, ② 지닌다→갖춘다, ③ 제시하지→내놓지, ④ 규정한다→명시한다는 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>무모순성</strong>: 한 체계 안에서 'A이다'와 'A가 아니다'가 동시에 성립하지 않는 상태. 형식 논리학이 타당성을 판정할 때 작용하는 중요한 조건이에요.</li>
+<li><strong>타당성</strong>: 전제가 참이라고 가정했을 때 결론이 거짓일 수 없는 형식적 관계. '내용이 참이다'와는 다릅니다.</li>
+<li><strong>직관(후설)</strong>: 언어나 기호 없이 의식이 대상의 본질을 곧장 파악하는 활동.</li>
+<li><strong>선험적 구조</strong>: 경험 이전에 우리가 의미를 구성하고 판단할 수 있게 하는 의식의 형식.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>따지는 것</th>
+<th>형식 논리학(㉠)</th>
+<th>후설의 선험적 논리학(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>묻는 질문</td>
+<td>규칙을 지켰는가</td>
+<td>그 규칙은 왜 옳은가</td>
+</tr>
+<tr>
+<td>타당성의 잣대</td>
+<td>전제→결론의 형식적 관계(무모순성이 조건)</td>
+<td>의식의 직관적 구성</td>
+</tr>
+<tr>
+<td>규칙의 출처</td>
+<td>따지지 않음(출발점으로 전제)</td>
+<td>의식의 선험적 구조</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>규칙의 근거를 못 댐</td>
+<td>직관의 보편성 보장이 과제</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>형식 논리학에서 전제가 거짓인 추론이 타당할 수 있나요?</div><div class='qa-a'>네. 짜임새가 모순 없이 이어지면 내용의 참·거짓과 무관하게 타당합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설은 형식 논리학을 버리려 했나요?</div><div class='qa-a'>아니요. 형식 논리학이 이미 전제하고 있는 토대(자명함의 근거)를 해명하려 했습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설이 말한 직관은 감각적 인상과 같은가요?</div><div class='qa-a'>아니요. 직관은 기호의 매개 없이 본질을 직접 파악하는 의식의 활동으로, 단순한 감각과 구별됩니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2017학년도 수능 [16~20]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠논리실증주의자와 포퍼는 지식을 수학적 지식이나 논리학 지식처럼 경험과 무관한 것과 과학적 지식처럼 경험에 의존하는 것으로 구분한다. 그중 과학적 지식은 과학적 방법에 의해 누적된다고 주장한다. 가설은 과학적 지식의 후보가 되는 것인데, 그들은 가설로부터 논리적으로 도출된 예측을 관찰이나 실험 등의 경험을 통해 맞는지 틀리는지 판단함으로써 그 가설을 시험하는 과학적 방법을 제시한다. 논리실증주의자는 예측이 맞을 경우에, 포퍼는 예측이 틀리지 않는 한, 그 예측을 도출한 가설이 하나씩 새로운 지식으로 추가된다고 주장한다.</p>
+<p>하지만 ㉡콰인은 가설만 가지고서 예측을 논리적으로 도출할 수 없다고 본다. 예를 들어 ⓐ새로 발견된 금속 M은 열을 받으면 팽창한다는 가설만 가지고는 ⓑ열을 받은 M이 팽창할 것이라는 예측을 이끌어낼 수 없다. 먼저 지금까지 관찰한 모든 금속은 열을 받으면 팽창한다는 기존의 지식과 M에 열을 가했다는 조건 등이 필요하다. 이렇게 예측은 가설, 기존의 지식들, 여러 조건 등을 모두 합쳐야만 논리적으로 도출된다는 것이다. 그러므로 예측이 거짓으로 밝혀지면 정확히 무엇 때문에 예측에 실패한 것인지 알 수 없다는 것이다. 이로부터 콰인은 개별적인 가설뿐만 아니라 ⓒ기존의 지식들과 여러 조건 등을 모두 포함하는 전체 지식이 경험을 통한 시험의 대상이 된다는 총체주의를 제안한다.</p>
+<p>논리실증주의자와 포퍼는 수학적 지식이나 논리학 지식처럼 경험과 무관하게 참으로 판별되는 분석 명제와, 과학적 지식처럼 경험을 통해 참으로 판별되는 종합 명제를 서로 다른 종류라고 구분한다. 그러나 콰인은 총체주의를 정당화하기 위해 이 구분을 부정하는 논증을 다음과 같이 제시한다. 논리실증주의자와 포퍼의 구분에 따르면 “총각은 총각이다.”와 같은 동어 반복 명제와, “총각은 미혼의 성인 남성이다.”처럼 동어 반복 명제로 환원할 수 있는 것은 모두 분석 명제이다. 그런데 후자가 분석 명제인 까닭은 전자로 환원할 수 있기 때문이다. 이러한 환원이 가능한 것은 ‘총각’과 ‘미혼의 성인 남성’이 동의적 표현이기 때문인데 그게 왜 동의적 표현인지 물어보면, 이 둘을 서로 대체하더라도 명제의 참 또는 거짓이 바뀌지 않기 때문이라고 할 것이다. 하지만 이것만으로는 두 표현의 의미가 같다는 것을 보장하지 못해서, 동의적 표현은 언제나 반드시 대체 가능해야 한다는 필연성 개념에 다시 의존하게 된다. 이렇게 되면 동의적 표현이 동어 반복 명제로 환원 가능하게 하는 것이 되어, 필연성 개념은 다시 분석 명제 개념에 의존하게 되는 순환론에 빠진다. 따라서 콰인은 종합 명제와 구분되는 분석 명제가 존재한다는 주장은 근거가 없다는 결론에 ㉢도달한다.</p>
+<p>콰인은 분석 명제와 종합 명제로 지식을 엄격히 구분하는 대신, 경험과 직접 충돌하지 않는 중심부 지식과, 경험과 직접 충돌할 수 있는 주변부 지식을 상정한다. 경험과 직접 충돌하여 참과 거짓이 쉽게 바뀌는 주변부 지식과 달리 주변부 지식의 토대가 되는 중심부 지식은 상대적으로 견고하다. 그러나 이 둘의 경계를 명확히 나눌 수 없기 때문에, 콰인은 중심부 지식과 주변부 지식을 다른 종류라고 하지 않는다. 수학적 지식이나 논리학 지식은 중심부 지식의 한가운데에 있어 경험에서 가장 멀리 떨어져 있지만 그렇다고 경험과 무관한 것은 아니라는 것이다. 그런데 주변부 지식이 경험과 충돌하여 거짓으로 밝혀지면 전체 지식의 어느 부분을 수정해야 할지 고민하게 된다. 주변부 지식을 수정하면 전체 지식의 변화가 크지 않지만 중심부 지식을 수정하면 관련된 다른 지식이 많기 때문에 전체 지식도 크게 변화하게 된다. 그래서 대부분의 경우에는 주변부 지식을 수정하는 쪽을 선택하겠지만 실용적 필요 때문에 중심부 지식을 수정하는 경우도 있다. 그리하여 콰인은 중심부 지식과 주변부 지식이 원칙적으로 모두 수정의 대상이 될 수 있고, 지식의 변화도 더 이상 개별적 지식이 단순히 누적되는 과정이 아니라고 주장한다.</p>
+<p>총체주의는 특정 가설에 대해 제기되는 반박이 결정적인 것처럼 보이더라도 그 가설이 실용적으로 필요하다고 인정되면 언제든 그와 같은 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 그러나 총체주의는 “A이면서 동시에 A가 아닐 수는 없다.”와 같은 논리학의 법칙처럼 아무도 의심하지 않는 지식은 분석 명제로 분류해야 하는 것이 아니냐는 비판에 답해야 하는 어려움이 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 ‘아니요’라고 답변할 질문은?</p>
+<ul>
+<li>① 과학적 지식은 개별적으로 누적되는가?</li>
+<li>② 경험을 통하지 않고 가설을 시험할 수 있는가?</li>
+<li>③ 경험과 무관하게 참이 되는 지식이 존재하는가?</li>
+<li>④ 예측은 가설로부터 논리적으로 도출될 수 있는가?</li>
+<li>⑤ 수학적 지식과 과학적 지식은 종류가 다른 것인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+논리실증주의자와 포퍼는 가설로부터 도출된 예측을 경험을 통해 판단함으로써 가설을 시험하므로 ‘경험을 통하지 않고 가설을 시험할 수 있는가?’에 ‘아니요’로 답한다. 콰인도 가설을 포함한 전체 지식이 경험을 통한 시험의 대상이 된다고 보므로 같은 질문에 ‘아니요’로 답한다. 따라서 ㉠·㉡ 모두 ‘아니요’로 답할 질문은 ②. (①③④⑤는 한쪽이라도 ‘예’로 답한다.)</p>
+<p><em>선택률</em> — 응시 98,548명 — ①8.6% ②72.1% ③8.9% ④5.8% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 포퍼가 제시한 과학적 방법에 따르면, 예측이 틀리지 않았을 경우보다는 맞을 경우에 그 예측을 도출한 가설이 지식으로 인정된다.</li>
+<li>② 논리실증주의자에 따르면, “총각은 미혼의 성인 남성이다.”가 분석 명제인 것은 총각을 한 명 한 명 조사해 보니 모두 미혼의 성인 남성으로 밝혀졌기 때문이다.</li>
+<li>③ 콰인은 관찰과 실험에 의존하는 지식이 관찰과 실험에 의존하지 않는 지식과 근본적으로 다르다고 한다.</li>
+<li>④ 콰인은 분석 명제가 무엇인지는 동의적 표현이란 무엇인지에 의존하고, 다시 이는 필연성 개념에, 필연성 개념은 다시 분석 명제 개념에 의존한다고 본다.</li>
+<li>⑤ 콰인은 어떤 명제에, 의미가 다를 뿐만 아니라 서로 대체할 경우 그 명제의 참 또는 거짓이 바뀌는 표현을 사용할 수 있으면, 그 명제는 동어 반복 명제라고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+3문단에서 콰인은 ‘분석 명제 → 동의적 표현 → 필연성 개념 → 분석 명제 개념’으로 의존이 순환됨을 지적하며 분석 명제가 존재한다는 주장의 근거가 없다고 본다. 이 순환 구조를 정확히 진술한 ④가 적절하다. ① 포퍼는 예측이 맞을 경우가 아니라 틀리지 않는 한 가설을 인정한다. ② 분석 명제는 경험과 무관하게 참으로 판별되므로 한 명씩 조사하는 경험적 확인 때문은 아니다. ③·⑤는 콰인의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①16.3% ②4.9% ③7.1% ④68.0% ⑤5.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 총체주의의 입장에서 ⓐ～ⓒ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓑ가 거짓으로 밝혀지더라도 그것이 ⓐ 때문이라고 단정하지 못하겠군.</li>
+<li>② ⓑ가 거짓으로 밝혀지면 ⓒ의 어느 부분을 수정하느냐는 실용적 필요에 따라 달라지겠군.</li>
+<li>③ ⓑ는 ⓐ와 ⓒ로부터 논리적으로 도출된다고 하겠군.</li>
+<li>④ ⓑ가 거짓으로 밝혀지면 ⓑ는 ⓒ의 주변부에서 경험과 직접 충돌한 것이라고 하겠군.</li>
+<li>⑤ ⓑ가 거짓으로 밝혀지면 ⓒ를 수정하는 방법으로는 ⓐ를 받아들일 수 없다고 하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>18번 — 정답 ⑤</strong><br />
+총체주의에서는 가설이 실용적으로 필요하다고 인정되면 제기된 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 따라서 ⓑ가 거짓으로 밝혀져도 실용적 필요에 따라 전체 지식 ⓒ를 수정함으로써 가설 ⓐ를 받아들일 수 있다. ‘ⓒ를 수정해도 ⓐ를 받아들일 수 없다’고 본 ⑤가 총체주의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.6% ②5.9% ③13.9% ④14.2% ⑤62.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>윗글의 총체주의에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 가설로부터 논리적으로 도출된 예측이 경험과 충돌하더라도 그 충돌 때문에 가설이 틀렸다고 할 수 없다.</li>
+<li>② 논리학 지식이나 수학적 지식이 중심부 지식의 한가운데에 위치한다고 해서 경험과 무관한 것은 아니다.</li>
+<li>③ 전체 지식은 어떤 결정적인 반박일지라도 피할 수 있기 때문에 수정 대상을 주변부 지식으로 한정하는 것은 잘못이다.</li>
+<li>④ 중심부 지식을 수정하면 주변부 지식도 수정해야 하겠지만, 주변부 지식을 수정한다고 해서 중심부 지식을 수정해야 하는 것은 아니다.</li>
+<li>⑤ 중심부 지식과 주변부 지식 간의 경계가 불분명하다 해도 중심부 지식 중에는 주변부 지식들과 종류가 다른 지식이 존재한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>19번 — 정답 ⑤</strong><br />
+5문단에서 총체주의는 ‘아무도 의심하지 않는 논리학 법칙 같은 지식은 분석 명제로 분류해야 하지 않느냐’는 비판에 답해야 하는 어려움이 있다고 했다. 곧 중심부 지식 중에는 주변부 지식과 종류가 다른(분석 명제와 같은) 지식이 존재한다는 비판이 가능하다. 이를 진술한 ⑤가 적절한 비판이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①15.8% ②8.9% ③9.4% ④9.0% ⑤58.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>문맥상 ㉢과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 잇따른다</li>
+<li>② 다다른다</li>
+<li>③ 봉착한다</li>
+<li>④ 회귀한다</li>
+<li>⑤ 기인한다</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+㉢‘도달하다’는 ‘목적한 곳이나 수준에 다다르다’의 의미이므로 ‘다다른다’(②)로 바꿔 쓰는 것이 가장 적절하다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.2% ②85.8% ③9.5% ④1.0% ⑤0.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>형식 논리학은 논증과 추론의 구조를 분석하여 그것이 논리적으로 타당한지를 연구하는 분야이다. 형식 논리학의 대표적인 체계로는 명제 논리와 술어 논리가 있다. ㉠<u>명제 논리</u>는 참과 거짓을 판별할 수 있는 문장을 하나의 단위로 다루며, 이 단위들을 ‘그리고’, ‘또는’, ‘만약 ~이면’ 등의 논리 연결어로 결합하여 복합 명제를 만든다. 명제 논리에서 복합 명제의 참과 거짓은 그것을 이루는 원래 명제들의 참과 거짓에 따라 결정된다. 반면 ㉡<u>술어 논리</u>는 문장을 주어와 서술어로 분해하여 명제 논리보다 문장을 더 세밀하게 분석한다. 예컨대 ‘영호는 야구 선수이다.’와 ‘지호는 야구 선수이다.’는 명제 논리에서는 서로 무관한 두 명제로 처리되지만, 술어 논리에서는 두 문장이 모두 ‘야구 선수임’이라는 동일한 특징을 진술하고 있음을 포착한다.</p>
+<p>형식 논리학은 전제와 결론이 모순 없이 연결되는 구조적 일관성, 곧 무모순성에 초점을 둔다. 무모순성이란 한 논리 체계 안에서 상반된 명제가 동시에 성립하지 않는 상태를 말한다. 무모순성은 타당성을 판정하는 데 중요한 조건으로 작용하지만, 문장들이 서로 모순되지 않는다는 사실만으로 모든 추론이 타당해지는 것은 아니다. 형식 논리학에서 추론의 타당성은 전제가 참이라고 가정했을 때 결론이 거짓일 수 없는 형식적 관계로 결정되며, 전제의 내용이 실제로 참인지 거짓인지는 타당성 판정에 관여하지 않는다. 그리하여 전제가 거짓이라 하더라도 그로부터 모순 없이 결론이 도출되면 그 추론은 타당하다고 본다. 다만 전제가 모두 참이면서 동시에 타당한 추론만을 가리켜 건전한 추론이라 하여, 타당성과 건전성은 서로 구별된다.</p>
+<p>형식 논리학에서 타당성은 추론의 형식이 결정한다. ‘모든 A는 B이다. 모든 B는 C이다. 따라서 모든 A는 C이다.’라는 형식의 추론은, A·B·C에 어떤 말을 넣더라도 전제가 참이면 결론이 반드시 참이 되도록 짜여 있다. 이때 ‘ⓐ모든 새는 물고기이다. 모든 물고기는 날개가 있다. 따라서 모든 새는 날개가 있다.’처럼 전제가 사실과 어긋나는 경우를 생각해 볼 수 있다. 그런데도 형식 논리학이 이 추론을 타당하다고 판정하는 까닭은 무엇인가? 그것은 형식 논리학이 전제의 사실 여부가 아니라, 전제가 참이라고 가정했을 때 결론이 모순 없이 따라 나오는지만을 따지기 때문이다. 곧 타당성은 ‘전제가 참이라면 결론도 참일 수밖에 없는가’라는 형식의 문제이지, ‘전제가 실제로 참인가’라는 사실의 문제가 아니다.</p>
+<p>이처럼 형식 논리학은 추론의 내용을 비워 내고 그 골격만을 다룸으로써, 분야를 가리지 않고 적용할 수 있는 보편적 판정 기준을 마련한다. 어떤 주제의 논증이든 그 골격이 동일하다면 타당성의 판정도 동일하게 내려진다. 형식 논리학이 근대에 이르러 더욱 정교하게 발전하면서 추론의 구조를 기호로 표현하는 방법이 갖추어진 것도, 내용에서 독립한 이 형식성 덕분이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 명제 논리는 참과 거짓을 판별할 수 있는 문장을 하나의 단위로 다룬다.</li>
+<li>② 술어 논리는 문장을 주어와 서술어로 나누어 명제 논리보다 세밀하게 분석한다.</li>
+<li>③ 명제 논리에서 복합 명제의 참과 거짓은 그것을 이루는 명제들의 참과 거짓으로 결정된다.</li>
+<li>④ 무모순성은 한 체계 안에서 상반된 명제가 번갈아 가며 성립하는 상태를 뜻한다.</li>
+<li>⑤ 타당한 추론은 전제가 모두 참인 경우에 한하여 건전한 추론이라 불린다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+무모순성은 상반된 명제가 "동시에 성립하지 않는 상태"인데, ④는 "번갈아 가며 성립하는 상태"라고 비틀었으니 적절하지 않아 정답입니다. ①②③은 1문단, ⑤는 2문단의 건전성 설명과 그대로 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠의 단위는 그 자체로 참과 거짓을 판별할 수 있는 문장이다.</li>
+<li>② ㉠은 논리 연결어로 단위들을 결합하여 복합 명제를 만든다.</li>
+<li>③ ㉡은 한 문장을 주어와 서술어라는 구성 요소로 나눈다.</li>
+<li>④ ‘영호는 야구 선수이다.’와 ‘지호는 야구 선수이다.’의 공통된 특징은 ㉠에서는 포착되지 않는다.</li>
+<li>⑤ ㉡은 ㉠과 달리 복합 명제를 만들 때 논리 연결어를 사용하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong>
+복합 명제를 논리 연결어로 만드는 것은 명제 논리(㉠)의 일이지, 술어 논리(㉡)에 대해 지문이 "논리 연결어를 쓰지 않는다"라고 진술한 적은 없습니다. ㉡이 ㉠과 '달리' 그렇다고 단정한 ⑤는 지문에 근거가 없으므로 적절하지 않아 정답입니다. ①②는 명제 논리, ③은 술어 논리 설명과 일치하고, ④는 명제 논리가 두 문장의 공통 특징을 못 잡는다는 1문단 예시와 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ⓐ를 형식 논리학이 타당하다고 판정하는 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 전제와 결론에 쓰인 말들이 모두 같은 분야에 속하기 때문이다.</li>
+<li>② 전제가 참이라고 가정하면 결론이 모순 없이 따라 나오기 때문이다.</li>
+<li>③ 전제의 내용이 사실과 어긋난다는 점이 결론에서 바로잡히기 때문이다.</li>
+<li>④ 결론에 쓰인 ‘날개가 있다’가 실제 사실과 일치하기 때문이다.</li>
+<li>⑤ 전제가 모두 참이면서 타당한 추론만을 건전한 추론으로 보기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+이유를 묻는 문항입니다. 지문은 "전제가 참이라고 가정했을 때 결론이 모순 없이 따라 나오는지만을 따지기 때문"에 타당하다고 못 박았죠. 이를 옮긴 ②가 정답입니다. ①④는 사실·분야의 문제로 잘못 짚었고, ③은 "바로잡힌다"는 지문에 없는 내용, ⑤는 건전성에 관한 진술이라 '타당' 판정의 이유가 아닙니다.</p>
+<p><strong>9번 [3점] — 정답 ⑤</strong>
+⑤는 추론의 타당성을 전제의 사실 여부로 가른다는 점에서 형식 논리학의 핵심을 정면으로 어깁니다. (가)는 전제가 거짓이어도 형식이 같으므로 타당하고, (다)는 전제가 모두 참이면서 같은 형식이므로 타당하니, '사실과 어긋나서 타당하지 않다 / 일치해서 타당하다'는 진술은 모두 틀렸습니다. 그래서 적절하지 않은 ⑤가 정답이에요. ①은 거짓 전제+동일 형식→타당, ②는 부분에서 전체로 비약한 부당한 형식, ③은 참인 전제+타당=건전, ④는 형식이 같으면 판정이 같다는 4문단 원리를 정확히 적용한 적절한 반응들입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음 세 추론을 살펴보자. 추론 (가)는 ‘모든 고양이는 식물이다. 모든 식물은 헤엄친다. 따라서 모든 고양이는 헤엄친다.’이고, 추론 (나)는 ‘어떤 고양이는 검다. 따라서 모든 고양이는 검다.’이다. 한편 추론 (다)는 ‘모든 고양이는 포유류이다. 모든 포유류는 동물이다. 따라서 모든 고양이는 동물이다.’이다.</p>
+</blockquote>
+<ul>
+<li>① 추론 (가)는 첫째 전제와 둘째 전제가 모두 사실과 어긋나지만, 그 형식이 ‘모든 A는 B이다. 모든 B는 C이다. 따라서 모든 A는 C이다.’와 같으므로 타당하겠군.</li>
+<li>② 추론 (나)는 일부에 관한 전제로부터 전체에 관한 결론을 끌어내고 있어, 전제가 참이어도 결론이 반드시 참이 되지는 않으므로 타당하지 않겠군.</li>
+<li>③ 추론 (다)는 전제가 모두 참이면서 타당하므로 건전한 추론이라 할 수 있겠군.</li>
+<li>④ 추론 (가)와 추론 (다)는 형식이 같으므로, 전제의 사실 여부와 무관하게 타당성 판정이 동일하게 내려지겠군.</li>
+<li>⑤ 추론 (가)는 전제가 사실과 어긋나므로 타당하지 않고, 추론 (다)는 전제가 사실과 일치하므로 타당하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>명제 논리</strong>: 참·거짓을 판별할 수 있는 문장을 한 단위로 보고, 논리 연결어로 묶어 복합 명제를 만드는 체계.</li>
+<li><strong>술어 논리</strong>: 문장을 주어와 서술어로 쪼개어 더 세밀하게 분석하는 체계. 문장들의 공통 특징을 포착할 수 있어요.</li>
+<li><strong>타당성</strong>: 전제가 참이라고 가정했을 때 결론이 거짓일 수 없도록 짜인 형식적 관계. 형식의 문제예요.</li>
+<li><strong>건전성</strong>: 타당하면서 전제가 모두 실제로 참인 성질. 타당성보다 한 조건이 더 붙습니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>명제 논리</th>
+<th>술어 논리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 단위</td>
+<td>참·거짓 판별 가능한 문장</td>
+<td>주어 + 서술어</td>
+</tr>
+<tr>
+<td>분석의 결</td>
+<td>문장 단위 결합</td>
+<td>문장 내부까지 분해</td>
+</tr>
+<tr>
+<td>할 수 있는 일</td>
+<td>복합 명제의 참·거짓 계산</td>
+<td>문장들의 공통 특징 포착</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>타당성과 건전성: <strong>타당 = 형식이 맞다, 건전 = 형식도 맞고 전제도 실제로 참이다.</strong> 건전하면 반드시 타당하지만, 타당하다고 건전한 것은 아니에요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>'모든 새는 물고기다. 모든 물고기는 날개가 있다. 따라서 모든 새는 날개가 있다'는 타당한가요?</div><div class='qa-a'>네, 형식이 옳으므로 타당합니다. 다만 전제가 거짓이라 건전하지는 않아요.</div></div>
+<div class='qa-item'><div class='qa-q'>건전한 추론은 늘 타당한가요?</div><div class='qa-a'>네. 건전성은 타당성에 '전제가 모두 참'이라는 조건이 더해진 것이라서요.</div></div>
+<div class='qa-item'><div class='qa-q'>술어 논리가 명제 논리보다 나은 점은?</div><div class='qa-a'>문장을 주어·서술어로 쪼개어 명제 논리가 못 잡는 문장들 사이의 공통 특징을 포착할 수 있습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2019학년도 수능 [39~42]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>두 명제가 모두 참인 것도 모두 거짓인 것도 가능하지 않은 관계를 모순 관계라고 한다. 예를 들어, 임의의 명제를 P라고 하면 P와 ～P는 모순 관계이다.(기호 ‘～’은 부정을 나타낸다.) P와 ～P가 모두 참인 것은 가능하지 않다는 법칙을 무모순율이라고 한다. 그런데 “㉠다보탑은 경주에 있다.”와 “㉡다보탑은 개성에 있을 수도 있었다.”는 모순 관계가 아니다. 현실과 다르게 다보탑을 경주가 아닌 곳에 세웠다면 다보탑의 소재지는 지금과 달라졌을 것이다. 철학자들은 이를 두고, P와 ～P가 모두 참인 혹은 모두 거짓인 가능세계는 없지만 다보탑이 개성에 있는 가능세계는 있다고 표현한다.</p>
+<p>‘가능세계’의 개념은 일상 언어에서 흔히 쓰이는 필연성과 가능성에 관한 진술을 분석하는 데 중요한 역할을 한다. ‘P는 가능하다’는 P가 적어도 하나의 가능세계에서 성립한다는 뜻이며, ‘P는 필연적이다’는 P가 모든 가능세계에서 성립한다는 뜻이다. “만약 Q이면 Q이다.”를 비롯한 필연적인 명제들은 모든 가능세계에서 성립한다. “다보탑은 경주에 있다.”와 같이 가능하지만 필연적이지는 않은 명제는 우리의 현실세계를 비롯한 어떤 가능세계에서는 성립하고 또 어떤 가능세계에서는 성립하지 않는다.</p>
+<p>가능세계를 통한 담론은 우리의 일상적인 몇몇 표현들을 보다 잘 이해하는 데 도움이 된다. 다음 상황을 생각해 보자. 나는 현실에서 아침 8시에 출발하는 기차를 놓쳤고, 지각을 했으며, 내가 놓친 기차는 제시간에 목적지에 도착했다. 그리고 나는 “만약 내가 8시 기차를 탔다면, 나는 지각을 하지 않았다.”라고 주장한다. 그런데 전통 논리학에서는 “만약 A이면 B이다.”라는 형식의 명제는 A가 거짓인 경우에는 B의 참 거짓에 상관없이 참이라고 규정한다. 그럼에도 ⓐ내가 만약 그 기차를 탔다면 여전히 지각을 했을 것이라고 주장하지는 않는 이유는 무엇일까? 내가 그 기차를 탄 가능세계들을 생각해 보면 그 이유를 알 수 있다. 그 가능세계 중 어떤 세계에서 나는 여전히 지각을 한다. 가령 내가 탄 그 기차가 고장으로 선로에 멈춰 운행이 오랫동안 지연된 세계가 그런 예이다. 하지만 내가 기차를 탄 세계들 중에서, 내가 기차를 타고 별다른 이변 없이 제시간에 도착한 세계가 그렇지 않은 세계보다 우리의 현실세계와의 유사성이 더 높다. 일반적으로, A가 참인 가능세계들 중에 비교할 때, B도 참인 가능세계가 B가 거짓인 가능세계보다 현실세계와 더 유사하다면, 현실세계의 나는 A가 실현되지 않은 경우에, 만약 A라면 ～B가 아닌 B이라고 말할 수 있다.</p>
+<p>가능세계는 다음의 네 가지 성질을 갖는다. 첫째는 가능세계의 일관성이다. 가능세계는 명칭 그대로 가능한 세계이므로 어떤 것이 가능하지 않다면 그것이 성립하는 가능세계는 없다. 둘째는 가능세계의 포괄성이다. 이것은 어떤 것이 가능하다면 그것이 성립하는 가능세계는 존재한다는 것이다. 셋째는 가능세계의 완결성이다. 어느 세계에서든 임의의 명제 P에 대해 “P이거나 ～P이다.”라는 배중률이 성립한다. 즉 P와 ～P 중 하나는 반드시 참이라는 것이다. 넷째는 가능세계의 독립성이다. 한 가능세계는 모든 시간과 공간을 포함해야만 하며, 연속된 시간과 공간에 포함된 존재들은 모두 동일한 하나의 세계에만 속한다. 한 가능세계 W1의 시간과 공간이, 다른 가능세계 W2의 시간과 공간으로 이어질 수는 없다. W1과 W2는 서로 시간과 공간이 전혀 다른 세계이다.</p>
+<p>가능세계의 개념은 철학에서 갖가지 흥미로운 질문과 통찰을 이끌어 내며, 그에 관한 연구 역시 활발히 진행되고 있다. 나아가 가능세계를 활용한 논의는 오늘날 인지 과학, 언어학, 공학 등의 분야로 그 응용의 폭을 넓히고 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 배중률은 모든 가능세계에서 성립한다.</li>
+<li>② 모든 가능한 명제는 현실세계에서 성립한다.</li>
+<li>③ 필연적인 명제가 성립하지 않는 가능세계가 있다.</li>
+<li>④ 무모순율에 의하면 P와 ～P가 모두 참인 것은 가능하다.</li>
+<li>⑤ 전통 논리학에 따르면 “만약 A이면 B이다.”의 참 거짓은 A의 참 거짓과 상관없이 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠이 성립하지 않는 가능세계가 존재한다.</li>
+<li>② “만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”가 성립하는 가능세계 중에는 ㉠이 거짓인 가능세계는 없다.</li>
+<li>③ ㉡과 “다보탑은 개성에 있지 않다.”는 모순 관계가 아니다.</li>
+<li>④ 만약 ㉡이 거짓이라면 어떤 가능세계에서도 다보탑이 개성에 있지 않다.</li>
+<li>⑤ ㉠과 ㉡은 현실세계에서 둘 다 참인 것이 가능하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ⓐ에 대한 답으로 가장 적절한 것은?</p>
+<ul>
+<li>① 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 지각을 한 가능세계와 지각을 하지 않은 가능세계가 현실세계와의 유사성의 정도가 다르기 때문이다.</li>
+<li>② 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 기차 고장이 자주 일어나지 않는 가능세계가 현실세계와의 유사성이 높기 때문이다.</li>
+<li>③ 내가 그 기차를 탄 가능세계들끼리 비교할 때 내가 지각을 한 가능세계가 내가 지각을 하지 않은 가능세계에 비해 현실세계와의 유사성이 더 낮기 때문이다.</li>
+<li>④ 내가 그 기차를 탄 가능세계들끼리 비교할 때 그 가능세계들의 대다수에서 내가 지각을 하지 않았기 때문이다.</li>
+<li>⑤ 내가 그 기차를 탄 것이 현실세계에서 거짓이기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>42</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+명제 “모든 학생은 연필을 쓴다.”와 “어떤 학생도 연필을 쓰지 않는다.”는 반대 관계이다. 이 말은, 두 명제 다 참인 것은 가능하지 않지만, 둘 중 하나만 참이거나 둘 다 거짓인 것은 가능하다는 뜻이다.</p>
+</blockquote>
+<ul>
+<li>① 가능세계의 완결성과 독립성에 따르면, 모든 학생이 연필을 쓰는 가능세계가 존재한다는 것과 어떤 학생도 연필을 쓰지 않는 가능세계가 존재한다는 것 중 하나는 반드시 참이고, 그중 한 세계의 시간과 공간이 다른 세계로 이어질 수 없겠군.</li>
+<li>② 가능세계의 포괄성과 독립성에 따르면, “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 그 세계에 속한 한 명의 학생이 연필을 쓰는 가능세계들이 존재하고, 그 세계들의 시간과 공간은 서로 단절되어 있겠군.</li>
+<li>③ 가능세계의 완결성에 따르면, 어느 세계에서든 “어떤 학생은 연필을 쓴다.”와 “어떤 학생은 연필을 쓰지 않는다.” 중 하나는 반드시 참이겠군.</li>
+<li>④ 가능세계의 포괄성에 따르면, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 가능세계들이 있겠군.</li>
+<li>⑤ 가능세계의 일관성에 따르면, 학생들 중 절반은 연필을 쓰고 절반은 연필을 쓰지 않는 가능세계가 존재하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>논리의 규칙은 어디에서 그 타당함을 얻는가. 형식 논리학은 모순율과 같은 규칙을 출발점으로 삼아 추론의 타당성을 판정하지만, 그 규칙 자체가 왜 타당한지는 묻지 않는다. 후설은 이 점을 들어, 형식 논리학이 논리의 타당성을 떠받치는 근본적 근거를 제시하지 못한다고 보았다. 그는 선험적 논리학을 통해 ‘그 타당성이 어떻게 가능한가’, ‘우리는 그것을 어떻게 의식 속에서 구성하고 인식하는가’를 묻고자 하였다.</p>
+<p>후설에 따르면 논리의 규칙은 경험에서 귀납적으로 얻어진 것이 아니라, 우리가 의미를 구성하고 판단을 가능하게 하는 의식의 선험적 구조에서 비롯된다. 그는 이 의식의 작용을 탐구하기 위해 직관의 개념을 핵심으로 삼는다. 직관은 단순한 감각적 인상이나 본능적 통찰이 아니라, 언어나 기호의 매개 없이 의식이 대상의 본질을 직접 꿰뚫어 보는 행위를 말한다. 후설은 모든 참된 인식이 이러한 직관에 근거해야 한다고 본다.</p>
+<p>후설은 인식을 두 가지로 구별한다. 하나는 ⓐ기호적 인식으로, 이는 대상을 직접 마주하지 않은 채 언어나 기호를 결합하여 그 의미를 빈자리로만 지시하는 인식이다. 다른 하나는 ⓑ직관적 인식으로, 이는 그 빈자리를 의식이 대상의 본질로 직접 채워 충족하는 인식이다. ‘삼각형은 세 변을 가진 도형이다.’라는 명제를 예로 들면, 그 명제를 단지 기호의 결합으로 받아들이는 데 그칠 때 그것은 기호적 인식에 머문다. 그러나 세 변이 맞물린 도형을 의식 속에 떠올리고 — 이는 단순히 머릿속에 그림을 그리는 일이 아니라 그 의미가 대상의 본질로 충족되는 일인데 — 그것이 ‘삼각형’이라는 개념으로 성립함을 직접 파악할 때, 그 인식은 직관적 인식이 된다. 후설은 기호적 인식이 직관적 인식을 통해 충족될 때 비로소 그 판단이 참된 인식으로 정당화된다고 본다.</p>
+<p>이로부터 ㉠<u>후설은 논리의 타당성이 의식의 직관적 활동에 의해 정당화된다고 결론짓는다.</u> 우리가 모순을 배제하는 규칙을 자명하게 받아들이는 까닭은, 그 규칙의 의미가 의식의 직관을 통해 충족되기 때문이라는 것이다. 곧 논리의 규칙은 의식 바깥에서 주어진 것이 아니라, 의식이 스스로 의미를 구성하고 정당화하는 선험적 활동에 기초한다. 이런 점에서 선험적 논리학은 형식 논리학이 이미 전제하고 있는 조건을 되묻는 ‘논리의 논리학’이라 할 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 형식 논리학은 모순율과 같은 규칙을 추론의 타당성을 판정하는 출발점으로 삼는다.</li>
+<li>② 후설은 형식 논리학이 논리의 타당성을 떠받치는 근거를 제시하지 못한다고 보았다.</li>
+<li>③ 후설은 논리의 규칙이 경험에서 귀납적으로 얻어진 것이 아니라고 보았다.</li>
+<li>④ 후설은 직관을 본능적 통찰의 일종으로 보아 감각적 인상과 동일시하였다.</li>
+<li>⑤ 후설은 참된 인식이 직관에 근거해야 한다고 보았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong>
+지문 2문단은 직관이 "단순한 감각적 인상이나 본능적 통찰이 아니"라고 분명히 선을 긋습니다. 그런데 ④는 직관을 본능적 통찰·감각적 인상과 같다고 했으니 정반대로, 적절하지 않아 정답입니다. ①②③⑤는 각각 1·2문단 내용과 그대로 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>ⓐ, ⓑ를 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 대상을 직접 마주하지 않고 기호를 결합하여 의미를 지시한다면 그 인식에는 ⓑ가 작동한다.</li>
+<li>② 의식이 대상의 본질을 직접 채워 의미를 충족한다면 그 인식에는 ⓐ가 작동한다.</li>
+<li>③ 어떤 판단이 기호의 결합에만 머문다면 그 판단에는 ⓑ가 결여되어 있다.</li>
+<li>④ 세 변이 맞물린 도형을 떠올려 ‘삼각형’의 성립을 직접 파악한다면 그 인식에는 ⓐ만 작동한다.</li>
+<li>⑤ 어떤 판단이 참된 인식으로 정당화되려면 ⓐ가 ⓑ를 배제해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong>
+ⓑ(직관적 인식)는 빈자리를 본질로 직접 채우는 인식이므로, 판단이 기호의 결합에만 머물면 ⓑ가 빠져 있는 셈입니다. 이를 옳게 진술한 ③이 정답입니다. ①은 ⓐ가 작동하는 경우인데 ⓑ라고 뒤바꿨고, ②도 ⓑ를 ⓐ로 뒤집었습니다. ④는 직관적 파악이므로 ⓑ가 작동하는데 'ⓐ만'이라 했고, ⑤는 후설이 'ⓐ가 ⓑ로 충족될 때 정당화된다'고 본 것이지 '배제'가 아니므로 틀렸어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 논리의 규칙이 경험적 관찰을 통해 사후에 입증되기 때문이다.</li>
+<li>② 모순을 배제하는 규칙이 의식 바깥에서 주어진 것이기 때문이다.</li>
+<li>③ 기호적 인식만으로 판단의 참됨이 남김없이 보장되기 때문이다.</li>
+<li>④ 규칙을 자명하게 받아들이는 일이 의식의 직관을 통한 의미 충족에 기인하기 때문이다.</li>
+<li>⑤ 형식 논리학이 전제의 참·거짓을 따지지 않고 타당성을 판정하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+이유를 묻는 문항입니다. ㉠의 근거는 4문단에 "규칙을 자명하게 받아들이는 까닭은 그 규칙의 의미가 의식의 직관을 통해 충족되기 때문"이라고 제시돼 있죠. 이를 옮긴 ④가 정답입니다. ①은 후설이 거부하는 경험주의, ②는 "의식 바깥에서 주어진 것이 아니라"는 지문과 정반대, ③은 기호적 인식만으로는 충족되지 않는다는 지문과 어긋나며, ⑤는 형식 논리학에 관한 진술이라 ㉠의 이유가 아닙니다.</p>
+<p><strong>13번 [3점] — 정답 ⑤</strong>
+㉰는 '둥근 사각형'처럼 문법에 맞게 읽히기는 해도 본질을 의식 속에 결코 그릴 수 없는 경우, 곧 직관적 충족이 끝내 일어나지 못한 사례입니다. 그런데 ⑤는 ㉰를 '직관으로 충족되어 참된 인식으로 정당화된 사례'라고 정반대로 해석했으니 적절하지 않아 정답입니다. ①은 ㉮=기호적 인식, ②는 ㉯=직관적 인식, ③은 충족이 더해져야 정당화된다는 후설의 틀, ④는 ㉰의 미충족을 정확히 짚은 적절한 탐구들입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 ㉮~㉰를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 학생이 후설의 관점에서 세 경우를 검토하였다. ㉮의 경우, 학생은 ‘정십이면체는 열두 개의 면을 가진 도형이다.’라는 명제를 외운 정의대로 옳다고 판단하지만 그 도형을 의식 속에 또렷이 그려 내지는 못한다. ㉯의 경우, 학생은 그 도형의 열두 면이 맞물린 입체를 의식 속에 떠올리고 그것이 ‘정십이면체’로 성립함을 직접 파악한다. ㉰의 경우, 학생은 ‘둥근 사각형’이라는 표현을 문법에 맞게 읽어 내지만 그것에 대응하는 본질을 의식 속에 결코 그려 낼 수 없다.</p>
+</blockquote>
+<ul>
+<li>① ㉮에서 학생의 인식은 의미를 빈자리로만 지시하는 데 머무르므로 기호적 인식에 해당하겠군.</li>
+<li>② ㉯에서 학생의 인식은 빈자리를 대상의 본질로 직접 채우므로 직관적 인식에 해당하겠군.</li>
+<li>③ ㉮의 판단이 참된 인식으로 정당화되려면 ㉯에서와 같은 직관적 충족이 더해져야 하겠군.</li>
+<li>④ ㉰는 기호의 결합을 문법대로 읽어 냈으나 그 의미가 직관으로 충족되지 못한 경우이겠군.</li>
+<li>⑤ ㉰는 기호적 인식이 직관적 인식으로 충족된 사례이므로 참된 인식으로 정당화되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기호적 인식</strong>: 대상을 직접 마주하지 않고 언어·기호를 결합해 의미를 '빈자리'로만 가리키는 인식.</li>
+<li><strong>직관적 인식</strong>: 그 빈자리를 의식이 대상의 본질로 직접 채워 충족하는 인식.</li>
+<li><strong>충족</strong>: 기호적 인식의 빈 의미가 직관적 인식으로 채워지는 일. 이때 비로소 참된 인식으로 정당화돼요.</li>
+<li><strong>선험적 활동</strong>: 의식이 스스로 의미를 구성하고 정당화하는, 경험 이전의 작용.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<pre><code>[기호적 인식]  '삼각형은 세 변을 가진 도형'을
+                기호의 결합으로만 받아들임 — 의미가 '빈자리'
+        │
+        │  ── 충족(직관이 빈자리를 본질로 채움) ──▶
+        ▼
+[직관적 인식]  세 변이 맞물린 도형의 의미가 본질로 채워져
+                '삼각형'의 성립을 직접 파악 — 참된 인식으로 정당화
+</code></pre>
+<blockquote>
+<p>후설의 결론: 우리가 모순을 배제하는 규칙을 '당연하다'고 느끼는 까닭은, 그 규칙의 의미가 의식의 직관을 통해 채워지기 때문입니다. 논리의 타당함은 의식 바깥이 아니라, 의식의 선험적 활동 안에서 정당화돼요. 이때 '직관'은 머릿속에 그림을 그리는 단순한 심상이 아니라, 의미가 대상의 본질로 충족되는 의식의 활동이라는 점에 유의하세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>'둥근 사각형'을 문법에 맞게 읽을 수 있는데도 참된 인식이 아닌 까닭은?</div><div class='qa-a'>기호는 결합되지만 그에 대응하는 본질을 의식 속에 직관으로 채울 수 없어 충족이 일어나지 않기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>기호적 인식만으로 판단이 정당화될 수 있나요?</div><div class='qa-a'>아니요. 직관적 인식으로 충족될 때 비로소 참된 인식으로 정당화됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설이 직관을 '본능적 통찰'과 구별한 이유는?</div><div class='qa-a'>직관은 기호의 매개 없이 대상의 본질을 직접 파악하는 의식의 활동으로, 단순한 감각이나 본능과는 격이 다르기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 9월 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>인간의 본성에 관한 서로 다른 두 관점이 있다. 종교적 인간관에 따르면, 인간에게는 물리적 실체인 몸 이외에 비물리적 실체인 영혼이 있다. 영혼은 물리적 몸과 완전히 구별되며 인간의 결정의 원천이다. 반면 유물론적 인간관에 따르면, 인간은 물리적 몸에 지나지 않는다. 물리적 몸 이외에 영혼은 존재하지 않는다. 따라서 인간의 결정은 단지 뇌에서 일어나는 신경 사건이다. 이러한 두 관점 중 유물론적 인간관을 가정할 때, 인간은 자유롭게 선택할 수 있을까? 즉 인간에게 자유의지가 있을까? 가령 갑이 냉장고 문을 여니 딸기 우유와 초코 우유만 있다고 해 보자. 갑은 이것들 중 하나를 자유의지로 선택할 수 있을까?</p>
+<p>이러한 질문과 관련하여 반자유의지 논증은 갑에게 자유의지가 없다고 결론 내린다. 우선 임의의 선택은 이전 사건들에 의해 선결정되거나 무작위로 일어난다. 여기서 무작위로 일어난다는 것은 선결정되지 않는다는 것을 의미한다. 이러한 전제하에 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려한다. 첫 번째로 임의의 선택이 그 이전 사건들에 의해 선결정된다고 가정해 보자. 반자유의지 논증에서는 이 경우 우리에게 자유의지가 없다고 결론 내린다. 가령 갑의 딸기 우유 선택이 심지어 갑이 태어나기도 전에 선결정된 것이라면 갑이 자유의지로 그것을 선택한 것이라고 보기 어려울 것이다. 두 번째로 임의의 선택이 무작위로 일어난 것이라 가정해 보자. 반자유의지 논증에서는 이 경우에도 우리에게 자유의지가 없다고 결론 내린다. 가령 갑의 딸기 우유 선택이 단지 갑의 뇌에서 무작위로 일어난 신경 사건이라고 한다면, 그것은 자유의지의 산물이라고 보기 어려울 것이다.</p>
+<p>그러나 이 논증에 관한 다양한 비판이 가능하다. ㉠반자유의지 논증을 비판하는 한 입장에 따르면 반자유의지 논증의 선결정 가정을 고려할 때의 결론은 받아들여야 하지만, 무작위 가정을 고려할 때의 결론은 받아들일 필요가 없다. 따라서 반자유의지 논증의 결론도 받아들일 필요가 없다고 주장한다. 그 이유는 아래와 같다.</p>
+<p>임의의 선택이 나의 자유의지의 산물이 되기 위해서는 다음 두 가지 조건을 모두 충족해야 한다. 첫째, 내가 그 선택의 주체여야 한다. 둘째, 나의 선택은 그 이전 사건들에 의해 선결정되지 않아야 한다. 그런데 어떤 선택이 그 이전 사건들에 의해 선결정되어 있다면, 이것은 자유의지를 위한 둘째 조건과 충돌한다. 따라서 반자유의지 논증의 선결정 가정을 고려할 때의 결론인 우리에게 자유의지가 없다는 점을 받아들여야 한다. 물론 이러한 자유의지와 다른 의미를 지닌 자유의지가 있을 수 있다. 만약 ‘내가 자유롭게 선택했다’는 말이 단지 ‘내가 하고자 원했던 것을 했다’는 ⓐ욕구 충족적 자유의지를 의미한다면, 나의 선택이 그 이전 사건들에 의해 선결정되어 있든 그렇지 않든 그것은 내 자유의지의 산물일 수 있다. 그러나 이러한 자유의지는 ⓑ여기서 염두에 두는 두 가지 조건을 모두 충족하는 자유의지와 다르다.</p>
+<p>다음으로, 어떤 선택이 무작위로 일어난 것이라고 하더라도 그 선택의 주체는 나일 수 있다. 유물론적 인간관에 따르면 ‘갑이 딸기 우유를 선택했다’는 것은 ‘선택 시점에 갑의 뇌에서 신경 사건이 발생했다’는 것을 의미한다. 갑의 이러한 신경 사건이 이전 사건들에 의해 선결정되지 않은 것으로 가정해 보자. 이러한 가정 아래에서도 갑은 그 선택의 주체일 수 있다. 왜냐하면 이 가정은 선택 시점에 발생한 뇌의 신경 사건으로서 ‘갑이 딸기 우유를 선택했다’는 사실을 바꾸지 않기 때문이다. 결국 ㉡반자유의지 논증의 무작위 가정을 고려할 때의 결론은 받아들일 필요가 없다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 유물론적 인간관은 영혼의 존재를 인정하지 않는다.</li>
+<li>② 유물론적 인간관은 인간의 선택을 물리적 사건으로 본다.</li>
+<li>③ 종교적 인간관은 인간이 물리적 실체로만 구성된다고 보지 않는다.</li>
+<li>④ 종교적 인간관은 인간의 선택에서 비물리적 실체가 하는 역할을 인정한다.</li>
+<li>⑤ 반자유의지 논증은 임의의 선택이 선결정되지 않을 가능성을 고려하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+2문단에 따르면 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려하며, 무작위로 일어난다는 것은 곧 선결정되지 않는다는 의미다. 즉 선결정되지 않을 가능성도 고려하므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①0.6% ②5.3% ③1.8% ④3.4% ⑤89.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>ⓐ, ⓑ를 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 어떤 선택을 원해서 한다면 그 선택을 한 사람에게 ⓐ가 있을 수 없다.</li>
+<li>② 어떤 선택을 원해서 한다면 그 선택을 한 사람에게 ⓑ가 있을 수 없다.</li>
+<li>③ 어떤 선택이 선결정되어 있다면 그 선택을 한 사람에게 ⓐ가 있을 수 없다.</li>
+<li>④ 어떤 선택이 선결정되어 있다면 그 선택을 한 사람에게 ⓑ가 있을 수 없다.</li>
+<li>⑤ 어떤 선택을 원해서 하고 그 선택이 선결정되어 있지 않다면 그 선택을 한 사람에게 ⓐ와 ⓑ 중 어느 것도 있을 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong><br />
+ⓑ(두 조건을 모두 충족하는 자유의지)는 내가 선택의 주체이고 그 선택이 선결정되지 않아야 성립한다. 어떤 선택이 선결정되어 있다면 둘째 조건을 충족하지 못하므로 ⓑ가 있을 수 없다(④). 반면 ⓐ(욕구 충족적 자유의지)는 선결정 여부와 무관하게 성립할 수 있다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.9% ②8.2% ③9.3% ④77.1% ⑤4.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉡의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 비물리적 실체인 영혼은 존재하지 않기 때문이다.</li>
+<li>② 어떤 선택은 무작위로 일어난 것이 아니기 때문이다.</li>
+<li>③ 어떤 선택은 선결정되어 있지만 욕구 충족적 자유의지의 산물이기 때문이다.</li>
+<li>④ 반자유의지 논증의 선결정 가정을 고려할 때의 결론이 받아들여져야 하기 때문이다.</li>
+<li>⑤ 어떤 선택은 자유의지의 산물이 되기 위한 두 가지 조건을 모두 충족할 수 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+5문단에 따르면 어떤 선택이 무작위로(=선결정되지 않게) 일어났더라도 그 선택의 주체는 나일 수 있다. 즉 무작위로 일어난 선택은 ‘주체가 나일 것’과 ‘선결정되지 않을 것’이라는 자유의지의 두 조건을 모두 충족할 수 있으므로, 무작위 가정을 고려할 때의 결론(자유의지 없음)은 받아들일 필요가 없다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①3.1% ②9.0% ③12.2% ④11.6% ⑤64.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 ㉠에 입각하여 학생이 〈보기〉와 같은 탐구 활동을 한다고 할 때, [A]에 들어갈 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+자유의지와 관련된 H의 가설과 실험을 보고, 반자유의지 논증에 대해 논의해 보자.</p>
+<p><strong>∙ H의 가설</strong>
+　인간이 결정을 내릴 때 발생하는 신경 사건이 있기 전에 그가 어떤 선택을 할지 알게 해 주는 다른 신경 사건이 그의 뇌에서 매번 발생한다.</p>
+<p><strong>∙ H의 실험</strong>
+　피실험자의 왼손과 오른손에 각각 버튼 하나가 주어진다. 피실험자는 두 버튼 중 어떤 버튼을 누를지 특정 시점에 결정한다. 그 결정의 시점과 그 이전에 발생하는 뇌의 신경 사건을 동일한 피실험자에게서 100차례 관측한다.</p>
+<p><strong>◦ 논의:</strong> ［A］ (원문: 빈 상자)</p>
+</blockquote>
+<ul>
+<li>① H의 가설이 실험 결과에 의해 입증된다면, 선결정 가정을 고려할 때의 결론을 거부해야 한다.</li>
+<li>② H의 가설이 실험 결과에 의해 입증된다면, 무작위 가정은 참일 수밖에 없다.</li>
+<li>③ H의 가설이 실험 결과에 의해 입증되지 않는다면, 선결정 가정은 참일 수밖에 없다.</li>
+<li>④ H의 가설이 실험 결과에 의해 입증되지 않는다면, 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니다.</li>
+<li>⑤ H의 가설의 실험 결과에 의한 입증 여부와 상관없이, 반자유의지 논증의 결론을 받아들여야 한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+H의 실험은 인간의 선택(신경 사건)이 그 이전의 다른 신경 사건과 관련되는지, 즉 선결정되어 있는지를 알아보는 것이다. ㉠의 입장은 선결정 가정의 결론은 받아들이되 무작위 가정의 결론은 받아들일 필요가 없다고 본다. 따라서 H의 가설이 입증되지 않더라도(선택이 무작위라 하더라도) 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니라고 논의할 수 있다(④).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.3% ②10.1% ③12.2% ④61.9% ⑤7.1%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>형식 논리학과 현상학 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='형식 논리학과 현상학 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

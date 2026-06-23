@@ -1,0 +1,723 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>찻주전자 효과와 젖음성 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>찻주전자 효과와 젖음성 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 주전자나 생수병으로 물을 따르다가 물줄기가 주둥이 끝에서 똑 떨어지지 않고 바깥 면을 타고 주르륵 흘러내려 식탁을 적신 적이 있죠? 왈칵 쏟을 때는 멀쩡하던 물이, 따르는 속도를 줄이면 갑자기 주둥이를 휘감고 흘러내립니다. 이렇게 액체가 용기 바깥 벽을 타고 새는 현상을 <strong>찻주전자 효과</strong>, 또는 영어로 <em>드리블링</em>이라고 불러요. 농구에서 공을 바닥에 튕기며 끌고 가듯, 물이 주둥이 표면을 끌고 내려간다는 뜻이지요.</p>
+<p>왜 이런 일이 생길까요? 핵심은 세 가지예요. 첫째, <strong>젖음성</strong>입니다. 고체 표면에서 액체가 얼마나 잘 퍼지는지를 가리키는 말인데, 물을 좋아하는 표면(친수성)이면 물이 넓게 퍼지며 잘 달라붙고, 물을 싫어하는 표면(소수성)이면 물이 방울져 잘 안 붙어요. 둘째, <strong>유속</strong>, 곧 흐르는 속도입니다. 빠르게 흐르면 물줄기가 곧장 뻗어 나가 떨어지지만, 느리면 주둥이 가장자리를 따라 휘어져 벽으로 돌아 들어가요. 셋째, <strong>주둥이 가장자리의 모양</strong>입니다. 끝이 두툼하고 둥글면 물이 그 곡면을 타고 살살 돌아 들어가기 쉽고, 얇고 날카로우면 물이 모서리에서 뚝 끊겨 떨어져요.</p>
+<p>이 세 가지가 만나 정해지는 것이 <strong>이탈 각</strong>입니다. 주둥이를 떠나는 물줄기가 똑바로 아래로 향하는 선과 이루는 각도인데, 이 각이 작을수록 물이 벽 쪽으로 바싹 붙어 흘러 찻주전자 효과가 심해져요. 거꾸로 말하면, 이 각을 크게 키우면 새는 걸 막을 수 있다는 뜻이지요.</p>
+<blockquote>
+<p>한마디로: <strong>찻주전자 효과는 "느리게 따르면 물이 주둥이 벽을 타고 새는" 현상</strong>이고, 그 정도는 젖음성·유속·주둥이 모양이 함께 정하는 이탈 각으로 가늠해요. 이 단원은 그 원리와, 무엇이 효과를 키우고 줄이는지, 그리고 어떻게 막는지를 차근차근 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>찻주전자 효과(드리블링)</strong> 가 있습니다. 무엇이 이 현상을 일으키고(원인), 어떤 조건에서 더 심해지거나 약해지며(증감), 어떻게 하면 막을 수 있는지(해결)를 세 세트로 나누어 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>찻주전자 효과 (느린 유속에서 액체가 주둥이 벽을 타고 흐름)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>주둥이 가장자리의 곡률(반경)이 작아질수록 무엇이 어떻게 달라지는지, 그리고 찻주전자 효과를 막으려면 어떤 값을 골라야 하는지, 설계의 관점에서 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>젖음성·유속·곡률·점성이 이탈 각에 각각 어떻게 작용하는지(또는 작용하지 않는지)를 나란히 견주며, 그림으로 이탈 각의 정의를 확인합니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>유속이 줄면서 액체가 끝내 벽을 타고 흐르게 되는 과정을, 원심력과 다른 힘이 다투는 하나의 사슬로 따라갑니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 찻주전자 효과가 왜 일어나는지, 어떤 조건에서 심해지는지, 그리고 어떻게 막는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>생수병이나 찻주전자의 내용물을 따를 때, 빠르게 따르면 잘 쏟아지던 액체가 따르는 속력이 줄면 주둥이 바깥 면을 타고 흘러내린다. 이처럼 액체가 용기 바깥 면을 타고 흐르는 현상을 찻주전자 효과 또는 드리블링이라 한다. 2010년 뒤에즈 연구 팀은 이 현상의 원인이 점성이 아니라 주둥이의 젖음성과 형태, 그리고 유속에 있음을 실험으로 밝혔다고 보고된다. 젖음성은 고체 표면에서 액체가 잘 퍼지는 정도로, 젖음성이 클수록 액체는 표면에서 얇게 퍼지며 표면에 더 잘 달라붙는다. 물에 대한 젖음성이 큰 정도를 친수성, 작은 정도를 소수성이라 한다. 친수성 표면에서는 물이 넓게 퍼져 가장자리를 감싸며 흐르려 하고, 소수성 표면에서는 물이 방울처럼 뭉쳐 표면에서 떨어져 나가려 한다.</p>
+<p>찻주전자 효과의 정도는 이탈 각으로 가늠된다. 주둥이에서 떨어져 나오는 액체가 중력 방향을 나타내는 연직선과 이루는 각을 이탈 각이라 하며, 이탈 각이 작을수록 액체가 주둥이 벽에 가깝게 붙어 흘러 찻주전자 효과가 커진다. 이탈 각이 90°에 가까우면 액체가 주둥이에서 옆으로 곧게 뻗어 나가 바깥 면에 닿지 않지만, 이탈 각이 0°에 가까워지면 액체가 주둥이 벽을 따라 곧장 아래로 흘러 효과가 가장 심해진다. 유속이 충분히 클 때에는 이탈 각이 90°에 가깝게 유지되지만, 유속이 줄면 이탈 각도 작아진다. 같은 유속에서는 주둥이의 젖음성이 클수록 이탈 각이 작아진다. 액체가 벽을 타느냐 주둥이에서 이탈하느냐는 어떤 속력 값을 경계로 갈리는데, 그 속력보다 느리게 흐르면 액체는 주둥이 가장자리의 휘어진 곡면을 따라 벽으로 돌아 흐르고, 그 속력보다 빠르게 움직이면 가장자리에서 곧장 이탈한다. 이 경계가 되는 속력은 주둥이의 젖음성과 형태에 따라 달라지므로, 같은 속력으로 따르더라도 어떤 주둥이에서는 액체가 새고 어떤 주둥이에서는 새지 않는다.</p>
+<p>주둥이 가장자리의 곡률은 그 가장자리의 곡률 반경에 반비례한다. 곡률 반경이 큰 가장자리는 두툼하고 둥글며, 곡률 반경이 작은 가장자리는 얇고 날카롭다. 액체가 가장자리의 곡면을 타고 돌아 흐를 때, 액체를 가장자리에서 떼어 내려는 원심력은 유속이 빠를수록, 그리고 곡률 반경이 작을수록 크게 작용한다. 곡면이 급하게 휠수록 액체가 방향을 바꾸는 정도가 커지고, 그만큼 바깥으로 튀어 나가려는 원심력이 강해지기 때문이다. 곡률 반경을 줄이면 원심력이 커져 액체가 벽에 붙지 못하고 이탈하므로, 같은 유속에서도 이탈 각이 커지고 찻주전자 효과는 약해진다. 다만 곡률 반경을 무작정 줄일 수는 없다. 가장자리가 지나치게 얇고 날카로우면 가공이 어렵고 쉽게 손상되며, 액체가 한쪽으로 쏠려 따르는 방향을 정확히 겨누기 어려워진다. 그래서 실제 용기를 설계할 때에는 찻주전자 효과를 충분히 억제하면서도 가공과 사용에 무리가 없는 적절한 곡률 반경을 골라야 한다. 와인병 끝에 꽂아 쓰는 와인 따르개가 가장자리의 곡률 반경을 작게 만든 장치로, 속력이 느려도 드리블링이 잘 일어나지 않도록 한 것이다.</p>
+<p>한편 액체의 점성은 액체의 끈끈한 정도로, 점성이 클수록 액체는 잘 흐르지 않는다. 점성이 크면 액체가 느리게 따라진다는 인상을 주므로 찻주전자 효과와 관련이 있을 듯하지만, 뒤에즈 연구 팀의 실험에서 유속과 젖음성을 같게 한 두 대상에 점성만 다르게 했을 때 이탈 각에 유의미한 차이는 나타나지 않았다. 점성은 액체가 흐르는 속도에는 영향을 주지만, 일단 유속이 같게 맞추어지면 가장자리에서 액체가 벽으로 휘어드는 정도를 바꾸지는 못하기 때문이다. 곧 찻주전자 효과는 점성과는 무관하며, 이탈 각을 정하는 것은 유속과 젖음성, 그리고 가장자리의 곡률이다.</p>
+<p>이러한 결과는 찻주전자 효과를 막는 방법으로 이어진다. 주둥이에서 일정한 값 이상으로 액체의 속력을 유지하면 이탈 각이 크게 유지되어 효과가 나타나지 않으며, 가장자리의 곡률 반경을 줄이면 같은 속력에서도 원심력이 커져 액체가 벽에 붙지 못한다. 가장 효과적인 방법은 주둥이 끝을 물에 대한 젖음성이 매우 작은 초소수성 재료로 코팅하는 것으로, 이렇게 하면 액체의 속력이 느려 방울방울 떨어질 때에도 바깥 면을 타고 흐르지 않는다. 이 점은 효과를 막을 방법이 점성을 바꾸는 데 있지 않고 속력을 유지하거나 가장자리의 형태와 젖음성을 손보는 데 있음을 ㉠<u>일러 준다.</u></p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 찻주전자 효과는 따르는 속력이 줄어들 때 잘 나타난다.</li>
+<li>② 젖음성이 큰 표면에서는 액체가 얇게 퍼진다.</li>
+<li>③ 이탈 각이 작을수록 액체가 주둥이 벽에 가깝게 붙어 흐른다.</li>
+<li>④ 곡률 반경이 큰 가장자리는 얇고 날카로운 형태를 띤다.</li>
+<li>⑤ 점성만 다른 두 대상에서 이탈 각의 유의미한 차이는 나타나지 않았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+3문단에서 "곡률 반경이 큰 가장자리는 두툼하고 둥글며, 곡률 반경이 작은 가장자리는 얇고 날카롭다"라고 했어요. 그러니 곡률 반경이 <em>큰</em> 가장자리를 "얇고 날카롭다"고 한 ④는 거꾸로라서 일치하지 않아 정답입니다. ①은 1문단(속력이 줄면 흐름), ②는 1문단(젖음성↔얇게 퍼짐), ③은 2문단(이탈 각이 작을수록 벽에 붙음), ⑤는 4문단(점성만 다를 때 차이 없음)에 그대로 나와요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 점성이 큰 액체일수록 더 느리게 따라지기 때문이다.</li>
+<li>② 이탈 각을 정하는 데 점성은 관여하지 않기 때문이다.</li>
+<li>③ 젖음성이 클수록 액체가 표면에서 얇게 퍼지기 때문이다.</li>
+<li>④ 유속이 충분히 크면 이탈 각이 90°에 가깝게 유지되기 때문이다.</li>
+<li>⑤ 곡률 반경이 작을수록 가장자리가 쉽게 손상되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠은 "효과를 막을 방법이 점성을 바꾸는 데 있지 않다"는 부분이죠. 그 까닭은 같은 문단에서 "이탈 각을 정하는 것은 유속과 젖음성, 그리고 가장자리의 곡률"이며 찻주전자 효과가 점성과 무관하다고 한 데 있어요. 곧 이탈 각을 정하는 데 점성이 관여하지 않으니, 점성을 바꿔 봐야 소용이 없는 것이므로 ②가 정답입니다. ①은 점성이 느리게 따라지는 것과 관련 있다는 통념일 뿐 ㉠의 근거가 아니고(오히려 지문은 그 통념을 부정해요), ③·④는 각각 젖음성·유속의 작용을 말할 뿐 '점성을 손봐도 소용없는' 이유가 아니며, ⑤는 곡률 반경의 손상 문제로 ㉠과 직접 이어지지 않아요.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+그래프에서 ㉮는 곡률 반경이 작고 이탈 각이 큰 쪽, ㉯는 곡률 반경이 크고 이탈 각이 작은 쪽이에요. 3문단에 따르면 곡률 반경을 줄이면 원심력이 커져 이탈 각이 <em>커지고</em> 효과가 <em>약해집니다</em>. ⑤는 "㉯에서 ㉮ 쪽으로(=곡률 반경을 줄이면) 이탈 각이 작아진다"고 했는데, 곡률 반경을 줄이면 이탈 각은 오히려 커지므로 방향이 반대라서 적절하지 않아 정답입니다. ① 곡률 반경이 작은 ㉮가 더 얇고 날카롭고(3문단), ② 이탈 각이 큰 ㉮가 효과가 약하며(2문단), ③ 곡률 반경이 작은 ㉮에서 원심력이 더 크게 작용하고(3문단), ④ 곡률 반경이 큰 ㉯가 가공·사용에 무리가 적다(3문단)는 모두 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 액체를, 유속과 젖음성을 동일하게 맞춘 채 주둥이 가장자리의 곡률 반경만 달리한 여러 주둥이로 따르며 이탈 각을 재어 보았다. 그 결과를 정리하면 아래와 같다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈곡률 반경에 따른 이탈 각 그래프〉 — 가로축은 ‘주둥이 가장자리의 곡률 반경’(왼쪽 ‘작음’, 오른쪽 ‘큼’ 방향 화살표), 세로축은 ‘이탈 각’(아래 ‘작음’, 위 ‘큼’ 방향 화살표). 곡선은 왼쪽 위에서 오른쪽 아래로 완만히 내려가는 우하향 모양으로, 곡률 반경이 작은 ㉮ 지점에서 이탈 각이 크고, 곡률 반경이 큰 ㉯ 지점에서 이탈 각이 작다. 두 지점 ㉮(왼쪽 위)와 ㉯(오른쪽 아래)가 곡선 위에 점으로 표시되어 있다.</figure></p>
+</blockquote>
+<ul>
+<li>① ㉮의 주둥이는 ㉯의 주둥이보다 가장자리가 얇고 날카롭겠군.</li>
+<li>② ㉮의 주둥이는 ㉯의 주둥이보다 찻주전자 효과가 약하겠군.</li>
+<li>③ ㉮의 주둥이에서는 ㉯에서보다 액체를 떼어 내려는 원심력이 크게 작용했겠군.</li>
+<li>④ ㉯의 주둥이는 ㉮의 주둥이보다 가공과 사용에 무리가 적겠군.</li>
+<li>⑤ 곡률 반경을 ㉯에서 ㉮ 쪽으로 줄이면 이탈 각이 작아져 효과를 더 잘 막겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>이탈 각</strong>: 주둥이를 떠나는 액체가 연직선(똑바로 아래 방향)과 이루는 각. 작을수록 벽에 바싹 붙어 흘러 찻주전자 효과가 큼.</li>
+<li><strong>곡률 반경</strong>: 주둥이 가장자리가 휜 정도를 나타내는 값. 작을수록 가장자리가 얇고 날카롭고, 클수록 두툼하고 둥글다. 곡률은 곡률 반경에 반비례.</li>
+<li><strong>원심력</strong>: 곡면을 도는 물체를 바깥으로 떼어 내려는 힘. 유속이 빠를수록, 곡률 반경이 작을수록 크게 작용해 액체를 가장자리에서 이탈시킴.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>곡률 반경을 줄이면</th>
+<th>그래서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가장자리가 얇고 날카로워짐</td>
+<td>원심력 ↑</td>
+</tr>
+<tr>
+<td>원심력이 커짐</td>
+<td>액체가 벽에 못 붙고 이탈 → 이탈 각 ↑</td>
+</tr>
+<tr>
+<td>이탈 각이 커짐</td>
+<td>찻주전자 효과 ↓ (새는 게 줄어듦)</td>
+</tr>
+<tr>
+<td>단, 지나치게 줄이면</td>
+<td>가공 어려움·손상·방향 조준 곤란</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>곡률 반경은 작을수록 효과를 잘 막지만, 너무 작으면 만들기도 쓰기도 어려워요. 그래서 "충분히 막으면서도 무리가 없는" 적절한 값을 고르는 설계 문제가 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>이탈 각이 커지면 찻주전자 효과는 어떻게 되나요?</div><div class='qa-a'>액체가 벽에서 떨어져 나가므로 효과가 약해집니다(덜 샙니다).</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 줄이면 왜 효과가 약해지나요?</div><div class='qa-a'>원심력이 커져 액체가 가장자리에 붙지 못하고 이탈하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 한없이 줄이지 못하는 까닭은?</div><div class='qa-a'>가장자리가 너무 얇고 날카로우면 가공이 어렵고 쉽게 손상되며 따르는 방향을 겨누기 어렵기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [8~11]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>분자들이 만나 화학 반응을 진행하는 데 필요한 최소한의 운동 에너지를 활성화 에너지라 한다. 활성화 에너지가 작은 반응은, 반응의 활성화 에너지보다 큰 운동 에너지를 가진 분자들이 많아 반응이 빠르게 진행된다. 활성화 에너지를 조절하여 반응 속도에 변화를 주는 물질을 촉매라고 하며, 반응 속도를 빠르게 하는 능력을 촉매 활성이라 한다. 촉매는 촉매가 없을 때와는 활성화 에너지가 다른, 새로운 반응 경로를 제공한다. 화학 산업에서는 주로 고체 촉매가 이용되는데, 액체나 기체인 생성물을 촉매로부터 분리하는 별도의 공정이 필요 없기 때문이다. 고체 촉매는 대부분 활성 성분, 지지체, 증진제로 구성된다.</p>
+<p>활성 성분은 그 표면에 반응물을 흡착시켜 촉매 활성을 제공하는 물질이다. 고체 촉매의 촉매 작용에서는 반응물이 먼저 활성 성분의 표면에 화학 흡착되고, 흡착된 반응물이 표면에서 반응하여 생성물로 변환된 후, 생성물이 표면에서 탈착되는 과정을 거쳐 반응이 완결된다. 금속은 다양한 물질들이 표면에 흡착될 수 있어 여러 반응에서 활성 성분으로 사용된다. 예를 들면, 암모니아를 합성할 때 철을 활성 성분으로 사용하는데, 이때 반응물인 수소와 질소가 철의 표면에 흡착되어 각각 원자 상태로 분리된다. 흡착된 반응물은 전자를 금속 표면의 원자와 공유하여 안정화된다. 반응물의 흡착 세기는 금속의 종류에 따라 달라진다. 이때 흡착 세기가 적절해야 한다. 흡착이 약하면 흡착량이 적어 촉매 활성이 낮으며, 흡착이 너무 강하면 흡착된 반응물이 지나치게 안정화되어 표면에서의 반응이 느려지므로 촉매 활성이 낮다. 일반적으로 고체 촉매에서는 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다.</p>
+<p>금속은 열적 안정성이 낮아, 화학 반응이 일어나는 고온에서 금속 원자들로 이루어진 작은 입자들이 서로 달라붙어 큰 입자를 이루게 되는데 이를 소결이라 한다. 입자가 소결되면 금속 활성 성분의 전체 표면적은 줄어든다. 이러한 문제를 해결하는 것이 지지체이다. 작은 금속 입자들을 표면적이 넓고 열적 안정성이 높은 지지체의 표면에 분산하면 소결로 인한 촉매 활성 저하가 억제된다. 따라서 소량의 금속으로도 ㉠금속을 활성 성분으로 사용하는 고체 촉매의 활성을 높일 수 있다.</p>
+<p>증진제는 촉매에 소량 포함되어 활성을 조절한다. 활성 성분의 표면 구조를 변화시켜 소결을 억제하기도 하고, 활성 성분의 전자 밀도를 변화시켜 흡착 세기를 조절하기도 한다. 고체 촉매는 활성 성분이 반드시 있어야 하지만 경우에 따라 증진제나 지지체를 포함하지 않기도 한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 촉매를 이용하면 화학 반응이 새로운 경로로 진행된다.</li>
+<li>② 고체 촉매는 기체 생성물과 촉매의 분리 공정이 필요하다.</li>
+<li>③ 고체 촉매에 의한 반응은 생성물의 탈착을 거쳐 완결된다.</li>
+<li>④ 암모니아 합성에서 철 표면에 흡착된 수소는 전자를 철 원자와 공유한다.</li>
+<li>⑤ 증진제나 지지체 없이 촉매 활성을 갖는 고체 촉매가 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+1문단에서 화학 산업에서 고체 촉매가 주로 이용되는 이유는 액체나 기체인 생성물을 촉매로부터 분리하는 <strong>별도의 공정이 필요 없기</strong> 때문이라고 했으므로 ②는 일치하지 않는다. ①은 새로운 반응 경로 제공(1문단), ③은 탈착으로 반응 완결(2문단), ④는 흡착된 반응물이 전자를 금속 표면 원자와 공유(2문단), ⑤는 증진제·지지체를 포함하지 않기도 함(4문단)과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,571명 — ①2.5% ②83.9% ③7.1% ④3.5% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠의 촉매 활성을 높이는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 반응물을 흡착하는 금속 원자의 개수를 늘린다.</li>
+<li>② 활성 성분의 소결을 촉진하는 증진제를 첨가한다.</li>
+<li>③ 반응물의 반응 속도를 늦추는 지지체를 사용한다.</li>
+<li>④ 반응에 대한 활성화 에너지를 크게 하는 금속을 사용한다.</li>
+<li>⑤ 활성 성분의 금속 입자들을 뭉치게 하여 큰 입자로 만든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+2문단에서 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다고 했으므로 ①이 적절하다. 소결 촉진(②)과 입자 뭉침(⑤)은 표면적을 줄여 활성을 낮추고, 반응 속도를 늦추는 것(③)은 촉매 활성(반응 속도를 빠르게 하는 능력)과 반대이며, 활성화 에너지를 크게 하면(④) 반응이 느려진다.</p>
+<p><em>선택률</em> — 응시 98,584명 — ①54.3% ②5.8% ③20.5% ④11.2% ⑤7.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아세틸렌은 보통 선택적 수소화 공정을 통하여 에틸렌으로 변환된다. 이 공정에서 사용되는 고체 촉매는 팔라듐 금속 입자를 실리카 표면에 분산하여 만들며, 아세틸렌과 수소는 팔라듐 표면에 흡착되어 반응한다. 여기서 실리카는 표면적이 넓고 열적 안정성이 높다. 이때, 촉매에 규소를 소량 포함시키면 활성 성분의 표면 구조가 변화되어 고온에서 팔라듐의 소결이 억제된다. 또한 은을 소량 포함시키면 팔라듐의 전자 밀도가 높아지고 팔라듐 표면에 반응물이 흡착되는 세기가 조절되어 원하는 반응을 얻을 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 아세틸렌은 반응물에 해당한다.</li>
+<li>② 팔라듐은 활성 성분에 해당한다.</li>
+<li>③ 규소와 은은 모두 증진제에 해당한다.</li>
+<li>④ 실리카는 낮은 온도에서 활성 성분을 소결한다.</li>
+<li>⑤ 실리카는 촉매 활성 저하를 억제하는 기능을 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+실리카는 표면적이 넓고 열적 안정성이 높은 지지체로, 금속 입자를 분산해 소결로 인한 촉매 활성 저하를 억제하는 역할을 한다. 활성 성분을 소결하는 것이 아니므로 ④가 적절하지 않다. 에틸렌으로 변환되는 아세틸렌은 반응물(①), 반응물을 흡착시키는 팔라듐은 활성 성분(②), 표면 구조를 변화시켜 소결을 억제하는 규소와 전자 밀도를 변화시켜 흡착 세기를 조절하는 은은 증진제(③), 실리카는 지지체로서 활성 저하 억제(⑤).</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.8% ②5.4% ③17.2% ④64.9% ⑤10.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, 〈보기〉의 금속 ⓐ～ⓓ에 대한 설명으로 가장 적절한 것은? </p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 여러 가지 금속에 물질 <span class="boxmark">[가]</span>가 흡착될 때의 흡착 세기와 <span class="boxmark">[가]</span>의 화학 반응에서 각 금속의 촉매 활성을 나타낸다. (단, 흡착에 영향을 주는 다른 요소는 고려하지 않음.)
+<strong><span class="boxmark">[그림: 산 모양 산점도]</span></strong> 세로축은 ‘촉매 활성’(아래 ‘낮음’에서 위 ‘높음’ 방향 화살표), 가로축은 ‘흡착 세기’(왼쪽 ‘약함’, 오른쪽 ‘강함’ 방향 화살표). 점들이 왼쪽 아래에서 가운데 위로 올라갔다가 오른쪽 아래로 내려가는 산(山) 모양 추세를 이룬다. ⓐ는 가장 왼쪽(흡착 세기 약함·촉매 활성 낮음), ⓑ는 ⓐ보다 오른쪽 위(흡착 세기와 활성이 ⓐ보다 큼), ⓒ는 추세의 정점 부근(중간 흡착 세기·촉매 활성 최고), ⓓ는 가장 오른쪽(흡착 세기 강함·촉매 활성 낮음)에 위치한다. 이 밖에 기호가 붙지 않은 점들도 같은 산 모양 추세를 이룬다(별도의 추세선은 그려져 있지 않다).</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[가]</span>의 화학 반응은 ⓐ보다 ⓑ를 활성 성분으로 사용할 때 더 느리게 일어난다.</li>
+<li>② <span class="boxmark">[가]</span>는 ⓐ보다 ⓒ에 흡착될 때 흡착량이 더 적다.</li>
+<li>③ <span class="boxmark">[가]</span>는 ⓐ보다 ⓓ에 흡착될 때 안정화되는 정도가 더 크다.</li>
+<li>④ <span class="boxmark">[가]</span>는 ⓑ보다 ⓒ에 더 약하게 흡착된다.</li>
+<li>⑤ <span class="boxmark">[가]</span>의 화학 반응에서 촉매 활성만을 고려하면 가장 적합한 활성 성분은 ⓓ이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+2문단에 따르면 흡착이 너무 강하면 반응물이 지나치게 안정화되어 촉매 활성이 낮아진다. ⓓ는 ⓐ보다 흡착 세기가 훨씬 강하므로 <span class="boxmark">[가]</span>가 안정화되는 정도가 더 크다(③). ⓑ는 ⓐ보다 촉매 활성이 높으므로 반응이 더 빠르고(①), ⓒ는 ⓐ보다 흡착이 강해 흡착량이 더 많으며(②), ⓒ는 ⓑ보다 흡착이 더 강하고(④), 촉매 활성이 가장 높은 금속은 ⓓ가 아니라 ⓒ이다(⑤).</p>
+<p><em>선택률</em> — 응시 98,576명 — ①6.3% ②5.5% ③73.0% ④9.4% ⑤7.0%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>물을 천천히 따를 때 액체가 주둥이 바깥 면을 타고 흘러내리는 찻주전자 효과는, 주둥이를 떠나는 액체가 중력 방향을 나타내는 연직선과 이루는 이탈 각으로 그 정도를 가늠한다. 이탈 각이 작을수록 액체가 주둥이 벽에 가깝게 붙어 흘러 효과가 커진다. 2010년 뒤에즈 연구 팀은 이탈 각이 유속, 주둥이의 젖음성, 주둥이 가장자리의 곡률, 액체의 점성에 따라 어떻게 달라지는지를 실험으로 알아보았다. 그 결과 앞의 세 가지는 이탈 각을 바꾸지만, 점성은 그렇지 않음이 드러났다. 따라서 찻주전자 효과를 이해하려면 이탈 각에 작용하는 요인과 작용하지 않는 요인을 가려내는 것이 먼저이다. 이때 한 요인을 살피려면 나머지 요인을 같게 고정해야 하므로, 연구 팀은 한 요인만 달리한 여러 주둥이로 액체를 따르며 이탈 각을 비교하였다.</p>
+<p>유속은 단위 시간에 흐르는 액체의 양으로 정해지는 흐름의 속도이다. 유속이 충분히 클 때에는 이탈 각이 90°에 가깝게 유지되어 액체가 주둥이에서 곧장 이탈한다. 그러나 유속이 줄면 이탈 각이 작아져 액체가 벽 쪽으로 휘어 흐른다. 액체가 벽을 타느냐 이탈하느냐는 어떤 속력 값을 경계로 갈리는데, 그 값보다 느리면 가장자리의 곡면을 따라 벽으로 돌아 흐르고, 그 값보다 빠르면 가장자리에서 떨어져 나간다. 빠른 흐름일수록 액체가 진행하던 방향을 그대로 유지하려는 성질이 강해 가장자리에서 곧게 뻗어 나가기 때문이다. 이 경계가 되는 속력은 주둥이마다 일정하지 않고 젖음성이나 가장자리 형태에 따라 달라진다. 따라서 일정한 속력 이상으로 따르면 찻주전자 효과는 나타나지 않으며, 같은 주둥이라도 천천히 따를 때에만 효과가 두드러진다.</p>
+<p>젖음성은 고체 표면에서 액체가 잘 퍼지는 정도로, 젖음성이 클수록 액체는 표면에서 얇게 퍼진다. 물에 대한 젖음성이 큰 정도를 친수성, 작은 정도를 소수성이라 한다. 친수성 표면에서는 물이 넓게 퍼지며 표면을 감싸려 하고, 소수성 표면에서는 물이 방울처럼 뭉쳐 표면에서 떨어져 나가려 한다. 같은 유속에서 주둥이의 젖음성이 클수록 이탈 각이 작아져 찻주전자 효과가 커진다. 젖음성이 큰 표면에서는 액체가 가장자리에 더 잘 달라붙어 벽을 타고 흐르기 쉽기 때문이다. 반대로 젖음성이 작은 표면에서는 액체가 가장자리에 머무르지 못하고 떨어져 나가므로 이탈 각이 크게 유지된다. 이 성질을 이용해 주둥이 끝을 물에 대한 젖음성이 매우 작은 초소수성 재료로 코팅하면, 속력이 느려 액체가 방울방울 떨어질 때에도 바깥 면을 타고 흐르지 않는다. 곧 젖음성을 낮추는 것은 유속을 높이지 않고도 효과를 막는 길이 된다.</p>
+<p>곡률은 주둥이 가장자리가 휜 정도로, 가장자리의 곡률 반경에 반비례한다. 곡률 반경이 큰 가장자리는 두툼하고 둥글며, 곡률 반경이 작은 가장자리는 얇고 날카롭다. 곡률 반경이 작아 가장자리가 얇고 날카로울수록, 곡면을 도는 액체를 떼어 내려는 원심력이 크게 작용한다. 가장자리가 급하게 휠수록 액체가 진행 방향을 크게 바꾸어야 하고, 그만큼 바깥으로 튀어 나가려는 힘이 강해지기 때문이다. 이 원심력은 유속이 빠를수록, 곡률 반경이 작을수록 커진다. 그래서 곡률 반경이 작은 주둥이에서는 같은 유속에서도 이탈 각이 커져 찻주전자 효과가 약해진다. 와인병 끝에 꽂는 와인 따르개가 곡률 반경이 작아 속력이 느려도 드리블링이 잘 일어나지 않는 것이 그 예이다. 한편 액체의 점성은 액체의 끈끈한 정도로, 점성이 클수록 액체는 잘 흐르지 않는다. 점성이 큰 액체는 천천히 따라지므로 효과와 관련이 있을 듯하지만, 뒤에즈 연구 팀의 실험에서 유속과 젖음성을 같게 한 두 대상에 점성만 다르게 했을 때 이탈 각의 유의미한 차이는 나타나지 않았다. 점성은 액체가 흐르는 속도에 작용할 뿐, 유속을 같게 맞추고 나면 가장자리에서 휘어드는 정도를 바꾸지 못한다. 곧 점성은 이탈 각을 정하는 데 관여하지 않으며, 찻주전자 효과와는 무관하다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 유속이 충분히 클 때에는 이탈 각이 90°에 가깝게 유지된다.</li>
+<li>② 점성이 큰 액체일수록 같은 조건에서 이탈 각이 작아진다.</li>
+<li>③ 젖음성이 큰 주둥이일수록 같은 유속에서 이탈 각이 커진다.</li>
+<li>④ 곡률 반경이 큰 가장자리일수록 원심력이 크게 작용한다.</li>
+<li>⑤ 초소수성 코팅은 액체의 점성을 키워 흐름을 막는 방법이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong>
+2문단에서 "유속이 충분히 클 때에는 이탈 각이 90°에 가깝게 유지"된다고 했으니 ①이 일치해 정답이에요. ② 점성은 이탈 각을 정하는 데 관여하지 않으므로(4문단) "점성이 클수록 이탈 각이 작아진다"는 틀렸고, ③ 젖음성이 클수록 이탈 각은 <em>작아지므로</em>(3문단) "커진다"는 거꾸로이며, ④ 원심력은 곡률 반경이 <em>작을수록</em> 커지므로(4문단) "큰 가장자리일수록"은 반대예요. ⑤ 초소수성 코팅은 젖음성을 작게 하는 방법이지 점성을 키우는 게 아니므로(3문단) 틀렸습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글의 ‘유속’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 유속이 줄면 이탈 각이 작아져 액체가 벽 쪽으로 휘어 흐른다.</li>
+<li>② 어떤 속력 값보다 느리면 액체가 가장자리의 곡면을 따라 벽으로 흐른다.</li>
+<li>③ 일정한 속력 이상으로 따르면 찻주전자 효과가 나타나지 않는다.</li>
+<li>④ 유속이 빠를수록 액체를 가장자리에서 떼어 내려는 원심력이 커진다.</li>
+<li>⑤ 유속이 충분히 클 때에는 액체가 가장자리의 곡면을 따라 벽으로 돌아 흐른다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+2문단에 따르면 유속이 충분히 <em>클</em> 때에는 액체가 주둥이에서 <em>곧장 이탈</em>하고, 가장자리의 곡면을 따라 벽으로 돌아 흐르는 것은 유속이 어떤 속력 값보다 <em>느릴</em> 때예요. ⑤는 유속이 충분히 클 때 벽으로 돌아 흐른다고 했으니 빠를 때와 느릴 때를 뒤바꾼 것이라 적절하지 않아 정답입니다. ①②③은 2문단(유속이 줄 때의 흐름·경계 속력·일정 속력 이상에서 효과 없음), ④는 4문단(유속이 빠를수록 원심력 증가)에 부합해요.</p>
+<p><strong>6번 [3점] — 정답 ③</strong>
+그림에서 ㉮는 이탈 각 θ가 커서 줄기가 옆으로 뻗고, ㉯는 θ가 작아 벽 쪽으로 휘어 있어요. 2문단에서 유속이 줄면 이탈 각이 작아져 액체가 벽 쪽으로 휜다고 했으니, ㉯처럼 벽으로 휘는 것은 유속이 줄었기 때문이라는 ③이 적절해 정답입니다. ① 이탈 각이 <em>큰</em> ㉮는 효과가 <em>작고</em>(2문단) "작아 효과가 크다"는 거꾸로고, ② 줄기가 곧장 이탈한 쪽은 θ가 큰 ㉮이므로 ㉯가 유속이 크다는 진술은 ㉮·㉯를 맞바꿨으며, ④ 초소수성 코팅은 젖음성을 줄여 액체가 벽에 <em>덜</em> 붙게 하므로 ㉯를 ㉮ 쪽으로(덜 휘게) 돌릴 뿐 "더 휜다"는 반대예요. ⑤ 점성은 이탈 각과 무관하므로(4문단) 점성을 키워도 ㉮가 ㉯처럼 휘지는 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아래는 한 주둥이에서 액체가 떨어져 나오는 모습을 옆에서 본 것이다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 2]</span> 〈이탈 각 정의 도식〉 — 왼쪽에 주둥이 끝(가장자리)을 단면으로 그리고, 그 끝에서 액체 줄기가 비스듬히 아래로 뻗어 나간다. 가장자리의 끝점에서 똑바로 아래로 향하는 점선이 연직선(중력 방향)으로 표시되고, 그 점선과 액체 줄기 사이에 부채꼴로 ‘이탈 각 θ’가 표시되어 있다. 도식에는 같은 주둥이에서 유속이 큰 경우와 작은 경우의 두 줄기가 함께 그려져 있는데, 줄기 ㉮는 연직선에서 멀리 벌어져 거의 옆으로 뻗고(θ가 큼), 줄기 ㉯는 연직선에 바싹 붙어 주둥이 벽 쪽으로 휘어 있다(θ가 작음).</figure></p>
+</blockquote>
+<ul>
+<li>① ㉮는 ㉯보다 이탈 각이 작아 찻주전자 효과가 크겠군.</li>
+<li>② ㉯는 ㉮보다 유속이 커서 줄기가 곧장 이탈했겠군.</li>
+<li>③ ㉯처럼 줄기가 벽 쪽으로 휘는 것은 유속이 줄었기 때문이겠군.</li>
+<li>④ 주둥이를 초소수성 재료로 코팅하면 ㉯가 ㉮ 쪽으로 더 휘겠군.</li>
+<li>⑤ 같은 주둥이라도 점성이 큰 액체로 바꾸면 ㉮가 ㉯처럼 휘겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>유속</strong>: 흐름의 속도. 충분히 크면 이탈 각이 90°에 가깝고, 줄면 이탈 각이 작아져 벽을 탄다.</li>
+<li><strong>친수성 / 소수성</strong>: 물에 대한 젖음성이 큰 정도(친수성)와 작은 정도(소수성). 초소수성은 젖음성이 매우 작은 상태.</li>
+<li><strong>원심력</strong>: 곡면을 도는 액체를 바깥으로 떼어 내려는 힘. 유속이 빠를수록, 곡률 반경이 작을수록 커진다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>요인</th>
+<th>이탈 각에 미치는 작용</th>
+<th>찻주전자 효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유속 ↑</td>
+<td>이탈 각 ↑ (90°에 가까움)</td>
+<td>약해짐</td>
+</tr>
+<tr>
+<td>젖음성 ↑ (친수성)</td>
+<td>이탈 각 ↓</td>
+<td>강해짐</td>
+</tr>
+<tr>
+<td>곡률 반경 ↓ (날카로움)</td>
+<td>원심력 ↑ → 이탈 각 ↑</td>
+<td>약해짐</td>
+</tr>
+<tr>
+<td>점성 변화</td>
+<td>영향 없음</td>
+<td>무관</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>네 요인 중 유속·젖음성·곡률은 이탈 각을 바꾸지만, 점성은 아무리 달라도 이탈 각을 흔들지 못해요. "그럴듯한데 사실은 무관한" 점성을 가려내는 것이 이 세트의 핵심입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>젖음성이 큰 주둥이에서 찻주전자 효과가 더 심한 까닭은?</div><div class='qa-a'>같은 유속에서 이탈 각이 작아져 액체가 벽에 더 잘 붙어 흐르기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>초소수성 코팅이 새는 것을 막는 원리는?</div><div class='qa-a'>주둥이의 젖음성을 매우 작게 만들어, 느린 속력에서도 액체가 바깥 면을 타고 흐르지 못하게 하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>점성은 찻주전자 효과에 어떤 영향을 주나요?</div><div class='qa-a'>유속·젖음성을 같게 하면 점성만 달라도 이탈 각에 유의미한 차이가 없어, 사실상 영향을 주지 않습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [38~41]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>스마트폰은 다양한 위치 측정 기술을 활용하여 여러 지형 환경에서 위치를 측정한다. 위치에는 절대 위치와 상대 위치가 있다. 절대 위치는 위도, 경도 등으로 표시된 위치이고, 상대 위치는 특정한 위치를 기준으로 한 상대적인 위치이다.</p>
+<p>실외에서는 주로 스마트폰 단말기에 내장된 GPS(위성항법장치)나 IMU(관성측정장치)를 사용한다. GPS는 위성으로부터 오는 신호를 이용하여 절대 위치를 측정한다. GPS는 위치 오차가 시간에 따라 누적되지 않는다. 그러나 전파 지연 등으로 접속 초기에 짧은 시간 동안이지만 큰 오차가 발생하고 실내나 터널 등에서는 GPS 신호를 받기 어렵다. IMU는 내장된 센서로 가속도와 속도를 측정하여 위치 변화를 계산하고 초기 위치를 기준으로 하는 상대 위치를 구한다. 단기간 움직임에 대한 측정 성능이 뛰어나지만 센서가 측정한 값의 오차가 누적되기 때문에 시간이 지날수록 위치 오차가 커진다. 이 두 방식을 함께 사용하면 서로의 단점을 보완하여 <span class="boxmark">[오차]</span>를 줄일 수 있다.</p>
+<p>한편 실내에서 위치 측정에 사용 가능한 방법으로는 블루투스 기반의 비콘을 활용하는 기술이 있다. 비콘은 실내에 고정 설치되어 비콘마다 정해진 식별 번호와 위치 정보가 포함된 신호를 주기적으로 보내는 기기이다. 비콘들은 동일한 세기의 신호를 사방으로 보내지만 비콘으로부터 거리가 멀어질수록, 벽과 같은 장애물이 많을수록 신호의 세기가 약해진다. 단말기가 비콘 신호의 도달 거리 내로 진입하면 단말기 안의 수신기가 이 신호를 인식한다. 이 신호를 이용하여 2차원 평면에서의 위치를 측정하는 방법으로는 다음과 같은 것들이 있다.</p>
+<p>근접성 기법은 단말기가 비콘 신호를 수신하면 해당 비콘의 위치를 단말기의 위치로 정한다. 여러 비콘 신호를 수신했을 경우에는 신호가 가장 강한 비콘의 위치를 단말기의 위치로 정한다.</p>
+<p>삼변측량 기법은 3개 이상의 비콘으로부터 수신된 신호 세기를 측정하여 단말기와 비콘 사이의 거리로 환산한다. 각 비콘을 중심으로 이 거리를 반지름으로 하는 원을 그리고, 그 교점을 단말기의 현재 위치로 정한다. 교점이 하나로 모이지 않는 경우에는 세 원에 공통으로 속한 영역의 중심점을 단말기의 위치로 측정한다.</p>
+<p>㉠위치 지도 기법은 측정 공간을 작은 구역들로 나누어 각 구역마다 기준점을 설정하고 그 주위에 비콘들을 설치한다. 그러고 나서 비콘들이 송신하여 각 기준점에 도달하는 신호의 세기를 측정한다. 이 신호 세기와 비콘의 식별 번호, 기준점의 위치 좌표를 서버에 있는 데이터베이스에 위치 지도로 기록해 놓는다. 이 작업을 모든 기준점에서 수행한다. 특정한 위치에 도달한 단말기가 비콘 신호를 수신하면 신호 세기를 측정한 뒤 비콘의 식별 번호와 함께 서버로 전송한다. 서버는 수신된 신호 세기와 가장 가까운 신호 세기를 갖는 기준점을 데이터베이스에서 찾아 이 기준점의 위치를 단말기에 알려 준다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>38</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① GPS를 이용하여 측정한 위치는 기준이 되는 위치가 어디냐에 따라 달라진다.</li>
+<li>② 비콘들이 서로 다른 세기의 신호를 송신해야 단말기의 위치를 측정할 수 있다.</li>
+<li>③ 비콘이 전송하는 식별 번호는 신호가 도달하는 단말기를 구별하기 위한 정보이다.</li>
+<li>④ 비콘은 실내에서 GPS 신호를 받아 주위에 위성 식별 번호와 위치 정보를 전송하는 장치이다.</li>
+<li>⑤ IMU는 단말기가 초기 위치로부터 얼마나 떨어져 있는지를 계산하여 단말기의 위치를 구한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[오차]</span>에 대해 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① IMU는 시간이 지날수록 전파 지연으로 인한 오차가 커진다.</li>
+<li>② GPS는 사용 시간이 길어질수록 위성의 위치를 파악하는 데 오차가 커진다.</li>
+<li>③ IMU는 순간적인 오차가 발생하지만 시간이 지날수록 정확한 위치 측정이 가능해진다.</li>
+<li>④ GPS는 단말기가 터널에 진입 시 발생한 오차를 터널을 통과하는 동안 보정할 수 있다.</li>
+<li>⑤ IMU의 오차가 커지는 것은 가속도와 속도를 측정할 때 생기는 오차가 누적되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>39번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 측정 공간을 더 많은 구역으로 나눌수록 기준점이 많아진다.</li>
+<li>② 단말기가 측정 공간에 들어오기 전에 데이터베이스가 미리 구축되어 있어야 한다.</li>
+<li>③ 측정된 신호 세기가 서버에 저장된 값과 가장 가까운 비콘의 위치가 단말기의 위치가 된다.</li>
+<li>④ 비콘을 이동하여 설치하면 정확한 위치 측정을 위해 데이터베이스를 갱신할 필요가 있다.</li>
+<li>⑤ 위치 지도는 측정 공간 안의 특정 위치에서 수신된 신호 세기와 식별 번호 등을 데이터베이스에 기록해 놓은 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>40번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 단말기가 3개의 비콘 신호를 받은 상태를 도식화한 것이다. 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong></p>
+<p>* 각 원의 반지름은 신호 세기로 환산한 비콘과 단말기 사이의 거리이다.
+* 신호 세기에 영향을 미치는 장애물이 [Q]의 위치에 있다.
+(단, 세 원에 공통으로 속한 영역이 항상 존재한다고 가정하며, 신호 세기에 영향을 미치는 다른 요소는 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① 근접성 기법과 삼변측량 기법으로 측정한 단말기의 위치는 동일하겠군.</li>
+<li>② 측정된 신호 세기를 약한 것부터 나열하면 비콘1, 비콘2, 비콘3의 신호 순이겠군.</li>
+<li>③ 실제 단말기의 위치는 삼변측량 기법으로 측정된 위치에 비해 비콘3에 더 가까이 있겠군.</li>
+<li>④ [Q]의 위치에 있는 장애물이 제거된다면, 삼변측량 기법으로 측정되는 단말기의 위치는 현재 측정된 위치에서 P 방향으로 이동하겠군.</li>
+<li>⑤ 단말기에서 측정되는 비콘2의 신호 세기만 약해진다면, 삼변측량 기법으로 측정되는 단말기의 위치는 현재 측정된 위치에서 비콘2 방향으로 이동하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>찻주전자 효과는 액체를 천천히 따를 때 액체가 주둥이 바깥 면을 타고 흘러내리는 현상으로, 드리블링이라고도 한다. 빠르게 따를 때에는 액체가 주둥이 가장자리에서 곧장 떨어져 나가지만, 따르는 속력이 어떤 값 아래로 줄면 액체가 가장자리의 곡면을 따라 벽으로 돌아 흐른다. 이때 ㉠<u>액체가 주둥이 벽을 타고 흐르기 시작한다.</u> 똑같은 주둥이에서 빠를 때와 느릴 때의 결과가 갈리는 까닭은, 액체가 어느 쪽으로 향하는지가 가장자리에서 액체에 작용하는 힘들의 경쟁으로 정해지기 때문이다. 따라서 이 현상을 이해하려면 가장자리에서 액체에 어떤 힘들이 맞서며, 그 힘의 균형이 무엇에 따라 기우는지를 살펴야 한다.</p>
+<p>액체가 주둥이 가장자리의 휘어진 곡면을 따라 돌 때에는, 곡면을 도는 물체를 바깥으로 떼어 내려는 원심력이 작용한다. 이 원심력은 액체를 가장자리에서 이탈시키려는 힘으로, 유속이 빠를수록, 그리고 가장자리의 곡률 반경이 작을수록 크게 작용한다. 곡률은 가장자리가 휜 정도로 곡률 반경에 반비례하는데, 곡률 반경이 작아 가장자리가 얇고 날카로울수록 액체가 방향을 급하게 바꾸어야 하므로 바깥으로 튀어 나가려는 원심력이 강해진다. 따라서 빠르게 따르거나 날카로운 가장자리를 쓰면 떼어 내려는 힘이 커진다. 한편 가장자리 표면에는 액체를 붙들어 곡면을 따라 흐르게 하려는 작용이 있는데, 이는 표면의 젖음성이 클수록 강하다. 젖음성은 고체 표면에서 액체가 잘 퍼지는 정도로, 젖음성이 큰 표면에서는 액체가 얇게 퍼지며 가장자리에 더 잘 달라붙는다. 물에 대한 젖음성이 큰 정도를 친수성, 작은 정도를 소수성이라 하며, 친수성 표면일수록 붙들려는 작용이 강하다. 두 힘은 같은 가장자리에서 서로 반대 방향으로 작용하며, 어느 한쪽이 커지면 다른 쪽의 영향이 상대적으로 줄어든다. 결국 떼어 내려는 원심력과 붙들려는 작용 중 어느 쪽이 우세한가에 따라, 액체는 가장자리에서 이탈하거나 벽을 타고 흐른다.</p>
+<p>이 경쟁의 결과는 이탈 각으로 드러난다. 주둥이를 떠나는 액체가 중력 방향을 나타내는 연직선과 이루는 각을 이탈 각이라 하며, 이탈 각이 작을수록 액체가 주둥이 벽에 가깝게 붙어 흘러 찻주전자 효과가 커진다. 떼어 내려는 힘이 우세하면 이탈 각이 커져 액체가 곧장 떨어지고, 붙들려는 작용이 우세하면 이탈 각이 작아져 액체가 벽에 붙어 흐른다. 유속이 충분히 클 때 이탈 각이 90°에 가깝게 유지되는 것은 빠른 유속이 원심력을 크게 키워 떼어 내려는 힘이 붙들려는 작용을 압도하기 때문이다. 반대로 유속이 줄면 원심력이 약해져 두 힘의 균형이 붙들려는 쪽으로 기운다. 따라서 ㉠이 일어나는 까닭은, 유속이 줄어 원심력이 약해진 결과 붙들려는 작용이 상대적으로 우세해지는 데 있다. 점성이 큰 액체도 천천히 따라지지만, 점성은 이 경쟁의 두 힘을 바꾸지 못하므로 이탈 각에는 영향을 주지 않는다.</p>
+<p>이러한 힘의 경쟁은 효과를 막는 방법으로 이어진다. 막는 방법은 떼어 내려는 힘을 키우거나 붙들려는 힘을 줄이는 두 방향으로 나뉜다. 첫째, 일정한 값 이상으로 액체의 속력을 유지하면 원심력이 충분히 커져 액체가 가장자리에서 이탈하므로 찻주전자 효과가 나타나지 않는다. 둘째, 가장자리의 곡률 반경을 줄이는 것도 원심력을 키우는 방법이어서, 같은 유속에서도 액체가 벽에 붙지 못하게 한다. 와인병 끝에 꽂는 와인 따르개가 곡률 반경을 작게 만들어 느린 속력에서도 드리블링을 막는 장치이다. 앞의 두 방법이 모두 떼어 내려는 힘을 키우는 쪽이라면, 더 효과적인 셋째 방법은 붙들려는 힘을 줄이는 것이다. 주둥이 끝을 물에 대한 젖음성이 매우 작은 초소수성 재료로 코팅하면, 붙들려는 작용 자체가 약해져 속력이 느려 액체가 방울방울 떨어질 때에도 바깥 면을 타고 흐르지 않는다. 결국 어떤 방법을 쓰든, 두 힘의 균형을 떼어 내려는 쪽으로 되돌리는 것이 핵심이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 것은?</p>
+<ul>
+<li>① 액체가 어느 쪽으로 향하는지는 가장자리에서 작용하는 힘들의 경쟁으로 정해진다.</li>
+<li>② 떼어 내려는 원심력은 가장자리의 곡률 반경이 클수록 크게 작용한다.</li>
+<li>③ 젖음성이 큰 표면일수록 액체를 가장자리에서 떼어 내려는 작용이 강하다.</li>
+<li>④ 유속이 충분히 클 때에는 붙들려는 작용이 떼어 내려는 힘을 압도한다.</li>
+<li>⑤ 초소수성 코팅은 액체를 가장자리에 더 잘 붙들어 흐름을 막는 방법이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+1문단 끝에서 "액체가 어느 쪽으로 향하는지는 가장자리에서 액체에 작용하는 힘들의 경쟁으로 정해진다"라고 했으니 ①이 정답이에요. ② 원심력은 곡률 반경이 <em>작을수록</em> 커지므로(2문단) "클수록"은 거꾸로고, ③ 젖음성이 큰 표면은 액체를 <em>붙드는</em> 작용이 강하지 떼어 내는 작용이 강한 게 아니며(2문단), ④ 유속이 클 때는 <em>떼어 내려는 힘</em>이 압도하므로(3문단) 붙들려는 작용이 압도한다는 건 반대예요. ⑤ 초소수성 코팅은 붙들려는 작용을 <em>약하게</em> 하는 방법이므로(4문단) "더 잘 붙든다"는 정반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 주둥이 끝을 젖음성이 매우 작은 재료로 코팅하였기 때문이다.</li>
+<li>② 곡률 반경이 작아져 액체를 떼어 내려는 원심력이 크게 작용하기 때문이다.</li>
+<li>③ 유속이 줄어 원심력이 약해진 결과 붙들려는 작용이 상대적으로 우세해지기 때문이다.</li>
+<li>④ 액체의 점성이 커져 액체가 잘 흐르지 않게 되었기 때문이다.</li>
+<li>⑤ 유속이 충분히 커져 이탈 각이 90°에 가깝게 유지되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>8번 — 정답 ③</strong>
+㉠은 "액체가 주둥이 벽을 타고 흐르기 시작한다"는 부분이죠. 3문단 마지막에서 그 까닭을 "유속이 줄어 원심력이 약해진 결과 붙들려는 작용이 상대적으로 우세해지는 데 있다"고 분명히 밝혔으니 ③이 정답입니다. ②(곡률 반경 감소로 원심력 증가)와 ⑤(유속이 커져 90° 유지)는 오히려 액체가 <em>이탈하는</em> 쪽의 이야기라 벽을 타는 까닭과 반대고, ①(코팅)은 효과를 <em>막는</em> 방법이라 ㉠과 어긋나며, ④(점성)는 지문에서 효과와 무관하다고 본 요소라 이유가 될 수 없어요.</p>
+<p><strong>9번 [3점] — 정답 ①</strong>
+㉠(벽을 타고 흐름)이 일어나는 상황을 채우는 문제예요. 2·3문단에 따르면 액체를 가장자리에서 <em>떼어 내려는</em> 것은 원심력이고, 표면의 젖음성에서 비롯해 액체를 <em>붙들려는</em> 것은 붙들려는 작용이에요. 벽을 타려면 떼어 내려는 원심력(㉮)이 약해지고 붙들려는 작용(㉯)이 우세해져야 하므로 ①이 정답입니다. ㉮에 '붙들려는 작용'을 넣은 ③④는 약해지는 힘과 우세해지는 힘을 뒤바꾼 것이고, '중력'(②)·'점성'(④⑤)은 지문이 이 경쟁의 두 축으로 든 힘이 아니에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 ㉠이 일어나는 상황을 진술한다고 할 때, 〈보기〉의 ㉮, ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+주둥이 가장자리에서 액체에 작용하는 ( ㉮ )이 약해지고, 표면의 젖음성에서 비롯하여 ( ㉯ )이 상대적으로 우세해지면, 액체는 가장자리에서 이탈하지 못하고 벽을 타고 흐른다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 떼어 내려는 원심력 / ㉯: 붙들려는 작용</li>
+<li>② ㉮: 떼어 내려는 원심력 / ㉯: 떨어뜨리려는 중력</li>
+<li>③ ㉮: 붙들려는 작용 / ㉯: 떼어 내려는 원심력</li>
+<li>④ ㉮: 붙들려는 작용 / ㉯: 끈끈하게 하는 점성</li>
+<li>⑤ ㉮: 끈끈하게 하는 점성 / ㉯: 붙들려는 작용</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글로 볼 때, 찻주전자 효과를 막는 방법에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 액체의 속력을 일정한 값 이상으로 유지하면 원심력이 커져 효과가 나타나지 않는다.</li>
+<li>② 가장자리의 곡률 반경을 줄이면 같은 유속에서도 액체가 벽에 붙지 못한다.</li>
+<li>③ 주둥이 끝을 초소수성 재료로 코팅하면 붙들려는 작용이 약해진다.</li>
+<li>④ 속력을 유지하는 방법은 원심력을 키워 액체를 가장자리에서 이탈시킨다.</li>
+<li>⑤ 초소수성 코팅은 액체가 방울방울 떨어질 때 바깥 면을 타고 흐르도록 돕는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+4문단에서 초소수성 코팅을 하면 액체가 방울방울 떨어질 때에도 바깥 면을 타고 <em>흐르지 않는다</em>고 했어요. ⑤는 코팅이 바깥 면을 타고 흐르도록 <em>돕는다</em>고 했으니 정반대라서 적절하지 않아 정답입니다. ①은 속력 유지로 원심력 증가(4문단), ②는 곡률 반경 감소(4문단), ③은 코팅으로 붙들려는 작용 약화(4문단), ④는 속력 유지가 원심력을 키워 이탈시킴(3·4문단)으로 모두 적절해요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>힘의 경쟁</strong>: 가장자리에서 액체를 <em>떼어 내려는</em> 원심력과 <em>붙들려는</em> 작용이 겨루는 것. 우세한 쪽이 액체의 향방을 정한다.</li>
+<li><strong>붙들려는 작용</strong>: 표면의 젖음성에서 비롯해 액체를 가장자리에 달라붙게 하는 작용. 젖음성이 클수록 강하다.</li>
+<li><strong>이탈 각</strong>: 힘의 경쟁 결과로 드러나는 각. 떼어 내려는 힘이 우세하면 커지고, 붙들려는 작용이 우세하면 작아진다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>이탈 각 90°에 가까움</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>곧장 이탈</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>효과 없음</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>유속이 충분히 클 때 액체가 곧장 이탈하는 까닭은?</div><div class='qa-a'>빠른 유속이 원심력을 크게 키워 떼어 내려는 힘이 붙들려는 작용을 압도하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 줄이는 것과 속력을 유지하는 것은 무엇을 공통으로 키우나요?</div><div class='qa-a'>둘 다 액체를 가장자리에서 떼어 내려는 원심력을 키웁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>초소수성 코팅이 다른 방법과 다른 점은?</div><div class='qa-a'>원심력을 키우는 대신, 붙들려는 작용 자체를 약하게 만들어 효과를 막습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2017학년도 수능 [33~36]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>탄수화물은 사람을 비롯한 동물이 생존하는 데 필수적인 에너지원이다. 탄수화물은 섬유소와 비섬유소로 구분된다. 사람은 체내에서 합성한 효소를 이용하여 곡류의 녹말과 같은 비섬유소를 포도당으로 분해하고 이를 소장에서 흡수하여 에너지원으로 이용한다. 반면, 사람은 풀이나 채소의 주성분인 셀룰로스와 같은 섬유소를 포도당으로 분해하는 효소를 합성하지 못하므로, 섬유소를 소장에서 이용하지 못한다. ㉠소, 양, 사슴과 같은 반추 동물도 섬유소를 분해하는 효소를 합성하지 못하는 것은 마찬가지이지만, 비섬유소와 섬유소를 모두 에너지원으로 이용하며 살아간다.</p>
+<p>위(胃)가 넷으로 나누어진 반추 동물의 첫째 위인 반추위에는 여러 종류의 미생물이 서식하고 있다. 반추 동물의 반추위에는 산소가 없는데, 이 환경에서 왕성하게 생장하는 반추위 미생물들은 다양한 생리적 특성을 가지고 있다. 그중 ⓐ피브로박터 숙시노젠(F)은 섬유소를 분해하는 대표적인 미생물이다. 식물체에서 셀룰로스는 그것을 둘러싼 다른 물질과 복잡하게 얽혀 있는데, F가 가진 효소 복합체는 이 구조를 끊어 셀룰로스를 노출시킨 후 이를 포도당으로 분해한다. F는 이 포도당을 자신의 세포 내에서 대사 과정을 거쳐 에너지원으로 이용하여 생존을 유지하고 개체 수를 늘림으로써 생장한다. 이런 대사 과정에서 아세트산, 숙신산 등이 대사산물로 발생하고 이를 자신의 세포 외부로 배출한다. 반추위에서 미생물들이 생성한 아세트산은 반추 동물의 세포로 직접 흡수되어 생존에 필요한 에너지를 생성하는 데 주로 이용되고 체지방을 합성하는 데에도 쓰인다. 한편 반추위에서 숙신산은 프로피온산을 대사산물로 생성하는 다른 미생물의 에너지원으로 빠르게 소진된다. 이 과정에서 생성된 프로피온산은 반추 동물이 간(肝)에서 포도당을 합성하는 대사 과정에서 주요 재료로 이용된다.</p>
+<p>반추위에는 비섬유소인 녹말을 분해하는 ⓑ스트렙토코쿠스 보비스(S)도 서식한다. 이 미생물은 반추 동물이 섭취한 녹말을 포도당으로 분해하고, 이 포도당을 자신의 세포 내에서 대사 과정을 통해 자신에게 필요한 에너지원으로 이용한다. 이때 S는 자신의 세포 내의 산성도에 따라 세포 외부로 배출하는 대사산물이 달라진다. 산성도를 알려 주는 수소 이온 농도 지수(pH)가 7.0 정도로 중성이고 생장 속도가 느린 경우에는 아세트산, 에탄올 등이 대사산물로 배출된다. 반면 산성도가 높아져 pH가 6.0 이하로 떨어지거나 녹말의 양이 충분하여 생장 속도가 빠를 때는 젖산이 대사산물로 배출된다. 반추위에서 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물에게 필요한 에너지를 생성하는 데 이용되거나 아세트산 또는 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용된다.</p>
+<p>그런데 S의 과도한 생장이 반추 동물에게 악영향을 끼치는 경우가 있다. 반추 동물이 짧은 시간에 과도한 양의 비섬유소를 섭취하면 S의 개체 수가 급격히 늘고 과도한 양의 젖산이 배출되어 반추위의 산성도가 높아진다. 이에 따라 산성의 환경에서 왕성히 생장하며 항상 젖산을 대사산물로 배출하는 ⓒ락토바실러스 루미니스(L)와 같은 젖산 생성 미생물들의 생장이 증가하며 다량의 젖산을 배출하기 시작한다. F를 비롯한 섬유소 분해 미생물들은 자신의 세포 내부의 pH를 중성으로 일정하게 유지하려는 특성이 있는데, 젖산 농도의 증가로 자신의 세포 외부의 pH가 낮아지면 자신의 세포 내의 항상성을 유지하기 위해 에너지를 사용하므로 생장이 감소한다. 만일 자신의 세포 외부의 pH가 5.8 이하로 떨어지면 에너지가 소진되어 생장을 멈추고 사멸하는 단계로 접어든다. 이와 달리 S와 L은 상대적으로 산성에 견디는 정도가 강해 자신의 세포 외부의 pH가 5.5 정도까지 떨어지더라도 이에 맞춰 자신의 세포 내부의 pH를 낮출 수 있어 자신의 에너지를 세포 내부의 pH를 유지하는 데 거의 사용하지 않고 생장을 지속하는 데 사용한다. 그러나 S도 자신의 세포 외부의 pH가 그 이하로 더 떨어지면 생장을 멈추고 사멸하는 단계로 접어들고, 산성에 더 강한 L을 비롯한 젖산 생성 미생물들이 반추위 미생물의 많은 부분을 차지하게 된다. 그렇게 되면 반추위의 pH가 5.0 이하가 되는 급성 반추위 산성증이 발병한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>33</div><div class='q-stem'></div></div>
+<p>윗글을 읽고 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 섬유소는 사람의 소장에서 포도당의 공급원으로 사용된다.</li>
+<li>② 반추 동물의 세포에서 합성한 효소는 셀룰로스를 분해한다.</li>
+<li>③ 반추위 미생물은 산소가 없는 환경에서 생장을 멈추고 사멸한다.</li>
+<li>④ 반추 동물의 과도한 섬유소 섭취는 급성 반추위 산성증을 유발한다.</li>
+<li>⑤ 피브로박터 숙시노젠(F)은 자신의 세포 내에서 포도당을 에너지원으로 이용하여 생장한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>33번 — 정답 ⑤</strong><br />
+2문단에 따르면 F는 효소 복합체로 셀룰로스를 노출시켜 포도당으로 분해한 뒤, 그 포도당을 자신의 세포 내 대사 과정을 거쳐 에너지원으로 이용해 생장한다. 따라서 ⑤가 적절하다. ① 섬유소는 사람의 소장에서 이용되지 못한다. ② 셀룰로스를 분해하는 것은 반추 동물의 효소가 아니라 미생물(F)이다. ③ 반추위 미생물은 산소가 없는 환경에서 왕성히 생장한다. ④ 산성증은 과도한 ‘비섬유소’ 섭취가 유발한다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①4.6% ②6.9% ③4.4% ④8.2% ⑤75.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>34</div><div class='q-stem'></div></div>
+<p>윗글로 볼 때, ⓐ～ⓒ에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ와 ⓑ는 모두 급성 반추위 산성증에 걸린 반추 동물의 반추위에서는 생장하지 못하겠군.</li>
+<li>② ⓐ와 ⓑ는 모두 반추위에서 반추 동물의 체지방을 합성하는 물질을 생성할 수 있겠군.</li>
+<li>③ 반추위의 pH가 6.0일 때, ⓐ는 ⓒ보다 자신의 세포 내의 산성도를 유지하는 데 더 많은 에너지를 쓰겠군.</li>
+<li>④ ⓑ와 ⓒ는 모두 반추위의 산성도에 따라 다양한 종류의 대사산물을 배출하겠군.</li>
+<li>⑤ 반추위에서 녹말의 양과 ⓑ의 생장이 증가할수록, ⓐ의 생장은 감소하고 ⓒ의 생장은 증가하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>34번 — 정답 ④</strong><br />
+ⓑ(S)는 산성도에 따라 아세트산·에탄올 또는 젖산을 배출하지만, ⓒ(L)는 젖산 생성 미생물로서 산성도에 따라 젖산의 배출량이 달라질 뿐 ‘다양한 종류’의 대사산물을 배출하지는 않는다. 따라서 ⓒ도 다양한 대사산물을 배출한다고 본 ④는 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①7.7% ②13.8% ③11.9% ④58.2% ⑤9.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>35</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 ㉠이 가능한 이유를 진술한다고 할 때, 〈보기〉의 ㉮, ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+반추 동물이 섭취한 섬유소와 비섬유소는 반추위에서 ( ㉮ ), 이를 이용하여 생장하는 ( ㉯ )은 반추 동물의 에너지원으로 이용되기 때문이다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>② ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+<li>③ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추 동물이 대사 과정을 통해 생성한 포도당</li>
+<li>④ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>⑤ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>35번 — 정답 ①</strong><br />
+섬유소·비섬유소는 미생물에 의해 ‘포도당으로 분해’되는 것이지 미생물에 의해 ‘합성’되는 것이 아니므로 ㉮에는 ‘반추위 미생물의 에너지원이 되고’가 적절하다(③④⑤ 배제). 또 반추 동물의 에너지원으로 이용되는 것은 미생물이 대사 과정에서 생성한 대사산물(아세트산·젖산 등)이므로 ㉯에는 ‘반추위 미생물이 대사 과정을 통해 생성한 대사산물’이 적절하다(②의 ‘포도당’ 배제). 따라서 ①.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①39.0% ②10.4% ③6.0% ④33.5% ⑤11.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>36</div><div class='q-stem'></div></div>
+<p>윗글로 볼 때, 반추위 미생물에서 배출되는 숙신산과 젖산에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 숙신산이 많이 배출될수록 반추 동물의 간에서 합성되는 포도당의 양도 늘어난다.</li>
+<li>② 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물의 에너지원으로 이용될 수 있다.</li>
+<li>③ 숙신산과 젖산은 반추위가 산성일 때보다 중성일 때 더 많이 배출된다.</li>
+<li>④ 숙신산과 젖산은 반추위 미생물의 세포 내에서 대사 과정을 거쳐 생성된다.</li>
+<li>⑤ 숙신산과 젖산은 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용되기도 한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>36번 — 정답 ③</strong><br />
+숙신산은 섬유소 분해 과정에서 F가 배출하는 대사산물로 반추위의 산성도와는 관련이 없고, 젖산은 비섬유소(녹말)가 충분하고 산성도가 높을 때 배출되므로 중성일 때보다 산성일 때 더 많이 배출된다. 따라서 ‘산성일 때보다 중성일 때 더 많이 배출된다’는 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①6.5% ②5.3% ③77.7% ④5.0% ⑤5.0%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>찻주전자 효과와 젖음성 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='찻주전자 효과와 젖음성 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

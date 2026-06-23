@@ -1,0 +1,447 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>폐포의 표면 장력과 계면 활성제 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 숨을 한 번 크게 들이마셔 볼까요? 그 공기가 마지막으로 도착하는 곳이 바로 <strong>폐포</strong>입니다. 폐는 하나의 큰 풍선이 아니라, 포도송이처럼 작은 공기주머니 수억 개가 모여 만들어진 기관이에요. 이 작은 주머니 하나하나가 폐포이고, 여기서 산소와 이산화 탄소가 맞바꿔집니다. 폐포는 고무풍선처럼 <strong>늘어났다가 다시 줄어드는 성질</strong>을 가지고 있어서, 우리가 숨을 들이쉬면 부풀고 내쉬면 오므라들죠. 이 잘 늘어나는 성질을 어려운 말로 <strong>신전성</strong>이라고 부르는데, 신전성이 좋을수록 적은 힘으로도 편하게 숨을 쉴 수 있어요.</p>
+<p>그런데 여기에 한 가지 골칫거리가 있습니다. 폐포 안쪽은 얇은 물기(액체층)로 늘 촉촉하게 젖어 있는데, <strong>물에는 스스로 면적을 최대한 줄이려는 힘</strong>이 있거든요. 비 온 뒤 연잎 위의 물방울이 동그랗게 뭉치는 것을 본 적 있죠? 물 분자끼리 서로 강하게 끌어당겨 가능한 한 작게 모이려 하기 때문인데, 이 힘을 <strong>표면 장력</strong>이라고 합니다. 폐포 안쪽 물기에도 이 표면 장력이 작용해서, 폐포는 자꾸만 쪼그라들려고 해요. 심하면 풍선에서 바람이 빠지듯 폐포가 찌부러지는데, 이것을 <strong>허탈</strong>이라고 부릅니다.</p>
+<p>신기하게도 우리 폐포는 좀처럼 찌부러지지 않습니다. 그 비밀이 바로 <strong>계면 활성제</strong>예요. 폐포를 이루는 Ⅱ형 폐포 세포가 이 물질을 분비하는데, 계면 활성제는 물 분자끼리 손잡는 것을 방해해서 표면 장력을 확 떨어뜨립니다. 비누가 기름때를 풀어 주듯, 물의 단단한 결속을 느슨하게 만드는 셈이죠. 게다가 더 똑똑한 점은, <strong>폐포가 작아질수록 계면 활성제가 더 빽빽하게 모여</strong> 표면 장력을 더 많이 깎아 준다는 거예요. 덕분에 작아서 잘 찌부러질 법한 폐포도 안전하게 버틸 수 있습니다.</p>
+<blockquote>
+<p>한마디로: <strong>표면 장력은 폐포를 오그라들게 하는 "악역", 계면 활성제는 그것을 막아 주는 "구원투수"입니다.</strong> 그리고 이 둘의 줄다리기를 수치로 설명해 주는 것이 바로 <strong>라플라스 법칙</strong>(필요한 공기압은 표면 장력에 비례하고 폐포 반지름에 반비례한다)이에요.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 한가운데에는 <strong>폐포라는 작은 공기주머니의 안정</strong>이 있습니다. 폐포가 찌부러지지 않고 제 모양을 지키는 비결을, 세 세트가 서로 다른 각도에서 비춰 줍니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>폐포의 안정 (허탈을 막는 힘의 균형)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>폐포를 오그라들게 하는 표면 장력과, 그것을 막는 계면 활성제가 어떻게 맞서는지 큰 구도를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>폐포의 안정에 관여하는 세 가지 요인(탄성 복원력·표면 장력·계면 활성제)을 요소별로 뜯어 비교합니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>라플라스 법칙의 비례·반비례 관계를 수치로 따져, 크기가 다른 폐포에 적용해 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 작은 폐포가 왜 더 위태로운지, 그런데도 어떻게 멀쩡히 버티는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>인간의 폐는 포도송이의 포도알과 같은 수많은 폐포로 이루어져 있으며, 이 폐포에서 산소와 이산화 탄소의 교환이 일어난다. 폐포는 탄성력이 있어 부피가 늘어났다가 다시 복원되는 특성을 가진다. 폐포가 늘어나는 정도를 신전성이라 하는데, 신전성이 클수록 일정량의 공기를 들이마실 때 드는 에너지가 줄어 적은 힘으로도 원활하게 숨을 쉴 수 있다. 그런데 폐포의 안쪽 표면은 얇은 액체층으로 싸여 있고, 이 액체층에는 표면이 스스로 수축하여 가능한 한 작은 면적을 취하려는 힘인 표면 장력이 작용한다. 표면 장력은 일반적인 분자 간의 인력보다 강한 물 분자 간의 인력 때문에 형성된다. 액체 표면의 안쪽에 있는 물 분자는 사방에서 고르게 인력을 받지만, 표면에 있는 물 분자는 안쪽으로만 인력을 받으므로 표면적을 줄이려는 힘이 생기는 것이다. 이 표면 장력은 폐포를 오그라들게 하여 폐의 신전성을 떨어뜨린다.</p>
+<p>표면 장력이 작용함에도 폐포의 허탈, 곧 폐포가 정상적으로 확장된 상태를 유지하지 못하고 쭈그러드는 현상은 좀처럼 일어나지 않는다. 표면 장력에 의해 폐포가 오그라들려는 힘과 폐포 내부의 공기압이 서로 평형을 이루어 안정된 부피가 유지되기 때문이다. 만일 내부의 공기압이 오그라들려는 힘에 미치지 못하면 폐포는 그만큼 더 수축하게 된다. 이 안정된 부피를 위해 필요한 공기압은 표면 장력에 비례하고 폐포의 반지름에 반비례한다. 따라서 표면 장력이 동일하다면 반지름이 작은 폐포일수록 더 높은 내부 공기압을 요구하며, 그만큼 허탈이 더 쉽게 일어날 수 있다. 한 폐 안에는 크기가 서로 다른 폐포가 함께 있으므로, 만일 표면 장력이 모든 폐포에서 똑같다면 작은 폐포의 공기가 큰 폐포 쪽으로 빠져나가 작은 폐포부터 차례로 허탈에 이를 수 있다.</p>
+<p>작은 폐포가 더 위태로움에도 실제로는 허탈이 잘 일어나지 않는 까닭은 ㉠<u>계면 활성제</u>에 있다. 폐포를 이루는 Ⅱ형 폐포 세포는 계면 활성제를 분비하여 물 분자 사이의 인력을 방해하고, 이로써 ㉡<u>표면 장력</u>을 떨어뜨린다. 계면 활성제는 폐포의 표면을 덮는 양이 같더라도 폐포가 작아져 표면적이 줄면 더 조밀하게 분포한다. 그 결과 작은 폐포일수록 계면 활성제의 농도가 높아져 표면 장력이 더 많이 줄고, 작은 폐포가 요구하던 높은 공기압의 부담도 그만큼 완화된다. 이 때문에 크기가 다른 폐포들이 한 폐 안에서 함께 있어도 작은 폐포가 큰 폐포에 공기를 빼앗기지 않고 안정을 유지할 수 있다.</p>
+<p>만약 계면 활성제가 부족해지면 표면 장력을 낮추는 작용이 약해져 작은 폐포의 허탈이 촉진되고 호흡 기능이 떨어진다. 미숙아의 경우 Ⅱ형 폐포 세포가 충분히 성숙하지 못해 계면 활성제 분비가 모자라기 쉬운데, 이때는 외부에서 계면 활성제를 보충하거나 폐포에 일정한 압력을 가해 허탈을 막는 방법이 쓰인다. 외부에서 보충하는 계면 활성제는 폐포 표면의 액체층에 퍼져 본래의 계면 활성제처럼 작용하고, 압력을 가하는 방법은 폐포 내부의 공기압을 높여 오그라들려는 힘과의 평형을 회복시킨다. 이러한 방법들은 ⓐ<u>이상적인 호흡 보조 방안</u>을 마련하려는 연구로 이어지고 있다.</p>
+<p>이상적인 호흡 보조 방안은 표면 장력을 낮추어 폐포의 안정을 돕되, 폐포 자체의 탄성 복원력을 해치지 않아야 한다. 탄성 복원력이 약해지면 폐포가 본래 부피로 되돌아가지 못해 날숨이 어려워지기 때문이다. 또한 가스 교환이 이루어지는 얇은 폐포 세포층의 기능을 방해하지 않으면서, 작은 폐포일수록 표면 장력을 더 크게 낮추는 계면 활성제 본래의 특성까지 구현할 수 있다면 더욱 바람직하다. 표면 장력을 일률적으로 낮추기만 하는 방안은 작은 폐포와 큰 폐포에 같은 정도로 작용하므로, 폐포의 크기에 따라 작용의 세기가 달라지는 본래의 조절 기능을 온전히 대신하기 어렵다. 이러한 까닭에서 단순히 표면 장력을 낮추는 데 그치지 않고 폐의 생리적 조건에 가까운 보조 방안을 개발하기 위한 연구가 계속되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 폐포의 신전성이 클수록 일정량의 공기를 들이마시는 데 드는 에너지가 줄어든다.</li>
+<li>② 폐포 안쪽 액체층의 표면 장력은 물 분자 사이의 인력에 의해 형성된다.</li>
+<li>③ 표면 장력이 같다면 반지름이 작은 폐포일수록 안정된 부피 유지에 더 높은 공기압이 필요하다.</li>
+<li>④ 계면 활성제는 물 분자 사이의 인력을 방해하여 표면 장력을 떨어뜨린다.</li>
+<li>⑤ 계면 활성제가 부족하면 표면 장력이 낮아져 작은 폐포의 허탈이 촉진된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 폐포의 표면 장력을 낮추어 폐포의 안정을 도울 수 있어야 한다.</li>
+<li>② 폐포가 지닌 탄성 복원력을 손상시키지 않아야 한다.</li>
+<li>③ 폐포의 신전성을 줄여 내부 공기압이 일정하게 유지되도록 해야 한다.</li>
+<li>④ 가스 교환이 일어나는 폐포 세포층의 기능을 방해하지 않아야 한다.</li>
+<li>⑤ 폐포가 작아질수록 표면 장력을 더 크게 낮출 수 있어야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 다음은 의학 칼럼의 일부이다. 윗글을 참고할 때, 칼럼의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈건강 칼럼〉</strong>
+최근 일부 연구진은 사람의 계면 활성제와 성분이 유사한 ㉮인공 계면 활성제를 개발하여, 계면 활성제가 부족한 미숙아의 폐포에 직접 투여하는 치료를 시도하고 있다. 이 물질은 폐포 표면의 액체층에 퍼져 작용하도록 설계된다.</p>
+</blockquote>
+<ul>
+<li>① 폐포 표면의 액체층에 퍼져 물 분자 사이의 인력을 방해하도록 작용하겠군.</li>
+<li>② 미숙아의 폐포에 작용하여 표면 장력을 낮추는 역할을 대신하겠군.</li>
+<li>③ 표면 장력을 낮추어 작은 폐포의 허탈이 촉진되는 것을 막으려는 것이겠군.</li>
+<li>④ 폐포에 압력을 가하는 방법과 달리, 폐포 내부의 공기압 자체를 높여 표면 장력을 키우겠군.</li>
+<li>⑤ Ⅱ형 폐포 세포의 계면 활성제 분비가 모자랄 때 그 부족을 보충하려는 것이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 폐포를 오그라들게 하여 신전성을 떨어뜨린다.</li>
+<li>② ㉡은 ㉠과 달리 물 분자 사이의 인력에 의해 형성된다.</li>
+<li>③ ㉠은 ㉡을 강화하여 작은 폐포의 허탈을 억제한다.</li>
+<li>④ ㉡은 ㉠이 분비될수록 폐포의 표면에서 더 강하게 작용한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 폐포가 작아질수록 그 크기가 일정하게 유지된다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29]</div>
+<div class='passage exam-ps'><p>신체의 세포, 조직, 장기가 손상되어 더 이상 제 기능을 하지 못할 때에 이를 대체하기 위해 이식을 실시한다. 이때 이식으로 옮겨 붙이는 세포, 조직, 장기를 이식편이라 한다. 자신이나 일란성 쌍둥이의 이식편을 이용할 수 없다면 다른 사람의 이식편으로 ‘동종 이식’을 실시한다. 그런데 우리의 몸은 자신의 것이 아닌 물질이 체내로 유입될 경우 면역 반응을 일으키므로, 유전적으로 동일하지 않은 이식편에 대해 항상 거부 반응을 일으킨다. 면역적 거부 반응은 면역 세포가 표면에 발현하는 주조직적합복합체(MHC) 분자의 차이에 의해 유발된다. 개체마다 MHC에 차이가 있는데 서로 간의 유전적 거리가 멀수록 MHC에 차이가 커져 거부 반응이 강해진다. 이를 막기 위해 면역 억제제를 사용하는데, 이는 면역 반응을 억제하여 질병 감염의 위험성을 높인다.</p>
+<p>이식에는 많은 비용이 소요될 뿐만 아니라 이식이 가능한 동종 이식편의 수가 매우 부족하기 때문에 이를 대체하는 방법이 개발되고 있다. 우선 인공 심장과 같은 ‘전자 기기 인공 장기’를 이용하는 방법이 있다. 하지만 이는 장기의 기능을 일시적으로 대체하는 데 사용되며, 추가 전력 공급 및 정기적 부품 교체 등이 요구되는 단점이 있고, 아직 인간의 장기를 완전히 대체할 만큼 정교한 단계에 이르지는 못했다.</p>
+<p>다음으로는 사람의 조직 및 장기와 유사한 다른 동물의 이식편을 인간에게 이식하는 ‘이종 이식’이 있다. 그런데 이종 이식은 동종 이식보다 거부 반응이 훨씬 심하게 일어난다. 특히 사람이 가진 자연항체는 다른 종의 세포에서 발현되는 항원에 반응하는데, 이로 인해 이종 이식편에 대해서 초급성 거부 반응 및 급성 혈관성 거부 반응이 일어난다. 이런 거부 반응을 일으키는 유전자를 제거한 형질 전환 미니돼지에서 얻은 이식편을 이식하는 실험이 성공한 바 있다. 미니돼지는 장기의 크기가 사람의 것과 유사하고 번식력이 높아 단시간에 많은 개체를 생산할 수 있다는 장점이 있어, 이를 이용한 이종 이식편을 개발하기 위한 연구가 진행되고 있다.</p>
+<p>이종 이식의 또 다른 문제는 ㉠내인성 레트로바이러스이다. 내인성 레트로바이러스는 생명체의 DNA의 일부분으로, 레트로바이러스로부터 유래된 것으로 여겨지는 부위들이다. 이는 바이러스의 활성을 가지지 않으며 사람을 포함한 모든 포유류에 존재한다. ㉡레트로바이러스는 자신의 유전 정보를 RNA에 담고 있고 역전사 효소를 갖고 있는 바이러스로서, 특정한 종류의 세포를 감염시킨다. 유전 정보가 담긴 DNA로부터 RNA가 생성되는 전사 과정만 일어날 수 있는 다른 생명체와는 달리, 레트로바이러스는 다른 생명체의 세포에 들어간 후 역전사 과정을 통해 자신의 RNA를 DNA로 바꾸고 그 세포의 DNA에 끼어들어 감염시킨다. 이후에는 다른 바이러스와 마찬가지로 자신이 속해 있는 생명체를 숙주로 삼아 숙주 세포의 시스템을 이용하여 복제, 증식하고 일정한 조건이 되면 숙주 세포를 파괴한다.</p>
+<p>그런데 정자, 난자와 같은 생식 세포가 레트로바이러스에 감염되고도 살아남는 경우가 있었다. 이런 세포로부터 유래된 자손의 모든 세포가 갖게 된 것이 내인성 레트로바이러스이다. 내인성 레트로바이러스는 세대가 지나면서 돌연변이로 인해 염기 서열의 변화가 일어나며 해당 세포 안에서는 바이러스로 활동하지 않는다. 그러나 내인성 레트로바이러스를 떼어 내어 다른 종의 세포 속에 주입하면 이는 레트로바이러스로 변환되어 그 세포를 감염시키기도 한다. 따라서 미니돼지의 DNA에 포함된 내인성 레트로바이러스를 효과적으로 제거하는 기술이 개발 중에 있다.</p>
+<p>그동안의 대체 기술과 관련된 연구 성과를 토대로 ⓐ이상적인 이식편을 개발하기 위해 많은 연구가 수행되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동종 간보다 이종 간이 MHC 분자의 차이가 더 크다.</li>
+<li>② 면역 세포의 작용으로 인해 장기 이식의 거부 반응이 일어난다.</li>
+<li>③ 이종 이식을 하는 것만으로도 바이러스 감염의 원인이 될 수 있다.</li>
+<li>④ 포유동물은 과거에 어느 조상이 레트로바이러스에 의해 감염된 적이 있다.</li>
+<li>⑤ 레트로바이러스는 숙주 세포의 역전사 효소를 이용하여 RNA를 DNA로 바꾼다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이식편의 비용을 낮추어서 정기 교체가 용이해야 한다.</li>
+<li>② 이식편은 대체를 하려는 장기와 크기가 유사해야 한다.</li>
+<li>③ 이식편과 수혜자 사이의 유전적 거리를 극복해야 한다.</li>
+<li>④ 이식편은 짧은 시간에 대량으로 생산이 가능해야 한다.</li>
+<li>⑤ 이식편이 체내에서 거부 반응을 유발하지 않아야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근에 줄기 세포 연구와 3D 프린팅 기술이 급속도로 발전하고 있다. 줄기 세포는 인체의 모든 세포나 조직으로 분화할 수 있다. 그러므로 수혜자 자신의 줄기 세포만을 이용하여 3D 바이오 프린팅 기술로 제작한 ㉮세포 기반 인공 이식편을 만들 수 있을 것으로 전망된다. 이미 미니 폐, 미니 심장 등의 개발 성공 사례도 보고되었다.</p>
+</blockquote>
+<ul>
+<li>① 전자 기기 인공 장기와 달리 전기 공급 없이도 기능을 유지할 수 있겠군.</li>
+<li>② 동종 이식편과 달리 이식 후 면역 억제제를 사용할 필요가 없겠군.</li>
+<li>③ 동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없겠군.</li>
+<li>④ 이종 이식편과 달리 유전자를 조작하는 과정이 필요하지는 않겠군.</li>
+<li>⑤ 이종 이식편과 달리 자연항체에 의한 초급성 거부 반응이 일어나지 않겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자신이 속해 있는 생명체의 모든 세포의 DNA에 존재한다.</li>
+<li>② ㉡은 ㉠과 달리 자신의 유전 정보를 DNA에 담을 수 없다.</li>
+<li>③ ㉡은 ㉠과 달리 자신이 속해 있는 생명체에 면역 반응을 일으키지 않는다.</li>
+<li>④ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 유전 정보를 가지고 있다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 세포를 감염시켜 파괴한다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>폐는 수많은 폐포로 이루어진 기관이며, 폐포는 Ⅰ형 폐포 세포와 Ⅱ형 폐포 세포가 이룬 얇은 세포층으로 둘러싸여 있다. Ⅰ형 폐포 세포는 폐포 표면의 대부분을 덮어 산소와 이산화 탄소가 효율적으로 교환되게 하고, Ⅱ형 폐포 세포는 폐포의 안정에 관여하는 물질을 만들어 낸다. 폐포의 표면은 다시 얇은 액체층으로 덮여 있어, 폐포의 안정에는 세포층의 성질과 이 액체층의 성질이 함께 관여한다. 폐포는 들숨에 부풀었다가 날숨에 줄어드는 운동을 반복하는데, 이 운동이 안정적으로 이루어지려면 폐포가 부풀고 줄어드는 과정에서 정상적인 부피를 잃고 쭈그러드는 허탈이 일어나지 않아야 한다. 폐포의 안정에는 폐포 벽과 표면 액체층에서 비롯되는 여러 요인이 함께 관여하는데, 이 요인들은 폐포의 부피를 키우려는 방향과 줄이려는 방향으로 서로 다르게 작용한다.</p>
+<p>폐포의 안정에 관여하는 요인은 작용 방향과 원인에 따라 나눌 수 있다. 어떤 요인은 폐포에 직접 힘을 가하고, 어떤 요인은 그 힘의 세기를 조절한다. ㉠<u>탄성 복원력</u>은 늘어난 폐포가 본래의 부피로 되돌아가려는 힘이다. 이 힘은 폐포가 과도하게 부풀지 않도록 제한하는 한편, 날숨에서 폐포가 공기를 밀어내도록 돕는다. 탄성 복원력이 약해지면 폐포가 본래 부피로 돌아가지 못하므로 날숨이 어려워진다. ㉡<u>표면 장력</u>은 폐포 안쪽 액체층의 표면이 면적을 최소화하려는 힘으로, 강한 물 분자 간의 인력에서 비롯된다. 표면에 있는 물 분자는 안쪽으로만 인력을 받아 면적을 줄이려 하므로, 표면 장력은 폐포를 오그라들게 하여 부피를 줄이는 방향으로 작용한다. ㉢<u>계면 활성제</u>는 Ⅱ형 폐포 세포가 분비하는 물질로, 물 분자 사이의 인력을 방해하여 표면 장력의 크기를 떨어뜨린다. 계면 활성제는 표면 장력처럼 폐포에 직접 힘을 가하는 것이 아니라, 표면 장력의 세기를 조절함으로써 폐포의 안정에 관여한다.</p>
+<p>세 요인이 폐포에 작용하는 결과는 폐포의 크기에 따라 달라진다. 안정된 부피를 유지하기 위해 필요한 내부 공기압은 표면 장력에 비례하고 폐포의 반지름에 반비례하므로, 표면 장력이 일정하다면 반지름이 작은 폐포일수록 더 높은 공기압을 요구한다. 따라서 작은 폐포는 그 자체로 보면 큰 폐포보다 허탈이 일어나기 쉽다. 그런데 계면 활성제는 폐포의 표면을 덮는 양이 같아도 표면적이 줄면 더 조밀하게 분포하여, 작은 폐포에서 표면 장력을 더 크게 낮춘다. 표면적이 줄면 같은 양의 계면 활성제가 더 좁은 면적에 모여 농도가 높아지기 때문이다. 그 결과 크기가 서로 다른 폐포들이 한 폐 안에서 함께 있어도 작은 폐포가 큰 폐포 쪽으로 공기를 모두 빼앗기지 않고 안정을 유지할 수 있다.</p>
+<p>탄성 복원력과 표면 장력은 모두 폐포의 부피를 줄이는 방향으로 작용하지만, 그 까닭은 서로 다르다. 탄성 복원력은 폐포 벽 자체의 성질에서 비롯되는 반면, 표면 장력은 폐포 안쪽을 적신 액체층에서 비롯된다. 따라서 같은 폐포에서도 두 힘은 서로 독립적으로 변할 수 있다. 한편 계면 활성제는 이 두 힘 가운데 표면 장력에만 작용하여 그 세기를 낮춘다.</p>
+<p>폐포가 부풀고 줄어드는 한 번의 호흡에서 세 요인은 함께 작용한다. 들숨에서 폐포가 부풀면 표면적이 넓어져 계면 활성제의 분포가 성겨지므로 표면 장력을 낮추는 작용이 약해지고, 늘어난 폐포에는 본래 부피로 되돌아가려는 탄성 복원력이 커진다. 반대로 날숨에서 폐포가 줄어들면 계면 활성제가 다시 조밀해져 표면 장력을 더 크게 낮추므로, 폐포가 지나치게 오그라들어 허탈에 이르는 것을 막는다. 이렇듯 계면 활성제의 작용은 폐포의 크기 변화에 따라 저절로 세기가 달라져 안정을 돕는다. 계면 활성제가 부족해지면 표면 장력을 낮추는 조절 작용이 약해져, 작은 폐포의 허탈이 촉진되고 호흡 기능이 떨어진다. 이처럼 폐포의 안정은 부피를 줄이려는 힘과 그 힘을 조절하는 작용 사이의 균형 위에서 이루어진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 폐포를 둘러싼 세포층은 어떤 세포들로 이루어져 있는가?</li>
+<li>② 표면 장력은 폐포에 어떤 방향으로 작용하는가?</li>
+<li>③ 계면 활성제는 어떤 세포에서 분비되는가?</li>
+<li>④ 탄성 복원력은 폐포가 부푸는 속도를 얼마나 빠르게 하는가?</li>
+<li>⑤ 안정된 부피 유지에 필요한 공기압은 폐포의 반지름과 어떤 관계인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글을 읽고 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 탄성 복원력은 날숨에서 폐포가 공기를 밀어내도록 돕는다.</li>
+<li>② 표면 장력은 폐포 안쪽 액체층에서 비롯되어 폐포를 오그라들게 한다.</li>
+<li>③ 계면 활성제는 폐포에 직접 힘을 가하여 부피를 키우는 방향으로 작용한다.</li>
+<li>④ 표면 장력이 일정할 때 반지름이 작은 폐포일수록 더 높은 공기압을 요구한다.</li>
+<li>⑤ 계면 활성제가 부족하면 작은 폐포의 허탈이 촉진되어 호흡 기능이 떨어진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>㉠～㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두 폐포의 부피를 줄이는 방향으로 작용한다.</li>
+<li>② ㉠과 ㉢은 모두 폐포 안쪽 액체층에서 비롯되는 힘이다.</li>
+<li>③ ㉡과 ㉢은 모두 물 분자 사이의 인력에 의해 그 크기가 정해진다.</li>
+<li>④ ㉠은 ㉢과 달리, 폐포가 작아질수록 표면 장력을 더 크게 낮춘다.</li>
+<li>⑤ ㉢은 ㉡과 달리, 폐포 벽 자체의 성질에서 비롯되어 부피를 제한한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 ‘가상의 실험 결과’를 보고 추론한 내용이다. ㉮에 들어갈 말로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 폐포 모형의 표면 액체에 작용하는 힘을 다음과 같이 조절하였다. 모형 가는 기준이 되는 폐포 액체이고, 모형 나는 가에서 계면 활성제의 양만 늘린 것이며, 모형 다는 가에서 계면 활성제를 모두 없앤 것이다. 모형 라는 다에서 표면 액체의 양만 줄여 폐포의 반지름을 작게 만든 것이다. 모든 모형의 그 밖의 조건은 동일하다고 가정할 때, 학생은 ㉮ 라고 추론하였다.</p>
+</blockquote>
+<ul>
+<li>① 나는 가에 비해 표면 장력이 작아, 안정된 부피 유지에 필요한 공기압이 낮겠군.</li>
+<li>② 다는 가에 비해 표면 장력이 커, 폐포가 오그라들려는 경향이 강하겠군.</li>
+<li>③ 라는 다에 비해 반지름이 작아, 안정된 부피 유지에 필요한 공기압이 높겠군.</li>
+<li>④ 나는 다에 비해 물 분자 사이의 인력이 더 많이 방해받아, 표면 장력이 작겠군.</li>
+<li>⑤ 라는 나에 비해 계면 활성제가 더 조밀하게 분포하여, 표면 장력이 작겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 9월 [34~37]</div>
+<div class='passage exam-ps'><p>질병을 유발하는 병원체에는 세균, 진균, 바이러스 등이 있다. 생명체의 기본 구조에 속하는 세포막은 지질을 주성분으로 하는 이중층이다. 세균과 진균은 일반적으로 세포막 바깥 부분에 세포벽이 있고, 바이러스의 표면은 세포막 대신 캡시드라고 부르는 단백질로 이루어져 있다. 바이러스의 종류에 따라 캡시드 외부가 지질을 주성분으로 하는 피막으로 덮인 경우도 있다. 한편 진균과 일부 세균은 다른 병원체에 비해 건조, 열, 화학 물질에 저항성이 강한 포자를 만든다.</p>
+<p>생활 환경에서 병원체의 수를 억제하고 전염병을 예방하기 위한 목적으로 사용하는 방역용 화학 물질을 ‘항(抗)미생물 화학제’라 한다. 항미생물 화학제는 다양한 병원체가 공통으로 갖는 구조를 구성하는 성분들에 화학 작용을 일으키므로 광범위한 살균 효과가 있다. 그러나 병원체의 구조와 성분은 병원체의 종류에 따라 완전히 같지는 않으므로, 동일한 항미생물 화학제라도 그 살균 효과는 다를 수 있다.</p>
+<p>항미생물 화학제 중 ㉠멸균제는 포자를 포함한 모든 병원체를 파괴한다. ㉡감염방지제는 포자를 제외한 병원체를 사멸시키는 화합물로 병원, 공공시설, 가정의 방역에 사용된다. 감염방지제 중 독성이 약해 사람의 피부나 상처 소독에도 사용이 가능한 항미생물 화학제를 ㉢소독제라 한다. 사람의 세포막도 지질 성분으로 이루어져 있어 소독제라 하더라도 사람의 세포를 죽일 수 있으므로, 눈이나 호흡기 등의 점막에 접촉하지 않도록 주의해야 한다. 따라서 항미생물 화학제는 병원체에 대한 최대의 방역 효과와 인체 및 환경에 대한 최고의 안전성을 확보할 수 있도록 종류별 사용법을 지켜야 한다.</p>
+<p>항미생물 화학제의 작용기제는 크게 병원체의 표면을 손상시키는 방식과 병원체 내부에서 대사 기능을 저해하는 방식으로 나눌 수 있지만, 많은 경우 두 기제가 함께 작용한다. 고농도 에탄올 등의 알코올 화합물은 세포막의 기본 성분인 지질을 용해시키고 단백질을 변성시키며, 병원성 세균에서는 세포벽을 약화시킨다. 또한 알코올 화합물은 지질 피막이 없는 바이러스보다 지질 피막이 있는 병원성 바이러스에서 방역 효과가 크다. 지질 피막은 병원성 바이러스가 사람을 감염시키는 과정에서 중요한 역할을 하기 때문에, 지질을 손상시키는 기능을 가진 항미생물 화학제만으로도 병원성 바이러스에 대한 방역 효과가 있다. 지질 피막의 유무와 관계없이 다양한 바이러스의 감염 예방을 위해서는 하이포염소산 소듐 등의 산화제가 널리 사용된다. 병원성 바이러스의 방역에 사용되는 산화제는 바이러스의 공통적인 표면 구조를 이루는 캡시드를 손상시키는 기능이 있어 바이러스를 파괴하거나 바이러스의 감염력을 잃게 한다.</p>
+<p>병원체의 표면에 생긴 약간의 손상이 병원체를 사멸시키는 데 충분하지 않더라도, 항미생물 화학제가 내부로 침투하면 살균 효과가 증가한다. 알킬화제와 산화제는 병원체의 내부로 침투하면 필수적인 물질 대사를 정지시킨다. 글루타르 알데하이드와 같은 알킬화제가 알킬 작용기를 단백질에 결합시키면 단백질을 변성시켜 기능을 상실하게 하고, 핵산의 염기에 결합시키면 핵산을 비정상 구조로 변화시켜 유전자 복제와 발현을 교란한다. 산화제인 하이포염소산 소듐은 병원체 내에서 불특정한 단백질들을 산화시켜 단백질로 이루어진 효소들의 기능을 비활성화하고 병원체를 사멸에 이르게 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 병원성 세균은 어떤 작용기제로 사람을 감염시킬까?</li>
+<li>② 알코올 화합물은 병원성 세균의 살균에 효과가 있을까?</li>
+<li>③ 바이러스와 세균의 표면 구조는 어떤 차이가 있을까?</li>
+<li>④ 병원성 바이러스 감염 예방을 위한 방역에 사용되는 물질에는 무엇이 있을까?</li>
+<li>⑤ 항미생물 화학제가 병원체에 대해 광범위한 살균 효과를 나타내는 이유는 무엇일까?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>35</span>윗글을 읽고 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고농도 에탄올은 지질 피막이 있는 바이러스에 방역 효과가 있다.</li>
+<li>② 하이포염소산 소듐은 병원체의 내부가 아니라 표면의 단백질을 손상시킨다.</li>
+<li>③ 진균의 포자는 바이러스에 비해서 화학 물질에 대한 저항성이 더 강하다.</li>
+<li>④ 알킬화제는 병원체 내 핵산의 염기에 알킬 작용기를 결합시켜 유전자의 발현을 방해한다.</li>
+<li>⑤ 산화제가 다양한 바이러스를 사멸시키는 것은 그 산화제가 바이러스의 공통적인 구조를 구성하는 성분들에 작용하기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>36</span>㉠～㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두, 질병의 원인이 되는 진균의 포자와 바이러스를 사멸시킬 수 있다.</li>
+<li>② ㉠과 ㉢은 모두, 생활 환경의 방역뿐 아니라 사람의 상처 소독에 적용 가능하다.</li>
+<li>③ ㉡과 ㉢은 모두, 바이러스의 종류에 따라 살균 효과가 달라질 수 있다.</li>
+<li>④ ㉠은 ㉡과 달리, 세포막이 있는 병원성 세균은 사멸시킬 수 있으나 피막이 있는 병원성 바이러스는 사멸시킬 수 없다.</li>
+<li>⑤ ㉡은 ㉢과 달리, 인체에 해로우므로 사람의 점막에 직접 닿아서는 안 된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>37</span><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 ‘가상의 실험 결과’를 보고 추론한 내용이다. <span class="boxmark">[가]</span>에 들어갈 말로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦가상의 실험 결과
+항미생물 화학제로 사용되는 알코올 화합물 A를 변환시켜 다음과 같은 결과를 얻었다.
+<span class="boxmark">[결과1]</span> A에서 지질을 손상시키는 기능만을 약화시켜 B를 얻었다.
+<span class="boxmark">[결과2]</span> A에서 캡시드를 손상시키는 기능만을 강화시켜 C를 얻었다.
+<span class="boxmark">[결과3]</span> B에서 캡시드를 손상시키는 기능만을 강화시켜 D를 얻었다.
+◦학생의 추론: 화합물들의 방역 효과와 안전성을 비교해 보면, <span class="boxmark">[가]</span> 고 추론할 수 있어.
+(단, 지질 손상 기능과 캡시드 손상 기능은 서로 독립적이며, 화합물 A, B, C, D의 비교 조건은 모두 동일하다고 가정함.)</p>
+</blockquote>
+<ul>
+<li>① B는 A에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 작고, 인체에 대한 안전성은 높다</li>
+<li>② C는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>③ C는 B에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>④ D는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 높다</li>
+<li>⑤ D는 B에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+</ul></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>폐포는 안쪽 표면이 얇은 액체층으로 싸여 있어, 이 액체층의 표면 장력 때문에 끊임없이 오그라들려는 경향을 보인다. 표면 장력은 물 분자 사이의 강한 인력에서 비롯되는 힘으로, 액체 표면이 가능한 한 작은 면적을 취하도록 만든다. 표면에 있는 물 분자는 안쪽으로만 인력을 받으므로, 그 인력이 표면을 안으로 끌어당겨 면적을 줄이려는 힘으로 나타난다. 그런데도 폐포가 정상적인 부피를 유지할 수 있는 것은, 폐포를 오그라들게 하는 힘과 폐포 내부의 공기압이 평형을 이루기 때문이다. 폐포가 안정된 부피를 유지하기 위해 필요한 내부의 공기압은 ㉠<u>라플라스 법칙</u>으로 설명할 수 있다. 라플라스 법칙에 따르면 이 공기압은 표면 장력에 정비례하고 폐포의 반지름에 반비례한다. 즉 표면 장력이 커질수록 폐포를 유지하는 데 더 높은 공기압이 필요하고, 폐포의 반지름이 작아질수록 더 높은 공기압이 요구된다. 만일 폐포 내부의 공기압이 이 필요한 값에 미치지 못하면 오그라들려는 힘이 우세해져 폐포는 허탈에 이른다.</p>
+<p>라플라스 법칙은 표면 장력이 일정하다고 가정할 때 폐포의 크기와 필요한 공기압의 관계를 분명히 보여 준다. 가령 표면 장력이 같은 두 폐포가 있고 한쪽의 반지름이 다른 쪽의 절반이라면, 반지름이 절반인 폐포가 안정된 부피를 유지하는 데 필요한 공기압은 다른 폐포의 두 배가 된다. 반지름이 작을수록 같은 표면 장력이라도 폐포를 오그라들게 하는 효과가 커져, 이를 버티는 데 더 높은 공기압이 필요하기 때문이다. 이 때문에 표면 장력이 동일하다면 작은 폐포일수록 더 쉽게 허탈이 일어날 수 있다. 또한 같은 폐포라도 표면 장력이 두 배로 커지면 안정된 부피를 위해 필요한 공기압도 두 배로 커진다. 반대로 반지름이 그대로인 채 표면 장력이 절반으로 줄면 필요한 공기압도 절반으로 줄어든다. 이렇듯 폐포의 안정은 표면 장력과 반지름이라는 두 값에 함께 좌우되며, 한 값이 고정되어 있을 때 다른 값의 변화가 필요한 공기압을 어떻게 바꾸는지가 분명히 드러난다.</p>
+<p>표면 장력을 일정하다고 두지 않으면 작은 폐포가 더 위태롭다는 결론은 그대로 유지되지 않는다. 폐포의 표면 장력은 ㉡<u>계면 활성제</u>에 의해 달라지기 때문이다. Ⅱ형 폐포 세포가 분비하는 계면 활성제는 물 분자 사이의 인력을 방해하여 표면 장력을 낮춘다. 물 분자끼리의 인력이 약해지면 표면이 면적을 줄이려는 경향도 함께 약해지므로 표면 장력이 작아지는 것이다. 계면 활성제는 폐포 표면을 덮는 양이 같더라도 폐포가 작아져 표면적이 줄면 더 조밀하게 분포한다. 같은 양의 계면 활성제가 더 좁은 표면에 모이면 농도가 높아지는 것이다. 따라서 작은 폐포일수록 계면 활성제의 농도가 높아져 표면 장력이 더 많이 줄어든다. 반대로 폐포가 커져 표면적이 넓어지면 계면 활성제의 분포가 성겨져 표면 장력이 덜 줄어든다.</p>
+<p>계면 활성제의 이러한 특성은 라플라스 법칙이 예측하는 작은 폐포의 불리함을 상쇄한다. 반지름이 작아질수록 필요한 공기압은 커지지만, 동시에 표면 장력이 더 많이 낮아져 필요한 공기압을 다시 끌어내리기 때문이다. 곧 반지름 감소가 끌어올린 공기압을 표면 장력 감소가 도로 낮추는 셈이다. 표면 장력을 고정한 채 반지름만 볼 때와, 반지름이 줄 때 표면 장력도 함께 주는 실제 폐포를 견주면 그 결과가 크게 달라지는 것이다. 그러므로 표면 장력만을 따로 떼어 작은 폐포가 더 위태롭다고 본 라플라스 법칙의 예측은, 계면 활성제의 작용까지 함께 고려하면 그대로 적용되지 않는다. 그 결과 크기가 서로 다른 폐포들이 한 폐 안에 함께 있어도 작은 폐포가 큰 폐포 쪽으로 공기를 빼앗기지 않고 안정을 유지한다. 만약 계면 활성제가 부족해지면 작은 폐포에서 표면 장력이 충분히 낮아지지 못해, 라플라스 법칙이 예측하던 작은 폐포의 불리함이 그대로 드러난다. 이때는 작은 폐포의 허탈이 촉진되고 호흡 기능이 떨어지는 문제가 발생한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 폐포를 오그라들게 하는 힘과 내부 공기압이 평형을 이루면 폐포의 부피가 안정된다.</li>
+<li>② 라플라스 법칙에 따르면 안정된 부피에 필요한 공기압은 폐포의 반지름에 정비례한다.</li>
+<li>③ 표면 장력이 일정할 때 반지름이 큰 폐포일수록 더 쉽게 허탈이 일어난다.</li>
+<li>④ 계면 활성제는 물 분자 사이의 인력을 강화하여 표면 장력을 높인다.</li>
+<li>⑤ 폐포가 작아지면 표면을 덮는 계면 활성제의 양이 늘어나 농도가 높아진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 표면 장력이 일정하다면 반지름이 작은 폐포일수록 필요한 공기압이 낮다.</li>
+<li>② 폐포의 반지름이 일정하다면 표면 장력이 커질수록 필요한 공기압이 커진다.</li>
+<li>③ 표면 장력과 반지름이 모두 커지면 필요한 공기압은 반드시 작아진다.</li>
+<li>④ 필요한 공기압은 폐포의 반지름에 정비례하고 표면 장력에 반비례한다.</li>
+<li>⑤ 표면 장력이 두 배가 되면 필요한 공기압은 절반으로 줄어든다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>㉡에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① Ⅱ형 폐포 세포에서 분비된다.</li>
+<li>② 물 분자 사이의 인력을 방해하여 표면 장력을 낮춘다.</li>
+<li>③ 부족해지면 작은 폐포에서 표면 장력이 더 크게 낮아진다.</li>
+<li>④ 폐포가 작아질수록 더 조밀하게 분포한다.</li>
+<li>⑤ 표면을 덮는 양이 같아도 표면적이 줄면 농도가 높아진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 폐 안에 폐포 P와 폐포 Q가 있다. 두 폐포의 표면을 덮는 계면 활성제의 총량은 같으나, P의 반지름은 Q의 반지름의 절반이다. 한편 같은 폐의 폐포 R는 P와 반지름이 같지만, 계면 활성제가 거의 분비되지 않아 표면 장력이 P보다 훨씬 크다. 세 폐포의 그 밖의 조건은 모두 동일하다고 가정한다.</p>
+</blockquote>
+<ul>
+<li>① 표면 장력이 서로 같다고 가정하면, P는 Q보다 안정된 부피 유지에 더 높은 공기압이 필요하겠군.</li>
+<li>② P는 Q보다 표면적이 작아 계면 활성제가 더 조밀하게 분포하므로, P의 표면 장력은 Q보다 작겠군.</li>
+<li>③ 계면 활성제의 작용까지 고려하면, P가 Q보다 반드시 허탈이 잘 일어난다고 단정하기는 어렵겠군.</li>
+<li>④ R는 P와 반지름이 같지만 표면 장력이 더 크므로, 안정된 부피 유지에 더 높은 공기압이 필요하겠군.</li>
+<li>⑤ R는 계면 활성제가 거의 없어 표면 장력이 낮으므로, P보다 허탈이 잘 일어나지 않겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 9월 [29~32]</div>
+<div class='passage exam-ps'><p>㉠주사 터널링 현미경(STM)에서는 끝이 첨예한 금속 탐침과 도체 또는 반도체 시료 표면 간에 적당한 전압을 걸어 주고 둘 간의 거리를 좁히게 된다. 탐침과 시료의 거리가 매우 가까우면 양자 역학적 터널링 효과에 의해 둘이 접촉하지 않아도 전류가 흐른다. 이때 탐침과 시료 표면 간의 거리가 원자 단위 크기에서 변하더라도 전류의 크기는 민감하게 달라진다. 이 점을 이용하면 시료 표면의 높낮이를 원자 단위에서 측정할 수 있다. 하지만 전류가 흐를 수 없는 시료의 표면 상태는 STM을 이용하여 관찰할 수 없다. 이렇게 민감한 STM도 진공 기술의 뒷받침이 있었기에 널리 사용될 수 있었다.</p>
+<p>STM은 대체로 진공 통 안에 설치되어 사용되는데 그 이유는 무엇일까? 기체 분자는 끊임없이 떠돌아다니다가 주변과 충돌한다. 이때 일부 기체 분자들은 관찰하려는 시료의 표면에 붙어 표면과 반응하거나 표면을 덮어 시료 표면의 관찰을 방해한다. 따라서 용이한 관찰을 위해 STM을 활용한 실험에서는 관찰하려고 하는 시료와 기체 분자의 접촉을 최대한 차단할 필요가 있어 진공이 요구되는 것이다. 진공이란 기체 압력이 대기압보다 낮은 상태를 통칭하며 기체 압력이 낮을수록 진공도가 높다고 한다. 진공 통 내부의 온도가 일정하고 한 종류의 기체 분자만 존재할 경우, 기체 분자의 종류와 상관없이 통 내부의 기체 압력은 단위 부피당 떠돌아다니는 기체 분자의 수에 비례한다. 따라서 기체 분자들을 진공 통에서 뽑아내거나 진공 통 내부에서 움직이지 못하게 고정하면 진공 통 내부의 기체 압력을 낮출 수 있다.</p>
+<p>STM을 활용하는 실험에서 어느 정도의 진공도가 요구되는지를 이해하기 위해서는 ‘단분자층 형성 시간’의 개념을 이해할 필요가 있다. 진공 통 내부에서 떠돌아다니던 기체 분자들이 관찰하려는 시료의 표면에 달라붙어 한 층의 막을 형성하기까지 걸리는 시간을 단분자층 형성 시간이라 한다. 이 시간은 시료의 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률이 클수록, 단위 면적당 기체 분자의 충돌 빈도가 높을수록 짧다. 또한 기체 운동론에 따르면 고정된 온도에서 기체 분자의 질량이 크거나 기체의 압력이 낮을수록 단분자층 형성 시간은 길다. 가령 질소의 경우 20℃, 760토르* 대기압에서 단분자층 형성 시간은 3 × 10⁻⁹초이지만, 같은 온도에서 압력이 10⁻⁹토르로 낮아지면 대략 2,500초로 증가한다. 이런 이유로 STM에서는 시료의 관찰 가능 시간을 확보하기 위해 통상 10⁻⁹토르 이하의 초고진공이 요구된다.</p>
+<p>초고진공을 얻기 위해서는 ㉡스퍼터 이온 펌프가 널리 쓰인다. 스퍼터 이온 펌프는 진공 통 내부의 기체 분자가 펌프 내부로 유입되도록 진공 통과 연결하여 사용한다. 스퍼터 이온 펌프는 영구 자석, 금속 재질의 속이 뚫린 원통 모양 양극, 타이타늄으로 만든 판 형태의 음극으로 구성되어 있다. 자석 때문에 생기는 자기장이 원통 모양 양극의 축 방향으로 걸려 있고, 양극과 음극 간에는 2~7 kV의 고전압이 걸려 있다. 양극과 음극 간에 걸린 고전압의 영향으로 음극에서 방출된 전자는 자기장의 영향을 받아 복잡한 형태의 궤적을 그리며 양극으로 이동한다. 이 과정에서 음극에서 방출된 전자는 주변의 기체 분자와 충돌하여 기체 분자를 그것의 구성 요소인 양이온과 전자로 분리시킨다. 여기서 자기장은 전자가 양극까지 이동하는 거리를 자기장이 없을 때보다 증가시켜 주어 전자와 기체 분자와의 충돌 빈도를 높여 준다. 이 과정에서 생성된 양이온은 전기력에 의해 음극으로 당겨져 음극에 박히게 되어 이동 불가능한 상태가 된다. 이 과정이 1차 펌프 작용이다. 또한 양이온이 음극에 충돌하면 타이타늄이 떨어져 나와 충돌 지점 주변에 들러붙는다. 이렇게 들러붙은 타이타늄은 높은 화학 반응성 때문에 여러 기체 분자와 쉽게 반응하여, 떠돌아다니던 기체 분자를 흡착한다. 이는 떠돌아다니는 기체 분자의 수를 줄이는 효과가 있으므로 이를 2차 펌프 작용이라 부른다. 이렇듯 1, 2차 펌프 작용을 통해 스퍼터 이온 펌프는 초고진공 상태를 만들 수 있다.</p>
+<p><strong><span class="boxmark">[그림: 스퍼터 이온 펌프]</span></strong> (원본에서는 마지막 문단 중간, 단의 오른쪽에 배치된 입체 도해) 가운데에 속이 뚫린 원통 4개가 세로로 나란히 쌓여 묶음을 이루고 있으며, 오른쪽 위의 ‘양극’ 표지가 화살표로 이 원통 묶음을 가리킨다. 원통 묶음의 양옆에는 얇은 판 두 장이 마주 보고 세워져 있는데, 아래쪽의 ‘음극’ 표지가 화살표로 이 두 판을 가리킨다. 그 바깥 양쪽에는 두꺼운 직육면체 블록이 하나씩 놓여 있고 각각 ‘자석’이라 표시되어 있다. 맨 위에는 ‘−’, ‘+’ 단자가 표시된 ‘전원 장치’ 상자가 있으며 전선이 전극 쪽으로 연결되어 있다. 그림 아래에 ‘스퍼터 이온 펌프’라는 제목이 붙어 있다.</p>
+<p>* 토르(torr): 기체 압력의 단위.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 대기압보다 진공도가 낮은 상태가 진공이다.</li>
+<li>② 스퍼터 이온 펌프는 초고진공을 만드는 역할을 한다.</li>
+<li>③ 단분자층 형성 시간이 짧을수록 STM을 이용한 관찰이 용이하다.</li>
+<li>④ 일정한 온도와 부피의 진공 통 안에서 떠돌아다니는 기체 분자의 수는 기체 압력에 반비례한다.</li>
+<li>⑤ 단분자층 형성 시간은 시료 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률과 무관하게 결정된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>30</span>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 시료 표면의 높낮이를 원자 단위까지 측정할 수 없다.</li>
+<li>② 시료의 전기 전도 여부에 관계없이 시료를 관찰할 수 있다.</li>
+<li>③ 시료의 관찰 가능 시간을 늘리려면 진공 통 안의 기체 압력을 낮추어야 한다.</li>
+<li>④ 시료 표면의 관찰을 위해서는 시료 표면에 기체의 단분자층 형성이 필요하다.</li>
+<li>⑤ 양자 역학적 터널링 효과를 이용하여 탐침을 시료 표면에 접촉시킨 후 흐르는 전류를 측정한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>31</span>㉡의 ‘음극’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고전압과 전자의 상호 작용으로 자기장을 만든다.</li>
+<li>② 떠돌아다니던 기체 분자를 흡착하는 물질을 내놓는다.</li>
+<li>③ 기체 분자에서 분리된 양이온을 전기력으로 끌어당긴다.</li>
+<li>④ 전자와 기체 분자의 충돌로 만들어진 양이온을 고정시킨다.</li>
+<li>⑤ 기체 분자를 양이온과 전자로 분리시키는 전자를 방출한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>32</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 설명으로 옳지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+STM을 사용하여 규소의 표면을 관찰하는 실험을 하려고 한다. 동일한 사양의 STM이 설치된, 동일한 부피의 진공 통 A~E가 있고, 각 진공 통 내부에 있는 기체 분자의 정보는 다음 표와 같다. 진공 통 A 안의 기체 압력은 10⁻⁹토르이며, 모든 진공 통의 내부 온도는 20℃이다. (단, 기체 분자가 규소 표면과 충돌하여 달라붙을 확률은 기체의 종류와 관계없이 일정하며, 제시되지 않은 모든 조건은 각 진공 통에서 동일하다. N은 일정한 자연수이다.)</p>
+<table>
+<thead>
+<tr>
+<th>진공 통</th>
+<th>기체</th>
+<th>분자의 질량(amu*)</th>
+<th>단위 부피당 기체 분자 수(개/cm³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>질소</td>
+<td>28</td>
+<td>4N</td>
+</tr>
+<tr>
+<td>B</td>
+<td>질소</td>
+<td>28</td>
+<td>2N</td>
+</tr>
+<tr>
+<td>C</td>
+<td>질소</td>
+<td>28</td>
+<td>7N</td>
+</tr>
+<tr>
+<td>D</td>
+<td>산소</td>
+<td>32</td>
+<td>N</td>
+</tr>
+<tr>
+<td>E</td>
+<td>이산화 탄소</td>
+<td>44</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>* amu: 원자 질량 단위.</p>
+</blockquote>
+<ul>
+<li>① A 내부에서의 단분자층 형성 시간은 대략 2,500초이겠군.</li>
+<li>② B 내부의 기체 압력은 10⁻⁹토르보다 낮겠군.</li>
+<li>③ C 내부의 진공도는 B 내부의 진공도보다 낮겠군.</li>
+<li>④ D 내부에서의 단분자층 형성 시간은 A의 경우보다 길겠군.</li>
+<li>⑤ E 내부의 시료 표면에 대한 단위 면적당 기체 분자의 충돌 빈도는 D의 경우보다 높겠군.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

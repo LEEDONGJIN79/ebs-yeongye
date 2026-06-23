@@ -1,0 +1,475 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>초전도체와 초유체의 발견 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 아주 추운 날 손이 곱아서 잘 안 움직이는 경험 해 봤죠? 물질의 세계에서도 비슷한 일이 일어나요. 온도를 아주 많이 낮추면, 평소에는 숨어 있던 <strong>양자 역학</strong>의 신기한 성질이 갑자기 모습을 드러냅니다. 이 단원은 바로 그 "극저온에서 벌어지는 두 가지 놀라운 사건" — <strong>초전도</strong>와 <strong>초유체</strong>에 관한 이야기예요.</p>
+<p>먼저 큰 그림부터 볼게요. 물질은 주변과 끊임없이 에너지를 주고받는데, 온도가 높으면 받는 에너지가 많아 입자들이 활발하게 움직여요. 반대로 온도가 아주 낮으면 입자들이 가장 낮은 에너지 상태에 얌전히 가라앉습니다. 이렇게 차갑게 식혀 두어야만 양자 역학적 현상이 또렷이 보여요. 그래서 과학자들은 "더 낮은 온도"를 향한 경쟁을 벌였고, 그 끝에서 두 가지 발견이 기다리고 있었습니다.</p>
+<p><strong>첫 번째는 초전도예요.</strong> 전선에 전류가 흐르면 늘 약간의 저항이 생겨 열로 에너지를 잃죠. 그런데 어떤 금속은 온도를 절대영도(영하 273.15℃) 가까이 낮추면 <strong>전기 저항이 완전히 0이 되는</strong> 일이 벌어집니다. 마치 마찰이 사라진 얼음판 위를 미끄러지듯, 전류가 손실 없이 흐르는 거예요. 재미있는 건, 이런 일이 일어날지 미리 예측한 세 학자가 서로 <em>완전히 다른 답</em>을 내놓았다는 점이에요. "저항이 남는다", "0이 된다", "오히려 커진다" — 누가 맞았을까요? 카메를링 오너스가 수은으로 실험해 답을 찾아냅니다.</p>
+<p><strong>두 번째는 초유체예요.</strong> 보통 물질은 충분히 차게 하면 꽁꽁 얼어 고체가 되죠. 그런데 헬륨이라는 기체는 절대영도 가까이 가도 <strong>얼지 않고 액체로 남아요.</strong> 헬륨 원자가 너무 가벼워서, 절대영도에서도 가만히 못 있고 떨리는 <strong>영점 운동</strong>을 크게 하기 때문이에요. 이렇게 양자 역학이 지배하는 액체를 <strong>양자 액체(양자 유체)</strong>라고 부릅니다.</p>
+<blockquote>
+<p>한마디로: <strong>저온은 양자 역학을 눈에 보이게 만드는 무대</strong>예요. 그 무대 위에서 전기 저항이 사라지고(초전도), 얼지 않는 액체가 등장합니다(초유체). 이 단원은 그 두 발견의 원리와, 그것을 둘러싼 학자들의 예측·실험·결론을 차근차근 따라갑니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>"극저온에서 드러나는 양자 역학적 현상"</strong>이 있습니다. 두 갈래의 발견(초전도·초유체)을 세 세트로 나누어, 학자들의 경쟁적 예측과 실험, 그리고 그 의미를 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>극저온에서 드러나는 양자 역학적 현상</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>절대영도 근처에서 도체의 전기 저항이 어떻게 될지를 두고 마티센·듀어·켈빈이 내놓은 <em>서로 다른 예측</em>을 견주고, 오너스가 왜 하필 수은을 골라 초전도를 처음 관측했는지를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>헬륨이 절대영도에서도 얼지 않는 까닭(영점 운동)을 따라가며, 온도와 압력에 따라 헬륨의 상태가 어떻게 갈리는지를 <em>수치로 추론</em>해 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>초전도와 초유체라는 두 발견을 한데 묶어 그 의의를 짚고, 헬륨 I과 헬륨 II, 그리고 <em>이상적인 초전도 물질</em>이 갖추어야 할 조건을 견줍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 왜 저온이 양자 역학의 무대인지, 학자들의 예측이 어떻게 갈렸고 실험이 그것을 어떻게 가렸는지, 그리고 얼지 않는 액체가 무엇을 뜻하는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>물리계는 주변 환경과 끊임없이 에너지를 주고받으며, 주고받는 에너지의 양은 온도가 높을수록 많아질 수 있다. 온도가 아주 낮을 때는 받아들이는 에너지가 적어 입자들이 가장 낮은 몇 개의 에너지 상태에만 머물지만, 온도가 높아지면 입자들이 수많은 상태로 흩어져 그 하나하나의 값을 따지는 일이 무의미해진다. 그래서 거시적인 물리계에서 미시 세계의 양자 역학적 성질을 또렷이 관찰하려면 온도를 충분히 낮추어야 한다. 전기 저항이 절대영도 근처에서 어떻게 변하는지에 19세기 말 물리학자들이 주목한 것도 이런 까닭에서였다.</p>
+<p>전기 저항은 도체 안에서 전자가 이동할 때 받는 방해의 정도를 가리키며, 그 값이 작을수록 같은 전압에서 더 많은 전류가 흐른다. 절대영도란 입자의 열운동이 가장 낮아지는 한계 온도로, 섭씨 약 영하 273도에 해당한다. 도체를 이 온도 가까이 냉각하면 전기 저항이 어떻게 될 것인가를 두고 당시 세 갈래의 견해가 맞섰다.</p>
+<p>마티센은 도체의 저항값을 두 성분으로 ㉠나누어 보았다. 하나는 도체 자체의 내재적 특성으로 결정되는 부분이고, 다른 하나는 도체에 섞인 불순물이나 결함에서 비롯되는 부분이다. 앞의 부분은 온도가 낮아질수록 함께 줄어들지만, 뒤의 부분은 온도와 무관하게 일정하게 남는다. 따라서 그는 실제 금속처럼 불순물이나 결함이 있는 물질은 절대영도에 가까워지더라도 뒤의 부분 때문에 전기 저항이 끝까지 남아 있을 것이라고 보았다. 반면 수소 액화에 처음 성공한 듀어는 불순물이나 결함의 영향이 없는 도체를 만들 수 있다고 보고, 그런 도체의 온도를 절대영도에 가깝게 낮추면 두 성분이 모두 사라져 전기 저항이 결국 완벽하게 없어질 것이라고 ㉡생각하였다. 한편 켈빈은 온도를 낮추면 도체 안의 전자들도 얼어붙어 고체처럼 굳을 것이고, 그러면 전자가 움직일 수 없으므로 오히려 전기 저항이 커질 것이라고 보았다. 같은 조건을 두고 저항이 남는다, 사라진다, 커진다는 정반대의 예측이 나란히 제시된 것이다.</p>
+<p>이런 상황에서 카메를링 오너스는 1908년 헬륨을 ㉢냉각하여 액체 헬륨을 만드는 데 성공하였고, 1911년에는 액체 헬륨을 사용하여 수은을 절대 온도 4.2K에 가깝게 냉각시킬 수 있었다. 이때 <u>수은의 전기 저항이 정확히 0으로 떨어지는 현상을 관측하였는데, 이것이 바로 최초로 발견된 초전도 현상이다.</u> 그런데 오너스가 실험 대상으로 수은을 ㉣선택한 데에는 분명한 이유가 있었다. 마티센이 가정한 불순물 효과를 줄이려면 금속에 섞인 불순물을 제거해야 하는데, 불순물을 없애려면 우선 금속을 녹여야 한다. 그러나 녹는점이 높은 금속은 녹이는 과정에서 산소 같은 기체가 필연적으로 녹아 들어가 새로운 불순물이 된다. 불순물이 남아 있으면 마티센이 가정한 잔류 저항이 그대로 측정되어, 저항이 0이 되는지를 확인할 수 없게 된다. 수은은 상온에서 이미 액체 상태로 존재하여 다른 물질이 녹지 않는 낮은 온도에서도 별도의 융해 과정 없이 불순물을 통제하며 다룰 수 있었으므로, 오너스는 수은을 ㉤골랐던 것이다.</p>
+<p>수은의 초전도 발현 온도가 절대 온도 4.2K였다는 사실 또한 발견에 큰 행운이었다. 발현 온도란 그 온도 아래로 내려가야 비로소 초전도 현상이 나타나는 임계 온도를 말한다. 단일 원소로 된 금속 가운데 대기압에서 초전도 현상이 나타나는 물질은 29가지가 있는데, 이 중 15개는 초전도 발현 온도가 절대 온도 2K보다 낮아 오너스가 사용한 액체 헬륨으로도 도달하기 어려운 온도였다. 마침 수은의 발현 온도는 오너스가 액체 헬륨으로 닿을 수 있던 4.2K 근처여서 관측이 가능했던 것이다. 만일 수은의 초전도 발현 온도가 조금만 더 낮았다면, 초전도 현상의 발견은 더 낮은 온도에 도달하는 기술이 마련될 때까지 훨씬 더 뒤로 미루어졌을 것이다. 결국 초전도의 발견은 불순물을 통제하기 좋은 물질을 고른 안목과, 그 물질의 발현 온도가 도달 가능한 범위에 있었던 우연이 함께 만들어 낸 결과였다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글에서 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 녹는점이 높은 금속은 녹이는 과정에서 산소와 같은 기체가 섞여 들어갈 수 있다.</li>
+<li>② 전기 저항이 작은 도체일수록 같은 전압에서 흐르는 전류의 양이 적다.</li>
+<li>③ 마티센은 불순물이 있는 금속도 절대영도에 가까워지면 전기 저항이 완전히 사라진다고 보았다.</li>
+<li>④ 단일 원소 금속 중 대기압에서 초전도가 나타나는 물질은 모두 절대 온도 2K보다 낮은 온도에서 발현한다.</li>
+<li>⑤ 오너스는 수은을 냉각하는 데 성공한 뒤에야 비로소 액체 헬륨을 만들 수 있었다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글로 볼 때 켈빈의 견해로 가장 적절한 것은?</p>
+<ul>
+<li>① 도체의 저항값은 내재적 특성에서 비롯된 부분과 불순물에서 비롯된 부분으로 나뉜다.</li>
+<li>② 불순물과 결함이 없는 도체라면 절대영도 근처에서 전기 저항이 완전히 사라진다.</li>
+<li>③ 온도를 낮추면 전자의 운동이 멈춰 도체의 전기 저항이 오히려 커진다.</li>
+<li>④ 수은은 상온에서 액체로 존재하여 불순물을 제거하기에 유리하다.</li>
+<li>⑤ 초전도 발현 온도가 낮은 금속일수록 초전도 현상을 더 일찍 발견할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉의 <span class="boxmark">[가]</span>에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+불순물과 결함이 전혀 없는 이상적인 순수 도체가 있다고 하자. 이 도체의 온도를 절대영도에 가깝게 낮추어 갈 때, 마티센의 견해를 따른다면 이 도체의 전기 저항은 ( <span class="boxmark">[가]</span> )는 결론이 나올 것이다.</p>
+</blockquote>
+<ul>
+<li>① 전자가 얼어붙어 움직이지 못하므로 오히려 커진다</li>
+<li>② 불순물에서 비롯되는 부분이 없어 완전히 사라질 수 있다</li>
+<li>③ 내재적 특성에서 비롯된 부분만 남아 일정한 값으로 유지된다</li>
+<li>④ 불순물의 양에 비례하여 점점 더 큰 값으로 늘어난다</li>
+<li>⑤ 발현 온도가 2K보다 낮아 절대영도에서도 관측되지 않는다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>㉠~㉤과 같은 의미로 사용된 것은?</p>
+<ul>
+<li>① ㉠: 두 사람은 회사의 이익을 똑같이 나누어 가졌다.</li>
+<li>② ㉡: 그는 한참을 생각하다가 비로소 입을 열었다.</li>
+<li>③ ㉢: 회담이 결렬되자 두 나라의 관계가 급격히 냉각되었다.</li>
+<li>④ ㉣: 그는 선택의 여지가 없는 상황에서도 끝까지 침착함을 잃지 않았다.</li>
+<li>⑤ ㉤: 인부들은 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 9월 [31~34]</div>
+<div class='passage exam-ps'><p>18세기에는 열의 실체가 칼로릭(caloric)이며 칼로릭은 온도가 높은 쪽에서 낮은 쪽으로 흐르는 성질을 갖고 있는, 질량이 없는 입자들의 모임이라는 생각이 받아들여지고 있었다. 이를 칼로릭 이론이라 ㉠부르는데, 이에 따르면 찬 물체와 뜨거운 물체를 접촉시켜 놓았을 때 두 물체의 온도가 같아지는 것은 칼로릭이 뜨거운 물체에서 차가운 물체로 이동하기 때문이라는 것이다. 이러한 상황에서 과학자들의 큰 관심사 중의 하나는 증기 기관과 같은 열기관의 열효율 문제였다.</p>
+<p>열기관은 높은 온도의 열원에서 열을 흡수하고 낮은 온도의 대기와 같은 열기관 외부에 열을 방출하며 일을 하는 기관을 말하는데, 열효율은 열기관이 흡수한 열의 양 대비 한 일의 양으로 정의된다. 19세기 초에 카르노는 열기관의 열효율 문제를 칼로릭 이론에 기반을 두고 ㉡다루었다. 카르노는 물레방아와 같은 수력 기관에서 물이 높은 곳에서 낮은 곳으로 ㉢흐르면서 일을 할 때 물의 양과 한 일의 양의 비가 높이 차이에만 좌우되는 것에 주목하였다. 물이 높이 차에 의해 이동하는 것과 흡사하게 칼로릭도 고온에서 저온으로 이동하면서 일을 하게 되는데, 열기관의 열효율 역시 이러한 두 온도에만 의존한다는 것이었다.</p>
+<p>한편 1840년대에 줄(Joule)은 일정량의 열을 얻기 위해 필요한 각종 에너지의 양을 측정하는 실험을 행하였다. 대표적인 것이 열의 일당량 실험이었다. 이 실험은 열기관을 대상으로 한 것이 아니라, 추를 낙하시켜 물속의 날개바퀴를 회전시키는 실험이었다. 열의 양은 칼로리(calorie)로 표시되는데, 그는 역학적 에너지인 일이 열로 바뀌는 과정의 정밀한 실험을 통해 1 kcal의 열을 얻기 위해서 필요한 일의 양인 열의 일당량을 측정하였다. 줄은 이렇게 일과 열은 형태만 다를 뿐 서로 전환이 가능한 물리량이므로 등가성을 갖는다는 것을 입증하였으며, 열과 일이 상호 전환될 때 열과 일의 에너지를 합한 양은 일정하게 보존된다는 사실을 알아내었다. 이후 열과 일뿐만 아니라 화학 에너지, 전기 에너지 등이 등가성을 가지며 상호 전환될 때에 에너지의 총량은 변하지 않는다는 에너지 보존 법칙이 입증되었다.</p>
+<p>열과 일에 대한 이러한 이해는 카르노의 이론에 대한 과학자들의 재검토로 이어졌다. 특히 톰슨은 ⓐ칼로릭 이론에 입각한 카르노의 열기관에 대한 설명이 줄의 에너지 보존 법칙에 위배된다고 지적하였다. 카르노의 이론에 의하면, 열기관은 높은 온도에서 흡수한 열 전부를 낮은 온도로 방출하면서 일을 한다. 이것은 줄이 입증한 열과 일의 등가성과 에너지 보존 법칙에 ㉣어긋나는 것이어서 열의 실체가 칼로릭이라는 생각은 더 이상 유지될 수 없게 되었다. 하지만 열효율에 관한 카르노의 이론은 클라우지우스의 증명으로 유지될 수 있었다. 그는 카르노의 이론이 유지되지 않는다면 열은 저온에서 고온으로 흐르는 현상이 ㉤생길 수도 있을 것이라는 가정에서 출발하여, 열기관의 열효율은 열기관이 고온에서 열을 흡수하고 저온에 방출할 때의 두 작동 온도에만 관계된다는 카르노의 이론을 증명하였다.</p>
+<p>클라우지우스는 자연계에서는 열이 고온에서 저온으로만 흐르고 그와 반대되는 현상은 일어나지 않는 것과 같이 경험적으로 알 수 있는 방향성이 있다는 점에 주목하였다. 또한 일이 열로 전환될 때와는 달리, 열기관에서 열 전부를 일로 전환할 수 없다는, 즉 열효율이 100%가 될 수 없다는 상호 전환 방향에 관한 비대칭성이 있다는 사실에 주목하였다. 이러한 방향성과 비대칭성에 대한 논의는 이를 설명할 수 있는 새로운 물리량인 엔트로피의 개념을 낳았다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>31</span>윗글에서 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 열기관은 외부로부터 받은 일을 열로 변환하는 기관이다.</li>
+<li>② 수력 기관에서 물의 양과 한 일의 양의 비는 물의 온도 차이에 비례한다.</li>
+<li>③ 칼로릭 이론에 의하면 차가운 쇠구슬이 뜨거워지면 쇠구슬의 질량은 증가하게 된다.</li>
+<li>④ 칼로릭 이론에서는 칼로릭을 온도가 낮은 곳에서 높은 곳으로 흐르는 입자라고 본다.</li>
+<li>⑤ 열기관의 열효율은 두 작동 온도에만 관계된다는 이론은 칼로릭 이론의 오류가 밝혀졌음에도 유지되었다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>32</span>윗글로 볼 때 ⓐ의 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 화학 에너지와 전기 에너지는 서로 전환될 수 없는 에너지라는 점</li>
+<li>② 열의 실체가 칼로릭이라면 열기관이 한 일을 설명할 수 없다는 점</li>
+<li>③ 자연계에서는 열이 고온에서 저온으로만 흐르는 것과 같은 방향성이 있는 현상이 존재한다는 점</li>
+<li>④ 열효율에 관한 카르노의 이론이 맞지 않는다면 열은 저온에서 고온으로 흐르는 현상이 생길 수 있다는 점</li>
+<li>⑤ 열기관의 열효율은 열기관이 고온에서 열을 흡수하고 저온에 방출할 때의 두 작동 온도에만 관계된다는 점</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>33</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉의 <span class="boxmark">[가]</span>에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+줄의 실험과 달리, 열기관이 흡수한 열의 양(A)과 열기관으로부터 얻어진 일의 양(B)을 측정하여 B/A로 열의 일당량을 구하면, 그 값은 ( <span class="boxmark">[가]</span> )는 결과가 나올 것이다.</p>
+<p>※ 원본에서 ‘B/A’는 분수(분자 B, 분모 A) 형태로 표기되어 있다.</p>
+</blockquote>
+<ul>
+<li>① 열기관의 두 작동 온도의 차이가 일정하다면 줄이 구한 열의 일당량과 같다</li>
+<li>② 열기관이 열을 흡수할 때의 온도와 상관없이 줄이 구한 열의 일당량과 같다</li>
+<li>③ 열기관이 흡수한 열의 양이 많을수록 줄이 구한 열의 일당량보다 더 커진다</li>
+<li>④ 열기관의 두 작동 온도의 차이가 커질수록 줄이 구한 열의 일당량보다 더 커진다</li>
+<li>⑤ 열기관이 흡수한 열의 양과 두 작동 온도에 상관없이 줄이 구한 열의 일당량보다 작다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>윗글의 ㉠~㉤과 같은 의미로 사용된 것은?</p>
+<ul>
+<li>① ㉠: 웃음은 또 다른 웃음을 부르는 법이다.</li>
+<li>② ㉡: 그는 익숙한 솜씨로 기계를 다루고 있었다.</li>
+<li>③ ㉢: 이야기가 엉뚱한 방향으로 흐르고 있다.</li>
+<li>④ ㉣: 그는 상식에 어긋나는 일을 한 적이 없다.</li>
+<li>⑤ ㉤: 하늘을 보니 당장이라도 비가 오게 생겼다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>대부분의 물질은 온도를 충분히 낮추면 결국 고체로 굳는다. 물질의 상태는 온도와 압력에 따라 정해지는데, 대기압에서 온도를 계속 낮추면 액체와 기체가 공존하는 경계를 따라가다 고체·액체·기체가 함께 존재하는 삼중점을 지나면서 고체가 된다. 오너스도 기체 헬륨을 액화한 뒤 온도를 더 낮추면 헬륨이 다른 물질처럼 삼중점을 거쳐 얼 것이라고 예상하였다. 그러나 다른 모든 물질이 대기압에서 삼중점을 갖는 것과 달리, ㉠대기압에서 헬륨의 온도를 절대영도에 가깝게 낮추어도 헬륨은 얼지 않고 액체 상태로 남았다. 헬륨은 절대 온도 2.2K 아래로 내려가도, 나아가 절대영도에 이르러도 고체가 되지 않았던 것이다.</p>
+<p>이는 헬륨이 매우 가벼운 비활성 기체라는 사실과 깊은 관련이 있다. 양자 역학의 불확정성 원리에 따르면 입자의 위치와 운동량을 동시에 정확히 정할 수 없으므로, 입자는 절대영도에서도 가만히 있지 못하고 끊임없이 미세한 운동을 한다. 이를 영점 운동이라 한다. 영점 운동의 크기는 입자가 가벼울수록 커지는데, 헬륨 원자는 질량이 매우 작아 양자 역학적 효과가 크게 나타나고 그 결과 상대적으로 큰 영점 운동을 한다. 게다가 비활성 기체인 헬륨은 원자 사이에 작용하는 인력이 약해 이 영점 운동을 구속할 힘이 부족하다. 원자를 한자리에 붙잡아 두려는 인력보다 원자를 흔들어 대는 영점 운동이 우세하므로, 헬륨 원자들은 규칙적인 배열로 묶이지 못한다. 그래서 대기압의 헬륨은 절대영도에서도 고체가 아니라 액체로 존재하며, 이렇게 양자 역학적 특성이 지배하는 액체를 양자 액체 또는 양자 유체라 한다.</p>
+<p>헬륨의 상태가 온도에 따라 어떻게 갈리는지를 이해하려면 ‘단위 부피당 헬륨 원자의 결속 정도’를 살펴야 한다. 온도가 높으면 원자들이 활발히 움직여 서로 멀리 흩어지므로 결속이 약하고, 온도가 낮아질수록 원자들이 가라앉아 결속이 강해진다. 보통의 물질에서는 결속이 충분히 강해지면 원자들이 규칙적으로 배열되어 고체가 되지만, 헬륨에서는 온도를 아무리 낮추어도 영점 운동이 사라지지 않으므로 원자들이 한 점에 완전히 고정되어 배열되는 고체 상태에는 이르지 못한다. 헬륨을 절대 온도 4.2K까지 냉각하여 액화한 오너스는 헬륨의 온도를 더 낮추면서 액체 헬륨의 밀도와 비열* 등 여러 특성을 측정하였다. 그 과정에서 이 물리량들이 모두 절대 온도 2.2K 근처에서 최댓값을 갖는다는 특이한 현상을 관측하였다. 다른 액체에서는 보기 어려운 이 변화는 헬륨이 이 온도 부근에서 무언가 특별한 변화를 겪는다는 신호였다.</p>
+<p>오너스가 세상을 떠난 뒤 물리학자들은 밀도와 비열이 2.2K 근처에서 최댓값을 갖는 현상을 두고, 액체 헬륨이 이 온도에서 또 다른 액체로 상전이*를 한다는 결론에 도달하였다. 상전이는 보통 액체가 고체로 굳거나 기체로 끓는 것처럼 상태가 바뀌는 현상인데, 이미 액체가 된 헬륨이 다시 다른 액체로 바뀐다는 것이 어떤 의미인지는 한동안 분명하지 않았다. 그래서 학자들은 그 의미를 정확히 밝히지 못한 채, 상전이 온도보다 높은 쪽의 액체를 헬륨 I, 그보다 낮은 쪽의 액체를 헬륨 II라고만 불렀다. 특히 비열은 상전이 온도 근처에서 거의 발산하다시피 급격히 치솟는데, 가로축을 온도, 세로축을 비열로 놓고 그린 그래프의 모양이 그리스 문자 람다(λ)를 닮아, 이 상전이가 일어나는 온도를 람다점이라 부르게 되었다. 이처럼 헬륨은 단순히 절대영도에서 얼지 않는 데 그치지 않고, 극저온에서 액체끼리의 또 다른 상전이를 보이는 독특한 양자 액체였다. 상전이 온도 위와 아래에서 같은 액체가 이렇게 다른 모습을 보인다는 사실은, 헬륨 II가 보이는 특이한 성질과 더불어 이후 양자 유체 연구의 중요한 출발점이 되었다.</p>
+<p>* 비열: 물질 1g의 온도를 1℃ 높이는 데 필요한 열량.
+* 상전이: 물질이 고체·액체·기체처럼 서로 다른 상태로 바뀌는 현상.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 헬륨은 대기압에서 절대 온도 2.2K 아래로 내려가면 고체가 된다.</li>
+<li>② 영점 운동은 절대영도에서도 입자가 멈추지 않고 미세하게 움직이는 현상이다.</li>
+<li>③ 헬륨 원자는 질량이 커서 양자 역학적 효과가 거의 나타나지 않는다.</li>
+<li>④ 액체 헬륨의 밀도와 비열은 온도가 낮아질수록 끝없이 계속 커진다.</li>
+<li>⑤ 헬륨 II는 헬륨 I보다 상전이 온도가 높은 쪽에 존재하는 액체이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 헬륨 원자 사이의 인력이 강해 영점 운동이 강하게 구속되기 때문이다.</li>
+<li>② 헬륨이 무거운 원자여서 영점 운동이 거의 일어나지 않기 때문이다.</li>
+<li>③ 헬륨이 가벼운 비활성 기체여서 영점 운동이 크고, 그것을 구속할 힘이 부족하기 때문이다.</li>
+<li>④ 대기압에서는 어떤 물질도 삼중점을 거치지 않고 곧바로 고체가 되기 때문이다.</li>
+<li>⑤ 헬륨의 밀도와 비열이 2.2K 근처에서 최댓값을 갖기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 헬륨 원자의 질량이 지금보다 훨씬 무거웠다면, 영점 운동이 작아져 고체가 될 가능성이 커졌을 것이다.</li>
+<li>② 온도가 높을수록 헬륨 원자들이 멀리 흩어져 단위 부피당 결속이 약해진다.</li>
+<li>③ 헬륨은 영점 운동이 사라지지 않으므로 원자들이 규칙적으로 배열된 고체에 이르지 못한다.</li>
+<li>④ 비열을 세로축, 온도를 가로축으로 그린 그래프가 람다를 닮아 그 상전이 온도를 람다점이라 부른다.</li>
+<li>⑤ 헬륨 I에서 헬륨 II로의 변화는 액체에서 기체로 바뀌는 상전이이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 설명으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+대기압에서 같은 양의 액체 헬륨을 담은 동일한 용기 A~E를 준비하여 온도를 달리해 두었다. 각 용기의 절대 온도는 다음 표와 같으며, 람다점은 2.2K이다. 모든 용기는 대기압 상태이고, 표에 제시되지 않은 조건은 모두 동일하다. (단, 헬륨은 대기압에서 얼지 않는다.)</p>
+<table>
+<thead>
+<tr>
+<th>용기</th>
+<th>절대 온도(K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>C</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>E</td>
+<td>1.2</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① A에 담긴 헬륨은 람다점보다 높은 온도에 있으므로 헬륨 I 상태이겠군.</li>
+<li>② B의 헬륨을 더 냉각해 1.8K로 낮추면 헬륨 I에서 헬륨 II로의 상전이를 거치게 되겠군.</li>
+<li>③ D와 E의 헬륨은 모두 람다점보다 낮은 온도에 있으므로 헬륨 II 상태이겠군.</li>
+<li>④ E의 헬륨은 온도가 가장 낮으므로 영점 운동이 완전히 멎어 고체로 굳어 있겠군.</li>
+<li>⑤ A를 C까지 냉각하는 동안 액체 헬륨의 비열은 람다점에 가까워질수록 급격히 커지겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 9월 [29~32]</div>
+<div class='passage exam-ps'><p>㉠주사 터널링 현미경(STM)에서는 끝이 첨예한 금속 탐침과 도체 또는 반도체 시료 표면 간에 적당한 전압을 걸어 주고 둘 간의 거리를 좁히게 된다. 탐침과 시료의 거리가 매우 가까우면 양자 역학적 터널링 효과에 의해 둘이 접촉하지 않아도 전류가 흐른다. 이때 탐침과 시료 표면 간의 거리가 원자 단위 크기에서 변하더라도 전류의 크기는 민감하게 달라진다. 이 점을 이용하면 시료 표면의 높낮이를 원자 단위에서 측정할 수 있다. 하지만 전류가 흐를 수 없는 시료의 표면 상태는 STM을 이용하여 관찰할 수 없다. 이렇게 민감한 STM도 진공 기술의 뒷받침이 있었기에 널리 사용될 수 있었다.</p>
+<p>STM은 대체로 진공 통 안에 설치되어 사용되는데 그 이유는 무엇일까? 기체 분자는 끊임없이 떠돌아다니다가 주변과 충돌한다. 이때 일부 기체 분자들은 관찰하려는 시료의 표면에 붙어 표면과 반응하거나 표면을 덮어 시료 표면의 관찰을 방해한다. 따라서 용이한 관찰을 위해 STM을 활용한 실험에서는 관찰하려고 하는 시료와 기체 분자의 접촉을 최대한 차단할 필요가 있어 진공이 요구되는 것이다. 진공이란 기체 압력이 대기압보다 낮은 상태를 통칭하며 기체 압력이 낮을수록 진공도가 높다고 한다. 진공 통 내부의 온도가 일정하고 한 종류의 기체 분자만 존재할 경우, 기체 분자의 종류와 상관없이 통 내부의 기체 압력은 단위 부피당 떠돌아다니는 기체 분자의 수에 비례한다. 따라서 기체 분자들을 진공 통에서 뽑아내거나 진공 통 내부에서 움직이지 못하게 고정하면 진공 통 내부의 기체 압력을 낮출 수 있다.</p>
+<p>STM을 활용하는 실험에서 어느 정도의 진공도가 요구되는지를 이해하기 위해서는 ‘단분자층 형성 시간’의 개념을 이해할 필요가 있다. 진공 통 내부에서 떠돌아다니던 기체 분자들이 관찰하려는 시료의 표면에 달라붙어 한 층의 막을 형성하기까지 걸리는 시간을 단분자층 형성 시간이라 한다. 이 시간은 시료의 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률이 클수록, 단위 면적당 기체 분자의 충돌 빈도가 높을수록 짧다. 또한 기체 운동론에 따르면 고정된 온도에서 기체 분자의 질량이 크거나 기체의 압력이 낮을수록 단분자층 형성 시간은 길다. 가령 질소의 경우 20℃, 760토르* 대기압에서 단분자층 형성 시간은 3 × 10⁻⁹초이지만, 같은 온도에서 압력이 10⁻⁹토르로 낮아지면 대략 2,500초로 증가한다. 이런 이유로 STM에서는 시료의 관찰 가능 시간을 확보하기 위해 통상 10⁻⁹토르 이하의 초고진공이 요구된다.</p>
+<p>초고진공을 얻기 위해서는 ㉡스퍼터 이온 펌프가 널리 쓰인다. 스퍼터 이온 펌프는 진공 통 내부의 기체 분자가 펌프 내부로 유입되도록 진공 통과 연결하여 사용한다. 스퍼터 이온 펌프는 영구 자석, 금속 재질의 속이 뚫린 원통 모양 양극, 타이타늄으로 만든 판 형태의 음극으로 구성되어 있다. 자석 때문에 생기는 자기장이 원통 모양 양극의 축 방향으로 걸려 있고, 양극과 음극 간에는 2~7 kV의 고전압이 걸려 있다. 양극과 음극 간에 걸린 고전압의 영향으로 음극에서 방출된 전자는 자기장의 영향을 받아 복잡한 형태의 궤적을 그리며 양극으로 이동한다. 이 과정에서 음극에서 방출된 전자는 주변의 기체 분자와 충돌하여 기체 분자를 그것의 구성 요소인 양이온과 전자로 분리시킨다. 여기서 자기장은 전자가 양극까지 이동하는 거리를 자기장이 없을 때보다 증가시켜 주어 전자와 기체 분자와의 충돌 빈도를 높여 준다. 이 과정에서 생성된 양이온은 전기력에 의해 음극으로 당겨져 음극에 박히게 되어 이동 불가능한 상태가 된다. 이 과정이 1차 펌프 작용이다. 또한 양이온이 음극에 충돌하면 타이타늄이 떨어져 나와 충돌 지점 주변에 들러붙는다. 이렇게 들러붙은 타이타늄은 높은 화학 반응성 때문에 여러 기체 분자와 쉽게 반응하여, 떠돌아다니던 기체 분자를 흡착한다. 이는 떠돌아다니는 기체 분자의 수를 줄이는 효과가 있으므로 이를 2차 펌프 작용이라 부른다. 이렇듯 1, 2차 펌프 작용을 통해 스퍼터 이온 펌프는 초고진공 상태를 만들 수 있다.</p>
+<p><strong><span class="boxmark">[그림: 스퍼터 이온 펌프]</span></strong> (원본에서는 마지막 문단 중간, 단의 오른쪽에 배치된 입체 도해) 가운데에 속이 뚫린 원통 4개가 세로로 나란히 쌓여 묶음을 이루고 있으며, 오른쪽 위의 ‘양극’ 표지가 화살표로 이 원통 묶음을 가리킨다. 원통 묶음의 양옆에는 얇은 판 두 장이 마주 보고 세워져 있는데, 아래쪽의 ‘음극’ 표지가 화살표로 이 두 판을 가리킨다. 그 바깥 양쪽에는 두꺼운 직육면체 블록이 하나씩 놓여 있고 각각 ‘자석’이라 표시되어 있다. 맨 위에는 ‘−’, ‘+’ 단자가 표시된 ‘전원 장치’ 상자가 있으며 전선이 전극 쪽으로 연결되어 있다. 그림 아래에 ‘스퍼터 이온 펌프’라는 제목이 붙어 있다.</p>
+<p>* 토르(torr): 기체 압력의 단위.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 대기압보다 진공도가 낮은 상태가 진공이다.</li>
+<li>② 스퍼터 이온 펌프는 초고진공을 만드는 역할을 한다.</li>
+<li>③ 단분자층 형성 시간이 짧을수록 STM을 이용한 관찰이 용이하다.</li>
+<li>④ 일정한 온도와 부피의 진공 통 안에서 떠돌아다니는 기체 분자의 수는 기체 압력에 반비례한다.</li>
+<li>⑤ 단분자층 형성 시간은 시료 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률과 무관하게 결정된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>30</span>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 시료 표면의 높낮이를 원자 단위까지 측정할 수 없다.</li>
+<li>② 시료의 전기 전도 여부에 관계없이 시료를 관찰할 수 있다.</li>
+<li>③ 시료의 관찰 가능 시간을 늘리려면 진공 통 안의 기체 압력을 낮추어야 한다.</li>
+<li>④ 시료 표면의 관찰을 위해서는 시료 표면에 기체의 단분자층 형성이 필요하다.</li>
+<li>⑤ 양자 역학적 터널링 효과를 이용하여 탐침을 시료 표면에 접촉시킨 후 흐르는 전류를 측정한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>31</span>㉡의 ‘음극’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고전압과 전자의 상호 작용으로 자기장을 만든다.</li>
+<li>② 떠돌아다니던 기체 분자를 흡착하는 물질을 내놓는다.</li>
+<li>③ 기체 분자에서 분리된 양이온을 전기력으로 끌어당긴다.</li>
+<li>④ 전자와 기체 분자의 충돌로 만들어진 양이온을 고정시킨다.</li>
+<li>⑤ 기체 분자를 양이온과 전자로 분리시키는 전자를 방출한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>32</span><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 설명으로 옳지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+STM을 사용하여 규소의 표면을 관찰하는 실험을 하려고 한다. 동일한 사양의 STM이 설치된, 동일한 부피의 진공 통 A~E가 있고, 각 진공 통 내부에 있는 기체 분자의 정보는 다음 표와 같다. 진공 통 A 안의 기체 압력은 10⁻⁹토르이며, 모든 진공 통의 내부 온도는 20℃이다. (단, 기체 분자가 규소 표면과 충돌하여 달라붙을 확률은 기체의 종류와 관계없이 일정하며, 제시되지 않은 모든 조건은 각 진공 통에서 동일하다. N은 일정한 자연수이다.)</p>
+<table>
+<thead>
+<tr>
+<th>진공 통</th>
+<th>기체</th>
+<th>분자의 질량(amu*)</th>
+<th>단위 부피당 기체 분자 수(개/cm³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>질소</td>
+<td>28</td>
+<td>4N</td>
+</tr>
+<tr>
+<td>B</td>
+<td>질소</td>
+<td>28</td>
+<td>2N</td>
+</tr>
+<tr>
+<td>C</td>
+<td>질소</td>
+<td>28</td>
+<td>7N</td>
+</tr>
+<tr>
+<td>D</td>
+<td>산소</td>
+<td>32</td>
+<td>N</td>
+</tr>
+<tr>
+<td>E</td>
+<td>이산화 탄소</td>
+<td>44</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>* amu: 원자 질량 단위.</p>
+</blockquote>
+<ul>
+<li>① A 내부에서의 단분자층 형성 시간은 대략 2,500초이겠군.</li>
+<li>② B 내부의 기체 압력은 10⁻⁹토르보다 낮겠군.</li>
+<li>③ C 내부의 진공도는 B 내부의 진공도보다 낮겠군.</li>
+<li>④ D 내부에서의 단분자층 형성 시간은 A의 경우보다 길겠군.</li>
+<li>⑤ E 내부의 시료 표면에 대한 단위 면적당 기체 분자의 충돌 빈도는 D의 경우보다 높겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>물리계는 주변 환경과 상호 작용을 하며 에너지를 주고받는데, 주고받는 에너지의 양은 온도가 높을수록 많아질 수 있다. 양자 역학에 따르면 입자가 가질 수 있는 에너지는 불연속적인 값들로 정해지는데, 이를 에너지 준위라 한다. 온도가 아주 낮으면 입자는 받아들이는 에너지가 적어 물리계가 허용하는 에너지 준위 중 가장 낮은 몇 개만 차지한다. 반면 온도가 높아지면 수많은 에너지 준위에 입자들이 흩어져 분포하고, 주변과의 상호 작용이 커지면 에너지 준위 하나하나의 정확한 값이나 그것이 불연속적이라는 사실은 더 이상 중요하지 않게 된다. 곧 높은 온도에서는 양자 역학적 성질이 가려져 잘 드러나지 않는다. 따라서 우리가 직접 다룰 수 있는 규모의 거시적 물리계에서 양자 역학적 현상을 발견하려면 온도가 충분히 낮아야 한다. 절대 온도 4.2K에서 헬륨 기체를 액화하는 데 성공한 카메를링 오너스는 바로 이 저온의 무대에서, 거시적 물리계에 나타나는 두 가지 양자 역학적 현상, 곧 초전도 현상과 얼지 않는 액체를 발견하였다.</p>
+<p>초전도체는 전기 저항이 전혀 없는 전도체를 말한다. 보통의 도체는 전류가 흐를 때 전기 저항 때문에 에너지의 일부를 열로 잃지만, 초전도 상태에서는 저항이 정확히 0이어서 그런 손실이 일어나지 않는다. 오너스는 1911년 액체 헬륨으로 수은을 절대 온도 4.2K 가까이 냉각하여, 수은의 전기 저항이 정확히 0으로 떨어지는 ㉠초전도 현상을 처음 관측하였다. 수은은 전기 전도도가 특별히 좋은 금속은 아니었으나, 상온에서 액체로 존재해 녹이는 과정 없이 불순물을 통제하기 쉬웠고 초전도 발현 온도가 도달 가능한 범위에 있었다. ⓐ<u>이상적인 초전도 물질</u>이라면 불순물과 결함의 영향을 받지 않아야 하고, 발현 온도가 실험으로 도달할 수 있을 만큼 높아야 하며, 실험에서 다루기 쉬운 형태로 존재해야 한다. 수은은 이 조건들을 비교적 잘 만족하였기에 최초의 초전도 발견을 가능하게 한 물질이 되었다. 만약 발현 온도가 너무 낮거나 불순물을 걷어 내기 어려운 금속이었다면, 저항이 0이 되는 모습을 관측하기는 훨씬 어려웠을 것이다.</p>
+<p>오너스는 기체 헬륨을 액화하는 데서 멈추지 않고 액체 헬륨을 고체로 만들려 하였으나 끝내 실패하였다. 대기압에서 온도를 낮추면 삼중점을 거쳐 헬륨이 얼 것이라고 예상하였지만, 헬륨은 절대 온도 2.2K 아래로 내려가도 얼지 않았다. ㉡얼지 않는 액체 헬륨은 가벼운 비활성 기체라는 특성에서 비롯되는데, 영점 운동이 크고 그것을 구속할 힘이 부족하여 절대영도에서도 고체가 되지 않는다. 이처럼 양자 역학적 특성이 지배하는 액체를 양자 액체라 한다. 오너스는 헬륨의 온도를 더 낮추며 밀도와 비열을 측정하다가, 이 물리량들이 절대 온도 2.2K 근처에서 최댓값을 갖는 특이한 현상을 관측하였다. 훗날 물리학자들은 이 온도에서 액체 헬륨이 또 다른 액체로, 곧 헬륨 I에서 헬륨 II로 상전이한다는 결론을 내렸다.</p>
+<p>초전도 현상과 얼지 않는 액체는 모두 저온에서 양자 역학이 거시적 규모로 드러난 사례라는 점에서 의의가 크다. 미시 세계에서나 통하던 양자 역학의 법칙이 손으로 다룰 수 있는 크기의 대상에서 직접 관측되었기 때문이다. 두 현상은 모두 오너스의 헬륨 액화라는 같은 토대 위에서, 그리고 온도가 충분히 낮아야 드러난다는 같은 조건 아래에서 발견되었다. 그러나 한쪽은 도체에서 전기 저항이 사라지는 전도체의 성질로 나타나고, 다른 한쪽은 헬륨이 얼지 않고 액체로 남는 액체의 성질로 나타난다는 점에서 둘은 서로 다른 현상이다. 같은 발견의 무대에서 나왔지만 그 성질이 전혀 달랐던 셈이다. 오늘날에도 더 높은 온도에서 초전도를 일으키는 물질을 찾고, 절대영도에서도 얼지 않는 양자 액체의 특성을 활용하려는 연구가 이어지고 있어, 두 발견은 한 세기가 지난 지금도 여전히 현대 물리학의 살아 있는 주제로 남아 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 거시적 물리계에서 양자 역학적 현상을 발견하려면 온도가 충분히 낮아야 한다.</li>
+<li>② 온도가 높아지면 입자들은 수많은 에너지 준위에 흩어져 분포한다.</li>
+<li>③ 수은은 전기 전도도가 특별히 뛰어난 금속이어서 초전도 발견의 대상으로 선택되었다.</li>
+<li>④ 오너스는 액체 헬륨을 고체로 만들려 했으나 성공하지 못하였다.</li>
+<li>⑤ 초전도 현상과 얼지 않는 액체는 모두 오너스의 헬륨 액화를 토대로 발견되었다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글에서 ⓐ‘이상적인 초전도 물질’이 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 불순물과 결함의 영향을 받지 않아야 한다.</li>
+<li>② 초전도 발현 온도가 실험으로 도달할 수 있을 만큼 높아야 한다.</li>
+<li>③ 실험에서 다루기 쉬운 형태로 존재해야 한다.</li>
+<li>④ 상온에서 반드시 고체 상태로 존재해야 한다.</li>
+<li>⑤ 절대영도 가까이 냉각했을 때 전기 저항이 사라져야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 다음은 과학 잡지의 기사이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈△△ 과학〉</strong>
+최근 어떤 금속 화합물이 절대 온도 4.2K보다 훨씬 높은 온도에서도 전기 저항이 0이 되는 초전도 현상을 보인다는 연구가 보고되었다. 연구진은 이 ㉮고온 초전도 물질이 액체 헬륨 없이 더 값싼 냉각만으로도 초전도 상태에 이를 수 있어, 초전도를 활용한 장치를 폭넓게 보급할 길을 열 것으로 기대하였다.</p>
+</blockquote>
+<ul>
+<li>① 수은과 마찬가지로 절대영도 가까이 냉각하지 않고도 전기 저항이 0이 될 수 있겠군.</li>
+<li>② 발현 온도가 수은보다 높으므로, 같은 시대였다면 수은보다 먼저 초전도가 발견되었을 수도 있겠군.</li>
+<li>③ 액체 헬륨이 없이도 냉각할 수 있다면, 오너스가 도달하기 어려웠던 2K 미만의 저온이 반드시 필요하지는 않겠군.</li>
+<li>④ 전기 저항이 0이 된다는 점에서 수은에서 관측된 초전도 현상과 같은 성질을 보이겠군.</li>
+<li>⑤ 발현 온도가 높아졌으므로 영점 운동이 사라져 액체 헬륨처럼 얼지 않는 성질을 보이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 저온에서 나타나는 양자 역학적 현상이다.</li>
+<li>② ㉡은 ㉠과 달리 오너스의 헬륨 액화와는 무관하게 발견되었다.</li>
+<li>③ ㉠은 전기 저항과 관련된 성질로, ㉡은 얼지 않는 액체의 성질로 나타난다.</li>
+<li>④ ㉠과 ㉡은 둘 다 헬륨을 고체로 만드는 과정에서 관측되었다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 온도가 높을수록 더 뚜렷하게 나타난다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29]</div>
+<div class='passage exam-ps'><p>신체의 세포, 조직, 장기가 손상되어 더 이상 제 기능을 하지 못할 때에 이를 대체하기 위해 이식을 실시한다. 이때 이식으로 옮겨 붙이는 세포, 조직, 장기를 이식편이라 한다. 자신이나 일란성 쌍둥이의 이식편을 이용할 수 없다면 다른 사람의 이식편으로 ‘동종 이식’을 실시한다. 그런데 우리의 몸은 자신의 것이 아닌 물질이 체내로 유입될 경우 면역 반응을 일으키므로, 유전적으로 동일하지 않은 이식편에 대해 항상 거부 반응을 일으킨다. 면역적 거부 반응은 면역 세포가 표면에 발현하는 주조직적합복합체(MHC) 분자의 차이에 의해 유발된다. 개체마다 MHC에 차이가 있는데 서로 간의 유전적 거리가 멀수록 MHC에 차이가 커져 거부 반응이 강해진다. 이를 막기 위해 면역 억제제를 사용하는데, 이는 면역 반응을 억제하여 질병 감염의 위험성을 높인다.</p>
+<p>이식에는 많은 비용이 소요될 뿐만 아니라 이식이 가능한 동종 이식편의 수가 매우 부족하기 때문에 이를 대체하는 방법이 개발되고 있다. 우선 인공 심장과 같은 ‘전자 기기 인공 장기’를 이용하는 방법이 있다. 하지만 이는 장기의 기능을 일시적으로 대체하는 데 사용되며, 추가 전력 공급 및 정기적 부품 교체 등이 요구되는 단점이 있고, 아직 인간의 장기를 완전히 대체할 만큼 정교한 단계에 이르지는 못했다.</p>
+<p>다음으로는 사람의 조직 및 장기와 유사한 다른 동물의 이식편을 인간에게 이식하는 ‘이종 이식’이 있다. 그런데 이종 이식은 동종 이식보다 거부 반응이 훨씬 심하게 일어난다. 특히 사람이 가진 자연항체는 다른 종의 세포에서 발현되는 항원에 반응하는데, 이로 인해 이종 이식편에 대해서 초급성 거부 반응 및 급성 혈관성 거부 반응이 일어난다. 이런 거부 반응을 일으키는 유전자를 제거한 형질 전환 미니돼지에서 얻은 이식편을 이식하는 실험이 성공한 바 있다. 미니돼지는 장기의 크기가 사람의 것과 유사하고 번식력이 높아 단시간에 많은 개체를 생산할 수 있다는 장점이 있어, 이를 이용한 이종 이식편을 개발하기 위한 연구가 진행되고 있다.</p>
+<p>이종 이식의 또 다른 문제는 ㉠내인성 레트로바이러스이다. 내인성 레트로바이러스는 생명체의 DNA의 일부분으로, 레트로바이러스로부터 유래된 것으로 여겨지는 부위들이다. 이는 바이러스의 활성을 가지지 않으며 사람을 포함한 모든 포유류에 존재한다. ㉡레트로바이러스는 자신의 유전 정보를 RNA에 담고 있고 역전사 효소를 갖고 있는 바이러스로서, 특정한 종류의 세포를 감염시킨다. 유전 정보가 담긴 DNA로부터 RNA가 생성되는 전사 과정만 일어날 수 있는 다른 생명체와는 달리, 레트로바이러스는 다른 생명체의 세포에 들어간 후 역전사 과정을 통해 자신의 RNA를 DNA로 바꾸고 그 세포의 DNA에 끼어들어 감염시킨다. 이후에는 다른 바이러스와 마찬가지로 자신이 속해 있는 생명체를 숙주로 삼아 숙주 세포의 시스템을 이용하여 복제, 증식하고 일정한 조건이 되면 숙주 세포를 파괴한다.</p>
+<p>그런데 정자, 난자와 같은 생식 세포가 레트로바이러스에 감염되고도 살아남는 경우가 있었다. 이런 세포로부터 유래된 자손의 모든 세포가 갖게 된 것이 내인성 레트로바이러스이다. 내인성 레트로바이러스는 세대가 지나면서 돌연변이로 인해 염기 서열의 변화가 일어나며 해당 세포 안에서는 바이러스로 활동하지 않는다. 그러나 내인성 레트로바이러스를 떼어 내어 다른 종의 세포 속에 주입하면 이는 레트로바이러스로 변환되어 그 세포를 감염시키기도 한다. 따라서 미니돼지의 DNA에 포함된 내인성 레트로바이러스를 효과적으로 제거하는 기술이 개발 중에 있다.</p>
+<p>그동안의 대체 기술과 관련된 연구 성과를 토대로 ⓐ이상적인 이식편을 개발하기 위해 많은 연구가 수행되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동종 간보다 이종 간이 MHC 분자의 차이가 더 크다.</li>
+<li>② 면역 세포의 작용으로 인해 장기 이식의 거부 반응이 일어난다.</li>
+<li>③ 이종 이식을 하는 것만으로도 바이러스 감염의 원인이 될 수 있다.</li>
+<li>④ 포유동물은 과거에 어느 조상이 레트로바이러스에 의해 감염된 적이 있다.</li>
+<li>⑤ 레트로바이러스는 숙주 세포의 역전사 효소를 이용하여 RNA를 DNA로 바꾼다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이식편의 비용을 낮추어서 정기 교체가 용이해야 한다.</li>
+<li>② 이식편은 대체를 하려는 장기와 크기가 유사해야 한다.</li>
+<li>③ 이식편과 수혜자 사이의 유전적 거리를 극복해야 한다.</li>
+<li>④ 이식편은 짧은 시간에 대량으로 생산이 가능해야 한다.</li>
+<li>⑤ 이식편이 체내에서 거부 반응을 유발하지 않아야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근에 줄기 세포 연구와 3D 프린팅 기술이 급속도로 발전하고 있다. 줄기 세포는 인체의 모든 세포나 조직으로 분화할 수 있다. 그러므로 수혜자 자신의 줄기 세포만을 이용하여 3D 바이오 프린팅 기술로 제작한 ㉮세포 기반 인공 이식편을 만들 수 있을 것으로 전망된다. 이미 미니 폐, 미니 심장 등의 개발 성공 사례도 보고되었다.</p>
+</blockquote>
+<ul>
+<li>① 전자 기기 인공 장기와 달리 전기 공급 없이도 기능을 유지할 수 있겠군.</li>
+<li>② 동종 이식편과 달리 이식 후 면역 억제제를 사용할 필요가 없겠군.</li>
+<li>③ 동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없겠군.</li>
+<li>④ 이종 이식편과 달리 유전자를 조작하는 과정이 필요하지는 않겠군.</li>
+<li>⑤ 이종 이식편과 달리 자연항체에 의한 초급성 거부 반응이 일어나지 않겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자신이 속해 있는 생명체의 모든 세포의 DNA에 존재한다.</li>
+<li>② ㉡은 ㉠과 달리 자신의 유전 정보를 DNA에 담을 수 없다.</li>
+<li>③ ㉡은 ㉠과 달리 자신이 속해 있는 생명체에 면역 반응을 일으키지 않는다.</li>
+<li>④ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 유전 정보를 가지고 있다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 세포를 감염시켜 파괴한다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

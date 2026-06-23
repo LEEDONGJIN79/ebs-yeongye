@@ -1,0 +1,454 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>법인세 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 회사도 세금을 낸다는 사실은 다들 알고 있을 거예요. 그 세금을 <strong>법인세</strong>라고 합니다. 그런데 "회사가 세금을 낸다"라는 말, 가만히 보면 좀 이상하지 않나요? 세금은 결국 누군가의 주머니에서 나오는 건데, 회사는 사람이 아니라 법이 "이건 하나의 주체로 인정하자"라고 약속해서 만든 가상의 인격, 곧 <strong>법인</strong>이거든요. 그래서 법인세를 공부할 때 가장 먼저 만나는 질문이 바로 "그럼 그 세금의 부담은 진짜로 누가 지는가?"입니다.</p>
+<p>조금 더 풀어서 볼게요. 법인세는 회사가 한 해 동안 벌어들인 수입에서, 그 돈을 벌기 위해 쓴 비용을 뺀 나머지에 매겨져요. 쉽게 말해 "남은 몫"에 매기는 세금이죠. 그런데 무엇을 '비용'으로 인정해 줄지에 따라 회사의 행동이 달라집니다. 예를 들어 은행에서 돈을 빌려 이자를 내면 그 이자는 비용으로 빼 주는데, 회사가 자기 돈을 굴려 생긴 '기회비용'은 비용으로 빼 주지 않아요. 그러면 회사는 "이왕이면 빚을 내는 게 세금에 유리하네?" 하고 부채에 기대게 되죠. 이렇게 세금 제도가 회사의 판단을 한쪽으로 떠미는 일이 생기지 않게 하려는 고민이 <strong>중립적인 법인세 제도</strong>예요.</p>
+<p>또 하나 중요한 게 <strong>감가상각</strong>입니다. 기계나 공장은 시간이 지나면 닳고 낡아 값이 줄어드는데, 그 줄어든 만큼을 해마다 비용으로 인정해 주는 것이 감가상각이에요. 새 책가방을 사서 3년 쓰면 값이 점점 떨어지는 것과 같아요. 이 감가상각을 어떻게 재느냐, 얼마나 빠르게 인정해 주느냐에 따라 회사가 내는 세금이 달라집니다. 게다가 물가가 오르면(인플레이션), 옛날에 산 값을 기준으로 한 감가상각이 실제 가치보다 작아져서 회사가 오히려 세금을 더 무겁게 지기도 해요.</p>
+<blockquote>
+<p>한마디로: <strong>법인세는 "회사가 번 돈에서 비용을 뺀 몫에 매기는 세금"</strong>이지만, 그 부담이 누구에게 가는지(귀착), 어떤 비용을 빼 주는지(중립성·감가상각), 물가가 그것을 어떻게 흔드는지(인플레이션)를 따져 봐야 비로소 제대로 이해할 수 있어요. 이 단원은 그 세 갈래를 차근차근 짚어 갑니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>법인세</strong>가 있습니다. 법인세가 무엇이고 그 부담이 누구에게 가는지(귀착), 어떤 비용을 빼 주는 것이 바람직한지(중립성), 자본재의 가치 감소와 물가가 세금을 어떻게 바꾸는지(감가상각·인플레이션)를 세 세트로 나누어 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>법인세 (회사의 수입에서 비용을 뺀 몫에 매기는 직접세)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>법인세가 어떤 세금인지(정의·과세 대상·세율 구조)와, 그 부담이 실제로 누구에게 돌아가는지를 두고 갈리는 두 견해(자본에 대한 과세 / 경제적 이윤에 대한 과세)를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>자본재가 낡아 줄어드는 가치를 재는 두 접근(시장 가격에 기대는 방식 / 물리적 특성 변화에 기대는 방식)과, 정액법·가속상각이 세금을 어떻게 조절하는지를 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>빚에 기대게 만드는 현행 제도의 편향과 그것을 바로잡는 중립적 법인세제, 그리고 물가가 오를 때 역사적 비용에 기댄 감가상각이 어떻게 세 부담을 키우는지를 따라갑니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 법인세가 왜 단순히 "회사가 내는 세금"에 그치지 않고 부담의 향방·제도의 중립성·물가의 영향까지 얽힌 문제인지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>개인에게 부과되는 일반적 조세와 달리, 법인세는 법적으로만 그 실체가 인정되는 법인에 부과되는 조세이다. 법인은 자연인이 아니라 법이 권리·의무의 주체로 인정한 단위이므로, 법인에 매겨진 세금이 종국에 어떤 자연인의 몫이 되는지는 별도로 따져야 한다. 법인세의 과세 대상은 일정 기간 동안 얻은 수입에서 사업에 소요된 제반 비용을 뺀 것으로 정의된다. 무엇을 비용으로 인정하느냐에 따라 과세 대상의 크기가 달라지므로, 과세 대상의 정의는 세 부담의 향방을 가르는 출발점이 된다. 세계 여러 나라의 법인세 세율 구조를 보면 대체로 단순한 구조를 유지하며, 세율에 차이가 있더라도 그 차이가 누진성과 직접 연결되지는 않는 것이 일반적인 추세이다. 이는 법인세가 납세자의 능력에 따라 조세 부담을 지게 한다는 원칙을 적용하기 어렵기 때문이다. 개인 소득세에서는 소득이 큰 사람에게 더 높은 세율을 적용해 능력에 따른 부담을 실현하지만, 법인의 소득은 그 자체로 특정 개인의 담세 능력을 나타낸다고 보기 어렵다. 같은 규모의 소득이라도 그 뒤에 선 주주의 수와 처지가 제각각이어서, 소득의 크기를 곧바로 부담 능력의 크기로 환산할 수 없기 때문이다.</p>
+<p>법인세는 직접세의 일종이지만, 실제로 누가 그 부담을 지게 될 것인지는 분명하지 않다. 법인세의 부담이 실제로 누구에게 귀착되느냐에 대해서는 ㉠<u>법인 부문에 투자된 자본에 대한 과세라는 견해</u>와 ㉡<u>경제적 이윤에 대한 과세라는 견해</u>가 있다. 전자의 입장에서는, 법인세의 과세 대상이 되는 소득을 정의할 때 주주가 공급한 자본의 기회비용을 공제하는 것이 허용되지 않으므로, 결국 법인세는 법인 부문에 투자된 자본이 얻는 소득에 대한 과세라고 해석한다. 이 관점에서 보면 법인세 부담은 일차적으로 자본의 소유자에게 귀착되며, 상황에 따라 노동 공급자나 소비자도 일부 부담을 ⓐ<u>지게</u> 된다. 반면 후자의 입장에서는, 법인이 행하는 한계 투자가 차입된 자금으로 조달되는 상황이라면 법인세를 기업의 총수입에서 모든 기회비용을 빼고 남은 것, 곧 경제적 이윤에 대한 과세로 본다. 차입된 자금에 지급되는 이자는 비용으로 처리되기 때문이다. 법인세가 경제적 이윤에 부과되는 성격을 가지면, 세 부담은 법인의 소유주인 주주에게 전적으로 귀착된다고 본다.</p>
+<div class="ablock"><span class="atag">[A]</span>두 견해가 부담의 귀착을 다르게 보는 까닭은 과세 대상 소득을 정의하는 방식이 서로 다르기 때문이다. 자본에 대한 과세로 보는 견해는 주주가 댄 자본의 기회비용을 공제 대상에서 제외하므로, 과세 대상에는 자본이 정상적으로 벌어들이는 몫까지 포함된다. 이 경우 과세의 무게는 자본 전반에 실리고, 자본을 댄 주체뿐 아니라 그와 거래하는 노동·소비 측으로도 부담의 일부가 옮겨 갈 여지가 생긴다. 반면 경제적 이윤에 대한 과세로 보는 견해는 차입 이자가 비용으로 빠지는 상황을 전제하여, 모든 기회비용을 공제하고 남은 순수한 초과 이윤만을 과세 대상으로 삼는다. 이때 과세는 정상적인 자본의 몫을 건드리지 않으므로, 부담을 다른 주체로 옮길 통로가 없어 주주에게 온전히 남는다.</div>
+
+<p>이처럼 법인세의 성격을 어떻게 규정하느냐에 따라 부담의 귀착에 대한 판단이 달라진다. 자본에 대한 과세로 보면 부담은 자본 소유자를 넘어 노동·소비 측으로도 분산될 수 있는 반면, 경제적 이윤에 대한 과세로 보면 부담은 주주 한곳에 모인다. 따라서 같은 세율을 매기더라도 어느 견해를 취하느냐에 따라 그 세금이 사회의 누구에게 실제로 얼마나 돌아가는지가 달라지므로, 조세 정책의 형평을 평가할 때 두 견해의 차이는 중요한 쟁점이 된다. 다만 어느 견해에서도 법인세가 법인의 의사 결정에 영향을 줄 수 있다는 점은 공통적으로 인정된다. 과세 대상 소득을 무엇으로 보든, 비용으로 인정되는 항목과 그렇지 않은 항목의 구분이 법인의 자금 조달과 투자 판단을 한쪽으로 기울게 할 수 있기 때문이다. 이러한 이유에서 법인세 제도의 설계에서는 부담의 귀착뿐 아니라 법인의 행동에 미치는 효과까지 함께 ⓑ<u>고려된다</u>.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 법인세의 과세 대상은 어떻게 정의되는가?</li>
+<li>② 법인세의 세율 구조가 단순한 형태를 띠는 까닭은 무엇인가?</li>
+<li>③ 법인이 차입한 자금의 이자는 과세 대상 소득에서 어떻게 처리되는가?</li>
+<li>④ 법인세가 누진적 세율 구조를 갖추기 위해 필요한 제도적 조건은 무엇인가?</li>
+<li>⑤ 법인세의 부담이 자본의 소유자에게 귀착된다고 보는 견해의 근거는 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 주주가 공급한 자본의 기회비용을 과세 대상에서 빼는 것을 전제로 한다.</li>
+<li>② ㉡은 차입 자금의 이자가 비용으로 처리되지 않는 상황을 전제로 한다.</li>
+<li>③ ㉠은 ㉡과 달리 법인세 부담이 주주 이외의 주체로 옮겨 갈 수 있다고 본다.</li>
+<li>④ ㉡은 ㉠과 달리 법인세를 법인 부문에 투자된 자본에 대한 과세로 규정한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 법인세 부담이 전적으로 자본의 소유자에게만 귀착된다고 본다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 수행할 학습지의 일부이다. ㉮에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦과제: '㉡을 근거로 할 때, 어떤 조건이 충족되어야 법인세 부담이 주주에게 전적으로 귀착된다고 볼 수 있는가?'를 검증할 가설에 대한 판단
+∙가설</p>
+<blockquote>
+<p>법인이 새로 행하는 투자가 차입된 자금으로 조달될수록, 과세 대상 소득에서 공제되는 기회비용의 비율이 높아진다.
+∙판단
+가설이 참이라면 [ ㉮ ]고 할 수 있으므로, ㉡을 근거로 법인세 부담이 주주에게 전적으로 귀착된다고 보는 것을 지지할 수 있겠군.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>① 차입 자금이 늘수록 법인이 부담하는 이자가 줄어들어 경제적 이윤이 커진다</li>
+<li>② 차입 자금이 늘수록 과세 대상 소득이 정상적인 자본의 몫에 가까워진다</li>
+<li>③ 차입 자금이 늘수록 과세 대상 소득이 모든 기회비용을 뺀 경제적 이윤에 가까워진다</li>
+<li>④ 차입 자금이 늘수록 자본의 기회비용이 공제 대상에서 제외되어 과세 대상이 넓어진다</li>
+<li>⑤ 차입 자금이 늘수록 노동 공급자나 소비자에게 옮겨 가는 부담의 비율이 높아진다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>[A]를 적용하여 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 법인 P가 한 해 동안 거둔 총수입에서, 차입 자금의 이자를 포함한 모든 명시적 비용을 뺀 금액을 '회계상 이윤'이라 하자. 회계상 이윤에서 다시 주주가 댄 자본의 기회비용까지 뺀 금액을 '경제적 이윤'이라 한다. P의 현행 과세에서는 자본의 기회비용이 공제 대상으로 인정되지 않으나, 아래에서는 P에 대한 과세를 ㉠과 ㉡의 두 견해로 각각 보았을 때 과세 대상과 귀착이 어떻게 달라지는지를 견준다.</p>
+</blockquote>
+<ul>
+<li>① P에 대한 과세를 ㉠으로 본다면, 과세 대상에는 자본이 정상적으로 벌어들이는 몫까지 포함되겠군.</li>
+<li>② P에 대한 과세를 ㉡으로 본다면, 과세 대상은 경제적 이윤에 해당하는 부분으로 좁혀지겠군.</li>
+<li>③ ㉠으로 볼 때 P의 과세 대상이 넓어지는 것은 자본의 기회비용이 공제되지 않기 때문이겠군.</li>
+<li>④ ㉡으로 볼 때 P의 부담이 주주에게 온전히 남는 것은 정상적인 자본의 몫이 과세되지 않기 때문이겠군.</li>
+<li>⑤ ㉠으로 보든 ㉡으로 보든, P의 과세 대상에는 주주가 댄 자본의 기회비용이 공제된 금액이 들어가겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>문맥상 ⓐ, ⓑ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 감내(堪耐)하게</li>
+<li>② ⓐ: 분담(分擔)하게</li>
+<li>③ ⓐ: 감수(甘受)하게</li>
+<li>④ ⓑ: 간주(看做)된다</li>
+<li>⑤ ⓑ: 타진(打診)된다</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 6월 [29~33]</div>
+<div class='passage exam-ps'><p>특허권은 발명에 대한 정보의 소유자가 특허 출원 및 담당 관청의 심사를 통하여 획득한 특허를 일정 기간 독점적으로 사용할 수 있는 법률상 권리를 말한다. 한편 영업 비밀은 생산 방법, 판매 방법, 그 밖에 영업 활동에 유용한 기술상 또는 경영상의 정보 등으로, 일정 조건을 갖추면 법으로 보호받을 수 있다. 법으로 보호되는 특허권과 영업 비밀은 모두 지식 재산인데, 정보 통신 기술(ICT) 산업은 이 같은 지식 재산을 기반으로 창출된다. 지식 재산 보호 문제와 더불어 최근에는 ICT 다국적 기업이 지식 재산으로 거두는 수입에 대한 과세 문제가 불거지고 있다.</p>
+<p>일부 국가에서는 ICT 다국적 기업에 대해 <span class="boxmark">[디지털세]</span> 도입을 진행 중이다. 디지털세는 이를 도입한 국가에서 ICT 다국적 기업이 거둔 수입에 대해 부과되는 세금이다. 디지털세의 배경에는 법인세 감소에 대한 각국의 우려가 있다. 법인세는 국가가 기업으로부터 걷는 세금 중 가장 중요한 것으로, 재화나 서비스의 판매 등을 통해 거둔 수입에서 제반 비용을 제외하고 남은 이윤에 대해 부과하는 세금이라 할 수 있다.</p>
+<p>㉠많은 ICT 다국적 기업이 법인세율이 현저하게 낮은 국가에 자회사를 설립하고 그 자회사에 이윤을 몰아주는 방식으로 법인세를 회피한다는 비판이 있어 왔다. 예를 들면 ICT 다국적 기업 Z사는 법인세율이 매우 낮은 A국에 자회사를 세워 특허의 사용 권한을 부여한다. 그리고 법인세율이 A국보다 높은 B국에 설립된 Z사의 자회사에서 특허 사용으로 수입이 발생하면 Z사는 B국의 자회사로 하여금 A국의 자회사에 특허 사용에 대한 수수료인 로열티를 지출하도록 한다. 그 결과 Z사는 ⓐB국의 자회사에 법인세가 부과될 이윤을 최소화한다. ICT 다국적 기업의 본사를 많이 보유한 국가에서도 해당 기업에 대한 법인세 징수는 문제가 된다. 그러나 그중 어떤 국가들은 ICT 다국적 기업의 활동이 해당 산업에서 자국이 주도권을 유지하는 데 중요하기 때문에라도 디지털세 도입에는 방어적이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>ICT 산업을 주도하는 국가에서 더 중요한 문제는 ICT 지식 재산 보호의 국제적 강화일 수 있다. 이론적으로 봤을 때 지식 재산의 보호가 약할수록 유용한 지식 창출의 유인이 저해되어 지식의 진보가 정체되고, 지식 재산의 보호가 강할수록 해당 지식에 대한 접근을 막아 소수의 사람만이 혜택을 보게 된다. 전자로 발생한 손해를 유인 비용, 후자로 발생한 손해를 접근 비용이라고 한다면, 지식 재산 보호의 최적 수준은 두 비용의 합이 최소가 될 때일 것이다. 각국은 그 수준에서 자국의 지식 재산 보호 수준을 설정한다. 특허 보호 정도와 국민 소득의 관계를 보여 주는 한 연구에서는 국민 소득이 일정 수준 이상인 상태에서는 국민 소득이 증가할수록 특허 보호 정도가 강해지는 경향이 있지만, 가장 낮은 소득 수준을 벗어난 국가들은 그들보다 소득 수준이 낮은 국가들보다 오히려 특허 보호가 약한 것으로 나타났다. 이는 지식 재산 보호의 최적 수준에 대해서도 국가별 입장이 다름을 시사한다.</p></div></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>윗글을 읽고 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 법으로 보호되는 특허권과 영업 비밀의 공통점은 무엇인가?</li>
+<li>② 영업 비밀이 법적 보호 대상으로 인정받기 위한 절차는 무엇인가?</li>
+<li>③ ICT 다국적 기업의 수입에 과세하는 제도 도입의 배경은 무엇인가?</li>
+<li>④ 로열티는 ICT 다국적 기업의 법인세를 줄이는 데 어떻게 이용되는가?</li>
+<li>⑤ 이론적으로 지식 재산 보호의 최적 수준은 어떻게 설정하는가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>30</span><span class="boxmark">[디지털세]</span>에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 지식 재산 보호를 강화할 수 있는 수단이다.</li>
+<li>② 이윤에서 제반 비용을 제외한 금액에 부과된다.</li>
+<li>③ ICT 산업에서 주도적인 국가는 도입에 적극적이다.</li>
+<li>④ 여러 국가에 자회사를 설립하는 방식으로 줄일 수 있다.</li>
+<li>⑤ 도입된 국가에서 ICT 다국적 기업이 거둔 수입에 부과된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>31</span><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 수행할 학습지의 일부이다. ㉮에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦과제: '㉠을 근거로 ICT 다국적 기업에 디지털세가 부과되는 것이 타당한가?'를 검증할 가설에 대한 판단
+∙가설</p>
+<blockquote>
+<p>ICT 다국적 기업 자회사들의 수입 대비 이윤의 비율은 법인세율이 높은 국가일수록 낮다.
+∙판단
+가설이 참이라면 [ ㉮ ]고 할 수 있으므로 ㉠을 근거로 디지털세를 부과하는 것을 지지할 수 있겠군.</p>
+</blockquote>
+</blockquote>
+<ul>
+<li>① ICT 다국적 기업 자회사의 수입이 법인세율이 높은 국가일수록 많다</li>
+<li>② ICT 다국적 기업이 법인세율이 높은 국가의 자회사에 로열티를 지출한다</li>
+<li>③ ICT 다국적 기업 자회사의 수입 대비 제반 비용의 비율이 법인세율이 낮은 국가일수록 높다</li>
+<li>④ ICT 다국적 기업이 법인세율이 높은 국가의 자회사에서 수입에 비해 이윤을 줄이는 방식으로 법인세를 줄이고 있다</li>
+<li>⑤ 법인세율이 높은 국가에 본사가 있는 ICT 다국적 기업 자회사의 수입 대비 이윤의 비율은 법인세율이 낮은 국가일수록 낮다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>32</span>[A]를 적용하여 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+S국은 현재 국민 소득이 가장 낮은 수준의 국가이고 ICT 산업에서 주도적인 국가가 아니다. S국의 특허 보호 정책은 지식 재산 보호 정책을 대표한다.</p>
+</blockquote>
+<ul>
+<li>① ICT 산업에서 주도적인 국가는 S국이 유인 비용을 현재보다 크게 인식하여 지식 재산 보호 수준을 높이기 바라겠군.</li>
+<li>② S국에서는 지식 재산 보호 수준이 낮을 때가 높을 때보다 지식 재산 창출 의욕의 저하로 인한 손해가 더 심각하겠군.</li>
+<li>③ S국에서 현재의 특허 제도가 특허권을 과하게 보호한다고 판단한다면 지식 재산 보호 수준을 낮춰 접근 비용을 높이고 싶겠군.</li>
+<li>④ S국의 국민 소득이 점점 높아진다면 유인 비용과 접근 비용의 합이 최소가 되는 지식 재산 보호 수준은 낮아졌다가 높아지겠군.</li>
+<li>⑤ S국이 지식 재산 보호 수준을 높일 때, 지식의 발전이 저해되어 발생하는 손해는 감소하고 다수가 지식 재산의 혜택을 누리지 못하여 발생하는 손해는 증가하겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>33</span>문맥상 ⓐ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① Z사의 전체적인 법인세 부담을 줄인다</li>
+<li>② A국의 자회사가 거두는 수입을 늘린다</li>
+<li>③ A국의 자회사가 얻게 될 이윤을 줄인다</li>
+<li>④ B국의 자회사가 낼 법인세를 최소화한다</li>
+<li>⑤ B국의 자회사가 지출하는 제반 비용을 늘린다</li>
+</ul></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>법인세는 법인이 일정 기간 동안 얻은 수입에서 제반 비용을 뺀 것에 부과되는 조세이다. 그런데 비용으로 인정되는 항목 중에는 한 해에 모두 잡히지 않고 여러 해에 걸쳐 나누어 인정되는 것이 있다. 기계나 공장과 같은 자본재는 한 해에만 쓰이고 마는 것이 아니라 여러 해에 걸쳐 생산에 이바지하므로, 그 비용도 한 해에 몰아 인정하지 않고 사용 기간에 걸쳐 나누어 인정하는 것이 합리적이기 때문이다. 자본재의 가치 감소를 이렇게 기간에 걸쳐 비용으로 처리하는 것이 감가상각이다. 감가상각이 된 부분은 비용으로 처리되어 과세 대상 소득을 줄이므로, 법인의 세 부담을 줄이는 역할을 한다. 따라서 자본재의 가치가 한 해에 얼마나 줄어든 것으로 보느냐는 그해 세 부담의 크기와 직결되며, 같은 자본재라도 가치 감소를 어떻게 재느냐에 따라 비용으로 잡히는 몫이 달라진다.</p>
+<p>자본재가 나이를 먹어 감에 따라 그 가치가 줄어드는 부분을 경제적 감가상각이라 한다. 경제적 감가상각을 측정할 때에는 두 가지 접근 중 하나를 사용한다. ㉠<u>가격 중심적 접근</u>은 시장에서 조사된 자본재 가격에 기초해 감가상각을 산출하는 방식이다. 각 연령의 중고 자본재가 어떤 가격에 거래되고 있는지를 조사해, 시간의 경과에 따라 자본재의 가격이 하락하는 속도를 잰다. 이 방식은 시장에서 실제로 형성된 가격을 근거로 삼는다는 장점이 있으나, 해당 자본재가 거래되는 중고 시장이 충분히 형성되어 있어야 가격을 조사할 수 있다는 제약이 있다. 반면 ㉡<u>비가격적 접근</u>은 시간이 경과함에 따라 자본재의 물리적 특성에 일어나는 변화에 기초해 감가상각을 측정해 산출하는 방식이다. 부품의 마모 정도나 성능의 저하처럼 자본재 자체에 나타나는 물리적 변화를 살펴 가치가 줄어드는 정도를 헤아리는 것이다. 이 방식은 중고 거래가 드문 자본재에도 적용할 수 있으나, 물리적 마모와 가치 하락이 언제나 같은 속도로 진행되지는 않는다는 한계가 있다. 가령 기술 발전으로 더 나은 자본재가 나오면, 물리적으로는 멀쩡한 자본재라도 시장에서의 가치는 크게 떨어질 수 있기 때문이다. 그래서 어느 접근이 더 적합한지는 해당 자본재의 중고 시장이 잘 형성되어 있는지, 가치 하락의 원인이 물리적 마모에 있는지에 따라 달라진다.</p>
+<p>두 접근 중 어느 것을 쓰든 경제적 감가상각을 정확히 측정하려면 자본재마다 그 가치 감소를 따로 따져야 한다. 그러나 수없이 많은 자본재의 경제적 감가상각을 일일이 계산하는 것은 매우 복잡한 일이다. 그래서 현행 법인세 제도에서는 편의상 자본재를 몇 개의 그룹으로 분류하고, 각 그룹에 대해 미리 정해진 규칙에 따라 감가상각을 해 나가는 것을 허용한다. 그 규칙의 예로, 생산 활동에 투입되어 경제적 효용을 발휘할 수 있는 기간인 내용 기간을 고려하는 정액법이 있다. 정액법에서는 내용 기간이 n년인 자본재에 대해 1년에 구입 가격의 1/n씩 감가상각을 해 나가도록 허용한다. 가령 내용 기간이 5년인 자본재라면 해마다 구입 가격의 1/5씩 비용으로 처리되며, 5년이 지나면 구입 가격 전체가 비용으로 인정된다. 이렇게 정해진 규칙에 따른 감가상각은 계산이 간편하다. 그러나 자본재의 실제 가치는 해마다 일정하게 줄지 않는 경우가 많으므로, 정액법의 결과가 실제 경제적 감가상각과 정확히 일치한다는 보장은 없다.</p>
+<p>한편 정부는 기업의 투자를 ⓐ<u>유도하기</u> 위한 목적으로, 법인세제상의 감가상각을 일부러 경제적 감가상각과 차이가 나도록 만들기도 한다. 정부가 기업으로 하여금 정상적인 속도보다 더 빠르게 감가상각을 해 나가는 것을 허용하는 것이 그 예이다. 이렇게 하면 자본재를 구입한 초기에 더 많은 금액이 비용으로 ⓑ<u>처리되어</u> 그 시기의 과세 대상 소득이 줄고, 세 부담도 그만큼 앞당겨 ⓒ<u>가벼워진다</u>. 기업으로서는 투자 초기의 세 부담이 ⓓ<u>완화되므로</u> 새로운 설비 투자에 나설 ⓔ<u>유인을</u> 얻게 된다. 이처럼 감가상각을 어떻게 측정하고 어떤 규칙으로 허용하느냐는, 단순한 계산의 문제를 넘어 기업의 투자 행동을 움직이는 정책 수단이 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 감가상각을 측정하는 두 접근을 제시하고, 각각의 장점과 한계를 견주어 설명하고 있다.</li>
+<li>② 감가상각 제도가 시대에 따라 변화해 온 과정을 시간 순서에 따라 서술하고 있다.</li>
+<li>③ 경제적 감가상각과 법인세제상의 감가상각이 일치해야 한다는 주장을 반박하고 있다.</li>
+<li>④ 감가상각을 둘러싼 두 학파의 대립을 소개하고 절충적 대안을 도출하고 있다.</li>
+<li>⑤ 자본재의 종류를 기준별로 분류하고 각 종류에 적용되는 세율을 비교하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 법인이 구입 가격이 1,000인 자본재 한 대를 들였다고 하자. 이 자본재의 내용 기간은 5년이며, 정액법으로 감가상각을 한다. 한편 같은 자본재에 대해 정부가 투자 유도를 위해, 1년 차에 구입 가격의 2/5만큼을 감가상각하고 이후에는 남은 금액을 나누어 처리하는 더 빠른 방식을 허용했다고 한다. 단, 다른 조건은 모두 같다고 한다.</p>
+</blockquote>
+<ul>
+<li>① 정액법을 적용하면 이 자본재는 1년에 200씩 감가상각되겠군.</li>
+<li>② 정액법을 적용하면 5년 동안 비용으로 처리되는 감가상각의 합은 구입 가격과 같겠군.</li>
+<li>③ 더 빠른 방식의 1년 차 감가상각액은 정액법의 1년 차 감가상각액보다 크겠군.</li>
+<li>④ 더 빠른 방식을 적용하면 1년 차에 비용으로 처리되는 금액이 늘어 그해의 과세 대상 소득이 줄겠군.</li>
+<li>⑤ 더 빠른 방식을 적용하면 5년 동안 비용으로 처리되는 감가상각의 합이 정액법일 때보다 커지겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 자본재의 물리적 특성 변화를 기초로 감가상각을 산출한다.</li>
+<li>② ㉡은 중고 시장에서 조사된 거래 가격을 기초로 감가상각을 산출한다.</li>
+<li>③ ㉠은 ㉡과 달리 중고 거래가 드문 자본재에도 어려움 없이 적용된다.</li>
+<li>④ ㉡은 ㉠과 달리 자본재의 마모 속도와 가치 하락 속도가 어긋날 수 있다는 한계를 갖는다.</li>
+<li>⑤ ㉠과 ㉡은 모두 미리 정해진 규칙에 따라 자본재를 그룹별로 분류해 감가상각을 산출한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 촉진(促進)하기</li>
+<li>② ⓑ: 계상(計上)되어</li>
+<li>③ ⓒ: 경감(輕減)된다</li>
+<li>④ ⓓ: 가중(加重)되므로</li>
+<li>⑤ ⓔ: 동기(動機)를</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 6월 [22~25]</div>
+<div class='passage exam-ps'><p>통화 정책은 중앙은행이 물가 안정과 같은 경제적 목적의 달성을 위해 이자율이나 통화량을 조절하는 것이다. 대표적인 통화 정책 수단인 ‘공개 시장 운영’은 중앙은행이 민간 금융 기관을 상대로 채권을 매매해 금융 시장의 이자율을 정책적으로 결정한 기준 금리 수준으로 접근시키는 것이다. 중앙은행이 채권을 매수하면 이자율은 하락하고, 채권을 매도하면 이자율은 상승한다. 이자율이 하락하면 소비와 투자가 확대되어 경기가 활성화되고 물가 상승률이 오르며, 이자율이 상승하면 경기가 위축되고 물가 상승률이 떨어진다. 이와 같이 공개 시장 운영의 영향은 경제 전반에 ⓐ파급된다.</p>
+<p>중앙은행의 통화 정책이 의도한 효과를 얻기 위한 요건 중에는 ‘선제성’과 ‘정책 신뢰성’이 있다. 먼저 통화 정책이 선제적이라는 것은 중앙은행이 경제 변동을 예측해 이에 미리 대처한다는 것이다. 기준 금리를 결정하고 공개 시장 운영을 실시하여 그 효과가 실제로 나타날 때까지는 시차가 발생하는데 이를 ‘정책 외부 시차’라 하며, 이 때문에 선제성이 문제가 된다. 예를 들어 중앙은행이 경기 침체 국면에 들어서야 비로소 기준 금리를 인하한다면, 정책 외부 시차로 인해 경제가 스스로 침체 국면을 벗어난 다음에야 정책 효과가 ⓑ발현될 수도 있다. 이 경우 경기 과열과 같은 부작용이 ⓒ수반될 수 있다. 따라서 중앙은행은 통화 정책을 선제적으로 운용하는 것이 바람직하다.</p>
+<p>또한 통화 정책은 민간의 신뢰가 없이는 성공을 거둘 수 없다. 따라서 중앙은행은 정책 신뢰성이 손상되지 않게 ⓓ유의해야 한다. 그런데 어떻게 통화 정책이 민간의 신뢰를 얻을 수 있는지에 대해서는 견해 차이가 있다. 경제학자 프리드먼은 중앙은행이 특정한 정책 목표나 운용 방식을 ‘준칙’으로 삼아 민간에 약속하고 어떤 상황에서도 이를 지키는 ㉠‘준칙주의’를 주장한다. 가령 중앙은행이 물가 상승률 목표치를 민간에 약속했다고 하자. 민간이 이 약속을 신뢰하면 물가 불안 심리가 진정된다. 그런데 물가가 일단 안정되고 나면 중앙은행으로서는 이제 경기를 ⓔ부양하는 것도 고려해 볼 수 있다. 문제는 민간이 이 비일관성을 인지하면 중앙은행에 대한 신뢰가 훼손된다는 점이다. 준칙주의자들은 이런 경우에 중앙은행이 애초의 약속을 일관되게 지키는 편이 바람직하다고 주장한다.</p>
+<p>그러나 민간이 사후적인 결과만으로는 중앙은행이 준칙을 지키려 했는지 판단하기 어렵고, 중앙은행에 준칙을 지킬 것을 강제할 수 없는 것도 사실이다. 준칙주의와 대비되는 ㉡‘재량주의’에서는 경제 여건 변화에 따른 신축적인 정책 대응을 지지하며 준칙주의의 엄격한 실천은 현실적으로 어렵다고 본다. 아울러 준칙주의가 최선인지에 대해서도 물음을 던진다. 예상보다 큰 경제 변동이 있으면 사전에 정해 둔 준칙이 장애물이 될 수 있기 때문이다. 정책 신뢰성은 중요하지만, 이를 위해 중앙은행이 반드시 준칙에 얽매일 필요는 없다는 것이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>22</span>윗글에서 사용한 설명 방식에 해당하지 않는 것은?</p>
+<ul>
+<li>① 통화 정책의 목적을 유형별로 나누어 제시하고 있다.</li>
+<li>② 통화 정책에서 선제적 대응의 필요성을 예를 들어 설명하고 있다.</li>
+<li>③ 공개 시장 운영이 경제 전반에 영향을 미치는 과정을 인과적으로 설명하고 있다.</li>
+<li>④ 관련된 주요 용어의 정의를 바탕으로 통화 정책의 대표적인 수단을 설명하고 있다.</li>
+<li>⑤ 통화 정책의 신뢰성 확보를 위해 준칙을 지켜야 하는지에 대한 두 견해의 차이를 드러내고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>23</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해할 때 ‘경제학자 병’이 제안한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 가상의 경제에서 20○○년 1월 1일부터 9월 30일까지 3개 분기 동안 중앙은행의 기준 금리가 4%로 유지되는 가운데 다양한 물가 변동 요인의 영향으로 물가 상승률은 아래 표와 같이 나타났다. 단, 각 분기의 물가 변동 요인은 서로 관련이 없다고 한다.</p>
+<table>
+<thead>
+<tr>
+<th>기간</th>
+<th>1/1∼3/31<br>1분기</th>
+<th>4/1∼6/30<br>2분기</th>
+<th>7/1∼9/30<br>3분기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>물가 상승률</td>
+<td>2%</td>
+<td>3%</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+<p>경제학자 병은 1월 1일에 위 표의 내용을 예측할 수 있었고 국민들의 생활 안정을 위해 물가 상승률을 매 분기 2%로 유지해야 한다고 주장하였다. 이를 위해 다음 사항을 고려한 선제적 통화 정책을 제안했으나 받아들여지지 않았다.</p>
+<p><strong><span class="boxmark">[경제학자 병의 고려 사항]</span></strong>
+기준 금리가 4%로부터 1.5%p*만큼 변하면 물가 상승률은 위 표의 각 분기 값을 기준으로 1%p만큼 달라지며, 기준 금리 조정과 공개 시장 운영은 1월 1일과 4월 1일에 수행된다. 정책 외부 시차는 1개 분기이며 기준 금리 조정에 따른 물가 상승률 변동 효과는 1개 분기 동안 지속된다.</p>
+<p>* %p는 퍼센트 간의 차이를 말한다. 예를 들어 1%에서 2%로 변화하면 이는 1%p 상승한 것이다.</p>
+</blockquote>
+<ul>
+<li>① 중앙은행은 기준 금리를 1월 1일에 2.5%로 인하하고 4월 1일에도 이를 2.5%로 유지해야 한다.</li>
+<li>② 중앙은행은 기준 금리를 1월 1일에 2.5%로 인하하고 4월 1일에는 이를 4%로 인상해야 한다.</li>
+<li>③ 중앙은행은 기준 금리를 1월 1일에 4%로 유지하고 4월 1일에는 이를 5.5%로 인상해야 한다.</li>
+<li>④ 중앙은행은 기준 금리를 1월 1일에 5.5%로 인상하고 4월 1일에는 이를 4%로 인하해야 한다.</li>
+<li>⑤ 중앙은행은 기준 금리를 1월 1일에 5.5%로 인상하고 4월 1일에도 이를 5.5%로 유지해야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>24</span>윗글의 ㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠에서는 중앙은행이 정책 운용에 관한 준칙을 지키느라 경제 변동에 신축적인 대응을 못해도 이를 바람직하다고 본다.</li>
+<li>② ㉡에서는 중앙은행이 스스로 정한 준칙을 지키는 것은 얼마든지 가능하다고 본다.</li>
+<li>③ ㉠에서는 ㉡과 달리, 정책 운용에 관한 준칙을 지키지 않아도 민간의 신뢰를 확보할 수 있다고 본다.</li>
+<li>④ ㉡에서는 ㉠과 달리, 통화 정책에서 민간의 신뢰 확보를 중요하게 여기지 않는다.</li>
+<li>⑤ ㉡에서는 ㉠과 달리, 경제 상황 변화에 대한 통화 정책의 탄력적 대응이 효과적이지 않다고 본다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>25</span>ⓐ~ⓔ의 문맥적 의미를 활용하여 만든 문장으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 그의 노력으로 소비자 운동이 전국적으로 파급되었다.</li>
+<li>② ⓑ: 의병 활동은 민중의 애국 애족 의식이 발현한 것이다.</li>
+<li>③ ⓒ: 이 질병은 구토와 두통 증상을 수반하는 경우가 많다.</li>
+<li>④ ⓓ: 기온과 습도가 높은 요즘 건강관리에 유의해야 한다.</li>
+<li>⑤ ⓔ: 장남인 그가 늙으신 부모와 어린 동생들을 부양하고 있다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>법인세는 법인이 얻은 수입에서 제반 비용을 뺀 것에 부과되는 조세로서, 무엇을 비용으로 인정하느냐에 따라 법인의 행동에 영향을 준다. 법인이 사업에 필요한 자금을 마련하는 길에는 크게 두 가지가 있다. 하나는 은행 등에서 돈을 빌리는 차입이고, 다른 하나는 주주가 댄 자기 자본을 사용하는 것이다. 차입금에 대한 지급 이자는 비용으로 처리할 수 있지만, 법인이 자기 자본을 사용하여 발생하는 ㉠<u>귀속 이자</u>는 기회비용에 해당함에도 비용으로 처리할 수 없는 것이 현행 법인세제상의 특성이다. 귀속 이자란 자기 자본을 다른 곳에 투자했더라면 얻었을 수익으로, 실제로 지불되는 비용은 아니지만 포기된 가치라는 점에서 차입 이자와 성격이 같다. 그럼에도 한쪽만 비용으로 인정되는 이러한 비대칭은 법인이 자금을 조달할 때 자기 자본보다 부채에 대한 의존도를 높이게 만드는 유인을 ⓐ<u>제공할</u> 수 있다. 차입으로 자금을 마련하면 그 이자만큼 과세 대상 소득이 줄어 세 부담이 가벼워지기 때문이다.</p>
+<p>이에 따라 법인의 투자 의사 결정에 영향을 미치지 않는, 중립적인 성격의 법인세 제도의 필요성이 제기되었다. 중립적인 법인세 제도란 어떤 선택이 세제상 유리하거나 불리하게 만들지 않아, 법인이 세금이 아닌 본래의 경제적 이유에 따라 판단하도록 두는 제도를 말한다. 중립적인 법인세 제도를 만들기 위해서는 법인세에서 인정하는 감가상각을 경제적 감가상각과 일치시킬 필요가 있다. 경제적 감가상각이란 기계, 공장 등의 자본재가 나이를 먹어 감에 따라 그 가치가 줄어드는 부분을 ⓑ<u>뜻한다</u>. 법인세제상의 감가상각이 경제적 감가상각과 어긋나면, 어떤 자본재에 투자하는 것이 다른 자본재에 투자하는 것보다 세제상 유리해지는 일이 생겨, 세제가 투자의 방향을 왜곡할 수 있기 때문이다. 예컨대 어떤 자본재는 실제보다 빠르게, 다른 자본재는 더 느리게 감가상각이 인정된다면, 법인은 본래의 수익성과 무관하게 세제상 유리한 쪽으로 투자를 기울이게 된다. 따라서 둘을 일치시키는 것은 법인세제의 중립성을 ⓒ<u>확보하기</u> 위한 핵심 조건이 된다.</p>
+<p>중립성을 위협하는 요인은 자금 조달의 비대칭에만 있지 않다. 법인세제상 허용되는 감가상각은 해당 자본재를 취득할 당시에 실제로 지불한 가격인 '역사적 비용'에 기초하고 있다. 자본재를 산 가격이 장부에 기록되고, 그 가격을 기준으로 해마다 일정 몫이 비용으로 인정되는 것이다. 평상시에는 이 방식이 큰 문제를 일으키지 않지만, 인플레이션이 진행되면 사정이 달라진다. 인플레이션이 일어나면 자본재 가격도 상승하므로, 감가상각이 모두 끝난 자본재를 새것으로 대체하는 데 드는 '대체 비용'이 역사적 비용보다 커진다. 자본재가 닳아 없어진 만큼의 진정한 가치 상실분은 새것을 들이는 데 드는 대체 비용을 기준으로 따져야 하는데, 비용으로 인정되는 감가상각은 그보다 낮은 역사적 비용에 묶여 있는 것이다. 그 결과 역사적 비용에 입각한 감가상각의 실질 가치는 그 자본재의 진정한 가치 상실분보다 작을 수밖에 없다. 이렇게 감가상각의 실질적 가치가 ⓓ<u>떨어지면</u> 비용으로 인정되는 몫이 실제 가치 손실에 미치지 못하므로, 과세 대상 소득이 실제보다 부풀려져 법인의 실질적 조세 부담은 그만큼 무거워진다.</p>
+<p>기업의 법인세 부담이 인플레이션의 영향을 받는다는 것은, 같은 세율과 같은 규칙 아래에서도 물가 상황에 따라 실질 부담이 달라질 수 있음을 ⓔ<u>보여 준다</u>. 인플레이션으로 법인이 유리해지는 측면이 전혀 없는 것은 아니지만, 감가상각의 실질 가치 하락이라는 통로를 통해 더 무거운 세금을 지는 것이 일반적이다. 이는 법인세제의 중립성을 위협하는 또 다른 요인이 된다. 자기 자본의 귀속 이자를 비용으로 인정하지 않는 데서 비롯되는 부채 편향과 마찬가지로, 역사적 비용에 기초한 감가상각 역시 세제가 의도하지 않은 방향으로 법인의 실질 부담과 판단에 영향을 미치기 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 차입금에 대한 지급 이자는 비용으로 처리할 수 있다.</li>
+<li>② 법인세제상의 감가상각은 역사적 비용에 기초하여 이루어진다.</li>
+<li>③ 인플레이션이 진행되면 자본재의 대체 비용이 역사적 비용보다 커진다.</li>
+<li>④ 자기 자본의 귀속 이자는 기회비용에 해당하지만 비용으로 처리할 수 없다.</li>
+<li>⑤ 법인세제상의 감가상각과 경제적 감가상각이 어긋날수록 법인세제의 중립성이 강화된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 법인이 자기 자본을 사용함으로써 발생하는 기회비용에 해당한다.</li>
+<li>② 현행 법인세제에서는 비용으로 처리하는 것이 허용되지 않는다.</li>
+<li>③ 차입금의 지급 이자와 달리 과세 대상 소득에서 공제되지 않는다.</li>
+<li>④ 이를 비용으로 인정하지 않는 것이 법인의 부채 의존도를 낮추는 유인이 된다.</li>
+<li>⑤ 이를 둘러싼 처리상의 비대칭은 법인의 자금 조달 방식에 영향을 줄 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 법인이 자본재 한 대를 1,000에 취득했고, 법인세제는 이 자본재를 역사적 비용에 기초해 5년 동안 해마다 200씩 감가상각하도록 허용한다. 그런데 취득 이후 5년 동안 인플레이션이 진행되어, 5년이 지난 시점에 같은 자본재를 새것으로 들이는 데 드는 비용은 1,500이 되었다. 한편 이 기간에 이 자본재의 진정한 가치 상실분은 새것 기준으로 1,500에 해당한다고 하자. 단, 세율과 다른 조건은 모두 같다고 한다.</p>
+</blockquote>
+<ul>
+<li>① 법인세제가 인정한 감가상각의 총액은 대체 비용인 1,500과 같겠군.</li>
+<li>② 역사적 비용에 기초한 감가상각의 실질 가치는 진정한 가치 상실분에 미치지 못하겠군.</li>
+<li>③ 이 법인은 인플레이션으로 인해 자본재의 가치 손실을 실제보다 크게 인정받게 되겠군.</li>
+<li>④ 자본재를 새것으로 대체하는 데 드는 비용이 역사적 비용보다 작아져 세 부담이 가벼워지겠군.</li>
+<li>⑤ 감가상각이 대체 비용을 기준으로 이루어졌다면 이 법인의 실질적 조세 부담은 더 무거워졌겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 제거(除去)할</li>
+<li>② ⓑ: 의미(意味)한다</li>
+<li>③ ⓒ: 도모(圖謀)하기</li>
+<li>④ ⓓ: 저하(低下)되면</li>
+<li>⑤ ⓔ: 시사(示唆)한다</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2023학년도 수능 [10~13]</div>
+<div class='passage exam-ps'><p>법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과 효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가 항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야 그 상황에 ⓐ맞는 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한 경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ들 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해 배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.</p>
+<p>채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이 발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ받을 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를 증명하면 손해 배상금도 받을 수 있다.</p>
+<p>불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이 구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는 특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ고를 수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.</p>
+<p>행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠재량 준칙이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ지켜야 하기 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.</li>
+<li>② 법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.</li>
+<li>③ 불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.</li>
+<li>④ 불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.</li>
+<li>⑤ 불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.</li>
+<li>② 재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.</li>
+<li>③ 재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.</li>
+<li>④ 재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.</li>
+<li>⑤ 재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑과 을 사이에 위약금 약정이 없었다.
+(나) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.
+(다) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.
+(단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① (가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>② (나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>③ (나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>④ (다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>⑤ (다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이것이 네가 찾는 자료가 맞는지 확인해 보아라.</li>
+<li>② ⓑ: 그 부부는 노후 대책으로 적금을 들고 안심했다.</li>
+<li>③ ⓒ: 그의 파격적인 주장은 학계의 큰 주목을 받았다.</li>
+<li>④ ⓓ: 형은 땀 흘려 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+<li>⑤ ⓔ: 그분은 우리에게 한 약속을 반드시 지킬 것이다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

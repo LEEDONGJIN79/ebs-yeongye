@@ -1,0 +1,485 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>양자점 디스플레이 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 텔레비전이나 스마트폰 화면이 어떻게 빨강·초록·파랑 같은 또렷한 색을 내는지 생각해 본 적 있나요? 화면 속 작은 점들이 저마다 다른 색의 빛을 내야 우리가 보는 그림이 만들어지는데요, 그 색을 만드는 새로운 재료 가운데 하나가 바로 <strong>양자점</strong>입니다. 양자점은 머리카락 굵기의 몇만 분의 일밖에 안 되는, 아주 작은 알갱이예요. 그런데 신기하게도 <strong>이 알갱이는 크기만 바꾸면 내는 빛의 색이 달라집니다.</strong> 같은 물질로 만들어도 작게 만들면 푸른빛, 크게 만들면 붉은빛이 나오죠. 이게 어떻게 가능한지 차근차근 풀어 볼게요.</p>
+<p>먼저 알아야 할 말이 <strong>에너지 준위</strong>예요. 원자 속 전자는 아무 데나 있는 게 아니라, 핵 주위의 정해진 '계단'에만 머무를 수 있어요. 이 계단의 높이가 바로 에너지 준위입니다. 전자는 에너지를 받으면 위 계단으로 올라갔다가, 다시 아래 계단으로 내려오면서 그 차이만큼을 <em>빛</em>으로 내보냅니다. 마치 높은 곳에서 떨어지는 물이 큰 소리를 내듯, <strong>전자가 크게 떨어질수록(에너지 변동 폭이 클수록) 더 푸른 계열의 빛</strong>이, 작게 떨어질수록 더 붉은 계열의 빛이 나오는 것이죠.</p>
+<p>그런데 원자 하나가 아니라 수많은 원자가 모이면, 옆 원자들의 궤도가 서로 겹치면서(중첩) 계단 하나가 여러 층으로 뭉개져 <em>띠(밴드)</em> 모양이 됩니다. 이것을 <strong>에너지 밴드</strong>라고 해요. 여기서 핵심은, <strong>알갱이를 나노미터 크기로 아주 작게 만들면 이 띠의 구조가 달라져, 전자가 오르내리는 폭 자체가 변한다</strong>는 점이에요. 작을수록 그 폭이 커져서 푸른빛 쪽으로, 클수록 폭이 작아져서 붉은빛 쪽으로 옮겨 가죠. 그래서 양자점은 <em>크기만으로</em> 색을 골라 만들 수 있는, 빛을 내는 똑똑한 알갱이가 됩니다.</p>
+<blockquote>
+<p>한마디로: <strong>양자점은 "크기가 색을 정하는" 발광 재료</strong>예요. 전자가 띠 사이를 오르내리며 빛을 내는 원리와, 입자가 작을수록 변동 폭이 커져 푸른빛이 난다는 비례 관계 — 이 두 가지가 이 단원의 열쇠입니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>전자가 빛을 내는 원리와, 양자점의 크기가 빛의 색을 정하는 관계</strong>가 있습니다. 같은 원리를 세 세트가 서로 다른 각도에서 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>전자의 에너지 변동 → 빛 방출  (입자 크기에 따른 변화)▶  양자점의 색 조절<small>"에너지 준위·밴드·변동 폭"            "작을수록 푸른빛, 클수록 붉은빛"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>전자가 에너지 밴드를 오르내리며 빛을 내는 <em>원리</em>를 세우고, 그 원리가 양자점의 두 가지 쓰임(스스로 빛을 내는 형, 빛을 받아 색을 바꾸는 형)으로 갈라지는 모습을 봅니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>입자 크기와 빛의 색 사이의 <em>비례 관계</em>를 흡수·방출의 관점에서 더 파고들고, 크기에 따른 변화를 그래프로 읽어 냅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>양자점이 <em>디스플레이 발광 재료</em>로 쓰이려면 무엇을 갖춰야 하는지, 그리고 다른 발광 재료와 어떻게 구별되는지를 따져 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 전자가 어떻게 빛을 만들고, 왜 작은 알갱이일수록 푸른빛을 내며, 그 성질이 화면을 만드는 데 어떻게 쓰이는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>물질이 빛을 내는 현상은 그 물질을 이루는 전자의 에너지 상태가 바뀌는 과정으로 설명된다. 원자에는 중심에 핵이 있고 그 주위를 도는 전자가 있는데, 전자는 핵 주위의 정해진 궤도에만 존재할 수 있고 각 궤도마다 전자가 갖는 에너지 값이 정해져 있다. 이 값을 에너지 준위라 한다. 원자가 가진 특정한 몇 개의 궤도에만 전자가 있을 수 있으므로, 전자가 가질 수 있는 에너지 준위도 특정한 몇 개의 값으로만 정해진다. 전자는 에너지를 얻으면 바깥쪽 궤도로 올라가고 에너지를 잃으면 안쪽 궤도로 내려온다. 원자가 하나일 때는 전자가 가질 수 있는 에너지 준위가 이처럼 몇 개의 특정한 값이지만, 여러 원자가 모이면 사정이 달라진다. 이웃한 원자들의 궤도가 서로 겹치면서 전자들이 영향을 주고받아, 본래 같은 값이던 에너지 준위들이 미세하게 어긋나며 여럿으로 갈라지기 때문이다. 그 결과 에너지 준위는 하나의 값이 아니라 촘촘한 값들이 모인 일정한 범위로 나타나는데, 이렇게 에너지 값이 범위로 표현된 것을 에너지 밴드라 한다. 보통의 물질은 매우 많은 원자로 이루어져 있으므로 대부분 이러한 에너지 밴드를 가진다.</p>
+<p>전자는 가능한 한 낮은 에너지 상태에 머무르려는 성질이 있다. 그래서 발광 물질의 전자에 에너지가 공급되면 전자는 높은 에너지 밴드로 올라갔다가 다시 낮은 에너지 밴드로 내려오는데, 이때 두 밴드의 에너지 차이에 해당하는 만큼을 빛의 형태로 내보낸다. 이렇게 전자가 한 밴드에서 다른 밴드로 옮겨 가며 에너지를 빛으로 내놓는 현상이 발광이다. 수많은 원자로 이루어진 물질에서는 전자가 높은 에너지 밴드의 여러 값 중 한 곳에서 낮은 에너지 밴드의 여러 값 중 한 곳으로 내려오므로, 전자의 에너지가 변동되는 폭도 하나의 값이 아니라 일정한 범위를 이룬다. 그런데 전자가 내려올 때의 에너지 변동 폭이 클수록 방출되는 빛의 에너지가 크고, 이 변동 폭에 따라 빛의 색이 달라진다. 곧 어떤 물질이 어떤 색의 빛을 내는지는 그 물질에서 전자가 오르내리는 두 밴드의 간격, 다시 말해 에너지 변동 폭에 달려 있는 것이다.</p>
+<p>같은 물질이라도 전자의 에너지 변동 폭을 바꿀 수 있다면 내는 빛의 색을 조절할 수 있다. 그런데 물질의 입자 크기가 나노미터 단위로 작아지면 바로 이 변동 폭이 달라진다. 입자가 그만큼 작아지면 그 안에 갇힌 전자가 가질 수 있는 에너지 준위의 구조가 달라져, 높은 밴드와 낮은 밴드 사이의 간격이 바뀌기 때문이다. 반도체의 성질을 가진 나노미터 크기의 입자를 ㉠<u>양자점</u>이라 하는데, 양자점은 같은 물질로 만들어도 크기에 따라 다른 색의 빛을 낸다. 일반적으로 양자점은 입자의 크기가 작을수록 전자의 에너지 변동 폭이 커서 푸른 계열의 빛을 내고, 크기가 클수록 변동 폭이 작아서 붉은 계열의 빛을 낸다. 따라서 만들고자 하는 색에 맞추어 입자의 크기를 조절하면, 색마다 물질을 달리하지 않고도 하나의 물질에서 여러 색의 빛을 얻을 수 있다.</p>
+<p>이러한 성질 때문에 양자점은 화면의 색을 만드는 발광 재료로 쓰이는데, 그 쓰임은 크게 두 갈래로 나뉜다. 하나는 양자점이 전기 에너지를 직접 받아 스스로 빛을 내도록 하는 자체발광형이다. 자체발광형에서는 양자점으로 이루어진 층에 전기 에너지를 공급하면, 그 에너지를 받은 양자점의 전자가 높은 밴드로 올라갔다가 내려오며 그 양자점의 크기에 해당하는 색의 빛을 직접 낸다. 이 방식은 각 색의 양자점이 스스로 빛을 내므로 색이 선명하지만, 양자점 층에 직접 전기를 흘려보내는 구조를 갖추어야 한다. 다른 하나는 양자점이 다른 광원에서 나온 빛을 받아 색을 바꾸어 내보내는 광변환형이다. 광변환형에서는 푸른 계열의 빛을 내는 별도의 광원이 먼저 빛을 내고, 그 빛이 양자점 층을 지나면 양자점이 그 빛의 에너지를 흡수해 높은 밴드로 올라갔다가 내려오며, 자신의 크기에 해당하는 색의 빛으로 바꾸어 내보낸다. 이 방식은 광원의 빛을 양자점이 받아 색을 입히는 것이므로, 광원과 양자점 층을 따로 두어야 한다. 두 방식은 양자점의 크기로 색을 정한다는 점은 같지만, 양자점이 빛을 내는 데 필요한 에너지를 전기에서 직접 얻는가, 아니면 다른 광원의 빛에서 얻는가에서 서로 구별된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 전자는 핵 주위의 정해진 궤도에만 존재할 수 있다.</li>
+<li>② 수많은 원자가 모이면 궤도가 겹쳐 에너지 준위가 범위로 나타난다.</li>
+<li>③ 발광은 전자가 한 에너지 밴드에서 다른 에너지 밴드로 옮겨 갈 때 일어난다.</li>
+<li>④ 양자점은 입자의 크기가 클수록 전자의 에너지 변동 폭이 커진다.</li>
+<li>⑤ 보통의 물질은 매우 많은 원자로 이루어져 대부분 에너지 밴드를 가진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 반도체의 성질을 가진 나노미터 크기의 입자이다.</li>
+<li>② 같은 물질로 만들어도 크기가 다르면 다른 색의 빛을 낸다.</li>
+<li>③ 크기가 작을수록 푸른 계열의 빛을 내는 경향이 있다.</li>
+<li>④ 입자의 크기가 작아지면 전자가 가질 수 있는 에너지 준위의 구조가 달라진다.</li>
+<li>⑤ 크기를 바꾸어도 전자의 에너지 변동 폭은 일정하게 유지된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>윗글을 참고할 때, 〈보기〉의 A~C에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 물질로 만든 두 양자점 ㉮와 ㉯가 있다. ㉮는 ㉯보다 입자의 크기가 더 작다. 두 양자점에 같은 방식으로 에너지를 공급할 때, 전자의 에너지 변동 폭은 ㉮가 ㉯보다 ( A ), 방출되는 빛의 에너지는 ㉮가 ㉯보다 ( B ). 그리고 ㉮가 내는 빛은 ㉯가 내는 빛보다 ( C ) 계열에 가깝다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>크고</td>
+<td>크다</td>
+<td>푸른</td>
+</tr>
+<tr>
+<td>②</td>
+<td>크고</td>
+<td>작다</td>
+<td>푸른</td>
+</tr>
+<tr>
+<td>③</td>
+<td>크고</td>
+<td>크다</td>
+<td>붉은</td>
+</tr>
+<tr>
+<td>④</td>
+<td>작고</td>
+<td>크다</td>
+<td>붉은</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>작고</td>
+<td>작다</td>
+<td>붉은</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span><span class="pts">[3점]</span> 윗글을 읽고 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구진이 같은 물질로 크기가 서로 다른 양자점을 만들어 두 종류의 화면 시제품을 제작하였다.
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈두 시제품의 단면 도식〉 — 왼쪽 ⓐ시제품: 맨 아래 전극 위에 '양자점 층'이 놓이고 그 위에 다시 전극이 있어, 양자점 층으로 전기가 직접 흐르는 화살표가 표시됨(양자점이 직접 발광). 오른쪽 ⓑ시제품: 맨 아래 '푸른색 광원'이 있고 그 위에 '양자점 층'이 따로 놓여, 광원에서 나온 푸른 화살표가 양자점 층을 지나 색이 바뀐 빛으로 나가는 모습이 표시됨(광원의 빛을 양자점이 변환). 두 시제품 모두 양자점 층에는 크기가 작은 알갱이와 큰 알갱이가 섞여 그려져 있음.</figure></p>
+</blockquote>
+<ul>
+<li>① ⓐ시제품에서 양자점 층에 전기 에너지를 공급하면 양자점이 스스로 빛을 내겠군.</li>
+<li>② ⓐ시제품은 별도의 광원에서 나온 빛을 양자점이 받아 색을 바꾸어 내보내는 방식이겠군.</li>
+<li>③ ⓑ시제품에서는 양자점 층에 전기를 직접 흘려보내야 양자점이 색을 내겠군.</li>
+<li>④ ⓑ시제품의 양자점은 광원의 빛을 받아도 자신의 크기와 무관하게 같은 색을 내겠군.</li>
+<li>⑤ 두 시제품 모두 양자점의 크기를 바꾸어도 내는 빛의 색은 달라지지 않겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 6월 [25~28]</div>
+<div class='passage exam-ps'><p>일반 사용자가 디지털 카메라를 들고 촬영하면 손의 미세한 떨림으로 인해 영상이 번져 흐려지고, 걷거나 뛰면서 촬영하면 식별하기 힘들 정도로 영상이 흔들리게 된다. 흔들림에 의한 영향을 최소화하는 기술이 영상 안정화 기술이다.</p>
+<p>영상 안정화 기술에는 빛을 이용하는 광학적 기술과 소프트웨어를 이용하는 디지털 기술 등이 있다. 광학 영상 안정화(OIS) 기술을 사용하는 카메라 모듈은 렌즈 모듈, 이미지 센서, 자이로 센서, 제어 장치, 렌즈를 움직이는 장치로 구성되어 있다. 렌즈 모듈은 보정용 렌즈들을 포함한 여러 개의 렌즈들로 구성된다. 일반적으로 카메라는 렌즈를 통해 들어온 빛이 이미지 센서에 닿아 피사체의 상이 맺히고, 피사체의 한 점에 해당하는 위치인 화소마다 빛의 세기에 비례하여 발생한 전기 신호가 저장 매체에 영상으로 저장된다. 그런데 카메라가 흔들리면 이미지 센서 각각의 화소에 닿는 빛의 세기가 변한다. 이때 OIS 기술이 작동되면 자이로 센서가 카메라의 움직임을 감지하여 방향과 속도를 제어 장치에 전달한다. 제어 장치가 렌즈를 이동시키면 피사체의 상이 유지되면서 영상이 안정된다.</p>
+<p>렌즈를 움직이는 방법 중에는 보이스코일 모터를 이용하는 방법이 많이 쓰인다. 보이스코일 모터를 포함한 카메라 모듈은 중앙에 위치한 렌즈 주위에 코일과 자석이 배치되어 있다. 카메라가 흔들리면 제어 장치에 의해 코일에 전류가 흘러서 자기장과 전류의 직각 방향으로 전류의 크기에 비례하는 힘이 발생한다. 이 힘이 렌즈를 이동시켜 흔들림에 의한 영향이 상쇄되고 피사체의 상이 유지된다. 이외에도 카메라가 흔들릴 때 이미지 센서를 움직여 흔들림을 감쇄하는 방식도 이용된다.</p>
+<p>OIS 기술이 손 떨림을 훌륭하게 보정해 줄 수는 있지만 렌즈의 이동 범위에 한계가 있어 보정할 수 있는 움직임의 폭이 좁다. 디지털 영상 안정화(DIS) 기술은 촬영 후에 소프트웨어를 사용해 흔들림을 보정하는 기술로 역동적인 상황에서 촬영한 동영상에 적용할 때 좋은 결과를 얻을 수 있다. 이 기술은 촬영된 동영상을 프레임 단위로 나눈 후 연속된 프레임 간 피사체의 움직임을 추정한다. 움직임을 추정하는 한 방법은 특징점을 이용하는 것이다. 특징점으로는 피사체의 모서리처럼 주위와 밝기가 뚜렷이 구별되며 영상이 이동하거나 회전해도 그 밝기 차이가 유지되는 부분이 선택된다.</p>
+<p>먼저 k 번째 프레임에서 특징점들을 찾고, 다음 k+1 번째 프레임에서 같은 특징점들을 찾는다. 이 두 프레임 사이에서 같은 특징점이 얼마나 이동하였는지 계산하여 영상의 움직임을 추정한다. 그리고 흔들림이 발생한 곳으로 추정되는 프레임에서 위치 차이만큼 보정하여 흔들림의 영향을 줄이면 보정된 동영상은 움직임이 부드러워진다. 그러나 특징점의 수가 늘어날수록 연산이 더 오래 걸린다. 한편 영상을 보정하는 과정에서 영상을 회전하면 프레임에서 비어 있는 공간이 나타난다. 비어 있는 부분이 없도록 잘라 내면 프레임들의 크기가 작아지는데, 원래의 프레임 크기를 유지하려면 화질은 떨어진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>25</span>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 디지털 영상 안정화 기술은 소프트웨어를 이용하여 이미지 센서를 이동시킨다.</li>
+<li>② 광학 영상 안정화 기술을 사용하지 않는 디지털 카메라에도 이미지 센서는 필요하다.</li>
+<li>③ 연속된 프레임에서 동일한 피사체의 위치 차이가 작을수록 동영상의 움직임이 부드러워진다.</li>
+<li>④ 디지털 카메라의 저장 매체에는 이미지 센서 각각의 화소에서 발생하는 전기 신호가 영상으로 저장된다.</li>
+<li>⑤ 보정 기능이 없다면 손 떨림이 있을 때 이미지 센서 각각의 화소에 닿는 빛의 세기가 변하여 영상이 흐려진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글의 'OIS 기술'에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 보이스코일 모터는 카메라 모듈에 포함되는 장치이다.</li>
+<li>② 자이로 센서는 이미지 센서에 맺히는 영상을 제어 장치로 전달한다.</li>
+<li>③ 보이스코일 모터에 흐르는 전류에 의해 발생한 힘으로 렌즈의 위치를 조정한다.</li>
+<li>④ 자이로 센서가 카메라 움직임을 정확히 알려도 렌즈 이동의 범위에는 한계가 있다.</li>
+<li>⑤ 흔들림에 의해 피사체의 상이 이동하면 원래의 위치로 돌아오도록 렌즈나 이미지 센서를 이동시킨다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>윗글을 참고할 때, 〈보기〉의 A~C에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+특징점으로 선택되는 점들과 주위 점들의 밝기 차이가 ( A ), 영상이 흔들리기 전의 밝기 차이와 후의 밝기 차이 변화가 ( B ) 특징점의 위치 추정이 유리하다. 그리고 특징점들이 많을수록 보정에 필요한 ( C )이/가 늘어난다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>클수록</td>
+<td>클수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>②</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>③</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>④</td>
+<td>작을수록</td>
+<td>클수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>작을수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 윗글을 읽고 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+새로 산 카메라의 성능을 시험해 보고 싶어서 OIS 기능을 켜고 동영상을 촬영했다. 빌딩을 찍는 순간, 바람에 휘청하여 들고 있던 카메라가 기울어졌다. 집에 돌아와 촬영된 영상을 확인하고 소프트웨어로 보정하려 한다.</p>
+<p><strong><span class="boxmark">[그림: 촬영한 동영상 중 연속된 프레임]</span></strong> 나란히 놓인 두 장의 프레임 그림. <strong>㉠ k 번째 프레임</strong> — 수평한 지면 위에 고층 빌딩 두 채(왼쪽이 낮고 오른쪽이 높음)가 수직으로 똑바로 서 있는 장면. <strong>㉡ k+1 번째 프레임</strong> — 같은 두 빌딩 장면이지만 화면 전체가 기울어져 있음: 지면선이 오른쪽으로 갈수록 높아지게 비스듬하고, 빌딩들도 같은 각도로 왼쪽으로 기울어 화면이 시계 반대 방향으로 회전한 모습.</p>
+</blockquote>
+<ul>
+<li>① ㉠에서 프레임의 모서리 부분으로 특징점을 선택하는 것이 움직임을 추정하는 데 유리하겠군.</li>
+<li>② ㉡을 DIS 기능으로 보정하고 나서 프레임 크기가 변했다면 흔들림은 보정되었으나 원래의 영상 일부가 손실되었겠군.</li>
+<li>③ ㉠에서 빌딩 모서리들 간의 차이를 특징점으로 선택하고 그 차이를 계산하여 ㉡을 보정하겠군.</li>
+<li>④ ㉠은 OIS 기능으로 손 떨림을 보정한 프레임이지만, ㉡은 OIS 기능으로 보정해야 할 프레임이겠군.</li>
+<li>⑤ ㉡을 보면 ㉠이 촬영된 직후 카메라가 크게 움직여 DIS 기능으로는 완전히 보정되지 않았다는 것을 알 수 있겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>물질에 빛이나 전기의 형태로 에너지가 공급되면, 그 물질의 전자는 에너지를 흡수하여 높은 에너지 상태로 올라갔다가 다시 낮은 에너지 상태로 내려오면서 빛을 방출한다. 이때 전자가 흡수하거나 방출하는 에너지의 크기는 전자가 오르내리는 두 에너지 상태의 차이, 곧 에너지 변동 폭에 의해 정해진다. 변동 폭이 크면 큰 에너지의 빛이, 변동 폭이 작으면 작은 에너지의 빛이 오간다. 그리고 빛은 그 에너지가 클수록 푸른 계열에, 작을수록 붉은 계열에 가깝다. 따라서 어떤 물질이 어떤 색의 빛을 흡수하고 방출하는지는 결국 그 물질이 가진 에너지 변동 폭에 달려 있다. 보통의 물질에서는 이 변동 폭이 물질의 종류에 따라 거의 정해져 있어서, 같은 물질이면 대체로 비슷한 색의 빛을 흡수하고 방출한다. 물질을 이루는 원자들의 종류와 배열이 변동 폭을 정하기 때문이다. 그래서 보통의 물질에서 내는 빛의 색을 바꾸려면 물질 자체를 다른 것으로 바꾸어야 하는 셈이다.</p>
+<p>반도체의 성질을 가진 나노미터 크기의 입자인 양자점은 이와 다르다. 같은 물질이라면 덩어리로 있을 때는 늘 같은 변동 폭을 가져 같은 색을 내지만, 그 물질을 나노미터 단위의 작은 입자로 만들면 사정이 달라진다. 입자가 그만큼 작아지면 그 안에 전자가 갇히는 공간이 좁아지고, 갇힌 공간의 크기에 따라 전자가 가질 수 있는 에너지 상태의 구조가 바뀌어 에너지 변동 폭이 달라지기 때문이다. 그리하여 양자점에서는 입자의 크기를 바꾸는 것만으로 에너지 변동 폭을 조절할 수 있어, 같은 물질로 만들어도 크기에 따라 흡수하고 방출하는 빛의 색이 달라진다. 입자의 크기가 작아질수록 전자가 갇히는 공간이 더 좁아져 에너지 변동 폭이 커지고, 변동 폭이 커진 만큼 양자점은 더 큰 에너지의 빛을 방출한다. 그래서 작은 양자점은 푸른 계열의 빛을, 큰 양자점은 붉은 계열의 빛을 낸다. 이러한 관계는 빛을 흡수하는 쪽에서도 나타난다. 양자점은 자신이 방출하는 빛의 에너지보다 크거나 같은 에너지의 빛을 흡수하여 전자가 높은 에너지 상태로 들뜬 상태가 되었다가, 다시 내려오며 자신의 크기에 해당하는 에너지의 빛을 내보낸다. 자신이 흡수한 빛의 에너지가 방출하는 빛의 에너지보다 크더라도, 그 차이는 빛이 아닌 다른 형태로 빠져나가고 양자점은 자신의 크기에 맞는 색만을 낸다. 곧 양자점은 자신이 내는 빛보다 푸른 계열에 가까운(에너지가 큰) 빛을 받아 자신의 색으로 바꾸어 낼 수 있으나, 자신이 내는 빛보다 붉은 계열의(에너지가 작은) 빛은 에너지가 모자라 흡수하지 못한다.</p>
+<p>이때 입자의 크기와 빛의 색 사이의 관계는 단순한 비례가 아니라는 점에 주의해야 한다. 크기가 작아질수록 변동 폭이 커지는 것은 분명하지만, 그 변화의 정도는 크기가 작은 영역에서 더 가파르게 나타난다. 입자가 큰 영역에서는 크기를 조금 줄여도 변동 폭이 크게 바뀌지 않지만, 입자가 이미 충분히 작은 영역에서는 같은 정도로 크기를 줄여도 변동 폭이 훨씬 크게 늘어난다. 그래서 작은 양자점일수록 크기를 조금만 달리해도 색이 민감하게 바뀌며, 같은 물질에서 더 푸른 계열로 갈수록 색을 원하는 자리에 정밀하게 맞추기가 더 까다롭다. 화면을 만들 때 작은 양자점의 크기를 한층 더 정밀하게 통제해야 하는 까닭이 여기에 있다.</p>
+<p>크기에 따라 색이 정해진다는 사실은 같은 양자점들의 크기가 고를 때 더 분명하게 드러난다. 한데 모인 양자점들의 크기가 고르면 이들이 내는 빛의 색도 좁은 범위에 모여 한 가지 색에 가깝게 보이지만, 크기가 제각각이면 크고 작은 양자점이 서로 다른 색의 빛을 한꺼번에 내어 색이 탁하게 섞인다. 그러므로 원하는 색을 선명하게 얻으려면 양자점의 크기를 원하는 값에 맞추는 것만으로는 부족하고, 그 크기가 고르게 갖추어지도록 만들어야 한다. 이처럼 양자점은 크기라는 하나의 요소로 흡수하는 빛과 방출하는 빛의 색을 함께 결정한다. 입자의 크기를 정하면 그 양자점이 어떤 색의 빛을 낼지, 어떤 색의 빛까지 흡수할 수 있는지가 모두 정해지는 것이다. 양자점이 크기만으로 빛의 색을 다루는 발광 재료로 주목받는 것은 바로 이 성질 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 전자가 흡수하거나 방출하는 에너지의 크기는 에너지 변동 폭에 의해 정해진다.</li>
+<li>② 빛의 에너지가 클수록 그 빛은 푸른 계열에 가깝다.</li>
+<li>③ 보통의 물질에서는 에너지 변동 폭이 물질의 종류에 따라 정해져 있다.</li>
+<li>④ 양자점은 자신보다 붉은 계열의 빛을 흡수하여 푸른 계열의 빛으로 바꾼다.</li>
+<li>⑤ 양자점은 크기를 바꾸는 것만으로 흡수·방출하는 빛의 색을 조절할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>같은 물질로 만든 양자점에서 더 푸른 계열의 빛을 얻는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 입자의 크기를 더 작게 만들어 에너지 변동 폭을 키운다.</li>
+<li>② 입자의 크기를 더 크게 만들어 에너지 변동 폭을 키운다.</li>
+<li>③ 입자의 크기를 더 작게 만들어 에너지 변동 폭을 줄인다.</li>
+<li>④ 입자의 크기를 그대로 두고 더 붉은 계열의 빛을 흡수시킨다.</li>
+<li>⑤ 입자의 크기를 더 크게 만들어 방출하는 빛의 에너지를 키운다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 물질로 만든 양자점 P와 Q가 있다. P는 붉은 계열의 빛을 내고, Q는 푸른 계열의 빛을 낸다. 두 양자점에 각각 같은 방식으로 에너지를 공급하여 빛을 내게 하였다. 또한 P에는 Q가 내는 푸른 계열의 빛을, Q에는 P가 내는 붉은 계열의 빛을 따로 비추어 흡수 여부를 살폈다.</p>
+</blockquote>
+<ul>
+<li>① P는 Q보다 입자의 크기가 큰 양자점이겠군.</li>
+<li>② P는 Q보다 전자의 에너지 변동 폭이 작겠군.</li>
+<li>③ P는 Q가 내는 푸른 계열의 빛을 흡수할 수 있겠군.</li>
+<li>④ Q는 P가 내는 붉은 계열의 빛을 흡수할 수 있겠군.</li>
+<li>⑤ Q가 내는 빛은 P가 내는 빛보다 에너지가 크겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글을 바탕으로 할 때, 〈보기〉의 양자점 ⓐ~ⓓ에 대한 설명으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 같은 물질로 만든 여러 양자점에 대해, 입자의 크기와 그 양자점이 방출하는 빛의 에너지 사이의 관계를 나타낸 것이다. (단, 다른 조건은 모두 같다.)
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 2]</span> 〈크기-방출 에너지 곡선〉 — 가로축은 '입자의 크기'(왼쪽 '작음' → 오른쪽 '큼'), 세로축은 '방출하는 빛의 에너지'(아래 '작음' → 위 '큼'). 곡선은 왼쪽 위에서 오른쪽 아래로 내려가는 우하향 모양이되, 왼쪽(크기가 작은 영역)에서는 가파르게 떨어지고 오른쪽(크기가 큰 영역)에서는 완만해진다. 곡선 위에 네 점이 표시됨: ⓐ는 가장 왼쪽(가장 작은 크기·가장 큰 에너지), ⓑ는 ⓐ보다 오른쪽 아래, ⓒ는 ⓑ보다 더 오른쪽 아래, ⓓ는 가장 오른쪽(가장 큰 크기·가장 작은 에너지).</figure></p>
+</blockquote>
+<ul>
+<li>① ⓐ는 ⓓ보다 입자의 크기가 크다.</li>
+<li>② ⓐ가 방출하는 빛은 ⓓ가 방출하는 빛보다 붉은 계열에 가깝다.</li>
+<li>③ ⓑ는 ⓒ보다 전자의 에너지 변동 폭이 크다.</li>
+<li>④ ⓓ는 ⓐ보다 더 푸른 계열의 빛을 방출한다.</li>
+<li>⑤ 입자의 크기를 같은 정도로 줄일 때, 방출 에너지의 증가 폭은 ⓒ에서 ⓑ로 갈 때가 ⓑ에서 ⓐ로 갈 때보다 크다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 6월 [8~11]</div>
+<div class='passage exam-ps'><p>분자들이 만나 화학 반응을 진행하는 데 필요한 최소한의 운동 에너지를 활성화 에너지라 한다. 활성화 에너지가 작은 반응은, 반응의 활성화 에너지보다 큰 운동 에너지를 가진 분자들이 많아 반응이 빠르게 진행된다. 활성화 에너지를 조절하여 반응 속도에 변화를 주는 물질을 촉매라고 하며, 반응 속도를 빠르게 하는 능력을 촉매 활성이라 한다. 촉매는 촉매가 없을 때와는 활성화 에너지가 다른, 새로운 반응 경로를 제공한다. 화학 산업에서는 주로 고체 촉매가 이용되는데, 액체나 기체인 생성물을 촉매로부터 분리하는 별도의 공정이 필요 없기 때문이다. 고체 촉매는 대부분 활성 성분, 지지체, 증진제로 구성된다.</p>
+<p>활성 성분은 그 표면에 반응물을 흡착시켜 촉매 활성을 제공하는 물질이다. 고체 촉매의 촉매 작용에서는 반응물이 먼저 활성 성분의 표면에 화학 흡착되고, 흡착된 반응물이 표면에서 반응하여 생성물로 변환된 후, 생성물이 표면에서 탈착되는 과정을 거쳐 반응이 완결된다. 금속은 다양한 물질들이 표면에 흡착될 수 있어 여러 반응에서 활성 성분으로 사용된다. 예를 들면, 암모니아를 합성할 때 철을 활성 성분으로 사용하는데, 이때 반응물인 수소와 질소가 철의 표면에 흡착되어 각각 원자 상태로 분리된다. 흡착된 반응물은 전자를 금속 표면의 원자와 공유하여 안정화된다. 반응물의 흡착 세기는 금속의 종류에 따라 달라진다. 이때 흡착 세기가 적절해야 한다. 흡착이 약하면 흡착량이 적어 촉매 활성이 낮으며, 흡착이 너무 강하면 흡착된 반응물이 지나치게 안정화되어 표면에서의 반응이 느려지므로 촉매 활성이 낮다. 일반적으로 고체 촉매에서는 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다.</p>
+<p>금속은 열적 안정성이 낮아, 화학 반응이 일어나는 고온에서 금속 원자들로 이루어진 작은 입자들이 서로 달라붙어 큰 입자를 이루게 되는데 이를 소결이라 한다. 입자가 소결되면 금속 활성 성분의 전체 표면적은 줄어든다. 이러한 문제를 해결하는 것이 지지체이다. 작은 금속 입자들을 표면적이 넓고 열적 안정성이 높은 지지체의 표면에 분산하면 소결로 인한 촉매 활성 저하가 억제된다. 따라서 소량의 금속으로도 ㉠금속을 활성 성분으로 사용하는 고체 촉매의 활성을 높일 수 있다.</p>
+<p>증진제는 촉매에 소량 포함되어 활성을 조절한다. 활성 성분의 표면 구조를 변화시켜 소결을 억제하기도 하고, 활성 성분의 전자 밀도를 변화시켜 흡착 세기를 조절하기도 한다. 고체 촉매는 활성 성분이 반드시 있어야 하지만 경우에 따라 증진제나 지지체를 포함하지 않기도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 촉매를 이용하면 화학 반응이 새로운 경로로 진행된다.</li>
+<li>② 고체 촉매는 기체 생성물과 촉매의 분리 공정이 필요하다.</li>
+<li>③ 고체 촉매에 의한 반응은 생성물의 탈착을 거쳐 완결된다.</li>
+<li>④ 암모니아 합성에서 철 표면에 흡착된 수소는 전자를 철 원자와 공유한다.</li>
+<li>⑤ 증진제나 지지체 없이 촉매 활성을 갖는 고체 촉매가 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>㉠의 촉매 활성을 높이는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 반응물을 흡착하는 금속 원자의 개수를 늘린다.</li>
+<li>② 활성 성분의 소결을 촉진하는 증진제를 첨가한다.</li>
+<li>③ 반응물의 반응 속도를 늦추는 지지체를 사용한다.</li>
+<li>④ 반응에 대한 활성화 에너지를 크게 하는 금속을 사용한다.</li>
+<li>⑤ 활성 성분의 금속 입자들을 뭉치게 하여 큰 입자로 만든다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아세틸렌은 보통 선택적 수소화 공정을 통하여 에틸렌으로 변환된다. 이 공정에서 사용되는 고체 촉매는 팔라듐 금속 입자를 실리카 표면에 분산하여 만들며, 아세틸렌과 수소는 팔라듐 표면에 흡착되어 반응한다. 여기서 실리카는 표면적이 넓고 열적 안정성이 높다. 이때, 촉매에 규소를 소량 포함시키면 활성 성분의 표면 구조가 변화되어 고온에서 팔라듐의 소결이 억제된다. 또한 은을 소량 포함시키면 팔라듐의 전자 밀도가 높아지고 팔라듐 표면에 반응물이 흡착되는 세기가 조절되어 원하는 반응을 얻을 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 아세틸렌은 반응물에 해당한다.</li>
+<li>② 팔라듐은 활성 성분에 해당한다.</li>
+<li>③ 규소와 은은 모두 증진제에 해당한다.</li>
+<li>④ 실리카는 낮은 온도에서 활성 성분을 소결한다.</li>
+<li>⑤ 실리카는 촉매 활성 저하를 억제하는 기능을 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 할 때, 〈보기〉의 금속 ⓐ～ⓓ에 대한 설명으로 가장 적절한 것은? </p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 여러 가지 금속에 물질 <span class="boxmark">[가]</span>가 흡착될 때의 흡착 세기와 <span class="boxmark">[가]</span>의 화학 반응에서 각 금속의 촉매 활성을 나타낸다. (단, 흡착에 영향을 주는 다른 요소는 고려하지 않음.)
+<strong><span class="boxmark">[그림: 산 모양 산점도]</span></strong> 세로축은 ‘촉매 활성’(아래 ‘낮음’에서 위 ‘높음’ 방향 화살표), 가로축은 ‘흡착 세기’(왼쪽 ‘약함’, 오른쪽 ‘강함’ 방향 화살표). 점들이 왼쪽 아래에서 가운데 위로 올라갔다가 오른쪽 아래로 내려가는 산(山) 모양 추세를 이룬다. ⓐ는 가장 왼쪽(흡착 세기 약함·촉매 활성 낮음), ⓑ는 ⓐ보다 오른쪽 위(흡착 세기와 활성이 ⓐ보다 큼), ⓒ는 추세의 정점 부근(중간 흡착 세기·촉매 활성 최고), ⓓ는 가장 오른쪽(흡착 세기 강함·촉매 활성 낮음)에 위치한다. 이 밖에 기호가 붙지 않은 점들도 같은 산 모양 추세를 이룬다(별도의 추세선은 그려져 있지 않다).</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[가]</span>의 화학 반응은 ⓐ보다 ⓑ를 활성 성분으로 사용할 때 더 느리게 일어난다.</li>
+<li>② <span class="boxmark">[가]</span>는 ⓐ보다 ⓒ에 흡착될 때 흡착량이 더 적다.</li>
+<li>③ <span class="boxmark">[가]</span>는 ⓐ보다 ⓓ에 흡착될 때 안정화되는 정도가 더 크다.</li>
+<li>④ <span class="boxmark">[가]</span>는 ⓑ보다 ⓒ에 더 약하게 흡착된다.</li>
+<li>⑤ <span class="boxmark">[가]</span>의 화학 반응에서 촉매 활성만을 고려하면 가장 적합한 활성 성분은 ⓓ이다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>화면을 이루는 작은 점들이 저마다 정해진 색의 빛을 내야 우리가 보는 영상이 만들어진다. 이때 각 점에서 빛을 내는 물질을 발광 재료라 하는데, 발광 재료는 전자가 높은 에너지 상태에서 낮은 에너지 상태로 내려오며 그 차이만큼을 빛으로 내보내는 성질을 이용한다. 발광 재료가 화면에 쓰이려면 몇 가지 조건을 갖추어야 한다. 우선 원하는 색의 빛을 선명하게 내야 하고, 같은 조건에서 오래 빛을 내며 그 밝기와 색이 쉽게 변하지 않아야 한다. 또 화면의 작은 점 안에 들어갈 수 있을 만큼 미세하게 만들 수 있어야 한다. 빨강·초록·파랑처럼 화면에 필요한 여러 색을 고루 낼 수 있어야 함은 물론이다. 이러한 발광 재료로 ㉠<u>양자점</u>과 유기 발광 재료가 함께 쓰이는데, 둘은 내는 빛의 색을 정하는 방식에서 뚜렷이 구별된다.</p>
+<p>㉡<u>유기 발광 재료</u>는 탄소를 중심으로 한 분자로 이루어진 물질로, 분자의 구조에 따라 내는 빛의 색이 정해진다. 분자를 이루는 원자들의 결합 방식이 전자가 오르내리는 에너지 변동 폭을 정하고, 그 변동 폭이 빛의 색을 정하는 것이다. 그러므로 서로 다른 색을 얻으려면 색마다 분자 구조가 다른 재료를 따로 만들어 써야 한다. 색에 따라 재료가 달라지므로, 각 색의 재료가 빛을 내는 정도나 시간이 지나며 색과 밝기가 변해 가는 정도가 서로 같지 않을 수 있다. 가령 한 색의 재료는 오래 빛을 내는데 다른 색의 재료는 더 빨리 어두워질 수 있어, 화면 전체의 색 균형을 맞추기가 까다로워지기도 한다. 이와 달리 양자점은 한 가지 물질로 만들어도 입자의 크기만 달리하면 여러 색을 낼 수 있다. 앞서 본 대로 작은 양자점은 전자의 에너지 변동 폭이 커서 푸른 계열을, 큰 양자점은 변동 폭이 작아서 붉은 계열의 빛을 내므로, 같은 물질에서 크기만 조절하면 화면에 필요한 여러 색을 모두 얻을 수 있다. 색마다 다른 물질을 따로 만들지 않고 한 물질의 크기만으로 색을 맞출 수 있다는 점이 양자점이 가진 두드러진 특징이다.</p>
+<p>발광 재료가 내는 빛의 색이 얼마나 순수한지도 화면의 품질을 좌우한다. 하나의 점이 내는 빛이 한 가지 색에 가깝게 좁은 범위에 모여 있을수록 그 색이 선명하고, 여러 색이 섞여 넓게 퍼져 있을수록 색이 탁해진다. 빨강을 내야 할 점이 붉은빛에 다른 색이 섞여 나오면 그 빨강은 흐릿하게 보이고, 화면 전체가 표현할 수 있는 색의 범위도 좁아진다. 양자점은 같은 크기의 입자들이 거의 같은 색의 빛을 내므로, 한 점을 이루는 양자점들의 크기를 고르게 만들수록 그 점이 내는 빛이 좁은 색 범위에 모여 색이 선명해진다. 반대로 입자의 크기가 고르지 않으면 크고 작은 양자점이 저마다 다른 색의 빛을 한꺼번에 내어 색이 탁해진다. 그래서 ⓐ<u>이상적인 양자점 발광 재료</u>는 입자의 크기가 고르게 갖추어져야 한다. 크기가 고를수록 한 점이 내는 색이 순수해지고, 그 크기를 조절해 원하는 색에 정확히 맞출 수 있기 때문이다. 결국 양자점에서는 입자의 크기를 원하는 값에 맞추는 일과, 그 크기를 고르게 갖추는 일이 모두 색의 질을 좌우한다.</p>
+<p>다만 양자점이 모든 면에서 앞서는 것은 아니다. 양자점을 화면에 쓰려면 입자의 크기를 매우 정밀하게 통제해야 하고, 특히 작은 양자점일수록 크기를 조금만 달리해도 색이 민감하게 바뀌어 고르게 만들기가 더 까다롭다. 푸른 계열의 색을 맞추려 할 때 이 어려움이 더 두드러지는데, 작은 입자를 다루는 만큼 크기를 조금만 벗어나도 색이 크게 달라지기 때문이다. 반면 유기 발광 재료는 색마다 재료를 따로 만들어야 하는 번거로움이 있는 대신, 분자 구조가 색을 정하므로 같은 색을 내는 재료들 사이에서는 빛의 성질이 비교적 고른 편이다. 이처럼 두 재료는 색을 정하는 방식이 다른 만큼 저마다 장단점을 지니므로, 화면의 쓰임과 만들고자 하는 색에 맞추어 알맞은 재료를 고르거나 둘을 함께 쓰기도 한다. 결국 발광 재료를 이해하는 일은 어느 하나를 무조건 앞세우기 위해서가 아니라, 각 재료의 성질을 살려 더 나은 화면을 만들기 위한 바탕이 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 발광 재료는 전자가 낮은 에너지 상태로 내려오며 빛을 내는 성질을 이용한다.</li>
+<li>② 양자점은 색마다 서로 다른 물질을 만들어야 여러 색을 낼 수 있다.</li>
+<li>③ 화면에 쓰이는 발광 재료는 화면의 작은 점 안에 들어갈 만큼 미세해야 한다.</li>
+<li>④ 유기 발광 재료는 분자의 구조에 따라 내는 빛의 색이 정해진다.</li>
+<li>⑤ 한 점이 내는 빛이 좁은 색 범위에 모일수록 그 색이 선명하다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 입자의 크기가 고르게 갖추어져야 한다.</li>
+<li>② 같은 크기의 입자들이 거의 같은 색의 빛을 내야 한다.</li>
+<li>③ 크기를 조절해 원하는 색에 정확히 맞출 수 있어야 한다.</li>
+<li>④ 한 점이 내는 빛이 좁은 색 범위에 모일 수 있어야 한다.</li>
+<li>⑤ 크고 작은 입자가 고루 섞여 여러 색을 함께 내야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근 한 연구진이 입자의 크기를 매우 고르게 맞춘 ㉮새로운 양자점 발광 재료를 개발했다고 발표했다. 이 재료는 한 가지 물질로 만들어졌으며, 입자의 크기를 단계별로 다르게 하여 화면에 필요한 여러 색을 모두 얻을 수 있다. 연구진은 이 재료가 색의 순수함과 색을 맞추는 정밀함에서 앞선다고 밝혔다.</p>
+</blockquote>
+<ul>
+<li>① 한 가지 물질로 만들었어도 입자의 크기를 달리하면 여러 색을 얻을 수 있겠군.</li>
+<li>② 입자의 크기를 고르게 맞추었으므로 한 점이 내는 빛이 좁은 색 범위에 모여 색이 선명하겠군.</li>
+<li>③ 유기 발광 재료와 달리 색마다 분자 구조가 다른 재료를 따로 만들 필요가 없겠군.</li>
+<li>④ 작은 입자로 푸른 계열의 색을 맞출 때에는 크기를 더욱 정밀하게 통제해야 하겠군.</li>
+<li>⑤ 입자의 크기가 고를수록 크고 작은 양자점이 서로 다른 색을 섞어 내어 색이 탁해지겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 전자가 낮은 에너지 상태로 내려오며 빛을 낸다.</li>
+<li>② ㉡은 ㉠과 달리 한 가지 물질의 크기만 바꾸어 여러 색을 낸다.</li>
+<li>③ ㉠은 입자의 크기로, ㉡은 분자의 구조로 내는 빛의 색이 정해진다.</li>
+<li>④ ㉠과 ㉡은 모두 색마다 다른 물질을 만들어야 여러 색을 낼 수 있다.</li>
+<li>⑤ ㉠과 ㉡은 모두 같은 색 안에서 빛의 성질이 고르지 않다는 단점만을 지닌다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29]</div>
+<div class='passage exam-ps'><p>신체의 세포, 조직, 장기가 손상되어 더 이상 제 기능을 하지 못할 때에 이를 대체하기 위해 이식을 실시한다. 이때 이식으로 옮겨 붙이는 세포, 조직, 장기를 이식편이라 한다. 자신이나 일란성 쌍둥이의 이식편을 이용할 수 없다면 다른 사람의 이식편으로 ‘동종 이식’을 실시한다. 그런데 우리의 몸은 자신의 것이 아닌 물질이 체내로 유입될 경우 면역 반응을 일으키므로, 유전적으로 동일하지 않은 이식편에 대해 항상 거부 반응을 일으킨다. 면역적 거부 반응은 면역 세포가 표면에 발현하는 주조직적합복합체(MHC) 분자의 차이에 의해 유발된다. 개체마다 MHC에 차이가 있는데 서로 간의 유전적 거리가 멀수록 MHC에 차이가 커져 거부 반응이 강해진다. 이를 막기 위해 면역 억제제를 사용하는데, 이는 면역 반응을 억제하여 질병 감염의 위험성을 높인다.</p>
+<p>이식에는 많은 비용이 소요될 뿐만 아니라 이식이 가능한 동종 이식편의 수가 매우 부족하기 때문에 이를 대체하는 방법이 개발되고 있다. 우선 인공 심장과 같은 ‘전자 기기 인공 장기’를 이용하는 방법이 있다. 하지만 이는 장기의 기능을 일시적으로 대체하는 데 사용되며, 추가 전력 공급 및 정기적 부품 교체 등이 요구되는 단점이 있고, 아직 인간의 장기를 완전히 대체할 만큼 정교한 단계에 이르지는 못했다.</p>
+<p>다음으로는 사람의 조직 및 장기와 유사한 다른 동물의 이식편을 인간에게 이식하는 ‘이종 이식’이 있다. 그런데 이종 이식은 동종 이식보다 거부 반응이 훨씬 심하게 일어난다. 특히 사람이 가진 자연항체는 다른 종의 세포에서 발현되는 항원에 반응하는데, 이로 인해 이종 이식편에 대해서 초급성 거부 반응 및 급성 혈관성 거부 반응이 일어난다. 이런 거부 반응을 일으키는 유전자를 제거한 형질 전환 미니돼지에서 얻은 이식편을 이식하는 실험이 성공한 바 있다. 미니돼지는 장기의 크기가 사람의 것과 유사하고 번식력이 높아 단시간에 많은 개체를 생산할 수 있다는 장점이 있어, 이를 이용한 이종 이식편을 개발하기 위한 연구가 진행되고 있다.</p>
+<p>이종 이식의 또 다른 문제는 ㉠내인성 레트로바이러스이다. 내인성 레트로바이러스는 생명체의 DNA의 일부분으로, 레트로바이러스로부터 유래된 것으로 여겨지는 부위들이다. 이는 바이러스의 활성을 가지지 않으며 사람을 포함한 모든 포유류에 존재한다. ㉡레트로바이러스는 자신의 유전 정보를 RNA에 담고 있고 역전사 효소를 갖고 있는 바이러스로서, 특정한 종류의 세포를 감염시킨다. 유전 정보가 담긴 DNA로부터 RNA가 생성되는 전사 과정만 일어날 수 있는 다른 생명체와는 달리, 레트로바이러스는 다른 생명체의 세포에 들어간 후 역전사 과정을 통해 자신의 RNA를 DNA로 바꾸고 그 세포의 DNA에 끼어들어 감염시킨다. 이후에는 다른 바이러스와 마찬가지로 자신이 속해 있는 생명체를 숙주로 삼아 숙주 세포의 시스템을 이용하여 복제, 증식하고 일정한 조건이 되면 숙주 세포를 파괴한다.</p>
+<p>그런데 정자, 난자와 같은 생식 세포가 레트로바이러스에 감염되고도 살아남는 경우가 있었다. 이런 세포로부터 유래된 자손의 모든 세포가 갖게 된 것이 내인성 레트로바이러스이다. 내인성 레트로바이러스는 세대가 지나면서 돌연변이로 인해 염기 서열의 변화가 일어나며 해당 세포 안에서는 바이러스로 활동하지 않는다. 그러나 내인성 레트로바이러스를 떼어 내어 다른 종의 세포 속에 주입하면 이는 레트로바이러스로 변환되어 그 세포를 감염시키기도 한다. 따라서 미니돼지의 DNA에 포함된 내인성 레트로바이러스를 효과적으로 제거하는 기술이 개발 중에 있다.</p>
+<p>그동안의 대체 기술과 관련된 연구 성과를 토대로 ⓐ이상적인 이식편을 개발하기 위해 많은 연구가 수행되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동종 간보다 이종 간이 MHC 분자의 차이가 더 크다.</li>
+<li>② 면역 세포의 작용으로 인해 장기 이식의 거부 반응이 일어난다.</li>
+<li>③ 이종 이식을 하는 것만으로도 바이러스 감염의 원인이 될 수 있다.</li>
+<li>④ 포유동물은 과거에 어느 조상이 레트로바이러스에 의해 감염된 적이 있다.</li>
+<li>⑤ 레트로바이러스는 숙주 세포의 역전사 효소를 이용하여 RNA를 DNA로 바꾼다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이식편의 비용을 낮추어서 정기 교체가 용이해야 한다.</li>
+<li>② 이식편은 대체를 하려는 장기와 크기가 유사해야 한다.</li>
+<li>③ 이식편과 수혜자 사이의 유전적 거리를 극복해야 한다.</li>
+<li>④ 이식편은 짧은 시간에 대량으로 생산이 가능해야 한다.</li>
+<li>⑤ 이식편이 체내에서 거부 반응을 유발하지 않아야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근에 줄기 세포 연구와 3D 프린팅 기술이 급속도로 발전하고 있다. 줄기 세포는 인체의 모든 세포나 조직으로 분화할 수 있다. 그러므로 수혜자 자신의 줄기 세포만을 이용하여 3D 바이오 프린팅 기술로 제작한 ㉮세포 기반 인공 이식편을 만들 수 있을 것으로 전망된다. 이미 미니 폐, 미니 심장 등의 개발 성공 사례도 보고되었다.</p>
+</blockquote>
+<ul>
+<li>① 전자 기기 인공 장기와 달리 전기 공급 없이도 기능을 유지할 수 있겠군.</li>
+<li>② 동종 이식편과 달리 이식 후 면역 억제제를 사용할 필요가 없겠군.</li>
+<li>③ 동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없겠군.</li>
+<li>④ 이종 이식편과 달리 유전자를 조작하는 과정이 필요하지는 않겠군.</li>
+<li>⑤ 이종 이식편과 달리 자연항체에 의한 초급성 거부 반응이 일어나지 않겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자신이 속해 있는 생명체의 모든 세포의 DNA에 존재한다.</li>
+<li>② ㉡은 ㉠과 달리 자신의 유전 정보를 DNA에 담을 수 없다.</li>
+<li>③ ㉡은 ㉠과 달리 자신이 속해 있는 생명체에 면역 반응을 일으키지 않는다.</li>
+<li>④ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 유전 정보를 가지고 있다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 세포를 감염시켜 파괴한다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

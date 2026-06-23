@@ -1,0 +1,729 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>교류 욕구 이론 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>교류 욕구 이론 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 친구에게 "나 이번에 반장 됐어!"라고 말했을 때 친구가 "오, 너 잘 어울려!"라고 반겨 주면 괜히 어깨가 으쓱해지죠. 반대로 "네가 무슨 반장이야?" 하는 표정을 지으면 얼굴이 화끈거리고 속이 상합니다. 사람은 누구나 다른 사람과 어울리며 "나는 이런 사람이야"라는 자기 모습을 상대가 받아 주기를 바라는데, 사회학자 <strong>조너선 터너</strong>는 바로 이 바람을 <strong>교류 욕구</strong>라고 불렀어요.</p>
+<p>여기서 "나는 이런 사람이야"에 해당하는 자기 모습을 <strong>정체성</strong>이라고 합니다. 터너는 한 사람의 정체성을 네 가지로 나누어 보았어요. ① 자신을 정의하는 가장 밑바탕의 모습인 <em>핵심 정체성</em>, ② 민족이나 계급처럼 어떤 범주에 속해서 갖는 <em>사회적 정체성</em>, ③ 특정 동아리·회사 같은 집단에 속해서 갖는 <em>집단적 정체성</em>, ④ 반장·과장처럼 맡은 역할에서 갖는 <em>역할 정체성</em>입니다. 마치 한 사람이 여러 겹의 옷을 입고 있는 것과 비슷해요. 가장 안쪽 속옷(핵심)부터 바깥의 유니폼(역할)까지요.</p>
+<p>상대가 내 정체성을 받아 주는 일을 <strong>정체성 검증</strong>이라고 합니다. 검증에 <em>성공하면</em> 기쁨·자부심 같은 <strong>긍정적 감정</strong>이 생기고, <em>실패하면</em> 분노·수치·죄의식 같은 <strong>부정적 감정</strong>이 생깁니다. 그런데 사람은 이 나쁜 감정을 그냥 두지 않고 여러 방어 전략을 써요. 그중 터너가 가장 중요하게 본 것이 <strong>귀인</strong>, 곧 "이 감정이 어디서 왔지?" 하고 원인을 찾는 일입니다. 좋은 감정은 자기 자신과 곁에 있는 사람 덕분이라며 가까이로 끌어당기고(<em>구심적 편향</em>), 나쁜 감정은 "저 집단 탓이야, 사회 탓이야" 하며 멀리 있는 대상에게 밀어 버립니다(<em>원심적 편향</em>). 신기하게도, 이렇게 한 사람 마음속에서 일어난 일이 모이면 편견이나 사회로부터의 소외 같은 <strong>큰 사회 구조의 문제</strong>로까지 번질 수 있다는 것이 터너의 통찰이에요.</p>
+<blockquote>
+<p>한마디로: <strong>사람은 "내 정체성을 알아 줘"라는 교류 욕구를 품고 살며, 그것이 받아들여지느냐 아니냐가 감정을 낳고, 그 감정을 어디에 귀인하느냐가 결국 사회까지 움직인다</strong>는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>터너의 교류 욕구 이론</strong>이 있습니다. 한 사람이 자기 정체성을 인정받으려는 마음에서 출발해, 감정이 생기고, 그 감정의 원인을 찾는 과정을 거쳐, 마침내 사회 구조에까지 가닿는 흐름이죠. 세 세트는 이 큰 흐름의 서로 다른 길목을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>교류 욕구 이론 (조너선 터너)<small>"정체성 검증 → 감정 → 귀인 → 사회 구조"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>자아가 어떤 정체성들로 이루어지는지, 곧 핵심·사회적·집단적·역할이라는 <em>네 정체성의 분류</em>와 그 경계를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>정체성이 받아들여지거나 거부될 때 <em>어떤 감정이 생기고</em>, 그 감정이 어떤 조건에서 행동 수정으로 이어지는지를 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>부정적 감정을 <em>어디로 돌리는지</em>, 곧 구심적·원심적 편향과 그것이 편견·소외 같은 사회적 결과로 번지는 길을 따져 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 한 사람의 작은 인정 욕구가 어떻게 감정을 낳고 사회 구조에까지 영향을 주는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>사람은 다른 사람과 어울리는 과정에서 자신이 어떤 존재인지를 인정받고자 하는 욕구를 지닌다. 사회학자 터너는 이러한 인정의 욕구를 교류 욕구라 부르고, 그 욕구가 향하는 대상의 핵심에 자아를 이루는 정체성이 있다고 보았다. 그는 이 정체성이 무엇으로 구성되는지를 <span class="boxmark">[교류 욕구 이론]</span> 안에서 설명한다. 교류 욕구 이론에서 정체성은 개인이 자신에 대해 갖는 개념과 그에 결부된 감정을 함께 가리키며, 터너는 자아가 단일한 덩어리가 아니라 성격이 서로 다른 네 가지 정체성으로 이루어진다고 본다. 핵심 정체성은 개인이 자신을 정의하는 근본적인 개념과 감정으로, 직업이나 소속과 무관하게 그 사람의 가장 바탕에 놓여 거의 모든 상황에서 일반적으로 드러난다. 사회적 정체성은 민족이나 계급과 같은 범주적 단위의 구성원이 됨으로써 갖는 자신에 대한 개념과 감정으로, 개인이 어떤 범주에 속해 있다는 사실에서 비롯한다. 집단적 정체성은 특정한 조직이나 집단 같은 집합적 단위에 속하거나 그 단위와 자신을 동일시함으로써 생기는 개념과 감정이며, 역할 정체성은 회사에서의 직책처럼 제도적 영역에 놓인 집합적 단위에서 일정한 역할을 수행하는 개인이 그 역할과 관련하여 자신에 대해 갖는 개념과 감정이다.</p>
+<p>네 정체성은 그것이 의식되고 드러나는 방식에서 차이를 보인다. 핵심 정체성과 사회적 정체성은 거의 모든 사회적 상황에서 나타날 수 있으나, 그것이 개인의 행동에 영향을 줄 때에도 개인이 미처 의식하지 못하는 무의식적 요소를 그 안에 지닌다. 자신이 늘 그렇게 행동하면서도 왜 그렇게 행동하는지를 또렷이 설명하지 못하는 경우가 여기에 해당한다. 반면 집단적 정체성과 역할 정체성은 특정 집단을 따르거나 특정 역할을 수행하는 과정에서 나타나기 쉬우며, 개인이 그 정체성을 스스로 알아차리고 명료화할 수 있다. 어떤 조직에 속해 있다거나 어떤 직책을 맡고 있다는 사실은 개인이 분명히 의식하면서 행동에 반영할 수 있기 때문이다. 사람은 어떤 상황에서 이 가운데 하나의 정체성만을 내세우기도 하지만, 둘 이상의 정체성을 함께 내세워 상대에게 검증받으려 하기도 한다.</p>
+<p>네 정체성은 서로 무관하게 따로 존재하는 것이 아니라, 하나의 정체성이 다른 정체성의 구성 요소가 되기도 한다. 가령 어떤 개인의 어머니로서의 역할 정체성은 여성으로서의 사회적 정체성의 중요한 구성 요소가 될 수 있다. 이처럼 더 좁은 범위의 정체성이 더 일반적인 정체성 안으로 포개어지므로, 어디까지가 한 정체성이고 어디부터가 다른 정체성인지의 경계가 늘 분명한 것은 아니다. 같은 행동이라도 그것이 어머니라는 역할에서 비롯한 것인지 여성이라는 범주에서 비롯한 것인지를 딱 잘라 가르기 어려운 까닭이 여기에 있다. 그러나 터너는 이러한 분류를 통해, 사람이 상황에 따라 어떤 정체성을 앞세워 자신의 행동을 편성하고 조율하는지를 설명할 수 있다고 본다. 개인은 네 정체성 가운데 하나 또는 여럿을 검증받으려 노력하면서, 상대의 반응에 비추어 상황 속에서 자신의 행동을 끊임없이 가다듬어 가는 것이다.</p>
+<p><span class="boxmark">[교류 욕구 이론]</span>은 자아가 단일하고 고정된 덩어리가 아니라 성격이 다른 여러 정체성으로 이루어진다는 점을 밝혀, 같은 사람이라도 어떤 상황에서는 직책을 앞세우고 다른 상황에서는 출신을 앞세우는 까닭을 설명하는 토대를 제공한다. 자아를 하나의 단위로만 보는 관점으로는 한 사람이 처한 상황에 따라 다른 모습을 내세우는 현상을 설명하기 어려운데, 정체성을 넷으로 나누어 봄으로써 그 차이를 정체성의 종류로 설명할 수 있게 된 것이다. 나아가 이 분류는 같은 거부라도 어떤 정체성이 거부되었느냐에 따라 개인이 받는 영향이 달라지는 까닭을 설명하는 출발점이 되기도 한다. 다만 이 이론은 네 정체성을 구분하는 데 초점을 둘 뿐, 한 상황에서 여러 정체성이 동시에 활성화될 때 그중 어느 정체성이 우선하여 검증의 대상이 되는지, 그 우선순위가 어떤 원리로 정해지는지까지는 다루지 않는다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 핵심 정체성은 개인이 자신을 정의하는 근본적인 개념과 감정이다.</li>
+<li>② 사회적 정체성은 민족이나 계급과 같은 범주적 단위의 구성원이 됨으로써 갖는 것이다.</li>
+<li>③ 역할 정체성은 제도적 영역의 집합적 단위에서 역할을 수행하는 개인이 갖는 것이다.</li>
+<li>④ 핵심 정체성과 사회적 정체성은 행동에 영향을 줄 때 개인이 그 전부를 의식한다.</li>
+<li>⑤ 개인은 네 정체성 가운데 하나 또는 여럿을 검증받으려 하면서 행동을 조율한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+2문단에서 핵심 정체성과 사회적 정체성은 "행동에 영향을 줄 때에도 개인이 미처 의식하지 못하는 무의식적 요소를 지닌다"라고 했어요. 그런데 ④는 그 <em>전부를 의식한다</em>고 정반대로 말했으니 일치하지 않아 정답입니다. ①은 1문단(핵심 정체성의 정의), ②는 1문단(사회적 정체성의 정의), ③은 1문단(역할 정체성의 정의), ⑤는 3문단(하나 또는 여럿을 검증받으며 행동을 조율)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[교류 욕구 이론]</span>에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 자아를 이루는 정체성을 지나치게 여러 가지로 나누어 그 수를 늘리기만 하였다.</li>
+<li>② 정체성이 개인의 행동에 영향을 준다는 점을 다루지 않아 정체성을 행동과 무관한 것으로 보았다.</li>
+<li>③ 한 상황에서 여러 정체성이 함께 활성화될 때 어느 것이 우선 검증되는지를 정하는 원리를 밝히지 않았다.</li>
+<li>④ 집단적 정체성과 역할 정체성이 특정 상황에서 드러난다고만 보아 그 둘을 구별하지 못하였다.</li>
+<li>⑤ 한 정체성이 다른 정체성의 구성 요소가 될 수 있다고 보아 네 정체성의 구분 자체를 부정하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+비판하기 문항이에요. 4문단에서 이 이론은 "여러 정체성이 동시에 활성화될 때 그중 어느 정체성이 우선하여 검증의 대상이 되는지, 그 우선순위가 어떤 원리로 정해지는지까지는 다루지 않는다"라고 스스로 한계를 밝혔죠. 이 빈자리를 정확히 찌른 ③이 적절한 비판이라 정답입니다. ① 네 가지로 나눈 것을 "수를 늘리기만 했다"고 볼 근거가 없고, ② 정체성이 행동을 편성·조율한다는 점을 3문단에서 분명히 다루었으며, ④ 집단적·역할 정체성은 1·2문단에서 구별해 정의했고, ⑤ 구성 요소가 될 수 있다는 서술은 분류를 부정한 것이 아니라 정체성들이 포개어질 수 있음을 말한 것이라 부적절합니다.</p>
+<p><strong>3번 [3점] — 정답 ①</strong>
+한 정체성이 다른 정체성의 구성 요소가 되는 관계는, 3문단의 예처럼 <em>더 좁은 역할 정체성이 더 일반적인 사회적 정체성 안으로</em> 포개어지는 방향이에요(어머니로서의 역할 → 여성으로서의 사회적 정체성). 그런데 ①은 <em>사회적 정체성(출신)이 역할 정체성(직책) 안에 포개어졌다</em>고 방향을 거꾸로 뒤집었으니 적절하지 않아 정답입니다. ②는 출처를 설명 못 함=무의식적 요소(2문단), ③은 직책을 또렷이 의식=명료화 가능한 역할 정체성(2문단), ④는 상황에 따라 정체성을 달리 앞세움=행동의 조율(3문단), ⑤는 어느 자리에서나 변함없는 모습=핵심 정체성(1·2문단)에 정확히 대응하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+교류 욕구 이론을 지지하는 연구자 갑은 직장인 P와 Q가 자신의 어떤 정체성을 앞세우는지를 살피기 위해 두 사람을 면담하였다. P는 처음 만난 사람에게 자신을 소개할 때 늘 "저는 손재주가 좋고 꼼꼼한 사람입니다"라며 어느 자리에서나 변함없이 같은 모습을 내세웠고, 그 모습이 자신의 어떤 점에서 비롯하는지는 잘 설명하지 못하였다. Q는 회사에서는 "저는 우리 팀의 회계 담당입니다"라고 직책을 또렷이 밝히고 그 책임을 분명히 의식하였으나, 같은 자신을 가리켜 동향 모임에서는 "저는 ◇◇ 지역 출신입니다"라며 출신을 앞세웠다.</p>
+</blockquote>
+<ul>
+<li>① Q가 동향 모임에서 출신을 앞세운 것은, 출신에 따른 사회적 정체성이 직책에 따른 역할 정체성의 구성 요소가 되어 그 안에 포개어진 것이겠군.</li>
+<li>② P가 그 모습이 어디서 비롯하는지 잘 설명하지 못한 것은, 핵심 정체성에 개인이 의식하지 못하는 무의식적 요소가 있는 것과 관련되겠군.</li>
+<li>③ Q가 직책을 또렷이 밝히고 그 책임을 의식한 것은, 개인이 스스로 알아차리고 명료화할 수 있는 역할 정체성을 검증받으려 한 것으로 볼 수 있겠군.</li>
+<li>④ Q가 상황에 따라 직책과 출신을 달리 앞세운 것은, 사람이 상황에 따라 어떤 정체성을 앞세워 행동을 조율함을 보여 주는 것이겠군.</li>
+<li>⑤ P가 어느 자리에서나 변함없이 같은 모습을 내세운 것은, 거의 모든 상황에서 일반적으로 드러나는 핵심 정체성을 앞세운 것으로 볼 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>정체성</strong>: 개인이 자신에 대해 갖는 개념과 감정. 곧 "나는 이런 사람이다"라는 자기 인식.</li>
+<li><strong>핵심 정체성</strong>: 자신을 정의하는 가장 근본적인 모습으로, 거의 모든 상황에서 드러나는 정체성.</li>
+<li><strong>역할 정체성</strong>: 직책처럼 제도 안에서 맡은 역할을 수행하며 갖는 정체성. 개인이 또렷이 의식할 수 있어요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>정체성</th>
+<th>어디서 생기나</th>
+<th>드러나는 특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 정체성</td>
+<td>자신을 정의하는 근본 개념</td>
+<td>거의 모든 상황 · 무의식적 요소 있음</td>
+</tr>
+<tr>
+<td>사회적 정체성</td>
+<td>민족·계급 등 범주의 구성원</td>
+<td>거의 모든 상황 · 무의식적 요소 있음</td>
+</tr>
+<tr>
+<td>집단적 정체성</td>
+<td>조직·집단에 속하거나 동일시</td>
+<td>특정 상황 · 알아차리고 명료화 가능</td>
+</tr>
+<tr>
+<td>역할 정체성</td>
+<td>제도적 단위에서의 역할 수행</td>
+<td>특정 상황 · 알아차리고 명료화 가능</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>네 정체성은 따로 노는 것이 아니라 서로의 구성 요소가 되기도 해요(어머니 역할 → 여성이라는 사회적 정체성의 일부). 그래서 경계가 늘 칼처럼 나뉘지는 않습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>핵심 정체성과 역할 정체성은 '의식' 면에서 어떻게 다른가요?</div><div class='qa-a'>핵심 정체성은 행동에 영향을 줄 때에도 무의식적 요소가 남지만, 역할 정체성은 개인이 스스로 알아차리고 명료화할 수 있습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>"어머니로서의 역할 정체성이 여성으로서의 사회적 정체성의 구성 요소가 된다"는 말은 무슨 뜻인가요?</div><div class='qa-a'>더 좁은 정체성(어머니 역할)이 더 일반적인 정체성(여성) 안으로 포개어져 그 일부를 이룬다는 뜻입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이 이론이 다루지 못한 한계는 무엇인가요?</div><div class='qa-a'>한 상황에서 여러 정체성이 함께 활성화될 때 어느 것이 먼저 검증되는지, 그 우선순위의 원리는 밝히지 않았습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2026학년도 수능 [1~3]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>글을 읽고 그 의미를 이해하는 독해에는 글의 유형이나 독서 흥미 등의 다양한 요소가 영향을 미칠 수 있다. 이를 고려하여 독해 능력을 복잡한 과정으로 설명한 연구가 많다. 하지만 고프와 동료 연구자들이 제시한 <span class="boxmark">[단순 관점]</span>은 독해 능력을 ‘해독’과 ‘언어 이해’로 단순화하여 설명한다. 해독은 개별 단어를 인식하는 능력으로, 단어를 빠르고 정확히 소리 내어 읽기, 단어를 한눈에 식별하기 등을 포함한다. 언어 이해는 말로 듣거나 글로 읽은 내용의 의미를 파악하는 능력으로, 중심 내용 파악하기, 추론하기 등을 포함한다.</p>
+<p>단순 관점에 따르면 해독 발달에는 글자와 글자 소리에 대한 학습이 필수적이므로 글 읽기 경험과 말소리 듣기 경험이 모두 필요하다. 한편, 단어 인식을 못해 글을 읽을 수 없어도 그 내용을 말로 들려주었을 때 중심 내용 파악하기 등을 할 수 있다면, 해독 발달 전에도 구어 의사소통 경험을 통해 언어 이해가 발달된 것으로 본다. 또한 해독이 발달되면 글 읽기 경험을 통해서도 언어 이해가 발달될 수 있으므로 해독 발달 후에는 독서 경험이 독해 능력 발달에 주요한 기여를 한다고 본다.</p>
+<p>이를 바탕으로 단순 관점은 독자 유형을 다음의 네 가지로 구분한다. 해독과 언어 이해가 모두 충분한 독자, 해독과 언어 이해가 모두 부족한 독자, 언어 이해는 충분하지만 해독은 부족한 독자, 해독은 충분하지만 언어 이해는 부족한 독자이다. 단순 관점에 따르면 해독과 언어 이해 중 어느 하나라도 부족한 독자는 독해에 어려움을 겪으며, 능숙한 독해 수준에 도달하기도 힘들다. 가령, 단어 인식은 잘하지만 글의 중심 내용은 파악하지 못하는 학생은, 해독은 충분하지만 언어 이해가 부족한 독자 유형에 해당하며 능숙한 독해 수준에 도달하지 못했다고 할 수 있다.</p>
+<p>단순 관점은 글자를 단어로 인식하고 글의 내용을 파악하여 그 의미를 이해하기까지 독자의 머릿속에서 일어나는 작용이 어떤 과정을 거치는지 설명하지는 않는다. 그러나 독해 능력에 해독과 언어 이해가 미치는 영향을 규명함으로써 독해 능력 연구의 이론적 토대를 제공했다는 의의가 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 단순 관점에 따르면 추론하기는 언어 이해에 해당한다.</li>
+<li>② 단순 관점은 해독의 발달과 언어 이해의 발달을 모두 고려하여 독자 유형을 나눈다.</li>
+<li>③ 단순 관점에 따르면 독해 능력이 발달되기 위해서는 말소리 듣기 경험에 앞서 독서 경험이 필요하다.</li>
+<li>④ 단순 관점은 해독과 언어 이해가 독해 능력에 끼치는 영향을 밝혀 독해 능력 연구의 기반을 마련하였다.</li>
+<li>⑤ 단순 관점과 달리, 독해에 영향을 주는 여러 요소를 고려하여 독해 능력을 복잡한 과정으로 설명한 연구들이 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong><br />
+2문단에서 단순 관점은 해독 발달에 글 읽기 경험과 말소리 듣기 경험이 <strong>모두</strong> 필요하다고 보므로, 독서 경험이 말소리 듣기 경험에 앞서야 한다고 본 ③은 일치하지 않는다. ①은 1문단(언어 이해에 추론하기 포함), ②는 3문단(해독·언어 이해 발달을 기준으로 한 네 유형 구분), ④는 4문단(이론적 토대 제공의 의의), ⑤는 1문단(복잡한 과정으로 설명한 연구가 많다)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①1.2% ②1.2% ③91.7% ④0.9% ⑤4.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[단순 관점]</span>에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 해독이 부족하여 글의 내용을 잘 이해하지 못하는 경우를 다루지 않았다.</li>
+<li>② 독해에서 어려움이 나타날 수 있음을 고려하지 않아 독해를 지나치게 단순화하였다.</li>
+<li>③ 독해 능력 발달에 있어 해독의 영향이 더 크다고 보아 언어 이해의 중요성을 고려하지 않았다.</li>
+<li>④ 해독 발달을 글을 통한 시각적 경험으로만 설명하여 청각적 경험의 필요성을 증명하지 못하였다.</li>
+<li>⑤ 해독과 언어 이해를 바탕으로 글의 의미를 이해하기까지의 사고 과정이 어떻게 이루어지는지 밝히지 않았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong><br />
+4문단에서 단순 관점은 의미 이해까지 독자의 머릿속에서 일어나는 작용이 어떤 과정을 거치는지 설명하지 않는다고 했으므로, 이 한계를 지적한 ⑤가 적절한 비판이다. ①·②는 3문단에서 해독 부족과 독해의 어려움을 다루고 있어 부적절하고, ③은 어느 요소의 영향이 더 크다고 말한 바 없으며, ④는 말소리 듣기 경험(청각적 경험)도 해독 발달에 필요하다고 보았으므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①0.8% ②2.0% ③1.2% ④0.9% ⑤95.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+단순 관점을 지지하는 연구자 갑은 학생 A, B의 독해 능력을 분석하기 위한 활동을 진행하였다. 활동은 학생 A, B와 같은 연령대의 학생들이 수행하기에 무리가 없는 수준의 자료로 진행되었다. 아래는 학생 A, B가 수행한 활동의 결과이다.
+◦소리 내어 단어 읽기: 학생 A는 활동 자료에 있는 단어를 빠르고 정확하게 소리 내어 읽었고 한눈에 잘 식별하였다. 학생 B는 활동 자료에 있는 단어를 올바르게 발음하지 못하였고 한눈에 식별하지 못하였다.
+◦중심 내용 파악하기: 학생 A는 활동 자료를 글로 읽을 때와 말로 들을 때 모두 중심 내용을 파악하지 못하였다. 학생 B는 활동 자료를 글로 읽을 때는 중심 내용을 파악하지 못했지만 말로 들을 때는 중심 내용을 파악하였다.</p>
+</blockquote>
+<ul>
+<li>① 갑은 학생 A가 해독은 발달되었지만, 중심 내용을 파악하지 못한 점에서 언어 이해가 부족하다고 생각하겠군.</li>
+<li>② 갑은 학생 A가 글자와 글자 소리에 대한 학습을 통해 개별 단어를 인식하는 능력이 발달되었다고 생각하겠군.</li>
+<li>③ 갑은 학생 A의 언어 이해가 구어 의사소통 경험뿐 아니라 글 읽기 경험을 통해서도 발달될 수 있다고 생각하겠군.</li>
+<li>④ 갑은 학생 B가 단어를 올바르게 발음하지는 못하지만, 글 읽기 경험을 통해 중심 내용은 파악할 수 있게 되었다고 생각하겠군.</li>
+<li>⑤ 갑은 학생 B가 단어를 한눈에 식별하지는 못하지만 말로 들은 활동 자료의 중심 내용을 파악할 수 있었던 것은, 해독 발달 전에 언어 이해가 발달되었기 때문이라고 생각하겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>3번 — 정답 ④</strong><br />
+학생 B는 해독은 부족하지만 말로 들을 때 중심 내용을 파악하므로 언어 이해는 발달된 경우로, 이는 2문단의 ‘해독 발달 전에도 구어 의사소통 경험을 통해 언어 이해가 발달’한 사례다. 글 읽기 경험을 통한 언어 이해 발달은 해독이 발달된 뒤에 가능하므로, 해독이 부족한 B가 ‘글 읽기 경험을 통해’ 중심 내용을 파악하게 되었다는 ④는 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①2.0% ②4.3% ③15.6% ④72.5% ⑤5.3%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>터너는 사람이 자신의 정체성을 다른 사람에게 인정받고자 하는 욕구를 교류 욕구라 부르고, 이 욕구가 충족되는지 여부가 상호 작용의 흐름을 좌우한다고 보았다. 그는 1970년대 이후 정체성을 다룬 여러 연구를 종합하여, 정체성 검증의 성패가 어떤 감정을 낳고 그 감정이 다시 행동을 어떻게 바꾸는지를 하나의 메커니즘으로 ㉠정리하였다. 정체성 검증이란 개인이 내세운 정체성을 상대가 받아들이는지가 ㉡판가름되는 과정을 가리킨다. 개인은 상대의 표정이나 말, 태도와 같은 신호를 통해 자신의 정체성이 받아들여졌는지를 가늠하며, 그 결과에 따라 감정이 달라지고 이어지는 행동도 달라진다.</p>
+<p>타자가 개인의 어떤 정체성을 수용한다는 신호를 보내면, 그 신호를 받은 개인은 만족감, 기쁨, 자부심에 이르기까지 다양한 긍정적 감정을 ㉢겪으며, 이를 통해 해당 정체성에 더욱 몰입하게 된다. 자신이 내세운 모습이 받아들여졌으므로 그 모습을 더욱 자기 것으로 삼게 되는 것이다. 이렇게 수용과 몰입이 거듭되면 개인은 그 정체성을 자신을 대표하는 모습으로 여기게 되고, 비슷한 상황에서 같은 정체성을 더 자주 내세우게 된다. 반대로 정체성이 수용되지 않으면 개인은 분노, 공포, 당황, 수치, 죄의식 등 다양한 부정적 감정을 경험한다. 터너에 따르면 이러한 부정적 감정은 그저 불쾌한 느낌에 그치는 것이 아니라, 자아의 제시가 잘못되었다는 신호로 작용한다. 곧 부정적 감정은 개인으로 하여금 자신의 행동을 재평가하고 정체성이 타자에게 수용되도록 행동을 ㉣고치려는 동기를 부여한다. 다만 이러한 행동 수정은 개인이 자신의 정체성이 수용되지 않았다는 것을 스스로 인식할 때에만 ㉤일어난다. 거부의 신호가 있었더라도 개인이 그것을 알아차리지 못하면, 그 신호는 행동을 바꾸는 동기로 작동하지 못한다.</p>
+<p>정체성 검증의 결과가 감정에 미치는 영향의 크기는 어떤 정체성이 걸려 있느냐에 따라 다르다. 검증 실패로 인한 부정적 감정은 핵심 정체성이나 사회적 정체성처럼 사회적 상황에서 일반적으로 드러나는 정체성일수록 강렬하다. 늘 내세우는 모습이 거부될수록 자아가 받는 충격이 더 크기 때문이다. 어쩌다 한 번 드러나는 정체성보다, 거의 모든 상황에서 자신을 정의해 온 정체성이 부정당할 때 자아가 흔들리는 정도가 더 크다는 것이다. 다만 정체성 검증과 감정의 관계가 정체성의 종류만으로 일률적으로 정해지는 것은 아니어서, 경우에 따라서는 어떤 한 역할 정체성의 검증 실패가 그 개인에게 강한 부정적 감정을 일으키기도 한다. 자신이 깊이 몰입해 온 역할일수록, 그 역할 정체성이 거부될 때의 부정적 감정 또한 그만큼 커질 수 있는 것이다. 따라서 검증 실패가 일으키는 감정의 강도는 정체성의 종류라는 일반적 경향과 그 정체성에 대한 개인의 몰입 정도를 함께 고려해야 한다.</p>
+<p>이러한 감정과 행동 수정의 메커니즘은 검증의 성패와 개인의 인식이라는 두 조건이 어떻게 맞물리느냐에 따라 서로 다른 결과로 이어진다. 두 조건은 각각 둘로 나뉘므로, 검증의 성패와 인식 여부의 조합에 따라 개인이 보이는 반응을 나누어 살필 수 있다. 정체성이 수용되면 개인은 긍정적 감정을 경험하고 해당 정체성에 더 몰입한다. 정체성이 수용되지 않았고 개인이 그 사실을 인식하면, 부정적 감정이 행동을 재평가하고 수정하려는 동기로 이어진다. 그러나 정체성이 수용되지 않았더라도 개인이 그 사실을 인식하지 못하면, 부정적 감정이 행동 수정으로 이어지지 못한다. 검증이 실패했다는 사실 자체보다, 개인이 그 실패를 알아차리느냐가 행동의 변화를 가르는 분기점이 되는 셈이다. 터너는 이처럼 검증의 성패가 곧바로 행동을 바꾸는 것이 아니라 개인의 인식을 거쳐 비로소 행동 수정으로 이어진다는 점에서, 정체성 검증을 둘러싼 감정이 상호 작용을 조율하는 힘이 된다고 보았다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 정체성 검증을 둘러싼 상반된 두 이론을 대비하여 그 우열을 가리고 있다.</li>
+<li>② 정체성 검증이 감정과 행동에 작용하는 과정을 선행 연구를 종합한 메커니즘으로 설명하고 있다.</li>
+<li>③ 정체성 검증을 측정하는 방법이 시대에 따라 달라져 온 과정을 단계별로 정리하고 있다.</li>
+<li>④ 정체성 검증에 관한 통념을 제시한 뒤 그것이 안고 있는 모순을 비판하고 있다.</li>
+<li>⑤ 정체성 검증의 사례를 유형별로 나누고 각 유형의 발생 빈도를 비교하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 정답 ②</strong>
+1문단에서 터너는 "여러 연구를 종합하여" 정체성 검증의 성패가 감정과 행동에 작용하는 과정을 "하나의 메커니즘으로" 설명한다고 했어요. 글 전체가 검증→감정→행동 수정의 작동 과정을 풀어 가므로 ②가 적절해 정답입니다. ① 상반된 두 이론의 대비나 우열 가리기는 없고, ③ 측정 방법의 시대적 변화도, ④ 통념 비판도, ⑤ 사례 유형별 발생 빈도 비교도 나타나지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생의 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 타자가 정체성을 수용한다는 신호를 보내면, 그 개인은 해당 정체성에 더욱 몰입하게 되겠군.</li>
+<li>② 정체성이 수용되지 않아 생긴 부정적 감정은, 자아의 제시가 잘못되었다는 신호로 작용하겠군.</li>
+<li>③ 검증 실패로 인한 부정적 감정은, 일반적으로 드러나는 정체성이 걸려 있을수록 더 강렬하겠군.</li>
+<li>④ 정체성이 수용되지 않았더라도 개인이 그 사실을 인식하지 못하면, 행동을 수정하려는 동기가 생기지 않겠군.</li>
+<li>⑤ 역할 정체성의 검증 실패는 어떤 경우에도 핵심 정체성의 검증 실패보다 약한 부정적 감정을 일으키겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+3문단은 검증 실패의 부정적 감정이 일반적으로 드러나는 정체성일수록 강렬하다고 하면서도, "경우에 따라서는 어떤 한 역할 정체성의 검증 실패가 강한 부정적 감정을 일으키기도 한다"라고 단서를 달았어요. 그러므로 역할 정체성의 검증 실패가 <em>어떤 경우에도</em> 핵심 정체성보다 약하다고 못 박은 ⑤는 적절하지 않아 정답입니다. ①은 2문단(수용 신호→몰입), ②는 2문단(부정적 감정=잘못된 제시의 신호), ③은 3문단(일반적 정체성일수록 강렬), ④는 2문단(인식할 때에만 행동 수정)에 각각 부합합니다.</p>
+<p><strong>6번 [3점] — 정답 ④</strong>
+4문단의 메커니즘에 따르면, 행동을 수정하려는 동기는 <em>정체성이 거부되고 그 사실을 인식할 때</em>(상황2)에만 생깁니다. 상황1과 상황4는 인식 여부가 서로 <em>다르고</em>(상황1=인식함, 상황4=인식 못 함), 게다가 둘 다 정체성이 <em>수용된</em> 경우라 애초에 부정적 감정에서 비롯하는 행동 수정의 동기와는 무관해요. 그러니 "인식 여부가 같아 두 상황 모두 행동 수정으로 이어진다"는 ④는 두 군데가 어긋나 적절하지 않아 정답입니다. ①은 수용+인식=몰입(2·4문단), ②는 거부+인식=재평가·수정 동기(2·4문단), ③은 거부+인식 못 함=행동 수정으로 이어지지 않음(4문단), ⑤는 상황2·3이 거부는 같되 인식 여부에서 갈림(4문단)에 정확히 대응하는 적절한 추론입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 상황에 대해 추론한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 학생이 같은 정체성을 두고 네 가지 상황에 놓였다고 하자. 각 상황은 그가 내세운 정체성이 친구들에게 수용되었는지(수용/거부)와, 그가 그 수용 여부를 스스로 인식하였는지(인식함/인식 못 함)의 조합으로 나뉜다. 상황1에서는 정체성이 수용되었고 그 사실을 인식하였다. 상황2에서는 정체성이 거부되었고 그 사실을 인식하였다. 상황3에서는 정체성이 거부되었으나 그 사실을 인식하지 못하였다. 상황4에서는 정체성이 수용되었으나 그 사실을 인식하지 못하였다.</p>
+</blockquote>
+<ul>
+<li>① 상황1에서 그 학생은 긍정적 감정을 경험하고 해당 정체성에 더 몰입할 것이다.</li>
+<li>② 상황2에서 그 학생은 부정적 감정을 느끼고 자신의 행동을 재평가하여 수정하려는 동기를 갖게 될 것이다.</li>
+<li>③ 상황3에서 그 학생은 부정적 감정을 느끼더라도 그것이 행동 수정으로 이어지지는 않을 것이다.</li>
+<li>④ 상황1과 상황4는 수용 여부를 인식하였는지가 서로 같아, 두 상황 모두 행동을 수정하려는 동기로 이어질 것이다.</li>
+<li>⑤ 상황2와 상황3은 정체성이 거부되었다는 점은 같으나, 행동 수정으로 이어지는지에서 차이가 날 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>문맥상 ㉠～㉤과 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠: 정립(定立)하였다</li>
+<li>② ㉡: 판별(判別)되는</li>
+<li>③ ㉢: 향유(享有)하며</li>
+<li>④ ㉣: 수정(修正)하려는</li>
+<li>⑤ ㉤: 발생(發生)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong>
+'향유(享有)하다'는 '누리어 가지다'의 뜻으로 좋은 것을 <em>누린다</em>는 의미가 강해, 만족·기쁨뿐 아니라 분노·수치 같은 부정적 감정에도 두루 걸리는 ㉢'겪으며'를 대신하기 어렵습니다. 따라서 ③이 적절하지 않아 정답이에요. '정립하다(체계를 세워 바로 세우다)', '판별되다(가려져 구별되다)', '수정하다(바로잡아 고치다)', '발생하다(생겨나다)'는 각각 ㉠·㉡·㉣·㉤과 바꿔 쓸 수 있습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>정체성 검증</strong>: 개인이 내세운 정체성을 상대가 받아들이는지가 판가름되는 과정.</li>
+<li><strong>긍정적/부정적 감정</strong>: 검증에 성공하면 기쁨·자부심 등 긍정적 감정이, 실패하면 분노·수치·죄의식 등 부정적 감정이 생겨요.</li>
+<li><strong>행동 수정의 조건</strong>: 부정적 감정이 곧바로 행동을 바꾸는 것이 아니라, 개인이 <em>수용되지 않았음을 인식할 때에만</em> 행동 수정의 동기가 됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>[정체성 검증</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>감정</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>행동]</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>정체성이 수용될 때와 수용되지 않을 때 각각 어떤 감정이 생기나요?</div><div class='qa-a'>수용되면 만족·기쁨·자부심 같은 긍정적 감정이, 수용되지 않으면 분노·공포·수치·죄의식 같은 부정적 감정이 생깁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>부정적 감정이 행동 수정으로 이어지려면 무엇이 필요한가요?</div><div class='qa-a'>개인이 자신의 정체성이 수용되지 않았다는 사실을 스스로 인식해야 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>검증 실패의 부정적 감정은 항상 정체성 종류로만 정해지나요?</div><div class='qa-a'>아니요. 일반적으로 드러나는 정체성일수록 강렬하지만, 깊이 몰입한 역할 정체성의 검증 실패도 강한 부정적 감정을 일으킬 수 있습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [4~7]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>공포 소구는 그 메시지에 담긴 권고를 따르지 않을 때의 해로운 결과를 강조하여 수용자를 설득하는 것으로, 1950년대 초부터 설득 전략 연구자들의 연구 대상이 되었다. 초기 연구를 대표하는 재니스는 기존 연구에서 다루어지지 않았던 공포 소구의 설득 효과에 주목하였다. 그는 수용자에게 공포 소구를 세 가지 수준으로 달리 제시하는 실험을 한 결과, 중간 수준의 공포 소구가 가장 큰 설득 효과를 보인다는 것을 발견하였다.</p>
+<p>공포 소구 연구를 진척시킨 레벤달은 재니스의 연구가 인간의 감정적 측면에만 ㉠치우쳤다고 비판하며, 공포 소구의 효과는 수용자의 감정적 반응만이 아니라 인지적 반응과도 관련된다고 하였다. 그는 감정적 반응을 ‘공포 통제 반응’, 인지적 반응을 ‘위험 통제 반응’이라 ㉡불렀다. 그리고 후자가 작동하면 수용자들은 공포 소구의 권고를 따르게 되지만, 전자가 작동하면 공포 소구로 인한 두려움의 감정을 통제하기 위해 오히려 공포 소구에 담긴 위험을 무시하려는 반응을 보이게 된다고 하였다.</p>
+<p>이러한 선행 연구들을 종합한 위티는 우선 공포 소구의 설득 효과를 좌우하는 두 요인으로 ‘위협’과 ‘효능감’을 설정하였다. 수용자가 공포 소구에 담긴 위험을 자신이 ㉢겪을 수 있는 것이고 그 위험의 정도가 크다고 느끼면, 그 공포 소구는 위협의 수준이 높다. 그리고 공포 소구에 담긴 권고를 이행하면 자신의 위험을 예방할 수 있고 자신에게 그 권고를 이행할 능력이 있다고 느끼면, 효능감의 수준이 높다. 한 동호회에서 회원들에게 ‘모임에 꼭 참석해 주세요. 불참 시 회원 자격이 사라집니다.’라는 안내문을 ㉣보냈다고 하자. 회원 자격이 사라진다는 것은 그 동호회 활동에 강한 애착을 가지고 있는 사람에게는 높은 수준의 위협이 된다. 그리고 그가 동호회 모임에 참석하는 일이 어렵지 않다고 느낄 때, 안내문의 권고는 그에게 높은 수준의 효능감을 주게 된다.</p>
+<p>위티는 이 두 요인을 레벤달이 말한 두 가지 통제 반응과 관련지어 다음과 같은 결론을 도출하였다. 위협과 효능감의 수준이 모두 높을 때에는 위험 통제 반응이 작동하고, 위협의 수준은 높지만 효능감의 수준이 낮을 때에는 공포 통제 반응이 작동한다. 그러나 위협의 수준이 낮으면, 수용자는 그 위협이 자신에게 아무 영향을 ㉤주지 않는다고 느껴 효능감의 수준에 관계없이 공포 소구에 대한 반응이 없게 된다. 이렇게 정리된 결론은 그간의 공포 소구 이론을 통합한 결과라는 점에서 후속 연구의 중요한 디딤돌이 되었다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 화제에 대한 연구들이 시작된 사회적 배경을 분석하고 있다.</li>
+<li>② 화제에 대한 연구들을 선행 연구와 연결하여 설명하고 있다.</li>
+<li>③ 화제에 대한 연구들을 분류하는 기준의 문제점을 검토하고 있다.</li>
+<li>④ 화제에 대한 연구들을 소개한 후 남겨진 연구 과제를 제시하고 있다.</li>
+<li>⑤ 화제에 대한 연구들이 봉착했던 난관과 그 극복 과정을 소개하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 정답 ②</strong><br />
+재니스는 기존 연구에서 다루지 않았던 설득 효과에 주목했고, 레벤달은 재니스의 연구를 비판하며 진척시켰으며, 위티는 선행 연구들을 종합해 결론을 도출했다. 즉 공포 소구에 대한 연구들을 선행 연구와 연결하여 설명하고 있으므로 ②가 적절하다. 사회적 배경 분석(①), 분류 기준의 문제점 검토(③), 남겨진 연구 과제 제시(④), 난관과 극복 과정 소개(⑤)는 나타나지 않는다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①1.1% ②90.5% ③2.6% ④3.2% ⑤2.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생의 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재니스는 공포 소구의 효과를 연구하는 실험에서 공포 소구의 수준을 달리하며 수용자의 변화를 살펴보았겠군.</li>
+<li>② 레벤달은 재니스의 연구 결과에 대하여 수용자의 감정적 반응과 인지적 반응을 모두 고려하여 살펴보았겠군.</li>
+<li>③ 레벤달은 공포 소구의 설득 효과가 나타나려면 공포 통제 반응보다 위험 통제 반응이 작동해야 한다고 보았겠군.</li>
+<li>④ 위티는 수용자가 공포 소구에 담긴 위험을 느끼지 않아야 공포 소구의 권고를 따르게 된다고 보았겠군.</li>
+<li>⑤ 위티는 공포 소구의 위협 수준이 그 공포 소구의 효능감 수준에 따라 달라지는 것은 아니라고 보았겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>5번 — 정답 ④</strong><br />
+위티에 따르면 권고를 따르게 되는 위험 통제 반응은 위협과 효능감의 수준이 모두 높을 때 작동하며, 위협의 수준이 높으려면 수용자가 위험을 자신이 겪을 수 있고 그 정도가 크다고 느껴야 한다. 위험을 느끼지 않으면 위협 수준이 낮아 반응 자체가 없게 되므로 ④는 적절하지 않다. ①은 1문단의 세 수준 실험, ②는 2문단의 비판 근거, ③은 2문단의 두 반응 서술, ⑤는 3문단에서 위협과 효능감이 각각 독립적으로 정의된다는 점과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.4% ②1.3% ③5.0% ④86.0% ⑤7.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 실험에 대해 추론한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 모임에서 공포 소구 실험을 진행한 결과, 수용자들의 반응은 위티의 결론과 부합하였다. 이 실험에서는 위협의 수준(높음/ 낮음), 효능감의 수준(높음/ 낮음)의 조합을 달리하여 피실험자들을 네 집단으로 나누었다. 집단1과 집단2는 공포 소구에 대한 반응이 없었고, 집단3은 위험 통제 반응, 집단4는 공포 통제 반응이 작동하였다.</p>
+</blockquote>
+<ul>
+<li>① 집단1은 위협의 수준이 낮았을 것이다.</li>
+<li>② 집단3은 효능감의 수준이 높았을 것이다.</li>
+<li>③ 집단4는 위협과 효능감의 수준이 서로 달랐을 것이다.</li>
+<li>④ 집단2와 집단4는 위협의 수준이 서로 달랐을 것이다.</li>
+<li>⑤ 집단3과 집단4는 효능감의 수준이 서로 같았을 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong><br />
+위험 통제 반응이 작동한 집단3은 위협·효능감이 모두 높고, 공포 통제 반응이 작동한 집단4는 위협은 높지만 효능감이 낮다. 따라서 두 집단의 효능감 수준은 서로 다르므로 ⑤가 적절하지 않다. 반응이 없었던 집단1·2는 위협의 수준이 낮았던 집단(①), 집단3의 효능감은 높음(②), 집단4는 위협 높음·효능감 낮음(③), 집단2(위협 낮음)와 집단4(위협 높음)는 위협 수준이 다름(④).</p>
+<p><em>선택률</em> — 응시 98,571명 — ①1.1% ②2.9% ③4.8% ④4.5% ⑤87.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>문맥상 ㉠～㉤과 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠: 편향(偏向)되었다고</li>
+<li>② ㉡: 명명(命名)하였다</li>
+<li>③ ㉢: 경험(經驗)할</li>
+<li>④ ㉣: 발송(發送)했다고</li>
+<li>⑤ ㉤: 기여(寄與)하지</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong><br />
+‘기여(寄與)하다’는 ‘도움이 되도록 이바지하다’의 뜻인데, ‘아무 영향을 주지 않는다’의 ‘주다’는 도움의 의미를 내포하지 않으므로 ⑤는 바꾸어 쓰기에 적절하지 않다. ‘편향되다(한쪽으로 치우치게 되다)’, ‘명명하다(이름을 지어 붙이다)’, ‘경험하다(실제로 해 보거나 겪어 보다)’, ‘발송하다(우편 등으로 보내다)’는 각각 ㉠~㉣과 바꿔 쓸 수 있다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①2.0% ②8.4% ③2.2% ④2.4% ⑤86.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>정체성 검증의 실패로 부정적 감정을 ⓐ겪은 개인은 그 감정을 그대로 두지 않고 다양한 방어 전략을 동원한다. 가장 기본적인 방어 기제는 부정적 감정을 의식으로부터 ⓑ제거해 억압하는 것이며, 이렇게 일차적으로 감정을 억누른 뒤에도 그것을 다스리기 위한 추가적인 방어 기제가 활성화될 수 있다. 터너는 이러한 방어 기제 가운데, 감정적 반응의 원인을 찾는 귀인이 사회학적으로 가장 중요하다고 본다. 귀인이란 개인이 자신이 경험한 감정이 어디에서 비롯하였는지를 ⓒ헤아려 그 원인을 특정 대상에 돌리는 일을 말한다. 같은 감정이라도 그 원인을 어디에 돌리느냐에 따라 이후의 태도와 관계가 달라지기 때문에, 귀인은 단순한 마음속 작용을 넘어 사회적 의미를 지닌다. 터너에 따르면 사람은 자신의 감정에 대해 귀인을 하되, 그 감정이 긍정적인지 부정적인지에 따라 원인을 돌리는 방향이 서로 다르게 ⓓ나타난다.</p>
+<p>긍정적 감정을 경험할 때, 개인은 그 감정의 원인을 자기 자신과, 당면한 상황 안에 있는 가까운 타자에게 돌린다. 좋은 일이 생기면 그것을 자신의 능력이나 곁에 있는 사람의 덕으로 여기는 경향이 여기에 해당한다. 이처럼 좋은 감정을 가까운 대상에게 끌어당겨 귀인하는 경향을 ㉠구심적 편향이라 한다. 구심적 편향은 자아와 가까운 사람에 대한 호감과 몰입을 강화하는 방향으로 작용한다. 자신과 곁에 있는 이를 좋은 감정의 근원으로 삼으므로, 그 관계는 더욱 단단해진다. 반면 부정적 감정을 경험할 때, 개인은 그 부정적 감정으로부터 자아를 보호하기 위해 원인을 자신이 아닌 외부 요인에 돌린다. 나쁜 감정의 원인을 자기 자신에게 돌리면 자아가 더욱 위협받게 되므로, 그 원인을 자신에게서 떼어 놓으려 하는 것이다. 이때 개인은 민족과 같은 사회적 범주의 구성원이나 사회 구조처럼 자신에게서 보다 멀리 있는 타자에게 그 부정적 감정을 돌리는데, 이러한 경향을 ㉡원심적 편향이라 한다. 원심적 편향은 나쁜 감정의 책임을 자아에서 떼어 내어 멀리 밀어내는 방향으로 작용한다.</p>
+<p>두 편향은 같은 귀인이면서도 방향이 정반대라는 점에서 짝을 이룬다. 구심적 편향이 긍정적 감정을 자아 쪽으로 끌어당긴다면, 원심적 편향은 부정적 감정을 자아 바깥으로 밀어낸다. 곧 어떤 감정을 다루느냐와 그 감정을 어느 쪽으로 보내느냐가 두 편향을 가르는 기준이 된다. 그런데 사회학적으로 더 주목되는 것은 원심적 편향이다. 구심적 편향이 자아와 가까운 관계 안에서 작용하는 데 그치는 것과 달리, 원심적 편향은 부정적 감정을 멀리 있는 대상에 돌리는 일이 한 개인의 마음속에서 끝나지 않고 사회적인 결과로 ⓔ번지기 때문이다. 원심적 편향에 따라 부정적 감정이 사회적 범주의 구성원에게 돌려지면 그 구성원에 대한 편견이 생겨나고, 부정적 감정을 일으킨 것으로 간주된 사회 구조에 돌려지면 그 사회 구조로부터의 소외가 나타나며, 그 과정에서 타자에 대한 몰입의 상실이 함께 일어난다. 이렇게 만들어진 편견과 소외는 다시 사람들 사이의 상호 작용을 위축시켜, 또 다른 정체성 검증의 실패를 낳는 조건이 되기도 한다.</p>
+<p>이처럼 자아의 정체성 검증과 관련된 교류 욕구와 같은 힘은, 개인의 차원에 머무르지 않고 거시적인 수준의 사회 구조에까지 영향을 줄 수 있다. 한 사람이 자신의 정체성을 인정받지 못해 느낀 부정적 감정이 멀리 있는 집단이나 구조에 돌려지는 과정이 여러 사람에게서 되풀이되면, 그 개별적인 귀인들이 모여 편견이나 소외와 같은 사회적 양상으로 드러나기 때문이다. 한 개인의 귀인은 작아 보이지만, 같은 처지에 놓인 사람들의 귀인이 같은 방향으로 쌓이면 그 무게는 결코 작지 않다. 이렇게 작은 감정의 귀인이 개인 안에 갇히지 않고 사회 전체의 모습을 빚어 가는 것이다. 터너가 미시적인 감정의 귀인에서 거시적인 사회 구조로 이어지는 통로에 주목한 까닭이 여기에 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 개인은 긍정적 감정의 원인을 자신에게서 멀리 있는 사회적 범주의 구성원에게 돌린다.</li>
+<li>② 터너는 방어 기제 가운데 감정의 원인을 찾는 귀인을 사회학적으로 가장 중요하게 본다.</li>
+<li>③ 구심적 편향은 자아와 가까운 사람에 대한 호감과 몰입을 강화하는 방향으로 작용한다.</li>
+<li>④ 원심적 편향에 따라 부정적 감정이 사회 구조에 돌려지면 그 구조로부터의 소외가 나타난다.</li>
+<li>⑤ 가장 기본적인 방어 기제는 부정적 감정을 의식으로부터 제거해 억압하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+2문단에서 긍정적 감정의 원인은 "자기 자신과, 당면한 상황 안에 있는 가까운 타자"에게 돌리는 <em>구심적 편향</em>으로 설명했어요. 그런데 ①은 긍정적 감정을 <em>멀리 있는 사회적 범주의 구성원</em>에게 돌린다고 했으니, 멀리 있는 대상은 부정적 감정(원심적 편향)의 방향이라 일치하지 않아 정답입니다. ②는 1문단(귀인이 가장 중요), ③은 2문단(구심적 편향=호감·몰입 강화), ④는 3문단(사회 구조에 귀인→소외), ⑤는 1문단(기본 방어 기제=억압)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 감정의 원인을 외부의 대상에 돌리는 귀인에 해당한다.</li>
+<li>② ㉡은 ㉠과 달리 자아로부터 보다 멀리 있는 타자를 향한다.</li>
+<li>③ ㉠은 부정적 감정을, ㉡은 긍정적 감정을 자아 쪽으로 끌어당긴다.</li>
+<li>④ ㉡은 ㉠과 달리 감정적 반응의 원인을 찾는 귀인과는 무관하게 일어난다.</li>
+<li>⑤ ㉠과 ㉡은 모두 자아를 부정적 감정으로부터 보호하기 위해 작동한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong>
+㉠ 구심적 편향은 <em>가까운</em> 대상으로, ㉡ 원심적 편향은 자아로부터 <em>멀리</em> 있는 타자로 감정의 원인을 돌립니다. 따라서 ㉡이 ㉠과 달리 멀리 있는 타자를 향한다고 한 ②가 적절해 정답이에요. ① 외부 대상에 돌리는 것은 ㉡(원심적 편향) 쪽이고, ③ ㉠이 끌어당기는 것은 긍정적 감정이며, ④ ㉡도 귀인의 한 방향이므로 "귀인과 무관"은 틀렸고, ⑤ 자아를 부정적 감정으로부터 보호하려 작동하는 것은 ㉡뿐이라 "모두"가 성립하지 않습니다.</p>
+<p><strong>10번 [3점] — 정답 ⑤</strong>
+원인을 <em>외부로 밀어내어</em> 자아를 보호하는 것은 <em>부정적 감정</em>에 대한 원심적 편향이에요. 그런데 병은 <em>긍정적 감정</em>의 원인을 자신과 가까운 동료에게 돌린 <em>구심적 편향</em>의 사례입니다. ⑤는 이를 "부정적 감정으로부터 자아를 보호하려 외부로 밀어냈다"라고 감정의 부호와 귀인 방향을 모두 뒤바꿔 놓았으니 적절하지 않아 정답이에요. ①은 좋은 감정을 가까운 동료에게 끌어당김=구심적 편향(2문단), ②는 나쁜 감정을 멀리 있는 제도에 돌림=원심적 편향(2문단), ③은 사회 구조에 귀인→소외(3문단), ④는 범주 구성원에 귀인→편견(3문단)에 정확히 대응하는 적절한 탐구입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구진이 직장에서 성과를 인정받지 못해 부정적 감정을 느낀 사람들의 귀인 양상을 조사하여 아래와 같이 정리하였다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈귀인 방향 도식〉 — 가운데 '자아'를 두고, 왼쪽으로 '동료(가까운 타자)'를 향하는 짧은 화살표와 오른쪽으로 '출신 지역 사람들(사회적 범주)'·'회사 제도(사회 구조)'를 향하는 긴 화살표가 뻗어 있는 흑백 도식. 긍정적 감정은 왼쪽 짧은 화살표를 따라, 부정적 감정은 오른쪽 긴 화살표를 따라 이동함을 표시</figure></p>
+<p>조사 결과, 갑은 부정적 감정의 원인을 "우리 부서를 홀대하는 회사 제도"에 돌렸고, 을은 "○○ 지역 출신들은 원래 그렇다"라며 같은 범주의 구성원에게 돌렸다. 한편 성과를 인정받아 긍정적 감정을 느낀 병은 그 원인을 "내가 잘했고 옆에서 도운 동료 덕분"이라고 말하였다.</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[그림 1]</span>에서 긍정적 감정이 왼쪽 짧은 화살표를 따라 동료에게로 이동하는 것은, 좋은 감정을 가까운 타자에게 끌어당겨 귀인하는 구심적 편향에 해당하겠군.</li>
+<li>② <span class="boxmark">[그림 1]</span>에서 부정적 감정이 오른쪽 긴 화살표를 따라 회사 제도에게로 이동하는 것은, 나쁜 감정을 멀리 있는 대상에 돌리는 원심적 편향에 해당하겠군.</li>
+<li>③ 갑이 부정적 감정의 원인을 "회사 제도"에 돌린 것은, 그 사회 구조로부터의 소외로 이어질 수 있겠군.</li>
+<li>④ 을이 부정적 감정의 원인을 "○○ 지역 출신들"에게 돌린 것은, 그 사회적 범주의 구성원에 대한 편견으로 이어질 수 있겠군.</li>
+<li>⑤ 병이 긍정적 감정의 원인을 자신과 동료에게 돌린 것은, 부정적 감정으로부터 자아를 보호하기 위해 원인을 외부로 밀어낸 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 경험(經驗)한</li>
+<li>② ⓑ: 배제(排除)해</li>
+<li>③ ⓒ: 추산(推算)하여</li>
+<li>④ ⓓ: 양상(樣相)을 띤다</li>
+<li>⑤ ⓔ: 파급(波及)되기</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong>
+'추산(推算)하다'는 '짐작으로 미루어 셈하다'라는 뜻이라 <em>수나 양을 어림한다</em>는 의미가 강합니다. 감정이 어디서 비롯했는지를 <em>헤아려 살핀다</em>는 ⓒ의 자리에는 호응하지 않으므로 ③이 적절하지 않아 정답이에요. '경험하다(겪어 보다)', '배제하다(물리쳐 빼다)', '양상을 띠다(어떤 모습으로 나타나다)', '파급되다(영향이 번져 미치다)'는 각각 ⓐ·ⓑ·ⓓ·ⓔ와 바꿔 쓸 수 있습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>귀인</strong>: 자신이 느낀 감정이 어디서 비롯했는지 원인을 찾아 특정 대상에 돌리는 일. 터너가 방어 기제 중 가장 중요하게 본 것이에요.</li>
+<li><strong>구심적 편향</strong>: 좋은 감정(긍정적 감정)의 원인을 자기 자신과 가까운 타자에게 끌어당겨 돌리는 경향.</li>
+<li><strong>원심적 편향</strong>: 나쁜 감정(부정적 감정)의 원인을 사회적 범주의 구성원이나 사회 구조처럼 멀리 있는 대상에게 밀어내어 돌리는 경향.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>구심적 편향 (㉠)</th>
+<th>원심적 편향 (㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어떤 감정</td>
+<td>긍정적 감정</td>
+<td>부정적 감정</td>
+</tr>
+<tr>
+<td>돌리는 방향</td>
+<td>자아 쪽으로 끌어당김</td>
+<td>자아 바깥으로 밀어냄</td>
+</tr>
+<tr>
+<td>귀인 대상</td>
+<td>자기 자신·가까운 타자</td>
+<td>사회적 범주 구성원·사회 구조</td>
+</tr>
+<tr>
+<td>사회적 결과</td>
+<td>가까운 이에 대한 호감·몰입 강화</td>
+<td>편견 · 소외 · 몰입의 상실</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 편향은 같은 '귀인'이면서 방향만 반대인 짝이에요. 특히 <strong>원심적 편향은 한 사람의 마음속 일이 편견·소외라는 큰 사회 문제로 번지는 통로</strong>라서, 터너가 사회학적으로 더 주목했습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>구심적 편향과 원심적 편향은 각각 어떤 감정을 다루나요?</div><div class='qa-a'>구심적 편향은 긍정적 감정을, 원심적 편향은 부정적 감정을 다룹니다.</div></div>
+<div class='qa-item'><div class='qa-q'>원심적 편향에서 부정적 감정은 어디로 돌려지나요?</div><div class='qa-a'>민족 같은 사회적 범주의 구성원이나 사회 구조처럼 자아에게서 멀리 있는 대상으로 돌려집니다.</div></div>
+<div class='qa-item'><div class='qa-q'>개인의 감정 귀인이 어떻게 사회 구조에까지 영향을 주나요?</div><div class='qa-a'>부정적 감정을 멀리 있는 대상에 돌리는 일이 여러 사람에게서 되풀이되면, 그것이 모여 편견이나 소외 같은 사회적 양상으로 드러납니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 수능 [14~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>리프킨은 사회적 상호 작용에서의 자기표현은 본질적으로 연극적이며, 표면 연기와 심층 연기로 ⓐ이루어진다고 언급했다. 표면 연기는 내면의 자연스러운 감정보다 의례적인 표현과 같은 형식에 집중하여 연기하는 것이고, 심층 연기는 내면의 솔직한 정서를 ⓑ불러내어 자신의 진정성을 보여 주는 것이다. 인터넷에서의 커뮤니케이션에 주목한 리프킨은 가상 공간에서 자기표현이 더욱 활발히 이루어진다고 보았다.</p>
+<p>가상 공간의 특성에 주목한 연구자들은 사람들과의 관계 속에서 드러나는 고유한 존재로서의 위상을 뜻하는 자기 정체성이 가상 공간에서 다양하게 ⓒ나타난다고 본다. 가상 공간에서는 익명성이 작동하므로 현실에서 위축되는 사람도 적극적으로 자기표현을 할 수 있다. 아울러 현실에서의 자기 정체성을 ⓓ감추고 다른 인격체로 활동하거나 현실에서 억압된 정서를 공격적으로 드러내기도 한다. 게임 아이디, 닉네임, 아바타 등 가상 공간에서 개별적 대상으로 인식되는 '인터넷 ID'에 대한 사이버 폭력이 ⓔ넘쳐 나는 현실도 이와 무관하지 않다.</p>
+<p>사이버 폭력과 관련하여, 인터넷 ID만을 알고 있는 상황에서 그에 대해 명예훼손이나 모욕 등의 공격이 있을 때 가해자에게 법적인 책임을 물을 수 있는지에 대한 논란이 있어 왔다. 이는 인터넷 ID가 사회적 평판인 명예의 주체로 인정될 수 있는가와 관련된다. 인터넷 ID의 명예 주체성을 ㉠인정하는 입장에 따르면, 자기 정체성은 일원적ㆍ고정적인 것이 아니라 현실 세계와 가상 공간에 걸쳐 존재하고 상호 작용하는 복합적인 것이다. 인터넷에서의 자기 정체성은 사용자 개인의 자기 정체성의 일부이기 때문에 자기 정체성을 가진 인터넷 ID의 명예 역시 보호되어야 한다. 반면 ㉡인정하지 않는 입장에 따르면, 생성ㆍ변경ㆍ소멸이 자유롭고 복수로 개설이 가능한 인터넷 ID는 그 사용자인 개인을 가상 공간에서 구별하는 장치에 불과하다. 인터넷 ID는 현실에서의 성명과 달리 그 사용자인 개인과 동일시될 수 없고, 인터넷 ID 자체는 사람이 아니므로 명예 주체성을 인정할 수 없다는 것이다.</p>
+<p>㉮대법원은 실명을 거론한 경우는 물론, 실명을 거론하지 않았더라도 주위 사정을 종합할 때 지목된 사람이 누구인지를 제3자가 알 수 있는 경우에는 명예훼손이나 모욕에 대한 가해자의 법적 책임이 성립한다고 판시해 왔다. 이를 수용한 헌법재판소에서는 인터넷 ID와 관련된 명예훼손ㆍ모욕 사건의 헌법 소원에 대한 결정을 내린 바 있다. 이 결정에서 ㉯다수 의견은 인터넷 ID만을 알 수 있을 뿐 그 사용자가 누구인지 제3자가 알 수 없다면 피해자가 특정되지 않아 명예훼손이나 모욕에 대한 가해자의 법적 책임이 성립하지 않는다고 보았다. 반면 인터넷 ID는 가상 공간에서 성명과 같은 기능을 하므로 제3자의 인식 여부가 법적 책임의 근거가 될 수 없다는 ㉰소수 의견도 제시되었다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 심층 연기는 내면의 진솔한 정서를 드러내기 위해 형식에 집중하는 자기표현이다.</li>
+<li>② 리프킨은 현실 세계보다 가상 공간에서 자기표현이 더욱 왕성하게 드러난다고 보았다.</li>
+<li>③ 가상 공간에서 개별적인 것으로 인식되는 아바타는 사이버 폭력의 대상이 될 수 있다.</li>
+<li>④ 익명성은 가상 공간에서 자기 정체성이 다양하게 나타나는 데 영향을 미치는 가상 공간의 특성이다.</li>
+<li>⑤ 가상 공간에서의 자기 정체성은 현실에서의 자기 정체성과 마찬가지로 타인과의 관계 속에서 나타난다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>14번 — 정답 ①</strong><br />
+형식에 집중하는 것은 표면 연기이고, 심층 연기는 내면의 솔직한 정서를 불러내어 진정성을 보여 주는 것이므로 ①은 일치하지 않는다. ②는 1문단, ③·④는 2문단, ⑤는 2문단의 자기 정체성 정의(사람들과의 관계 속에서 드러나는 위상)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①73.8% ②3.1% ③4.9% ④4.9% ⑤13.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자기 정체성을 단일하고 고정적인 것으로 파악하겠군.</li>
+<li>② ㉠은 ㉡과 달리 인터넷 ID에 대한 공격을 그 사용자인 개인에 대한 공격이라고 보겠군.</li>
+<li>③ ㉡은 ㉠과 달리 인터넷에서의 자기 정체성과 현실 세계의 자기 정체성이 상호 작용을 한다고 보겠군.</li>
+<li>④ ㉡은 ㉠과 달리 인터넷 ID는 복수 개설이 가능하므로 자기 정체성이 복합적으로 구성된다고 보겠군.</li>
+<li>⑤ ㉠과 ㉡은 모두, 인터넷 ID마다 개인의 자기 정체성이 다르다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong><br />
+㉠은 인터넷에서의 자기 정체성을 사용자 개인의 자기 정체성의 일부로 보므로 인터넷 ID에 대한 공격을 개인에 대한 공격으로 본다. ㉡은 인터넷 ID를 개인을 구별하는 장치에 불과하다고 보므로 그렇지 않다(②). ① ㉠은 자기 정체성을 일원적·고정적이지 않다고 보고, ③ 상호 작용을 인정하는 쪽은 ㉠이며, ④ 복합적 구성을 보는 쪽도 ㉠이고, ⑤ ㉡은 ID와 개인을 동일시할 수 없다고 보므로 ID마다 정체성이 다르다고 보지 않는다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①3.1% ②80.0% ③3.6% ④5.6% ⑤7.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+○○ 인터넷 카페의 이용자 A는 a, B는 b, C는 c라는 ID를 사용한다. 박사 학위 소지자인 A는 □□ 전시관의 해설사이고, B는 같은 전시관에서 물고기 관리를 혼자 전담한다. 이 전시관의 누리집에는 직무별로 담당자가 공개되어 있다. 어떤 사람이 □□ 전시관에서 A의 해설을 듣고 A의 실명을 언급한 후기를 카페 게시판에 올리자 다음과 같은 댓글이 달렸다.
+</p>
+<p>↳ [b] A가 박사인지 의심스럽다. A는 #~#.
+　↳ [a] □□ 전시관에서 물고기를 관리하는 b는 #~#.
+　　↳ [c] 게시판 분위기를 흐리는 a는 #~#.</p>
+<p>(단, '#~#'는 명예를 훼손하거나 모욕을 주는 표현이고 A, B, C는 실명이다. ID로는 그 사용자의 개인 정보를 알 수 없으며, A, B, C의 법적 책임에 영향을 미치는 다른 요소는 고려하지 않는다.)</p>
+</blockquote>
+<ul>
+<li>① ㉮는 B가 가해자로서의 법적 책임을 져야 하지만 C는 가해자로서의 법적 책임을 지지 않는다고 보겠군.</li>
+<li>② ㉯는 B가 가해자로서의 법적 책임을 져야 하지만 A는 가해자로서의 법적 책임을 지지 않는다고 보겠군.</li>
+<li>③ ㉮와 ㉰는 A가 가해자로서의 법적 책임을 져야 하는지의 여부에 대해 같게 보겠군.</li>
+<li>④ ㉯와 ㉰는 B가 가해자로서의 법적 책임을 져야 하는지의 여부에 대해 같게 보겠군.</li>
+<li>⑤ ㉮, ㉯, ㉰가, C가 가해자로서의 법적 책임을 져야 하는지의 여부에 대해 판단한 내용이 모두 같지는 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+㉯(다수 의견)는 피해자가 특정되어야 책임이 성립한다고 본다. B는 실명 A를 언급해 피해자를 특정했으므로 책임을 진다. A도 '□□ 전시관에서 물고기를 관리하는 b'라고 언급했는데, 누리집에 직무별 담당자가 공개되어 있어 제3자가 B임을 특정할 수 있으므로 A 역시 책임을 진다. 따라서 "A는 책임을 지지 않는다"는 ②가 적절하지 않다. C는 ID a만 언급해 사용자를 특정할 수 없으므로 ㉮·㉯에서는 책임이 없으나, ID를 성명과 같이 보는 ㉰에서는 책임이 있다(①·⑤). A에 대해 ㉮·㉰는 모두 책임이 있다고 보고(③), B에 대해 ㉯·㉰는 모두 책임이 있다고 본다(④).</p>
+<p><em>선택률</em> — 응시 98,599명 — ①16.0% ②34.9% ③18.8% ④19.4% ⑤11.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 완성(完成)된다고</li>
+<li>② ⓑ: 요청(要請)하여</li>
+<li>③ ⓒ: 표출(表出)된다고</li>
+<li>④ ⓓ: 기만(欺瞞)하고</li>
+<li>⑤ ⓔ: 확충(擴充)되는</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>17번 — 정답 ③</strong><br />
+'표출(表出)되다'는 '겉으로 나타나다'의 의미로 ⓒ'나타난다고'와 바꿔 쓸 수 있다. ① '완성되다'(완전히 다 이루어지다), ② '요청하다'(필요한 일을 청하다), ④ '기만하다'(남을 속여 넘기다), ⑤ '확충되다'(늘어나고 넓어져 충실해지다)는 각각의 문맥에 맞지 않는다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①1.9% ②1.5% ③93.9% ④1.8% ⑤0.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>교류 욕구 이론 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='교류 욕구 이론 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

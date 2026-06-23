@@ -1,0 +1,548 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>법해석의 본질과 유추 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 학교 규칙에 "교실에서 공을 차지 말 것"이라고만 적혀 있다고 해 봐요. 그런데 어떤 학생이 교실에서 공을 <em>던지며</em> 놀다가 유리창을 깼어요. 규칙에는 '차지 말 것'이라고만 되어 있으니 '던지는 것'은 괜찮은 걸까요? 대부분은 "공을 차든 던지든 결국 교실에서 위험하게 노는 건 마찬가지니까 이것도 금지로 봐야지"라고 생각할 거예요. 이렇게 <strong>규칙에 딱 들어맞는 말이 없을 때, 비슷한 다른 경우에 쓰는 규칙을 끌어와 푸는 것</strong>을 법에서는 <strong>유추(類推)</strong>라고 합니다.</p>
+<p>오랫동안 사람들은 유추를 이렇게 생각했어요. "법은 원래 '교실에서 공을 차지 마라' 같은 일반 규칙에서 '철수가 공을 찬 일' 같은 구체적 사건의 답을 끌어내는 깔끔한 작업이다. 그런데 가끔 딱 맞는 규칙이 <em>없는</em> 빈틈(이걸 <strong>흠결</strong>이라고 해요)이 생기면, 그때만 어쩔 수 없이 비슷한 경우를 빌려 쓰는 <strong>보조 수단</strong>이 유추다." 즉 유추는 평소엔 안 쓰다가 빈틈이 났을 때만 꺼내는 <em>예비 도구</em>라는 거죠.</p>
+<p>그런데 이 단원의 글들은 이 통념에 <strong>딴지를 겁니다.</strong> 첫째 글(가)은 말해요. "사실 빈틈이 없어 보이는 평범한 사건을 처리할 때도, 우리는 사건과 규칙을 서로 맞춰 보며 다듬는 과정을 거친다. 그러니 유추는 가끔 쓰는 보조 수단이 아니라 <strong>법 해석의 본질 그 자체</strong>다." 둘째 글(나)은 다른 각도에서 따집니다. "유추가 '비슷한 사건에서 비슷한 사건으로 곧장 건너뛰는 것'이라고들 하지만, 두 사건이 '비슷하다'고 말하려면 <em>무엇을 기준으로 비슷한지</em>를 정해 주는 <strong>일반적 명제(규칙·원리)</strong>가 반드시 끼어든다. 그 명제가 없으면 비슷하다는 말 자체가 제멋대로가 된다."</p>
+<blockquote>
+<p>한마디로: 두 글은 출발점도 결론의 결도 다르지만, <strong>"유추는 사건에서 사건으로 곧장 가는 게 아니라, 둘을 이어 주는 '일반적 명제(제3의 비교점)'를 반드시 거친다"</strong>는 한 지점에서 만나요. 이 단원은 그 통찰을 세 각도로 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>법 해석에서의 유추</strong>가 있습니다. 통념(유추=빈틈 메우는 보조 수단, 사건→사건 직접 추론)을 어떻게 비판하고, 그 자리에 무엇을 놓는지를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>법 해석과 유추 — "사건에서 사건으로 곧장 가지 않는다"</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>유추를 "법 해석의 본질"로 보는 글과, "사건 간 직접 추론으로서의 유추"를 비판하는 글을 <em>나란히</em> 놓고, 두 글이 어디서 갈라지고 어디서 만나는지를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>유추가 '제3의 비교점'을 거치는 구조와, 끌어낸 결론이 참일 가능성(개연성)이 높아지려면 유사성이 <em>무엇과 관련</em>되어야 하는지를, 구체적 추론 사례에 적용해 익힙니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>유추를 '법 해석의 본질'로 규정하는 한 이론을 소개하고, 그 규정이 과연 흠결 없이 성립하는지 <em>비판적으로</em> 따져 보며 '확장 해석'·'유추 금지' 같은 쟁점까지 넓힙니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 유추가 왜 보조 수단에 그치지 않는지, '비슷하다'는 판단 뒤에 무엇이 숨어 있는지, 그리고 그 통찰이 형사법의 '유추 금지'와 어떻게 이어지는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p><strong>(가)</strong></p>
+<p>법의 해석은 일반적이고 추상적인 규범으로부터 개별적이고 구체적인 사례의 처리 방안을 도출하는 작업이다. 전통적으로 이 작업은 상위의 규범에서 하위의 결론을 끌어내는 연역적 절차로 이해되었고, 유추는 그러한 절차의 바깥에 놓인 것으로 여겨졌다. 곧 특정 사례에 직접 적용될 규범이 존재하지 않는 흠결의 상황에서, 그 사례와 유사한 다른 사례에 적용되는 규범을 빌려 와 문제를 해결하는 보조 수단이 유추라는 것이다. 이 견해에서 해석과 유추는 서로 다른 작업으로 ⓐ<u>구별된다</u>.</p>
+<p>그러나 이러한 이해는 법 해석의 본질을 충분히 드러내지 못한다. 흠결 보충이 필요 없어 보이는 사례에서도 법은 순수한 연역만으로 발견되지 않기 때문이다. 일반적이고 추상적인 형태로 주어진 규범은 다양한 사례와 그 변형들에 적용되지만, 그 하나하나에 대해 유일한 정답을 미리 준비해 둔 것은 아니다. 그래서 해석자는 사실 관계를 규범에 맞춰 보고 다시 규범을 사실 관계에 맞춰 보는 과정을 거치며 규범을 정제한다. 규범과 사례라는 이질적인 원료를 서로 결합할 수 있도록 다듬어 가는 이 과정을 동화라 한다.</p>
+<p>흠결이 있어 보이는 사례에서 시도되는 유추 역시 그 구조가 통념과 다르다. 유추는 흔히 말하듯 하나의 사례로부터 다른 사례로 곧장 추론하는 것이 아니라, 항상 두 사례를 이어 주는 ㉠<u>제3의 비교점</u>을 거친다. 개별적 사례들에서 출발하여, 그 비교점을 담은 일반적 명제인 규범을 경유하고, 다시 개별적 결론으로 나아가는 것이 유추의 구조이다. 결국 흠결의 유무와 상관없이 모든 법 해석은 동화의 과정을 밟으며, 그 본질은 연역과 귀납이 함께 섞인 추론 양식인 유추로 더 잘 표현된다. 유추는 보조 수단이 아니라, 추상적 규범과 사실 관계를 일치시켜 가는 법 해석의 본질 그 자체이다.</p>
+<p><strong>(나)</strong></p>
+<p>판례법 국가의 법적 판단을 잘 보여 주는 것으로 흔히 거론되는 추론이 있다. 법관이 과거 사례의 사실 관계와 결론을 살핀 뒤 그것을 현재 사례와 비교하여, 두 사례의 유사성과 차이에 기초해 결론을 내리는 방식이다. 이러한 ⓑ<u>직접적 비교</u>로서의 유추에는 몇 가지 장점이 있다고 여겨진다. 선례에 대한 기속과 개별 사례의 특수성을 고려하는 유연성 사이에서 균형을 잡기에 유리하고, 비슷한 것은 비슷하게 취급하라는 정의 원칙에 부합하며, 추상적 원리에 대해 견해를 달리하는 사람들도 사례의 유사성이라는 기준에는 동의할 수 있다는 것이다.</p>
+<p>하지만 이 장점들은 그대로 ⓒ<u>유지되기</u> 어렵다. 두 사례의 유사성과 차이를 의미 있게 논하려면 사례의 비교 그 이상이 필요하기 때문이다. 두 사례 사이의 유사점과 차이점은 사실상 무한하므로, 그중에서 법적으로 중요한 것만 추려 내려면 모종의 규칙 또는 원리가 ⓓ<u>개입해야</u> 한다. 이 규칙은 두 사례의 사실 관계를 이어 주는 일반적 명제라 할 수 있다. 그러한 명제가 없다면 과거의 사례는 그저 과거의 사례일 뿐, 현재 사례를 기속할 힘을 지니지 못한다. 유사점에 주목하는 것만큼이나 차이에 주목하는 것도 정당할 수 있기 때문이다.</p>
+<p>따라서 법원이 그 규칙을 특정했다면, 사실 관계의 유사성 자체가 아니라 그 규칙이 현재 사례의 결론을 ⓔ<u>정하게</u> 된다. 현재 사례는 과거의 사례와 유사하기 때문이 아니라, 그 사례와 마찬가지로 하나의 일반적 명제의 규율 범위에 속하기 때문에 유사하게 처리되는 것이다. 만일 법관이 그러한 명제 없이 순전히 직관에 따라 유사점을 그때그때 취사선택한다면, 그 판단은 근본적으로 자의적이어서 선례가 현재 사례를 기속했다고 보기 어렵다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>(가)와 (나)의 내용 전개 방식에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 유추에 대한 전통적 이해를 비판하며 그 본질을 새롭게 규정하고, (나)는 유추의 장점으로 거론되는 것들을 검토하여 그 한계를 드러내고 있다.</li>
+<li>② (가)는 유추와 해석을 구별하는 기준을 시대순으로 정리하고, (나)는 유추의 장점을 사례별로 분류하여 평가하고 있다.</li>
+<li>③ (가)는 흠결 보충이 불가능한 경우를 유형화하고, (나)는 선례 기속의 요건이 강화되어 온 과정을 밝히고 있다.</li>
+<li>④ (가)는 유추의 위험성을 경고하는 견해들을 종합하고, (나)는 직접적 비교의 정당성을 옹호하는 근거를 보강하고 있다.</li>
+<li>⑤ (가)는 연역과 귀납의 우열을 가려 결론을 내리고, (나)는 판례법과 성문법의 차이를 대조하여 절충안을 제시하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>(가)를 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 일반적이고 추상적인 규범은 적용될 사례 하나하나에 대한 유일한 정답을 미리 갖추고 있지는 않다.</li>
+<li>② 법 해석은 흠결이 있는 사례에 한해 동화의 과정을 거치고 그 밖의 사례에서는 연역만으로 완결된다.</li>
+<li>③ 흠결 보충이 필요 없어 보이는 사례에서도 규범을 정제하는 과정이 요구된다.</li>
+<li>④ 동화는 규범과 사례라는 이질적인 원료를 결합할 수 있도록 다듬어 가는 과정이다.</li>
+<li>⑤ 유추는 하나의 사례에서 다른 사례로 직접 건너뛰지 않고 일반적 명제를 경유한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>(가), (나)를 바탕으로 할 때, ㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 두 사례 사이의 유사점과 차이점은 사실상 무한하여, 그중 법적으로 중요한 것을 가리려면 일반적 명제가 있어야 하기 때문이다.</li>
+<li>② 과거의 사례는 그 자체로 현재 사례를 기속할 힘을 지니므로 별도의 규칙이 요구되지 않기 때문이다.</li>
+<li>③ 유사성에 주목하는 것이 차이에 주목하는 것보다 언제나 더 정당하기 때문이다.</li>
+<li>④ 법관이 직관적으로 파악한 유사성은 그 자체로 사법적 판단의 규범적 요건을 충족하기 때문이다.</li>
+<li>⑤ 추상적 규범은 구체적 사례와 본래 동질적이어서 별도의 정제 과정 없이 결합되기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 법에 "공원 안으로 자동차의 출입을 금지한다"라는 조문만 있고, 다른 탈것에 대한 조문은 없다고 하자. 갑은 이 조문이 매연과 소음으로부터 이용객의 안전과 평온을 지키려는 취지라고 보고, 전동 킥보드도 같은 위험을 일으키므로 출입이 금지된다고 판단한다. 반면 을은 과거에 "오토바이의 출입을 금지한다"라는 조문을 적용했던 사례를 떠올리고, 전동 킥보드가 그 오토바이와 생김새와 크기가 비슷하다는 점만을 근거로 출입이 금지된다고 판단한다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 조문의 취지를 끌어내어 전동 킥보드에 적용한 것은, (가)에서 말한 동화의 과정에 해당한다고 볼 수 있겠군.</li>
+<li>② 갑의 판단에서 '이용객의 안전과 평온'이라는 취지는, 자동차의 사례와 전동 킥보드의 사례를 이어 주는 일반적 명제의 구실을 하겠군.</li>
+<li>③ 을이 떠올린 오토바이 사례가 전동 킥보드 사례를 기속하려면, (나)에 따를 때 두 사례를 이어 주는 규칙 또는 원리가 필요하겠군.</li>
+<li>④ 을이 생김새와 크기의 유사성만으로 판단한 것은, (나)에서 자의적일 수 있다고 본 직관적 취사선택에 가깝겠군.</li>
+<li>⑤ 을의 판단은 일반적 명제를 거치지 않았으므로, (가)에서 말한 유추의 구조를 온전히 갖춘 모범적인 사례에 해당하겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 나뉜다</li>
+<li>② ⓑ: 견줌</li>
+<li>③ ⓒ: 지켜지기</li>
+<li>④ ⓓ: 끼어들어야</li>
+<li>⑤ ⓔ: 좁히게</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2026학년도 수능 [4~9]</div>
+<div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>법조문으로 구성된 법 규범인 성문법의 의미를 파악하는 것을 법 해석이라고 한다. 법은 사회 구성원들에게 보편적으로 적용되는 규범이므로, 성문법을 ⓐ구성하는 단어나 문장은 그 일상적 의미에 충실하게 해석되어야 한다. 이러한 ‘문리 해석’이 법 해석의 출발점이다.</p>
+<p>그러나 문리 해석으로 그 내용을 제대로 파악하기 어려우면, 그것이 사용된 맥락을 ⓑ고려하여 그 의미를 파악하는 ‘체계적 해석’, 입법 과정에서 논의된 내용을 바탕으로 그 의미를 파악하는 ‘역사적 해석’ 등의 해석 방법을 사용할 수 있다. 그 예로서 ‘담보’를 들 수 있다. 담보의 일상적 의미는 ‘맡아서 보증함’이고, 이런 의미로 사용된 예로 ‘구조물의 안전을 담보하기 위한 검사’를 들 수 있다. 하지만 성문법 조문에서 사용될 때는 그 맥락을 고려하여 다른 의미로 해석되기도 한다.</p>
+<p>담보는 유상 계약의 맥락에서 거래 대상의 값어치를 보장한다는 의미로 해석된다. 유상 계약이란 그 당사자가 서로 대가를 주고받을 것을 약속하는 계약을 뜻한다. 유상 계약의 일종인 매매 계약에서 목적물이 계약 체결 당시부터 있던 하자 때문에 대금만큼의 값어치를 하지 못하는 상태였다면, 매도인은 그 하자 발생의 원인이 무엇이든 담보 책임을 져야 한다. 그 책임의 내용은 손해 배상이 원칙이지만, 만약 하자로 인해 매수인이 계약의 목적을 달성할 수 없으면 매수인은 계약을 ⓒ파기하고 대금 환불을 청구할 수도 있다. 다만 매수인이 계약 체결 당시 하자의 존재를 알았거나 알 수 있었던 경우에는 담보 책임이 인정되지 않는다.</p>
+<p>한편, 담보는 채권과 관련된 맥락에서는 채권의 실현 가능성을 보장하기 위한 조치라는 의미로 해석된다. 담보 물권이 그 예이다. 금전 채권은 채권자가 채무자로부터 돈을 받아야 실현되는데, 채무자가 돈을 지급하지 않으면 강제 집행 절차를 거쳐야 한다. 강제 집행의 목적물이 부동산이면 그 부동산을 경매하여 마련된 경매 대금을 배당받음으로써 금전 채권이 실현된다. 이때 경매 대금을 배당받을 금전 채권자가 여럿이면 각 채권자는 각자의 채권액에 비례하여 배당받아야 하는 것이 원칙이다. 그러나 그 채권자 중 담보 물권을 가진 자는 경매 대금에서 자신의 채권액부터 먼저 배당받는다.</p>
+<p><strong>(나)</strong></p>
+<p>보증이란 채무자가 채무를 이행하지 않으면 그 채무를 다른 사람이 대신 이행하기로 하는 것이다. 이때 원래의 채무자를 주채무자, 주채무자 대신 채무를 이행하는 사람을 보증인이라 하고, 주채무자가 부담하는 채무를 주채무, 보증인이 부담하는 채무를 보증 채무라 한다. 보증은 담보 기능을 수행하므로 주채무가 소멸되면 보증 채무도 당연히 소멸된다. 보증이 ⓓ성립하려면 채권자와 보증인을 당사자로 하는 보증 계약이 필요하다. 보증 계약은 보증인에게만 채무를 발생시키므로 유상 계약이 아니다. ㉠이는 주채무자와 보증인 간에 보증의 대가를 지급하기로 하는 계약이 별도로 체결되었더라도 마찬가지이다.</p>
+<p>보증 계약에 대해서는 보증인 보호를 위하여 법적 규제가 적용된다. 우선 ｢민법｣에 의하면 보증 계약을 할 때는 일반적인 계약과는 달리 계약서가 작성되어야 하고, 여기에는 보증인의 서명이나 기명 날인이 있어야 한다. 이를 위반한 보증 계약은 무효이지만 보증 채무가 이행되었으면 보증인이 그 무효를 주장할 수 없다. 주채무가 주채무자의 사업과 무관한 금전 채무이고, 보증인이 대가 없이 주채무자에 대한 호의로 보증 계약을 한 경우에는 ｢보증인 보호를 위한 특별법｣에 의한 보호도 제공된다. 예컨대 보증 기간이 명시되지 않은 경우 보증 기간은 3년으로 간주된다.</p>
+<p>채권자가 주채무자에게 주채무의 이행을 청구하지 않고 곧바로 보증인에게만 보증 채무의 이행을 청구한 경우, 보증인은 주채무자가 강제 집행 대상 재산을 보유하고 있음을 채권자에게 증명하여 보증 채무의 이행을 거절할 수 있는 권리가 있다. 그러나 보증인이 이러한 권리를 포기하기로 하는 ‘연대 보증 특약’이 보증 계약에 포함될 수 있다. 이러한 특약을 한 보증인인 <span class="boxmark">[연대 보증인]</span>은, 채권자가 곧바로 주채무 전액에 해당하는 돈의 지급을 요구하더라도 그 이행을 거절할 수 없다.</p>
+<p>연대 보증인에게도 ｢보증인 보호를 위한 특별법｣이 적용되는지가 문제 되는데, 어떤 해석 방법을 따르느냐에 따라 결론이 달라질 수 있다. 위 법률 제2조가 그 적용 대상인 보증 계약을 ‘주채무자가 금전 채무를 이행하지 않는 경우 그 채무를 보증인이 이행하기로 하는 계약’이라고 ⓔ규정하고 있으나 그 입법 과정에서 연대 보증인 보호의 필요성이 강조되었기 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>(가)와 (나)의 내용 전개 방식에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 법조문의 의미 해석 방법을 구분하여 제시하고, (나)는 보증 계약에 관한 규범의 주요 내용을 열거하고 있다.</li>
+<li>② (가)는 법조문의 의미 차이가 확대되어 온 이유를 분석하고, (나)는 보증 계약에 관련되는 주요 개념들을 정의하고 있다.</li>
+<li>③ (가)는 법조문의 의미를 해석하는 방법의 사례를 소개하고, (나)는 보증 계약의 폐해와 이로 인한 결과를 서술하고 있다.</li>
+<li>④ (가)는 법조문의 의미를 파악하는 입장들을 대조하고, (나)는 보증 계약이 역사적 맥락에 따라 변화한 과정을 밝히고 있다.</li>
+<li>⑤ (가)는 법조문의 의미를 다른 상황에서 유추하여 도출하고, (나)는 보증 계약의 유형별로 규제의 공통점을 비교하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>(가)를 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 법은 사회 구성원들에게 보편적으로 적용되어야 하므로 일상적 의미가 해석의 출발점이 되어야 한다.</li>
+<li>② 법조문에서의 담보에는 채권자의 금전 채권 실현의 가능성을 보장하는 조치라는 법적인 의미가 부여되기도 한다.</li>
+<li>③ 금전 채권자가 여럿인 경우에 진행된 경매에서 담보 물권의 존재 여부는 경매 대금의 배당 순위에 영향을 준다.</li>
+<li>④ 유상 계약에서의 담보는 당사자 간 거래 대상의 값어치를 보장하는 의미로 해석되므로, 교환 대상 사이의 값어치가 일치해야 계약이 체결된다.</li>
+<li>⑤ 법조문의 의미를 문리 해석만으로 제대로 파악하기 어려운 경우에는 법조문의 입법 과정에서 논의된 내용을 바탕으로 그 의미를 해석하기도 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>(가), (나)를 바탕으로 할 때, ㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 주채무자가 보증인에게 지급하기로 한 대가를 채권자가 대신 받을 수 있기 때문이다.</li>
+<li>② 보증인에게 대가를 지급할 의무를 지는 사람이 보증 계약의 당사자가 아니기 때문이다.</li>
+<li>③ 보증 채무를 이행하기 전까지는 보증인이 주채무자로부터 손해 배상을 받을 수 없기 때문이다.</li>
+<li>④ 채권자에게 주채무자 대신 채무를 이행하는 것은 보증인 자신의 채무를 이행하는 것에 해당하기 때문이다.</li>
+<li>⑤ 보증은 주채무자에 대한 채권의 실현을 담보하는 기능을 수행한다는 점에서 담보 물권과 다름없기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="boxmark">[연대 보증인]</span>에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 주채무자에 대한 호의로 대가 없이 보증 계약을 한 자이어야 한다.</li>
+<li>② ｢보증인 보호를 위한 특별법｣ 제2조의 문리 해석에 의하면 이 법의 적용 대상에 해당한다.</li>
+<li>③ 채권자가 주채무자에게 채무의 이행을 청구하지 않는 한 보증 채무의 이행을 거절할 권리가 있다.</li>
+<li>④ 채권자와는 보증 계약을 하고 채무자와는 연대 보증 특약을 함으로써, 보증 채무를 부담하게 된다.</li>
+<li>⑤ 채권자가 주채무자에게 채무의 이행을 청구하여 그 채권이 실현되면 더 이상 보증 채무를 이행할 의무가 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 자신이 보유한 예술품을 1년에 1점씩 4년간 을에게 납품하고, 그 대금으로 1점당 500만 원씩을 매년 연말에 받기로 하는 매매 계약을 했다. 을은 그 예술품을 소장 목적으로 수집하고 있었다. 갑이 을에게 대금 채무에 대한 담보를 요구하자 을은 병에게 보증을 서 달라고 부탁했고, 병은 을에 대한 호의로 대가 없이 갑과 보증 계약을 했다. 이에 갑이 을에게 예술품의 납품을 시작했고 을은 2년 동안 갑에게 그 대금을 지급했다. 그런데 이후 2년 동안 갑이 예술품을 1년에 1점씩 납품했으나 을은 그 대금을 지급하지 않았다. 이에 갑이 병에게 미납 대금 1,000만 원의 지급을 요구하고 있다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 납품한 예술품에 갑의 행위와 무관한 하자가 있어서 을에게 손해가 발생한 경우, 계약 체결 시점에 을이 그 하자를 알 수 있었으면 을은 손해 배상을 받을 권리가 없다.</li>
+<li>② 갑이 납품한 예술품에 하자가 있어서 을에게 손해가 발생한 경우, 을이 그 하자에도 불구하고 계약의 목적을 달성할 수 있으면 을은 그 대금의 환불을 받을 권리가 없다.</li>
+<li>③ 보증 계약서에 병의 서명은 있고 연대 보증 특약이 없는 경우, 을에게 강제 집행 대상 재산이 있음을 병이 갑에게 증명했더라도 병은 갑이 요구한 1,000만 원의 지급을 거절할 수 없다.</li>
+<li>④ 보증 계약서가 작성되지 않았고 연대 보증 특약이 없는 경우, 병이 을을 대신하여 갑에게 1,000만 원을 지급했으면 보증 계약의 무효를 주장할 수 없다.</li>
+<li>⑤ 보증 계약서에 병의 서명도 날인도 없지만 연대 보증 특약이 있는 경우, ｢보증인 보호를 위한 특별법｣ 제2조를 어떤 방법으로 해석하든 병은 갑에게 1,000만 원을 지급할 의무가 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 이루는</li>
+<li>② ⓑ: 헤아려</li>
+<li>③ ⓒ: 깨뜨리고</li>
+<li>④ ⓓ: 이루어지려면</li>
+<li>⑤ ⓔ: 바로잡고</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>(가) 유추는 두 대상이 몇 가지 점에서 유사하다는 사실이 확인된 상태에서, 한 대상이 어떤 추가적 특성을 지님이 알려졌을 때 다른 대상도 그 특성을 지닌다고 추론하는 논증이다. 유추는 이미 알고 있는 전제에서 새로운 정보를 결론으로 끌어낸다는 점에서 유익하므로 일상과 학문에서 널리 쓰인다. 특히 법의 영역에서, 직접 적용할 규범이 없는 사례를 그와 유사한 사례에 적용되는 규범으로 처리하려는 시도는 유추의 구조를 잘 보여 준다.</p>
+<p>(나) 법에서 유추를 활용하는 쪽은, 처리할 사례가 이미 규범이 마련된 다른 사례와 유사하기 때문에 그 규범을 끌어와 적용할 수 있다고 추론한다. 가령 어떤 행위에 직접 적용될 조문이 없을 때, 그와 본질적으로 닮은 행위를 규율하는 조문을 빌려 같은 결론을 내리는 식이다. 이를 통해 이들은 규범의 빈틈에도 일관된 처리가 가능하다고 본다.</p>
+<p>(다) 도출한 새로운 정보가 참일 가능성을 유추의 개연성이라 한다. 개연성이 높으려면 비교 대상 사이의 유사성이 커야 하는데, 이 유사성은 단순히 비슷하다는 점에서의 유사성이 아니라 끌어내려는 새로운 정보와 관련 있는 유사성이어야 한다. 예컨대 ㉠법에서 유추를 활용하는 쪽은, 두 행위가 공유하는 유사성 가운데 그 규범이 보호하려는 취지와 관련된 유사성, 가령 같은 종류의 위험을 일으킨다는 유사성은 결론과 관련 있는 유사성으로 본다. 반면 두 행위가 일어난 장소나 시각의 차이처럼 취지와 무관한 특성은 무시해도 된다고 본다. 결국 유추는 두 사례를 곧장 잇는 것이 아니라, 취지에 해당하는 일반적 명제를 거쳐 결론에 이른다.</p>
+<p>(라) 그러나 ㉡유추의 무분별한 활용을 경계하는 쪽은 두 가지 측면에서 이를 비판한다. 첫째, 두 사례 사이의 유사점과 차이점은 사실상 무한하므로, 어떤 유사성을 결론과 관련 있는 것으로 고를지를 정해 주는 규칙이 없으면 판단이 자의로 흐른다는 것이다. 결론과 관련 있는 유사성이라는 말 자체가 이미 모종의 일반적 명제를 전제하는데도, 활용하는 쪽은 그 명제를 충분히 드러내지 않은 채 유사성을 직관적으로 취사선택한다고 지적한다. 둘째, 형사법에서는 처벌 규범을 피고인에게 불리하게 유추하는 것이 원칙적으로 금지된다는 것이다. 유사성을 근거로 처벌 범위를 넓히는 일은, 무엇이 죄가 되는지를 미리 법으로 정해 두어야 한다는 요청과 충돌하기 때문이다.</p>
+<p>(마) 요컨대 첫째 비판은 결론과 관련 있는 유사성을 가리는 일반적 명제가 드러나지 않으면 유추의 개연성을 신뢰하기 어렵다는 지적이고, 둘째 비판은 그 일반적 명제가 분명하더라도 형사법의 영역에서는 유추의 확대 적용이 통제되어야 한다는 지적이다. 두 비판은 모두, 유추가 사례 간의 직접 비교가 아니라 일반적 명제의 매개를 통해서만 정당화될 수 있음을 다른 방향에서 보여 준다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>(가)~(마)에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가): 유추의 개념과 유익함을 밝히고, 법의 영역이 그 구조를 잘 보여 줌을 언급하고 있다.</li>
+<li>② (나): 법에서 유추를 활용하는 쪽의 추론 방식을 제시하고 있다.</li>
+<li>③ (다): 유추의 개연성이 높아지기 위한 유사성의 조건을 법의 사례를 들어 설명하고 있다.</li>
+<li>④ (라): 유추의 무분별한 활용을 경계하는 쪽의 비판을 두 측면에서 소개하고 있다.</li>
+<li>⑤ (마): 두 비판이 서로 모순됨을 들어 유추가 법에서 쓰일 수 없음을 결론으로 제시하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글을 바탕으로 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 유추의 개연성은 비교 대상 사이의 유사성이 결론과 무관할수록 높아진다.</li>
+<li>② 두 행위가 일어난 장소가 다르다는 점은, 규범의 취지가 위험 방지라면 유추의 개연성을 떨어뜨리는 근거가 된다.</li>
+<li>③ 결론과 관련 있는 유사성을 가려내는 일에는 이미 모종의 일반적 명제가 전제되어 있다.</li>
+<li>④ 형사법에서 처벌 규범의 유추가 금지되는 것은 두 사례 사이에 어떤 유사성도 존재하지 않기 때문이다.</li>
+<li>⑤ 유사성을 직관적으로 취사선택하는 판단일수록 유추의 개연성에 대한 신뢰가 커진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두 두 사례의 유사성만으로 결론이 곧바로 정당화된다고 본다.</li>
+<li>② ㉠이 ㉡의 비판에 대응하려면, 자신이 고른 유사성이 규범의 취지와 관련됨을 보여야 한다.</li>
+<li>③ ㉡은 ㉠과 달리 두 사례 사이에 결론과 관련 있는 유사성이 존재할 수 없다고 본다.</li>
+<li>④ ㉠은 ㉡과 달리 형사법에서도 처벌 범위를 넓히는 유추가 자유롭게 허용된다고 본다.</li>
+<li>⑤ ㉡은 일반적 명제의 매개 없이도 유추가 정당화될 수 있다고 본다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span><span class="pts">[3점]</span> 〈보기〉는 하나의 유추이다. 유추에 대한 윗글의 설명을 참고할 때, ⓐ~ⓒ에 해당하는 것을 ㉮~㉱ 중에서 골라 알맞게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+내가 아는 ㉮어떤 식당은 ㉯재료를 매일 새로 들여 음식이 신선하다. 나는 길을 걷다가 그 식당과 ㉰운영 방식이 비슷한 ㉱다른 식당을 보았다. 그래서 이 식당도 음식이 신선할 것이라고 추측했다.</p>
+<p>윗글에 따르면, 유추는 이미 ⓐ어떤 대상이 ⓑ추가적 특성을 지님이 알려졌을 때, 그와 유사한 ⓒ다른 대상도 그 특성을 지닌다고 추론하는 것이다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ⓐ</th>
+<th>ⓑ</th>
+<th>ⓒ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>㉮</td>
+<td>㉯</td>
+<td>㉱</td>
+</tr>
+<tr>
+<td>②</td>
+<td>㉮</td>
+<td>㉰</td>
+<td>㉱</td>
+</tr>
+<tr>
+<td>③</td>
+<td>㉱</td>
+<td>㉮</td>
+<td>㉰</td>
+</tr>
+<tr>
+<td>④</td>
+<td>㉱</td>
+<td>㉯</td>
+<td>㉰</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>㉱</td>
+<td>㉰</td>
+<td>㉯</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 6월 [20~24]</div>
+<div class='passage exam-ps'><p>(가) 유비 논증은 두 대상이 몇 가지 점에서 유사하다는 사실이 확인된 상태에서 어떤 대상이 추가적 특성을 갖고 있음이 알려졌을 때 다른 대상도 그 추가적 특성을 가지고 있다고 추론하는 논증이다. 유비 논증은 이미 알고 있는 전제에서 새로운 정보를 결론으로 도출하게 된다는 점에서 유익하기 때문에 일상생활과 과학에서 흔하게 쓰인다. 특히 의학적인 목적에서 포유류를 대상으로 행해지는 동물 실험이 유효하다는 주장과 그에 대한 비판은 유비 논증을 잘 이해할 수 있게 해 준다.</p>
+<p>(나) 유비 논증을 활용해 동물 실험의 유효성을 주장하는 쪽은 인간과 ⓐ실험동물이 ⓑ유사성을 보유하고 있기 때문에 신약이나 독성 물질에 대한 실험동물의 ⓒ반응 결과를 인간에게 안전하게 적용할 수 있다고 추론한다. 이를 바탕으로 이들은 동물 실험이 인간에게 명백하고 중요한 이익을 준다고 주장한다.</p>
+<p>(다) 도출한 새로운 정보가 참일 가능성을 유비 논증의 개연성이라 한다. 개연성이 높기 위해서는 비교 대상 간의 유사성이 커야 하는데 이 유사성은 단순히 비슷하다는 점에서의 유사성이 아니고 새로운 정보와 관련 있는 유사성이어야 한다. 예를 들어 ㉠동물 실험의 유효성을 주장하는 쪽은 실험동물로 많이 쓰이는 포유류가 인간과 공유하는 유사성, 가령 비슷한 방식으로 피가 순환하며 허파로 호흡을 한다는 유사성은 실험 결과와 관련 있는 유사성으로 보기 때문에 자신들의 유비 논증은 개연성이 높다고 주장한다. 반면에 인간과 꼬리가 있는 실험동물은 꼬리의 유무에서 유사성을 갖지 않지만 그것은 실험과 관련이 없는 특성이므로 무시해도 된다고 본다.</p>
+<p>(라) 그러나 ㉡동물 실험을 반대하는 쪽은 유효성을 주장하는 쪽을 유비 논증과 관련하여 두 가지 측면에서 비판한다. 첫째, 인간과 실험동물 사이에는 위와 같은 유사성이 있다고 말하지만 그것은 기능적 차원에서의 유사성일 뿐이라는 것이다. 인간과 실험동물의 기능이 유사하다고 해도 그 기능을 구현하는 인과적 메커니즘은 동물마다 차이가 있다는 과학적 근거가 있는데도 말이다. 둘째, 기능적 유사성에만 주목하면서도 막상 인간과 동물이 고통을 느낀다는 기능적 유사성에는 주목하지 않는다는 것이다. 인간은 자신의 고통과 달리 동물의 고통은 직접 느낄 수 없지만 무엇인가에 맞았을 때 신음 소리를 내거나 몸을 움츠리는 동물의 행동이 인간과 기능적으로 유사하다는 것을 보고 유비 논증으로 동물이 고통을 느낀다는 것을 알 수 있는데도 말이다.</p>
+<p>(마) 요컨대 첫째 비판은 동물 실험의 유효성을 주장하는 유비 논증의 개연성이 낮다고 지적하는 반면 둘째 비판은 동물도 고통을 느낀다는 점에서 동물 실험의 윤리적 문제를 제기하는 것이다. 인간과 동물 모두 고통을 느끼는데 인간에게 고통을 ㉢끼치는 실험은 해서는 안 되고 동물에게 고통을 끼치는 실험은 해도 된다고 생각하는 것은 공평하지 않다고 생각하기 때문이다. 결국 윤리성의 문제도 일관되지 않게 쓰인 유비 논증에서 비롯된 것이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>20</span>(가)~(마)에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가) : 유비 논증의 개념과 유용성을 소개하고 있다.</li>
+<li>② (나) : 동물 실험의 유효성 주장에 유비 논증이 활용되고 있음을 언급하고 있다.</li>
+<li>③ (다) : 동물 실험을 예로 들어 유비 논증이 높은 개연성을 갖기 위한 조건을 설명하고 있다.</li>
+<li>④ (라) : 동물 실험 유효성 주장이 유비 논증을 잘못 적용하고 있다는 비판을 소개하고 있다.</li>
+<li>⑤ (마) : 동물 실험 유효성 주장이 갖는 현실적 문제들을 유비 논증의 차원을 넘어서 살펴보고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>21</span>윗글을 바탕으로 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 유비 논증의 개연성은 이미 알고 있는 정보와 관련이 없는 새로운 대상이 추가될 때 높아진다.</li>
+<li>② 인간은 자신이 고통을 느낀다는 것이나 동물이 고통을 느낀다는 것이나 모두 유비 논증에 의해 안다.</li>
+<li>③ 인간이 꼬리가 있는 실험동물과 차이가 있다는 사실은 동물 실험의 유효성을 주장하는 논증의 개연성을 낮춘다.</li>
+<li>④ 동물 실험이 인간에게 중대한 이익을 가져다준다는 것은 동물 실험의 유효성과 상관없이 알 수 있는 정보이다.</li>
+<li>⑤ 동물 실험에 윤리적 문제가 있다는 주장에는 인간과 동물의 고통을 공평한 기준으로 대해야 한다는 생각이 전제되어 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>22</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두 인간과 동물이 기능적으로 유사하면 인과적 메커니즘도 유사하다고 생각한다.</li>
+<li>② ㉠이 ㉡의 비판에 적절히 대응하기 위해서는 인간과 동물이 기능적으로 유사하지 않다는 것을 보여 주면 된다.</li>
+<li>③ ㉡은 ㉠이 인간과 동물 사이의 기능적 차원의 유사성과 인과적 메커니즘의 차이점 중 전자에만 주목한다고 비판한다.</li>
+<li>④ ㉡은 ㉠과 달리 인간과 동물이 유사하지 않으면 동물 실험 결과는 인간에게 적용할 수 없다고 생각한다.</li>
+<li>⑤ ㉡은 ㉠과 달리 인간이 고통을 느끼는 것과 동물이 고통을 느끼는 것은 기능적으로 유사하지 않다고 생각한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>23</span><span class="pts">[3점]</span> 〈보기〉는 유비 논증의 하나이다. 유비 논증에 대한 윗글의 설명을 참고할 때, ⓐ~ⓒ에 해당하는 것을 ㉮~㉱ 중에서 골라 알맞게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+내가 알고 있는 ㉮어떤 개는 ㉯몹시 사납고 물려는 버릇이 있다. 나는 공원에서 산책을 하다가 그 개와 ㉰비슷하게 생긴 ㉱다른 개를 만났다. 그래서 이 개도 사납고 물려는 버릇이 있을 것이라고 추측했다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ⓐ</th>
+<th>ⓑ</th>
+<th>ⓒ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>㉮</td>
+<td>㉯</td>
+<td>㉱</td>
+</tr>
+<tr>
+<td>②</td>
+<td>㉮</td>
+<td>㉰</td>
+<td>㉯</td>
+</tr>
+<tr>
+<td>③</td>
+<td>㉱</td>
+<td>㉮</td>
+<td>㉰</td>
+</tr>
+<tr>
+<td>④</td>
+<td>㉱</td>
+<td>㉯</td>
+<td>㉰</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>㉱</td>
+<td>㉰</td>
+<td>㉯</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>24</span>문맥상 ㉢과 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① 맡기는</li>
+<li>② 가하는</li>
+<li>③ 주는</li>
+<li>④ 안기는</li>
+<li>⑤ 겪게 하는</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>(가)</p>
+<p>흠결 보충의 보조 수단. 유추를 일컫는 전통적 규정이다. 법의 해석을 변증한 인물들 가운데에는 유추를 법 해석의 본질로 끌어올린 이들이 있다. 이들에 따르면 법 해석은 상위 규범에서 하위 결론을 끌어내는 단순한 연역이 아니라, 규범과 사례라는 ㉠<u>이질적 원료</u>를 결합할 수 있도록 다듬어 가는 <span class="boxmark">[동화]</span>의 과정이다. 동화에서 해석자는 사실 관계를 규범에 맞춰 보고 규범을 사실 관계에 맞춰 보기를 ⓐ<u>반복하는</u>데, 이 왕복 운동이야말로 연역과 귀납이 함께 섞인 추론 양식인 유추의 본모습이라는 것이다.</p>
+<p>이들은 유추를 본질로 규정하기 위해 그 구조를 다음과 같이 ⓑ<u>제시한다</u>. 유추는 하나의 사례에서 다른 사례로 곧장 건너뛰는 것이 아니라, 항상 두 사례를 이어 주는 제3의 비교점을 거친다. 개별적 사례들에서 출발하여, 그 비교점을 담은 일반적 명제인 규범을 경유하고, 다시 개별적 결론으로 나아간다. 이 구조는 흠결이 있어 보이는 사례뿐 아니라 흠결이 없어 보이는 사례에도 ⓒ<u>적용된다</u>. 따라서 흠결의 유무와 상관없이 모든 법 해석은 유추의 구조를 띠며, 유추는 보조 수단이 아니라 추상적 규범과 사실 관계를 일치시켜 가는 ㉡<u>법 해석의 본질</u> 그 자체로 규정된다.</p>
+<p>(나)</p>
+<p>유추를 법 해석의 본질로 끌어올리는 규정에는 분명 통찰이 있다. 두 사례를 곧장 잇지 않고 일반적 명제를 경유한다는 지적은, '비슷하다'는 판단 뒤에 언제나 모종의 규칙이 숨어 있음을 드러내기 때문이다. 그러나 이 규정이 흠결의 유무를 가리지 않고 해석과 유추를 ⓓ<u>동일시한</u> 데에는 따져 볼 대목이 남는다.</p>
+<p>전통적으로 형사법에서는 처벌 규범을 피고인에게 불리하게 넓혀 적용하는 유추가 원칙적으로 금지되어 왔다. 그런데 해석과 유추가 본질에서 같다고 보면, 해석이라는 이름으로 이루어지는 규범의 확대 적용과 금지되는 유추 사이의 경계가 흐려질 수 있다. 실제로 종래에 해석과 유추를 엄격히 구별하던 와중에도, 확장 해석이나 목적론적 해석이라는 이름으로 사실상 유추와 다를 바 없는 규범의 확대 적용에 이른 사례가 드물지 않았다. 만일 해석과 유추가 정말로 구별되어야 하는 별개의 작업이라면, 양자가 실질적으로 같은 결과를 낳는 일을 설명하기 어렵다.</p>
+<p>그렇다면 둘을 본질에서 같다고 보는 규정은, 오히려 ㉢유추 금지가 어떻게 ⓔ<u>무력화될</u> 수 있는지를 경고하는 것으로 ㉣읽혀야 한다. 설득력이 떨어지는 연역과 유추의 구분에 매달리기보다, 해석이든 유추든 규범을 확대 적용하는 모든 작업을 한데 묶어 일관되게 통제하는 편이 낫다. 이렇게 보면 유추를 본질로 규정하는 일은, 역설적으로 전통적인 유추 금지의 취지를 더 잘 구현하는 길이 될 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 유추가 일반적 명제를 경유한다는 통찰을 인정하면서도 그 규정의 적용 범위에 대해서는 견해를 달리하고 있다.</li>
+<li>② (가)와 (나)는 모두 유추를 흠결 보충의 보조 수단으로 보는 전통적 규정을 옹호하고 있다.</li>
+<li>③ (가)와 달리 (나)는 해석과 유추를 본질에서 동일하게 보아야 형사법이 안정된다고 주장하고 있다.</li>
+<li>④ (나)와 달리 (가)는 확장 해석과 유추의 결과가 서로 다름을 들어 둘의 구별을 강조하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두 연역적 절차만으로 법 해석이 완결될 수 있음을 전제하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동화에서 해석자는 사실 관계를 규범에 맞춰 보고 규범을 사실 관계에 맞춰 보기를 반복한다.</li>
+<li>② 유추는 두 사례를 곧장 잇지 않고 제3의 비교점을 담은 일반적 명제를 경유한다.</li>
+<li>③ 유추의 구조는 흠결이 있어 보이는 사례에만 나타나고 흠결이 없어 보이는 사례에는 나타나지 않는다.</li>
+<li>④ 유추는 연역과 귀납이 함께 섞인 추론 양식으로 이해된다.</li>
+<li>⑤ 유추를 본질로 보는 견해는 법 해석을 단순한 연역과 구별한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="boxmark">[동화]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 규범과 사례라는 이질적 원료를 결합할 수 있도록 다듬어 가는 과정이다.</li>
+<li>② 흠결이 없어 보이는 사례에서는 일어나지 않고 흠결이 있는 사례에서만 일어난다.</li>
+<li>③ 사실 관계를 규범에 맞춰 보고 다시 규범을 사실 관계에 맞춰 보는 왕복 운동을 포함한다.</li>
+<li>④ 연역과 귀납이 함께 섞인 추론 양식인 유추의 본모습으로 이해된다.</li>
+<li>⑤ 추상적 규범과 사실 관계를 일치시켜 가는 작업에 해당한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span>(나)의 글쓴이의 관점에서 ㉠~㉣에 대한 (가)의 규정을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 법 해석이 순수한 연역만으로 완결되지 않음을 보이는 근거로 쓰이고 있다.</li>
+<li>② ㉡은 흠결의 유무를 가리지 않고 해석과 유추를 동일시하는 데까지 나아가고 있다.</li>
+<li>③ ㉢은 해석과 유추의 경계가 흐려질 때 나타날 수 있는 위험을 가리키고 있다.</li>
+<li>④ ㉣은 유추를 본질로 보는 규정이 유추 금지의 취지와 충돌하기만 함을 확정하고 있다.</li>
+<li>⑤ ㉡에서 본질의 동일시는, ㉢에서 경고로 이어질 단서를 품고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>14</span><span class="pts">[3점]</span> 〈보기〉는 (가)의 규정을 지지하는 학자와 (나)의 글쓴이가 나누는 가상의 대화이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>(가) 지지 학자:</strong> 확장 해석이라는 이름으로 이루어진 규범의 확대 적용이, 금지된 유추와 실질적으로 같은 결과를 낳은 사례가 드물지 않았습니다. 이는 해석과 유추가 본질에서 다르지 않음을 보여 줍니다.
+<strong>(나)의 글쓴이:</strong> 같은 사실을 저는 다르게 읽습니다. 방금 그 말씀과 제 문제의식을 연결하면, 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 해석과 유추가 같은 결과를 낳는다는 사실은, 유추 금지가 해석이라는 이름으로 우회되어 무력화될 수 있음을 경고한다</li>
+<li>② 확장 해석과 유추가 다른 결과를 낳는 한, 둘을 본질에서 같다고 보는 규정은 성립할 수 없다</li>
+<li>③ 유추가 일반적 명제를 경유하지 않는다는 점에서, 해석과 유추는 처음부터 구별될 수 없다</li>
+<li>④ 형사법에서 유추가 금지되는 이상, 확장 해석이라는 이름의 확대 적용도 전면적으로 허용되어야 한다</li>
+<li>⑤ 해석과 유추를 본질에서 같다고 보면, 규범의 확대 적용을 통제할 근거가 사라진다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>15</span>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 답습(踏襲)하는</li>
+<li>② ⓑ: 함구(緘口)한다</li>
+<li>③ ⓒ: 결부(結付)된다</li>
+<li>④ ⓓ: 등치(等値)한</li>
+<li>⑤ ⓔ: 발효(發效)될</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 수능 [4~9]</div>
+<div class='passage exam-ps'><p>(가)</p>
+<p>㉠정립-반정립-종합. 변증법의 논리적 구조를 일컫는 말이다. 변증법에 따라 철학적 논증을 수행한 인물로는 단연 헤겔이 거명된다. 변증법은 대등한 위상을 지니는 세 범주의 병렬이 아니라, 대립적인 두 범주가 조화로운 통일을 이루어 가는 수렴적 상향성을 구조적 특징으로 한다. 헤겔에게서 변증법은 논증의 방식임을 넘어, 논증 대상 자체의 존재 방식이기도 하다. 즉 세계의 근원적 질서인 '이념'의 내적 구조도, 이념이 시ㆍ공간적 현실로서 드러나는 방식도 변증법적이기에, 이념과 현실은 하나의 체계를 이루며, 이 두 차원의 원리를 밝히는 철학적 논증도 변증법적 체계성을 ⓐ지녀야 한다.</p>
+<p>헤겔은 미학도 철저히 변증법적으로 구성된 체계 안에서 다루고자 한다. 그에게서 미학의 대상인 예술은 종교, 철학과 마찬가지로 '절대정신'의 한 형태이다. 절대정신은 절대적 진리인 '이념'을 인식하는 인간 정신의 영역을 ⓑ가리킨다. 예술ㆍ종교ㆍ철학은 절대적 진리를 동일한 내용으로 하며, 다만 인식 형식의 차이에 따라 구분된다. 절대정신의 세 형태에 각각 대응하는 형식은 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>이다. '직관'은 주어진 물질적 대상을 감각적으로 지각하는 지성이고, '표상'은 물질적 대상의 유무와 무관하게 내면에서 심상을 떠올리는 지성이며, '사유'는 대상을 개념을 통해 파악하는 순수한 논리적 지성이다. 이에 세 형태는 각각 '직관하는 절대정신', '표상하는 절대정신', '사유하는 절대정신'으로 규정된다. 헤겔에 따르면 직관의 외면성과 표상의 내면성은 사유에서 종합되고, 이에 맞춰 예술의 객관성과 종교의 주관성은 철학에서 종합된다.</p>
+<p>형식 간의 차이로 인해 내용의 인식 수준에는 중대한 차이가 발생한다. 헤겔에게서 절대정신의 내용인 절대적 진리는 본질적으로 논리적이고 이성적인 것이다. 이러한 내용을 예술은 직관하고 종교는 표상하며 철학은 사유하기에, 이 세 형태 간에는 단계적 등급이 매겨진다. 즉 예술은 초보 단계의, 종교는 성장 단계의, 철학은 완숙 단계의 절대정신이다. 이에 따라 ㉡예술-종교-철학 순의 진행에서 명실상부한 절대정신은 최고의 지성에 의거하는 것, 즉 철학뿐이며, 예술이 절대정신으로 기능할 수 있는 것은 인류의 보편적 지성이 미발달된 머나먼 과거로 한정된다.</p>
+<p>(나)</p>
+<p>변증법의 매력은 '종합'에 있다. 종합의 범주는 두 대립적 범주 중 하나의 일방적 승리로 ⓒ끝나도 안 되고, 두 범주의 고유한 본질적 규정이 소멸되는 중화 상태로 나타나도 안 된다. 종합은 양자의 본질적 규정이 유기적 조화를 이루어 질적으로 고양된 최상의 범주가 생성됨으로써 성립하는 것이다.</p>
+<p>헤겔이 강조한 변증법의 탁월성도 바로 이것이다. 그러기에 변증법의 원칙에 최적화된 엄밀하고도 정합적인 학문 체계를 조탁하는 것이 바로 그의 철학적 기획이 아니었던가. 그런데 그가 내놓은 성과물들은 과연 그 기획을 어떤 흠결도 없이 완수한 것으로 평가될 수 있을까? 미학에 관한 한 '그렇다'는 답변은 쉽지 않을 것이다. 지성의 형식을 직관-표상-사유 순으로 구성하고 이에 맞춰 절대정신을 예술-종교-철학 순으로 편성한 전략은 외관상으로는 변증법 모델에 따른 전형적 구성으로 보인다. 그러나 실질적 내용을 ⓓ보면 직관으로부터 사유에 이르는 과정에서는 외면성이 점차 지워지고 내면성이 점증적으로 강화ㆍ완성되고 있음이, 예술로부터 철학에 이르는 과정에서는 객관성이 점차 지워지고 주관성이 점증적으로 강화ㆍ완성되고 있음이 확연히 드러날 뿐, 진정한 변증법적 종합은 ⓔ이루어지지 않는다. 직관의 외면성 및 예술의 객관성의 본질은 무엇보다도 감각적 지각성인데, 이러한 핵심 요소가 그가 말하는 종합의 단계에서는 완전히 소거되고 만다.</p>
+<p>변증법에 충실하려면 헤겔은 철학에서 성취된 완전한 주관성이 재객관화되는 단계의 절대정신을 추가했어야 할 것이다. 예술은 '철학 이후'의 자리를 차지할 수 있는 유력한 후보이다. 실제로 많은 예술 작품은 '사유'를 매개로 해서만 설명되지 않는가. 게다가 이는 누구보다도 풍부한 예술적 체험을 한 헤겔 스스로가 잘 알고 있지 않은가. 이 때문에 방법과 철학 체계 간의 이러한 불일치는 더욱 아쉬움을 준다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 특정한 철학적 방법에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하고 있다.</li>
+<li>② (가)와 (나)는 모두 특정한 철학적 방법에 대한 상반된 평가를 바탕으로 더 설득력 있는 미학 이론을 모색하고 있다.</li>
+<li>③ (가)와 달리 (나)는 특정한 철학적 방법의 시대적 한계를 지적하고 이에 맞서는 혁신적 방법을 제안하고 있다.</li>
+<li>④ (가)와 달리 (나)는 특정한 철학적 방법에서 파생된 미학 이론을 바탕으로 예술 장르를 범주적으로 유형화하고 있다.</li>
+<li>⑤ (나)와 달리 (가)는 특정한 철학적 방법의 통시적인 변화 과정을 적용하여 철학사를 단계적으로 설명하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>(가)에서 알 수 있는 헤겔의 생각으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 예술ㆍ종교ㆍ철학 간에는 인식 내용의 동일성과 인식 형식의 상이성이 존재한다.</li>
+<li>② 세계의 근원적 질서와 시ㆍ공간적 현실은 하나의 변증법적 체계를 이룬다.</li>
+<li>③ 절대정신의 세 가지 형태는 지성의 세 가지 형식이 인식하는 대상이다.</li>
+<li>④ 변증법은 철학적 논증의 방법이자 논증 대상의 존재 방식이다.</li>
+<li>⑤ 절대정신의 내용은 본질적으로 논리적이고 이성적인 것이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>(가)에 따라 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>의 개념을 적용한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 먼 타향에서 밤하늘의 별들을 바라보는 것은 직관을 통해, 같은 곳에서 고향의 하늘을 상기하는 것은 표상을 통해 이루어지겠군.</li>
+<li>② 타임머신을 타고 미래로 가는 자신의 모습을 상상하는 것과, 그 후 판타지 영화의 장면을 떠올려 보는 것은 모두 표상을 통해 이루어지겠군.</li>
+<li>③ 초현실적 세계가 묘사된 그림을 보는 것은 직관을 통해, 그 작품을 상상력 개념에 의거한 이론에 따라 분석하는 것은 사유를 통해 이루어지겠군.</li>
+<li>④ 예술의 새로운 개념을 설정하는 것은 사유를 통해, 이를 바탕으로 새로운 감각을 일깨우는 작품의 창작을 기획하는 것은 직관을 통해 이루어지겠군.</li>
+<li>⑤ 도덕적 배려의 대상을 생물학적 상이성 개념에 따라 규정하는 것과, 이에 맞서 감수성 소유 여부를 새로운 기준으로 제시하는 것은 모두 사유를 통해 이루어지겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>(나)의 글쓴이의 관점에서 ㉠과 ㉡에 대한 헤겔의 이론을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠과 ㉡ 모두에서 첫 번째와 두 번째의 범주는 서로 대립한다.</li>
+<li>② ㉠과 ㉡ 모두에서 두 번째와 세 번째 범주 간에는 수준상의 차이가 존재한다.</li>
+<li>③ ㉠과 달리 ㉡에서는 범주 간 이행에서 첫 번째 범주의 특성이 갈수록 강해진다.</li>
+<li>④ ㉡과 달리 ㉠에서는 세 번째 범주에서 첫 번째와 두 번째 범주의 조화로운 통일이 이루어진다.</li>
+<li>⑤ ㉡과 달리 ㉠에서는 범주 간 이행에서 수렴적 상향성이 드러난다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 〈보기〉는 헤겔과 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>헤겔:</strong> 괴테와 실러의 문학 작품을 읽을 때 놓치지 않아야 할 점이 있네. 이 두 천재도 인생의 완숙기에 이르러서야 비로소 최고의 지성적 통찰을 진정한 예술미로 승화시킬 수 있었네. 그에 비해 초기의 작품들은 미적으로 세련되지 못해 결코 수준급이라 할 수 없었는데, 이는 그들이 아직 지적으로 미성숙했기 때문이었네.
+<strong>(나)의 글쓴이:</strong> 방금 그 말씀과 선생님의 기본 논증 방법을 연결하면 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 이론에서는 대립적 범주들의 종합을 이루어야 하는 세 번째 단계가 현실에서는 그 범주들을 중화한다</li>
+<li>② 이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다</li>
+<li>③ 이론에서는 반정립 단계에 위치하는 예술이 현실에서는 정립 단계에 있는 것으로 나타난다</li>
+<li>④ 이론에서는 객관성을 본질로 하는 예술이 현실에서는 객관성이 사라진 주관성을 지닌다</li>
+<li>⑤ 이론에서는 절대정신으로 규정되는 예술이 현실에서는 진리의 인식을 수행할 수 없다</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 소지(所持)하여야</li>
+<li>② ⓑ: 포착(捕捉)한다</li>
+<li>③ ⓒ: 귀결(歸結)되어도</li>
+<li>④ ⓓ: 간주(看做)하면</li>
+<li>⑤ ⓔ: 결성(結成)되지</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>기적적 사건에 대한 흄의 견해 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr><tr><td>정답</td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ⑤</strong>
+(마)는 프라이스의 반론을 <em>흄의 논증과 떼어 놓고</em> 그 의의를 살핀 것이 아니라, "복권 당첨과 기적은 다른 종류의 사건"이라는 점을 들어 그 반론이 흄의 논증을 무너뜨리지 <em>못한다</em>고 평가한 부분이에요. 즉 철저히 흄의 논증과 <em>관련지어</em> 따지고 있으니, "흄의 논증과 무관한 차원에서 살펴보고 있다"는 ⑤가 적절하지 않아 정답입니다. ①은 (가)에서 자연법칙으로 설명될 수 있는 사건과 단지 현재 설명되지 않는 진기한 현상을 모두 제외하며 기적의 범위를 좁혀 규정했고, ②는 (나)에서 객관적 증거가 없어 증언의 신뢰성 문제가 된다고 했으며, ③은 (다)에서 자연법칙 쪽 증거와 거짓·속임 쪽 증거를 견주었고, ④는 (라)의 복권 비유 비판을 소개했으므로 모두 적절합니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+(다)에서 흄은 "증언이 거짓일 가능성이 기적의 발생 가능성보다 낮아야" 그 증언을 믿을 수 있다고 했으므로 ④가 적절해 정답입니다. ① (가)에서 일어나기 힘들어도 자연법칙으로 설명되면 기적이 <em>아니라고</em> 했고, ② (나)는 한참 전 기적일수록 객관적 증거가 <em>없다고</em> 했으며, ③ (가)는 설명되지 않는 진기한 현상도 훗날 설명될 수 있다고 하여 "설명 안 됨 = 초자연적"이라는 단정을 막았고, ⑤ 프라이스는 두 확률이 <em>같다</em>고 본 것이 아니라 신문 보도가 거짓일 확률이 천만분의 1보다 작지 않다는 점을 근거로 들었으므로 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ③</strong>
+㉡(프라이스)은 (라)에서 "흄의 기준을 따른다면"이라며 흄의 <em>확률적 접근 자체는 받아들인 채</em> 그 기준을 복권에 적용하면 불합리해진다고 비판해요. 따라서 ③이 적절해 정답입니다. ① 증언 신뢰도가 자연법칙보다 높아야 한다는 것은 ㉠(흄)의 주장이지 ㉡이 함께 내세운 것이 아니고, ② 흄이 ㉡에 대응하는 길은 (마)에서 보듯 "복권 당첨과 기적은 다른 종류"임을 보이는 것이지 복권이 실제로 일어남을 <em>부정</em>하는 것이 아니며, ④ "발생 확률이 현재 0"이라는 진술은 (마)에서 흄 측을 옹호하는 근거로 제시된 것이라 ㉡의 견해로 보기 어렵고, ⑤ (나)에서 흄은 객관적 증거가 없어 <em>증언의 신뢰성</em>에 기댄다고 했으므로 ⑤는 거꾸로입니다.</p>
+<p><strong>4번 [3점] — 정답 ②</strong>
+〈보기〉의 추론에서 흄이 <em>따져야 할 대상</em>은 공중에 뜬 사람을 보았다는 ㉮증언이고(ⓐ=㉮), 두 가설 중 <em>거짓 가설</em>은 증언자가 속임수·착각에 빠졌다는 ㉯이며(ⓑ=㉯), 두 가설을 견주는 <em>비교의 기준</em>은 참일 ㉱가능성의 크기예요(ⓒ=㉱). 따라서 ⓐ㉮·ⓑ㉯·ⓒ㉱로 짝지은 ②가 정답입니다. ㉰(초자연적 사건이 실제로 일어났을 가설)는 거짓 가설(ⓑ)이 아니라 흄이 더 낮게 본 <em>참 가능성 쪽 가설</em>이므로 ⓑ에 놓은 ①·④는 틀리고, ㉮를 비교 기준으로, ㉱를 대상으로 잘못 배치한 ③·⑤도 적절하지 않습니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+㉢"다루는"은 "기적의 증언을 복권 보도와 같은 종류의 사건으로 <em>여겨 처리하는</em>"의 뜻이에요. ⑤"일임하는"은 "어떤 일을 통째로 남에게 맡기는" 뜻이라 이 문맥에 들어가면 "같은 종류로 일임하는"이 되어 호응이 깨지므로 적절하지 않아 정답입니다. ①취급하는·②간주하는·③처리하는·④치부하는은 모두 "어떤 대상을 일정하게 여겨 다루다"라는 의미로 바꿔 쓸 수 있습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기적(초자연적 사건)</strong>: 일어나기 드문 일이 아니라, 자연법칙으로는 실제로 일어날 수 없는 일. 자연의 질서 '너머'의 개입으로 생긴 사건.</li>
+<li><strong>증언의 신뢰성</strong>: 기적은 직접 보기보다 남의 말로 전해지므로, 기적을 믿느냐는 결국 그 말을 믿느냐의 문제가 된다는 점.</li>
+<li><strong>확률적 접근</strong>: "증언이 거짓일 가능성"과 "기적이 실제로 일어날 가능성"의 크기를 견주어 더 그럴듯한 쪽을 받아들이는 흄의 방법.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>흄의 기적 논증</th>
+<th>프라이스의 반론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 주장</td>
+<td>기적의 증언은 믿을 수 없다</td>
+<td>흄의 기준은 복권 보도조차 못 믿게 만든다</td>
+</tr>
+<tr>
+<td>따지는 잣대</td>
+<td>증언이 거짓일 확률 vs 기적의 발생 확률</td>
+<td>같은 확률 잣대를 복권에 적용</td>
+</tr>
+<tr>
+<td>약점·재반박</td>
+<td>(자연법칙 증거가 압도적)</td>
+<td>복권 당첨(확률&gt;0, 실제 발생) ≠ 기적(현재 확률 0)</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>명량 대첩이 기적이 아닌 까닭은?</div><div class='qa-a'>일어나기 매우 힘든 일이지만 자연법칙을 어기지는 않기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>흄에 따르면 기적의 증언을 믿을 수 있는 조건은?</div><div class='qa-a'>증언이 거짓일 가능성이 기적의 발생 가능성보다 낮아야 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>프라이스의 복권 반론이 빗나가는 까닭은?</div><div class='qa-a'>복권 당첨은 실제로 일어나는 사건이지만 기적은 발생 여부 자체가 논란인(현재 확률 0) 다른 종류의 사건이기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 6월 [20~24] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>20번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>21번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>22번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>23번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>24번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+4문단에서 비판자는 "자연법칙에 어긋나는 사건은 그 발생 확률이 현재로서는 0"인 경우를 정면으로 다루며, 그때 증언이 거짓일 가능성이 그보다 낮을 수 없다고 했어요. 즉 흄의 논증은 발생 가능성이 0인 경우를 <em>바탕으로</em> 결론을 내리는 것이므로, "발생 가능성이 0일 경우를 고려하지 않는다"는 ④가 적절하지 않아 정답입니다. ①은 1문단(증언을 그대로 받아들이는 태도), ②는 1문단(흄=증언의 신뢰성 판단), ③은 2문단(두 가설의 확률을 모두 견줌), ⑤는 2문단(자연법칙에 대한 강력한 증거)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+ⓑ(두 조건을 모두 충족하는 합리적 믿음)는 "증언이 거짓일 가능성이 사건의 발생 가능성보다 낮을 것"과 "사건이 일어날 수 있을 것"을 모두 만족해야 성립해요. 그런데 어떤 사건의 발생 확률이 0이라면 증언이 거짓일 가능성이 그보다 더 낮을 수 없어 첫째 조건이 깨지므로 ⓑ가 성립할 수 없습니다. 따라서 "발생 확률이 0이면 ⓑ가 성립할 수 없다"는 ②가 정답입니다. 반면 ⓐ(실용적 신뢰)는 그 사건이 일어날 수 있든 없든 사람을 인간적으로 신뢰하는 것이라 발생 확률과 무관하게 성립할 수 있으므로 ④는 틀리고, 일어날 수 있는 사건이라면 오히려 두 조건을 충족할 여지가 생기는데도 ⓐ·ⓑ가 있을 수 없다고 한 ①·③·⑤도 조건 관계를 뒤섞어 적절하지 않습니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ③</strong>
+5문단에 따르면, 지금 설명되지 않는 진기한 사건(감광판 사례)도 실제로 일어나는 사건이어서 발생 확률이 0이 아니라면 증언이 거짓일 가능성이 그보다 낮을 여지가 있고, 그러면 합리적 믿음의 두 조건을 충족할 수 있어요. 그래서 "모든 진기한 증언까지 믿어서는 안 된다"는 결론은 받아들일 필요가 없다고 한 것이므로 ③이 정답입니다. ① 발생 확률이 0이 아닌 것은 <em>진기한</em> 사건이지 <em>자연법칙에 어긋나는</em> 사건이 아니고, ② 진기한 증언이 <em>언제나</em> 거짓일 가능성이 낮다고 한 적은 없으며, ④ 자연법칙에 어긋나는 증언의 결론은 ㉠이 오히려 <em>받아들여야 한다</em>고 했고, ⑤는 두 태도의 우열을 가린 진술이라 ㉡의 이유가 아닙니다.</p>
+<p><strong>9번 [3점] — 정답 ④</strong>
+〈보기〉의 천체 출현은 지금은 설명되지 않지만 관측 기록과 일치하는 <em>진기한 사건</em>에 해당해요. ㉠의 입장은 "자연법칙에 <em>어긋나는</em> 사건의 증언은 믿어선 안 된다는 결론은 받아들이되, <em>진기한</em> 사건 일반에까지 그 결론을 넓힐 필요는 없다"는 것이죠. 따라서 이 천체가 훗날 새 법칙으로 설명된다면(=자연법칙으로 설명되는 진기한 사건이라면) 그 증언을 믿어선 안 된다는 결론을 <em>반드시</em> 받아들여야 하는 것은 아니라고 논의할 수 있어 ④가 정답입니다. ① 설명되지 않는 경우의 결론은 ㉠도 받아들이므로 거부 대상이 아니고, ② 설명되지 않는다고 발생 확률이 곧장 0이 되는 것은 아니며, ③ 새 법칙으로 설명된다고 증언이 거짓일 가능성이 0이 되는 것은 아니고, ⑤는 결론을 <em>그대로</em> 받아들이라는 진술이라 ㉠의 입장과 어긋납니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>두 가설</strong>: 기적 증언을 두고 세우는 "증언자가 거짓·착각이다"라는 가설과 "초자연적 사건이 실제로 일어났다"라는 가설.</li>
+<li><strong>합리적 믿음의 두 조건</strong>: ① 증언이 거짓일 가능성이 사건의 발생 가능성보다 낮을 것, ② 사건이 적어도 일어날 수 있는 사건일 것.</li>
+<li><strong>진기한 사건 vs 자연법칙에 어긋나는 사건</strong>: 앞은 지금 설명만 안 될 뿐 실제로 일어나(확률&gt;0), 뒤는 발생 여부 자체가 논란(현재 확률 0)이라는 점에서 갈림.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>┌ 자연법칙에 '어긋나는' 사건의 증언</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>발생 확률 0</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>합리적 믿음의 두 조건은?</div><div class='qa-a'>증언이 거짓일 가능성이 사건의 발생 가능성보다 낮을 것, 그리고 그 사건이 일어날 수 있는 사건일 것입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>비판자가 받아들이는 결론과 받아들이지 않는 결론은?</div><div class='qa-a'>자연법칙에 어긋나는 사건의 증언은 믿어선 안 된다는 결론은 받아들이고, 진기한 사건 일반에까지 그 결론을 넓히는 것은 받아들이지 않습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>감광판 사례가 비판의 근거가 되는 까닭은?</div><div class='qa-a'>지금 설명되지 않아도 실제로 일어나(발생 확률≠0) 훗날 설명될 수 있는 진기한 사건의 예이기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 9월 [10~13] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+2문단에 따르면 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려하며, 무작위로 일어난다는 것은 곧 선결정되지 않는다는 의미다. 즉 선결정되지 않을 가능성도 고려하므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①0.6% ②5.3% ③1.8% ④3.4% ⑤89.1%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong><br />
+ⓑ(두 조건을 모두 충족하는 자유의지)는 내가 선택의 주체이고 그 선택이 선결정되지 않아야 성립한다. 어떤 선택이 선결정되어 있다면 둘째 조건을 충족하지 못하므로 ⓑ가 있을 수 없다(④). 반면 ⓐ(욕구 충족적 자유의지)는 선결정 여부와 무관하게 성립할 수 있다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.9% ②8.2% ③9.3% ④77.1% ⑤4.2%</p></div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+5문단에 따르면 어떤 선택이 무작위로(=선결정되지 않게) 일어났더라도 그 선택의 주체는 나일 수 있다. 즉 무작위로 일어난 선택은 ‘주체가 나일 것’과 ‘선결정되지 않을 것’이라는 자유의지의 두 조건을 모두 충족할 수 있으므로, 무작위 가정을 고려할 때의 결론(자유의지 없음)은 받아들일 필요가 없다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①3.1% ②9.0% ③12.2% ④11.6% ⑤64.3%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+H의 실험은 인간의 선택(신경 사건)이 그 이전의 다른 신경 사건과 관련되는지, 즉 선결정되어 있는지를 알아보는 것이다. ㉠의 입장은 선결정 가정의 결론은 받아들이되 무작위 가정의 결론은 받아들일 필요가 없다고 본다. 따라서 H의 가설이 입증되지 않더라도(선택이 무작위라 하더라도) 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니라고 논의할 수 있다(④).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.3% ②10.1% ③12.2% ④61.9% ⑤7.1%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+4문단에 따르면 확률적 인식론자는 충분한 증거가 없는 한 믿음의 정도를 크게 바꾸지 <em>않는 것</em>이 합리적이라고 봐요. 즉 "충분한 증거 없이 믿음의 정도를 크게 바꾸는" 일 자체가 합리적이지 않다고 보므로, ②가 묻는 "그렇게 바꾸어야 하는 이유"에 대한 답은 윗글에서 찾을 수 없어 정답입니다. ①은 4문단(증거의 무게에 맞춘 조정의 정당화), ③은 2문단(증거 갱신 원리의 변화 방식), ④는 2문단(증언 신뢰도·사전 믿음에 따라 갱신 크기가 달라짐), ⑤는 1문단(믿음의 태도)에서 답을 찾을 수 있습니다.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+㉠(전통적 입장)은 어떤 증언에 대해 '믿는다/믿지 않는다' 두 태도 중 하나만 가질 수 있다고 보므로, '믿지 않는다'에 강·약의 <em>정도</em>가 있을 수 없어요. 믿음을 정도의 문제로 보는 것은 ㉡(확률적 인식론자)이죠. 따라서 "참이라 믿지 않는 것이 강한 정도로 의심한다는 의미"라고 ㉠에 정도를 부여한 ②가 적절하지 않아 정답입니다. ①은 두 입장이 양립 불가함을, ③은 ㉠의 이분법적 태도를, ④·⑤는 ㉡이 믿음의 정도에 강약·차등을 둘 수 있음을 바르게 설명합니다.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+2문단에서 갱신의 크기는 "증언의 신뢰도와 A의 사전 믿음의 정도에 함께" 달려 있고, "A가 애초에 일어나기 어렵다고 여겨질수록 같은 증언으로도 믿음의 정도는 더디게 올라간다"라고 했어요. 따라서 같은 증언이라도 사전 믿음의 정도에 따라 변화가 달라진다는 ④가 적절해 정답입니다. ① 충분한 증거 없는 큰 변화는 합리적이지 <em>않고</em>, ② 이 원리는 행위가 아니라 믿음의 정도에 관한 것이며, ③ 사전 믿음의 정도는 갱신 크기와 <em>무관하지 않고</em>, ⑤ 사전 믿음이 가장 낮은 사건도 "거의" 안 올라갈 뿐 "전혀" 안 변하는 것은 아니므로 모두 어긋납니다.</p>
+<p><strong>13번 [3점] — 정답 ⑤</strong>
+㉯는 ㉮와 관련된 증언이므로, ㉯만을 새롭게 접하면 ㉮에 대한 믿음의 정도는 '㉯가 주어졌다는 조건하에 ㉮가 일어났다는 것에 대한 믿음의 정도'로 변해요. 그런데 주민마다 애초의 믿음의 정도가 <em>서로 달랐다면</em>, 같은 증언을 접한 뒤에도 그 정도가 <em>반드시 같아진다</em>고 단정할 수는 없으므로 ⑤가 적절하지 않아 정답입니다. ① 무관한 증언만 접하면 ㉮의 믿음은 그대로(2·3문단), ② 관련 증언 ㉯로 믿음이 강해질 수 있음(2문단), ③ 자연법칙에 어긋나는 사건은 사전 믿음이 낮아 더디게 오름(2·3문단), ④ 증언의 신뢰도가 다르면 갱신 크기도 다름(2문단)에 각각 들어맞는 적절한 적용입니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>14번 — 정답 ①</strong>
+ⓐ'가질'은 '생각이나 태도를 마음에 품다'의 뜻이고, ①의 '보람을 가졌다'도 같은 의미라 정답입니다. ② ⓑ'접하게'는 '새로운 정보·증언을 대하다'의 뜻인데 ②는 '우연히 만나다'라 다르고, ③ ⓒ'되어야'는 '어떤 상태에 이르다(변화의 귀결)'인데 ③은 '신분·직업을 얻다'라 다르며, ④ ⓓ'따르면'은 '기준·원리에 의거하다'인데 ④는 '뒤를 좇다'라 다르고, ⑤ ⓔ'지키거나'는 '믿음의 정도라는 상태를 그대로 이어 가다(보전하다)'인데 ⑤의 '약속을 지키다'는 '약속·규칙을 어기지 않다'라 달라 모두 적절하지 않습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>믿음의 정도</strong>: 어떤 증언을 '믿는다/안 믿는다'로 딱 잘라 보지 않고, 가장 강함에서 가장 약함까지 <em>정도</em>로 보는 관점.</li>
+<li><strong>증거 갱신 원리</strong>: 새 증언을 접했을 때 믿음의 정도를, '그 증언이 주어졌다는 조건하의 믿음의 정도'로 바꾸는 원리.</li>
+<li><strong>사전 믿음의 정도</strong>: 증언을 접하기 전, 그 사건이 일어났으리라고 애초에 매기는 믿음의 정도. 이것이 낮을수록 같은 증언으로도 믿음이 더디게 오른다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>사건의 사전 믿음</th>
+<th>같은 신뢰도의 증언을 접했을 때</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평범한 사건(사전 믿음 보통)</td>
+<td>믿음의 정도가 뚜렷이 오름</td>
+<td>증언을 믿게 될 수 있음</td>
+</tr>
+<tr>
+<td>일어나기 어려운 사건(사전 믿음 낮음)</td>
+<td>믿음의 정도가 더디게 오름</td>
+<td>믿으려면 더 강한 증언 필요</td>
+</tr>
+<tr>
+<td>자연법칙에 어긋나는 사건(사전 믿음 최저)</td>
+<td>어지간한 증언으로는 거의 안 오름</td>
+<td>합리적으로 믿기 어려움</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>흄의 결론을 확률적 인식론으로 옮기면, <strong>"기적의 증언은 믿을 수 없다"는 곧 "사전 믿음이 가장 낮은 사건은 어지간한 증언으로 믿음의 정도가 거의 오르지 않는다"</strong>가 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>믿음을 '정도'로 본다는 말은 무슨 뜻인가요?</div><div class='qa-a'>믿는다/안 믿는다로 가르지 않고, 가장 강함에서 가장 약함까지의 정도로 본다는 뜻입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 증언인데 믿음의 정도가 다르게 변하는 까닭은?</div><div class='qa-a'>그 사건의 사전 믿음의 정도가 다르기 때문입니다. 사전 믿음이 낮을수록 더디게 오릅니다.</div></div>
+<div class='qa-item'><div class='qa-q'>자연법칙에 어긋나는 사건의 증언을 믿기 어려운 까닭은?</div><div class='qa-a'>그 사건의 사전 믿음의 정도가 가장 낮아, 어지간한 증언으로는 믿음의 정도가 거의 올라가지 않기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [16~20] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+4문단에 따르면 베이즈주의자의 관점에서는 특별한 이유가 없는 한 기존의 믿음의 정도를 유지하는 것이 합리적이므로 ‘특별한 이유 없이 믿음의 정도를 바꾸’는 변화 자체가 일어나지 않는다. 따라서 ②의 ‘특별한 이유 없이 믿음의 정도를 바꾸어야 하는 이유’에 대한 답은 윗글에서 찾을 수 없다.</p>
+<p><em>선택률</em> — 응시 98,599명 — ①3.4% ②83.4% ③4.2% ④5.0% ⑤2.0%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ②</strong><br />
+㉠(전통적 인식론자)은 임의의 명제에 대해 세 가지 믿음의 태도 중 하나만을 가질 수 있다고 보므로, 거짓이라 믿는 태도에 강·약의 정도가 있을 수 없다. 믿음을 정도의 문제로 보는 것은 ㉡(베이즈주의자)이다. 따라서 ②는 ㉠에 대한 이해로 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,600명 — ①4.0% ②75.4% ③6.2% ④8.0% ⑤5.1%</p></div>
+<div class='exp'><p><strong>18번 — 정답 ④</strong><br />
+2문단에서 조건화 원리는 ‘새롭게 알게 된 명제가 동시에 둘 이상인 경우에도 마찬가지로 적용된다’고 했다. 따라서 어떤 명제가 참인 것과 다른 명제가 거짓인 것을 동시에 새롭게 알게 되었을 때에도 적용될 수 있으므로 ④가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,599명 — ①1.4% ②4.6% ③5.0% ④80.7% ⑤5.0%</p></div>
+<div class='exp'><p><strong>19번 — 정답 ⑤</strong><br />
+㉯는 ㉮와 관련된 명제이므로, ㉯만을 새롭게 알게 되면 ㉮에 대한 믿음의 정도는 ‘㉯가 참이라는 조건하에 ㉮가 참이라는 것에 대한 믿음의 정도’로 변한다. 병과 정의 애초 믿음의 정도가 서로 달랐더라도 변화 후 두 사람의 정도가 ‘같을 수 없다’고 단정할 수는 없으므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,600명 — ①1.8% ②4.4% ③21.2% ④15.1% ⑤56.0%</p></div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+ⓑ‘따르면’과 ②‘따라’는 모두 ‘어떤 경우, 사실이나 기준 따위에 의거하다’의 의미이다. ⓐ는 ‘생각·태도 따위를 마음에 품다’, ⓒ는 ‘대상을 평가하다’, ⓓ는 ‘긍정적 상태를 가지게 되다’, ⓔ는 ‘원래의 내용·상태를 다르게 고치다’의 의미로, 각 보기의 용례와 다르다.</p>
+<p><em>선택률</em> — 응시 98,599명 — ①1.6% ②89.8% ③1.4% ④3.5% ⑤1.8%</p></div>
+</div></div>
+</body></html>

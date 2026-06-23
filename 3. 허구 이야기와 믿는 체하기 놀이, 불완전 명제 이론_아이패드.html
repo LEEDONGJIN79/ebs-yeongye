@@ -1,0 +1,960 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>허구 이야기를 보는 두 시선 — 믿는 체하기 놀이와 불완전 명제  — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>허구 이야기를 보는 두 시선 — 믿는 체하기 놀이와 불완전 명제  — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>소설을 읽다가 주인공이 죽는 장면에서 눈물이 핑 돈 적, 한 번쯤 있죠? 그런데 가만 생각해 보면 이상해요. 우리는 그 인물이 <strong>실제로 존재하지 않는다</strong>는 걸 분명히 알아요. 흥부도, 놀부도 세상에 없었던 사람이고요. 없는 사람의 없는 일에 우리는 왜 슬퍼할까요? 그리고 "흥부는 마음씨가 착하다."라는 문장은, 흥부가 실제로 없으니 <strong>참일까요 거짓일까요?</strong></p>
+<p>이 단원은 바로 이 질문을 다루는 두 철학자의 생각을 비교합니다. 어려운 말로 하면 "허구(꾸며 낸 이야기) 속 문장은 무엇을 뜻하는가"를 따지는 <strong>언어철학·미학</strong> 이야기예요. 핵심 도구가 하나 있는데, 문장의 뜻을 두 겹으로 나눠 보는 거예요.</p>
+<ul>
+<li><strong>의미론적 내용</strong>: 누가 어떤 상황에서 말했든 상관없이, 문장 자체가 가리키는 내용. 쉽게 말해 "글자 그대로의 뜻"이에요.</li>
+<li><strong>사용상의 내용</strong>: 그 문장이 <em>실제 상황에서</em> 전달하는 내용. 즉 "이 자리에서 진짜로 통하는 뜻"이죠.</li>
+</ul>
+<p>연극 배우가 무대에서 "호랑이가 달려온다!"라고 외쳐도 우리가 그를 거짓말쟁이라 욕하지 않는 이유가 여기 있어요. 글자 그대로의 뜻(의미론적 내용)은 잠깐 꺼 두고, 무대라는 <strong>놀이 규칙 안에서만</strong> 통하는 뜻(사용상의 내용)으로 받아들이기로 약속했기 때문이에요.</p>
+<p>여기서 두 갈래 생각이 갈립니다. 한쪽(월턴)은 "허구 문장은 애초에 참·거짓을 따질 <strong>명제가 아니다</strong>. 그건 우리가 함께 하는 <strong>'믿는 체하기 놀이'의 소품</strong>일 뿐"이라고 봐요. 마치 소꿉놀이에서 진흙 떡을 진짜 떡인 <em>체하며</em> 노는 것처럼요. 다른 쪽(불완전 명제 이론)은 "아니다, 허구 문장도 분명히 의미론적 내용을 가진다. 다만 허구의 자리가 <strong>텅 비어 있는 명제</strong>, 즉 '불완전 명제'를 표현하는 것"이라고 맞서요.</p>
+<p>이 단원에서 우리는 이 두 시선을 나란히 놓고, 같은 현상(허구에 대한 우리의 감정·인식)을 두 이론이 어떻게 다르게 설명하는지 따라가 볼 거예요. 처음엔 추상적으로 느껴져도, 결국은 "왜 가짜 이야기에 우리가 진심으로 빠져드는가"라는, 누구나 한 번쯤 품어 본 궁금증으로 이어진답니다.</p>
+<hr /></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것 (개념 지도)</div></div>
+<div class='umap'>
+<div class='umap-center'>허구 이야기 속 문장은 무엇을 뜻하는가?<small>(의미론적 내용 ↔ 사용상의 내용)</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>EBS 지문의 두 이론, 곧 월턴의 '믿는 체하기 놀이'와 그것을 반박하는 '불완전 명제 이론'을 (가)·(나)로 나누어 정면으로 맞붙입니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>시야를 넓혀, "예술(허구를 포함한)을 어떻게 정의하고 비평할 것인가"를 둘러싼 여러 이론을 차례로 만나 봅니다. 허구 문장이 '사이비 명제'라는 발상이 어디서 오는지 자연스럽게 이어져요.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>"대상이 없는 이름을 포함한 문장의 참·거짓"이라는 핵심 쟁점을, 명제의 관계와 경우를 따지는 논리적 도구로 좀 더 정밀하게 다룹니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 다 풀고 나면, 같은 개념(허구 문장과 그 진릿값)을 <strong>이론 대결로, 비평의 적용으로, 논리적 분석으로</strong> 세 번 굴려 보게 됩니다.</p>
+<hr /></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>허구는 실제로 일어나지 않은, 꾸며 낸 이야기이다. 소설과 같은 허구 이야기를 이해하려면 문장 자체가 갖는 ‘의미론적 내용’과, 문장이 사용된 맥락 속에서 독자나 청자가 실제로 파악하는 ‘사용상의 내용’을 구별해야 한다. 의미론적 내용은 화자의 의도나 맥락과 무관하게 문장이 지시하는 내용 자체, 즉 명제이다. 사용상의 내용은 화자의 의도와 맥락에 따라 문장이 실제로 전달하는 내용이다. 일상적 진술에서는 두 내용이 대체로 일치하지만, 허구에서는 갈라진다.</p>
+<p>월턴은 이 구별을 이용해 허구 이야기를 ‘㉠<u>믿는 체하기 놀이</u>’로 해석한다. 허구 이야기는 독자나 청자가 그 내용이 실제가 아님을 알면서도 마치 실제인 것처럼 가정하고 참여하는 놀이라는 것이다. 따라서 허구 이야기 속 문장은 명제를 표현하는 형식이 아니라 놀이를 작동시키는 소품이다. 독자나 청자는 이 문장을 놀이 규칙 안에서 사실로 받아들여야 한다는 전제하에 그 사용상의 내용만을 수용한다. 가령 “한양의 어느 마을에 형제가 살았다.”라는 문장이 소설에 쓰이면, 이 문장의 의미론적 내용은 놀이에서 비활성화되고, 믿는 체하는 경우에 한해 이야기 안에서만 사실이라는 사용상의 내용을 전달할 뿐이다.</p>
+<p>이러한 접근은 허구에 대한 우리의 인식과 감정 반응을 설명하는 데 ⓐ<u>쓰인다</u>. 독자나 청자는 허구가 사실이 아님을 알면서도 마치 실제인 것처럼 인식하고 감정적으로 반응한다. 연극 중 배우가 “호랑이가 달려온다.”라고 외쳐도 누구도 그것을 사실로 여기지 않지만, 배우를 거짓말쟁이라고 비난하지 않는다. 이는 허구가 문장의 지시 내용을 언어로 표현하는 행위, 즉 언어 행위가 아니라 놀이로서의 특성을 ⓑ<u>갖기</u> 때문이다. 우리는 허구를 감상할 때 명제의 참과 거짓을 판단하는 대신, 문장들을 놀이의 소품으로 인식하며 슬퍼하거나 기뻐한다.</p>
+<p>월턴에 따르면, 어떤 인물을 가리키는 ‘허구 이름’을 포함하는 ㉡<u>허구 문장</u>은 참 또는 거짓을 판단할 수 있는 명제를 포함하지 않는다. 허구 이름이 지시하는 대상이 실제로 존재하지 않으므로 그 이름은 내용이 없으며, 이러한 이름을 포함하는 문장도 참이거나 거짓일 수 없다는 것이다. 이 관점은 허구 안의 사건들이 왜 참이나 거짓으로 평가되지 않는지, 그리고 우리가 등장인물에게 감정적으로 반응하면서도 그들이 실제로 존재하지 않음을 아는 이중적 태도를 어떻게 지닐 수 있는지 설명해 준다.</p>
+<p><strong>(나)</strong></p>
+<p>‘㉢<u>불완전 명제 이론</u>’은 허구 이야기 속 문장인 허구 문장도 일반 문장과 마찬가지로 의미론적 내용을 포함한다고 주장한다. 이 이론에 따르면, 허구 문장은 명제를 표현하되, 허구적 대상이 놓일 자리가 비어 있는 형태의 ‘불완전 명제’를 표현한다. 가령 “흥부는 가난하다.”라는 문장에서 ‘흥부’라는 이름은 가리킬 대상을 현실에서 찾지 못하므로, 이 문장은 ‘ ─은 가난하다’처럼 주어 자리가 채워지지 않은 명제를 ⓒ<u>나타낸다</u>. 빈자리가 있다는 점에서 불완전할 뿐, 명제가 아예 없는 것은 아니라는 것이다.</p>
+<p>이 이론은 빈자리가 ‘무엇으로’ 채워지는지를 맥락으로 설명한다. 허구 문장의 빈자리는 현실의 대상이 아니라, 해당 이야기가 구성한 허구 세계의 설정으로 채워진다. 독자는 이야기를 읽는 동안 그 세계의 설정을 빈자리에 ⓓ<u>넣어</u> 불완전 명제를 일시적으로 완성하며, 이렇게 완성된 명제에 대해서는 그 이야기 안에서 참과 거짓을 따질 수 있다. ‘흥부는 가난하다’는 「흥부전」의 설정 안에서 참이고, ‘흥부는 부유하다’는 거짓이다. 이때의 참·거짓은 현실세계가 아니라 이야기가 마련한 세계를 기준으로 정해진다.</p>
+<p>불완전 명제 이론은 월턴의 견해가 설명하기 어려운 지점을 짚는다. 월턴은 허구 문장이 명제를 포함하지 않는다고 보지만, 우리는 분명 “흥부가 제비 다리를 고친 것은 사실인가?”와 같이 이야기 안에서 참·거짓을 ⓔ<u>따진다</u>. 만약 허구 문장에 명제가 전혀 없다면 이런 물음 자체가 성립하지 않을 것이다. 불완전 명제 이론은 빈자리를 가진 명제라는 장치를 통해, 허구 문장이 의미론적 내용을 유지하면서도 그 진릿값이 현실이 아닌 이야기 세계에서 정해진다고 봄으로써, 허구 안에서의 참·거짓 판단을 설명한다. 다만 이 이론에 대해서는, 비어 있는 자리를 가진 것을 온전한 명제와 같은 자격으로 볼 수 있는지에 대한 의문이 제기되기도 한다.</p>
+<blockquote>
+<p><span class="boxmark">[참고]</span> 위 (가)·(나)에서 직접 인용으로 제시된 예시 문장들은 두 이론이 같은 사례를 어떻게 다르게 처리하는지 보이기 위한 것이다.</p>
+</blockquote></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 허구 문장이 의미론적 내용과 사용상의 내용으로 분리된다는 전제를 바탕으로 허구의 본질을 규명하고 있다.</li>
+<li>② (가)와 (나)는 모두 허구 문장의 진릿값을 판단할 수 없다는 결론을 공유하면서 그 근거를 서로 다르게 제시하고 있다.</li>
+<li>③ (가)와 달리 (나)는 허구 문장이 명제를 포함하는지를 쟁점으로 삼아 앞선 이론과 구별되는 견해를 제시하고 있다.</li>
+<li>④ (가)와 달리 (나)는 허구에 대한 감정 반응이 일어나는 심리적 기제를 분석하여 새로운 감상 이론을 정립하고 있다.</li>
+<li>⑤ (나)와 달리 (가)는 허구 이름이 지시하는 대상의 존재 여부를 유보한 채 문장의 형식만을 분석하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 두 글의 관계를 묻는 문항</strong> · 정답 ③
+(나)는 첫 문장에서 "허구 문장도 의미론적 내용을 포함한다"라고 선언하며, 월턴이 "허구 문장은 명제를 포함하지 않는다"라고 본 것과 정면으로 갈라서요. 즉 (나)의 핵심 쟁점은 <em>허구 문장이 명제를 담느냐 마느냐</em>이고, 이 점에서 앞선 이론(가)과 구별되는 견해를 내놓죠. 그래서 ③이 맞습니다.
+- ① 두 내용의 분리를 전제로 삼는 건 (가)예요. (나)는 오히려 의미론적 내용이 살아 있다고 봅니다. "모두"가 함정.
+- ② (가)는 진릿값 판단 불가, (나)는 이야기 안에서 판단 가능이라고 봐서, '결론을 공유'한다는 말이 틀렸어요.
+- ④ 감정 반응의 심리 기제를 다루는 건 (가)의 3문단이고, (나)의 주제가 아니에요.
+- ⑤ (가)는 대상의 존재 여부를 유보하지 않아요. "실제로 존재하지 않는다"라고 분명히 단정하죠.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠<u>믿는 체하기 놀이</u>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 참여자는 이야기의 내용이 실제가 아님을 알면서도 그것을 사실로 받아들이기로 한다.</li>
+<li>② 이야기 속 문장은 명제를 표현하는 형식이 아니라 놀이를 작동시키는 소품으로 기능한다.</li>
+<li>③ 참여자는 문장의 의미론적 내용을 비활성화한 채 사용상의 내용만을 수용한다.</li>
+<li>④ 놀이 규칙 안에서 사실로 받아들여야 한다는 전제가 충족될 때 사용상의 내용이 성립한다.</li>
+<li>⑤ 참여자가 문장을 사실로 받아들이는 까닭은 그 문장이 표현하는 명제가 참으로 입증되었기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>2번 — 특정 개념을 정확히 이해했는지 묻는 문항</strong> · 정답 ⑤
+믿는 체하기 놀이에서 참여자가 문장을 사실로 받아들이는 이유는 명제가 <em>참으로 입증되어서</em>가 아니에요. 오히려 월턴은 그 문장이 명제를 표현하지 않는다고 보죠. 참여자는 '놀이 규칙 안에서 사실로 받아들이기로 한 약속' 때문에 받아들이는 거예요. 그래서 ⑤가 적절하지 않습니다. ①~④는 2문단에 그대로 근거가 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉡<u>허구 문장</u>에 대한 (가)와 (나)의 입장을 분석한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가)는 허구 이름이 가리키는 대상이 없으므로 그 이름을 포함하는 문장에 참·거짓을 따질 명제가 담기지 않는다고 본다.</li>
+<li>② (나)는 허구 이름이 채울 대상을 찾지 못하더라도 그 문장이 빈자리를 가진 명제를 표현한다고 본다.</li>
+<li>③ (가)와 달리 (나)는 허구 문장이 의미론적 내용을 유지한다고 보아 그 문장에 대한 참·거짓 판단이 가능하다고 본다.</li>
+<li>④ (나)와 달리 (가)는 허구 문장의 참·거짓을 현실세계가 아니라 이야기가 마련한 세계를 기준으로 정한다고 본다.</li>
+<li>⑤ (가)와 (나)는 모두 허구 이름이 현실에서 지시 대상을 갖지 못한다는 점은 인정한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>3번 — 두 입장을 견주어 분석하는 문항</strong> · 정답 ④
+선지 ④는 주어를 바꿔 끼운 함정이에요. 허구 문장의 참·거짓을 "이야기가 마련한 세계를 기준으로" 정하는 쪽은 (가)가 아니라 (나)예요((나) 2~3문단). (가)는 애초에 참·거짓을 따질 수 없다고 봤죠. "(나)와 달리 (가)는"이라고 주체를 뒤집었으니 틀렸습니다.
+- ① (가) 4문단 그대로. ② (나) 1문단. ③ (나)는 의미론적 내용을 유지하므로 이야기 안에서 판단이 가능하다고 봐요. ⑤ 양쪽 모두 '현실에 대상이 없다'는 사실은 인정합니다(가: 존재하지 않는다 / 나: 채울 대상을 찾지 못한다).</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>〈보기〉는 (가)와 (나)의 입장에서 학생이 나눈 가상의 대화이다. ㉮에 들어갈 내용으로 가장 적절한 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>학생 A(월턴의 입장):</strong> 무대에서 배우가 “호랑이가 달려온다.”라고 외칠 때, 그 말은 참도 거짓도 아니야. 우리는 그 말을 놀이의 소품으로 받아들여 무서워하는 <em>체할</em> 뿐이거든.
+<strong>학생 B(불완전 명제 이론의 입장):</strong> 하지만 관객이 “지금 무대에 정말 호랑이가 있나?”라고 물어 “아니, 호랑이가 달려오는 것으로 되어 있어.”라고 답할 수 있다면, 그 말에는 따져 볼 내용이 있는 셈이지. 그래서 나는 〔 ㉮ 〕고 봐.</p>
+</blockquote>
+<ul>
+<li>① 그 말이 표현하는 명제가 현실세계에서 참으로 확정되기 전까지는 관객이 감정 반응을 보일 수 없다</li>
+<li>② 그 말은 빈자리를 가진 명제를 표현하며, 그 빈자리가 연극의 설정으로 채워져 그 연극이 마련한 이야기 세계 안에서 참·거짓이 정해진다</li>
+<li>③ 그 말은 명제를 전혀 포함하지 않으므로 관객의 물음은 애초에 성립할 수 없는 잘못된 물음이다</li>
+<li>④ 그 말의 의미론적 내용과 사용상의 내용이 일치할 때에만 관객이 그것을 사실로 받아들일 수 있다</li>
+<li>⑤ 그 말은 현실의 대상을 지시하므로 관객은 그 지시가 옳은지를 현실세계를 기준으로 검증해야 한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 〈보기〉에 두 이론을 적용하는 문항</strong> · 정답 ②
+학생 B는 불완전 명제 이론의 입장이에요. 이 이론의 핵심은 <em>허구 문장이 빈자리를 가진 명제를 표현하고, 그 빈자리가 이야기(여기서는 연극)의 설정으로 채워져 그 이야기 세계 안에서 참·거짓이 정해진다</em>는 것이죠. ㉮에는 바로 이 주장이 들어가야 하므로 ②가 맞습니다.
+- ① '현실세계에서 참으로 확정'은 불완전 명제 이론과 어긋나요(이야기 세계 기준).
+- ③ 명제를 전혀 포함하지 않는다는 건 월턴(A)의 입장이라 B의 말이 될 수 없어요.
+- ④ 두 내용의 일치는 (가)·(나) 어느 쪽 핵심 주장도 아니고, B의 논점도 아니에요.
+- ⑤ '현실의 대상을 지시한다'는 불완전 명제 이론과 정반대(대상이 없어 빈자리라고 했죠).</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ<u>쓰인다</u>: 활용된다</li>
+<li>② ⓑ<u>갖기</u>: 띠기</li>
+<li>③ ⓒ<u>나타낸다</u>: 표상한다</li>
+<li>④ ⓓ<u>넣어</u>: 대입하여</li>
+<li>⑤ ⓔ<u>따진다</u>: 망라한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 어휘를 바꿔 쓰는 문항</strong> · 정답 ⑤
+ⓔ'따진다'는 '참인지 거짓인지 옳고 그름을 가린다'는 뜻이에요. '망라한다'는 '빠짐없이 모아 다룬다'는 뜻이라 호응하지 않죠. 그래서 ⑤가 부적절합니다. ①활용된다·②띠기·③표상한다·④대입하여는 각각 문맥에서 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><ul>
+<li><strong>핵심 용어</strong></li>
+<li><strong>의미론적 내용</strong>: 맥락과 무관하게 문장 자체가 지시하는 내용(명제).</li>
+<li><strong>사용상의 내용</strong>: 실제 맥락에서 그 문장이 전달하는 내용.</li>
+<li><strong>믿는 체하기 놀이</strong>: 허구를 실제인 <em>체하며</em> 함께하는 놀이로 보는 월턴의 관점. 허구 문장 = 놀이의 소품.</li>
+<li><strong>허구 이름</strong>: 흥부처럼 현실에 지시 대상이 없는 이름.</li>
+<li>
+<p><strong>불완전 명제</strong>: 허구적 대상의 자리가 비어 있는 명제. 이야기 설정으로 빈자리가 채워진다고 보는 관점.</p>
+</li>
+<li>
+<p><strong>개념 한눈에</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>쟁점</th>
+<th>월턴(가)</th>
+<th>불완전 명제 이론(나)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>허구 문장은 명제를 담는가</td>
+<td>담지 않음(소품)</td>
+<td>담음(빈자리 명제)</td>
+</tr>
+<tr>
+<td>의미론적 내용은</td>
+<td>비활성화</td>
+<td>유지됨</td>
+</tr>
+<tr>
+<td>참·거짓 판단은</td>
+<td>불가</td>
+<td>이야기 세계 안에서 가능</td>
+</tr>
+<tr>
+<td>설명의 강점</td>
+<td>감정 반응의 이중적 태도</td>
+<td>이야기 안 참·거짓 물음</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>확인 질문</strong></li>
+<li>월턴이 "배우를 거짓말쟁이라 비난하지 않는다"는 사실로 보이려 한 것은? → <em>허구가 언어 행위가 아니라 놀이라는 점.</em></li>
+<li>불완전 명제 이론에서 '흥부는 가난하다'가 참이 되는 기준은? → <em>현실세계가 아니라 「흥부전」이 마련한 이야기 세계.</em></li>
+</ul>
+<hr /></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 수능 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>㉠정립-반정립-종합. 변증법의 논리적 구조를 일컫는 말이다. 변증법에 따라 철학적 논증을 수행한 인물로는 단연 헤겔이 거명된다. 변증법은 대등한 위상을 지니는 세 범주의 병렬이 아니라, 대립적인 두 범주가 조화로운 통일을 이루어 가는 수렴적 상향성을 구조적 특징으로 한다. 헤겔에게서 변증법은 논증의 방식임을 넘어, 논증 대상 자체의 존재 방식이기도 하다. 즉 세계의 근원적 질서인 '이념'의 내적 구조도, 이념이 시ㆍ공간적 현실로서 드러나는 방식도 변증법적이기에, 이념과 현실은 하나의 체계를 이루며, 이 두 차원의 원리를 밝히는 철학적 논증도 변증법적 체계성을 ⓐ지녀야 한다.</p>
+<p>헤겔은 미학도 철저히 변증법적으로 구성된 체계 안에서 다루고자 한다. 그에게서 미학의 대상인 예술은 종교, 철학과 마찬가지로 '절대정신'의 한 형태이다. 절대정신은 절대적 진리인 '이념'을 인식하는 인간 정신의 영역을 ⓑ가리킨다. 예술ㆍ종교ㆍ철학은 절대적 진리를 동일한 내용으로 하며, 다만 인식 형식의 차이에 따라 구분된다. 절대정신의 세 형태에 각각 대응하는 형식은 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>이다. '직관'은 주어진 물질적 대상을 감각적으로 지각하는 지성이고, '표상'은 물질적 대상의 유무와 무관하게 내면에서 심상을 떠올리는 지성이며, '사유'는 대상을 개념을 통해 파악하는 순수한 논리적 지성이다. 이에 세 형태는 각각 '직관하는 절대정신', '표상하는 절대정신', '사유하는 절대정신'으로 규정된다. 헤겔에 따르면 직관의 외면성과 표상의 내면성은 사유에서 종합되고, 이에 맞춰 예술의 객관성과 종교의 주관성은 철학에서 종합된다.</p>
+<p>형식 간의 차이로 인해 내용의 인식 수준에는 중대한 차이가 발생한다. 헤겔에게서 절대정신의 내용인 절대적 진리는 본질적으로 논리적이고 이성적인 것이다. 이러한 내용을 예술은 직관하고 종교는 표상하며 철학은 사유하기에, 이 세 형태 간에는 단계적 등급이 매겨진다. 즉 예술은 초보 단계의, 종교는 성장 단계의, 철학은 완숙 단계의 절대정신이다. 이에 따라 ㉡예술-종교-철학 순의 진행에서 명실상부한 절대정신은 최고의 지성에 의거하는 것, 즉 철학뿐이며, 예술이 절대정신으로 기능할 수 있는 것은 인류의 보편적 지성이 미발달된 머나먼 과거로 한정된다.</p>
+<p>(나)</p>
+<p>변증법의 매력은 '종합'에 있다. 종합의 범주는 두 대립적 범주 중 하나의 일방적 승리로 ⓒ끝나도 안 되고, 두 범주의 고유한 본질적 규정이 소멸되는 중화 상태로 나타나도 안 된다. 종합은 양자의 본질적 규정이 유기적 조화를 이루어 질적으로 고양된 최상의 범주가 생성됨으로써 성립하는 것이다.</p>
+<p>헤겔이 강조한 변증법의 탁월성도 바로 이것이다. 그러기에 변증법의 원칙에 최적화된 엄밀하고도 정합적인 학문 체계를 조탁하는 것이 바로 그의 철학적 기획이 아니었던가. 그런데 그가 내놓은 성과물들은 과연 그 기획을 어떤 흠결도 없이 완수한 것으로 평가될 수 있을까? 미학에 관한 한 '그렇다'는 답변은 쉽지 않을 것이다. 지성의 형식을 직관-표상-사유 순으로 구성하고 이에 맞춰 절대정신을 예술-종교-철학 순으로 편성한 전략은 외관상으로는 변증법 모델에 따른 전형적 구성으로 보인다. 그러나 실질적 내용을 ⓓ보면 직관으로부터 사유에 이르는 과정에서는 외면성이 점차 지워지고 내면성이 점증적으로 강화ㆍ완성되고 있음이, 예술로부터 철학에 이르는 과정에서는 객관성이 점차 지워지고 주관성이 점증적으로 강화ㆍ완성되고 있음이 확연히 드러날 뿐, 진정한 변증법적 종합은 ⓔ이루어지지 않는다. 직관의 외면성 및 예술의 객관성의 본질은 무엇보다도 감각적 지각성인데, 이러한 핵심 요소가 그가 말하는 종합의 단계에서는 완전히 소거되고 만다.</p>
+<p>변증법에 충실하려면 헤겔은 철학에서 성취된 완전한 주관성이 재객관화되는 단계의 절대정신을 추가했어야 할 것이다. 예술은 '철학 이후'의 자리를 차지할 수 있는 유력한 후보이다. 실제로 많은 예술 작품은 '사유'를 매개로 해서만 설명되지 않는가. 게다가 이는 누구보다도 풍부한 예술적 체험을 한 헤겔 스스로가 잘 알고 있지 않은가. 이 때문에 방법과 철학 체계 간의 이러한 불일치는 더욱 아쉬움을 준다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 특정한 철학적 방법에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하고 있다.</li>
+<li>② (가)와 (나)는 모두 특정한 철학적 방법에 대한 상반된 평가를 바탕으로 더 설득력 있는 미학 이론을 모색하고 있다.</li>
+<li>③ (가)와 달리 (나)는 특정한 철학적 방법의 시대적 한계를 지적하고 이에 맞서는 혁신적 방법을 제안하고 있다.</li>
+<li>④ (가)와 달리 (나)는 특정한 철학적 방법에서 파생된 미학 이론을 바탕으로 예술 장르를 범주적으로 유형화하고 있다.</li>
+<li>⑤ (나)와 달리 (가)는 특정한 철학적 방법의 통시적인 변화 과정을 적용하여 철학사를 단계적으로 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong><br />
+(가)는 변증법에 기반한 헤겔 미학에서 예술이 초보 단계의 절대정신으로 평가됨을 설명하고, (나)는 변증법에 충실하면 예술이 '철학 이후'의 자리를 차지할 수 있다고 본다. 두 글 모두 변증법(특정한 철학적 방법)에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하므로 ①이 적절하다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①48.1% ②12.0% ③25.8% ④8.6% ⑤5.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 헤겔의 생각으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 예술ㆍ종교ㆍ철학 간에는 인식 내용의 동일성과 인식 형식의 상이성이 존재한다.</li>
+<li>② 세계의 근원적 질서와 시ㆍ공간적 현실은 하나의 변증법적 체계를 이룬다.</li>
+<li>③ 절대정신의 세 가지 형태는 지성의 세 가지 형식이 인식하는 대상이다.</li>
+<li>④ 변증법은 철학적 논증의 방법이자 논증 대상의 존재 방식이다.</li>
+<li>⑤ 절대정신의 내용은 본질적으로 논리적이고 이성적인 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+예술·종교·철학은 직관·표상·사유라는 인식 형식의 차이에 따라 구분되는 절대정신의 세 형태이지, 지성의 세 형식이 '인식하는 대상'이 아니다. 세 형태가 인식하는 대상(내용)은 절대적 진리인 '이념'이다. 따라서 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,555명 — ①14.7% ②12.1% ③54.8% ④9.3% ⑤9.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)에 따라 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>의 개념을 적용한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 먼 타향에서 밤하늘의 별들을 바라보는 것은 직관을 통해, 같은 곳에서 고향의 하늘을 상기하는 것은 표상을 통해 이루어지겠군.</li>
+<li>② 타임머신을 타고 미래로 가는 자신의 모습을 상상하는 것과, 그 후 판타지 영화의 장면을 떠올려 보는 것은 모두 표상을 통해 이루어지겠군.</li>
+<li>③ 초현실적 세계가 묘사된 그림을 보는 것은 직관을 통해, 그 작품을 상상력 개념에 의거한 이론에 따라 분석하는 것은 사유를 통해 이루어지겠군.</li>
+<li>④ 예술의 새로운 개념을 설정하는 것은 사유를 통해, 이를 바탕으로 새로운 감각을 일깨우는 작품의 창작을 기획하는 것은 직관을 통해 이루어지겠군.</li>
+<li>⑤ 도덕적 배려의 대상을 생물학적 상이성 개념에 따라 규정하는 것과, 이에 맞서 감수성 소유 여부를 새로운 기준으로 제시하는 것은 모두 사유를 통해 이루어지겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+직관은 '주어진 물질적 대상을 감각적으로 지각하는 지성'이다. 새로운 감각을 일깨우는 작품의 창작을 '기획'하는 것은 주어진 물질적 대상을 감각적으로 지각하는 일이 아니므로 직관에 해당하지 않는다. 따라서 ④가 잘못된 적용이다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①4.0% ②6.7% ③9.4% ④69.3% ⑤10.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(나)의 글쓴이의 관점에서 ㉠과 ㉡에 대한 헤겔의 이론을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠과 ㉡ 모두에서 첫 번째와 두 번째의 범주는 서로 대립한다.</li>
+<li>② ㉠과 ㉡ 모두에서 두 번째와 세 번째 범주 간에는 수준상의 차이가 존재한다.</li>
+<li>③ ㉠과 달리 ㉡에서는 범주 간 이행에서 첫 번째 범주의 특성이 갈수록 강해진다.</li>
+<li>④ ㉡과 달리 ㉠에서는 세 번째 범주에서 첫 번째와 두 번째 범주의 조화로운 통일이 이루어진다.</li>
+<li>⑤ ㉡과 달리 ㉠에서는 범주 간 이행에서 수렴적 상향성이 드러난다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong><br />
+(나)의 글쓴이는 예술-종교-철학(㉡)의 이행에서 첫 번째 범주(예술)의 본질인 객관성(감각적 지각성)이 점차 지워진다고 보았다. 즉 ㉡에서 첫 번째 범주의 특성은 갈수록 '약해'지므로, 갈수록 강해진다고 한 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①9.9% ②12.2% ③52.2% ④14.8% ⑤10.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 헤겔과 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>헤겔:</strong> 괴테와 실러의 문학 작품을 읽을 때 놓치지 않아야 할 점이 있네. 이 두 천재도 인생의 완숙기에 이르러서야 비로소 최고의 지성적 통찰을 진정한 예술미로 승화시킬 수 있었네. 그에 비해 초기의 작품들은 미적으로 세련되지 못해 결코 수준급이라 할 수 없었는데, 이는 그들이 아직 지적으로 미성숙했기 때문이었네.
+<strong>(나)의 글쓴이:</strong> 방금 그 말씀과 선생님의 기본 논증 방법을 연결하면 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 이론에서는 대립적 범주들의 종합을 이루어야 하는 세 번째 단계가 현실에서는 그 범주들을 중화한다</li>
+<li>② 이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다</li>
+<li>③ 이론에서는 반정립 단계에 위치하는 예술이 현실에서는 정립 단계에 있는 것으로 나타난다</li>
+<li>④ 이론에서는 객관성을 본질로 하는 예술이 현실에서는 객관성이 사라진 주관성을 지닌다</li>
+<li>⑤ 이론에서는 절대정신으로 규정되는 예술이 현실에서는 진리의 인식을 수행할 수 없다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+헤겔의 이론에서 예술은 직관(외면성)에 대응하는 초보 단계의 절대정신이다. 그런데 〈보기〉에서 헤겔은 괴테와 실러가 완숙기의 '최고의 지성적 통찰'을 진정한 예술미로 승화시켰다고 말한다. 이는 사유(내면성)를 바탕으로 한 예술이 현실에 존재함을 인정한 것이므로, 이론과 연결하면 '이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다'(②)는 말이 된다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①10.9% ②33.4% ③12.1% ④30.8% ⑤13.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 소지(所持)하여야</li>
+<li>② ⓑ: 포착(捕捉)한다</li>
+<li>③ ⓒ: 귀결(歸結)되어도</li>
+<li>④ ⓓ: 간주(看做)하면</li>
+<li>⑤ ⓔ: 결성(結成)되지</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong><br />
+'귀결되다'는 '어떤 결말이나 결과에 이르게 되다'라는 뜻으로, ⓒ'끝나도'와 바꾸어 쓰기에 적절하다(③).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.4% ②3.4% ③67.3% ④3.1% ⑤17.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>미학은 예술과 미적 경험에 관한 개념과 이론을 다루는 철학의 한 분야이며, 그 핵심 물음 가운데 하나가 ‘예술이란 무엇인가’이다. 예술이 자연에 대한 모방이라는 생각에서 비롯된 ㉠<u>모방론</u>은, 대상과 그 재현이 닮은꼴이어야 한다는 재현의 충실성을 ⓐ<u>내세운다</u>. 그러나 외부 세계를 의도적으로 왜곡해 표현하는 화풍이 등장하면서, 닮음을 필수 조건으로 삼는 모방론은 그러한 작품을 예술로 인정하기 어려웠다. 이에 모방을 조건으로 삼지 않고도 예술을 규정할 새로운 이론이 요구되었다.</p>
+<p>이 요구에 응한 것이 표현론과 형식론이다. ㉡<u>표현론</u>은 진지한 관념이나 감정과 같은 예술가의 마음을 예술의 조건으로 규정한다. 이에 따르면 진정한 예술 작품은 반드시 물리적 소재로 구성될 필요가 없는 정신적 대상이다. 비슷한 시기에 발전한 형식론은 외부 세계나 작가의 내면보다 작품 자체의 고유한 형식을 ⓑ<u>앞세운다</u>. 형식론은 예술 감각을 지닌 비평가만이 직관적으로 식별할 수 있고 정의는 불가능한 어떤 성질, 곧 ‘의미 있는 형식’을 통해 그 비평가에게 미적 정서를 일으키는 작품을 예술로 본다.</p>
+<p>이후 일상적 사물을 그대로 전시한 작품이, 형식적으로 동일한 일반 사물과 달리 왜 예술로 인정되는지를 기존 이론이 설명하지 못하게 되자 두 갈래 대응이 나타났다. 하나는 ㉢<u>예술 정의 불가론</u>이다. 이것은 우리가 흔히 예술로 분류하는 미술·연극·문학·음악 등이 서로 이질적이어서, 그것들을 모두 아우르는 공통된 본질을 찾을 수 없다고 본다. 나아가 예술을 정의하려는 기존 이론들이 겉으로는 명제의 형태를 띠지만 실은 참과 거짓을 판정할 수 없는 사이비 명제이므로, 예술의 정의에 관한 논의 자체가 불필요하다고 ⓒ<u>여긴다</u>.</p>
+<p>다른 하나는 ㉣<u>제도론</u>이다. 제도론은 예술계라는 사회 제도에 속한 누군가에 의해 ‘감상의 후보’ 자격을 받은 인공물을 예술로 규정한다. 어떤 작품이 특정 기준에서 훌륭하므로 예술이라 부를 수 있다는 평가적 이론과 달리, 제도론은 일정한 절차와 관례를 거치기만 하면 예술로 볼 수 있다는 분류적 이론이다. 이로써 형식이 같은 두 사물 중 하나만 예술이 되는 까닭을, 사물의 성질이 아니라 그것이 놓인 제도적 절차에서 찾는다.</p>
+<p><strong>(나)</strong></p>
+<p>예술 작품을 어떻게 감상하고 비평할 것인가에 대해서도 견해가 갈린다. 작품의 의미와 가치에 대한 해석과 판단은 비평의 목적과 태도에 따라 달라진다. 주요 비평 방법으로는 맥락주의 비평, 형식주의 비평, 인상주의 비평이 있다.</p>
+<p>맥락주의 비평은 작품이 창작된 사회적·역사적 배경에 주목한다. 이 비평은 예술가가 살던 시대의 환경, 정치·경제·문화적 상황, 작품이 사회에 미치는 효과 등을 비평의 중요한 근거로 삼는다. 작품이 예술가가 속한 문화의 상징과 믿음을 구체화하며 그 사회의 특성을 반영한다고 보기 때문이다. 맥락주의 비평은 작가의 심리 상태와 이념까지 포함해 가급적 많은 자료를 ⓓ<u>모아</u> 작품을 해석한다.</p>
+<p>그러나 객관적 자료에 기대는 맥락주의 비평은 작품 외적 요소에 치우쳐 작품의 본질을 놓칠 우려가 있다는 지적을 받는다. 이를 보완하는 것이 형식주의 비평과 인상주의 비평이다. 형식주의 비평은 외적 요인 대신 작품의 형식적 요소와 그 요소들 사이의 구조적 짜임새를 중시한다. 이 비평은 작품에 표현된 사물이나 풍경 같은 내용보다, 선·색·형태 등의 조형 요소와 비례·율동·강조 같은 조형 원리를 작품의 우수성을 ⓔ<u>가리는</u> 기준으로 삼는다.</p>
+<p>인상주의 비평은 분석적 비평 전반에 회의적이어서, 예술을 어떤 규칙이나 객관적 자료로 판단할 수 없다고 본다. 인상주의 비평은 비평가가 다른 권위 있는 비평가의 관점과 무관하게 자신의 생각과 느낌에 대해 자율성과 창의성을 발휘해 비평하는 것이다. 즉 인상주의 비평가는 작가의 의도나 외적 요인을 고려할 필요 없이, 자유로운 상상력으로 작품을 해석하고 판단한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)와 (나)의 공통적인 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 하나의 사례를 중심으로 여러 이론을 시대순으로 나열하고 있다.</li>
+<li>② 대립하는 관점들이 하나로 수렴되어 가는 역사적 과정을 밝히고 있다.</li>
+<li>③ 화제와 관련된 여러 입장을 제시하며 그 차이가 드러나도록 설명하고 있다.</li>
+<li>④ 화제에 대한 상반된 이론을 평가하여 하나의 종합적 결론을 도출하고 있다.</li>
+<li>⑤ 화제가 사회에 미친 영향을 분석하여 입장들 사이의 우열을 가리고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>6번 — 두 글의 서술 방식을 묻는 문항</strong> · 정답 ③
+(가)는 모방론·표현론·형식론·예술 정의 불가론·제도론이라는 여러 입장을, (나)는 맥락주의·형식주의·인상주의 비평이라는 여러 입장을 늘어놓고 <em>서로 어떻게 다른지</em>가 드러나게 설명해요. 그래서 ③이 맞습니다.
+- ① '하나의 사례 중심'이 아니에요. ② 입장들이 하나로 '수렴'하지 않아요. ④ 평가해서 '하나의 종합 결론'을 내리지 않아요. ⑤ 사회적 영향을 분석해 우열을 가리지도 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(가)의 형식론에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 미적 정서를 일으킬 수 있는 어떤 성질을 근거로 예술 여부를 판단한다.</li>
+<li>② 모든 관람객이 직관적으로 식별할 수 있는 형식을 통해 예술 여부를 판단한다.</li>
+<li>③ 감정을 표현한 작품이라면 정신적 대상이라도 모두 예술이라고 주장한다.</li>
+<li>④ 작품이 창작된 시대적 배경을 형식적 요소로 환원하여 평가한다.</li>
+<li>⑤ 사회 제도가 부여한 절차를 거친 작품만을 예술로 분류한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 특정 이론을 정확히 이해했는지 묻는 문항</strong> · 정답 ①
+형식론은 '의미 있는 형식'이 일으키는 미적 정서를 기준으로 예술 여부를 가려요(2문단). 그래서 ①이 맞습니다.
+- ② '모든 관람객'이 아니라 '예술 감각을 지닌 비평가'만 식별해요. "모든"이 함정.
+- ③ 감정 표현은 표현론의 조건이에요(형식론 아님). ④ 시대적 배경은 형식론이 다루지 않아요. ⑤ 절차로 예술을 가리는 건 제도론이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>(가)에 등장하는 이론의 관점에서 상대의 견해를 평가한 말로 적절하지 않은 것은?</p>
+<ul>
+<li>① 표현론자가 모방론자에게: 대상을 충실히 재현하기만 하면, 예술가의 감정이 담기지 않은 작품도 예술로 인정하는 당신의 견해는 받아들일 수 없습니다.</li>
+<li>② 모방론자가 형식론자에게: 닮음이라는 조건 없이 ‘의미 있는 형식’만으로 예술을 가린다면, 무엇이 무엇을 재현했는지를 따질 기준이 사라집니다.</li>
+<li>③ 제도론자가 예술 정의 불가론자에게: 절차와 관례라는 공통 요소로 예술을 분류할 수 있으므로, 공통된 요소가 없다는 당신의 주장은 성립하지 않습니다.</li>
+<li>④ 예술 정의 불가론자가 모방론자에게: 당신이 예술을 규정할 때 쓰는 명제는 참과 거짓을 판정할 수 없으므로, 그 정의는 받아들일 수 없습니다.</li>
+<li>⑤ 형식론자가 제도론자에게: 당신의 견해는 작품의 형식이 지닌 ‘의미 있는 형식’을 직관으로 식별해야만 예술이 성립함을 인정하는 것입니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 입장들이 서로를 비판하는 문항</strong> · 정답 ⑤
+형식론자는 '의미 있는 형식'을 직관으로 식별하는 쪽이에요. 그런데 ⑤는 <em>제도론자</em>가 그것을 인정한다는 식으로 두 이론을 뒤섞었어요. 제도론은 절차와 관례로 예술을 분류하지, 형식의 직관적 식별을 조건으로 삼지 않죠. 그래서 ⑤가 부적절합니다. ①~④는 각 이론이 상대 이론의 약점을 정확히 짚고 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>다음은 미술 전람회에 다녀온 학생이 (가)와 (나)를 읽고 작성한 메모이다. 메모의 내용으로 적절하지 않은 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈메모〉</strong>
+작품 「오래된 의자」 — 화가 B가, 목수였던 자기 아버지가 평생 쓰던 낡은 의자를 보고 그린 그림. 화가 B는 성실하게 한 가지 일을 지켜 온 아버지의 태도에서 자신의 예술관을 길어 올렸다고 한다. 작품 전체에 차분한 갈색 계열이 쓰였다.
+- 표현론의 관점으로 보면, 화가 B가 낡은 의자를 그린 데에서 아버지에 대한 존경의 마음을 읽어 낼 수 있겠군. … ①
+- 예술 정의 불가론의 관점으로 보면, 이 그림이 예술인지 아닌지를 정의로 가리려는 시도 자체가 불필요하다고 볼 수 있겠군. … ②
+- 제도론의 관점으로 보면, 이 의자가 특별한 까닭은 원래 주인이 목수였다는 사실 자체에 있다고 보아 그림을 예술로 평가할 수 있겠군. … ③
+- 형식주의 비평의 관점으로 보면, 차분한 갈색 계열을 짜임새 있게 구성한 점에서 이 그림이 우수하다고 말할 수 있겠군. … ④
+- 인상주의 비평의 관점으로 보면, 낡은 의자를 보고 떠오른 나 자신의 지난날의 위안을 비평에 담을 수 있겠군. … ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 〈보기〉에 이론을 적용하는 문항</strong> · 정답 ③
+제도론에서 어떤 작품이 예술이 되는 까닭은 '의자의 원래 주인이 목수였다는 사실' 같은 사물의 성질에 있는 게 아니에요. 예술계의 <em>절차와 관례를 거쳐 감상의 후보 자격을 받았는지</em>에 있죠. ③은 이 핵심을 사물의 성질로 바꿔치기한 함정이라 적절하지 않습니다. ①은 표현론(예술가의 마음), ②는 정의 불가론, ④는 형식주의 비평, ⑤는 인상주의 비평에 정확히 들어맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ<u>내세운다</u>: 전제한다</li>
+<li>② ⓑ<u>앞세운다</u>: 우선시한다</li>
+<li>③ ⓒ<u>여긴다</u>: 간주한다</li>
+<li>④ ⓓ<u>모아</u>: 망라하여</li>
+<li>⑤ ⓔ<u>가리는</u>: 유보하는</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 어휘를 바꿔 쓰는 문항</strong> · 정답 ⑤
+ⓔ'가리는'은 '우수한지 아닌지를 판가름하는' 뜻이에요. '유보하는'은 '판단을 미루는' 뜻이라 정반대죠. 그래서 ⑤가 부적절합니다. ①전제한다·②우선시한다·③간주한다·④망라하여는 각 자리에서 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><ul>
+<li><strong>핵심 용어</strong></li>
+<li><strong>모방론</strong>: 예술은 대상의 충실한 재현이라는 견해.</li>
+<li><strong>표현론</strong>: 예술가의 진지한 감정·관념을 예술의 조건으로 보는 견해.</li>
+<li><strong>형식론</strong>: '의미 있는 형식'이 일으키는 미적 정서로 예술을 규정하는 견해.</li>
+<li><strong>예술 정의 불가론</strong>: 예술의 공통 본질을 찾을 수 없어 정의 논의가 불필요하다는 견해. 기존 정의를 '사이비 명제'로 봄.</li>
+<li>
+<p><strong>제도론</strong>: 예술계의 절차·관례를 거쳐 감상의 후보가 된 인공물을 예술로 보는 분류적 이론.</p>
+</li>
+<li>
+<p><strong>개념 한눈에</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>이론</th>
+<th>예술의 조건</th>
+<th>핵심어</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모방론</td>
+<td>대상의 충실한 재현</td>
+<td>닮음</td>
+</tr>
+<tr>
+<td>표현론</td>
+<td>예술가의 감정·관념</td>
+<td>정신적 대상</td>
+</tr>
+<tr>
+<td>형식론</td>
+<td>의미 있는 형식</td>
+<td>미적 정서</td>
+</tr>
+<tr>
+<td>정의 불가론</td>
+<td>(정의 자체를 거부)</td>
+<td>사이비 명제</td>
+</tr>
+<tr>
+<td>제도론</td>
+<td>제도적 절차·관례</td>
+<td>감상의 후보</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>확인 질문</strong></li>
+<li>예술 정의 불가론이 기존 정의 이론을 '사이비 명제'라 부른 까닭은? → <em>참·거짓을 판정할 수 없는 진술이라고 보기 때문.</em> (세트 1에서 본 '허구 문장의 진릿값' 쟁점과 연결돼요.)</li>
+<li>형식이 같은 두 사물 중 하나만 예술이 되는 까닭을, 제도론은 어디서 찾는가? → <em>사물의 성질이 아니라 제도적 절차에서.</em></li>
+</ul>
+<hr /></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 9월 [20~25]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>미학은 예술과 미적 경험에 관한 개념과 이론에 대해 논의하는 철학의 한 분야로서, 미학의 문제들 가운데 하나가 바로 예술의 정의에 대한 문제이다. 예술이 자연에 대한 모방이라는 아리스토텔레스의 말에서 비롯된 모방론은, 대상과 그 대상의 재현이 닮은꼴이어야 한다는 재현의 투명성 이론을 ⓐ전제한다. 그러나 예술가의 독창적인 감정 표현을 중시하는 한편 외부 세계에 대한 왜곡된 표현을 허용하는 낭만주의 사조가 18세기 말에 등장하면서, 모방론은 많이 쇠퇴했다. 이제 모방을 필수 조건으로 삼지 않는 낭만주의 예술가의 작품을 예술로 인정해 줄 수 있는 새로운 이론이 필요했다.</p>
+<p>20세기 초에 콜링우드는 진지한 관념이나 감정과 같은 예술가의 마음을 예술의 조건으로 규정하는 표현론을 제시하여 이 문제를 해결하였다. 그에 따르면, 진정한 예술 작품은 물리적 소재를 통해 구성될 필요가 없는 정신적 대상이다. 또한 이와 비슷한 ⓑ시기에 외부 세계나 작가의 내면보다 작품 자체의 고유 형식을 중시하는 형식론도 발전했다. 벨의 형식론은 예술 감각이 있는 비평가들만이 직관적으로 식별할 수 있고 정의는 불가능한 어떤 성질을 일컫는 ‘의미 있는 형식’을 통해 그 비평가들에게 미적 정서를 유발하는 작품을 예술 작품이라고 보았다.</p>
+<p>20세기 중반에, 뒤샹이 변기를 가져다 전시한 「샘」이라는 작품은 예술 작품으로 인정되지만 그것과 형식적인 면에서 차이가 없는 일반적인 변기는 예술 작품으로 인정되지 않는 이유를 설명하지 못하게 되자 두 가지 대응 이론이 나타났다. 하나는 우리가 흔히 예술 작품으로 분류하는 미술, 연극, 문학, 음악 등이 서로 이질적이어서 그것들 전체를 아울러 예술이라 정의할 수 있는 공통된 요소를 갖지 않는다는 웨이츠의 예술 정의 불가론이다. 그의 이론은 예술의 정의에 대한 기존의 이론들이 겉보기에는 명제의 형태를 취하고 있으나 사실은 참과 거짓을 판정할 수 없는 사이비 명제이므로, 예술의 정의에 대한 논의 자체가 불필요하다는 견해를 대변한다.</p>
+<p>다른 하나는 예술계라는 어떤 사회 제도에 속하는 한 사람 또는 여러 사람에 의해 감상의 후보 자격을 수여받은 인공물을 예술 작품으로 규정하는 디키의 제도론이다. 하나의 작품이 어떤 특정한 기준에서 훌륭하므로 예술 작품이라고 부를 수 있다는 평가적 ⓒ이론들과 달리, 디키의 견해는 일정한 절차와 관례를 거치기만 하면 모두 예술 작품으로 볼 수 있다는 분류적 이론이다. 예술의 정의와 관련된 이 논의들은 예술로 분류할 수 있는 작품들의 공통된 본질을 찾는 시도이자 예술의 필요충분조건을 찾는 시도이다.</p>
+<p>(나)</p>
+<p>예술 작품을 어떻게 감상하고 비평해야 하는지에 대해 다양한 논의들이 있다. 예술 작품의 의미와 가치에 대한 해석과 판단은 작품을 비평하는 목적과 태도에 따라 달라진다. 예술 작품에 대한 주요 비평 방법으로는 맥락주의 비평, 형식주의 비평, 인상주의 비평이 있다.</p>
+<p>㉠맥락주의 비평은 주로 예술 작품이 창작된 사회적·역사적 배경에 관심을 갖는다. 비평가 텐은 예술 작품이 창작된 당시 예술가가 살던 시대의 환경, 정치·경제·문화적 상황, 작품이 사회에 미치는 효과 등을 예술 작품 비평의 중요한 ⓓ근거로 삼는다. 그 이유는 예술 작품이 예술가가 속해 있는 문화의 상징과 믿음을 구체화하며, 예술가가 속한 사회의 특성들을 반영한다고 보기 때문이다. 또한 맥락주의 비평에서는 작품이 창작된 시대적 상황 외에 작가의 심리적 상태와 이념을 포함하여 가급적 많은 자료를 바탕으로 작품을 분석하고 해석한다.</p>
+<p>그러나 객관적 자료를 중심으로 작품을 비평하려는 맥락주의는 자칫 작품 외적인 요소에 치중하여 작품의 핵심적 본질을 훼손할 우려가 있다는 비판을 받는다. 이러한 맥락주의 비평의 문제점을 극복하기 위한 방법으로는 형식주의 비평과 인상주의 비평이 있다. 형식주의 비평은 예술 작품의 외적 요인 대신 작품의 형식적 요소와 그 요소들 간 구조적 유기성의 분석을 중요하게 생각한다. 프리드와 같은 형식주의 비평가들은 작품 속에 표현된 사물, 인간, 풍경 같은 내용보다는 선, 색, 형태 등의 조형 요소와 비례, 율동, 강조 등과 같은 조형 원리를 예술 작품의 우수성을 판단하는 기준이라고 주장한다.</p>
+<p>㉡인상주의 비평은 모든 분석적 비평에 대해 회의적인 ⓔ시각을 가지고 있어 예술을 어떤 규칙이나 객관적 자료로 판단할 수 없다고 본다. “훌륭한 비평가는 대작들과 자기 자신의 영혼의 모험들을 관련시킨다.”라는 비평가 프랑스의 말처럼, 인상주의 비평은 비평가가 다른 저명한 비평가의 관점과 상관없이 자신의 생각과 느낌에 대하여 자율성과 창의성을 가지고 비평하는 것이다. 즉, 인상주의 비평가는 작가의 의도나 그 밖의 외적인 요인들을 고려할 필요 없이 비평가의 자유 의지로 무한대의 상상력을 가지고 작품을 해석하고 판단한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>(가)와 (나)의 공통적인 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대립되는 관점들이 수렴되어 가는 역사적 과정을 밝히고 있다.</li>
+<li>② 화제에 대한 이론들을 평가하여 종합적 결론을 도출하고 있다.</li>
+<li>③ 화제가 사회에 미치는 영향들을 분석하여 서로 간의 차이를 밝히고 있다.</li>
+<li>④ 화제와 관련된 관점의 문제점을 제시하고 대안적 관점을 소개하고 있다.</li>
+<li>⑤ 화제와 관련된 하나의 사례를 중심으로 다양한 이론을 시대순으로 나열하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>20번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,575명 — ①2.5% ②5.3% ③12.2% ④57.9% ⑤19.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>(가)의 형식론에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 미적 정서를 유발할 수 있는 어떤 성질을 근거로 예술 작품의 여부를 판단한다.</li>
+<li>② 모든 관람객이 직관적으로 식별할 수 있는 형식을 통해 예술 작품의 여부를 판단한다.</li>
+<li>③ 감정을 표현하는 모든 작품은 그 작품이 정신적 대상이더라도 예술 작품이라고 주장한다.</li>
+<li>④ 외부 세계의 형식적 요소를 작가 내면의 관념으로 표현하는 것을 예술의 조건이라고 주장한다.</li>
+<li>⑤ 특정한 사회 제도에 속하는 모든 예술가와 비평가가 자격을 부여한 작품을 예술 작품으로 판단한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>21번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①81.0% ②4.3% ③1.7% ④3.1% ⑤6.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p>(가)에 등장하는 이론가와 예술가들이 상대의 견해나 작품을 평가할 수 있는 말로 적절하지 않은 것은?</p>
+<ul>
+<li>① 모방론자가 뒤샹에게: 당신의 작품 「샘」은 변기를 닮은 것이 아니라 변기 그 자체라는 점에서 예술 작품이 되기 위한 필요충분조건을 갖추고 있습니다.</li>
+<li>② 낭만주의 예술가가 모방론자에게: 대상을 재현하기만 하면 예술가의 감정을 표현하지 않은 작품도 예술 작품으로 인정하는 당신의 견해는 받아들일 수 없습니다.</li>
+<li>③ 표현론자가 낭만주의 예술가에게: 당신의 작품은 예술가의 마음을 표현했으니 대상을 있는 그대로 표현하지 않았더라도 예술 작품입니다.</li>
+<li>④ 뒤샹이 제도론자에게: 예술계에서 일정한 절차와 관례를 거치면 예술 작품이라는 당신의 주장은 저의 작품 「샘」 외에 다른 변기들도 예술 작품이 될 수 있음을 인정하는 것입니다.</li>
+<li>⑤ 예술 정의 불가론자가 표현론자에게: 당신이 예술가의 관념을 예술 작품의 조건으로 규정할 때 사용하는 명제는 참과 거짓을 판단할 수 없기 때문에 받아들일 수 없습니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>22번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①53.2% ②5.7% ③8.5% ④17.2% ⑤12.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>23</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 비평문을 쓰기 위해 미술 전람회에 다녀온 학생이 (가)와 (나)를 읽은 후 작성한 메모의 일부이다. 메모의 내용이 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈메모〉</strong>
+■ 작품 정보 요약
+‧ 작품 제목: 「그리움」
+‧ 팸플릿의 설명
+- 화가 A가, 화가였던 자기 아버지가 생전에 신던 낡고 색이 바랜 신발을 보고 그린 작품임.
+- 화가 A의 예술가 정신은 궁핍하게 살면서도 예술혼을 잃지 않고 작품 활동을 했던 아버지의 삶에서 영향을 받았음.
+‧ 작품 전체에 따뜻한 계열의 색이 주로 사용됨.</p>
+<p>■ 비평문 작성을 위한 착안점
+- 콜링우드의 관점을 적용하면, 화가 A가 낡은 신발을 그린 것에서 아버지에 대한 그리움을 갖고 있었으리라는 점을 제시할 수 있겠군. … ①
+- 디키의 관점을 적용하면, 평범한 신발이 특별한 이유는 신발의 원래 주인이 화가였다는 사실에 있음을 언급하여 이 그림을 예술 작품으로 평가할 수 있겠군. … ②
+- 텐의 관점을 적용하면, 이 작품에서 아버지의 낡은 신발은 화가 A가 추구하는 예술가 정신의 상징임을 팸플릿 정보를 근거로 해석할 수 있겠군. … ③
+- 프리드의 관점을 적용하면, 따뜻한 계열의 색들을 유기적으로 구성한 점에서 이 그림이 우수한 작품임을 언급할 수 있겠군. … ④
+- 프랑스의 관점을 적용하면, 그림 속의 낡고 색이 바랜 신발을 보고, 지친 나의 삶에서 편안함과 여유를 느꼈음을 서술할 수 있겠군. … ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>23번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①4.7% ②69.0% ③15.6% ④3.8% ⑤4.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>24</div><div class='q-stem'></div></div>
+<p>피카소의 「게르니카」에 대해 〈보기〉의 A는 ㉠의 관점, B는 ㉡의 관점에서 비평한 내용이다. (나)를 바탕으로 A, B를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong><span class="boxmark">[그림: 피카소, 「게르니카」]</span></strong> 흑백 톤의 가로로 긴 벽화. 울부짖는 말, 부러진 칼을 든 인물, 고통을 호소하며 양팔을 뻗은 아이, 뿔 달린 동물(소) 등 비극적·기괴한 형상들이 화면에 배치되어 있다.</p>
+<p>A : 1937년 히틀러가 바스크 산악 마을인 ‘게르니카’에 30여 톤의 폭탄을 퍼부어 수많은 인명을 살상한 비극적 사건의 참상을, 울부짖는 말과 부러진 칼 등의 상징적 이미지를 사용하여 전 세계에 고발한 기념비적인 작품이다.
+B : 뿔 달린 동물은 슬퍼 보이고, 아이는 양팔을 뻗어 고통을 호소하고 있다. 우울한 색과 기괴한 형태들이 나를 그 속으로 끌어들이는 듯하다. 그러나 빛이 보인다. 고통과 좌절감이 느껴지지만 희망을 갈구하는 훌륭한 작품이다.</p>
+</blockquote>
+<ul>
+<li>① A에서 ‘1937년’에 ‘게르니카’에서 발생한 사건을 언급한 것은 역사적 정보를 바탕으로 작품을 해석하기 위한 것이겠군.</li>
+<li>② A에서 비극적 참상을 ‘전 세계에 고발’하였다고 서술한 것은 작품이 사회에 미치는 효과를 드러내고자 한 것이겠군.</li>
+<li>③ B에서 ‘슬퍼 보이고’와 ‘고통을 호소하고’라고 서술한 것은 작가의 심리적 상태를 표현하려는 것이겠군.</li>
+<li>④ B에서 ‘우울한 색과 기괴한 형태’를 언급한 것은 비평가의 주관적 인상을 반영하기 위한 것이겠군.</li>
+<li>⑤ B에서 ‘희망을 갈구하는’이라고 서술한 것은 비평가의 자유로운 상상력이 반영된 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>24번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.0% ②5.0% ③76.7% ④11.1% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>25</div><div class='q-stem'></div></div>
+<p>문맥을 고려할 때, 밑줄 친 말이 ⓐ～ⓔ의 동음이의어인 것은?</p>
+<ul>
+<li>① ⓐ: 모든 인간은 평등하다고 전제(前提)해야 한다.</li>
+<li>② ⓑ: 가을은 오곡백과가 무르익는 시기(時期)이다.</li>
+<li>③ ⓒ: 이 문제에 대해서는 이론(異論)의 여지가 없다.</li>
+<li>④ ⓓ: 이 소설은 사실을 근거(根據)로 하여 쓰였다.</li>
+<li>⑤ ⓔ: 청소년의 시각(視角)으로 이 문제를 살펴보자.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>25번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.0% ②3.3% ③86.6% ④2.3% ⑤2.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>서로 다른 두 명제가 동시에 참일 수 없고 동시에 거짓일 수도 없는 관계를 ‘모순 관계’라고 한다. 임의의 명제를 P라 하면, P와 P의 부정인 ‘P가 아니다’는 모순 관계이다. 두 명제가 모두 참인 것이 가능하지 않다는 원리를 무모순율이라 하고, 어떤 경우에도 둘 중 하나는 반드시 참이라는 원리를 배중률이라 한다. 그런데 지시 대상이 분명한 일상의 진술과 달리, 가리킬 대상이 현실에 없는 이름을 품은 진술에서는 이 원리들이 곧바로 적용되는지가 문제 된다.</p>
+<p>이를 분석하기 위해 철학자들은 ‘가능한 상황’이라는 장치를 들여온다. 어떤 명제가 ‘가능하다’는 것은 그 명제가 적어도 하나의 가능한 상황에서 성립한다는 뜻이고, ‘필연적이다’는 것은 모든 가능한 상황에서 성립한다는 뜻이다. 가령 “표준 기압에서 순수한 물은 100도에서 끓는다.”는 현실에서 성립하지만 다른 조건의 상황에서는 성립하지 않을 수 있으므로 가능하되 필연적이지는 않다. 반면 “비가 오면 비가 온다.”처럼 형식만으로 늘 참인 명제는 모든 상황에서 성립하므로 필연적이다.</p>
+<p>이 장치는 ㉠<u>“흥부는 존재한다.”</u>와 ㉡<u>“흥부는 존재하지 않는다.”</u>처럼 가리킬 대상이 없는 이름을 품은 진술을 다루는 데 쓰인다. ‘흥부’는 현실에 대상이 없으므로 ㉠은 현실 상황에서 성립하지 않는다. 그러나 흥부에 해당하는 인물이 실재하는 상황을 상상할 수 있으므로, ㉠이 성립하는 가능한 상황은 존재한다. 즉 ㉠은 필연적이지 않은, 가능한 명제이다. 한편 ㉠과 ㉡은 모순 관계여서, 어떤 상황에서든 둘 중 정확히 하나만 참이다. 따라서 ㉠이 거짓인 현실 상황에서는 ㉡이 참이 된다. 대상이 없는 이름을 품은 진술이라 하더라도, 그것이 명제인 한 진릿값을 갖는다는 것이다.</p>
+<p>다만 진릿값을 ‘무엇을 기준으로’ 정하는지는 진술마다 다르다. ㉠·㉡처럼 ‘존재’를 묻는 진술의 진릿값은 현실 상황을 기준으로 정해진다. 그러나 “흥부는 가난하다.”와 같이 이야기 속 설정을 담은 진술은, 현실이 아니라 그 이야기가 마련한 상황을 기준으로 진릿값이 정해진다. 「흥부전」이 마련한 상황에서 ‘흥부는 가난하다’는 참이고 ‘흥부는 부유하다’는 거짓이다. 같은 이름을 품은 진술이라도, 그것이 존재를 묻는가 이야기 속 속성을 묻는가에 따라 기준이 되는 상황이 달라진다. 한편 이야기가 어떤 속성에 대해 아무런 설정도 제시하지 않은 경우에는, 그 속성을 묻는 진술의 진릿값이 그 이야기가 마련한 상황 안에서 확정되지 않을 수 있다.</p>
+<p>이렇게 가능한 상황을 끌어들이는 분석은 일상 언어의 몇몇 표현을 더 잘 이해하게 해 준다. 대상이 없는 이름이 들어간 진술도 무의미한 헛소리로 처리하지 않고, 어떤 상황을 기준으로 삼느냐를 구분함으로써 그 진릿값을 따질 수 있게 하기 때문이다. 이러한 분석은 오늘날 논리학과 언어철학에서 폭넓게 활용되고 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 배중률에 따르면 모순 관계인 두 명제가 모두 거짓인 상황이 존재한다.</li>
+<li>② 필연적인 명제는 어떤 가능한 상황에서는 성립하지 않을 수 있다.</li>
+<li>③ 가리킬 대상이 현실에 없는 이름을 품은 진술은 진릿값을 갖지 못한다.</li>
+<li>④ “비가 오면 비가 온다.”는 모든 가능한 상황에서 성립하는 명제이다.</li>
+<li>⑤ 이야기 속 속성을 묻는 진술의 진릿값은 현실 상황을 기준으로 정해진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 내용 일치 문항</strong> · 정답 ④
+"비가 오면 비가 온다."는 형식만으로 늘 참인 명제라서 모든 가능한 상황에서 성립한다고 2문단에 나와요. 그래서 ④가 일치합니다.
+- ① 배중률은 <em>둘 중 하나는 반드시 참</em>이라는 원리라, 둘 다 거짓인 상황이 있다는 ①은 틀려요.
+- ② 필연적인 명제는 <em>모든</em> 상황에서 성립한다고 했으니, 성립하지 않을 수 있다는 ②는 반대.
+- ③ 대상이 없는 이름을 품은 진술도 명제인 한 진릿값을 갖는다고 3문단이 말해요. ③은 정반대.
+- ⑤ 이야기 속 속성을 묻는 진술은 <em>이야기 상황</em>을 기준으로 한다고 4문단에 있어요. '현실 상황'이라 한 ⑤는 함정.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 현실 상황에서는 성립하지 않지만, 성립하는 가능한 상황은 존재한다.</li>
+<li>② ㉠과 ㉡은 모순 관계이므로 어떤 상황에서도 둘이 함께 참일 수는 없다.</li>
+<li>③ ㉡은 ‘흥부’가 가리킬 대상이 없으므로 진릿값을 가질 수 없는 진술이다.</li>
+<li>④ ㉠은 모든 가능한 상황에서 성립하지는 않으므로 필연적인 명제는 아니다.</li>
+<li>⑤ ㉠이 거짓인 현실 상황에서는 ㉡이 참이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 특정 부분을 이해하는 문항</strong> · 정답 ③
+③ ㉡"흥부는 존재하지 않는다."는 ㉠과 모순 관계여서, ㉠이 거짓인 현실에서는 ㉡이 참이 돼요(3문단). 즉 분명히 진릿값을 갖죠. 그런데 ③은 '대상이 없어 진릿값을 가질 수 없다'고 했으니 지문과 어긋나 적절하지 않습니다. 나머지는 모두 3문단에 근거가 있어요.
+- ① ㉠은 현실에서는 성립하지 않지만 흥부가 실재하는 가능한 상황은 상상할 수 있죠(3문단).
+- ② ㉠·㉡은 모순 관계라 함께 참일 수 없어요.
+- ④ ㉠은 모든 상황에서 성립하지는 않으니 필연적 명제가 아니에요.
+- ⑤ 모순 관계 정의상 ㉠이 거짓이면 ㉡은 참이 맞아요(혼동을 유발하지만 적절한 진술).</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ‘“흥부는 가난하다.”의 진릿값은 어떻게 정해지는가’에 대한 답으로 가장 적절한 것은?</p>
+<ul>
+<li>① ‘흥부’가 현실에 대상을 갖지 못하므로 이 진술은 진릿값을 갖지 않는다.</li>
+<li>② 이 진술은 존재를 묻는 진술이므로 현실 상황을 기준으로 진릿값이 정해진다.</li>
+<li>③ 이 진술은 이야기 속 속성을 묻는 진술이므로 그 이야기가 마련한 상황을 기준으로 진릿값이 정해진다.</li>
+<li>④ 이 진술은 필연적인 명제이므로 모든 가능한 상황에서 동일한 진릿값을 갖는다.</li>
+<li>⑤ 이 진술은 ‘흥부는 부유하다’와 모순 관계이므로 둘 중 하나는 반드시 현실에서 참이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 물음에 대한 답을 찾는 문항</strong> · 정답 ③
+"흥부는 가난하다."는 <em>이야기 속 속성</em>을 묻는 진술이에요. 4문단에 따르면 이런 진술의 진릿값은 현실이 아니라 그 이야기가 마련한 상황을 기준으로 정해지죠. 그래서 ③이 맞습니다.
+- ① 명제인 한 진릿값을 가져요(3문단). ② 이건 존재를 묻는 진술이 아니라 속성을 묻는 진술이에요. ④ 필연적인 명제가 아니에요(이야기에 따라 달라질 수 있죠). ⑤ 모순 관계·현실 기준 모두 이 진술에는 해당하지 않아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글을 참고할 때, 〈보기〉를 이해한 내용으로 적절한 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 소설가가 ‘파랑’이라는 인물이 등장하는 소설 「파랑 이야기」를 쓰면서, 본문에 “파랑은 키가 크다.”라고만 적고 파랑의 직업은 끝내 밝히지 않았다. 한 독자는 “파랑은 의사이다.”라는 진술의 진릿값이 궁금해졌다.</p>
+</blockquote>
+<ul>
+<li>① “파랑은 존재한다.”는 현실 상황을 기준으로 참이 되겠군.</li>
+<li>② “파랑은 의사이다.”는 직업에 관한 설정이 제시되지 않았으므로 「파랑 이야기」가 마련한 상황 안에서 진릿값이 확정되지 않을 수 있겠군.</li>
+<li>③ “파랑은 키가 작다.”는 현실 상황을 기준으로 거짓이 되겠군.</li>
+<li>④ “파랑은 키가 크다.”는 현실 상황을 기준으로 참이 되겠군.</li>
+<li>⑤ “파랑은 존재하지 않는다.”는 「파랑 이야기」가 마련한 상황을 기준으로 참이 되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>14번 — 〈보기〉에 적용하는 문항</strong> · 정답 ②
+"파랑은 의사이다."는 <em>이야기 속 속성</em>을 묻는 진술이라 「파랑 이야기」가 마련한 상황을 기준으로 따져야 해요. 그런데 소설은 파랑의 직업에 대해 아무 설정도 주지 않았으니, 4문단 끝 문장대로 그 이야기 상황 안에서 진릿값이 확정되지 않을 수 있죠. 그래서 ②가 맞습니다.
+- ① "파랑은 존재한다."는 <em>존재를 묻는</em> 진술이라 현실 기준인데, 파랑은 현실에 없으므로 거짓이에요. '참'이라 한 ①은 틀려요.
+- ③ "파랑은 키가 작다."도 <em>이야기 상황</em>을 기준으로 따져야 해요(키가 크다고 했으니 이야기 안에서 거짓). '현실 상황 기준'이 함정.
+- ④ "파랑은 키가 크다."는 이야기 속 속성을 묻는 진술이라 <em>이야기 상황</em>을 기준으로 참인데, '현실 상황 기준'으로 따진 ④는 기준을 잘못 잡았어요.
+- ⑤ "파랑은 존재하지 않는다."는 <em>존재를 묻는</em> 진술이라 현실 기준이고, 현실에서 참이에요. '이야기 상황 기준'이라 한 ⑤는 틀립니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><ul>
+<li><strong>핵심 용어</strong></li>
+<li><strong>모순 관계</strong>: 두 명제가 동시에 참일 수도 동시에 거짓일 수도 없는 관계. 둘 중 정확히 하나만 참.</li>
+<li><strong>무모순율</strong>: 두 명제가 모두 참일 수는 없다는 원리.</li>
+<li><strong>배중률</strong>: 어떤 경우에도 둘 중 하나는 반드시 참이라는 원리.</li>
+<li><strong>가능한 상황</strong>: 명제의 성립 여부를 따지기 위해 상상하는 상황. '가능 = 적어도 한 상황에서 성립', '필연 = 모든 상황에서 성립'.</li>
+<li>
+<p><strong>기준이 되는 상황</strong>: 진릿값을 정할 때 무엇을 기준으로 삼는가(현실 vs 이야기 세계).</p>
+</li>
+<li>
+<p><strong>개념 한눈에</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>진술의 종류</th>
+<th>예</th>
+<th>진릿값 기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>존재를 묻는 진술</td>
+<td>"흥부는 존재한다"</td>
+<td>현실 상황</td>
+</tr>
+<tr>
+<td>이야기 속 속성을 묻는 진술</td>
+<td>"흥부는 가난하다"</td>
+<td>이야기가 마련한 상황</td>
+</tr>
+<tr>
+<td>형식만으로 늘 참인 진술</td>
+<td>"비가 오면 비가 온다"</td>
+<td>모든 상황(필연)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>확인 질문</strong></li>
+<li>㉠"흥부는 존재한다."가 '필연적이지 않다'고 보는 까닭은? → <em>현실 상황에서는 성립하지 않으므로, 모든 상황에서 성립하는 것이 아니기 때문.</em></li>
+<li>같은 이름을 품은 진술인데 진릿값 기준이 갈리는 까닭은? → <em>존재를 묻는가, 이야기 속 속성을 묻는가가 다르기 때문.</em></li>
+</ul>
+<hr /></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2019학년도 수능 [39~42]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>두 명제가 모두 참인 것도 모두 거짓인 것도 가능하지 않은 관계를 모순 관계라고 한다. 예를 들어, 임의의 명제를 P라고 하면 P와 ～P는 모순 관계이다.(기호 ‘～’은 부정을 나타낸다.) P와 ～P가 모두 참인 것은 가능하지 않다는 법칙을 무모순율이라고 한다. 그런데 “㉠다보탑은 경주에 있다.”와 “㉡다보탑은 개성에 있을 수도 있었다.”는 모순 관계가 아니다. 현실과 다르게 다보탑을 경주가 아닌 곳에 세웠다면 다보탑의 소재지는 지금과 달라졌을 것이다. 철학자들은 이를 두고, P와 ～P가 모두 참인 혹은 모두 거짓인 가능세계는 없지만 다보탑이 개성에 있는 가능세계는 있다고 표현한다.</p>
+<p>‘가능세계’의 개념은 일상 언어에서 흔히 쓰이는 필연성과 가능성에 관한 진술을 분석하는 데 중요한 역할을 한다. ‘P는 가능하다’는 P가 적어도 하나의 가능세계에서 성립한다는 뜻이며, ‘P는 필연적이다’는 P가 모든 가능세계에서 성립한다는 뜻이다. “만약 Q이면 Q이다.”를 비롯한 필연적인 명제들은 모든 가능세계에서 성립한다. “다보탑은 경주에 있다.”와 같이 가능하지만 필연적이지는 않은 명제는 우리의 현실세계를 비롯한 어떤 가능세계에서는 성립하고 또 어떤 가능세계에서는 성립하지 않는다.</p>
+<p>가능세계를 통한 담론은 우리의 일상적인 몇몇 표현들을 보다 잘 이해하는 데 도움이 된다. 다음 상황을 생각해 보자. 나는 현실에서 아침 8시에 출발하는 기차를 놓쳤고, 지각을 했으며, 내가 놓친 기차는 제시간에 목적지에 도착했다. 그리고 나는 “만약 내가 8시 기차를 탔다면, 나는 지각을 하지 않았다.”라고 주장한다. 그런데 전통 논리학에서는 “만약 A이면 B이다.”라는 형식의 명제는 A가 거짓인 경우에는 B의 참 거짓에 상관없이 참이라고 규정한다. 그럼에도 ⓐ내가 만약 그 기차를 탔다면 여전히 지각을 했을 것이라고 주장하지는 않는 이유는 무엇일까? 내가 그 기차를 탄 가능세계들을 생각해 보면 그 이유를 알 수 있다. 그 가능세계 중 어떤 세계에서 나는 여전히 지각을 한다. 가령 내가 탄 그 기차가 고장으로 선로에 멈춰 운행이 오랫동안 지연된 세계가 그런 예이다. 하지만 내가 기차를 탄 세계들 중에서, 내가 기차를 타고 별다른 이변 없이 제시간에 도착한 세계가 그렇지 않은 세계보다 우리의 현실세계와의 유사성이 더 높다. 일반적으로, A가 참인 가능세계들 중에 비교할 때, B도 참인 가능세계가 B가 거짓인 가능세계보다 현실세계와 더 유사하다면, 현실세계의 나는 A가 실현되지 않은 경우에, 만약 A라면 ～B가 아닌 B이라고 말할 수 있다.</p>
+<p>가능세계는 다음의 네 가지 성질을 갖는다. 첫째는 가능세계의 일관성이다. 가능세계는 명칭 그대로 가능한 세계이므로 어떤 것이 가능하지 않다면 그것이 성립하는 가능세계는 없다. 둘째는 가능세계의 포괄성이다. 이것은 어떤 것이 가능하다면 그것이 성립하는 가능세계는 존재한다는 것이다. 셋째는 가능세계의 완결성이다. 어느 세계에서든 임의의 명제 P에 대해 “P이거나 ～P이다.”라는 배중률이 성립한다. 즉 P와 ～P 중 하나는 반드시 참이라는 것이다. 넷째는 가능세계의 독립성이다. 한 가능세계는 모든 시간과 공간을 포함해야만 하며, 연속된 시간과 공간에 포함된 존재들은 모두 동일한 하나의 세계에만 속한다. 한 가능세계 W1의 시간과 공간이, 다른 가능세계 W2의 시간과 공간으로 이어질 수는 없다. W1과 W2는 서로 시간과 공간이 전혀 다른 세계이다.</p>
+<p>가능세계의 개념은 철학에서 갖가지 흥미로운 질문과 통찰을 이끌어 내며, 그에 관한 연구 역시 활발히 진행되고 있다. 나아가 가능세계를 활용한 논의는 오늘날 인지 과학, 언어학, 공학 등의 분야로 그 응용의 폭을 넓히고 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 배중률은 모든 가능세계에서 성립한다.</li>
+<li>② 모든 가능한 명제는 현실세계에서 성립한다.</li>
+<li>③ 필연적인 명제가 성립하지 않는 가능세계가 있다.</li>
+<li>④ 무모순율에 의하면 P와 ～P가 모두 참인 것은 가능하다.</li>
+<li>⑤ 전통 논리학에 따르면 “만약 A이면 B이다.”의 참 거짓은 A의 참 거짓과 상관없이 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠이 성립하지 않는 가능세계가 존재한다.</li>
+<li>② “만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”가 성립하는 가능세계 중에는 ㉠이 거짓인 가능세계는 없다.</li>
+<li>③ ㉡과 “다보탑은 개성에 있지 않다.”는 모순 관계가 아니다.</li>
+<li>④ 만약 ㉡이 거짓이라면 어떤 가능세계에서도 다보탑이 개성에 있지 않다.</li>
+<li>⑤ ㉠과 ㉡은 현실세계에서 둘 다 참인 것이 가능하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ⓐ에 대한 답으로 가장 적절한 것은?</p>
+<ul>
+<li>① 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 지각을 한 가능세계와 지각을 하지 않은 가능세계가 현실세계와의 유사성의 정도가 다르기 때문이다.</li>
+<li>② 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 기차 고장이 자주 일어나지 않는 가능세계가 현실세계와의 유사성이 높기 때문이다.</li>
+<li>③ 내가 그 기차를 탄 가능세계들끼리 비교할 때 내가 지각을 한 가능세계가 내가 지각을 하지 않은 가능세계에 비해 현실세계와의 유사성이 더 낮기 때문이다.</li>
+<li>④ 내가 그 기차를 탄 가능세계들끼리 비교할 때 그 가능세계들의 대다수에서 내가 지각을 하지 않았기 때문이다.</li>
+<li>⑤ 내가 그 기차를 탄 것이 현실세계에서 거짓이기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>42</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+명제 “모든 학생은 연필을 쓴다.”와 “어떤 학생도 연필을 쓰지 않는다.”는 반대 관계이다. 이 말은, 두 명제 다 참인 것은 가능하지 않지만, 둘 중 하나만 참이거나 둘 다 거짓인 것은 가능하다는 뜻이다.</p>
+</blockquote>
+<ul>
+<li>① 가능세계의 완결성과 독립성에 따르면, 모든 학생이 연필을 쓰는 가능세계가 존재한다는 것과 어떤 학생도 연필을 쓰지 않는 가능세계가 존재한다는 것 중 하나는 반드시 참이고, 그중 한 세계의 시간과 공간이 다른 세계로 이어질 수 없겠군.</li>
+<li>② 가능세계의 포괄성과 독립성에 따르면, “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 그 세계에 속한 한 명의 학생이 연필을 쓰는 가능세계들이 존재하고, 그 세계들의 시간과 공간은 서로 단절되어 있겠군.</li>
+<li>③ 가능세계의 완결성에 따르면, 어느 세계에서든 “어떤 학생은 연필을 쓴다.”와 “어떤 학생은 연필을 쓰지 않는다.” 중 하나는 반드시 참이겠군.</li>
+<li>④ 가능세계의 포괄성에 따르면, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 가능세계들이 있겠군.</li>
+<li>⑤ 가능세계의 일관성에 따르면, 학생들 중 절반은 연필을 쓰고 절반은 연필을 쓰지 않는 가능세계가 존재하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>허구 이야기를 보는 두 시선 — 믿는 체하기 놀이와 불완전 명제  — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='허구 이야기를 보는 두 시선 — 믿는 체하기 놀이와 불완전 명제  — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>연산 환경 변화와 GPU — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>연산 환경 변화와 GPU — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 학급에서 청소를 한다고 생각해 볼까요? 교실 하나를 아주 꼼꼼하게 정리해야 한다면, 머리가 좋고 손이 야무진 반장 한두 명이 "이건 이렇게, 저건 저렇게" 판단해 가며 처리하는 편이 낫습니다. 그런데 운동장에 떨어진 똑같은 모양의 낙엽 수만 장을 줍는 일이라면 어떨까요? 이때는 반장 한두 명보다, 똑같은 동작("줍기")만 반복하는 친구 수백 명이 한꺼번에 달려드는 편이 훨씬 빠릅니다. 바로 이 두 가지 일처리 방식의 차이가 <strong>CPU와 GPU</strong>의 차이예요.</p>
+<p><strong>CPU(중앙 처리 장치)는 컴퓨터의 '두뇌'</strong>입니다. 문서를 쓰고 웹을 탐색하고 운영 체제를 제어하는, 종류가 다양하고 순서가 수시로 바뀌는 복잡한 일을 잘하도록 만들어졌어요. 그래서 똑똑한(고성능) 코어를 몇 개만 두고, 복잡한 흐름을 정밀하게 조율하는 데 집중합니다. 마치 야무진 반장 같은 거죠.</p>
+<p><strong>GPU(그래픽 처리 장치)는 원래 화면의 수많은 점(픽셀)을 그리던 장치</strong>예요. 화면을 그리는 일은 "같은 계산을 수많은 점에 똑같이 반복"하는 일이라, GPU는 단순한 계산만 하는 작은 코어를 수백~수천 개나 칩 하나에 빼곡히 담았습니다. <em>많은 일꾼이 한 가지 작업을 동시에 하는 공장</em>에 비유할 수 있죠. 그런데 인공 지능 학습이나 고해상도 영상 처리, 기상 예측처럼 "똑같은 계산을 엄청나게 많이 반복"하는 일이 늘어나면서, 그래픽이 아닌 분야에서도 GPU가 컴퓨터의 새 중심으로 떠올랐습니다.</p>
+<p>다만 GPU에도 약점이 있어요. 일꾼이 아무리 많아도 모두 <em>똑같은 동작</em>을 할 때만 빠릅니다. "어떤 값이 기준보다 크면 A를, 아니면 B를 하라" 같은 <strong>갈림길(분기문)</strong>이 자주 나오면, 일꾼마다 할 일이 달라져 누군가는 기다려야 하므로 속도가 뚝 떨어지죠.</p>
+<blockquote>
+<p>한마디로: <strong>CPU는 "복잡한 일을 똑똑하게", GPU는 "단순한 일을 떼로 한꺼번에"</strong> 처리합니다. 이 단원에서는 GPU가 어떤 구조로 그 많은 일을 동시에 해내는지, 그리고 어디서 빠르고 어디서 막히는지를 차근차근 살펴봅니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>"같은 연산을 한꺼번에 처리하는 GPU의 병렬 구조"</strong>가 있습니다. 같은 GPU라도 어느 면을 들여다보느냐에 따라 보이는 것이 달라요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>GPU — 병렬 연산 장치<small>"단순 코어 수천 개가 같은 명령을 동시에"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>GPU 안을 열어 봅니다. 연산 코어가 연산 유닛으로 묶이고, 스레드와 스레드 블록으로 나뉘며, 스케줄러가 일을 나눠 주는 <em>실행 구조</em>와, 속도를 좌우하는 <em>메모리 계층</em>([A])을 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>GPU를 CPU와 <em>맞세워</em> 봅니다. 병렬 처리가 빠른 이유와, 연산량이 고르지 않거나 갈림길이 많을 때 효율이 떨어지는 까닭, 그리고 처리 속도·제어 유연성·메모리 효율이 서로 <em>맞물려 상충</em>하는 모습을 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>GPU가 <em>어디에 어떻게 쓰이는지</em>를 갈래로 나눠 봅니다. 그래픽·인공 지능·과학 계산이라는 활용의 갈래와, 데이터를 담아 두는 세 가지 메모리(전역·공유·레지스터)의 성질을 견주어 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, GPU가 <em>어떻게</em> 그 많은 연산을 동시에 해내고, <em>왜</em> 어떤 일에는 강하고 어떤 일에는 약한지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>GPU는 컴퓨터 내에서 그래픽 처리를 담당하던 장치로, 수많은 픽셀에 동일한 연산이 반복적으로 이루어지는 그래픽 연산의 특성에 맞추어 다수의 코어가 병렬로 작동하는 구조로 이루어져 있다. GPU는 수백 개에서 수천 개에 이르는 단순 연산 전용 코어를 하나의 칩에 집적한 장치로, 동일한 명령어를 다수의 데이터에 반복 적용하는 방식에 최적화되어 있다. 이는 많은 일꾼이 한 가지 작업을 동시에 수행하는 공장에 비유할 수 있다. GPU의 코어는 복잡한 제어 흐름을 조율하는 기능을 최소화한 대신 동일한 연산을 빠르게 수행하도록 설계되어 있어, 인공 지능 학습의 행렬 곱셈이나 고해상도 영상의 픽셀 단위 연산처럼 같은 연산이 대규모로 반복되는 작업을 효율적으로 처리한다. 개별 코어는 단순하지만 그 수가 매우 많으므로, 처리할 데이터가 많더라도 연산이 동일하기만 하면 여러 코어가 이를 나누어 동시에 맡을 수 있는 것이다. 이러한 처리는 GPU 내부의 연산 자원이 일정한 단위로 묶여 체계적으로 작동하기에 가능하다.</p>
+<p>GPU 내부에 집적된 수많은 연산 코어는 일정 단위로 묶여 연산 유닛을 형성한다. 연산 유닛은 여러 개의 스레드를 병렬로 실행할 수 있는 독립적인 실행 공간으로, 공장 안에서 같은 작업을 수행하는 작업반에 비유할 수 있다. 스레드는 연산을 수행하는 최소 단위로, 하나의 스레드는 하나의 명령어를 실행한다. GPU는 여러 스레드를 하나의 스레드 블록으로 묶어서 관리하는데, 스레드 블록 내의 스레드들은 기본적으로 동일한 명령어를 실행한다. 이처럼 스레드를 블록 단위로 묶는 것은 같은 명령어를 수행할 연산들을 한데 모아 한꺼번에 처리하기 위함이다. 따라서 같은 블록에 속한 스레드들은 서로 다른 데이터를 맡더라도 같은 동작을 동시에 수행하게 된다. 만약 한 스레드가 한 픽셀을 맡는다면, 한 블록의 스레드들은 서로 다른 픽셀을 맡되 그 픽셀들에 같은 연산을 동시에 적용하는 식이다.</p>
+<p>스레드 블록이 실제 연산 유닛에서 실행되기까지는 분배 과정을 거친다. 명령어가 GPU에 전달되면 디코딩 과정을 통해 해석되며, 스케줄러는 이 명령어에 따라 스레드 블록을 각 연산 유닛에 분배하고 병렬 처리가 이루어지도록 제어한다. 분배가 끝나면 스레드 블록은 병렬로 연산을 실행하고, 실행한 결과는 GPU 내의 메모리에 저장된다. 이때 연산량이 균등하게 분배되지 않으면 일부 연산 유닛은 다른 유닛의 연산이 끝날 때까지 대기 상태에 놓이게 되어, 전체 GPU의 자원이 비효율적으로 사용되는 문제가 발생한다. 작업반 가운데 한 곳에만 일감이 몰리면 나머지 작업반이 손을 놓고 기다리게 되는 것과 같다. 그러므로 스케줄러가 스레드 블록을 고르게 나누어 각 연산 유닛이 비슷한 양의 일을 맡도록 하는 것은 GPU 성능을 좌우하는 중요한 요소가 된다.</p>
+<div class="ablock"><span class="atag">[A]</span>GPU는 연산 속도를 높이기 위해 계층화된 메모리 구조를 갖추고 있다. 메모리는 접근 속도, 용량, 사용 범위 등에 따라 전역 메모리, 공유 메모리, 레지스터로 나뉜다. 전역 메모리는 모든 스레드가 접근할 수 있는 대용량 저장 공간으로, 다음 단계의 연산이나 외부와의 공유를 위해 연산 실행 결과를 저장한다. 다만 접근 속도가 느려 연산 중에 사용하기에는 적합하지 않다. 따라서 연산 중에는 개별 스레드만 사용할 수 있는 저장소인 레지스터나, 같은 스레드 블록 내의 스레드들이 공동으로 사용하는 공유 메모리를 활용하여 데이터를 저장하고 처리한다. 레지스터는 용량은 작지만 접근이 매우 빠르고, 공유 메모리는 전역 메모리보다 빠르면서도 여러 스레드 간의 정보 공유가 가능하다. 다만 같은 스레드 블록 내의 여러 스레드가 동시에 같은 메모리 공간에 접근할 경우, 충돌이 발생해 병렬성이 저하되어 연산이 지연되거나 처리 속도가 떨어지는 현상이 나타날 수 있다. 그러므로 메모리를 어떻게 분배하고 접근 방식을 어떻게 조정하느냐는 GPU 연산 성능에 큰 영향을 미친다. </div></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 연산량이 균등하게 분배될수록 일부 연산 유닛이 대기 상태에 놓이는 시간이 길어진다.</li>
+<li>② GPU의 코어는 제어 기능을 최소화하고 동일한 연산을 빠르게 수행하도록 설계되어 있다.</li>
+<li>③ 하나의 스레드는 하나의 명령어를 실행하는, 연산을 수행하는 최소 단위이다.</li>
+<li>④ 스레드 블록 내의 스레드들은 기본적으로 동일한 명령어를 실행한다.</li>
+<li>⑤ 스케줄러는 디코딩을 거친 명령어에 따라 스레드 블록을 각 연산 유닛에 분배한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>1번 — 정답 ①</strong>
+3문단에서 "연산량이 균등하게 분배되지 않으면 일부 연산 유닛은 다른 유닛의 연산이 끝날 때까지 대기 상태에 놓이게" 된다고 했어요. 즉 대기가 길어지는 것은 분배가 <em>고르지 못할 때</em>입니다. 그런데 ①은 "균등하게 분배될수록" 대기가 길어진다고 정반대로 말했으니 일치하지 않아 정답이에요. ②는 1문단(제어 기능 최소화·동일 연산 빠르게), ③은 2문단(스레드=명령어 실행 최소 단위), ④는 2문단(블록 내 스레드 동일 명령어), ⑤는 3문단(스케줄러가 디코딩된 명령에 따라 블록 분배)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 적절한 것은?</p>
+<ul>
+<li>① 전역 메모리는 접근 속도가 빨라 연산 중에 데이터를 처리하기에 가장 적합하다.</li>
+<li>② 레지스터는 같은 스레드 블록에 속한 여러 스레드가 공동으로 사용하는 저장소이다.</li>
+<li>③ 공유 메모리는 전역 메모리보다 접근이 빠르면서도 여러 스레드 간의 정보 공유가 가능하다.</li>
+<li>④ 여러 스레드가 서로 다른 메모리 공간에 접근하면 충돌이 발생해 병렬성이 저하된다.</li>
+<li>⑤ 연산 실행 결과를 외부와 공유하기 위해서는 레지스터에 결과를 저장해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+[A]에서 "공유 메모리는 전역 메모리보다 빠르면서도 여러 스레드 간의 정보 공유가 가능하다"라고 했으므로 ③이 적절해 정답입니다. ① 전역 메모리는 "접근 속도가 느려 연산 중에 사용하기에는 적합하지 않다"라고 했으니 정반대예요. ② 레지스터는 <em>개별 스레드만 사용할 수 있는 저장소</em>이고, 여러 스레드가 공동으로 쓰는 것은 <em>공유 메모리</em>인데, ②는 레지스터에 공유 메모리의 설명을 갖다 붙여 주체를 맞바꿨습니다. ④ 충돌은 "서로 다른" 공간이 아니라 "같은 메모리 공간에" 동시에 접근할 때 일어나므로 조건이 어긋났습니다. ⑤ 결과를 외부와 공유하려면 <em>전역 메모리</em>에 저장한다고 했지 레지스터가 아니에요.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+[A]에서 전역 메모리는 "접근 속도가 느려 연산 중에 사용하기에는 적합하지 않다"라고 했어요. 〈보기〉에서 전역 메모리에 담은 것은 연산 <em>중</em>의 데이터가 아니라 <em>최종 결과</em>죠. 그런데 ⑤는 전역 메모리를 "접근 속도가 빨라 연산 중에 사용하기에 적합한 메모리"라고 설명했으니, 전역 메모리의 성질을 정반대로 적용해 적절하지 않으므로 정답입니다. ①은 1문단(동일 명령어를 다수 데이터에 반복), ②는 2문단(블록 단위 관리), ③은 3문단(균등하지 않은 분배), ④는 3문단(대기→자원 비효율)에 각각 정확히 대응하는 적절한 탐구예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 GPU에 인공 지능 학습 작업이 전달되었다. 이 작업은 동일한 행렬 곱셈 명령을 수만 개의 데이터에 반복 적용하는 것이었다. GPU는 이 명령을 디코딩한 뒤, 같은 명령을 수행할 스레드들을 여러 스레드 블록으로 묶었다. 스케줄러는 묶인 스레드 블록들을 네 개의 연산 유닛 ㉮·㉯·㉰·㉱에 나누어 보냈는데, 처리할 데이터가 한쪽에 치우쳐 ㉮에는 다른 유닛의 두 배에 해당하는 스레드 블록이 몰렸다. 각 유닛에서 스레드들은 연산 중간값을 레지스터와 공유 메모리에 나누어 담아 처리했고, 최종 결과는 전역 메모리에 저장했다.</p>
+<p><strong><span class="boxmark">[그림 1]</span> 〈스레드 블록 분배 도식〉</strong> — 위쪽 '명령어 디코딩' 상자에서 화살표가 '스케줄러'로, 스케줄러에서 네 개의 연산 유닛 ㉮·㉯·㉰·㉱로 화살표가 갈라져 내려가며, ㉮로 향하는 화살표 아래에만 스레드 블록 묶음이 두 배로 그려져 한쪽에 일감이 몰린 모습을 보이는 도식.</p>
+</blockquote>
+<ul>
+<li>① 동일한 행렬 곱셈 명령을 수만 개의 데이터에 반복 적용한 것은, GPU가 동일한 명령어를 다수의 데이터에 반복 적용하는 방식에 최적화되어 있음을 보여 주는 것이겠군.</li>
+<li>② 같은 명령을 수행할 스레드들을 여러 스레드 블록으로 묶은 것은, 같은 명령어를 실행하는 스레드들을 블록 단위로 관리하기 위한 것이겠군.</li>
+<li>③ ㉮에 다른 유닛의 두 배에 해당하는 스레드 블록이 몰린 것은, 연산량이 균등하게 분배되지 않은 상황에 해당하겠군.</li>
+<li>④ ㉯·㉰·㉱이 ㉮의 연산이 끝나기를 기다리게 된다면, GPU의 자원이 비효율적으로 사용되는 문제가 나타날 수 있겠군.</li>
+<li>⑤ 최종 결과를 전역 메모리에 저장한 것은, 접근 속도가 빨라 연산 중에 사용하기에 적합한 메모리를 택한 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>연산 유닛</strong>: 여러 스레드를 병렬로 실행하는 독립적인 실행 공간. 공장 안의 '작업반'에 해당해요.</li>
+<li><strong>스레드 / 스레드 블록</strong>: 스레드는 명령어 하나를 실행하는 연산의 최소 단위, 스레드 블록은 같은 명령어를 실행할 스레드들을 묶은 단위.</li>
+<li><strong>스케줄러</strong>: 디코딩된 명령에 따라 스레드 블록을 연산 유닛에 나누어 보내고 병렬 처리를 제어하는 부분.</li>
+<li><strong>메모리 계층(전역·공유·레지스터)</strong>: 접근 속도·용량·사용 범위가 다른 세 저장소. 빠른 곳일수록 작고 좁게 쓰여요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>명령어</span><span class='fs-sub'>고르게 나눠야 대기 없이 빠름</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>디코딩</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>스케줄러가 스레드 블록을 분배</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>스레드를 '스레드 블록'으로 묶는 까닭은 무엇인가요?</div><div class='qa-a'>같은 명령어를 실행할 연산들을 한데 모아 한꺼번에 병렬로 처리하기 위해서입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>연산 <em>중</em>에는 왜 전역 메모리를 잘 쓰지 않나요?</div><div class='qa-a'>전역 메모리는 대용량이지만 접근 속도가 느려서, 연산 중에는 더 빠른 레지스터나 공유 메모리를 씁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>스케줄러가 일을 고르게 나누는 일이 왜 중요한가요?</div><div class='qa-a'>한쪽에 일이 몰리면 다른 연산 유닛이 그 연산이 끝날 때까지 대기해 GPU 자원이 비효율적으로 쓰이기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 9월 [14~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>‘메타버스(metaverse)’는 ‘초월’이라는 의미의 ‘메타(meta)’와 ‘세계’를 뜻하는 ‘유니버스(universe)’의 합성어로, 현실 세계와 가상 공간이 적극적으로 상호 작용하는 공간을 의미한다. 감각 전달 장치는 메타버스 속에서 사용자를 대신하는 아바타가 보고 만지는 것으로 설정된 감각을 사용자에게 전달하는 장치이다. 사용자는 이를 통하여 가상 공간을 현실감 있게 체험하면서 메타버스에 몰입하게 된다.</p>
+<p>시각을 전달하는 장치인 HMD<em>는 사용자의 양쪽 눈에 가상 공간을 표현하는, 시차</em>가 있는 영상을 전달한다. 전달된 영상을 뇌에서 조합하는 과정에서 사용자는 공간과 물체의 입체감을 느낄 수 있다. 가상 공간에서 물체를 접촉하는 것처럼 사용자의 손에 감각 반응을 직접 전달하는 장치로는 가상 현실 장갑이 있다. 가상 현실 장갑은 가상 공간에서 아바타가 만지는 가상 물체의 크기, 형태, 온도 등을 사용자가 느낄 수 있도록 설계되어 있다. 이 외에도 가상 현실 장갑은 사용자의 손가락 및 팔의 움직임에 따라 아바타를 움직이게 할 수 있다.</p>
+<p>한편 사용자의 움직임을 아바타에게 전달하는 공간 이동 장치를 이용하면, 사용자는 몰입도 높은 메타버스 체험을 할 수 있다. 공간 이동 장치인 가상 현실 트레드밀은 일정한 공간에 설치되어 360도 방향으로 사용자의 이동이 가능하도록 바닥의 움직임을 지원한다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>가상 현실 트레드밀과 함께 사용되는 모션 트래킹 시스템은 사용자의 동작에 따라 아바타가 동일하게 움직일 수 있도록 동기화하는 시스템으로, 동작 추적 센서, 관성 측정 센서, 압력 센서 등으로 구성된다. 동작 추적 센서는 사용자의 동작을 파악하며, 관성 측정 센서는 사용자의 이동 속도 변화율 및 회전 속도를 측정한다. 압력 센서는 서로 다른 물체 간에 작용하는 압력을 측정한다. 만약 바닥에 압력 센서가 부착된 신발을 사용자가 신고 뛰면, 압력 센서는 지면과 발바닥 사이의 압력을 감지하여 사용자가 뛰는 힘을 파악할 수 있다. 모션 트래킹 시스템이 사용자의 동작 정보를 컴퓨터에 전달하면, 컴퓨터는 사용자가 움직이는 방향과 속도에 ⓐ맞춰 트레드밀의 바닥을 제어한다. 이와 같이 사용자의 이동 동작에 따라 트레드밀의 움직임이 변경되기도 하지만, 아바타가 존재하는 가상 공간의 환경 변화에 따라 트레드밀 바닥의 진행 속도 및 방향, 기울기 등이 변경되기도 한다. 또한 사용자의 움직임이나 트레드밀의 작동 변화에 따라 HMD에 표시되는 가상 공간의 장면이 변경되어 사용자는 더욱 현실감 높은 체험을 할 수 있다.</p></div>
+
+<ul>
+<li>HMD: 머리에 쓰는 3D 디스플레이의 한 종류.</li>
+<li>시차: 한 물체를 서로 다른 두 지점에서 보았을 때 방향의 차이.</li>
+</ul></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 감각 전달 장치와 공간 이동 장치는 사용자가 메타버스에 몰입할 수 있게 한다.</li>
+<li>② 공간 이동 장치는 현실 세계 사용자의 움직임을 메타버스의 아바타에게 전달한다.</li>
+<li>③ HMD는 사용자가 시각을 통해 메타버스의 공간과 물체의 입체감을 느끼도록 한다.</li>
+<li>④ 감각 전달 장치는 아바타가 느끼는 것으로 설정된 감각을 사용자에게 전달하는 장치이다.</li>
+<li>⑤ 가상 현실 장갑을 착용하면 사용자와 아바타는 상호 간에 감각 반응을 주고받을 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong><br />
+2문단에 따르면 가상 현실 장갑은 아바타가 만지는 가상 물체의 감각을 사용자에게 전달하고, 사용자의 손가락·팔 움직임에 따라 아바타를 움직이게 할 수 있을 뿐, 사용자의 감각 반응을 아바타에게 전달하는 것은 아니다. 상호 간에 감각 반응을 주고받는다고 한 ⑤가 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.5% ②8.9% ③7.4% ④7.2% ⑤74.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 적절한 것은?</p>
+<ul>
+<li>① 관성 측정 센서는 사용자의 이동 속도와 뛰는 힘을 측정할 수 있다.</li>
+<li>② HMD에 표시되는 가상 공간 장면의 변경에 따라 HMD는 가상 현실 트레드밀을 제어한다.</li>
+<li>③ 가상 공간에서 아바타가 경사로를 만나면 가상 현실 트레드밀 바닥의 기울기가 변경될 수 있다.</li>
+<li>④ 모션 트래킹 시스템은 아바타의 동작에 따라 사용자가 동일하게 움직일 수 있도록 동기화한다.</li>
+<li>⑤ 아바타가 이동 방향을 바꾸면 가상 현실 트레드밀 바닥의 진행 방향이 변경되어 사용자의 이동 방향이 바뀌게 된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>15번 — 정답 ③</strong><br />
+[A]에 따르면 아바타가 존재하는 가상 공간의 환경 변화에 따라 트레드밀 바닥의 진행 속도 및 방향, 기울기 등이 변경되기도 한다. 따라서 아바타가 경사로를 만나면 트레드밀 바닥의 기울기가 변경될 수 있다(③).</p>
+<p><em>선택률</em> — 응시 98,558명 — ①2.5% ②4.1% ③82.0% ④4.1% ⑤6.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+동작 추적 센서의 하나인 키넥트 센서는 적외선 카메라와 RGB 카메라 등으로 구성된다. 적외선 카메라는 광원에서 발산된 적외선이 피사체의 표면에서 반사되어 수신되기까지 걸리는 시간을 측정하여, 피사체의 입체 정보를 포함하는 저해상도 단색 이미지를 제공한다. 반면 RGB 카메라는 피사체의 고해상도 컬러 이미지를 제공한다. 키넥트 센서는 저해상도 입체 이미지를 고해상도 컬러 이미지에 투영하여 사용자가 검출되는 경우, 〈그림〉과 같이 신체 부위에 대응되는 25개의 연결점을 선으로 이은 3D 골격 이미지를 제공한다.</p>
+<p><strong><span class="boxmark">[그림: 3D 골격 이미지]</span></strong> (원문: 〈보기〉 글의 왼쪽에 배치) 정면을 향해 두 팔을 몸통에서 약간 벌리고 서 있는 사람의 몸 윤곽(머리·몸통·양팔·양다리)이 회색 점선으로 그려져 있다. 그 윤곽 안에 신체 부위에 대응되는 검은 점(연결점)들이 굵은 실선으로 이어져 골격을 이룬다. 머리에 1점, 목과 어깨 중앙에 각 1점, 양쪽 어깨·팔꿈치·손목에 각 1점씩 있고 양 손끝에는 손가락에 해당하는 점 여러 개가 모여 있다. 척추 중간에 1점, 골반 중앙에 1점과 양쪽 골반에 각 1점, 양 무릎·발목·발끝에 각 1점씩 찍혀 있다. 점선 윤곽 아래에 ‘〈그림〉’ 캡션이 있다.</p>
+</blockquote>
+<ul>
+<li>① 키넥트 센서는 가상 공간에 있는 물체들 간의 거리를 측정하여 입체감을 구현할 수 있다.</li>
+<li>② 키넥트 센서가 확보한, 사용자의 춤추는 동작 정보를 바탕으로 아바타의 춤추는 동작이 구현될 수 있다.</li>
+<li>③ 키넥트 센서와 관성 측정 센서를 이용하여 사용자의 걷는 자세 및 이동 속도 변화율을 파악할 수 있다.</li>
+<li>④ 연결점의 수와 위치의 제약 때문에 사용자의 골격 이미지로는 사용자의 얼굴 표정 변화를 아바타에게 전달할 수 없다.</li>
+<li>⑤ 적외선 카메라의 입체 이미지와 RGB 카메라의 컬러 이미지 정보로부터 생성된 골격 이미지가 사용자의 동작 정보를 파악하는 데 사용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+4문단에서 동작 추적 센서는 사용자의 동작을 파악하는 센서라고 했고, 〈보기〉에서 키넥트 센서는 동작 추적 센서의 하나라고 했다. 따라서 키넥트 센서가 가상 공간에 있는 물체들 간의 거리를 측정하여 입체감을 구현한다는 ①은 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,562명 — ①58.7% ②5.1% ③8.5% ④17.2% ⑤10.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 그 연주자는 피아노를 언니의 노래에 정확히 맞추어 쳤다.</li>
+<li>② 아내는 집 안에 있는 물건들의 색깔을 조화롭게 맞추었다.</li>
+<li>③ 우리는 다음 주까지 손발을 맞추어 작업을 마치기로 했다.</li>
+<li>④ 그 동아리는 신입 회원을 한 명 더 뽑아 인원을 맞추었다.</li>
+<li>⑤ 동생은 중간고사를 보고 나서 친구와 답을 맞추어 보았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>17번 — 정답 ①</strong><br />
+ⓐ‘맞추다’는 ‘어떤 기준이나 정도에 어긋나지 아니하게 하다’의 뜻으로, ①의 ‘노래에 정확히 맞추어’와 같은 의미로 쓰였다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①78.4% ②3.8% ③12.5% ④2.5% ⑤3.3%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>최근까지 일반적인 컴퓨터 환경에서는 운영 체제를 제어하거나 사용자 인터페이스를 처리하고, 문서를 작성하거나 웹을 탐색하는 등 다양한 범용 작업이 주요 연산 대상이었다. 이러한 작업은 명령어의 종류가 많고 그 순서가 수시로 바뀌며, 연산 간 종속성이 크다. 컴퓨터의 연산은 주로 여러 개의 코어로 구성된 ㉠중앙 처리 장치에서 수행되는데, 코어는 명령어를 해석하고 각종 연산을 실행하는 부분이다. ㉠은 여러 개의 고성능 코어로 구성되어 복잡한 제어 흐름을 정밀하게 조율할 수 있도록 설계되었다. 그러나 인공 지능 학습이나 고해상도 영상 처리처럼 대규모 데이터에 동일한 연산을 반복 수행해야 하는 작업이 늘면서, 코어 수에 한계가 있고 개별 코어가 복잡한 제어에 맞추어진 ㉠으로는 이러한 병렬 연산 환경을 효율적으로 처리하기 어려워졌다. 이러한 상황에서 새로운 중심 장치로 떠오른 것이 다수의 단순 연산 전용 코어를 집적한 ㉡그래픽 처리 장치이다.</p>
+<p>㉡의 성능은 단위 시간당 처리할 수 있는 연산의 양으로 나타낼 수 있다. ㉡은 같은 명령어를 여러 스레드에 동시에 적용해 한꺼번에 처리하므로, 동일한 연산을 대량으로 반복하는 작업에서 ㉠보다 훨씬 많은 양을 같은 시간에 처리한다. ㉠이 소수의 코어로 연산을 차례대로 처리하는 데 견주어, ㉡은 수많은 코어로 연산을 동시에 펼쳐 처리하기 때문이다. 한 번에 동시에 실행되는 스레드가 많을수록, 또 각 연산 유닛에 일이 고르게 나뉠수록 단위 시간당 처리량은 커진다. 반대로 동시에 실행할 수 있는 스레드의 수가 적거나 일부 연산 유닛에만 일이 몰리면, 나머지 자원이 놀게 되어 처리량은 줄어든다. 이처럼 ㉡의 성능은 얼마나 많은 연산을 얼마나 고르게 병렬로 펼치느냐에 달려 있으며, 같은 ㉡이라도 맡은 작업의 성격에 따라 처리량은 크게 달라진다.</p>
+<p>그런데 ㉡은 ㉢스레드 블록 내 모든 스레드가 동일한 명령어를 동시에 수행하도록 설계되어 있어, 분기문이나 조건 판단이 자주 등장하는 연산에서는 병렬 처리의 효율이 낮아진다. 조건 판단은 특정 수치나 상태에 따라 연산의 흐름을 다르게 결정하는 과정이며, 분기문은 이러한 조건 판단에 따라 실행 경로를 분리하거나 연결하는 명령 구조이다. 예컨대 '어떤 값이 일정 기준보다 크면 A 연산을, 그렇지 않으면 B 연산을 수행하라.'는 명령이 있으면, 값이 기준보다 큰 데이터를 맡은 스레드와 그렇지 않은 데이터를 맡은 스레드는 실행해야 할 작업이 서로 달라진다. 이때 ㉡은 한 블록의 스레드들이 같은 명령을 함께 수행해야 하므로, A 연산을 맡은 스레드가 일하는 동안 B 연산을 맡은 스레드는 대기하고, 다시 B 연산이 수행되는 동안 A 연산을 맡은 스레드가 대기하게 된다. 그 결과 일부 스레드가 다른 스레드의 작업이 끝날 때까지 기다리게 되어 병렬성이 손실된다. 또한 같은 스레드 블록 내의 여러 스레드가 동시에 같은 메모리 공간에 접근하면 충돌이 발생해 연산이 지연된다. 따라서 ㉡은 단순하고 반복적인 연산에는 매우 효과적이지만, 흐름이 자주 갈라지는 연산에는 그 강점을 온전히 발휘하지 못한다.</p>
+<p>이처럼 ㉡의 설계에서는 세 가지 요소가 서로 맞물려 있다. 첫째는 처리 속도로, 단위 시간당 처리하는 연산의 양이다. 둘째는 제어 유연성으로, 분기문이나 조건 판단처럼 흐름이 갈라지는 연산을 무리 없이 처리하는 정도이다. 셋째는 메모리 효율로, 여러 스레드가 충돌 없이 데이터를 주고받는 정도이다. 코어의 제어 기능을 최소화하고 같은 명령어를 떼로 반복하게 하면 처리 속도는 높아지지만, 그만큼 흐름이 갈라지는 연산을 다루는 제어 유연성은 떨어진다. 또 많은 스레드를 동시에 돌려 처리 속도를 높이려 하면 같은 메모리에 접근하려는 스레드가 늘어 충돌이 잦아지므로 메모리 효율을 함께 높이기는 어렵다. 결국 ㉡은 세 요소를 모두 동시에 최대로 끌어올리기 어려우며, 어떤 작업을 맡기느냐에 따라 어느 요소를 우선할지를 조정하게 된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생에게 제공된 학습지의 일부이다. 학생의 ‘판단 결과’로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학습지]</span></strong> ※ 아래를 읽고 윗글에 비추어 맞으면 ○, 틀리면 × 표시를 하시오.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>판단할 내용</th>
+<th style="text-align: center;">판단 결과</th>
+<th style="text-align: center;">선지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>두 연산 장치를 견주며 각각이 잘 다루는 작업을 설명하고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">①</td>
+</tr>
+<tr>
+<td>㉡의 성능을 좌우하는 요소들을 제시하고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">②</td>
+</tr>
+<tr>
+<td>㉡이 효율을 잃는 경우를 사례를 들어 설명하고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">③</td>
+</tr>
+<tr>
+<td>분기문은 조건 판단의 한 종류로서 조건 판단에 포함된다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">④</td>
+</tr>
+<tr>
+<td>㉡의 설계에서 서로 맞물려 상충하는 요소들을 밝히고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">⑤</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+3문단에서 "분기문은 이러한 조건 판단에 따라 실행 경로를 분리하거나 연결하는 명령 구조"라고 했어요. 즉 분기문은 조건 판단의 <em>결과에 따라 경로를 나누는 구조</em>이지, 조건 판단의 한 종류로 그 안에 포함되는 것이 아닙니다. 둘의 관계를 뒤집어 ○ 표시한 ④가 적절하지 않아 정답이에요. ①은 1문단(㉠·㉡ 대비와 각자 잘 다루는 작업), ②는 2문단(성능을 좌우하는 요소), ③은 3문단(분기문 사례로 효율 저하 설명), ⑤는 4문단(세 요소의 상충)에 비추어 모두 ○이 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>㉢의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 한 블록에 속한 스레드들이 서로 다른 명령어를 동시에 수행하기 때문이다.</li>
+<li>② 분기문에서 갈라진 경로를 따라 일부 스레드가 다른 스레드의 작업이 끝나기를 기다려야 하기 때문이다.</li>
+<li>③ 조건 판단이 없는 단순 반복 연산에서도 스레드 간 충돌이 반드시 일어나기 때문이다.</li>
+<li>④ 스레드 블록에 분배되는 연산량이 항상 균등하게 나뉘기 때문이다.</li>
+<li>⑤ 고성능 코어가 복잡한 제어 흐름을 정밀하게 조율하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+㉢은 "스레드 블록 내 모든 스레드가 동일한 명령어를 동시에 수행하도록 설계"되어 분기문에서 효율이 낮아진다는 부분이에요. 그 이유는 3문단에 있죠. 분기문이 끼어들면 스레드마다 할 일이 달라지는데, 같은 블록은 같은 명령을 함께 수행해야 하므로 "일부 스레드는 다른 스레드의 작업이 끝날 때까지 대기"하게 됩니다. 이를 정확히 짚은 ②가 정답이에요. ① 한 블록의 스레드는 "동일한 명령어"를 수행하므로 "서로 다른 명령어"는 사실과 어긋나고, ③ 충돌은 같은 메모리 접근 시의 일이며 "단순 반복 연산에서도 반드시" 일어난다고 하지 않았어요. ④ 연산량이 "항상 균등하게" 나뉜다는 것은 지문과 어긋나며(균등하지 않으면 대기 발생), ⑤ 복잡한 제어를 정밀하게 조율하는 것은 ㉡이 아니라 ㉠의 특성입니다.</p>
+<p><strong>6번 [3점] — 정답 ⑤</strong>
+4문단에서 처리 속도와 제어 유연성은 <em>함께 높이기 어려운</em>, 서로 맞물려 상충하는 요소예요. 제어 유연성을 높인다고 처리 속도가 따라 높아지는 관계가 아니죠. 그런데 ⑤는 "제어 유연성을 높이면 처리 속도가 함께 높아져 분기문 처리가 빨라진다"라고 두 요소가 같이 오르는 것처럼 잘못 연결했으니 적절하지 않아 정답입니다. ①은 2문단(단순 반복에 유리), ②는 3문단(조건 판단·분기문), ③은 3문단(같은 명령 수행 설계에서 병렬성 손실), ④는 4문단(속도↑ 시 메모리 충돌↑로 메모리 효율과 상충)에 각각 들어맞는 적절한 반응이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 연산 장치를 두고 두 작업을 처리하게 했다. 작업 갑은 동일한 색 보정 명령을 한 영상의 수백만 픽셀에 똑같이 적용하는 일이고, 작업 을은 픽셀마다 밝기 값이 기준보다 크면 한 가지 보정을, 작으면 다른 보정을 적용하도록 흐름이 갈라지는 일이다. 한편 같은 작업 갑을 처리하더라도, 동시에 실행하는 스레드의 수를 늘려 처리 속도를 높이자 여러 스레드가 같은 메모리 공간에 한꺼번에 접근하는 일이 잦아졌다.</p>
+</blockquote>
+<ul>
+<li>① 작업 갑이 동일한 명령을 수백만 픽셀에 똑같이 적용하는 것은, ㉡이 같은 시간에 많은 양을 처리하기에 유리한 단순 반복 연산에 해당하겠군.</li>
+<li>② 작업 을에서 밝기 값에 따라 보정이 갈라지는 것은, 스레드마다 실행할 작업이 달라지는 조건 판단과 분기문이 등장하는 경우이겠군.</li>
+<li>③ 작업 을에서 일부 스레드가 대기하게 되는 것은, 한 블록의 스레드들이 같은 명령을 함께 수행해야 하는 설계에서 병렬성이 손실되는 모습이겠군.</li>
+<li>④ 작업 갑의 스레드 수를 늘리자 같은 메모리 공간 접근이 잦아진 것은, 처리 속도를 높이려 할 때 메모리 효율을 함께 높이기 어려운 상충을 보여 주겠군.</li>
+<li>⑤ 작업 을이 효율을 잃는 것은, 제어 유연성을 높이면 처리 속도가 함께 높아져 분기문 처리가 빨라지기 때문이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>㉠(중앙 처리 장치)</strong>: 고성능 코어 몇 개로 복잡한 제어 흐름을 정밀하게 조율하는 장치. 종류가 다양하고 순서가 바뀌는 범용 작업에 강해요.</li>
+<li><strong>㉡(그래픽 처리 장치)</strong>: 단순 코어 수천 개로 같은 명령을 떼로 반복하는 장치. 동일 연산의 대량 반복에 강해요.</li>
+<li><strong>분기문 / 조건 판단</strong>: 어떤 값에 따라 실행 경로가 갈라지는 명령 구조와 그 갈림을 정하는 과정. GPU가 약한 지점이에요.</li>
+<li><strong>상충하는 세 요소</strong>: 처리 속도·제어 유연성·메모리 효율. 한꺼번에 최대로 끌어올리기 어렵습니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>㉠ 중앙 처리 장치</th>
+<th>㉡ 그래픽 처리 장치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코어</td>
+<td>고성능 코어 소수</td>
+<td>단순 코어 수백~수천</td>
+</tr>
+<tr>
+<td>잘하는 일</td>
+<td>복잡·가변·종속적인 범용 작업</td>
+<td>동일 연산의 대량 반복</td>
+</tr>
+<tr>
+<td>제어 흐름</td>
+<td>복잡한 제어를 정밀 조율</td>
+<td>같은 명령을 동시에 떼로 수행</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>병렬 반복에 비효율</td>
+<td>분기문·조건 판단에 효율 저하</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>㉡은 <strong>처리 속도 · 제어 유연성 · 메모리 효율</strong>이 서로 맞물려, 셋을 한꺼번에 다 높이기는 어려워요. 그래서 <em>어떤 작업이냐에 따라 무엇을 우선할지</em>를 조정하게 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>㉠과 ㉡은 각각 어떤 작업에 강한가요?</div><div class='qa-a'>㉠은 종류가 많고 순서가 바뀌는 복잡한 범용 작업에, ㉡은 같은 연산을 대규모로 반복하는 작업에 강합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡이 분기문에서 효율을 잃는 까닭은?</div><div class='qa-a'>한 블록의 스레드가 같은 명령을 함께 수행해야 하는데, 분기문이 끼면 할 일이 갈라져 일부 스레드가 대기하게 되기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡의 처리 속도를 무작정 높이기 어려운 까닭은?</div><div class='qa-a'>스레드를 더 많이 동시에 돌리면 같은 메모리에 접근하려는 충돌이 잦아져 메모리 효율이 떨어지는 등, 세 요소가 서로 상충하기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 9월 [8~11]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>블록체인 기술은 데이터를 블록이라는 단위로 묶어 체인 형태로 연결한 것을 여러 대의 컴퓨터에 중복 저장하는 기술이다. 체인 형태로 연결된 블록의 집합을 블록체인이라 하고, 블록체인을 저장하는 컴퓨터를 노드라고 한다. 새로 생성된 블록은 노드들에 전파된다. 노드들은 블록에 포함된 내용이 블록체인의 다른 블록에 있는 내용과 상충되지 않는지, 동일한 내용이 블록체인의 다른 블록에 이중으로 포함되어 있지 않은지 검증한다. 검증이 끝난 블록을 블록체인에 연결할지 여부는 모든 노드들이 참여하는 승인 과정을 통해 정해진다. 승인이 완료된 블록은 블록체인에 연결되고, 이 블록체인은 노드들에 저장된다. 승인 과정에는 합의 알고리즘이 사용되고, 합의 알고리즘의 예로 ‘작업증명’이 있다.</p>
+<p>블록체인 기술의 성능은 블록체인에 데이터가 저장되는 속도로 정의되며, 단위 시간당 블록체인에 저장되는 데이터의 양으로 계산될 수 있다. 블록체인 기술은 공개형과 비공개형으로 구분된다. 비공개형은 공개형과 달리 노드 수에 제한을 두고, 일반적으로 공개형에 비해 합의 알고리즘의 속도가 빠르다. 따라서 비공개형은 승인 과정에 걸리는 시간이 짧기 때문에 성능이 높다.</p>
+<p>데이터가 무단으로 변경되기 어렵다는 성질을 무결성이라 하는데 무결성은 블록체인 기술의 대표적인 장점이다. 특정 노드에 저장되어 있는 일부 데이터가 변경되면 변경된 블록과 그 이후의 블록들은 블록체인과의 연결이 끊어진다. 끊어진 모든 블록을 다시 연결하는 것은 승인 과정을 필요로 하기 때문에 연결을 복구하는 것은 어렵다. 즉 블록과 블록체인의 연결을 유지하면서 블록체인에 포함된 데이터를 변경하는 것이 어려우므로 블록체인 데이터는 무결성이 높다. 무단 변경과 달리, 일부 데이터가 지워져도 승인된 원래의 데이터로 복원할 때는 승인 과정이 필요하지 않다. 따라서 ㉠블록체인에 포함된 데이터는 일부가 지워지더라도 복원이 용이하다.</p>
+<p>블록체인 기술에서 고려해야 할 세 가지 특성이 있다. 보안성은 데이터의 무단 변경이 어려울 뿐 아니라 동일한 내용의 데이터가 블록체인의 서로 다른 블록에 또는 단일 블록에 이중으로 포함되는 것이 어렵다는 성질이다. 승인 과정에 걸리는 시간이 줄거나 노드 수가 감소하면 보안성은 낮아진다. 탈중앙성은 승인 과정에 다수의 노드들이 참여하고, 특정 노드가 승인 과정을 주도하지 않는다는 성질이다. 노드 수가 감소하면 탈중앙성은 낮아진다. 확장성은 블록체인 기술이 목표로 하는 응용 분야에 적용 가능할 만큼 성능이 높고, 노드 수가 증가해도 서비스 유지가 가능하다는 성질이다. 노드 수가 증가하면 성능이 저하되므로, 확장성이 높다는 것은 노드 수가 증가하더라도 성능 저하가 크지 않다는 것을 의미한다. 그래서 기술 변화 없이 확장성을 높이고자 할 때 노드 수를 제한하는 방법이 사용되기도 한다. 노드 수를 제한하면 성능 저하를 막을 수 있기 때문이다. 아직까지 블록체인 기술은 보안성, 탈중앙성, 확장성을 함께 높일 수 있는 방법이 없어 대규모로 채택되지 못하고 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽은 학생에게 제공된 학습지의 일부이다. 학생의 ‘판단 결과’로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학습지]</span></strong> ※ 아래를 읽고 맞으면 ○, 틀리면 × 표시를 하시오.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>판단할 내용</th>
+<th style="text-align: center;">판단 결과</th>
+<th style="text-align: center;">선지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>블록체인 기술의 특성과 한계를 살펴보고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">①</td>
+</tr>
+<tr>
+<td>블록체인의 구조를 분석하고, 블록체인 기술의 응용 분야를 소개하고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">②</td>
+</tr>
+<tr>
+<td>블록체인 기술의 장점을 열거하고, 다른 기술과의 경쟁 양상을 설명하고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">③</td>
+</tr>
+<tr>
+<td>⋮</td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>합의 알고리즘은 작업증명의 한 예이다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">④</td>
+</tr>
+<tr>
+<td>체인 형태로 연결된 블록의 집합을 저장하는 컴퓨터를 노드라고 한다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">⑤</td>
+</tr>
+</tbody>
+</table>
+<p>(선지 ①~⑤는 학습지 표의 각 행에 표시된 ‘판단 결과’이다.)</p>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>8번 — 정답 ④</strong><br />
+1문단에서 승인 과정에는 합의 알고리즘이 사용되고 작업증명은 합의 알고리즘의 한 예라고 했다. 합의 알고리즘이 작업증명보다 큰 범주이므로 ‘합의 알고리즘은 작업증명의 한 예이다’에 ○ 표시한 ④가 적절하지 않다. ①은 글 전체가 특성(2~4문단)과 한계(4문단 끝)를 다루므로 ○이 맞고, ②는 응용 분야 소개가 없으며 ③은 다른 기술과의 경쟁 양상 설명이 없으므로 × 가 맞다. ⑤는 1문단의 정의 그대로이므로 ○이 맞다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①3.4% ②8.8% ③6.3% ④75.6% ⑤6.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 승인 과정에 참여할 노드를 결정하기 위해 합의 알고리즘이 사용된다.</li>
+<li>② 일부 블록체인 데이터가 변경되면 전체 노드의 모든 블록은 승인 과정을 다시 거쳐야 한다.</li>
+<li>③ 블록과 블록체인의 연결을 유지하면서 블록체인 데이터를 삭제할 수 있으면 보안성이 높다.</li>
+<li>④ 공개형 블록체인 기술은 같은 양의 데이터가 저장되는 데 걸리는 시간이 짧을수록 성능이 낮아진다.</li>
+<li>⑤ 블록이 블록체인에 연결되기 위해서는 블록의 데이터가 블록체인의 다른 데이터와 비교되어야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong><br />
+블록체인에 연결되려면 검증을 거쳐야 하는데, 검증은 블록의 내용이 다른 블록의 내용과 상충되거나 이중으로 포함되지 않는지 확인하는 것, 즉 다른 데이터와의 비교이다(⑤). ①승인 과정 자체에 합의 알고리즘이 쓰이는 것이지 참여 노드 결정용이 아니고, ②승인을 다시 거쳐야 하는 것은 변경된 블록과 그 이후의 블록들이며, ③연결을 유지한 채 삭제할 수 있다는 것은 무단 변경이 쉽다는 것이므로 보안성이 높은 게 아니고, ④저장 시간이 짧을수록 성능은 높아진다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①5.6% ②15.6% ③5.2% ④5.2% ⑤68.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 블록체인에 포함된 데이터는 변경이 쉽기 때문이다.</li>
+<li>② 블록체인이 여러 노드들에 중복 저장되기 때문이다.</li>
+<li>③ 승인 과정에 참여하는 노드 수에 제한이 있기 때문이다.</li>
+<li>④ 데이터가 블록체인에 포함되기 위해서는 승인 과정을 필요로 하기 때문이다.</li>
+<li>⑤ 동일한 데이터가 블록체인에 연결된 서로 다른 블록에 이중으로 포함되어 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong><br />
+블록체인은 여러 대의 컴퓨터(노드)에 중복 저장되므로, 일부 데이터가 지워져도 다른 노드들에 있는 승인된 원래 데이터를 별도의 승인 과정 없이 가져와 복원할 수 있다(②). ④는 무단 변경으로 끊어진 연결의 복구가 어려운 이유에 해당할 뿐, 복원이 용이한 이유가 아니다(복원에는 승인 과정이 필요 없음). ⑤동일 데이터의 이중 포함은 검증에서 걸러지는 대상이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.1% ②55.8% ③7.1% ④25.8% ⑤8.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+노드 수가 10개로 고정된 블록체인 기술을 사용하고 있는 A 업체는 이전에 사용하던 작업증명 대신 속도가 더 빠른 합의 알고리즘을 개발해, 유통 분야에서 요구되는 성능을 초과 달성했다. 한편 B 업체는 최근 A 업체보다 데이터의 위조 불가능성을 향상시킨 블록체인 기술을 개발했다. 이 기술은 노드 수에 제한이 없지만 현재는 200개의 노드가 참여하고 있다. 승인 과정에는 작업증명을 사용한다.</p>
+</blockquote>
+<ul>
+<li>① A 업체의 블록체인 기술은 이전보다 확장성과 보안성이 모두 높아졌겠군.</li>
+<li>② B 업체의 블록체인 기술은 노드 수가 증가할수록 보안성과 확장성이 모두 높아지겠군.</li>
+<li>③ B 업체의 블록체인 기술은 노드 수가 감소하면 성능은 높아지고 탈중앙성이 낮아지겠군.</li>
+<li>④ A 업체의 블록체인 기술은 B 업체와 달리 공개형이고, B 업체보다 탈중앙성이 낮겠군.</li>
+<li>⑤ A 업체의 블록체인 기술은 B 업체와 승인 과정이 다르고, B 업체보다 무결성이 높겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+승인 과정에는 모든 노드가 참여하므로 노드 수가 감소하면 승인 시간이 짧아져 성능(데이터 저장 속도)은 높아지고, 4문단에 따라 탈중앙성은 낮아진다(③). ①합의 알고리즘 속도가 빨라져 승인 시간이 줄면 보안성은 낮아지므로 둘 다 높아진 게 아니고, ②노드 수 증가 시 보안성은 높아지지만 성능 저하로 확장성은 낮아질 수 있으며, ④노드 수를 제한(고정)한 A 업체는 비공개형이고, ⑤B 업체가 위조 불가능성(무결성)을 향상시켰으므로 A 업체의 무결성이 더 높은 것이 아니다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.9% ②13.2% ③67.8% ④6.6% ⑤9.4%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>GPU는 수많은 단순 연산 전용 코어가 병렬로 작동하는 장치로, 동일한 명령어를 다수의 데이터에 반복 적용하는 작업을 빠르게 처리한다. GPU의 코어는 복잡한 제어 흐름을 조율하는 기능을 최소화한 대신 같은 연산을 빠르게 수행하도록 설계되어 있어, 처리할 데이터가 많더라도 그 연산이 동일하기만 하면 수백에서 수천 개의 코어가 이를 동시에 나누어 맡을 수 있다. 이러한 처리 방식은 본래 그래픽 연산을 위한 것이었으나, 같은 연산이 대규모로 반복되는 여러 분야로 그 쓰임이 넓어졌다. GPU가 처리하는 작업은 크게 세 갈래로 나눌 수 있다.</p>
+<p>첫째는 그래픽 처리이다. 영상 처리나 고해상도 그래픽 구현에서는 화면을 이루는 수많은 픽셀 하나하나에 같은 연산을 적용해야 한다. 픽셀의 수가 많아 처리할 연산의 양은 막대하지만, 각 픽셀에 적용되는 연산은 동일하므로 다수의 코어가 이를 동시에 나누어 맡기에 알맞다. 만약 코어 수가 적은 장치로 이를 처리한다면 픽셀을 차례대로 하나씩 계산해야 해 많은 시간이 걸리지만, GPU는 픽셀들을 여러 코어에 흩어 동시에 계산하므로 같은 시간에 훨씬 많은 양을 처리한다. GPU가 원래 이러한 그래픽 연산을 위해 설계된 까닭에, 픽셀 단위의 병렬 연산은 GPU가 가장 잘 다루는 작업에 속한다.</p>
+<p>둘째는 인공 지능 학습이다. 인공 지능 학습에서는 행렬 곱셈과 역전파 계산처럼 동일한 연산이 방대한 데이터에 걸쳐 반복된다. 이러한 연산은 그 양이 매우 많지만 형태가 같아, 수천 개의 코어가 같은 명령을 동시에 수행하는 GPU의 구조와 잘 맞는다. 학습에 쓰이는 데이터의 양이 커질수록 반복해야 하는 연산의 양도 늘어나는데, 코어 수가 한정된 장치로는 이를 감당하기 어려운 반면 GPU는 연산을 여러 코어에 펼쳐 병렬로 처리함으로써 학습에 드는 시간을 크게 줄인다. 그래픽 처리를 위해 마련된 병렬 구조가 인공 지능 학습이라는 다른 분야에 그대로 활용되는 셈이다.</p>
+<p>㉠셋째는 과학 기술 분야의 대규모 수치 연산이다. 기상 예측, 유전자 배열 분석, 유체 역학 시뮬레이션 등에서는 막대한 양의 수치 계산을 빠르게 처리해야 한다. 이들 분야의 계산 역시 동일한 계산을 수많은 데이터에 거듭 적용하는 형태를 띠므로, 병렬 구조에 기반한 GPU가 효과적으로 활용된다. 예컨대 유체의 흐름을 모사하는 시뮬레이션에서는 공간을 잘게 나눈 수많은 지점마다 같은 방식의 계산을 되풀이해야 하는데, 이러한 계산은 지점별로 형태가 동일하므로 여러 코어에 흩어 동시에 처리하기에 알맞다. 이처럼 세 갈래의 작업은 분야는 다르지만 '같은 연산의 대규모 반복'이라는 공통점을 지니며, 바로 이 공통점이 분야를 가리지 않고 GPU를 폭넓게 쓰이게 한 바탕이 된다. 반대로 데이터마다 적용할 연산이 제각기 다른 작업이라면, 같은 명령을 떼로 반복하는 GPU의 구조는 그 강점을 발휘하기 어렵다.</p>
+<p>이렇게 처리되는 데이터는 GPU 내부의 <span class="boxmark">[메모리]</span>에 저장되는데, <span class="boxmark">[메모리]</span>는 접근 속도, 용량, 사용 범위에 따라 세 가지로 나뉜다. 전역 메모리는 모든 스레드가 접근할 수 있는 대용량 저장 공간으로, 연산 결과를 다음 단계나 외부와의 공유를 위해 저장한다. 다만 접근 속도가 느려 연산 중에 쓰기에는 적합하지 않다. 공유 메모리는 같은 스레드 블록 내의 스레드들이 공동으로 사용하는 저장소로, 전역 메모리보다 빠르면서 여러 스레드 간의 정보 공유가 가능하다. 레지스터는 개별 스레드만 사용할 수 있는 저장소로, 용량은 작지만 접근이 매우 빠르다. 따라서 연산 중에 거듭 쓰이는 값은 빠른 레지스터나 공유 메모리에 두고, 최종 결과만 전역 메모리에 저장하는 방식으로 성능을 높인다. 다만 같은 스레드 블록 내의 여러 스레드가 동시에 같은 메모리 공간에 접근하면 충돌이 발생해 병렬성이 저하되어 연산이 지연될 수 있으므로, 메모리를 어떻게 나누어 쓰느냐가 GPU의 성능을 좌우한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① GPU는 인공 지능 학습을 위해 처음 설계된 뒤 그래픽 처리에 활용되기 시작했다.</li>
+<li>② 전역 메모리는 모든 스레드가 접근할 수 있으나 접근 속도가 느린 대용량 저장 공간이다.</li>
+<li>③ 레지스터는 같은 스레드 블록 내의 여러 스레드가 공동으로 사용하는 저장소이다.</li>
+<li>④ 그래픽 처리, 인공 지능 학습, 과학 기술 연산은 서로 다른 종류의 연산을 반복한다는 공통점이 있다.</li>
+<li>⑤ 여러 스레드가 서로 다른 메모리 공간에 접근하면 충돌이 발생해 병렬성이 저하된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+5문단에서 전역 메모리는 "모든 스레드가 접근할 수 있는 대용량 저장 공간"이고 "접근 속도가 느려" 연산 중에 쓰기 어렵다고 했으므로 ②가 일치해 정답이에요. ① GPU는 "본래 그래픽 연산을 위한 것"이었다고 했으니 순서가 뒤바뀌었고, ③ "개별 스레드만 사용"하는 것은 레지스터이며 "공동으로 사용"하는 것은 공유 메모리라 둘을 맞바꿨습니다. ④ 세 갈래의 공통점은 "<em>같은</em> 연산의 대규모 반복"이라고 했으니 "서로 다른 종류의 연산"은 정반대고, ⑤ 충돌은 "서로 다른" 공간이 아니라 "같은 메모리 공간에" 동시에 접근할 때 일어납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[메모리]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 전역 메모리는 연산 결과를 외부와 공유하기 위해 저장하는 데 쓰인다.</li>
+<li>② 공유 메모리는 전역 메모리보다 접근 속도가 빠르다.</li>
+<li>③ 레지스터는 용량이 작지만 접근 속도가 매우 빠르다.</li>
+<li>④ 공유 메모리는 같은 스레드 블록 내의 스레드들이 함께 사용할 수 있다.</li>
+<li>⑤ 전역 메모리는 접근 속도가 빨라 연산 중에 데이터를 처리하기에 적합하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+5문단에서 전역 메모리는 "접근 속도가 느려 연산 중에 쓰기에는 적합하지 않다"라고 했어요. 그런데 ⑤는 전역 메모리를 "접근 속도가 빨라 연산 중에 데이터를 처리하기에 적합"하다고 정반대로 설명했으니 적절하지 않아 정답입니다. ①은 전역 메모리의 외부 공유용 저장, ②는 공유 메모리가 전역보다 빠름, ③은 레지스터의 작은 용량·빠른 속도, ④는 공유 메모리의 블록 내 공동 사용으로 모두 5문단에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 기상 예측, 유전자 배열 분석 등은 막대한 양의 수치 계산을 빠르게 처리해야 하는 작업이다.</li>
+<li>② 과학 기술 분야의 계산은 같은 연산이 수많은 데이터에 반복 적용되는 형태를 띤다.</li>
+<li>③ 병렬 구조에 기반한 GPU가 이 분야의 대규모 수치 연산에 효과적으로 활용된다.</li>
+<li>④ 이 분야의 연산은 데이터마다 적용되는 연산의 형태가 서로 달라 병렬 처리에 적합하지 않다.</li>
+<li>⑤ 이 분야의 작업은 그래픽 처리나 인공 지능 학습과 '같은 연산의 대규모 반복'이라는 공통점을 지닌다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong>
+㉠은 과학 기술 분야의 대규모 수치 연산을 다룬 부분이에요. 4문단은 이 분야의 계산도 "같은 연산이 수많은 데이터에 반복 적용되는 형태"라서 GPU가 효과적이라고 했죠. 그런데 ④는 "데이터마다 적용되는 연산의 형태가 서로 달라 병렬 처리에 적합하지 않다"라고 정반대로 말했으니 적절하지 않아 정답입니다. ①·②·③은 4문단(수치 계산의 양·반복 형태·GPU 활용), ⑤는 4문단 끝('같은 연산의 대규모 반복'이라는 공통점)에서 그대로 확인됩니다.</p>
+<p><strong>10번 [3점] — 정답 ③</strong>
+5문단에서 빠른 것은 <em>레지스터와 공유 메모리</em>이고, 전역 메모리는 <em>느린</em> 대용량 저장소예요. 〈보기〉에서 ⓐ는 공유 메모리, ⓑ는 레지스터, ⓒ는 전역 메모리에 해당하죠. 그런데 ③은 ⓒ(전역 메모리)를 "빠른" 저장소라 하고 ⓐ·ⓑ를 "느린" 것처럼 말해 속도 관계를 거꾸로 뒤집었으니 적절하지 않아 정답입니다. ①은 ⓐ=공유 메모리(블록 내 공동 사용), ②는 ⓑ=레지스터(개별 스레드 전용), ④는 ⓒ=전역 메모리(결과 저장·공유), ⑤는 같은 공간 동시 접근에 따른 충돌·병렬성 저하에 각각 정확히 대응하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 GPU가 유체 역학 시뮬레이션을 수행하고 있다. 한 스레드 블록에 속한 여러 스레드가 같은 계산을 나누어 맡아, 계산에 거듭 쓰이는 중간값은 블록 내 스레드들이 함께 들여다보는 저장소 ⓐ에 두고, 각 스레드가 혼자만 쓰는 임시값은 저장소 ⓑ에 두었다. 모든 계산이 끝난 뒤의 최종 결과는 저장소 ⓒ에 저장해 다음 단계의 연산에 넘겼다. 그런데 같은 블록의 여러 스레드가 한꺼번에 ⓐ의 같은 자리에 접근하려 하자 처리 속도가 잠시 느려졌다.</p>
+<p><strong><span class="boxmark">[그림 2]</span> 〈메모리 계층과 접근 범위〉</strong> — 하나의 스레드 블록을 큰 사각형으로 그리고 그 안에 여러 스레드를 작은 원으로 배치한 도식. 각 스레드 원 옆에 그 스레드만 연결된 작은 상자(ⓑ 레지스터)가 붙어 있고, 블록 사각형 가운데에 모든 스레드가 화살표로 연결된 중간 크기 상자(ⓐ 공유 메모리)가 있으며, 블록 바깥 아래쪽에 블록 전체가 화살표로 연결된 가장 큰 상자(ⓒ 전역 메모리)가 놓여 접근 범위가 넓어질수록 상자가 커지는 모습을 보이는 도식.</p>
+</blockquote>
+<ul>
+<li>① 블록 내 스레드들이 함께 들여다보는 ⓐ는, 같은 스레드 블록 내의 스레드들이 공동으로 사용하는 공유 메모리에 해당하겠군.</li>
+<li>② 각 스레드가 혼자만 쓰는 임시값을 둔 ⓑ는, 개별 스레드만 사용할 수 있는 레지스터에 해당하겠군.</li>
+<li>③ 중간값을 ⓐ에 두고 임시값을 ⓑ에 둔 것은, 접근 속도가 느린 ⓐ·ⓑ보다 빠른 ⓒ에 결과를 모아 두기 위한 것이겠군.</li>
+<li>④ 최종 결과를 저장해 다음 단계로 넘긴 ⓒ는, 다음 단계의 연산이나 외부와의 공유를 위해 결과를 저장하는 전역 메모리에 해당하겠군.</li>
+<li>⑤ 여러 스레드가 한꺼번에 ⓐ의 같은 자리에 접근하려 하자 속도가 느려진 것은, 같은 메모리 공간에 동시 접근할 때의 충돌로 병렬성이 저하된 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>GPU 활용의 세 갈래</strong>: 그래픽 처리(픽셀 연산), 인공 지능 학습(행렬 곱셈·역전파), 과학 기술 수치 연산(기상·유전자·유체 역학). 모두 '같은 연산의 대규모 반복'이라는 공통점이 있어요.</li>
+<li><strong>전역 메모리</strong>: 모든 스레드가 접근하는 대용량 저장소. 느리지만 결과 저장·공유에 쓰여요.</li>
+<li><strong>공유 메모리 / 레지스터</strong>: 공유 메모리는 같은 블록 스레드들이 함께, 레지스터는 개별 스레드만 쓰는 빠른 저장소.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<pre><code>[GPU 활용의 세 갈래 — 한 뿌리에서 갈라짐]
+                 같은 연산의 대규모 반복
+                          │
+        ┌─────────────────┼─────────────────┐
+   그래픽 처리        인공 지능 학습        과학 기술 수치 연산
+   (픽셀 연산)        (행렬 곱셈·역전파)     (기상·유전자·유체 역학)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>메모리</th>
+<th>접근 범위</th>
+<th>속도</th>
+<th>쓰임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전역 메모리</td>
+<td>모든 스레드</td>
+<td>느림</td>
+<td>결과 저장·외부 공유</td>
+</tr>
+<tr>
+<td>공유 메모리</td>
+<td>같은 블록 내 스레드</td>
+<td>중간</td>
+<td>연산 중 정보 공유</td>
+</tr>
+<tr>
+<td>레지스터</td>
+<td>개별 스레드</td>
+<td>매우 빠름</td>
+<td>연산 중 임시값</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>GPU 활용의 세 갈래를 묶어 주는 공통점은 무엇인가요?</div><div class='qa-a'>분야는 달라도 '같은 연산을 대규모로 반복'한다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>연산 <em>중</em>에 주로 쓰는 메모리는 무엇인가요?</div><div class='qa-a'>접근이 빠른 레지스터와 공유 메모리를 주로 씁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 메모리 공간에 여러 스레드가 한꺼번에 접근하면 어떤 일이 생기나요?</div><div class='qa-a'>충돌이 발생해 병렬성이 저하되어 연산이 지연될 수 있습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [38~41]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>스마트폰은 다양한 위치 측정 기술을 활용하여 여러 지형 환경에서 위치를 측정한다. 위치에는 절대 위치와 상대 위치가 있다. 절대 위치는 위도, 경도 등으로 표시된 위치이고, 상대 위치는 특정한 위치를 기준으로 한 상대적인 위치이다.</p>
+<p>실외에서는 주로 스마트폰 단말기에 내장된 GPS(위성항법장치)나 IMU(관성측정장치)를 사용한다. GPS는 위성으로부터 오는 신호를 이용하여 절대 위치를 측정한다. GPS는 위치 오차가 시간에 따라 누적되지 않는다. 그러나 전파 지연 등으로 접속 초기에 짧은 시간 동안이지만 큰 오차가 발생하고 실내나 터널 등에서는 GPS 신호를 받기 어렵다. IMU는 내장된 센서로 가속도와 속도를 측정하여 위치 변화를 계산하고 초기 위치를 기준으로 하는 상대 위치를 구한다. 단기간 움직임에 대한 측정 성능이 뛰어나지만 센서가 측정한 값의 오차가 누적되기 때문에 시간이 지날수록 위치 오차가 커진다. 이 두 방식을 함께 사용하면 서로의 단점을 보완하여 <span class="boxmark">[오차]</span>를 줄일 수 있다.</p>
+<p>한편 실내에서 위치 측정에 사용 가능한 방법으로는 블루투스 기반의 비콘을 활용하는 기술이 있다. 비콘은 실내에 고정 설치되어 비콘마다 정해진 식별 번호와 위치 정보가 포함된 신호를 주기적으로 보내는 기기이다. 비콘들은 동일한 세기의 신호를 사방으로 보내지만 비콘으로부터 거리가 멀어질수록, 벽과 같은 장애물이 많을수록 신호의 세기가 약해진다. 단말기가 비콘 신호의 도달 거리 내로 진입하면 단말기 안의 수신기가 이 신호를 인식한다. 이 신호를 이용하여 2차원 평면에서의 위치를 측정하는 방법으로는 다음과 같은 것들이 있다.</p>
+<p>근접성 기법은 단말기가 비콘 신호를 수신하면 해당 비콘의 위치를 단말기의 위치로 정한다. 여러 비콘 신호를 수신했을 경우에는 신호가 가장 강한 비콘의 위치를 단말기의 위치로 정한다.</p>
+<p>삼변측량 기법은 3개 이상의 비콘으로부터 수신된 신호 세기를 측정하여 단말기와 비콘 사이의 거리로 환산한다. 각 비콘을 중심으로 이 거리를 반지름으로 하는 원을 그리고, 그 교점을 단말기의 현재 위치로 정한다. 교점이 하나로 모이지 않는 경우에는 세 원에 공통으로 속한 영역의 중심점을 단말기의 위치로 측정한다.</p>
+<p>㉠위치 지도 기법은 측정 공간을 작은 구역들로 나누어 각 구역마다 기준점을 설정하고 그 주위에 비콘들을 설치한다. 그러고 나서 비콘들이 송신하여 각 기준점에 도달하는 신호의 세기를 측정한다. 이 신호 세기와 비콘의 식별 번호, 기준점의 위치 좌표를 서버에 있는 데이터베이스에 위치 지도로 기록해 놓는다. 이 작업을 모든 기준점에서 수행한다. 특정한 위치에 도달한 단말기가 비콘 신호를 수신하면 신호 세기를 측정한 뒤 비콘의 식별 번호와 함께 서버로 전송한다. 서버는 수신된 신호 세기와 가장 가까운 신호 세기를 갖는 기준점을 데이터베이스에서 찾아 이 기준점의 위치를 단말기에 알려 준다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>38</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① GPS를 이용하여 측정한 위치는 기준이 되는 위치가 어디냐에 따라 달라진다.</li>
+<li>② 비콘들이 서로 다른 세기의 신호를 송신해야 단말기의 위치를 측정할 수 있다.</li>
+<li>③ 비콘이 전송하는 식별 번호는 신호가 도달하는 단말기를 구별하기 위한 정보이다.</li>
+<li>④ 비콘은 실내에서 GPS 신호를 받아 주위에 위성 식별 번호와 위치 정보를 전송하는 장치이다.</li>
+<li>⑤ IMU는 단말기가 초기 위치로부터 얼마나 떨어져 있는지를 계산하여 단말기의 위치를 구한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[오차]</span>에 대해 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① IMU는 시간이 지날수록 전파 지연으로 인한 오차가 커진다.</li>
+<li>② GPS는 사용 시간이 길어질수록 위성의 위치를 파악하는 데 오차가 커진다.</li>
+<li>③ IMU는 순간적인 오차가 발생하지만 시간이 지날수록 정확한 위치 측정이 가능해진다.</li>
+<li>④ GPS는 단말기가 터널에 진입 시 발생한 오차를 터널을 통과하는 동안 보정할 수 있다.</li>
+<li>⑤ IMU의 오차가 커지는 것은 가속도와 속도를 측정할 때 생기는 오차가 누적되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>39번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 측정 공간을 더 많은 구역으로 나눌수록 기준점이 많아진다.</li>
+<li>② 단말기가 측정 공간에 들어오기 전에 데이터베이스가 미리 구축되어 있어야 한다.</li>
+<li>③ 측정된 신호 세기가 서버에 저장된 값과 가장 가까운 비콘의 위치가 단말기의 위치가 된다.</li>
+<li>④ 비콘을 이동하여 설치하면 정확한 위치 측정을 위해 데이터베이스를 갱신할 필요가 있다.</li>
+<li>⑤ 위치 지도는 측정 공간 안의 특정 위치에서 수신된 신호 세기와 식별 번호 등을 데이터베이스에 기록해 놓은 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>40번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 단말기가 3개의 비콘 신호를 받은 상태를 도식화한 것이다. 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong></p>
+<p>* 각 원의 반지름은 신호 세기로 환산한 비콘과 단말기 사이의 거리이다.
+* 신호 세기에 영향을 미치는 장애물이 [Q]의 위치에 있다.
+(단, 세 원에 공통으로 속한 영역이 항상 존재한다고 가정하며, 신호 세기에 영향을 미치는 다른 요소는 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① 근접성 기법과 삼변측량 기법으로 측정한 단말기의 위치는 동일하겠군.</li>
+<li>② 측정된 신호 세기를 약한 것부터 나열하면 비콘1, 비콘2, 비콘3의 신호 순이겠군.</li>
+<li>③ 실제 단말기의 위치는 삼변측량 기법으로 측정된 위치에 비해 비콘3에 더 가까이 있겠군.</li>
+<li>④ [Q]의 위치에 있는 장애물이 제거된다면, 삼변측량 기법으로 측정되는 단말기의 위치는 현재 측정된 위치에서 P 방향으로 이동하겠군.</li>
+<li>⑤ 단말기에서 측정되는 비콘2의 신호 세기만 약해진다면, 삼변측량 기법으로 측정되는 단말기의 위치는 현재 측정된 위치에서 비콘2 방향으로 이동하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>연산 환경 변화와 GPU — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='연산 환경 변화와 GPU — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

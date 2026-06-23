@@ -1,0 +1,362 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>야스퍼스의 한계 상황 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr><tr><td>정답</td>
+<td><b>②</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+표제는 글 전체의 중심 화제를, 부제는 그것을 다루는 방향을 담아야 해요. 이 글은 야스퍼스 사상이 "상황 내 존재 → 한계 상황 → 좌절 → 초월자 → 실존"으로 어떻게 짜여 무엇을 지향하는지를 차례로 설명하죠. 그러니 사상의 <em>구조와 지향</em>을 표제로, <em>상황·좌절·초월자</em>를 부제로 단 ②가 가장 적절합니다. ①(형성 배경)·④(논쟁과 이견)는 글에 나오지 않는 내용이고, ③은 사상에 대한 비판·옹호를 다루지 않으며, ⑤는 현대적 수용·효용을 논하지 않아요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠한계 상황은 인간이 그 앞에서 유한성을 깨닫는 계기이고(2문단), ㉡초월자는 세계의 불완전함을 깨달을 때 다가가는 대상이며(3문단), ㉢실존은 초월자와의 만남을 통해 성립하는 본래적 존재예요(4문단). 이 셋의 관계를 정확히 묶은 ②가 정답입니다. ① 한계 상황은 <em>변경할 수 없는</em> 상황이므로 틀렸고, ③ 한계 상황·초월자는 <em>선택할 수 있는</em> 것이 아니며, ④ 초월자는 세계를 완결된 전체로 <em>만드는</em> 원리가 아니라 세계가 불완전함을 깨달아야 다가가는 존재이고, ⑤ 초월자·실존은 불안을 <em>제거하는 수단</em>이 아니라 좌절을 거쳐 이르는 목표예요.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ⑤</strong>
+적절한 비판은 지문의 주장에 빈틈을 정확히 겨누는 것이어야 해요. ㄴ은 "좌절→초월자 감지"라는 인과에 대해 <em>같은 좌절을 겪고도 감지하지 못하는 경우</em>를 들어 반례를 제기하므로 적절하고, ㄷ은 "언어로 규정될 수 없다"면서 <em>그 존재를 단언하는 것</em>의 정당성을 문제 삼으니 적절하며, ㄹ은 <em>유한한 인간이 자신의 유한성을 온전히 깨닫는 일</em>의 가능성을 따지므로 적절한 비판이에요. 따라서 ㄴ, ㄷ, ㄹ을 고른 ⑤가 정답입니다. ㄱ은 지문이 한계 상황과 일반적 상황을 <em>변경 가능성</em>이라는 기준으로 이미 분명히 갈라 두었음을 스스로 인정하면서도 "아무 기준 없이 뒤섞여 구별할 수 없다고 보아야 하느냐"고 되묻는데, 이는 지문이 제시한 구분 기준을 부정할 근거 없이 부정하는 셈이어서 적절한 비판이 되지 못해요.</p>
+<p><strong>4번 [3점] — 정답 ⑤</strong>
+〈보기〉는 이성의 힘으로 곤경을 다 밝혀 두려움 없이 받아들일 수 있고 숨은 존재가 필요 없다고 보는 입장이에요. ⑤는 〈보기〉가 곤경을 '두려움 없이' 받아들인다고 본 반면 야스퍼스는 한계 상황에서 <em>좌절을 겪는다</em>고 보았으니, "동요하지 않는다"는 공통점으로 묶은 것은 잘못이라 적절하지 않아 정답입니다. ① 〈보기〉는 곤경을 이성으로 밝힐 수 있다고 보지만 야스퍼스는 한계 상황을 <em>변경할 수 없다</em>고 보므로 차이가 맞고, ② 〈보기〉는 숨은 존재를 거부하지만 야스퍼스는 초월자와의 만남을 실존의 조건으로 보므로 차이가 맞으며, ③ 둘 다 곤경을 <em>마주해야 한다</em>고 본다는 공통점이 성립하고, ④ 〈보기〉는 이성으로 삶을 완성한다고 보지만 야스퍼스는 <em>추론으로는 초월자에 도달할 수 없다</em>고 보므로 차이가 맞아요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상황 내 존재</strong>: 인간은 늘 어떤 상황 안에 놓인 채로 살아가며, 그 사실을 자각하는 존재라는 야스퍼스의 인간 규정.</li>
+<li><strong>한계 상황</strong>: 죽음·고통·투쟁·죄책감처럼 인간의 노력으로는 변경할 수 없는, 결정적이고 근원적인 상황.</li>
+<li><strong>초월자 / 실존</strong>: 인간을 넘어 그 뒤에 숨겨진 존재가 초월자, 한계 상황을 자각하고 초월자와 만나 회복하는 본래적 존재가 실존.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>무엇인가</th>
+<th>다음으로 이어짐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상황 내 존재</td>
+<td>상황에 구속됨을 자각하는 인간</td>
+<td>→ 변경 불가능한 한계 상황과 마주침</td>
+</tr>
+<tr>
+<td>한계 상황</td>
+<td>죽음·고통·투쟁·죄책감</td>
+<td>→ 회의·불안 속 좌절, 유한성 자각</td>
+</tr>
+<tr>
+<td>좌절</td>
+<td>지식·행동의 근거가 흔들림</td>
+<td>→ 초월자를 감지하는 계기</td>
+</tr>
+<tr>
+<td>초월자·실존</td>
+<td>인간을 넘어선 숨은 존재와의 만남</td>
+<td>→ 본래적 존재(실존)의 성립</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>야스퍼스에게 좌절은 <em>끝</em>이 아니라 <em>통로</em>예요. 벽에 부딪혀 봐야 벽 너머를 느끼듯, 한계 상황의 좌절을 거쳐야 초월자에게 다가갈 수 있습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>일반적 상황과 한계 상황은 무엇으로 갈리나요?</div><div class='qa-a'>능동적 노력으로 변경할 수 있는가 없는가로 갈립니다. 한계 상황은 변경할 수 없는 근원적 상황입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>야스퍼스가 좌절을 부정적으로만 보지 않은 까닭은?</div><div class='qa-a'>좌절을 통해 인간이 자신의 유한성을 깨닫고 초월자를 감지하는 계기를 얻기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>한계 상황을 외면하는 것이 왜 자기 포기인가요?</div><div class='qa-a'>한계 상황의 경험을 통해서만 초월자 앞에 설 수 있는데, 그것을 외면하면 초월자에게 이르는 유일한 통로를 스스로 닫는 셈이기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 6월 [19~22] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>19번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>20번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>21번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>22번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>5번 — 정답 ④</strong>
+2문단에서 한계 상황을 <em>회피하려는</em> 인간은 자신을 좌절하게 만드는 그 상황의 배후에 있는 것을 <em>이해하지 못한다</em>고 했어요. 그런데 ④는 회피하는 인간이 배후를 <em>이해하게 된다</em>고 정반대로 말했으니 적절하지 않아 정답입니다. ①②는 1문단(한계 상황의 종류와 지속성), ③은 1문단(회의와 좌절), ⑤는 1문단(대응의 중요성)에 그대로 부합하는 적절한 설명이에요.</p></div>
+<div class='exp'><p><strong>6번 — 정답 ③</strong>
+ⓐ경험과 ⓑ대응은 모두 한계 상황을 <em>외면하지 않고 마주하는</em> 태도를 가리키며, 3문단은 그러한 경험·대응이 실존으로 이어진다고 했어요. 그러니 좌절을 견디는 인간에게서 ⓐ·ⓑ가 모두 실존으로 이어진다는 ③이 적절해 정답입니다. ① 회피만 해서는 초월자 앞에 설 수 없고(2·4문단), ② 벗어날 수 없음을 인정하지 <em>않는</em> 인간은 회피로 기울어 대응이 이루어지지 않으며(4문단), ④ ⓐ경험은 좌절을 <em>차단</em>하는 일이 아니라 좌절을 견디며 마주하는 일이고, ⑤ ⓐ·ⓑ는 모두 <em>한계 상황</em>에 대한 것이라 일반적 상황과 묶을 수 없어요.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+㉡은 "좌절이 초월자를 감지하는 계기가 된다"는 부분이죠. 그 까닭은 3문단에서 좌절이 인간으로 하여금 <em>세계가 불완전하다는 사실을 깨닫게</em> 하고, 그 깨달음을 통해 초월자에게 다가가게 한다고 한 데 있어요. 곧 좌절이 세계의 불완전함에 대한 깨달음으로 이끌기 때문이므로 ①이 정답입니다. ② 한계 상황은 <em>소멸되지 않고</em>, ③ 초월자는 언어·추론으로는 <em>도달할 수 없으며</em>, ④ 회피는 유한성 직시를 <em>차단</em>하고, ⑤ 한계 상황은 <em>변경할 수 없는</em> 상황이므로 모두 ㉡의 이유가 될 수 없어요.</p>
+<p><strong>8번 [3점] — 정답 ④</strong>
+㉠은 "한계 상황을 회피하려는 인간은 그 상황의 배후에 있는 것을 이해하지 못한다"는 입장이에요. 갑은 죽음을 떠올리게 하는 모든 것을 멀리하는 <em>회피</em>의 태도를 보이므로, ㉠에 입각하면 갑은 그 상황의 배후를 이해하지 못한다고 보아야 합니다. 따라서 ④가 정답이에요. ① 갑의 회피는 배후를 이해하려는 시도가 <em>아니고</em>, ② 일과로 자신을 채우는 것은 좌절을 인정한 것이 아니라 <em>회피</em>이며, ③ 을이 좌절을 견디는 것은 회피가 아니라 <em>대응</em>이므로 자기 포기가 아니고, ⑤ 을은 벗어날 수 없음을 받아들여 좌절을 견디는 <em>대응</em>을 하므로 오히려 실존에 이르는 길 위에 있어요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>회피</strong>: 한계 상황에서 벗어날 수 없음을 인정하지 않고 그 상황을 외면하려는 태도. 좌절의 고통은 잠시 덜지만 유한성 직시를 차단한다.</li>
+<li><strong>대응</strong>: 한계 상황을 외면하지 않고 좌절을 견디며 마주하는 태도. 유한성의 자각과 초월자 감지로 이어진다.</li>
+<li><strong>좌절</strong>: 한계 상황 앞에서 지식·행동의 근거가 흔들리는 아픔. 회피의 대상이 아니라 견뎌 내야 할 통로.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>회피</th>
+<th>대응</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출발점</td>
+<td>벗어날 수 없음을 인정하지 않음</td>
+<td>벗어날 수 없음을 받아들임</td>
+</tr>
+<tr>
+<td>좌절을 대하는 법</td>
+<td>외면·차단</td>
+<td>견딤</td>
+</tr>
+<tr>
+<td>유한성 자각</td>
+<td>막힘</td>
+<td>이루어짐</td>
+</tr>
+<tr>
+<td>귀결</td>
+<td>배후를 이해 못 함 → 자기 포기</td>
+<td>초월자 감지 → 실존</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 한계 상황, 같은 좌절이라도 <em>외면하느냐 견디느냐</em>에 따라 길이 정반대로 갈려요. 야스퍼스가 "대응이 중요하다"고 한 이유가 여기에 있습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>회피하는 인간이 상황의 배후를 이해하지 못하는 까닭은?</div><div class='qa-a'>한계 상황을 외면하는 한 자신의 유한성을 직시할 기회가 차단되기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>좌절이 어떻게 초월자 감지로 이어지나요?</div><div class='qa-a'>좌절이 세계가 불완전하다는 깨달음으로 인간을 이끌고, 그 깨달음을 통해 인간이 초월자에게 다가가기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>한계 상황에 '대응'하는 일이 왜 실존에 이르는 유일한 길인가요?</div><div class='qa-a'>인간은 오직 한계 상황의 경험을 통해서만 초월자 앞에 설 수 있고, 실존은 초월자와의 만남을 통해 성립하기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 9월 [10~13] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+2문단에 따르면 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려하며, 무작위로 일어난다는 것은 곧 선결정되지 않는다는 의미다. 즉 선결정되지 않을 가능성도 고려하므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①0.6% ②5.3% ③1.8% ④3.4% ⑤89.1%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong><br />
+ⓑ(두 조건을 모두 충족하는 자유의지)는 내가 선택의 주체이고 그 선택이 선결정되지 않아야 성립한다. 어떤 선택이 선결정되어 있다면 둘째 조건을 충족하지 못하므로 ⓑ가 있을 수 없다(④). 반면 ⓐ(욕구 충족적 자유의지)는 선결정 여부와 무관하게 성립할 수 있다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.9% ②8.2% ③9.3% ④77.1% ⑤4.2%</p></div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+5문단에 따르면 어떤 선택이 무작위로(=선결정되지 않게) 일어났더라도 그 선택의 주체는 나일 수 있다. 즉 무작위로 일어난 선택은 ‘주체가 나일 것’과 ‘선결정되지 않을 것’이라는 자유의지의 두 조건을 모두 충족할 수 있으므로, 무작위 가정을 고려할 때의 결론(자유의지 없음)은 받아들일 필요가 없다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①3.1% ②9.0% ③12.2% ④11.6% ⑤64.3%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+H의 실험은 인간의 선택(신경 사건)이 그 이전의 다른 신경 사건과 관련되는지, 즉 선결정되어 있는지를 알아보는 것이다. ㉠의 입장은 선결정 가정의 결론은 받아들이되 무작위 가정의 결론은 받아들일 필요가 없다고 본다. 따라서 H의 가설이 입증되지 않더라도(선택이 무작위라 하더라도) 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니라고 논의할 수 있다(④).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.3% ②10.1% ③12.2% ④61.9% ⑤7.1%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong>
+1문단에서 암호는 "지평 저 너머에 있는 초월자를 지시하고 해명해 주는 언어"라고 했으니 ⑤가 일치해요. ① 암호는 보편타당하게 경험·검증되는 것이 <em>아니고</em>(2문단), ② 초월자는 표상을 통해 대상으로 인식될 수 <em>없으며</em>(1문단), ③ 인간은 암호를 <em>해독하지 않으면 안 되고</em>(2문단), ④ 초월자는 한계 상황을 자각한 가능적 실존에게만 나타나므로(1문단) 모두 일치하지 않습니다.</p></div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+1문단에서 초월자(따라서 암호)는 한계 상황을 자각하고 실존을 찾으려는 <em>가능적 실존에게만</em> 나타난다고 했어요. 그런데 ②는 ㉡(암호)이 <em>가능적 실존이 아닌 사람에게도</em> 말을 걸어온다고 했으니 적절하지 않아 정답입니다. ① 암호를 해독하지 못하면 오직 암호로만 나타나는 초월자를 파악할 수 없으니 맞고(2문단), ③ 암호는 초월자가 직접이 아니라 암호로 나타나는 방식과 관련되어 맞으며, ④ ㉡은 "말을 걸어오는 언어"라는 ㉠의 기능을 가리키니 맞고, ⑤ 암호는 현실적 언어가 아니어서 보편타당하게 검증되는 언어와 구별되니 맞아요.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong>
+ⓐ는 "사람들이 암호를 하나의 정해진 의미로 환원하지 않는 까닭"을 묻죠. 2문단에서 그 까닭을 "초월자의 암호는 하나의 의미로 고정될 수 없는 <em>다의적인 것</em>이기 때문"이라고 곧바로 밝혀 두었어요. 따라서 ③이 정답입니다. ① 암호를 마주한 두 사람은 한계 상황을 <em>지나온 가능적 실존</em>이고, ② 암호는 검증되는 현실적 언어가 <em>아니며</em>, ④ 암호가 대상의 언어로 환원되면 오히려 초월자를 가리킬 수 없게 되고, ⑤ 암호 해독에는 같은 의미를 강요하는 <em>보편적 규칙이 없으므로</em>(3문단, 각자의 방식) 모두 ⓐ의 답이 될 수 없어요.</p>
+<p><strong>12번 [3점] — 정답 ①</strong>
+〈보기〉의 두 관람객은 한계 상황을 지난 가능적 실존으로, 같은 추상화에서 서로 다른 것을 읽어 내되 서로의 읽음을 틀렸다고 여기지 않아요. 이는 암호의 <em>다의성</em>(하나의 의미로 고정될 수 없음)이 그대로 드러난 것이므로 ①이 적절해 정답입니다. ② 그림이 <em>검증되는 현실적 언어</em>라면 다의적으로 열려 있을 수 없으니 어긋나고, ③ 서로의 읽음을 인정하는 것은 보편적 규칙이 같은 의미를 강요하기 <em>때문이 아니라</em> 각자의 방식으로 해독하기 때문이며, ④ 두 사람은 한계 상황을 <em>자각한</em> 가능적 실존이고 초월자는 대상으로 나타나지 <em>않고</em>, ⑤ 추상화 감상은 노력으로 변경할 수 있는 <em>일반적 상황</em>과는 무관해요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>가능적 실존</strong>: 한계 상황을 자각하고 자신의 본래적 존재(실존)를 찾으려는 인간. 초월자는 이 가능적 실존에게만 나타난다.</li>
+<li><strong>암호</strong>: 초월자가 가능적 실존에게 건네는 언어. 지평 너머의 초월자를 지시·해명하지만, 검증되는 현실적 언어는 아니다.</li>
+<li><strong>암호 해독의 개별성</strong>: 보편 규칙이 같은 해독을 강요하는 것이 아니라, 가능적 실존이 저마다 자기 방식으로 암호를 풀어내는 것.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>암호의 성질</th>
+<th>무엇인가</th>
+<th>그래서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비대상성</td>
+<td>대상을 가리키는 현실적 언어가 아님</td>
+<td>표상으로 인식할 수 없는 초월자를 지시</td>
+</tr>
+<tr>
+<td>다의성</td>
+<td>하나의 의미로 고정되지 않음</td>
+<td>같은 암호도 여러 의미로 열려 있음</td>
+</tr>
+<tr>
+<td>해독의 개별성</td>
+<td>각자의 방식으로 해독됨</td>
+<td>해독의 과정에서 실존을 회복</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>암호는 정답이 하나인 사전 같은 언어가 아니에요. 같은 암호라도 사람마다 자기 방식으로 풀어내고, 바로 그 <em>풀어내는 과정</em>에서 진정한 자기 자신을 되찾습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>초월자는 누구에게, 어떤 방식으로 나타나나요?</div><div class='qa-a'>한계 상황을 자각한 가능적 실존에게, 직접이 아니라 암호를 통해 나타납니다.</div></div>
+<div class='qa-item'><div class='qa-q'>인간이 암호를 반드시 해독해야 하는 까닭은?</div><div class='qa-a'>인간의 언어로는 파악할 수 없는 초월자가 오직 암호에 의해서만 나타나기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 암호를 사람마다 다르게 읽어도 되는 까닭은?</div><div class='qa-a'>암호는 하나의 의미로 고정될 수 없는 다의적인 것이며, 각자의 방식으로 해독되기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 수능 [39~42] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</div></div>
+</body></html>

@@ -1,0 +1,1131 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>예술 형식과 매체 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>예술 형식과 매체 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 같은 이야기라도 <strong>그림으로 보여 줄 때</strong>와 <strong>글로 들려줄 때</strong>의 느낌이 사뭇 다르죠? 사고 현장을 찍은 사진 한 장은 그 순간을 통째로 한눈에 보여 주지만, 소설은 "그가 비명을 질렀다"라고 한 줄씩 풀어 가며 머릿속에 장면을 그리게 합니다. 같은 대상을 다루는데도 왜 이렇게 다를까요? 바로 <strong>매체(media)</strong>가 다르기 때문이에요.</p>
+<p>먼저 큰 그림부터 볼게요. 매체란 <strong>예술이 우리에게 전달되는 통로이자 재료</strong>예요. 그림(회화)은 색과 형태라는 재료로 <em>공간</em>에 펼쳐지고, 시(문학)는 말과 문자라는 재료로 <em>시간</em>을 따라 흘러갑니다. 옛날 로마의 시인 호라티우스는 "시는 그림과 같이"라는 유명한 말을 남겼어요. 시도 그림처럼 눈앞에 보이듯 생생해야 한다는 뜻이었죠. 그래서 오랫동안 사람들은 <strong>시와 그림을 비슷한 것</strong>으로 여겼습니다.</p>
+<p>그런데 18세기의 레싱이라는 사람이 "잠깐, 그건 둘을 너무 뭉뚱그린 거예요"라고 제동을 걸어요. 레싱은 그림과 시가 <strong>정보를 전달하는 방식이 근본부터 다르다</strong>고 봤습니다. 그림은 한순간을 <em>동시에</em> 펼쳐 보이는 데 강하고(그래서 <em>공간</em>의 예술), 시는 사건을 <em>차례차례</em> 풀어내는 데 강하다(그래서 <em>시간</em>의 예술)는 거예요. 「라오콘 군상」이라는 조각을 예로 들면, 조각은 고통을 일그러진 표정으로 <em>직접</em> 보여 주지만, 시는 "그가 비명을 질렀다"라고만 적어 독자가 그 장면을 <em>스스로 상상하게</em> 만들죠. 레싱은 바로 이 점, 즉 독자의 상상을 자극해 머릿속 공간을 넓혀 주는 힘 때문에 <strong>문자 예술(시)이 이미지 예술(회화)보다 우월하다</strong>고까지 선언했답니다.</p>
+<p>여기서 한 걸음 더. 오늘날에는 문학·회화·음악의 경계가 무너지고 여러 매체가 섞이는 일이 흔해졌어요. 이렇게 <strong>매체끼리 서로 영향을 주고받는 현상</strong>을 가리켜 <em>상호 매체성</em>이라고 부릅니다. 이 개념을 보는 시선은 둘로 갈려요. 하나는 <em>매체를 곧 예술 형식으로 보아</em> 여러 매체의 <strong>통합</strong>을 중요하게 여기는 쪽이고, 다른 하나는 <em>매체를 정보를 저장·전달·처리하는 장치로 보아</em> 각 매체의 <strong>작동 방식</strong>에 주목하는 쪽이에요.</p>
+<blockquote>
+<p>한마디로: <strong>레싱은 "시와 그림은 매체가 달라 표현 방식도 다르다"라고 둘을 갈라 보았고</strong>, 그 핵심은 <em>그림=공간·동시 / 시=시간·연속</em>이라는 대비예요. 그리고 오늘날의 <strong>상호 매체성</strong>은 그렇게 갈렸던 매체들이 다시 섞이는 모습을 두 가지 시선으로 바라봅니다. 이 단원은 그 매체적 차이와 그것을 둘러싼 관점들을 차근차근 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>예술 형식과 매체</strong>, 그중에서도 <strong>레싱의 매체 이론</strong>이 있습니다. 시와 그림이 왜 다른지(매체적 차이), 그 차이를 누구의 관점과 견주는지(관점 대비), 그리고 그것이 오늘날의 매체 융합 논의와 어떻게 이어지는지(상호 매체성)를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>예술 형식과 매체 (시·그림의 매체적 차이와 그 효과)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>레싱이 미메시스를 <em>표현</em>과 <em>재현</em>으로 가르고, 회화를 공간·동시의 예술로, 시를 시간·연속의 예술로 본 까닭과, 그래서 시가 상상의 공간을 넓힌다고 본 이론을 <em>하나의 흐름</em>으로 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>"시는 그림과 같이"라는 고전적 관점과, 그에 맞서 매체의 차이를 주목한 레싱의 관점을 <em>나란히 놓고</em> 두 입장이 어디서 갈리는지를 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>레싱의 매체 이론을 <em>소개</em>한 뒤, 오늘날의 상호 매체성이 매체를 보는 두 관점으로 그 매체 이분법을 어떻게 <em>다시 보게</em> 하는지를 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 시와 그림이 왜 다른지, 그 차이를 어떤 관점들이 어떻게 바라보는지, 그리고 그 논의가 오늘날 매체 융합으로 어떻게 이어지는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>예술 형식을 구현하는 수단인 매체의 자리를 두고 문자와 이미지는 오랫동안 경쟁해 왔다. 과거의 지배적 관점은 로마의 시인 호라티우스의 경구 ‘시는 그림과 같이’로 대표된다. 이 경구는 본래 시와 회화가 공통으로 지니는 미메시스의 특징을 ⓐ<u>가리킨</u> 것으로 해석되지만, 시는 회화를 모범으로 삼아야 한다는 뜻으로도 받아들여져 왔다. 18세기 후반의 레싱은 회화의 원칙을 시에 적용해 두 예술 형식의 경계를 모호하게 만드는 이러한 관점에 ⓑ<u>맞섰다</u>. 그는 각각의 예술 형식 안에서 매체와 그 효과에 주목할 것을 제안하였고, 이로써 예술 형식 간의 매체적 차이에 대한 논의의 출발점을 마련하였다.</p>
+<p>레싱은 시와 회화가 정보를 처리하는 방식이 서로 달라 근본적인 차이가 생긴다고 보았다. 그는 그동안 미메시스로 통칭되어 온 예술 형식의 공통 기능을, 회화적 묘사에서는 표현으로, 서술적 묘사에서는 재현으로 구분하였다. 회화적 묘사는 형상을 통해 대상의 상태를 눈앞에 직접 드러내는 표현이고, 서술적 묘사는 언어를 통해 대상을 차례로 풀어내는 재현이다. 표현은 대상을 한 자리에 펼쳐 보이므로 수용자가 그것을 단번에 받아들이게 하지만, 재현은 대상을 말의 순서에 실어 보내므로 수용자가 그것을 차례로 따라가며 머릿속에서 다시 짜 맞추게 한다. 그는 모든 예술 작품이 이러한 경계 안에서 ⓒ<u>이루어지는</u> 실현이라고 보아, 한 작품이 무엇을 잘 담고 무엇을 담기 어려운가는 그 작품이 딛고 선 매체의 조건에 따라 갈린다고 하였다. 이렇게 레싱은 예술 형식 간의 차이를 수용자에게 작용하는 서로 다른 매체의 효과로 설명하였다.</p>
+<p>매체의 차이는 시간과 공간의 차이로 ⓓ<u>모인다</u>. 레싱에 따르면 이미지 예술은 공간적이어서 한 장면을 한꺼번에 보이는 동시적 묘사에 탁월하고, 문자 예술은 시간적이어서 사건을 잇따라 펼치는 연속적 묘사에 알맞다. 그래서 회화는 한 순간에 머무는 정지된 장면을 그 자리에 모아 보이는 데 강하고, 시는 한 순간에 머물지 않고 흘러가는 사건을 앞뒤로 이어 보이는 데 강하다. 그는 헬레니즘 시기의 조각상 「라오콘 군상」을 예로 든다. 형상으로 묘사된 「라오콘 군상」은 인물들의 고통을 일그러진 표정을 통해 한 순간에 직접 보여 준다. 반면 시인은 라오콘이 고통으로 비명을 지르고 있다고만 서술함으로써, 그 고통이 일어나기까지의 과정과 그 뒤에 이어질 일을 독자가 스스로 그려 내도록 ⓔ<u>이끈다</u>. 같은 고통을 다루더라도 조각은 그것을 한 순간에 정지시켜 보이고, 시는 그것을 시간의 흐름 속에 풀어 놓는 것이다. 레싱은 회화가 시간을 한 순간에 가두는 대신 그 순간을 가장 알맞게 골라야 하고, 시는 공간을 한꺼번에 펼치는 대신 그 공간을 시간의 차례로 풀어야 한다고 보았다.</p>
+<p>레싱은 이 두 방식 가운데 시적 묘사가 수용자의 머릿속에 감각적인 환상을 더 강하게 불러일으킨다고 보았다. ㉮회화적 묘사는 대상을 한 순간에 고정해 직접 보여 주므로 수용자가 받아들일 여지가 그만큼 닫혀 있다. 반면 ㉯서술적 묘사는 대상을 시간의 흐름에 따라 풀어내어 수용자의 상상을 자극하므로 회화보다 상상의 공간을 더 넓게 연다. 레싱에 따르면 상상력이 빚어낸 환상은 움직이지 않는 대상조차 살아 있는 이야기로 바꾸어 놓지만, 조형 예술에서 대상의 비운동성은 현실의 자연스러움을 깨뜨려 환상의 완성을 가로막는다. 이렇게 ㉠<u>레싱은 이미지 예술에 대해 문자 예술이 가지는 우월성을 선언한다.</u></p>
+<div class="ablock"><span class="atag">[A]</span>레싱의 논의는 한 예술 형식을 다른 형식의 잣대로 재던 고전적 관점을 넘어, 각 매체가 무엇을 잘하고 무엇을 못하는가를 그 매체 자체의 조건에서 따지게 했다는 데 의의가 있다. 그가 그은 표현과 재현, 공간과 시간의 경계는 이후 예술 형식 간의 매체적 차이를 논하는 모든 논의가 딛고 선 출발점이 되었다. 무엇이 더 우월한가 하는 그의 결론보다, 각 매체의 고유한 작동 방식에서 예술의 효과를 설명하려 한 그의 시각이 매체 연구의 토대가 된 것이다.</div></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 매체에 대한 상반된 정의를 대조하여 예술 형식의 우열을 가리는 기준을 비판하고 있다.</li>
+<li>② 예술 형식의 변천 과정을 시대순으로 밝혀 매체 이론이 성립한 역사적 배경을 강조하고 있다.</li>
+<li>③ 한 이론가가 예술 형식 간의 매체적 차이를 구분한 방식을 밝히면서 그 논의의 의의를 제시하고 있다.</li>
+<li>④ 여러 예술가의 작품을 유형별로 분석하여 매체의 발전이 예술에 미친 영향을 평가하고 있다.</li>
+<li>⑤ 예술 형식을 둘러싼 두 학파의 논쟁을 소개하고 그 논쟁이 절충되는 과정을 단계적으로 서술하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+이 글은 처음부터 끝까지 <em>레싱 한 사람</em>이 시와 회화의 매체적 차이를 어떻게 갈랐는지를 따라가고, 마지막 [A]에서 그 논의가 매체 연구의 출발점이 되었다는 <em>의의</em>를 밝히고 있어요. 그래서 ③이 정답입니다. ① 매체의 상반된 정의를 대조하지도, 우열 기준을 비판하지도 않았고(오히려 레싱이 우열을 매긴 쪽), ② 시대순 변천을 밝힌 글이 아니에요. ④ 여러 예술가의 작품을 유형별로 분석한 것이 아니라 「라오콘 군상」 하나를 예로 들었을 뿐이고, ⑤ 두 학파의 논쟁을 절충하는 과정은 나오지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 호라티우스의 경구는 시와 회화가 매체적으로 구별된다는 점을 강조한 것이다.</li>
+<li>② 레싱은 미메시스라는 공통 기능을 회화적 묘사의 표현과 서술적 묘사의 재현으로 나누었다.</li>
+<li>③ 레싱은 회화의 원칙을 시에 적용하여 두 예술 형식의 경계를 분명히 하고자 하였다.</li>
+<li>④ 이미지 예술은 시간적 매체이므로 사건을 잇따라 펼치는 연속적 묘사에 탁월하다.</li>
+<li>⑤ 조형 예술에서 대상의 비운동성은 수용자의 상상이 빚은 환상을 완성하는 데 기여한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+2문단에서 레싱은 "미메시스로 통칭되어 온 공통 기능을, 회화적 묘사에서는 표현으로, 서술적 묘사에서는 재현으로 구분"했다고 했으니 ②가 정답이에요. ① 호라티우스의 경구는 시와 회화를 <em>비슷한 것</em>으로 묶은 관점이지 구별을 강조한 게 아니고, ③ 회화의 원칙을 시에 적용해 경계를 <em>모호하게</em> 만든 것은 레싱이 <em>비판한</em> 고전적 관점이에요. ④ 이미지 예술은 <em>공간적</em> 매체이고 동시적 묘사에 탁월하다고 했으니 ‘시간적·연속적’은 거꾸로고, ⑤ 비운동성은 환상의 완성을 <em>가로막는다</em>고 했으니 반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉮, ㉯의 사례로 적절한 것만을 〈보기〉에서 있는 대로 찾아 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+ㄱ. 한 화가가 전쟁의 참상을 단 한 폭의 그림에 담아, 무너진 건물과 쓰러진 사람들을 한눈에 들어오도록 배치하였다.
+ㄴ. 한 시인이 영웅이 방패를 들기까지의 동작을 손을 뻗고 가죽끈을 매고 팔을 드는 순서로 길게 풀어 써, 독자가 그 동작을 차례로 떠올리게 하였다.
+ㄷ. 한 소설가가 인물이 편지를 받아 봉투를 뜯고 한 줄씩 읽어 내려가며 표정이 바뀌는 과정을 문장으로 이어, 독자가 그 변화를 상상하도록 하였다.
+ㄹ. 한 조각가가 달리는 말의 네 다리가 땅에서 떨어진 한 순간을 그대로 굳혀, 보는 이가 그 자세를 즉시 알아보게 하였다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉮</th>
+<th>㉯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>ㄱ, ㄹ</td>
+<td>ㄴ, ㄷ</td>
+</tr>
+<tr>
+<td>②</td>
+<td>ㄱ, ㄴ</td>
+<td>ㄷ, ㄹ</td>
+</tr>
+<tr>
+<td>③</td>
+<td>ㄴ, ㄷ</td>
+<td>ㄱ, ㄹ</td>
+</tr>
+<tr>
+<td>④</td>
+<td>ㄹ</td>
+<td>ㄱ, ㄴ, ㄷ</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>ㄱ, ㄷ</td>
+<td>ㄴ, ㄹ</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>3번 — 정답 ①</strong>
+㉮(회화적 묘사 — 한 순간을 고정해 직접 보임)와 ㉯(서술적 묘사 — 시간의 흐름에 따라 풀어 상상을 자극)의 사례를 가르는 문제예요. ㄱ(한 폭의 그림에 한눈에 배치)과 ㄹ(한 순간의 자세를 굳힌 조각)은 한 순간을 동시에 보이는 <em>회화적 묘사</em>이니 ㉮, ㄴ(동작을 순서로 길게 풀어 씀)과 ㄷ(과정을 문장으로 이어 상상하게 함)은 시간에 따라 펼치는 <em>서술적 묘사</em>이니 ㉯입니다. 따라서 ㉮=ㄱ·ㄹ, ㉯=ㄴ·ㄷ인 ①이 정답이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉠에 나타난 레싱의 관점에서 [A]를 비판한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 매체의 차이를 그 매체 자체의 조건에서 따지는 것은 예술 형식의 우열을 가릴 수 없게 만든다.</li>
+<li>② 표현과 재현의 경계를 긋는 일은 두 예술 형식의 공통점을 부각하는 데에 더 큰 의의가 있다.</li>
+<li>③ 각 매체의 작동 방식에 주목하는 것만으로는 어느 매체가 상상의 공간을 더 넓히는지를 가릴 수 없다.</li>
+<li>④ 매체적 차이에 대한 논의의 출발점이 되었다는 점보다, 문자 예술이 더 우월하다는 결론이야말로 핵심으로 평가되어야 한다.</li>
+<li>⑤ 고전적 관점을 넘어섰다는 평가는 회화의 원칙을 시에 적용한 호라티우스의 관점을 오히려 되살리는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+㉠은 "문자 예술이 더 우월하다"는 레싱의 <em>결론</em>이고, [A]는 그 우월성 결론보다 <em>각 매체의 작동 방식에 주목한 시각</em>이 의의라고 평가하는 대목이에요. 레싱 자신의 관점(㉠)에서 보면, [A]는 정작 자신이 힘주어 내린 ‘문자 예술의 우월성’이라는 결론을 부차적인 것으로 밀어낸 셈이죠. 그러니 "출발점이 되었다는 점보다 문자 예술이 더 우월하다는 결론이 핵심"이라는 ④가 레싱의 관점에서 [A]를 향한 비판으로 가장 적절합니다. ①③은 오히려 [A]의 시각을 두둔하는 말이라 레싱이 [A]를 <em>비판</em>하는 말이 될 수 없고, ② 레싱은 공통점이 아니라 <em>차이</em>를 강조했으며, ⑤ [A]는 호라티우스의 관점을 되살린 것이 아니라 넘어섰다고 본 것이라 사실과 어긋나요.</p>
+<p><strong>5번 [3점] — 정답 ⑤</strong>
+갑의 조각은 한 순간을 한꺼번에 보이는 동시적 묘사(①), 을의 시는 동작을 차례로 푸는 연속적 묘사(②)예요. 갑은 대상을 정지시켜 직접 보여 주니 받아들일 여지가 닫혀 있고(③), 을은 상상을 자극해 상상의 공간을 더 넓게 열죠(④) — 모두 지문에 맞는 적절한 이해예요. 그런데 ⑤는 <em>비운동성 덕분에</em> 조각이 환상을 더 완성도 높게 빚는다고 했는데, 4문단에서 "조형 예술에서 대상의 비운동성은 현실의 자연스러움을 깨뜨려 환상의 완성을 <em>가로막는다</em>"라고 했으니 정반대예요. 그래서 ⑤가 적절하지 않아 정답입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 신화 속 한 장면을 두 예술가가 각각 다루었다. 조각가 갑은 사냥의 여신이 활시위를 한껏 당긴 바로 그 순간을 대리석에 새겨, 팽팽한 시위와 곤두선 근육을 한눈에 드러냈다. 시인 을은 같은 장면을, 여신이 화살집에서 화살을 뽑고 시위에 메긴 뒤 천천히 당겨 마침내 놓기까지의 과정을 여러 행에 걸쳐 차례로 노래하여, 읽는 이가 그 동작이 이어지는 모습을 머릿속에 그리게 하였다.</p>
+</blockquote>
+<ul>
+<li>① 갑의 조각은 한 순간을 한꺼번에 보이는 동시적 묘사로 여신의 상태를 드러내고 있군.</li>
+<li>② 을의 시는 동작을 시간의 흐름에 따라 풀어내는 연속적 묘사로 장면을 노래하고 있군.</li>
+<li>③ 갑의 조각은 대상을 정지시켜 직접 보여 주므로 읽는 이가 받아들일 여지가 을의 시보다 닫혀 있겠군.</li>
+<li>④ 을의 시는 읽는 이의 상상을 자극하므로 갑의 조각보다 상상의 공간을 더 넓게 열겠군.</li>
+<li>⑤ 갑의 조각은 대상의 비운동성 덕분에 을의 시보다 환상을 더 완성도 높게 빚어내겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 지칭(指稱)한</li>
+<li>② ⓑ: 대항(對抗)하였다</li>
+<li>③ ⓒ: 성립(成立)하는</li>
+<li>④ ⓓ: 귀착(歸着)된다</li>
+<li>⑤ ⓔ: 추대(推戴)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+ⓔ ‘이끈다’는 <em>독자가 스스로 그려 내도록 유도한다</em>는 뜻인데, ⑤ ‘추대(推戴)한다’는 <em>윗사람으로 떠받든다</em>는 뜻이라 호응하지 않아요. 그래서 ⑤가 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘가리킨→지칭한’, ② ‘맞섰다→대항하였다’, ③ ‘이루어지는→성립하는’, ④ ‘모인다→귀착된다’는 각각 문맥의 뜻과 통해 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>미메시스</strong>: 재현 또는 모방. 레싱은 이 공통 기능을 회화의 <em>표현</em>과 서술의 <em>재현</em>으로 갈랐어요.</li>
+<li><strong>표현 / 재현</strong>: <em>표현</em>은 형상으로 대상을 눈앞에 직접 드러내는 회화적 묘사, <em>재현</em>은 언어로 대상을 차례로 풀어내는 서술적 묘사.</li>
+<li><strong>동시적 묘사 / 연속적 묘사</strong>: <em>동시적</em>은 한 장면을 한꺼번에(공간·회화), <em>연속적</em>은 사건을 잇따라(시간·시).</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>이미지 예술(회화·조각)</th>
+<th>문자 예술(시)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매체의 성격</td>
+<td>공간적</td>
+<td>시간적</td>
+</tr>
+<tr>
+<td>묘사 방식</td>
+<td>동시적 묘사(표현)</td>
+<td>연속적 묘사(재현)</td>
+</tr>
+<tr>
+<td>수용자 작용</td>
+<td>한 순간을 직접 보임 → 여지 닫힘</td>
+<td>상상을 자극 → 상상 공간 확장</td>
+</tr>
+<tr>
+<td>한계 / 강점</td>
+<td>비운동성이 환상 완성을 가로막음</td>
+<td>환상으로 정지된 대상도 살려 냄</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>레싱은 <em>그림=공간·동시 / 시=시간·연속</em>으로 둘을 가르고, 상상의 공간을 넓히는 힘 때문에 <em>시가 더 우월하다</em>고 보았어요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>레싱은 미메시스라는 공통 기능을 무엇과 무엇으로 나누었나요?</div><div class='qa-a'>회화적 묘사의 <em>표현</em>과 서술적 묘사의 <em>재현</em>으로 나누었습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>레싱이 시를 회화보다 우월하다고 본 까닭은?</div><div class='qa-a'>시적 묘사가 수용자의 상상을 자극해 상상의 공간을 더 넓게 열기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>조형 예술에서 ‘비운동성’은 어떤 작용을 하나요?</div><div class='qa-a'>현실의 자연스러움을 깨뜨려 환상의 완성을 가로막습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [21~26]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>과거는 지나가 버렸기 때문에 역사가가 과거의 사실과 직접 만나는 것은 불가능하다. 역사가는 사료를 매개로 과거와 만난다. 사료는 과거를 그대로 재현하는 것은 아니기 때문에 불완전하다. 사료의 불완전성은 역사 연구의 범위를 제한하지만, 그 불완전성 때문에 역사학이 학문이 될 수 있으며 역사는 끝없이 다시 서술된다. 매개를 거치지 않은 채 손실되지 않은 과거와 ⓐ만날 수 있다면 역사학이 설 자리가 없을 것이다. 역사학은 전통적으로 문헌 사료를 주로 활용해 왔다. 그러나 유물, 그림, 구전 등 과거가 남긴 흔적은 모두 사료로 활용될 수 있다. 역사가들은 새로운 사료를 발굴하기 위해 노력한다. 알려지지 않았던 사료를 찾아내기도 하지만, 중요하지 않게 ⓑ여겨졌던 자료를 새롭게 사료로 활용하거나 기존의 사료를 새로운 방향에서 파악하기도 한다. 평범한 사람들의 삶의 모습을 중점적인 주제로 다루었던 미시사 연구에서 재판 기록, 일기, 편지, 탄원서, 설화집 등의 이른바 ‘서사적’ 자료에 주목한 것도 사료 발굴을 위한 노력의 결과이다.</p>
+<p>시각 매체의 확장은 사료의 유형을 더욱 다양하게 했다. 이에 따라 역사학에서 영화를 통한 역사 서술에 대한 관심이 일고, 영화를 사료로 파악하는 경향도 ⓒ나타났다. 역사가들이 주로 사용하는 문헌 사료의 언어는 대개 지시 대상과 물리적ㆍ논리적 연관이 없는 추상화된 상징적 기호이다. 반면 영화는 카메라 앞에 놓인 물리적 현실을 이미지화하기 때문에 그 자체로 물질성을 띤다. 즉, 영화의 이미지는 닮은꼴로 사물을 지시하는 도상적 기호가 된다. 광학적 메커니즘에 따라 피사체로부터 비롯된 영화의 이미지는 그 피사체가 있었음을 지시하는 지표적 기호이기도 하다. 예를 들어 다큐멘터리 영화는 피사체와 밀접한 연관성을 갖기 때문에 피사체의 진정성에 대한 믿음을 고양하여 언어적 서술에 비해 호소력 있는 서술로 비춰지게 된다.</p>
+<p>그렇다면 영화는 역사와 어떻게 관계를 맺고 있을까? 역사에 대한 영화적 독해와 영화에 대한 역사적 독해는 영화와 역사의 관계에 대한 두 축을 ⓓ이룬다. 역사에 대한 영화적 독해는 영화라는 매체로 역사를 해석하고 평가하는 작업과 연관된다. 영화인은 자기 나름의 시선을 서사와 표현 기법으로 녹여내어 역사를 비평할 수 있다. 역사를 소재로 한 역사 영화는 역사적 고증에 충실한 개연적 역사 서술 방식을 취할 수 있다. 혹은 역사적 사실을 자원으로 삼되 상상력에 의존하여 가공의 인물과 사건을 덧대는 상상적 역사 서술 방식을 취할 수도 있다. 그러나 비단 역사 영화만이 역사를 재현하는 것은 아니다. 모든 영화는 명시적이거나 우회적인 방법으로 역사를 증언한다. 영화에 대한 역사적 독해는 영화에 담겨 있는 역사적 흔적과 맥락을 검토하는 것과 연관된다. 역사가는 영화 속에 나타난 풍속, 생활상 등을 통해 역사의 외연을 확장할 수 있다. 나아가 제작 당시 대중이 공유하던 욕망, 강박, 믿음, 좌절 등의 집단적 무의식과 더불어 이상, 지배적 이데올로기 같은 미처 파악하지 못했던 가려진 역사를 끌어내기도 한다.</p>
+<p>영화는 주로 허구를 다루기 때문에 역사 서술과는 거리가 있다고 보는 사람도 있다. 왜냐하면 역사가들은 일차적으로 사실을 기록한 자료에 기반해서 연구를 ⓔ펼치기 때문이다. 또한 역사가는 ㉠자료에 기록된 사실이 허구일지도 모른다는 의심을 버리지 않고 이를 확인하고자 한다. 그러나 문헌 기록을 바탕으로 하는 역사 서술에서도 허구가 배격되어야 할 대상만은 아니다. 역사가는 ㉮허구의 이야기 속에서 그 안에 반영된 당시 시대적 상황을 발견하여 사료로 삼으려고 노력하기도 한다. 지어낸 이야기는 실제 있었던 사건에 대한 기록이 아니지만 사고방식과 언어, 물질문화, 풍속 등 다양한 측면을 반영하며, 작가의 의도와 상관없이 혹은 작가의 의도 이상으로 동시대의 현실을 전달해 주기도 한다. 어떤 역사가들은 허구의 이야기에 반영된 사실을 확인하는 것에서 더 나아가 ㉯사료에 직접적으로 나타나지 않은 과거를 재현하기 위해 허구의 이야기를 활용하여 사료에 기반한 역사적 서술을 보완하기도 한다. 역사가가 허구를 활용하는 것은 실제로 존재했던 과거에 접근하고자 하는 고민의 결과이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>영화는 허구적 이야기에 역사적 사실을 담아냄으로써 새로운 사료의 원천이 될 뿐 아니라, 대안적 역사 서술의 가능성까지 지니고 있다. 영화는 공식 제도가 배제했던 역사를 사회에 되돌려 주는 ‘아래로부터의 역사’의 형성에 기여한다. 평범한 사람들의 회고나 증언, 구전 등의 비공식적 사료를 토대로 영화를 만드는 작업은 빈번하게 이루어지고 있다. 그리하여 영화는 하층 계급, 피정복 민족처럼 역사 속에서 주변화된 집단의 묻혀 있던 목소리를 표현해 낸다. 이렇듯 영화는 공식 역사의 대척점에서 활동하면서 역사적 의식 형성에 참여한다는 점에서 역사 서술의 한 주체가 된다.</p></div></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 역사의 개념을 밝히면서 영화와 역사 간의 공통점과 차이점을 비교하고 있다.</li>
+<li>② 영화의 변천 과정을 통시적으로 밝혀 사료로서 영화가 지닌 의의를 강조하고 있다.</li>
+<li>③ 역사에 대한 서로 다른 견해를 대조하여 사료로서 영화가 지닌 한계를 비판하고 있다.</li>
+<li>④ 영화의 사료로서의 특성을 밝히면서 역사 서술로서 영화가 지닌 가능성을 제시하고 있다.</li>
+<li>⑤ 다양한 영화의 유형별 장단점을 분석하여 영화가 역사 서술의 대안이 될 수 있는지에 대해 평가하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>21번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 개인적 기록은 사료로 활용하기에 적절하지 않다.</li>
+<li>② 역사가가 활용하는 공식적 문헌 사료는 매개를 거치지 않은 과거의 사실이다.</li>
+<li>③ 기존의 사료를 새로운 방향에서 파악하는 것은 사료의 발굴이라고 할 수 있다.</li>
+<li>④ 문헌 사료의 언어는 다큐멘터리 영화의 이미지에 비해 지시 대상에 대한 지표성이 강하다.</li>
+<li>⑤ 카메라를 매개로 얻어진 영화의 이미지는 지시 대상과 닮아 있다는 점에서 상징적 기호이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>22번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>23</div><div class='q-stem'></div></div>
+<p>㉮, ㉯의 사례로 적절한 것만을 〈보기〉에서 있는 대로 찾아 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+ㄱ. 조선 후기 유행했던 판소리를 자료로 활용하여 당시 음식 문화의 실상을 파악하고자 했다.
+ㄴ. B. C. 3세기경에 편찬된 것으로 알려진 경전의 일부에 사용된 어휘를 면밀히 분석하여, 그 경전의 일부가 후대에 첨가되었을 가능성을 검토했다.
+ㄷ. 중국 명나라 때의 상거래 관행을 연구하기 위해 명나라 때 유행한 다양한 소설들에서 상업 활동과 관련된 내용을 모아 공통된 요소를 분석했다.
+ㄹ. 17세기의 사건 기록에서 찾아낸 한 평범한 여성의 삶에 대한 역사서를 쓰면서 그 여성의 심리를 묘사하기 위해 같은 시대에 나온 설화집의 여러 곳에서 문장을 차용했다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉮</th>
+<th>㉯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>ㄱ, ㄷ</td>
+<td>ㄹ</td>
+</tr>
+<tr>
+<td>②</td>
+<td>ㄱ, ㄹ</td>
+<td>ㄴ</td>
+</tr>
+<tr>
+<td>③</td>
+<td>ㄴ, ㄷ</td>
+<td>ㄱ</td>
+</tr>
+<tr>
+<td>④</td>
+<td>ㄷ</td>
+<td>ㄴ, ㄹ</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>ㄹ</td>
+<td>ㄱ, ㄴ</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>23번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>24</div><div class='q-stem'></div></div>
+<p>㉠에 나타난 역사가의 관점에서 [A]를 비판한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 영화는 많은 사실 정보를 담고 있기 때문에 사료로서의 가능성을 가지고 있다.</li>
+<li>② 하층 계급의 역사를 서술하기 위해서는 영화와 같이 허구를 포함하는 서사적 자료에 주목해야 한다.</li>
+<li>③ 영화가 늘 공식 역사의 대척점에 있는 것은 아니며, 공식 역사의 입장에서 지배적 이데올로기를 선전하는 수단으로 활용되곤 한다.</li>
+<li>④ 주변화된 집단의 목소리는 그 집단의 이해관계를 반영하기 때문에 그것에 바탕을 둔 영화는 주관에 매몰된 역사 서술일 뿐이다.</li>
+<li>⑤ 기억이나 구술 증언은 거짓이거나 변형될 가능성이 있기 때문에 다른 자료와 비교하여 진위 여부를 검증한 후에야 사료로 사용이 가능하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>24번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>25</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+1982년 작 영화 「마르탱 게르의 귀향」은 16세기 중엽 프랑스 농촌의 보통 사람들 간의 사건에 관한 재판 기록을 토대로 한다. 당시 사건의 정황과 생활상에 관한 고증을 맡은 한 역사가는 영화 제작 이후 재판 기록을 포함한 다양한 문서들을 근거로 동명의 역사서를 출간했다. 1993년, 영화 「마르탱 게르의 귀향」은 19세기 중엽 미국을 배경으로 하여 허구적 인물과 사건으로 재구성한 영화 「서머스비」로 탈바꿈되었다. 두 작품에서는 여러 해 만에 귀향한 남편이 재판 과정에서 가짜임이 드러난다. 전자는 당시 생활상을 있는 그대로 복원하는 데 치중했다. 반면 후자는 가짜 남편을 마을에 바람직한 변화를 가져온 지도자로 묘사하면서 미국 근대사를 긍정적으로 평가하고자 하는 대중의 욕망을 반영했다.</p>
+</blockquote>
+<ul>
+<li>① 「서머스비」에 반영된, 미국 근대사를 긍정적으로 평가하려는 대중의 욕망은 영화가 제작된 당시 사회의 집단적 무의식에 해당하는군.</li>
+<li>② 실화에 바탕을 둔 영화 「마르탱 게르의 귀향」을 가공의 인물과 사건으로 재구성한 「서머스비」에서는 영화에 대한 역사적 독해를 시도하기 어렵겠군.</li>
+<li>③ 영화 「마르탱 게르의 귀향」은 실제 사건의 재판 기록을 토대로 제작됐지만, 그 속에도 역사에 대한 영화인 나름의 시선이 표현 기법으로 나타났겠군.</li>
+<li>④ 영화 「마르탱 게르의 귀향」은 역사적 고증에 바탕을 두고 당시 사건과 생활상을 충실히 재현하기 위해 노력했다는 점에서 개연적 역사 서술 방식에 가깝겠군.</li>
+<li>⑤ 역사서 『마르탱 게르의 귀향』은 16세기 프랑스 농촌의 평범한 사람들의 삶의 모습을 서사적 자료에 근거하여 다루었다는 점에서 미시사 연구의 방식을 취했다고 볼 수 있군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>25번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>26</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 대면(對面)할</li>
+<li>② ⓑ: 간주(看做)되었던</li>
+<li>③ ⓒ: 대두(擡頭)했다</li>
+<li>④ ⓓ: 결합(結合)한다</li>
+<li>⑤ ⓔ: 전개(展開)하기</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>26번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>고대 로마의 시인 호라티우스는 ‘시는 그림과 같이’라는 경구를 남겼다. 이 말은 아리스토텔레스의 『시학』을 따라, 시와 회화가 공통으로 지니는 미메시스의 특징을 짚은 것으로 풀이된다. 미메시스란 대상을 본떠 다시 ⓐ<u>드러내는</u> 일을 가리키며, 시와 회화는 모두 이 본뜸을 통해 세계를 담아낸다는 것이다. 그림이 사물의 모습을 화폭에 본떠 옮기듯, 시도 인간의 행동과 감정을 말로 본떠 옮긴다고 보는 셈이다.</p>
+<p>이 경구는 한편으로 시는 회화를 모범으로 삼아야 한다는 뜻으로도 받아들여져 왔다. 회화가 대상을 눈앞에 또렷이 보여 주듯, 시도 읽는 이의 눈앞에 장면이 선히 떠오를 만큼 생생해야 한다는 것이다. 이러한 고전적 관점은 시와 회화를 하나의 잣대로 묶어, 회화에서 ⓑ<u>끌어낸</u> 원칙을 시에도 그대로 적용하였다. 곧 좋은 그림이 갖추어야 할 또렷함과 균형을 좋은 시도 갖추어야 한다고 본 것이다.</p>
+<p>고전적 관점에서 두 예술 형식의 경계는 그리 중요하지 않다. 시가 잘 지어졌는지를 따질 때에도 그것이 한 폭의 그림처럼 또렷한 형상을 떠올리게 하는가가 기준이 된다. 한 편의 시를 읽고 머릿속에 선명한 그림이 그려지면 잘 지어진 시이고, 그렇지 못하면 모자란 시라는 식이다. 그래서 이 관점에서는 시가 한 장면을 또렷이 그려 보일수록 회화의 미덕에 가까워진다고 여겨졌고, 회화 또한 한 폭 안에 이야기를 담을수록 시의 미덕에 가까워진다고 여겨졌다. 결국 이 관점은 시와 회화가 같은 본뜸의 기능을 ⓒ<u>나누어 가진다</u>는 점을 앞세워, 둘 사이의 차이보다 닮음에 무게를 둔다. 두 형식이 서로 다른 재료와 통로로 이루어진다는 사실은 이 관점에서 크게 문제 되지 않는다.</p>
+<p><strong>(나)</strong></p>
+<p>18세기 후반의 레싱은 고전적 관점이 시와 회화의 경계를 흐린다고 보아 이에 맞섰다. 그는 회화의 원칙을 시에 그대로 적용하는 대신, 각각의 예술 형식 안에서 매체와 그 효과에 주목해야 한다고 주장하였다. 시와 회화는 정보를 처리하는 방식이 서로 달라, 같은 미메시스라도 그 작동이 근본부터 갈린다는 것이다. 회화의 잣대로 시를 재면 시가 자기 재료로 가장 잘하는 일이 도리어 흠으로 비치게 된다고 그는 보았다.</p>
+<p>레싱은 미메시스로 통칭되어 온 공통 기능을, 회화적 묘사에서는 표현으로, 서술적 묘사에서는 재현으로 구분하였다. 그에 따르면 이미지 예술은 공간적이어서 한 장면을 한꺼번에 보이는 동시적 묘사에 알맞고, 문자 예술은 시간적이어서 사건을 잇따라 펼치는 연속적 묘사에 알맞다. 곧 회화는 사물들이 나란히 놓인 공간을 다루는 데 강하고, 시는 사건들이 잇따르는 시간을 다루는 데 강하다는 것이다. 「라오콘 군상」을 예로 들면, 조각은 인물의 고통을 일그러진 표정으로 한 순간에 직접 보이지만, 시는 그가 비명을 지른다고 서술하여 그 고통이 이어지는 과정을 독자가 스스로 그리도록 ⓓ<u>맡긴다</u>. 그러므로 회화에서 또렷한 형상은 강점이 되지만, 시에서 그 또렷함을 그대로 요구하면 시가 시간의 흐름을 풀어내는 자기 몫을 놓치게 된다.</p>
+<p>이 차이에서 레싱은 시적 묘사가 수용자의 머릿속에 감각적 환상을 더 강하게 일으킨다고 보았다. 시가 장면을 직접 보여 주지 않고 말의 차례로 풀어 놓을 때, 수용자는 그 빈자리를 자신의 상상으로 채워 넣으며 장면을 살아 움직이게 만든다. 상상력이 빚은 환상은 움직이지 않는 대상조차 살아 있는 이야기로 바꾸지만, 조형 예술의 비운동성은 현실의 자연스러움을 깨뜨려 환상의 완성을 가로막는다. 그러므로 회화에 ‘시는 그림과 같이’를 요구하던 고전적 관점과 달리, 레싱은 시에 그림이 갖지 못한 시간의 힘이 있음을 강조한 것이다. 이렇게 레싱은 회화를 모범으로 삼는 고전적 관점을 ⓔ<u>물리치고</u>, ㉠시적 묘사가 회화보다 상상의 공간을 더 넓게 연다고 보았다. 그에게 두 예술 형식의 차이는 흐려야 할 것이 아니라 오히려 또렷이 밝혀야 할 것이었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에서 모두 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① 시와 회화는 무엇을 공통의 기능으로 지니는가?</li>
+<li>② 시는 어떤 점에서 회화보다 상상의 공간을 더 넓히는가?</li>
+<li>③ 매체에 따라 정보를 처리하는 방식은 어떻게 달라지는가?</li>
+<li>④ 예술 형식 간의 경계를 흐리는 관점은 왜 비판받게 되었는가?</li>
+<li>⑤ 조형 예술에서 대상의 비운동성은 어떤 한계를 낳는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+(가)와 (나)에서 <em>모두</em> 답이 나오는 질문을 찾는 문제예요. (가)는 1문단에서 미메시스를 시와 회화의 <em>공통 기능</em>으로 짚었고, (나)도 2문단에서 “미메시스로 통칭되어 온 <em>공통 기능</em>”을 표현·재현으로 나눈다고 하여 그 공통 기능을 전제하죠. 그러니 ‘시와 회화는 무엇을 공통의 기능으로 지니는가’라는 ①은 두 글 모두에서 답할 수 있어 정답입니다. ②④는 (나)에서만, ⑤는 (나)에서만 답할 수 있고, ③도 매체별 정보 처리 차이는 (나)에서만 다루므로 ‘모두’ 조건을 채우지 못해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>(가)에 나타난 고전적 관점에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 시와 회화가 공통으로 지니는 미메시스의 특징에 주목한다.</li>
+<li>② 시의 완성도를 따질 때 또렷한 형상을 떠올리게 하는가를 기준으로 삼는다.</li>
+<li>③ 회화에서 끌어낸 원칙을 시에도 적용하여 두 예술 형식을 하나의 잣대로 묶는다.</li>
+<li>④ 시와 회화의 차이보다 둘이 공유하는 닮음에 더 무게를 둔다.</li>
+<li>⑤ 시와 회화가 정보를 처리하는 방식이 근본부터 다르다는 점을 앞세운다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+‘정보를 처리하는 방식이 근본부터 다르다’는 ⑤는 (가)의 고전적 관점이 아니라 (나)에서 <em>레싱</em>이 내세운 주장이에요. 고전적 관점은 오히려 두 형식의 <em>닮음</em>에 무게를 두므로, ⑤가 적절하지 않아 정답입니다. ①은 1문단(공통의 미메시스), ②는 3문단(또렷한 형상이 기준), ③은 2문단(회화 원칙을 시에 적용), ④는 3문단(닮음에 무게)에 각각 부합하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>〈보기〉의 입장에서 (가)의 고전적 관점에 대해 비판한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 예술 형식의 가치는 그 형식이 어떤 재료와 통로로 이루어지는가에서 비롯된다. 그러므로 한 형식을 평가할 때 다른 형식에서 빌려 온 잣대를 들이대면, 정작 그 형식이 자기 재료로 가장 잘하는 일을 놓치게 된다. 각 형식은 저마다의 조건 위에서 따로 따져야 한다.</p>
+</blockquote>
+<ul>
+<li>① 시와 회화가 공통의 기능을 지닌다는 전제 자체가 성립할 수 없으므로, 두 형식은 비교조차 될 수 없다.</li>
+<li>② 회화의 원칙을 시의 잣대로 삼는 것은 시가 자기 매체로 가장 잘하는 일을 가리게 되므로, 두 형식을 하나의 기준으로 묶어서는 안 된다.</li>
+<li>③ 시가 또렷한 형상을 떠올리게 해야 한다는 기준은 회화에도 똑같이 적용되어야 공정한 평가가 된다.</li>
+<li>④ 미메시스라는 공통 기능에 주목한 것은 옳으나, 그 기능을 표현과 재현으로 더 잘게 나누지 못한 점이 한계이다.</li>
+<li>⑤ 시와 회화의 닮음에 무게를 둔 것은 정당하지만, 두 형식의 우열까지 가리지 못한 점에서 불완전하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong>
+〈보기〉는 <em>한 형식을 다른 형식의 잣대로 재면 그 형식이 자기 재료로 가장 잘하는 일을 놓친다</em>는 입장이에요. 고전적 관점은 회화의 원칙을 시의 잣대로 삼았으니, 이 입장에서 보면 시가 자기 매체로 잘하는 일을 가리는 셈이죠. 그러니 “하나의 기준으로 묶어서는 안 된다”는 ②가 비판으로 가장 적절합니다. ① 〈보기〉는 공통 기능 자체를 부정하지 않았고(비교 불가까지 말하지 않음), ③은 오히려 하나의 잣대를 옹호하는 말이며, ④⑤는 〈보기〉에 없는 ‘표현·재현 구분’이나 ‘우열’을 끌어들여 비판의 초점이 어긋나요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 시는 대상을 한 순간에 고정하여 직접 보여 주기 때문이다.</li>
+<li>② 시는 회화와 달리 미메시스의 기능에서 완전히 벗어나기 때문이다.</li>
+<li>③ 시는 사건을 시간의 흐름에 따라 풀어내어 수용자의 상상을 자극하기 때문이다.</li>
+<li>④ 시는 공간적 매체로서 한 장면을 한꺼번에 보이는 데 알맞기 때문이다.</li>
+<li>⑤ 시는 대상의 비운동성을 통해 현실의 자연스러움을 더 잘 살리기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+㉠은 “시적 묘사가 회화보다 상상의 공간을 더 넓게 연다”는 부분이에요. 그 까닭은 (나) 2~3문단에서, 시가 사건을 <em>시간의 흐름에 따라 풀어내어</em> 수용자의 <em>상상을 자극</em>하기 때문이라고 했으니 ③이 정답입니다. ① 대상을 한 순간에 고정해 직접 보이는 것은 <em>회화</em>이고, ② 시도 미메시스(재현)의 기능을 지니므로 ‘완전히 벗어난다’는 틀렸으며, ④ 시는 <em>시간적</em> 매체라 ‘공간적’은 거꾸로예요. ⑤ 비운동성은 환상의 완성을 <em>가로막는</em> 것이라 상상 확장의 이유가 될 수 없습니다.</p>
+<p><strong>11번 [3점] — 정답 ③</strong>
+㉮(한 폭의 그림)는 한 장면을 한꺼번에 보이는 동시적 묘사이고, ㉯(서사시)는 사건을 차례로 푸는 연속적 묘사예요. B(레싱)의 관점에서 ㉮가 한눈에 들어오는 것은 회화가 <em>동시적 묘사</em>를 하기 때문이니 ③이 정답입니다. ① A(고전적 관점)는 그림이 시를 모범으로 삼는다고 보지 않고(거꾸로 시가 그림을 모범으로), ② 서사시도 미메시스(재현)의 기능을 지니므로 틀렸어요. ④ ㉯에서 싸움이 움직인 것은 <em>상상을 자극</em>했기 때문이지 ‘정지시켜 직접 보여 주어서’가 아니며(그건 회화), ⑤ 레싱(B)은 두 형식을 <em>같은 잣대</em>로 묶는 것에 반대했으니 성립하지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 학생이 작성한 감상문이다. 이에 대해 (가)의 고전적 관점(A)과 (나)의 레싱의 관점(B)에서 설명한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+㉮전쟁을 다룬 한 폭의 그림을 보았다. 무너진 성벽과 쓰러진 병사들, 피어오르는 연기가 한 화면에 빼곡히 담겨, 그 참혹한 순간이 한눈에 들어왔다. 마치 사진처럼 또렷해서 오래 잊히지 않았다.
+㉯같은 전쟁을 노래한 서사시도 읽었다. 시인은 한 병사가 칼을 뽑고 적과 마주서서 끝내 쓰러지기까지를 여러 행에 걸쳐 차례로 풀어 썼다. 장면을 직접 보여 주지는 않는데도, 읽는 동안 그 싸움이 머릿속에서 생생히 움직였다.</p>
+</blockquote>
+<ul>
+<li>① A의 관점에서 보면, 학생이 ㉮에서 참혹한 순간이 한눈에 들어온다고 느낀 것은 그림이 시를 모범으로 삼아 형상을 흐렸기 때문이다.</li>
+<li>② A의 관점에서 보면, 학생이 ㉯를 ‘사진처럼 또렷하다’고 느끼지 못한 것은 서사시가 미메시스의 기능을 지니지 않기 때문이다.</li>
+<li>③ B의 관점에서 보면, 학생이 ㉮에서 순간이 한눈에 들어온다고 느낀 것은 회화가 한 장면을 한꺼번에 보이는 동시적 묘사를 하기 때문이다.</li>
+<li>④ B의 관점에서 보면, 학생이 ㉯에서 싸움이 머릿속에서 움직였다고 느낀 것은 서사시가 대상을 정지시켜 직접 보여 주었기 때문이다.</li>
+<li>⑤ A와 B의 관점에서 보면, ㉮와 ㉯는 모두 회화의 원칙을 따랐다는 점에서 같은 잣대로 평가되어야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 구현(具現)하는</li>
+<li>② ⓑ: 도출(導出)한</li>
+<li>③ ⓒ: 공유(共有)한다</li>
+<li>④ ⓓ: 위임(委任)한다</li>
+<li>⑤ ⓔ: 배격(排擊)하고</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+ⓓ ‘맡긴다’는 <em>독자가 스스로 그리도록 그 일을 넘긴다</em>는 뜻인데, ④ ‘위임(委任)한다’는 <em>권한이나 직무를 남에게 맡긴다</em>는 공적·제도적 뜻이라 상상 작용을 넘긴다는 문맥과 어긋나요. 그래서 ④가 적절하지 않아 정답입니다. ① ‘드러내는→구현하는’, ② ‘끌어낸→도출한’, ③ ‘나누어 가진다→공유한다’, ⑤ ‘물리치고→배격하고’는 각각 문맥과 통해 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>고전적 관점</strong>: 호라티우스의 ‘시는 그림과 같이’로 대표되는, 시와 회화를 <em>하나의 잣대</em>로 묶는 관점.</li>
+<li><strong>매체적 차이</strong>: 레싱이 주목한, 시(시간·연속)와 회화(공간·동시)가 정보를 처리하는 방식의 근본적 차이.</li>
+<li><strong>경계 흐리기 vs 경계 밝히기</strong>: 고전적 관점은 두 형식의 경계를 <em>흐리고</em>, 레싱은 그 경계를 <em>또렷이 밝히려</em> 했어요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>(가) 고전적 관점</th>
+<th>(나) 레싱의 관점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무엇에 주목하나</td>
+<td>시·회화의 <em>닮음</em>(공통 미메시스)</td>
+<td>시·회화의 <em>차이</em>(매체적 차이)</td>
+</tr>
+<tr>
+<td>평가의 잣대</td>
+<td>회화의 원칙을 시에도 적용</td>
+<td>각 매체의 조건에서 따로 평가</td>
+</tr>
+<tr>
+<td>경계에 대한 태도</td>
+<td>경계를 흐림</td>
+<td>경계를 또렷이 밝힘</td>
+</tr>
+<tr>
+<td>결론</td>
+<td>시는 회화를 모범으로</td>
+<td>시가 상상 공간을 더 넓힘(시 우월)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 관점은 <em>닮음에 묶을 것이냐, 차이로 가를 것이냐</em>에서 갈려요. 레싱은 차이로 갈라야 각 매체가 잘하는 일이 보인다고 했습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>고전적 관점이 시와 회화를 묶는 근거는 무엇인가요?</div><div class='qa-a'>둘이 공통으로 지니는 미메시스, 곧 본뜸의 기능입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>레싱이 고전적 관점에 맞선 핵심 주장은?</div><div class='qa-a'>시와 회화는 정보를 처리하는 방식이 달라 각 매체의 효과에 따로 주목해야 한다는 것입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 관점은 ‘경계’를 어떻게 다르게 보나요?</div><div class='qa-a'>고전적 관점은 경계를 흐리고, 레싱은 경계를 또렷이 밝히려 했습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 9월 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>리얼리즘 영화 이론가 앙드레 바쟁에 따르면 영화는 ‘세상을 향해 열린 창’이다. 창을 통해 세상을 인식하는 것처럼, 관객은 영화를 통해 현실을 객관적으로 인식할 수 있다. 영화가 담아내고자 하는 현실은 물리적 시·공간이 분할되지 않는 하나의 총체로, 그 의미가 미리 정해지지 않은 미결정의 상태이다. 바쟁은 영화가 현실의 물리적 연속성과 미결정성을 있는 그대로 드러내야 한다고 생각했다.</p>
+<p>바쟁은 영화감독을 ‘이미지를 믿는 감독’과 ‘현실을 믿는 감독’으로 분류했다. 영화의 형식을 중시한 ‘이미지를 믿는 감독’은 다양한 영화적 기법으로 현실을 변형하여 ⓐ새로운 의미를 창조하는 데 주력한다. 몽타주의 대가인 예이젠시테인이 대표적이다. 몽타주는 추상적이거나 상징적인 이미지를 통해 관객이 익숙한 대상을 낯설게 받아들이게 한다. 또한 짧은 숏들을 불규칙적으로 편집해서 영화가 재현한 공간이 불연속적으로 연결된 듯한 느낌을 만들어 낸다. 바쟁은 몽타주가 현실의 연속성을 ⓑ깨뜨릴 뿐만 아니라 감독의 의도에 따라 관객이 현실을 하나의 의미로만 해석하게 할 우려가 있는 연출 방식이라고 생각했다.</p>
+<p>바쟁은 ‘현실을 믿는 감독’을 지지했다. 이들은 ‘이미지를 믿는 감독’과 달리 영화의 내용, 즉 현실을 더 중요하게 생각하기에 변형되지 않은 현실을 객관적으로 보여 주고자 한다. 디프 포커스와 롱 테이크는 이를 가능하게 해 주는 영화적 기법이다. 디프 포커스는 근경에서 원경까지 숏 전체를 선명하게 초점을 맞춰 촬영하는 기법으로, 원근감이 느껴지도록 공간감을 표현할 수 있다. 롱 테이크는 하나의 숏이 1~2분 이상 끊김 없이 길게 진행되도록 촬영하는 기법이다. 영화 속 사건이 지속되는 시간과 관객의 영화 체험 시간이 일치하여 현실을 ⓒ마주하는 듯한 효과를 낳는다. 바쟁에 따르면, 디프 포커스와 롱 테이크를 혼용하여 연출한 장면은 관객이 그 장면에 담긴 인물이나 사물을 자율적으로 선택하여 응시하면서 화면 속 공간 전체와 사건의 전개를 지켜볼 수 있게 해 준다.</p>
+<p>바쟁은 현실의 공간에서 자연광을 이용해 촬영하거나, 연기 경험이 없는 일반인을 배우로 ⓓ쓰는 등 다큐멘터리처럼 강한 현실감을 만들어 내는 연출 방식에 찬사를 보냈다. 또한 정교하게 구조화된 서사를 통해 의미를 명확하게 제시하는 영화보다는 열린 결말을 통해 의미를 확정적으로 제시하지 않는 영화를 선호했다. 이러한 영화가 미결정 상태의 현실을 있는 그대로 드러낸다고 생각했기 때문이다.</p>
+<p>(나)</p>
+<p><span class="boxmark">[정신분석학적 영화 이론]</span>에 따르면 ㉠관객이 영화에서 느끼는 현실감은 상상적인 것이며 환영이다. 영화와 관객의 심리 사이의 관계를 다루는 정신분석학적 영화 이론은 영화와 관객 사이에 발생하는 동일시 현상에 주목한다. 이런 동일시 현상은 영화 장치로 인해 발생한다. 이때 영화 장치는 카메라, 영화의 서사, 영화관의 환경 등을 아우르는 개념이다. 가장 대표적인 동일시 현상은 관객이 영화의 등장인물에 자신을 일치시키는 것이다. 이런 동일시는 극영화뿐 아니라 다큐멘터리 영화에서도 발생한다. 그런데 관객이 보고 있는 인물과 사물은 영화가 상영되는 그 시간과 장소에는 존재하지 않는다. 그 인물과 사물의 부재를 채우는 역할은 관객의 몫이다. 관객은 상상적 작업을 통해, 영화가 보여 주는 세계의 중심에 자신을 위치시킴으로써, 허구적 세계와 현실 사이의 간극을 ⓔ없앤다. 따라서 정신분석학적 영화 이론에서 영화는 일종의 몽상이다.</p>
+<p>정신분석학적 영화 이론에 따르면 관객의 시점은 카메라의 시점과 동일시된다. 관객은 카메라에 의해 기록된 것만을 볼 수 있다. 따라서 관객은 자신이 영화를 보는 시선의 주체라고 생각하지만 그 시선은 카메라에 의해 이미 규정된 시선이다. 또한 영화는 촬영과 편집 과정에서 특정한 의도에 따라 선택과 배제가 이루어지지만, 관객은 제작 과정에서 무엇이 배제되었는지 알 수 없다. 관객은 자신이 현실 세계를 보고 있다고 믿지만, 사실은 인위적으로 만들어진 세계를 보고 있다는 것이 정신분석학적 영화 이론가들의 주장이다.</p>
+<p>영화관의 환경은 관객이 영화가 환영임을 인식하기 어렵게 만든다. 영화에 몰입한 관객은 플라톤이 말한 ‘동굴의 비유’ 속 죄수처럼 스크린에 비친 허구적 세계를 현실이라고 착각한다. 이때 영화는 꿈에 빗대진다. 정신분석학적 영화 이론은 영화가 은폐하고 있는 특정한 이념을 관객이 의심하지 않고 자신의 것으로 받아들일 위험이 있다고 경고한다. 이는 관객이 비판적 거리를 유지하면서 영화를 볼 수 있도록, 영화가 환영임을 영화 스스로 폭로하는 설정이 담겨 있는 대안적인 영화가 필요하다는 주장으로 이어진다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에서 모두 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① 영화는 무엇에 비유될 수 있는가?</li>
+<li>② 영화의 내용과 형식 중 무엇이 중요한가?</li>
+<li>③ 영화에 관객의 심리는 어떻게 반영되는가?</li>
+<li>④ 영화 이론의 시기별 변천 양상은 어떠한가?</li>
+<li>⑤ 영화관 환경은 관객에게 어떤 영향을 주는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>12번 — 정답 ①</strong><br />
+(가)는 영화를 ‘세상을 향해 열린 창’에, (나)는 영화를 몽상·꿈에 빗대므로 두 글 모두 영화가 무엇에 비유되는지 답할 수 있다(①). ②와 ⑤는 (나)·(가) 중 한쪽에만 관련 내용이 있고(내용·형식 논의는 (가), 영화관 환경은 (나)), ③관객의 심리가 영화에 반영되는 방식과 ④시기별 변천 양상은 두 글 모두에 없다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①62.1% ②8.3% ③21.5% ④3.0% ⑤5.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)를 바탕으로 할 때, 영화적 기법의 효과에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 몽타주를 활용하여 대립 관계의 두 세력이 충돌하는 상황을 상징적 이미지로 표현한 장면에서, 관객은 생소한 느낌을 받을 수 있다.</li>
+<li>② 몽타주를 활용하여 서로 다른 공간을 짧은 숏으로 불규칙하게 교차시킨 장면에서, 관객은 영화 속 공간이 불연속적으로 재구성되었다는 인상을 받을 수 있다.</li>
+<li>③ 디프 포커스를 활용하여 주인공과 주인공 뒤로 펼쳐진 배경을 하나의 숏으로 촬영한 장면에서, 관객은 배경이 흐릿하게 인물은 선명하게 보이는 느낌을 받을 수 있다.</li>
+<li>④ 롱 테이크를 활용하여 사자가 사슴을 사냥하는 모든 과정을 하나의 숏으로 길게 촬영한 장면에서, 관객은 실제 상황을 마주하는 듯한 느낌을 받을 수 있다.</li>
+<li>⑤ 디프 포커스와 롱 테이크를 활용하여 광장의 군중을 촬영한 장면에서, 관객은 자율적으로 인물이나 배경에 시선을 옮기며 사건의 전개를 지켜볼 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong><br />
+디프 포커스는 근경에서 원경까지 숏 전체를 선명하게 초점을 맞춰 촬영하는 기법이므로, 배경이 흐릿하고 인물만 선명하게 보인다는 ③은 적절하지 않다. ①·②는 몽타주의 효과(낯설게 받아들이게 함, 불연속적 연결의 느낌), ④는 롱 테이크의 효과(현실을 마주하는 듯한 효과), ⑤는 디프 포커스·롱 테이크 혼용의 효과(자율적 응시와 사건 전개 관람)에 부합한다.</p>
+<p><em>선택률</em> — 응시 98,549명 — ①3.1% ②7.5% ③82.0% ④2.9% ⑤4.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>〈보기〉의 입장에서 (가)의 ‘바쟁’에 대해 비판한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+관객은 특별한 예술 교육을 받지 않아도 작품을 해석할 수 있다. 또한 감독의 의도대로 작품을 해석하는 존재가 아니다. 따라서 감독은 영화를 통해 관객을 계몽하려 할 필요가 없다. 관객은 작품과 상호 작용하며 의미를 생산하는 능동적 존재이다. 감독과 관객은 수평적인 위치에 있다.</p>
+</blockquote>
+<ul>
+<li>① 바쟁은 열린 결말의 영화를 관객이 이해하도록 돕는 예술 교육의 필요성을 간과하고 있다.</li>
+<li>② 바쟁은 정교하게 구조화된 서사의 영화를 통해 관객을 계몽하는 것을 영화의 목적이라고 오인하고 있다.</li>
+<li>③ 바쟁이 감독의 연출 역량을 기준으로 감독의 유형을 나눈 것은 영화와 관객의 상호 작용을 무시한 구분에 불과하다.</li>
+<li>④ 바쟁이 변형된 현실을 통해 생성한 의미를 관객에게 전달하는 것을 중시한다는 점에서 관객의 능동적인 작품 해석 능력을 과소평가하고 있다.</li>
+<li>⑤ 바쟁은 감독의 연출 방식에 따라 영화 작품에 대한 관객의 이해가 달라질 수 있다고 본다는 점에서 감독이 관객보다 우위에 있다고 간주하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong><br />
+바쟁은 몽타주가 관객이 현실을 하나의 의미로만 해석하게 할 우려가 있다고 보고, ‘현실을 믿는 감독’의 연출 방식이 관객의 객관적 인식을 가능하게 한다고 보았다. 이는 감독의 연출 방식이 관객의 이해를 좌우한다는 것, 즉 감독이 관객보다 우위에 있다는 전제이므로, 감독과 관객을 수평적 관계로 보는 〈보기〉의 입장에서 ⑤와 같이 비판할 수 있다. ①〈보기〉는 예술 교육이 불필요하다는 입장이고, ②바쟁은 구조화된 서사보다 열린 결말을 선호했으며, ③감독 유형 구분은 역량이 아니라 형식/내용 중시 여부에 따른 것이고, ④변형된 현실로 의미를 생성하는 것은 바쟁이 지지한 입장이 아니다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①1.9% ②7.5% ③8.8% ④8.7% ⑤73.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[정신분석학적 영화 이론]</span>을 바탕으로 할 때, ㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 관객은 영화 장치의 영향을 받기 때문이다.</li>
+<li>② 현실의 의미는 미리 정해져 있지 않기 때문이다.</li>
+<li>③ 영화가 현실을 불연속적으로 파편화하여 드러내기 때문이다.</li>
+<li>④ 관객은 영화의 은폐된 이념을 그대로 받아들일 위험이 있기 때문이다.</li>
+<li>⑤ 관객은 영화의 제작 과정에서 배제된 것들을 인식할 수 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>15번 — 정답 ①</strong><br />
+㉠(관객이 느끼는 현실감은 상상적인 것이며 환영)의 근거는 동일시 현상이며, 동일시 현상은 영화 장치(카메라·서사·영화관 환경)로 인해 발생한다(①). ②는 (가)의 내용이고, ④은폐된 이념의 수용 위험은 ㉠의 이유가 아니라 ㉠으로 인해 생길 수 있는 문제이며, ⑤관객은 제작 과정에서 무엇이 배제되었는지 알 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①62.7% ②8.0% ③7.4% ④15.2% ⑤6.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 학생이 작성한 영화 감상문이다. 이에 대해 (가)의 바쟁(A)의 관점과 (나)의 정신분석학적 영화 이론(B)의 관점에서 설명한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[영화 감상문]</span></strong>
+최근 영화관에서 본 두 편의 영화가 기억에 남는다. ㉮첫째 번 영화는 고단하게 살아가는 한 가족의 일상을 표현한 작품이다. 다큐멘터리라는 착각이 들 정도로 사실적인 영화였다. 작품에 대해 더 찾아보니 거리에서 인공조명 없이 촬영되었고, 주인공은 연기 경험이 없는 일반인이었다고 한다. 마지막에 아버지가 아들의 손을 꼭 잡아 줄 때, 마치 내 손을 잡아 주는 것처럼 느껴져 감동적이었다. 열린 결말이라서 주인공 가족이 앞으로 어떻게 살아갈지 궁금했다.</p>
+<p>㉯둘째 번 영화는 초인적 주인공이 외계의 침략자를 물리치는 내용이다. 영화 후반부까지 사건 전개를 예측하지 못할 정도로 반전을 거듭하는 이야기와 실재라고 착각할 정도로 뛰어난 컴퓨터 그래픽 화면은 으뜸이었지만 뻔한 결말은 아쉬웠다. 그래도 주인공이 침략자를 무찌르는 장면에서는 내가 주인공이 되어 세상을 구하는 것 같아서 쾌감이 느껴졌다. 그런데 영화가 끝나고 생각해 보니 왜 세계의 평화는 서구인이 지키고, 특정 나라에서 일어나는 사건이 인류의 위기인지 의아했다.</p>
+</blockquote>
+<ul>
+<li>① A의 관점에서 보면, 학생이 ㉮에서 궁금함을 떠올린 것은 ‘이미지를 믿는 감독’이 열린 결말을 통해 현실을 있는 그대로 ㉮에 담았기 때문이다.</li>
+<li>② A의 관점에서 보면, 학생이 ㉯에서 사건의 전개를 예측하지 못한 것은 ㉯에는 의미가 미리 정해져 있지 않은 미결정 상태의 현실이 담겨 있기 때문이다.</li>
+<li>③ A의 관점에서 보면, 학생이 ㉮와 ㉯에서 착각하는 듯한 인상을 받은 것은 ㉮와 ㉯가 강한 현실감을 만들어 내는 연출 방식으로 촬영되었기 때문이다.</li>
+<li>④ B의 관점에서 보면, 학생이 ㉯에서 의아함을 떠올린 것은 ㉯가 관객으로 하여금 비판적 거리를 유지하며 영화를 볼 수 있도록 하는 대안적인 영화이기 때문이다.</li>
+<li>⑤ B의 관점에서 보면, 학생이 ㉮에서 감동을 받은 것과 ㉯에서 쾌감을 느낀 것은 상상적 작업을 통해 허구적 세계의 중심에 자신을 위치시켰기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+B의 관점에서 ㉮·㉯ 모두에서 동일시가 발생하며, 학생이 느낀 감동과 쾌감은 상상적 작업을 통해 영화가 보여 주는 세계의 중심에 자신을 위치시킨 결과이다(⑤). ①열린 결말로 현실을 있는 그대로 담는 것은 ‘현실을 믿는 감독’의 특징이고, ②미결정 상태의 현실은 ㉮(열린 결말)에 해당하는 내용이며, ③㉮는 강한 현실감의 연출 방식이지만 ㉯의 착각은 컴퓨터 그래픽 때문이고, ④학생의 의아함은 영화가 끝난 뒤 떠올린 것이므로 ㉯가 스스로 환영임을 폭로하는 대안적 영화라고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①3.0% ②9.6% ③7.9% ④10.8% ⑤67.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 개선(改善)된</li>
+<li>② ⓑ: 파괴(破壞)할</li>
+<li>③ ⓒ: 대면(對面)하는</li>
+<li>④ ⓓ: 기용(起用)하는</li>
+<li>⑤ ⓔ: 해소(解消)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>17번 — 정답 ①</strong><br />
+ⓐ‘새로운’은 ‘지금까지 있은 적이 없다’는 의미이므로, ‘잘못되거나 부족한 것이 고쳐져 더 좋게 되다’라는 의미의 ‘개선(改善)된’과 바꿔 쓸 수 없다(①). ⓑ깨뜨릴—파괴할, ⓒ마주하는—대면하는, ⓓ(배우로) 쓰는—기용하는, ⓔ없앤다—해소한다는 각각 바꿔 쓰기에 적절하다.</p>
+<p><em>선택률</em> — 응시 98,549명 — ①90.9% ②1.5% ③0.7% ④1.7% ⑤4.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>18세기 후반의 레싱은 문자 예술과 이미지 예술 사이의 차이를 매체의 관점에서 해명하였다. 그는 시와 회화가 정보를 처리하는 방식이 서로 달라 근본적인 차이가 생긴다고 보고, 미메시스로 통칭되어 온 공통 기능을 회화적 묘사의 표현과 서술적 묘사의 재현으로 구분하였다. 표현은 형상으로 대상을 눈앞에 직접 드러내는 일이고, 재현은 언어로 대상을 차례로 풀어내는 일이다. <strong><span class="boxmark">[레싱이 보는 매체적 차이]</span></strong>는 이미지 예술과 문자 예술이 각각 공간과 시간이라는 서로 다른 축 위에 ⓐ<u>놓인다</u>는 데에 있다. 이미지 예술은 공간적이어서 한 장면을 한꺼번에 보이는 동시적 묘사에 알맞고, 문자 예술은 시간적이어서 사건을 잇따라 펼치는 연속적 묘사에 알맞다는 것이다. 같은 대상을 다루더라도 회화는 그것을 한자리에 모아 보이고 시는 그것을 앞뒤로 이어 보이므로, 두 형식은 서로 다른 방식으로 수용자에게 가닿는다.</p>
+<p>레싱은 이 차이가 수용자에게 미치는 효과로 이어진다고 보았다. 「라오콘 군상」을 예로 들면, 조각은 인물의 고통을 일그러진 표정으로 직접 보이지만, 시는 그가 비명을 지른다고 서술하여 독자가 그 장면을 스스로 그리게 한다. 회화는 한 순간을 그 자리에 붙들어 보여 주는 대신 그 앞뒤의 시간을 담지 못하고, 시는 사건의 앞뒤를 차례로 풀어내는 대신 한 장면을 단번에 펼쳐 보이지는 못한다. 그는 이렇게 상상을 자극하는 시적 묘사가 회화보다 상상의 공간을 더 넓게 연다고 보았다. 상상력이 빚은 환상은 움직이지 않는 대상조차 살아 있는 이야기로 바꾸지만, 조형 예술의 비운동성은 환상의 완성을 가로막는다는 것이다.</p>
+<p>이러한 논의를 바탕으로 레싱은 각각의 예술 형식을 그 매체의 고유한 조건에서 평가해야 한다고 보았다. 그는 한 형식을 다른 형식의 잣대로 재던 고전적 관점을 넘어, 매체마다 잘하는 일과 못하는 일이 따로 있음을 ⓑ<u>밝혔다</u>. 한 매체의 강점은 다른 매체의 약점과 맞물려 있어, 어느 하나를 기준으로 모든 형식을 줄 세울 수는 없다는 것이다. 그리하여 레싱의 이론은 예술 형식 간의 매체적 차이를 논하는 논의의 출발점이 되었으며, 각 매체를 그 작동 방식에 따라 구별해 보는 시각을 예술 연구에 ⓒ<u>심었다</u>.</p>
+<p><strong>(나)</strong></p>
+<p>레싱이 매체에 따라 예술 형식을 또렷이 갈랐다면, 오늘날의 매체 환경은 그 경계가 다시 흐려지는 쪽으로 나아가고 있다. 문학·회화·음악 등의 예술 형식들 사이에서 서로 다른 매체들이 경쟁하거나 혼합되는 형태가 늘어나는 것이다. 한 작품 안에 글과 이미지와 소리가 함께 놓이거나, 한 매체의 표현 방식이 다른 매체로 옮겨 가는 일이 흔해졌다. 이러한 매체 간 상호 작용을 설명하는 개념이 상호 매체성이다. 상호 매체성에 대한 이해는 크게 두 관점으로 나뉜다. 하나는 매체를 예술 형식과 동일한 것으로 보아 서로 다른 매체 간의 통합을 중시하는 관점이고, 다른 하나는 매체를 정보를 저장·전달·처리하는 것으로 보아 각 매체가 지닌 특수한 작동 방식에 관심을 ⓓ<u>두는</u> 관점이다. 앞의 관점이 여러 매체가 한데 어우러져 빚어내는 새로운 형식에 눈을 둔다면, 뒤의 관점은 그렇게 어우러진 매체들이 저마다 정보를 어떻게 다루는지에 눈을 둔다.</p>
+<p>이 두 관점은 레싱의 매체 이론과 서로 다른 방식으로 맞물린다. 통합을 중시하는 관점에서 보면, ㉠레싱이 그은 표현과 재현, 공간과 시간의 경계는 더 이상 고정된 것으로 다루어지지 않는다. 매체를 곧 예술 형식으로 보는 이 관점은 여러 매체가 하나로 어우러지는 형태에 주목하므로, 시와 회화를 처음부터 갈라 놓는 이분법으로는 그 어우러짐을 담아내기 어렵다고 보기 때문이다. 한편 매체를 정보의 저장·전달·처리로 보는 관점은 레싱과 마찬가지로 각 매체의 작동 방식에 주목한다는 점에서 그와 닿아 있다. 그러나 이 관점은 ㉡어느 매체가 더 우월한가를 가리기보다, 각 매체가 정보를 다루는 방식 자체를 ⓔ<u>살피는</u> 데로 관심을 옮긴다. 그리하여 상호 매체성의 논의는 레싱이 남긴 매체별 구별의 통찰을 이어받으면서도, 그가 내린 우열의 결론에서는 비켜선다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>다음은 (가)와 (나)를 읽고 수행한 학습 활동지의 일부이다. Ⓐ~Ⓔ 중 적절하지 않은 것은?</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>활동 내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ⓐ</td>
+<td>글의 화제: (가)와 (나)는 모두 ‘예술 형식과 매체의 관계’를 화제로 삼고 있다.</td>
+</tr>
+<tr>
+<td>Ⓑ</td>
+<td>공통된 서술 방식: (가)와 (나)는 모두 구체적인 예술 형식을 들어 매체의 차이나 상호 작용을 설명한다.</td>
+</tr>
+<tr>
+<td>Ⓒ</td>
+<td>(가)는 (나)와 달리, 한 이론가가 매체적 차이를 구분한 방식과 그 효과를 제시한다.</td>
+</tr>
+<tr>
+<td>Ⓓ</td>
+<td>(나)는 (가)와 달리, 매체를 보는 두 관점을 나누어 소개하고 각 관점이 레싱의 이론과 어떻게 맞물리는지를 밝힌다.</td>
+</tr>
+<tr>
+<td>Ⓔ</td>
+<td>(나)는 (가)에서 소개한 레싱의 이론이 등장하게 된 시대적 배경을 시간순으로 따져 그 한계를 입증한다.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>① Ⓐ</li>
+<li>② Ⓑ</li>
+<li>③ Ⓒ</li>
+<li>④ Ⓓ</li>
+<li>⑤ Ⓔ</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong>
+Ⓔ는 (나)가 레싱 이론의 <em>시대적 배경을 시간순으로 따져 한계를 입증</em>한다고 했는데, (나)는 시대적 배경을 연대순으로 추적하지 않고 ‘두 관점’으로 레싱 이론과의 맞물림을 따질 뿐이에요. 그래서 Ⓔ가 적절하지 않아 정답입니다. Ⓐ는 두 글의 공통 화제(예술 형식과 매체), Ⓑ는 구체적 예술 형식을 든 설명, Ⓒ는 (가)의 매체 차이 구분·효과 제시, Ⓓ는 (나)의 두 관점 소개와 레싱과의 맞물림으로 모두 글의 실제 내용에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[레싱이 보는 매체적 차이]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이미지 예술과 문자 예술이 각각 공간과 시간이라는 서로 다른 축 위에 놓인다는 데 있다.</li>
+<li>② 미메시스라는 공통 기능을 회화적 묘사의 표현과 서술적 묘사의 재현으로 구분한 결과이다.</li>
+<li>③ 이미지 예술은 한 장면을 한꺼번에 보이는 동시적 묘사에 알맞다고 본다.</li>
+<li>④ 문자 예술은 사건을 잇따라 펼치는 연속적 묘사에 알맞다고 본다.</li>
+<li>⑤ 두 예술 형식이 정보를 처리하는 방식이 본래 같다는 점에서 비롯된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong>
+<span class="boxmark">[레싱이 보는 매체적 차이]</span>는 시와 회화가 정보를 처리하는 방식이 <em>서로 달라</em> 생기는 차이예요(1문단). ⑤는 두 형식이 정보를 처리하는 방식이 ‘본래 같다’고 했으니 정반대라서 적절하지 않아 정답입니다. ①은 공간·시간의 두 축(1문단), ②는 표현·재현 구분(1문단), ③은 동시적 묘사(1문단), ④는 연속적 묘사(1문단)로 모두 네모박스가 가리키는 내용에 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 매체를 정보의 저장·전달·처리로 보아 각 매체의 작동 방식에 주목하기 때문이다.</li>
+<li>② 매체를 예술 형식과 동일한 것으로 보아 여러 매체가 하나로 어우러지는 형태에 주목하기 때문이다.</li>
+<li>③ 시와 회화가 정보를 처리하는 방식이 근본부터 다르다는 점을 더 분명히 하려 하기 때문이다.</li>
+<li>④ 어느 매체가 더 우월한가를 가리는 일이 매체 연구의 출발점이 되어야 하기 때문이다.</li>
+<li>⑤ 조형 예술의 비운동성이 환상의 완성을 가로막는다는 점을 새롭게 밝히려 하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong>
+㉠은 “레싱이 그은 경계가 더 이상 고정된 것으로 다루어지지 않는다”는 부분이고, 바로 뒤 문장이 그 까닭이에요 — <em>매체를 곧 예술 형식으로 보아</em> 여러 매체가 <em>하나로 어우러지는 형태</em>에 주목하기 때문에 갈라 놓는 이분법으로는 그 어우러짐을 담기 어렵다는 거죠. 그래서 ②가 정답입니다. ①은 <em>다른</em> 관점(정보의 저장·전달·처리)의 설명이고, ③④는 오히려 경계를 더 굳히는 방향이라 ‘고정되지 않는다’는 ㉠과 어긋나며, ⑤는 (가)의 내용일 뿐 ㉠의 이유가 아니에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>(가)의 레싱의 관점을 바탕으로 할 때, ㉡에 대해 반박할 수 있는 말로 가장 적절한 것은?</p>
+<ul>
+<li>① 매체마다 정보를 다루는 방식이 다른 이상, 그 방식이 낳는 효과의 차이를 따져 어느 쪽이 상상의 공간을 더 넓히는지까지 가려야 한다.</li>
+<li>② 매체의 작동 방식에 주목하는 일은 애초에 불가능하므로, 매체 간의 우열을 가리는 것도 무의미하다.</li>
+<li>③ 여러 매체가 하나로 어우러지는 형태에서는 표현과 재현의 구분이 사라지므로, 매체별 작동 방식을 따질 필요가 없다.</li>
+<li>④ 매체의 차이는 시대에 따라 달라지는 것이므로, 어느 한 시대의 매체 효과만으로 우열을 논해서는 안 된다.</li>
+<li>⑤ 정보를 다루는 방식 자체를 살피는 것은 매체의 닮음을 부각할 뿐이므로, 두 예술 형식을 하나의 잣대로 묶어야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong>
+㉡은 <em>우열을 가리기보다 정보를 다루는 방식 자체를 살피는 데로 관심을 옮긴다</em>는 입장이에요. (가)의 레싱은 매체마다 효과가 다르며 그 차이로 <em>시가 회화보다 상상의 공간을 더 넓힌다</em>고 우열까지 가린 사람이죠. 그러니 레싱의 관점에서 ㉡에 맞서려면 “효과의 차이를 따져 어느 쪽이 상상 공간을 더 넓히는지까지 가려야 한다”는 ①이 가장 적절합니다. ②는 작동 방식 주목이 불가능하다는 말이라 레싱과도 어긋나고, ③⑤는 오히려 매체별 구분을 허무는 쪽이며, ④는 시대 상대성을 끌어들여 레싱의 논지와 무관해요.</p>
+<p><strong>17번 [3점] — 정답 ②</strong>
+①은 회화의 동시적 묘사(A), ③은 매체 통합 관점(B), ④는 정보의 저장·전달·처리 관점(B), ⑤는 상호 매체성의 관심(B)으로 모두 지문에 맞는 적절한 설명이에요. 그런데 ②는 두 번째 설치 작품이 시간을 겪게 한 것을 <em>문자 예술의 몫</em>이라고 했는데, 그 작품은 영상·소리·진동이 어우러진 작품이지 문자 예술이 아니에요. 사건을 시간에 따라 펼치는 일이 문자 예술의 특성인 것은 (가)의 내용이지만, 그렇다고 설치 작품의 시간 체험을 문자 예술의 몫이라 할 수는 없으니 ②가 적절하지 않아 정답입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 학생이 작성한 감상문이다. 이에 대해 (가)의 레싱의 관점(A)과 (나)의 상호 매체성의 관점(B)에서 설명한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 전시에서 두 작품을 보았다. 첫 번째는 폭풍을 그린 한 폭의 그림으로, 휘몰아치는 파도와 기우는 배가 한 화면에 담겨 그 위태로운 순간이 한눈에 들어왔다. 두 번째는 같은 폭풍을 다룬 설치 작품으로, 어두운 방 안에 영상과 파도 소리, 바닥의 진동이 한데 어우러져, 관람객이 그 한가운데를 천천히 걸어 지나가며 폭풍이 이어지는 시간을 몸으로 겪게 하였다.</p>
+</blockquote>
+<ul>
+<li>① A: 첫 번째 그림이 위태로운 순간을 한눈에 보여 준 것은 회화가 한 장면을 한꺼번에 드러내는 동시적 묘사에 알맞기 때문입니다.</li>
+<li>② A: 두 번째 작품이 폭풍이 이어지는 시간을 겪게 한 것은, 사건을 잇따라 펼치는 일이 본래 시간적 매체인 문자 예술의 몫임을 보여 줍니다.</li>
+<li>③ B: 두 번째 작품에서 영상·소리·진동이 한데 어우러진 것은, 매체를 예술 형식과 동일하게 보아 여러 매체의 통합에 주목하는 관점으로 설명할 수 있습니다.</li>
+<li>④ B: 두 번째 작품의 각 요소가 정보를 전달하는 방식을 따로 살피는 것은, 매체를 정보의 저장·전달·처리로 보는 관점에 해당합니다.</li>
+<li>⑤ B: 두 작품의 매체가 섞이거나 나뉘는 양상에 주목하는 것은, 매체 간 상호 작용을 설명하려는 상호 매체성의 관심에서 비롯됩니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 위치(位置)한다</li>
+<li>② ⓑ: 규명(糾明)하였다</li>
+<li>③ ⓒ: 정착(定着)시켰다</li>
+<li>④ ⓓ: 경주(傾注)하는</li>
+<li>⑤ ⓔ: 고찰(考察)하는</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>18번 — 정답 ④</strong>
+ⓓ ‘두는’은 <em>관심을 어디에 둔다</em>는 뜻인데, ④ ‘경주(傾注)하는’은 <em>힘이나 정신을 한곳에 쏟아붓는다</em>는 뜻이라 ‘관심을 두는’의 담담한 문맥보다 지나치게 강하고 대상도 어긋나요(관심을 ‘쏟아붓는’이 아니라 ‘두는’ 정도). 그래서 ④가 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘놓인다→위치한다’, ② ‘밝혔다→규명하였다’, ③ ‘심었다→정착시켰다’, ⑤ ‘살피는→고찰하는’은 각각 문맥과 통해 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상호 매체성</strong>: 서로 다른 매체들이 경쟁하거나 혼합되는, 매체 간 상호 작용을 설명하는 개념.</li>
+<li><strong>통합 중시 관점</strong>: 매체를 <em>예술 형식과 같은 것</em>으로 보아 여러 매체의 어우러짐(통합)에 주목하는 시선.</li>
+<li><strong>작동 방식 주목 관점</strong>: 매체를 <em>정보의 저장·전달·처리</em>로 보아 각 매체가 정보를 다루는 방식에 주목하는 시선.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>(가) 레싱의 매체 이론</th>
+<th>(나) 상호 매체성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매체를 보는 눈</td>
+<td>시·회화를 매체에 따라 또렷이 가름</td>
+<td>매체들이 섞이는 상호 작용에 주목</td>
+</tr>
+<tr>
+<td>두 관점과의 관계</td>
+<td>—</td>
+<td>통합 중시 / 작동 방식 주목</td>
+</tr>
+<tr>
+<td>통합 중시 관점</td>
+<td>(경계가 고정됨)</td>
+<td>레싱의 경계를 고정된 것으로 보지 않음</td>
+</tr>
+<tr>
+<td>작동 방식 관점</td>
+<td>(각 매체의 효과로 우열까지 가림)</td>
+<td>작동 방식은 잇되, 우열의 결론에서는 비켜섬</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>상호 매체성의 두 관점은 레싱의 통찰을 <em>한쪽은 넘어서고</em>(통합), <em>한쪽은 이어받되 우열은 내려놓는</em>(작동 방식) 방식으로 그의 이론과 맞물려요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>상호 매체성을 이해하는 두 관점은 무엇인가요?</div><div class='qa-a'>매체를 예술 형식으로 보아 통합을 중시하는 관점과, 매체를 정보의 저장·전달·처리로 보아 작동 방식에 주목하는 관점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>통합 중시 관점은 레싱의 경계를 어떻게 보나요?</div><div class='qa-a'>여러 매체가 어우러지는 형태에 주목하므로, 레싱이 그은 경계를 더 이상 고정된 것으로 다루지 않습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>작동 방식 주목 관점이 레싱과 닿는 점과 갈라지는 점은?</div><div class='qa-a'>각 매체의 작동 방식에 주목하는 점에서 닿지만, 우열을 가리기보다 정보를 다루는 방식 자체를 살핀다는 점에서 갈라집니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2023학년도 9월 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>아도르노는 문화 산업에 의해 양산되는 대중 예술이 이윤 극대화를 위한 상품으로 전락함으로써 예술의 본질을 상실했을 뿐 아니라 현대 사회의 모순과 부조리를 은폐하고 있다고 지적했다. <span class="boxmark">[아도르노가 보는 대중 예술]</span>은 창작의 구성에서 표현까지 표준화되어 생산되는 상품에 불과하다. 그는 대중 예술의 규격성으로 인해 개인의 감상 능력 역시 표준화되고, 개인의 개성은 다른 개인의 그것과 다르지 않게 된다고 보았다. 특히 모든 것을 상품의 교환 가치로 환원하려는 자본주의 사회에서, 대중 예술은 개인의 정체성마저 상품으로 ⓐ전락시키는 기제로 작용한다는 것이다.</p>
+<p>아도르노는 서로 다른 가치 체계를 하나의 가치 체계로 통일시키려는 속성을 동일성으로, 하나의 가치 체계로의 환원을 거부하는 속성을 비동일성으로 규정하고, 예술은 이러한 환원을 거부하는 비동일성을 지녀야 한다고 주장한다. 그렇기 때문에 예술은 대중이 원하는 아름다운 상품이 되기를 거부하고, 그 자체로 추하고 불쾌한 것이 되어야 한다는 것이다. 그에게 있어 예술은 예술가가 직시한 세계의 본질을 감상자들에게 체험하게 해야 한다. 예술은 동일화되지 않으려는, 일정한 형식이 없는 비정형화된 모습으로 나타남으로써 현대 사회의 부조리를 체험하게 하는 매개여야 한다는 것이다.</p>
+<p>아도르노는 쇤베르크의 음악과 같은 전위 예술이 그 자체로 동일화에 저항하면서도, 저항이나 계몽을 직접적으로 드러내지 않는다는 것을 높게 평가한다. 저항이나 계몽을 직접 표현하는 것에는 비동일성을 동일화하려는 폭력적 의도가 내재되어 있다고 보기 때문이다. 불협화음으로 가득 찬 쇤베르크의 음악이 감상자들에게 불쾌함을 느끼게 했던 것처럼 예술은 그것에 드러난 비동일성을 체험하게 함으로써 동일화의 폭력에 저항해야 한다는 것이다.</p>
+<p>아도르노에게 있어 예술은 사회적 산물이며, 그래서 미학은 작품에 침전된 사회의 고통스러운 상태를 읽기 위해 존재한다. 그는 비동일성 그 자체를 속성으로 하는 전위 예술을 예술이 추구해야 할 바람직한 모습으로 제시했다.</p>
+<p>(나)</p>
+<p>아도르노의 미학은 예술과 사회의 관계를 통해 예술의 자율성을 추구했다는 점에서 긍정적으로 평가된다. 예술은 사회적인 것인 동시에 사회에서 떨어져 사회의 본질을 직시하는 것이어야 한다고 보기 때문이다. 그의 미학은 기존의 예술에 대한 비판적 관점을 제공한다. 가령 사과를 표현한 세잔의 작품을 아도르노의 미학으로 읽어 낸다면, 이 그림은 사회의 본질과 ⓑ유리된 '아름다운 가상'을 표현한 것에 불과할 것이다.</p>
+<p>하지만 세잔의 작품은 예술가의 주관적 인상을 붉은색과 회색 등의 색채와 기하학적 형태로 표현한 미메시스일 수 있다. 미메시스란 세계를 바라보는 주체의 관념을 재현하는 것, 즉 감각될 수 없는 것을 감각 가능한 것으로 구현하는 것을 의미한다. 다시 말해 세잔의 작품은 눈에 보이는 특정의 사과가 아닌 예술가의 시선에 포착된 세계의 참모습, 곧 자연의 생명력과 그에 얽힌 농부의 삶 그리고 이를 ⓒ응시하는 예술가의 사유를 재현한 것이 된다.</p>
+<p>아도르노는 예술이 예술가에게 포착된 세계의 본질을 감상자로 하여금 체험하게 하는 것이어야 한다고 본다. 그러나 그는 이러한 미적 체험을 현대 사회의 부조리에 국한시킴으로써, 진정한 예술을 감각적 대상인 형태 그 자체의 비정형성에 대한 체험으로 한정한다. 결국 ㉠아도르노의 미학에서는 주관의 재현이라는 미메시스가 부정되고 있다.</p>
+<p>한편 아도르노의 미학은 예술의 영역을 극도로 축소시키고 있다. 즉 그 자신은 동일화의 폭력을 비판하지만, 자신이 추구하는 전위 예술만이 진정한 예술이라고 주장하며 ㉡전위 예술의 관점에서 예술의 동일화를 시도하고 있다. 특히 이는 현실 속 다양한 예술의 가치가 발견될 기회를 ⓓ박탈한다. 실수로 찍혀 작가의 어떠한 주관도 결여된 사진에서조차 새로운 예술 정신을 ⓔ발견하는 것이 가능하다는 베냐민의 지적처럼, 전위 예술이 아닌 예술에서도 미적 가치를 발견할 수 있다. 또한 대중음악이 사회적 저항의 메시지를 전달하는 사례도 있듯이, 자본의 논리에 편승한 대중 예술이라 하더라도 사회에 대한 비판적 기능을 수행하는 경우도 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>다음은 (가)와 (나)를 읽고 수행한 독서 활동지의 일부이다. Ⓐ～Ⓔ 중 적절하지 않은 것은?</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>　</th>
+<th>(가)</th>
+<th>(나)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글의 화제</td>
+<td>아도르노의 예술관 ·············· Ⓐ <em>((가)·(나) 통합 칸)</em></td>
+<td></td>
+</tr>
+<tr>
+<td>서술 방식의 공통점</td>
+<td>구체적인 예를 제시하고 그것에 담긴 의미를 설명함. ·············· Ⓑ <em>((가)·(나) 통합 칸)</em></td>
+<td></td>
+</tr>
+<tr>
+<td>서술 방식의 차이점</td>
+<td>(가)는 (나)와 달리 화제와 관련된 개념을 정의하고 개념의 변화 과정을 제시함. ······ Ⓒ</td>
+<td>(나)는 (가)와 달리 논지를 강화하기 위해 다른 이의 견해를 인용함. ······ Ⓓ</td>
+</tr>
+<tr>
+<td>서술된 내용 간의 관계</td>
+<td>(가)에서 소개한 이론에 대해 (나)에서 의의를 밝히고 한계를 지적함. ·············· Ⓔ <em>((가)·(나) 통합 칸)</em></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① Ⓐ</li>
+<li>② Ⓑ</li>
+<li>③ Ⓒ</li>
+<li>④ Ⓓ</li>
+<li>⑤ Ⓔ</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong><br />
+(가)는 2문단에서 '동일성'·'비동일성'의 개념을, (나)는 2문단에서 '미메시스'의 개념을 정의하고 있으나, (가)에 개념의 변화 과정은 제시되지 않았으므로 Ⓒ가 부적절하다. Ⓑ는 (가)의 쇤베르크 음악, (나)의 세잔 작품이라는 구체적 예에 대응하고, Ⓓ는 (나) 4문단의 베냐민 견해 인용에 대응하며, Ⓔ는 (나)가 아도르노 미학의 의의(1문단)와 한계(2~4문단)를 다룬다는 점에 대응한다.</p>
+<p><em>선택률</em> — 응시 100,016명 — ①0.0% ②3.9% ③84.0% ④8.1% ⑤3.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[아도르노가 보는 대중 예술]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 문화 산업을 통해 상품화된 개인의 정체성과 대립적 관계를 형성한다.</li>
+<li>② 일정한 규격에 맞춰 생산될 뿐 아니라 대중의 감상 능력을 표준화한다.</li>
+<li>③ 자본주의의 교환 가치 체계에 종속된 것으로서 예술로 포장된 상품에 불과하다.</li>
+<li>④ 모든 것을 상품의 교환 가치로 환원하려는 자본주의 사회의 속성을 은폐한다.</li>
+<li>⑤ 문화 산업의 이윤 극대화 과정에서 개인들이 지닌 개성의 차이를 상실시킨다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>5번 — 정답 ①</strong><br />
+(가) 1문단에서 대중 예술은 상품으로 전락했고 개인의 정체성마저 상품으로 전락시키는 기제로 작용한다고 했다. 상품화된 개인의 정체성과 대중 예술은 모두 자본주의의 교환 가치 체계로 동일화된 동질적인 것이므로 대립적 관계를 형성하지 않는다(① 부적절). ②~⑤는 모두 (가) 1문단의 규격성·감상 능력 표준화, 상품으로의 전락, 모순·부조리 은폐, 개성 상실 내용과 부합한다.</p>
+<p><em>선택률</em> — 응시 100,025명 — ①71.0% ②3.0% ③2.9% ④17.9% ⑤4.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>㉠의 이유를 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 비정형적 형태뿐 아니라 정형적 형태 역시 재현되기 때문이다.</li>
+<li>② 재현의 주체가 예술가로부터 예술 작품의 감상자로 전환되기 때문이다.</li>
+<li>③ 미적 체험의 대상이 사회의 부조리에서 세계의 본질로 변화되기 때문이다.</li>
+<li>④ 미적 체험의 과정에서 비정형적인 형태가 예술가의 주관으로 왜곡되기 때문이다.</li>
+<li>⑤ 예술가의 주관이 가려지고 작품에 나타난 형태에 대한 체험만이 강조되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong><br />
+미메시스는 세계를 바라보는 주체의 관념(예술가의 주관)을 감각 가능한 것으로 재현하는 것이다. 그런데 아도르노는 미적 체험을 현대 사회의 부조리에 국한하고 진정한 예술을 형태 그 자체의 비정형성에 대한 체험으로 한정하므로, 예술가의 주관이 가려지고 형태에 대한 체험만 강조되어 주관의 재현인 미메시스가 부정된다(⑤). ③은 미적 체험의 대상인 세계의 본질이 부조리에 국한된다는 지문 내용과 방향이 어긋난다.</p>
+<p><em>선택률</em> — 응시 100,043명 — ①11.0% ②6.5% ③9.5% ④17.9% ⑤54.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(가)의 '아도르노'의 관점을 바탕으로 할 때, ㉡에 대해 반박할 수 있는 말로 가장 적절한 것은?</p>
+<ul>
+<li>① 동일화는 애초에 예술과 무관하므로 예술의 동일화는 실현 불가능하다.</li>
+<li>② 전위 예술의 속성은 부조리 그 자체를 폭로하는 것이므로 비동일성은 결국 동일성으로 귀결된다.</li>
+<li>③ 동일성으로 환원된 대중 예술에서도 비동일성을 발견할 수 있으므로 예술의 동일화는 무의미하다.</li>
+<li>④ 전위 예술은 동일성과 비동일성의 구분을 거부하므로 전위 예술로의 동일화는 새로운 차원의 비동일성으로 전환된다.</li>
+<li>⑤ 동일화를 거부하는 속성이 전위 예술의 본질이므로 전위 예술을 추구하는 것은 동일화가 아니라 비동일화를 지향하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong><br />
+(가)에서 전위 예술은 비동일성 그 자체를 속성으로 하며, 예술은 동일화(환원)를 거부해야 한다. 따라서 '전위 예술의 관점에서 예술의 동일화를 시도한다'는 ㉡의 비판에 대해, 동일화를 거부하는 속성이 전위 예술의 본질이므로 전위 예술 추구는 동일화가 아니라 비동일화 지향이라고 반박할 수 있다(⑤). ①은 대중 예술이 이미 동일화된 상품이라는 (가)의 내용과 어긋나고, ②~④는 전위 예술의 비동일성 속성과 모순된다.</p>
+<p><em>선택률</em> — 응시 100,018명 — ①2.0% ②5.7% ③6.8% ④5.9% ⑤79.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 학생이 미술관에 다녀와서 작성한 감상문이다. 이에 대해 (가)의 '아도르노'의 관점(A)과 (나)의 글쓴이의 관점(B)에서 설명한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[상자: 학생의 감상문]</span></strong>
+주말 동안 미술관에서 작품을 관람했다. 기억에 남는 세 작품이 있었다. 첫 번째 작품의 제목은 ｢자화상｣이었지만 얼굴의 형상을 전혀 찾아볼 수 없는 기괴한 모습이었고, 제각각의 형태와 색채들이 이곳저곳 흩어져 있어 불편한 감정만 느껴졌다. 두 번째 작품은 사회에 비판적인 유명 연예인의 얼굴을 묘사한 그림으로, 대량 복제되어 유통되는 작품이었다. 그리고 사용된 색채와 구도가 TV에서 본 상업 광고의 한 장면같이 익숙하게 느껴져서 좋았다. 세 번째 작품은 시골 마을의 서정적인 풍경을 사실적으로 묘사한 그림으로 색감과 조형미가 뛰어나 오랫동안 기억에 잔상으로 남았다.</p>
+</blockquote>
+<ul>
+<li>① A : 첫 번째 작품에서 학생이 기괴함과 불편함을 느낀 것은 부조리한 사회에 대한 예술적 체험의 충격 때문일 수 있습니다.</li>
+<li>② A : 두 번째 작품에서 학생이 느낀 익숙함은 현대 사회의 모순에 대한 무감각과 같은 것일 수 있습니다. 이는 문화 산업의 논리에 동일화되어 감각이 무뎌진 결과라 할 수 있습니다.</li>
+<li>③ A : 세 번째 작품에 표현된 서정성과 조형미는 부조리에 대한 저항과는 괴리가 있습니다. 사회에 대한 저항을 직접적으로 드러낸 예술이어야 진정한 예술이라고 할 수 있습니다.</li>
+<li>④ B : 첫 번째 작품의 흩어져 있는 형태와 색채가 예술가의 표현 의도를 담고 있지 않더라도 그 작품에서 예술적 가치를 발견할 수 있습니다.</li>
+<li>⑤ B : 두 번째 작품은 대량 생산을 통해 제작된 것이지만 그 연예인의 사회 비판적 이미지를 이용해 현대 사회의 문제점을 고발하는 것일 수 있습니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>8번 — 정답 ③</strong><br />
+(가) 3문단에서 아도르노는 전위 예술이 저항이나 계몽을 직접적으로 드러내지 않는 것을 높게 평가하며, 저항·계몽의 직접 표현에는 비동일성을 동일화하려는 폭력적 의도가 내재되어 있다고 본다. 따라서 '사회에 대한 저항을 직접적으로 드러낸 예술이어야 진정한 예술'이라는 ③의 후반부는 A의 관점과 어긋난다. ④는 베냐민의 지적(주관이 결여된 사진에서도 예술 정신 발견 가능), ⑤는 대중 예술의 사회 비판 기능 사례라는 (나) 4문단의 내용과 부합한다.</p>
+<p><em>선택률</em> — 응시 100,031명 — ①3.9% ②7.9% ③64.4% ④16.3% ⑤8.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 맞바꾸는</li>
+<li>② ⓑ: 동떨어진</li>
+<li>③ ⓒ: 바라보는</li>
+<li>④ ⓓ: 빼앗는다</li>
+<li>⑤ ⓔ: 찾아내는</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+ⓐ '전락시키다'는 '나쁜 상태나 타락한 상태에 빠지다'라는 뜻의 '전락하다'의 사동사이므로, '어떤 것을 주고 다른 것을 받다'라는 뜻의 '맞바꾸는'으로 바꿀 수 없다(①). ⓑ유리된→동떨어진, ⓒ응시하는→바라보는, ⓓ박탈한다→빼앗는다, ⓔ발견하는→찾아내는 은 모두 적절하다.</p>
+<p><em>선택률</em> — 응시 100,014명 — ①85.8% ②7.2% ③0.7% ④3.4% ⑤3.1%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>예술 형식과 매체 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='예술 형식과 매체 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

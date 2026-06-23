@@ -1,0 +1,487 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>전류 밀도와 표피 효과 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>전선에 전기가 흐르면 왜 뜨거워질까요? 휴대폰 충전기를 오래 쓰면 미지근해지죠. 그 따뜻함의 정체가 바로 이 단원의 출발점이에요.</p>
+<p>전기가 흐른다는 건 사실 <strong>전하를 띤 작은 알갱이(전자)들이 한쪽으로 줄지어 이동</strong>하는 일이에요. 이 알갱이들이 1초 동안 전선 단면을 얼마나 많이 지나가느냐가 바로 '전류의 세기'이고, 단위는 암페어(A)라고 불러요. 그런데 전자들이 전선 안을 지날 때 길에 박힌 원자들과 자꾸 부딪쳐요. 부딪칠 때마다 운동 에너지가 조금씩 열로 바뀌는데, 이게 전선이 따뜻해지는 이유예요.</p>
+<p>여기서 핵심 개념이 등장해요. 같은 양의 전류가 흘러도 <strong>전선이 가늘면(단면적이 좁으면) 좁은 길에 전자가 빽빽하게 몰려요.</strong> 이렇게 단위 면적당 흐르는 전류의 양을 <strong>전류 밀도</strong>라고 불러요. 사람으로 비유하면, 같은 인원이 넓은 광장을 지날 때와 좁은 골목을 지날 때 골목 쪽이 훨씬 북적이는 것과 같아요. 전류 밀도가 높을수록 단위 부피당 부딪힘이 잦아져 열이 더 많이 나고, 그만큼 전력이 새고 기기가 상할 위험이 커져요.</p>
+<p>그런데 전류에는 한 방향으로만 흐르는 직류 말고, 방향이 계속 뒤바뀌는 <strong>교류</strong>가 있어요. 교류에서는 또 다른 현상이 생겨요. 전류가 방향을 바꿀 때마다 주변 자기장이 흔들리고, 그 흔들림이 전선 속에 소용돌이 같은 전류(유도 와전류)를 만들어 전류를 전선 한가운데에서 바깥쪽 껍질로 밀어내요. 그래서 전류가 표면에만 몰려 흐르는데, 이걸 <strong>표피 효과</strong>라고 해요. 표면만 쓰면 실제로 전류가 다닐 수 있는 길(유효 단면적)이 좁아져서 저항이 커지고 열도 더 나요. 특히 신호가 빠르게 진동하는 고주파일수록 이 효과가 심해져요.</p>
+<p>그래서 엔지니어들은 가는 선을 여러 가닥 꼬아 쓰거나(리츠 와이어), 전도가 잘 되는 금속을 표면에 얇게 입히는 식으로 이 손실을 줄여요. 이 단원에서는 이 개념들이 어떻게 수치로 연결되는지, 그리고 실제 설계에 어떻게 쓰이는지를 함께 살펴볼 거예요.</p></div>
+<h2 class='sec'>이 단원에서 배울 것 (개념 지도)</h2><div class='umap'>
+<div class='umap-center'>전류 밀도와 열 발생, 표피 효과</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>전류 밀도가 단면적·열 발생량과 어떻게 비례·반비례로 묶이는지를 수치로 따져 보는 연습이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>같은 '열이 난다'는 결과가 직류에서는 전류 밀도, 교류에서는 표피 효과라는 서로 다른 길로 갈라지는 구조를 비교해요.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>하나의 도선을 표면층·중심부·도금층 같은 구성 요소로 나누어, 각 부분이 전류 흐름과 열에 어떤 역할을 하는지를 따져요.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 다 풀고 나면 "전류 밀도가 높아지면 → 열이 는다", "주파수가 높아지면 → 표피 효과가 세진다" 같은 인과의 사슬을 자유롭게 뒤집고 이어 볼 수 있게 될 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>전선은 흔히 굵기를 키우거나 재질을 바꾸어 전기를 더 잘 흐르게 한다. 그렇다면 같은 굵기의 전선이라도 어느 부분이 더 뜨거워지는지는 무엇으로 알 수 있을까? 이를 따지려면 전류 밀도에 대한 이해가 필요하다.</p>
+<p>전류란 전하를 띤 입자들이 일정한 방향으로 이동하는 현상이며, 그 세기는 일정한 시간 동안 도선의 단면을 통과한 전하의 양으로 정해지고 단위는 암페어(A)이다. 도선 안에서 전류가 흐를 때 이동하는 전자는 도선을 이루는 원자들과 충돌을 거듭하는데, 이 과정에서 전자의 운동 에너지 일부가 열에너지로 바뀐다. 전류의 세기가 커지면 충돌이 잦아져 발생하는 열도 늘어난다.</p>
+<p>같은 세기의 전류가 흐르더라도 도선이 가늘어 단면적이 좁으면, 좁은 면적에 전류가 몰린다. 이처럼 단위 면적을 통과하는 전류의 양을 ㉠<u>전류 밀도</u>라 한다. 전류 밀도는 전류의 세기를 도선의 단면적으로 나눈 값이므로, 전류가 일정할 때 단면적이 좁을수록 커지고 넓을수록 작아진다. 도선의 한 부분에서 단위 부피당 발생하는 열은 그 부분의 전류 밀도가 높을수록 늘어난다. 따라서 한 전선에서 유독 가는 부분이 있으면 그 부분의 전류 밀도가 높아 국부적으로 더 뜨거워진다.</p>
+<p>전류 밀도가 열 발생에 미치는 영향은 같은 전류를 두 도선에 흘려 비교하면 분명해진다. 단면적이 서로 다른 두 도선에 같은 세기의 전류를 흘리면, 단면적이 절반인 도선은 전류 밀도가 두 배가 된다. 단위 부피당 열 발생량이 전류 밀도의 제곱에 비례한다고 보면, 전류 밀도가 두 배인 도선은 같은 부피에서 네 배의 열을 낸다. 이렇게 부분마다 열 발생이 달라지면 특정 지점에 열이 집중되어 전력이 손실되고, 과도한 열은 도선의 성능을 떨어뜨리거나 회로를 손상시킬 수 있다.</p>
+<p>그래서 전선을 설계할 때는 흐를 전류의 세기에 맞추어 적절한 단면적을 확보한다. 단면적을 넉넉히 잡으면 전류 밀도가 낮아져 열 발생이 줄지만, 그만큼 재료가 더 들고 무게가 늘어난다. 반대로 단면적을 줄이면 재료는 아끼지만 전류 밀도가 높아져 열이 많이 난다. 따라서 허용되는 열의 한계 안에서 단면적을 정하는 것이 설계의 기본이 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 전류의 단위를 정의하고 그 단위가 정해진 역사적 배경을 서술하고 있다.</li>
+<li>② 전류 밀도의 종류를 나누고 그 분류에 따른 도선의 구조를 비교하고 있다.</li>
+<li>③ 전자의 충돌 현상을 설명하고 충돌을 막는 여러 방법을 나열하고 있다.</li>
+<li>④ 도선의 재질을 구분하는 기준을 제시하고 재질별 장단점을 분석하고 있다.</li>
+<li>⑤ 전류 밀도를 통한 열 발생의 원리를 설명하고 이를 전선 설계에 적용하는 방안을 제시하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 전류가 흐르는 도선에서는 전자와 원자의 충돌로 열이 발생한다.</li>
+<li>② 전선의 굵기를 키우는 것 외에 재질을 바꾸어 전기를 잘 흐르게 하기도 한다.</li>
+<li>③ 한 전선에서 다른 부분보다 가는 부분은 더 뜨거워질 수 있다.</li>
+<li>④ 단면적이 같은 두 도선이라면 흐르는 전류가 달라도 전류 밀도는 서로 같다.</li>
+<li>⑤ 단면적을 넉넉히 잡으면 열 발생은 줄지만 재료와 무게는 늘어난다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 도선의 단위 면적을 통과하는 전류의 양으로 정해진다.</li>
+<li>② ㉠이 높은 부분일수록 단위 부피당 발생하는 열이 많다.</li>
+<li>③ 흐르는 전류가 일정할 때 단면적이 넓어지면 ㉠은 작아진다.</li>
+<li>④ 같은 도선에서 전류의 세기가 커지면 ㉠도 커진다.</li>
+<li>⑤ 단면적이 같은 두 도선에 흐르는 전류가 다르면 ㉠이 더 큰 쪽은 전류가 더 작은 도선이다.</li>
+</ul>
+<p><strong>4번 <span class="pts">[3점]</span>. 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</strong></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 재질로 만든 도선 P와 Q에 각각 전류를 흘려 단위 부피당 열 발생을 비교하였다. P는 단면적이 일정한 한 줄의 도선이고, Q는 중간에 단면적이 절반으로 줄어드는 잘록한 구간이 있는 도선이다. P의 단면적은 Q의 굵은 구간과 같다. P와 Q에 흐르는 전류의 세기는 서로 같으며, 측정하는 동안 외부 조건은 변동이 없었다. (단, 단위 부피당 열 발생량은 전류 밀도의 제곱에 비례하는 것으로 본다.)</p>
+</blockquote>
+<ul>
+<li>① Q의 잘록한 구간은 그 앞뒤의 굵은 구간보다 전류 밀도가 낮아 더 적은 열을 내겠군.</li>
+<li>② Q의 잘록한 구간에서는 전류의 세기 자체가 절반으로 줄어들어 열 발생이 줄겠군.</li>
+<li>③ Q의 잘록한 구간은 그 앞뒤 굵은 구간에 비해 단위 부피당 네 배의 열을 내겠군.</li>
+<li>④ P 전체에 흐르는 전류를 절반으로 줄이면, 그래도 Q의 잘록한 구간보다 단위 부피당 열 발생이 많겠군.</li>
+<li>⑤ Q의 잘록한 구간을 더 가늘게 만들면 그 구간의 전류 밀도가 낮아져 열 발생이 줄겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 9월 [8~11]</div>
+<div class='passage exam-ps'><p>저울은 흔히 지렛대의 원리를 이용하거나 전기 저항 변화를 측정하여 질량을 잰다. 그렇다면 초정밀 저울은 기체 분자나 DNA와 같은 미세 물질의 질량을 어떻게 잴까? 이에 답하기 위해서는 압전 효과에 대한 이해가 필요하다.</p>
+<p>압전 효과에는 재료에 기계적 변형이 생기면 재료에 전압이 발생하는 1차 압전 효과와, 재료에 전압을 걸면 재료에 기계적 변형이 생기는 2차 압전 효과가 있다. 두 압전 효과가 모두 생기는 재료를 압전체라 하며, 수정이 주로 쓰인다.</p>
+<p>압전체로 사용하는 수정은 특정 방향으로 절단 및 가공하여 납작한 원판 모양으로 만든다. 이후 원판의 양면에 전극을 만든 후 (＋)와 (－) 극이 교대로 바뀌는 전압을 가하면 수정이 진동한다. 이때 전압의 주파수*를 수정의 고유 주파수와 일치시켜 수정이 큰 폭으로 진동하도록 하여 진동을 측정하기 쉽게 만든 것이 ㉠수정 진동자이다. 고유 주파수란 어떤 물체가 갖는 고유한 진동 주파수인데, 같은 재료의 압전체라도 압전체의 모양과 크기에 따라 달라진다. 수정 진동자에 어떤 물질이 달라붙어 질량이 증가하면 고유 주파수에서 진동하던 수정 진동자의 주파수가 감소한다. 수정 진동자의 주파수는 매우 작은 질량 변화에 민감하게 변하므로 기체 분자나 DNA와 같은 미세한 물질의 질량을 측정할 수 있다. 진동자에서 질량 민감도는 주파수의 변화 정도를 측정된 질량으로 나눈 값인데, 수정 진동자의 질량 민감도는 매우 크다.</p>
+<p>수정 진동자로 질량을 측정하는 원리를 응용하면 특정 기체의 농도를 감지할 수 있다. 수정 진동자를 특정 기체가 붙도록 처리하면, 여기에 특정 기체가 달라붙으며 질량 변화가 생겨 수정 진동자의 주파수는 감소한다. 일정 시점이 되면 수정 진동자의 주파수가 더 감소하지 않고 일정한 값을 유지한다. 이렇게 일정한 값을 유지하는 이유는 특정 기체가 일정량 이상 달라붙지 않기 때문이다. 혼합 기체에서 특정 기체의 농도가 클수록 더 작은 주파수에서 주파수가 일정하게 유지된다. 특정 기체가 얼마나 빨리 수정 진동자에 붙어서 주파수가 일정한 값이 되는가의 척도를 반응 시간이라 하는데, 반응 시간이 짧을수록 특정 기체의 농도를 더 빨리 잴 수 있다.</p>
+<p>그런데 측정 대상이 아닌 기체가 함께 붙으면 측정하려는 대상 기체의 정확한 농도 측정이 어렵다. 또한 대상 기체만 붙더라도 그 기체의 농도를 알 수는 없다. 이 때문에 대상 기체의 농도에 따라 수정 진동자의 주파수 변화를 미리 측정해 놓아야 한다. 그 후 대상 기체의 농도를 모르는 혼합 기체에서 주파수 변화를 측정하면 대상 기체의 농도를 알 수 있다. 수정 진동자의 주파수 변화 정도를 농도로 나누면 농도에 대한 민감도를 구할 수 있다.</p>
+<ul>
+<li>주파수: 진동이 1초 동안 반복하는 횟수 또는 전압의 (＋)와 (－) 극이 1초 동안, 서로 바뀌고 다시 원래대로 되는 횟수.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 압전체의 제작 방법을 소개하고 제작 시 유의점을 나열하고 있다.</li>
+<li>② 압전 효과의 개념을 정의하고 압전체의 장단점을 분석하고 있다.</li>
+<li>③ 압전 효과의 종류를 분류하고 그 분류에 따른 압전체의 구조를 비교하고 있다.</li>
+<li>④ 압전체의 유형을 구분하는 기준을 제시하고 초정밀 저울의 작동 과정을 단계별로 설명하고 있다.</li>
+<li>⑤ 압전 효과에 기반한 초정밀 저울의 작동 원리를 설명하고 이 원리가 적용된 기체 농도 측정 방법을 소개하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 수정 이외에도 압전 효과를 보이는 재료가 존재한다.</li>
+<li>② 수정을 절단하고 가공하여 미세 질량 측정에 사용한다.</li>
+<li>③ 전기 저항 변화를 이용하여 물체의 질량을 측정하는 경우가 있다.</li>
+<li>④ 같은 방향으로 절단한 수정은 크기가 달라도 고유 주파수가 서로 같다.</li>
+<li>⑤ 진동자의 주파수 변화 정도를 측정된 질량으로 나누면 질량에 대한 민감도를 구할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠에는 1차 압전 효과를 보일 수 있는 재료가 있다.</li>
+<li>② ㉠에서는 전압에 의해 압전체의 기계적 변형이 일어난다.</li>
+<li>③ ㉠에는 전극이 양면에 있는 원판 모양의 수정이 사용된다.</li>
+<li>④ ㉠에서는 전극에 가하는 전압의 주파수를 수정의 고유 주파수에 맞춘다.</li>
+<li>⑤ ㉠의 전극에 가해지는 특정 주파수의 전압은 압전체의 고유 주파수 값을 더 크게 만든다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+알코올 감지기 A와 B를 이용하여 어떤 밀폐된 공간에 있는 혼합 기체의 알코올 농도를 측정하였다. 이때 A와 B는 모두 진동자에 알코올이 달라붙을 수 있도록 처리되어 있다. A와 B 모두, 시간이 흐름에 따라 주파수가 감소하다가 더 이상 감소하지 않고 일정하게 유지되었다.
+(단, 측정하는 동안 밀폐된 공간의 상황은 변동 없음.)</p>
+</blockquote>
+<ul>
+<li>① A의 진동자에 있는 압전체의 고유 주파수를 알코올만 있는 기체에서 미리 측정해 놓으면, 혼합 기체에서의 알코올의 농도를 알 수 있겠군.</li>
+<li>② B에 달라붙은 알코올의 양은 변하지 않고 다른 기체가 함께 달라붙은 후 진동자의 주파수가 일정하게 유지된다면, 이때 주파수의 값은 알코올만 붙었을 때보다 더 작겠군.</li>
+<li>③ A와 B에서 알코올이 달라붙도록 진동자를 처리한 것은 알코올이 달라붙음에 따라 진동자가 최대한 큰 폭으로 진동할 수 있게 하려는 것이겠군.</li>
+<li>④ A가 B에 비해 동일한 양의 알코올이 달라붙은 후에 생기는 주파수 변화 정도가 크다면, A가 B보다 알코올 농도에 대한 민감도가 더 작다고 할 수 있겠군.</li>
+<li>⑤ B가 A보다 알코올이 일정량까지 달라붙는 시간이 더 짧더라도 알코올이 달라붙은 양이 서로 같다면, A와 B의 반응 시간은 서로 같겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>전류가 흐르는 도선은 전자와 원자의 충돌로 열을 낸다. 그런데 같은 도선이라도 전류가 한 방향으로만 흐르는 경우와 방향이 주기적으로 바뀌는 경우는 열이 발생하는 양상이 다르다. 전류의 열 발생에 영향을 미치는 요인에는 전류 밀도와 표피 효과가 있다.</p>
+<p>전류 밀도는 단위 면적을 통과하는 전류의 양으로, 전류의 세기를 도선의 단면적으로 나눈 값이다. 전류가 일정할 때 단면적이 좁을수록 전류 밀도는 높아진다. 도선의 한 부분에서 단위 부피당 발생하는 열은 그 부분의 전류 밀도가 높을수록 많아진다. 전류가 한 방향으로만 흐르는 직류에서는 전류가 단면 전체에 고르게 퍼져 흐르므로, 단면적이 정해지면 전류 밀도가 단면 전체에서 일정하다. 따라서 직류에서 열 발생을 줄이려면 단면적을 넉넉히 잡아 전류 밀도를 낮추는 것이 기본이다. 다만 단면적을 키우면 재료가 더 들고 도선이 무거워지므로, 허용되는 열의 한계 안에서 단면적을 정한다.</p>
+<p>전류의 세기와 방향이 시간에 따라 주기적으로 바뀌는 교류에서는 사정이 다르다. 전류가 변하면 그 주변의 자기장도 함께 변하고, 변하는 자기장은 도선 내부에 전기장을 유도한다. 이 전기장은 도선 안의 전자를 회전시켜 소용돌이 모양의 전류를 만드는데 이를 유도 와전류라 한다. 유도 와전류는 도선 중심부의 전류 흐름을 밀어내 중심부의 전류 밀도를 낮추고, 표면 쪽의 전류 흐름을 촉진한다. 그 결과 전류가 도선의 표면을 따라 집중적으로 흐르게 되는데 이를 표피 효과라 한다. 표피 효과는 주파수가 높을수록 강해진다. 주파수가 높을수록 자기장이 변하는 정도가 커져 유도 와전류가 강해지고, 중심부의 전류를 더 많이 표면으로 밀어내기 때문이다.</p>
+<p>표피 효과가 일어나면 전류가 도선의 표면층에만 몰린다. 그러면 전류가 실제로 흐를 수 있는 단면, 곧 유효 단면적이 줄어든다. 전류 밀도가 단면적에 반비례하므로 유효 단면적이 줄면 표면층의 전류 밀도는 높아지고, 전류가 좁은 길을 흐르게 되어 저항이 커진다. 저항이 커지면 같은 전류가 흘러도 더 많은 에너지가 열로 바뀐다. 결국 교류에서는 도선의 실제 굵기가 충분하더라도 표피 효과 때문에 그 굵기를 다 쓰지 못하고 열이 늘어날 수 있다. 직류에서는 단면적 전체가 쓰이지만, 교류에서는 주파수가 높을수록 쓰이는 단면이 줄어드는 셈이다.</p>
+<p>그래서 고주파 전류를 다루는 장치는 표피 효과를 줄이도록 설계한다. 가는 선 여러 가닥을 서로 절연해 꼬아 만든 도선을 쓰면, 각 가닥의 자기장 영향이 서로 상쇄되어 표피 효과가 약해지고 전체 단면에 전류가 더 고르게 흐른다. 또 전류가 표면을 따라 흐르는 성질을 이용해, 거의 쓰이지 않는 중심부 금속을 줄이거나 표면에 전도가 잘 되는 금속을 얇게 입혀 열 발생을 줄이기도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 직류에서는 도선의 단면 전체에 전류가 고르게 퍼져 흐른다.</li>
+<li>② 교류에서 주파수가 높아지면 표피 효과가 더 강하게 나타난다.</li>
+<li>③ 유도 와전류는 도선 중심부의 전류 흐름을 표면 쪽으로 밀어낸다.</li>
+<li>④ 직류에서 단면적을 키우면 전류 밀도가 낮아져 열 발생이 줄어든다.</li>
+<li>⑤ 표피 효과가 일어나면 도선이 실제로 흐를 수 있는 단면이 넓어진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글의 '표피 효과'에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 전류의 방향이 주기적으로 바뀌는 경우에 나타난다.</li>
+<li>② 도선 표면층의 전류 밀도를 높이고 저항을 키운다.</li>
+<li>③ 변하는 자기장이 도선 안에 유도하는 전기장과 관련된다.</li>
+<li>④ 주파수가 같다면 도선의 굵기가 굵어질수록 더 강해진다.</li>
+<li>⑤ 전류가 흐르는 유효 단면적을 줄여 열 발생을 늘린다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글을 참고할 때, 〈보기〉의 ㉮~㉰에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+교류에서 주파수가 높아지면 자기장의 변화가 ( ㉮ ) 유도 와전류가 강해지고, 그 결과 전류가 흐르는 유효 단면적은 ( ㉯ ). 한편 같은 세기의 전류가 흐를 때 유효 단면적이 줄어들면 저항이 ( ㉰ ).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉮</th>
+<th>㉯</th>
+<th>㉰</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>커지고</td>
+<td>늘어난다</td>
+<td>커진다</td>
+</tr>
+<tr>
+<td>②</td>
+<td>커지고</td>
+<td>줄어든다</td>
+<td>커진다</td>
+</tr>
+<tr>
+<td>③</td>
+<td>커지고</td>
+<td>줄어든다</td>
+<td>작아진다</td>
+</tr>
+<tr>
+<td>④</td>
+<td>작아지고</td>
+<td>늘어난다</td>
+<td>작아진다</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>작아지고</td>
+<td>줄어든다</td>
+<td>커진다</td>
+</tr>
+</tbody>
+</table>
+<p><strong>8번 <span class="pts">[3점]</span>. 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</strong></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+굵기가 같은 도선 ㉢과 ㉣이 있다. ㉢에는 한 방향으로만 흐르는 직류를, ㉣에는 방향이 주기적으로 바뀌는 교류를 흘렸다. 두 도선에 흐르는 전류의 세기는 서로 같다. 한편 ㉣에 흘리는 교류의 주파수를 처음보다 높이며 표면 쪽 전류 흐름의 변화를 관찰하였다. (단, 두 도선의 재질과 길이는 같다.)</p>
+</blockquote>
+<ul>
+<li>① ㉢에서는 표피 효과로 인해 중심부보다 표면에 전류가 더 몰려 흐르겠군.</li>
+<li>② ㉣의 주파수를 높이면 유도 와전류가 약해져 표면으로 몰리는 정도가 줄겠군.</li>
+<li>③ ㉢은 단면 전체가 전류 흐름에 쓰이지만, ㉣은 표면층에 전류가 집중되겠군.</li>
+<li>④ ㉣의 주파수를 높일수록 전류가 흐르는 유효 단면적이 넓어져 저항이 작아지겠군.</li>
+<li>⑤ 굵기가 같으므로 ㉢과 ㉣은 전류가 흐르는 유효 단면적도 항상 서로 같겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 6월 [25~28]</div>
+<div class='passage exam-ps'><p>일반 사용자가 디지털 카메라를 들고 촬영하면 손의 미세한 떨림으로 인해 영상이 번져 흐려지고, 걷거나 뛰면서 촬영하면 식별하기 힘들 정도로 영상이 흔들리게 된다. 흔들림에 의한 영향을 최소화하는 기술이 영상 안정화 기술이다.</p>
+<p>영상 안정화 기술에는 빛을 이용하는 광학적 기술과 소프트웨어를 이용하는 디지털 기술 등이 있다. 광학 영상 안정화(OIS) 기술을 사용하는 카메라 모듈은 렌즈 모듈, 이미지 센서, 자이로 센서, 제어 장치, 렌즈를 움직이는 장치로 구성되어 있다. 렌즈 모듈은 보정용 렌즈들을 포함한 여러 개의 렌즈들로 구성된다. 일반적으로 카메라는 렌즈를 통해 들어온 빛이 이미지 센서에 닿아 피사체의 상이 맺히고, 피사체의 한 점에 해당하는 위치인 화소마다 빛의 세기에 비례하여 발생한 전기 신호가 저장 매체에 영상으로 저장된다. 그런데 카메라가 흔들리면 이미지 센서 각각의 화소에 닿는 빛의 세기가 변한다. 이때 OIS 기술이 작동되면 자이로 센서가 카메라의 움직임을 감지하여 방향과 속도를 제어 장치에 전달한다. 제어 장치가 렌즈를 이동시키면 피사체의 상이 유지되면서 영상이 안정된다.</p>
+<p>렌즈를 움직이는 방법 중에는 보이스코일 모터를 이용하는 방법이 많이 쓰인다. 보이스코일 모터를 포함한 카메라 모듈은 중앙에 위치한 렌즈 주위에 코일과 자석이 배치되어 있다. 카메라가 흔들리면 제어 장치에 의해 코일에 전류가 흘러서 자기장과 전류의 직각 방향으로 전류의 크기에 비례하는 힘이 발생한다. 이 힘이 렌즈를 이동시켜 흔들림에 의한 영향이 상쇄되고 피사체의 상이 유지된다. 이외에도 카메라가 흔들릴 때 이미지 센서를 움직여 흔들림을 감쇄하는 방식도 이용된다.</p>
+<p>OIS 기술이 손 떨림을 훌륭하게 보정해 줄 수는 있지만 렌즈의 이동 범위에 한계가 있어 보정할 수 있는 움직임의 폭이 좁다. 디지털 영상 안정화(DIS) 기술은 촬영 후에 소프트웨어를 사용해 흔들림을 보정하는 기술로 역동적인 상황에서 촬영한 동영상에 적용할 때 좋은 결과를 얻을 수 있다. 이 기술은 촬영된 동영상을 프레임 단위로 나눈 후 연속된 프레임 간 피사체의 움직임을 추정한다. 움직임을 추정하는 한 방법은 특징점을 이용하는 것이다. 특징점으로는 피사체의 모서리처럼 주위와 밝기가 뚜렷이 구별되며 영상이 이동하거나 회전해도 그 밝기 차이가 유지되는 부분이 선택된다.</p>
+<p>먼저 k 번째 프레임에서 특징점들을 찾고, 다음 k+1 번째 프레임에서 같은 특징점들을 찾는다. 이 두 프레임 사이에서 같은 특징점이 얼마나 이동하였는지 계산하여 영상의 움직임을 추정한다. 그리고 흔들림이 발생한 곳으로 추정되는 프레임에서 위치 차이만큼 보정하여 흔들림의 영향을 줄이면 보정된 동영상은 움직임이 부드러워진다. 그러나 특징점의 수가 늘어날수록 연산이 더 오래 걸린다. 한편 영상을 보정하는 과정에서 영상을 회전하면 프레임에서 비어 있는 공간이 나타난다. 비어 있는 부분이 없도록 잘라 내면 프레임들의 크기가 작아지는데, 원래의 프레임 크기를 유지하려면 화질은 떨어진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>25</span>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 디지털 영상 안정화 기술은 소프트웨어를 이용하여 이미지 센서를 이동시킨다.</li>
+<li>② 광학 영상 안정화 기술을 사용하지 않는 디지털 카메라에도 이미지 센서는 필요하다.</li>
+<li>③ 연속된 프레임에서 동일한 피사체의 위치 차이가 작을수록 동영상의 움직임이 부드러워진다.</li>
+<li>④ 디지털 카메라의 저장 매체에는 이미지 센서 각각의 화소에서 발생하는 전기 신호가 영상으로 저장된다.</li>
+<li>⑤ 보정 기능이 없다면 손 떨림이 있을 때 이미지 센서 각각의 화소에 닿는 빛의 세기가 변하여 영상이 흐려진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글의 'OIS 기술'에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 보이스코일 모터는 카메라 모듈에 포함되는 장치이다.</li>
+<li>② 자이로 센서는 이미지 센서에 맺히는 영상을 제어 장치로 전달한다.</li>
+<li>③ 보이스코일 모터에 흐르는 전류에 의해 발생한 힘으로 렌즈의 위치를 조정한다.</li>
+<li>④ 자이로 센서가 카메라 움직임을 정확히 알려도 렌즈 이동의 범위에는 한계가 있다.</li>
+<li>⑤ 흔들림에 의해 피사체의 상이 이동하면 원래의 위치로 돌아오도록 렌즈나 이미지 센서를 이동시킨다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>윗글을 참고할 때, 〈보기〉의 A~C에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+특징점으로 선택되는 점들과 주위 점들의 밝기 차이가 ( A ), 영상이 흔들리기 전의 밝기 차이와 후의 밝기 차이 변화가 ( B ) 특징점의 위치 추정이 유리하다. 그리고 특징점들이 많을수록 보정에 필요한 ( C )이/가 늘어난다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>클수록</td>
+<td>클수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>②</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>③</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>④</td>
+<td>작을수록</td>
+<td>클수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>작을수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 윗글을 읽고 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+새로 산 카메라의 성능을 시험해 보고 싶어서 OIS 기능을 켜고 동영상을 촬영했다. 빌딩을 찍는 순간, 바람에 휘청하여 들고 있던 카메라가 기울어졌다. 집에 돌아와 촬영된 영상을 확인하고 소프트웨어로 보정하려 한다.</p>
+<p><strong><span class="boxmark">[그림: 촬영한 동영상 중 연속된 프레임]</span></strong> 나란히 놓인 두 장의 프레임 그림. <strong>㉠ k 번째 프레임</strong> — 수평한 지면 위에 고층 빌딩 두 채(왼쪽이 낮고 오른쪽이 높음)가 수직으로 똑바로 서 있는 장면. <strong>㉡ k+1 번째 프레임</strong> — 같은 두 빌딩 장면이지만 화면 전체가 기울어져 있음: 지면선이 오른쪽으로 갈수록 높아지게 비스듬하고, 빌딩들도 같은 각도로 왼쪽으로 기울어 화면이 시계 반대 방향으로 회전한 모습.</p>
+</blockquote>
+<ul>
+<li>① ㉠에서 프레임의 모서리 부분으로 특징점을 선택하는 것이 움직임을 추정하는 데 유리하겠군.</li>
+<li>② ㉡을 DIS 기능으로 보정하고 나서 프레임 크기가 변했다면 흔들림은 보정되었으나 원래의 영상 일부가 손실되었겠군.</li>
+<li>③ ㉠에서 빌딩 모서리들 간의 차이를 특징점으로 선택하고 그 차이를 계산하여 ㉡을 보정하겠군.</li>
+<li>④ ㉠은 OIS 기능으로 손 떨림을 보정한 프레임이지만, ㉡은 OIS 기능으로 보정해야 할 프레임이겠군.</li>
+<li>⑤ ㉡을 보면 ㉠이 촬영된 직후 카메라가 크게 움직여 DIS 기능으로는 완전히 보정되지 않았다는 것을 알 수 있겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>고주파 전류를 다루는 도선은 단순한 한 가닥의 금속선이 아니라 여러 부분이 맡은 역할을 나누어 가진 구조로 만들어진다. 고주파 도선은 대체로 전류가 실제로 흐르는 표면층, 그 안쪽의 중심부, 그리고 표면을 덮는 도금층으로 구성된다.</p>
+<p>표면층은 전류가 집중적으로 흐르는 부분이다. 교류에서는 변하는 자기장이 도선 안에 유도 와전류를 만들어 중심부의 전류를 표면 쪽으로 밀어내는데, 이 때문에 전류는 표면을 따라 흐른다. 이를 표피 효과라 하며, 주파수가 높을수록 더 강하게 나타나 전류가 흐르는 표면층은 더 얇아진다. 표면층이 얇아지면 전류가 실제로 흐를 수 있는 유효 단면적이 줄어든다. 전류 밀도는 전류의 세기를 단면적으로 나눈 값이므로, 유효 단면적이 줄면 표면층의 전류 밀도가 높아지고, 좁은 길을 흐르게 된 전류는 더 큰 저항을 받아 더 많은 열을 낸다.</p>
+<p>중심부는 전류가 거의 흐르지 않는 안쪽 영역이다. 표피 효과가 강한 고주파에서는 중심부의 전류 밀도가 매우 낮아 ㉠<u>전류 흐름에 기여하는 정도</u>가 작다. 그래서 중심부를 굵은 금속으로 채워 두어도 전류 전달에는 큰 도움이 되지 않으면서 재료와 무게만 늘어난다. 이 때문에 고주파 도선에서는 중심부의 불필요한 금속을 줄여 자원을 아끼기도 한다. 다만 중심부를 지나치게 줄이면 도선 전체의 기계적 강도가 약해질 수 있으므로, 강도를 유지하는 선에서 줄인다.</p>
+<p>도금층은 표면을 덮어 전류가 흐르는 길의 성질을 개선하는 부분이다. 전류가 표면층에 몰리는 만큼, 표면의 전도가 잘 될수록 같은 전류에 대해 저항이 작아져 열 발생이 줄어든다. 그래서 전도가 비교적 낮은 금속으로 만든 도선이라도 표면에 전도가 높은 금속을 얇게 입히면, 전류가 주로 흐르는 표면층의 저항이 낮아져 열이 줄어든다. 도금층은 표면에만 얇게 입혀도 효과가 있는데, 어차피 전류가 표면을 따라 흐르기 때문이다.</p>
+<p>이처럼 고주파 도선은 전류가 흐르는 표면층, 강도를 받치는 중심부, 저항을 낮추는 도금층이 각자의 역할을 맡는다. 도선은 활용 목적에 따라 도금층이나 중심부의 구성을 달리하기도 한다. 표면층은 전류가 흐르는 한 반드시 있어야 하지만, 경우에 따라 도금층을 두지 않거나 중심부를 크게 줄이기도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 고주파 도선에서 전류는 주로 표면층을 따라 흐른다.</li>
+<li>② 표면에 전도가 높은 금속을 입히면 표면층의 저항이 낮아진다.</li>
+<li>③ 주파수가 높을수록 전류가 흐르는 표면층은 더 얇아진다.</li>
+<li>④ 표면층은 전류가 흐르는 도선이라도 두지 않을 수 있다.</li>
+<li>⑤ 중심부를 줄이면 재료와 무게를 아낄 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠의 정도를 작게 하는 조건으로 가장 적절한 것은?</p>
+<ul>
+<li>① 도선에 흐르는 교류의 주파수를 높인다.</li>
+<li>② 표면을 덮는 도금층의 전도를 더 높인다.</li>
+<li>③ 표면층에 흐르는 전류의 세기를 키운다.</li>
+<li>④ 도선 전체의 단면적을 더 넓게 만든다.</li>
+<li>⑤ 표면에 입히는 도금층을 더 두껍게 한다.</li>
+</ul>
+<p><strong>11번 <span class="pts">[3점]</span>. 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</strong></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 고주파 장치에 쓰려고 도선 R를 만들었다. R는 전도가 비교적 낮은 알루미늄으로 속을 채우고, 그 표면에 전도가 높은 구리를 얇게 입혀 만든다. R에는 방향이 주기적으로 바뀌는 교류가 흐르며, 사용 중에는 주파수를 더 높이는 경우도 있다. 이때 알루미늄 속은 도선의 강도를 받치고, 구리 막은 전류가 흐르는 길의 저항을 낮춘다.</p>
+</blockquote>
+<ul>
+<li>① R에 흐르는 전류는 알루미늄 속보다 구리 막 쪽에 더 몰려 흐르겠군.</li>
+<li>② 구리를 표면에 얇게만 입혀도 저항을 낮추는 효과를 얻을 수 있겠군.</li>
+<li>③ R의 주파수를 더 높이면 전류가 흐르는 표면층이 더 얇아지겠군.</li>
+<li>④ 알루미늄 속은 전류 전달보다 도선의 강도를 받치는 역할을 주로 하겠군.</li>
+<li>⑤ 구리 막을 더 두껍게 입힐수록 알루미늄 속을 흐르는 전류가 늘어나겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>윗글을 바탕으로 할 때, 〈보기〉의 ⓐ~ⓒ에 대한 설명으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 같은 굵기의 고주파 도선 세 개에 흐르는 전류의 분포를 비교한 것이다. ⓐ는 낮은 주파수의 교류가 흐르는 도선으로 전류가 표면에서 안쪽까지 비교적 넓게 퍼져 흐른다. ⓑ는 ⓐ보다 높은 주파수의 교류가 흐르는 도선으로 전류가 더 얇은 표면층에 몰려 흐른다. ⓒ는 ⓑ와 같은 주파수의 교류가 흐르되 표면에 전도가 높은 금속을 입힌 도선이다. (단, 세 도선의 굵기와 재질의 속은 같고, 흐르는 전류의 세기도 같다.)</p>
+</blockquote>
+<ul>
+<li>① ⓐ는 ⓑ보다 전류가 흐르는 유효 단면적이 좁다.</li>
+<li>② ⓑ는 ⓐ보다 표면층의 전류 밀도가 낮다.</li>
+<li>③ ⓑ는 ⓒ보다 같은 전류에 대한 표면층의 저항이 작다.</li>
+<li>④ ⓒ는 ⓑ보다 같은 전류가 흐를 때 열 발생이 적다.</li>
+<li>⑤ ⓐ는 ⓒ보다 전류가 표면에 더 집중되어 흐른다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 6월 [8~11]</div>
+<div class='passage exam-ps'><p>분자들이 만나 화학 반응을 진행하는 데 필요한 최소한의 운동 에너지를 활성화 에너지라 한다. 활성화 에너지가 작은 반응은, 반응의 활성화 에너지보다 큰 운동 에너지를 가진 분자들이 많아 반응이 빠르게 진행된다. 활성화 에너지를 조절하여 반응 속도에 변화를 주는 물질을 촉매라고 하며, 반응 속도를 빠르게 하는 능력을 촉매 활성이라 한다. 촉매는 촉매가 없을 때와는 활성화 에너지가 다른, 새로운 반응 경로를 제공한다. 화학 산업에서는 주로 고체 촉매가 이용되는데, 액체나 기체인 생성물을 촉매로부터 분리하는 별도의 공정이 필요 없기 때문이다. 고체 촉매는 대부분 활성 성분, 지지체, 증진제로 구성된다.</p>
+<p>활성 성분은 그 표면에 반응물을 흡착시켜 촉매 활성을 제공하는 물질이다. 고체 촉매의 촉매 작용에서는 반응물이 먼저 활성 성분의 표면에 화학 흡착되고, 흡착된 반응물이 표면에서 반응하여 생성물로 변환된 후, 생성물이 표면에서 탈착되는 과정을 거쳐 반응이 완결된다. 금속은 다양한 물질들이 표면에 흡착될 수 있어 여러 반응에서 활성 성분으로 사용된다. 예를 들면, 암모니아를 합성할 때 철을 활성 성분으로 사용하는데, 이때 반응물인 수소와 질소가 철의 표면에 흡착되어 각각 원자 상태로 분리된다. 흡착된 반응물은 전자를 금속 표면의 원자와 공유하여 안정화된다. 반응물의 흡착 세기는 금속의 종류에 따라 달라진다. 이때 흡착 세기가 적절해야 한다. 흡착이 약하면 흡착량이 적어 촉매 활성이 낮으며, 흡착이 너무 강하면 흡착된 반응물이 지나치게 안정화되어 표면에서의 반응이 느려지므로 촉매 활성이 낮다. 일반적으로 고체 촉매에서는 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다.</p>
+<p>금속은 열적 안정성이 낮아, 화학 반응이 일어나는 고온에서 금속 원자들로 이루어진 작은 입자들이 서로 달라붙어 큰 입자를 이루게 되는데 이를 소결이라 한다. 입자가 소결되면 금속 활성 성분의 전체 표면적은 줄어든다. 이러한 문제를 해결하는 것이 지지체이다. 작은 금속 입자들을 표면적이 넓고 열적 안정성이 높은 지지체의 표면에 분산하면 소결로 인한 촉매 활성 저하가 억제된다. 따라서 소량의 금속으로도 ㉠금속을 활성 성분으로 사용하는 고체 촉매의 활성을 높일 수 있다.</p>
+<p>증진제는 촉매에 소량 포함되어 활성을 조절한다. 활성 성분의 표면 구조를 변화시켜 소결을 억제하기도 하고, 활성 성분의 전자 밀도를 변화시켜 흡착 세기를 조절하기도 한다. 고체 촉매는 활성 성분이 반드시 있어야 하지만 경우에 따라 증진제나 지지체를 포함하지 않기도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 촉매를 이용하면 화학 반응이 새로운 경로로 진행된다.</li>
+<li>② 고체 촉매는 기체 생성물과 촉매의 분리 공정이 필요하다.</li>
+<li>③ 고체 촉매에 의한 반응은 생성물의 탈착을 거쳐 완결된다.</li>
+<li>④ 암모니아 합성에서 철 표면에 흡착된 수소는 전자를 철 원자와 공유한다.</li>
+<li>⑤ 증진제나 지지체 없이 촉매 활성을 갖는 고체 촉매가 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>㉠의 촉매 활성을 높이는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 반응물을 흡착하는 금속 원자의 개수를 늘린다.</li>
+<li>② 활성 성분의 소결을 촉진하는 증진제를 첨가한다.</li>
+<li>③ 반응물의 반응 속도를 늦추는 지지체를 사용한다.</li>
+<li>④ 반응에 대한 활성화 에너지를 크게 하는 금속을 사용한다.</li>
+<li>⑤ 활성 성분의 금속 입자들을 뭉치게 하여 큰 입자로 만든다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아세틸렌은 보통 선택적 수소화 공정을 통하여 에틸렌으로 변환된다. 이 공정에서 사용되는 고체 촉매는 팔라듐 금속 입자를 실리카 표면에 분산하여 만들며, 아세틸렌과 수소는 팔라듐 표면에 흡착되어 반응한다. 여기서 실리카는 표면적이 넓고 열적 안정성이 높다. 이때, 촉매에 규소를 소량 포함시키면 활성 성분의 표면 구조가 변화되어 고온에서 팔라듐의 소결이 억제된다. 또한 은을 소량 포함시키면 팔라듐의 전자 밀도가 높아지고 팔라듐 표면에 반응물이 흡착되는 세기가 조절되어 원하는 반응을 얻을 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 아세틸렌은 반응물에 해당한다.</li>
+<li>② 팔라듐은 활성 성분에 해당한다.</li>
+<li>③ 규소와 은은 모두 증진제에 해당한다.</li>
+<li>④ 실리카는 낮은 온도에서 활성 성분을 소결한다.</li>
+<li>⑤ 실리카는 촉매 활성 저하를 억제하는 기능을 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 할 때, 〈보기〉의 금속 ⓐ～ⓓ에 대한 설명으로 가장 적절한 것은? </p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 여러 가지 금속에 물질 <span class="boxmark">[가]</span>가 흡착될 때의 흡착 세기와 <span class="boxmark">[가]</span>의 화학 반응에서 각 금속의 촉매 활성을 나타낸다. (단, 흡착에 영향을 주는 다른 요소는 고려하지 않음.)
+<strong><span class="boxmark">[그림: 산 모양 산점도]</span></strong> 세로축은 ‘촉매 활성’(아래 ‘낮음’에서 위 ‘높음’ 방향 화살표), 가로축은 ‘흡착 세기’(왼쪽 ‘약함’, 오른쪽 ‘강함’ 방향 화살표). 점들이 왼쪽 아래에서 가운데 위로 올라갔다가 오른쪽 아래로 내려가는 산(山) 모양 추세를 이룬다. ⓐ는 가장 왼쪽(흡착 세기 약함·촉매 활성 낮음), ⓑ는 ⓐ보다 오른쪽 위(흡착 세기와 활성이 ⓐ보다 큼), ⓒ는 추세의 정점 부근(중간 흡착 세기·촉매 활성 최고), ⓓ는 가장 오른쪽(흡착 세기 강함·촉매 활성 낮음)에 위치한다. 이 밖에 기호가 붙지 않은 점들도 같은 산 모양 추세를 이룬다(별도의 추세선은 그려져 있지 않다).</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[가]</span>의 화학 반응은 ⓐ보다 ⓑ를 활성 성분으로 사용할 때 더 느리게 일어난다.</li>
+<li>② <span class="boxmark">[가]</span>는 ⓐ보다 ⓒ에 흡착될 때 흡착량이 더 적다.</li>
+<li>③ <span class="boxmark">[가]</span>는 ⓐ보다 ⓓ에 흡착될 때 안정화되는 정도가 더 크다.</li>
+<li>④ <span class="boxmark">[가]</span>는 ⓑ보다 ⓒ에 더 약하게 흡착된다.</li>
+<li>⑤ <span class="boxmark">[가]</span>의 화학 반응에서 촉매 활성만을 고려하면 가장 적합한 활성 성분은 ⓓ이다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

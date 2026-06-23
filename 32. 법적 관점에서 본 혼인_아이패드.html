@@ -1,0 +1,856 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>법적 관점에서 본 혼인 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>법적 관점에서 본 혼인 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 결혼식을 떠올려 보세요. 하얀 드레스, 주례 선생님, 박수치는 하객들… 그런데 한 가지 놀라운 사실이 있어요. <strong>이 멋진 결혼식을 아무리 성대하게 치러도, 그것만으로는 법이 인정하는 부부가 되지 않는다는 것</strong>입니다. 법의 눈으로 보면 부부는 식장이 아니라 동사무소(주민센터)에서 탄생해요. 바로 <strong>혼인 신고</strong>라는 종이 한 장을 내야 비로소 법적인 부부가 되거든요.</p>
+<p>왜 이렇게 까다롭게 굴까요? 혼인은 그저 두 사람의 사랑 이야기가 아니라, <strong>사회의 가장 작은 단위인 '가족'을 새로 만드는 일</strong>이기 때문이에요. 가족이 모여 사회가 되고 나라가 되니까, 국가는 이 관계를 법으로 단단히 보호하려 합니다. 그래서 옛날에는 결혼식 같은 사회적 관습만으로도 혼인을 인정했지만, 오늘날 대부분의 나라는 <strong>법이 정한 절차를 밟아야만 혼인이 성립한다</strong>고 봐요. 이런 제도를 <strong>법률혼 제도</strong>라고 부릅니다.</p>
+<p>그럼 법이 인정하는 혼인은 어떻게 이루어질까요? 크게 두 가지 조건을 모두 채워야 해요.</p>
+<ul>
+<li><strong>실질적 요건</strong> — '진짜로 부부가 되겠다는 마음'에 관한 조건이에요. 두 사람의 <strong>혼인 의사가 서로 맞아야</strong>(합치) 하고, <strong>혼인할 수 있는 나이(만 18세)</strong>여야 하며, <strong>너무 가까운 친척이 아니어야</strong> 하고, <strong>이미 배우자가 있으면 안 됩니다</strong>(중혼 금지).</li>
+<li><strong>형식적 요건</strong> — '겉으로 드러내는 절차'에 관한 조건이에요. 바로 <strong>혼인 신고</strong>입니다. 신고서를 내고 관청이 이를 받아들여야(수리) 비로소 부부가 됩니다.</li>
+</ul>
+<p>이 두 조건을 다 채우면, 두 사람 사이에는 <strong>법적인 효력</strong>이 줄줄이 생겨요. 서로 법적 <strong>배우자</strong>가 되고, 상대방의 가까운 친척과도 <strong>인척</strong>이라는 관계가 맺어지며, 함께 살며 돕고 서로에게 충실할 <strong>의무</strong>, 재산에 관한 여러 <strong>권리</strong>가 따라옵니다. 마치 계약서에 도장을 찍으면 권리와 의무가 한꺼번에 생기는 것과 똑같아요.</p>
+<blockquote>
+<p>한마디로: <strong>혼인은 두 사람의 약속이지만, 동시에 국가가 법으로 묶어 주는 '법률 행위'</strong>예요. 마음(실질적 요건)과 절차(형식적 요건)가 둘 다 갖춰질 때 비로소 성립하고, 그 순간부터 부부에게는 여러 법적 권리와 의무가 생깁니다. 이 단원에서는 혼인을 '사랑'이 아니라 '법'의 눈으로 들여다봅니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>'법이 바라보는 혼인'</strong>이 있습니다. 같은 혼인이라도 법은 그것을 ① 어떻게 성립시키고, ② 무엇이 잘못되면 깨뜨리며, ③ 성립한 뒤 어떤 권리·의무를 만들어 내는지를 차근차근 따집니다. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>법적 관점에서 본 혼인<small>"마음(실질적 요건) + 절차(형식적 요건) → 법적 효력"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>혼인이 <em>어떻게 성립하는지</em>, 그리고 성립하면 <em>어떤 법적 효력</em>이 따라오는지를 잡습니다. 혼인을 하나의 '법률 행위'로 보는 관점이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>혼인에 <em>문제가 생겼을 때</em>를 다룹니다. 처음부터 없던 일로 되는 '무효', 깨뜨릴 수 있는 '취소', 멀쩡한 혼인을 끝내는 '이혼'이 어떻게 구별되는지 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>부부가 된 뒤의 <em>재산 관계</em>를 따집니다. 부부가 미리 정하는 약정과 법이 정한 기본 원칙, 그리고 살림에 관한 권리·책임을 들여다봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 법이 혼인을 어떻게 세우고(성립), 어떻게 거두며(무효·취소·이혼), 그 안에서 부부의 권리·의무를 어떻게 배분하는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>사람은 살아가는 동안 여러 약속을 한다. 혼인도 두 사람 사이의 약속이다. 하지만 이것은 주말에 함께 영화를 보자는 약속과는 다르다. 일반적인 약속처럼 혼인도 두 사람의 의사가 합치하여 이루어지지만, 이때의 의사는 일정한 법률 효과의 발생을 목적으로 한다는 점에서 차이가 있다. 과거에는 결혼식과 같은 사회적 관습에 따른 의식을 치르면 혼인이 성립한 것으로 보기도 하였다. 그러나 오늘날 대부분의 국가는 법에서 정한 절차를 따라야만 혼인이 성립하는 법률혼 제도를 두고 있다. 혼인은 사회의 기본 단위인 가족을 형성하는 일이어서 국가의 근간과 맞닿아 있고, 그래서 법은 이 관계를 절차로써 확인하고 보호한다.</p>
+<p>이처럼 두 사람의 의사 표시를 필수적 요소로 하여 법률 효과를 발생시키는 행위들을 법률 행위라 한다. 혼인은 법률 행위의 일종으로서, 당사자에게 일정한 권리와 의무를 발생시킨다. 다만 혼인이 성립하려면 법이 규정한 실질적 요건과 형식적 요건을 모두 갖추어야 한다. 실질적 요건은 혼인의 ‘내용’에 관한 것으로, 가장 중요한 것은 혼인 의사의 합치이다. ㉠<u>혼인 의사</u>는 부부 관계를 맺겠다는 의사로, 반드시 당사자 사이의 합의가 있어야 한다. 또한 두 사람은 모두 혼인할 수 있는 나이인 만 18세에 이르러야 하고, 8촌 이내의 혈족 관계가 아니어야 하며, 이미 배우자가 있는 사람은 거듭하여 혼인할 수 없다.</p>
+<p>형식적 요건은 혼인의 ‘절차’에 관한 것으로, 혼인 신고의 이행이다. 부부로서의 법적 효력을 인정받으려면 혼인 신고서를 관청에 제출하고 그것이 접수되어 수리되어야 한다. 갑과 을이 서로 혼인할 의사로 합의하고 신고서를 제출하여 수리되었다고 하자. 이때 두 사람은 비로소 법적 배우자가 되며, ㉡<u>혼인이 발생시키는 법적 효력</u>이 따라온다. 두 사람은 상대방의 4촌 이내 혈족 및 그 배우자와 인척 관계를 맺고, 함께 살며 서로 돕고 부양하며 정조를 지킬 의무를 진다. 또한 혼인 전부터 가지고 있던 재산이나 혼인 뒤에 얻은 재산에 대해서도 법적 효력이 발생한다. 만일 이 가운데 어느 효력을 둘러싸고 다툼이 생기면, 당사자가 사적으로 물리력을 행사하여 해결하는 것은 허용되지 않는다.</p>
+<p>권리의 내용은 민법과 같은 실체법에서 규정하고 있고, 그것을 강제적으로 실현할 수 있도록 가사 소송법과 같은 절차법이 갖추어져 있다. 한쪽이 부양 의무를 이행하지 않으면 다른 한쪽은 가정 법원에 소를 제기하여 자기 권리의 존재와 내용을 공적으로 확정받을 수 있고, 나아가 그 이행을 강제하도록 신청할 수도 있다. 이처럼 혼인으로 발생한 권리와 의무는 단순한 도덕적 약속에 그치지 않고 국가의 절차를 통해 실현이 보장된다는 점에서 일반적인 약속과 구별된다.</p>
+<p>그런데 ㉮<u>혼인 의사의 합치라는 실질적 요건이 처음부터 갖추어지지 않았다면</u> 어떻게 될까. 두 사람 사이에 부부가 되겠다는 진정한 의사의 합치가 없었다면, 비록 신고가 수리되었더라도 그 혼인은 처음부터 효력이 없는 것으로 다루어질 수 있다. 형식적 요건인 신고가 이루어졌다는 사실만으로 혼인이 유효해지는 것은 아니며, 실질적 요건과 형식적 요건은 어느 하나라도 빠지면 온전한 혼인으로 인정받지 못한다. 다시 말해 신고라는 절차는 합치된 의사를 겉으로 드러내고 공적으로 확인하는 장치일 뿐, 그 자체가 혼인을 만들어 내는 것은 아니다.</p>
+<p>혼인은 평생 부부 관계로 살아가겠다는 법적인 약속이다. 그러므로 그 기간을 미리 정하여 ‘몇 년 동안만 부부로 지내겠다’와 같이 조건을 ⓐ<u>붙이는</u> 것은 원칙적으로 효력이 없다. 혼인이 성립하면 두 사람 사이에는 배우자라는 신분과 그에 따른 권리·의무가 한꺼번에 생겨나며, 이는 두 사람이 합의한 내용을 넘어 법이 정한 효력으로서 일률적으로 부여된다. 이렇듯 혼인은 당사자의 의사에서 출발하지만, 일단 성립하면 그 효력의 내용과 범위는 법이 정한 바에 따른다는 점에서 여느 약속과는 다른 무게를 지닌다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법률혼 제도에서는 법에서 정한 절차를 따라야 혼인이 성립한다.</li>
+<li>② 혼인이 성립하면 당사자 사이에 인척 관계가 형성될 수 있다.</li>
+<li>③ 실질적 요건과 형식적 요건 중 하나만 갖추어도 혼인은 온전히 성립한다.</li>
+<li>④ 혼인으로 발생한 의무의 이행은 절차법을 통해 강제될 수 있다.</li>
+<li>⑤ 혼인 전부터 가지고 있던 재산에 대해서도 법적 효력이 발생한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+2문단에서 혼인이 성립하려면 "실질적 요건과 형식적 요건을 모두 갖추어야 한다"라고 했고, 5문단에서도 "어느 하나라도 빠지면 온전한 혼인으로 인정받지 못한다"라고 못 박았어요. 그런데 ③은 <em>하나만</em> 갖추어도 성립한다고 했으니 정반대라 일치하지 않아 정답입니다. ①은 1문단(법률혼 제도), ②는 3문단(인척 관계 형성), ④는 4문단(절차법을 통한 강제), ⑤는 3문단(혼인 전 재산에도 효력)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 관청의 수리가 있어야 비로소 성립한다.</li>
+<li>② ㉡은 당사자가 합의한 내용대로만 그 범위가 정해진다.</li>
+<li>③ ㉠과 ㉡은 ㉠이 갖추어지면 그 결과로 ㉡이 소멸하는 관계이다.</li>
+<li>④ ㉠과 ㉡은 모두 신고라는 절차가 없이도 그대로 발생한다.</li>
+<li>⑤ ㉠에는 당사자 사이의 합의가 필요하고, ㉡에는 부양과 정조의 의무가 포함된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong>
+㉠은 '혼인 의사', ㉡은 '혼인이 발생시키는 법적 효력'을 가리켜요. 2문단은 혼인 의사가 "반드시 당사자 사이의 합의가 있어야 한다"라고 했고, 3문단은 그 효력에 "서로 돕고 부양하며 정조를 지킬 의무"가 들어간다고 했으니 ⑤가 적절해 정답입니다. ① 수리가 있어야 성립하는 것은 <em>형식적 요건(신고)</em>이지 혼인 의사가 아니에요. ② 효력은 6문단에서 "당사자가 합의한 내용을 넘어 법이 정한 효력으로서 일률적으로 부여된다"라고 했으니 '합의한 내용대로만'은 틀려요. ③ 의사가 갖추어지면 효력이 <em>발생</em>하는 것이지 소멸하는 관계가 아니고, ④ 효력(㉡)은 신고가 수리되어야 따라오므로 '신고 없이도 발생'은 틀립니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉮의 상황에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① 신고가 수리되었으므로 혼인은 언제나 유효하게 성립한다.</li>
+<li>② 진정한 혼인 의사의 합치가 없었다면 혼인은 처음부터 효력이 없는 것으로 다루어질 수 있다.</li>
+<li>③ 형식적 요건이 갖추어졌으므로 실질적 요건은 더 이상 따질 필요가 없다.</li>
+<li>④ 두 사람은 만 18세에 이르지 못하였기 때문에 혼인이 성립하지 못한 것이다.</li>
+<li>⑤ 신고라는 절차가 그 자체로 혼인을 만들어 내므로 의사의 합치는 요건이 아니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>3번 — 정답 ②</strong>
+㉮는 혼인 의사의 합치라는 실질적 요건이 처음부터 없었던 상황이에요. 5문단에서 "진정한 의사의 합치가 없었다면, 비록 신고가 수리되었더라도 그 혼인은 처음부터 효력이 없는 것으로 다루어질 수 있다"라고 했으니 ②가 적절해 정답입니다. ① 5문단은 신고만으로 유효해지지 않는다고 했고, ③ 실질적 요건이 빠졌다는 것이 바로 문제의 핵심이므로 '따질 필요 없다'는 틀려요. ④ ㉮는 <em>의사 합치</em>가 없는 경우이지 나이(만 18세)가 문제 된 경우가 아니며, ⑤ 5문단은 신고가 "그 자체가 혼인을 만들어 내는 것은 아니다"라고 했으니 정반대입니다.</p>
+<p><strong>4번 [3점] — 정답 ③</strong>
+입양은 〈보기〉에서 "양쪽의 의사가 합치하고 입양 신고가 수리되어야 성립한다"라고 했어요. 그러니 의사가 합치하지 않아도 신고만으로 성립한다는 ③은 〈보기〉와 어긋나 적절하지 않으므로 정답입니다. ①은 셋 모두 법률 효과를 목적으로 하는 신분 행위(지문 2문단+〈보기〉), ②는 입양·혼인 모두 양쪽 의사 합치 필요, ④는 인지가 한쪽 의사만으로 성립(상대방 승낙 불요)한다는 〈보기〉 서술, ⑤는 입양·인지 모두 신고를 거친다는 점에서 각각 적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 분석으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+입양은 혈연 관계가 없는 사람들 사이에 법적으로 부모와 자식의 관계를 맺는 신분 행위로, 양부모가 될 사람과 양자가 될 사람 양쪽의 의사가 합치하고 입양 신고가 수리되어야 성립한다. 한편 인지는 혼인하지 않은 사이에서 태어난 자녀를 그 아버지나 어머니가 자기 자녀로 인정하는 신분 행위인데, 인지하는 사람의 의사 표시만으로 신고가 이루어지면 성립하고 상대방의 승낙을 필요로 하지 않는다는 점에서 입양과 차이가 있다.</p>
+</blockquote>
+<ul>
+<li>① 혼인, 입양, 인지는 모두 일정한 법률 효과의 발생을 목적으로 하는 신분 행위이다.</li>
+<li>② 입양과 혼인은 양쪽 당사자의 의사가 합치해야 성립한다는 점이 공통된다.</li>
+<li>③ 입양은 신고만 이루어지면 당사자의 의사가 합치하지 않아도 성립한다는 점에서 혼인과 차이가 있다.</li>
+<li>④ 인지는 한쪽의 의사 표시만으로 성립한다는 점에서 양쪽의 의사 합치가 필요한 입양과 차이가 있다.</li>
+<li>⑤ 입양과 인지는 모두 신고라는 형식적 절차를 거쳐 성립한다는 점이 공통된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 그는 편지 끝에 자신의 이름을 또박또박 붙였다.</li>
+<li>② 계약서에는 위반 시의 책임을 묻는 조항이 붙어 있었다.</li>
+<li>③ 아이는 어머니 뒤에 바짝 붙어 떨어지지 않으려 했다.</li>
+<li>④ 두 마을을 잇는 다리에 새 이름이 붙게 되었다.</li>
+<li>⑤ 오랜 노력 끝에 그 일에 자신감이 붙기 시작했다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+ⓐ'붙이는'은 "조건을 붙이는", 곧 '어떤 것에 무엇을 딸려 덧붙이다'의 뜻이에요. ②의 '붙어 있었다'(조항이 딸려 있음)가 가장 가깝습니다. ①은 '써넣다', ③은 '바짝 가까이 가다', ④는 '이름·번호 따위를 매기다', ⑤는 '어떤 성질·감정이 생기다'의 뜻이라 문맥이 달라요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>법률혼 제도</strong>: 결혼식 같은 관습만으로는 안 되고, 법이 정한 절차(혼인 신고)를 밟아야 혼인이 성립한다고 보는 제도.</li>
+<li><strong>실질적 요건</strong>: 혼인의 '내용'에 관한 조건 — 혼인 의사의 합치, 만 18세 이상, 8촌 이내 혈족 아님, 중혼 아님.</li>
+<li><strong>형식적 요건</strong>: 혼인의 '절차'에 관한 조건 — 혼인 신고서를 내고 관청이 수리하는 것.</li>
+<li><strong>법적 효력</strong>: 혼인이 성립하면 따라오는 결과 — 배우자 지위, 인척 관계, 부양·협조·정조의 의무, 재산에 관한 권리.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>실질적 요건</th>
+<th>형식적 요건</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무엇에 관한 조건인가</td>
+<td>혼인의 '내용'(진짜 마음)</td>
+<td>혼인의 '절차'(겉으로 드러냄)</td>
+</tr>
+<tr>
+<td>대표 내용</td>
+<td>혼인 의사의 합치, 연령·혈족·중혼 제한</td>
+<td>혼인 신고의 이행(제출→수리)</td>
+</tr>
+<tr>
+<td>빠지면?</td>
+<td>둘 중 하나라도 빠지면 온전한 혼인으로 인정받지 못함</td>
+<td>(같음)</td>
+</tr>
+<tr>
+<td>성립하면?</td>
+<td>→ 배우자 지위·인척 관계·권리·의무가 한꺼번에 발생</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>결혼식을 성대하게 치르면 법적으로 부부가 되나요?</div><div class='qa-a'>아니요. 혼인 신고(형식적 요건)가 수리되어야 법적 부부가 됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>혼인 의사의 합치란 무엇인가요?</div><div class='qa-a'>부부 관계를 맺겠다는 두 사람의 의사가 서로 맞는 것으로, 반드시 당사자 사이의 합의가 있어야 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>혼인이 성립하면 어떤 효력이 생기나요?</div><div class='qa-a'>배우자 지위, 인척 관계, 부양·협조·정조의 의무, 재산에 관한 법적 효력이 발생합니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2019학년도 수능 [16~20]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>사람은 살아가는 동안 여러 약속을 한다. 계약도 하나의 약속이다. 하지만 이것은 친구와 뜻이 맞아 주말에 영화 보러 가자는 약속과는 다르다. 일반적인 다른 약속처럼 계약도 서로의 의사 표시가 합치하여 성립하지만, 이때의 의사는 일정한 법률 효과의 발생을 목적으로 한다는 점에서 차이가 있다. 한 예로 매매 계약은 ‘팔겠다’는 일방의 의사 표시와 ‘사겠다’는 상대방의 의사 표시가 합치함으로써 성립하며, 매도인은 매수인에게 매매 목적물의 소유권을 이전하여야 할 의무를 짐과 동시에 매매 대금의 지급을 청구할 권리를 갖는다. 반대로 매수인은 매도인에게 매매 대금을 지급할 의무가 있고 소유권의 이전을 청구할 권리를 갖는다. 양 당사자는 서로 권리를 행사하고 서로 의무를 이행하는 관계에 놓이는 것이다.</p>
+<p>이처럼 의사 표시를 필수적 요소로 하여 법률 효과를 발생시키는 행위들을 법률 행위라 한다. 계약은 법률 행위의 일종으로서, 당사자에게 일정한 청구권과 이행 의무를 발생시킨다. 청구권을 내용으로 하는 권리가 채권이고, 그에 따라 이행을 해야 할 의무가 채무이다. 따라서 채권과 채무는 발생한 법률 효과가 동전의 양면처럼 서로 다른 방향에서 파악되는 것이라 할 수 있다. 채무자가 채무의 내용대로 이행하여 채권을 소멸시키는 것을 변제라 한다.</p>
+<p>갑과 을은 을이 소유한 그림 A를 갑에게 매도하는 것을 내용으로 하는 매매 계약을 체결하였다. ㉠을의 채무는 그림 A의 소유권을 갑에게 이전하는 것이다. 동산인 물건의 소유권을 이전하는 방식은 그 물건을 인도하는 것이다. 갑은 그림 A가 너무나 마음에 들었기 때문에 그것을 인도받기 전에 대금 전액을 금전으로 지급하였다. 그런데 갑이 아무리 그림 A를 넘겨달라고 청구하여도 을은 인도해 주지 않았다. 이런 경우 갑이 사적으로 물리력을 행사하여 해결하는 것은 엄격히 금지된다.</p>
+<p>채권의 내용은 민법과 같은 실체법에서 규정하고 있고, 그것을 강제적으로 실현할 수 있도록 민사 소송법이나 민사 집행법 같은 절차법이 갖추어져 있다. 갑은 소를 제기하여 판결로써 자기가 가진 채권의 존재와 내용을 공적으로 확정받을 수 있고, 나아가 법원에 강제 집행을 신청할 수도 있다. 강제 집행은 국가가 물리적 실력을 행사하여 채무자의 의사에 구애받지 않고 채무의 내용을 실행시켜 채권이 실현되도록 하는 제도이다.</p>
+<p>을이 그림 A를 넘겨주지 않은 까닭은 갑으로부터 매매 대금을 받은 뒤에 을의 과실로 불이 나 그림 A가 타 없어졌기 때문이다. ㉮결국 채무는 이행 불능이 되었다. 소송을 하더라도 불능의 내용을 이행하라는 판결은 ⓐ나올 수 없다. 그림 A의 소실이 계약 체결 전이었다면, 그 계약은 실현 불가능한 내용을 담고 있기 때문에 체결할 때부터 계약 자체가 무효이다. 이행 불능이 채무자의 과실 때문에 일어난 것이라면 채무자가 채무 불이행에 대한 책임을 져야 한다.</p>
+<p>이때 채무 불이행은 갑이나 을의 의사 표시가 작용한 것이 아니라, 매매 목적물의 소실에 따른 이행 불능으로 말미암은 것이다. 이러한 사건을 통해서도 법률 효과가 발생한다. 채무 불이행에 대한 책임은 갑으로 하여금 계약을 해제할 수 있는 권리를 갖게 한다. 갑이 계약 해제권을 행사하면 그때까지 유효했던 계약이 처음부터 효력이 없는 것으로 된다. 이때의 계약 해제는 일방의 의사 표시만으로 성립한다. 따라서 갑이 해제권을 행사하는 데에 을의 승낙은 요건이 되지 않는다. 이러한 법률 행위를 단독 행위라 한다.</p>
+<p>갑은 계약을 해제하였다. 이로써 그 계약으로 발생한 채권과 채무는 없던 것이 된다. 당연히 계약의 양 당사자는 자신의 채무를 이행할 필요가 없다. 이미 이행된 것이 있다면 계약이 체결되기 전의 상태로 돌려놓아야 한다. 이를 청구할 수 있는 권리가 원상회복 청구권이다. 계약의 해제로 갑은 원상회복 청구권을 행사할 수 있으며, 이러한 ㉡갑의 채권은 결국 을에게 매매 대금을 반환해 달라고 청구할 수 있는 권리가 된다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 실체법에는 청구권에 관한 규정이 있다.</li>
+<li>② 절차법에 강제 집행 제도가 마련되어 있다.</li>
+<li>③ 법률 행위가 없으면 법률 효과가 발생하지 않는다.</li>
+<li>④ 법원을 통하여 물리력으로 채권을 실현할 수 있다.</li>
+<li>⑤ 실현 불가능한 것을 내용으로 하는 계약은 무효이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>16번 — 정답 ③</strong><br />
+2문단에서 의사 표시를 필수적 요소로 하여 법률 효과를 발생시키는 행위들이 법률 행위라 했지만, 6문단에서 채무 불이행은 의사 표시가 작용한 것이 아니라 매매 목적물의 소실에 따른 이행 불능으로 말미암은 것인데 이러한 사건을 통해서도 법률 효과가 발생한다고 했다. 따라서 법률 행위가 없어도 법률 효과는 발생할 수 있으므로 ③이 일치하지 않는다. ①은 2·4문단(채권의 내용은 실체법에서 규정), ②는 4문단(절차법에 따른 강제 집행), ④는 4문단(국가가 물리적 실력을 행사해 채권 실현), ⑤는 5문단(계약 체결 전 소실이면 계약 자체가 무효)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①21.5% ②9.2% ③49.6% ④15.2% ⑤5.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 매도인의 청구와 매수인의 이행으로 소멸한다.</li>
+<li>② ㉡은 채권자와 채무자의 의사 표시가 작용하여 성립한 것이다.</li>
+<li>③ ㉠과 ㉡은 ㉠이 이행되면 그 결과로 ㉡이 소멸하는 관계이다.</li>
+<li>④ ㉠과 ㉡은 동일한 계약의 효과를 서로 다른 측면에서 바라본 것이다.</li>
+<li>⑤ ㉠에는 물건을 인도할 의무가 있고, ㉡에는 금전의 지급을 청구할 권리가 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>17번 — 정답 ⑤</strong><br />
+㉠(을의 채무)은 그림 A의 소유권을 갑에게 이전하는 것이고, 동산의 소유권 이전 방식은 인도이므로 ㉠에는 물건을 인도할 의무가 있다. ㉡(갑의 채권)은 계약 해제에 따른 원상회복 청구권으로서 매매 대금의 반환, 즉 금전의 지급을 청구할 권리이다. ①은 매수인(갑)의 청구와 매도인(을)의 이행으로 소멸하는 것이므로 주체가 뒤바뀌었고, ②의 ㉡은 의사 표시가 아닌 목적물 소실(사건)로 말미암은 채무 불이행에서 비롯되었으며, ③은 ㉠이 이행되지 못한 결과로 ㉡이 발생한 것이고, ④는 계약이 해제되어 무효가 된 상황이므로 동일 계약의 양면이라 할 수 없다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①5.2% ②7.6% ③17.2% ④14.1% ⑤56.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p>㉮의 상황에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ‘을’의 과실로 이행 불능이 되어 ‘갑’의 계약 해제권이 발생한다.</li>
+<li>② ‘갑’은 소를 제기하여야 매매의 목적이 된 재산권을 이전받을 수 있다.</li>
+<li>③ ‘갑’은 원상회복 청구권을 행사하여야 ‘그림 A’의 소유권을 회복할 수 있다.</li>
+<li>④ ‘갑’과 ‘을’은 애초부터 실현 불가능한 내용의 계약을 체결하였기 때문에 이행 불능이 되었다.</li>
+<li>⑤ ‘을’이 ‘갑’에게 ‘그림 A’를 인도하는 것은 불가능해졌지만 ‘을’은 채무 불이행에 대한 책임을 지지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>18번 — 정답 ①</strong><br />
+㉮는 을의 과실로 그림 A가 소실되어 생긴 이행 불능이며, 이로 인한 채무 불이행 책임은 갑에게 계약 해제권을 발생시킨다(①). ② 그림 A가 소실되었으므로 소를 제기해도 소유권을 이전받을 수 없다. ③ 원상회복 청구권은 매매 대금 반환을 청구할 권리가 될 뿐 그림 A의 소유권 회복과 무관하다. ④ 소실은 계약 체결 후 일어났으므로 애초부터 실현 불가능한 계약이 아니다. ⑤ 이행 불능이 채무자(을)의 과실 때문이므로 을은 채무 불이행 책임을 져야 한다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①79.9% ②5.2% ③4.0% ④6.6% ⑤3.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 분석으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+증여는 당사자의 일방이 자기의 재산을 무상으로 상대방에게 줄 의사를 표시하고 상대방이 이를 승낙함으로써 성립하는 계약이다. 증여자만 이행 의무를 진다는 점이 특징이다. 유언은 유언자의 사망과 동시에 일정한 법률 효과를 발생시키려는 것을 목적으로 하는데, 유언자의 의사 표시만으로 유효하게 성립하고 의사 표시의 상대방이 필요 없다는 점에서 증여와 차이가 있다.</p>
+</blockquote>
+<ul>
+<li>① 증여, 유언, 매매는 모두 법률 행위로서 의사 표시를 요소로 한다.</li>
+<li>② 증여와 유언은 법률 효과를 발생시키려는 목적이 있다는 점이 공통된다.</li>
+<li>③ 증여는 변제의 의무를 발생시키지 않는다는 점에서 매매와 차이가 있다.</li>
+<li>④ 증여는 당사자 일방만이 이행한다는 점에서 양 당사자가 서로 이행하는 관계를 갖는 매매와 차이가 있다.</li>
+<li>⑤ 증여는 양 당사자의 의사 표시가 서로 합치하여 성립한다는 점에서 의사 표시의 합치가 필요 없는 유언과 차이가 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>19번 — 정답 ③</strong><br />
+증여는 계약이고 증여자만 이행 의무(채무)를 지므로, 채무의 내용대로 이행하여 채권을 소멸시키는 변제의 의무가 증여자에게 발생한다. 따라서 증여가 변제의 의무를 발생시키지 않는다는 ③은 적절하지 않다. ①②는 셋 모두 의사 표시를 요소로 법률 효과를 발생시키는 법률 행위라는 점에서, ④는 매매가 쌍방 이행 관계인 데 비해 증여는 일방만 이행한다는 점에서, ⑤는 유언이 유언자의 의사 표시만으로 성립하는 데 비해 증여는 의사 표시의 합치(표시와 승낙)로 성립한다는 점에서 적절하다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①4.6% ②17.2% ③51.0% ④17.8% ⑤9.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 오랜 연구 끝에 만족할 만한 실험 결과가 나왔다.</li>
+<li>② 그 사람이 부드럽게 나오니 내 마음이 누그러졌다.</li>
+<li>③ 우리 마을은 라디오가 잘 안 나오는 산간 지역이다.</li>
+<li>④ 이 책에 나오는 옛날이야기 한 편을 함께 읽어 보자.</li>
+<li>⑤ 그동안 우리 지역에서는 걸출한 인물들이 많이 나왔다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>20번 — 정답 ①</strong><br />
+ⓐ‘나올’은 ‘처리나 결과로 이루어지거나 생기다’의 뜻으로, ①의 ‘나왔다’(실험 결과가 생김)와 가장 가깝다. ②는 ‘어떠한 태도를 취하여 겉으로 드러내다’, ③은 ‘방송을 듣거나 볼 수 있다’, ④는 ‘책·신문 따위에 실리다’, ⑤는 ‘상품이나 인물 따위가 산출되다’의 뜻이다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①94.9% ②1.6% ③0.5% ④0.6% ⑤1.4%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>법적으로 부부가 된 사이라도 그 관계가 늘 온전하게 유지되는 것은 아니다. 혼인이 일단 신고로 성립한 뒤에도, 처음부터 그것이 효력이 없는 것으로 다루어지는 경우가 있고, 일정한 사유가 있어 나중에 깨뜨릴 수 있는 경우가 있으며, 멀쩡히 성립한 혼인을 두 사람이 끝내는 경우가 있다. 이 셋은 모두 혼인 관계가 풀린다는 점에서는 비슷해 보이지만, 그 원인과 효과가 서로 다르다. 혼인은 배우자라는 신분과 인척 관계, 부양과 협조의 의무, 재산에 관한 권리 등 여러 법적 효력을 한꺼번에 발생시키므로, 그 혼인이 어떤 경로로 풀리느냐에 따라 이미 발생한 효력을 그대로 둘 것인지 거두어들일 것인지가 달라진다. 그래서 법은 혼인 관계가 풀리는 모습을 무효·취소·이혼으로 나누어, 각각의 사유와 그에 따르는 효과를 따로 규정한다.</p>
+<div class="ablock"><span class="atag">[A]</span>혼인의 무효란 혼인이 신고되었더라도 처음부터 그 효력이 발생하지 않는 것을 말한다. 당사자 사이에 혼인할 진정한 의사의 합치가 없었던 경우나, 8촌 이내의 혈족 사이에서 혼인 신고가 이루어진 경우가 이에 해당한다. 무효인 혼인은 효력이 처음부터 없으므로, 그 사이에서는 배우자라는 신분도, 그에 따른 권리·의무도 애초에 발생하지 않은 것으로 본다. 이에 비해 혼인의 취소란 일단 유효하게 성립한 혼인을, 일정한 사유가 있을 때 당사자나 그 밖의 청구권자가 가정 법원에 청구하여 장래를 향해 깨뜨리는 것을 말한다. 혼인할 수 있는 나이에 이르지 못한 사람이 한 혼인이나, 이미 배우자가 있는 사람이 거듭하여 한 혼인이 취소의 대상이 된다. 취소된 혼인은 그 취소가 확정된 때부터 효력을 잃을 뿐, 취소되기 전까지 발생했던 효력은 그대로 인정된다. 곧 무효는 효력을 처음부터 부정하는 것이고, 취소는 그때까지의 효력은 남겨 둔 채 장래의 효력만 끊는 것이라는 점에서 구별된다. </div>
+
+<p>혼인이 무효나 취소의 사유가 없이 유효하게 성립한 뒤, 두 사람이 그 관계를 끝내려는 경우가 이혼이다. ㉠<u>이혼</u>은 부부가 서로 합의하여 신고함으로써 이루어지기도 하고, 한쪽이 가정 법원에 청구하여 재판으로 이루어지기도 한다. 합의에 의한 이혼은 두 사람의 의사가 합치하여 신고가 수리되면 성립하지만, 재판에 의한 이혼은 법이 정한 일정한 사유가 있어야 청구할 수 있다. 재판상 이혼의 사유는 한쪽의 부당한 대우나 부양 의무의 위반처럼 혼인 관계를 더 이상 유지하기 어렵게 만드는 중대한 사정에 한정되며, 그러한 사유가 인정되어야 비로소 법원이 이혼을 명한다. 이혼이 이루어지면 두 사람은 배우자라는 신분에서 벗어나고, 혼인으로 맺어졌던 인척 관계도 끝난다. 또한 혼인 중에 함께 형성한 재산을 어떻게 나눌 것인지를 두고 한쪽이 다른 한쪽에게 재산의 분할을 청구할 수 있는 권리가 생긴다. 다만 이혼은 무효나 취소와 달리, 그 전까지 혼인이 유효하게 성립해 있었음을 전제로 한다는 점에서 다르다. 곧 이혼은 없던 혼인을 부정하는 것이 아니라, 있던 혼인을 두 사람의 의사나 재판으로 마무리하는 것이다.</p>
+<p>이처럼 혼인 관계가 풀리는 세 경우는 그 효력이 미치는 시점에서 갈린다. ㉡<u>혼인의 무효</u>는 효력을 처음부터 없던 것으로 돌리고, ㉢<u>혼인의 취소와 이혼</u>은 모두 장래를 향해서만 효력을 끊는다는 점에서 무효와 구별된다. 다만 취소가 이미 성립한 혼인의 사유를 들어 그 효력을 깨뜨리는 것인 데 비해, 이혼은 사유를 따지기에 앞서 두 사람의 의사나 재판으로 혼인을 끝낸다는 점에서 취소와 다르다.</p>
+<p>무효나 취소, 이혼 가운데 어느 것에 해당하느냐는 당사자에게 중대한 결과를 가져온다. 처음부터 효력이 없는 무효와 달리, 취소나 이혼의 경우에는 혼인이 유지되던 동안 발생한 권리·의무가 인정되고, 자녀의 신분이나 재산의 청산을 둘러싼 법률관계도 그에 맞추어 ⓐ<u>정해지기</u> 때문이다. 가령 어떤 혼인이 무효로 다루어지면 그 사이에서 형성되었던 재산상의 효력도 처음부터 없던 것이 되지만, 같은 혼인이 취소나 이혼으로 풀리면 그동안 쌓인 권리·의무를 바탕으로 재산을 청산하게 된다. 이렇듯 효력이 미치는 시점이 어디까지인지가 곧 당사자가 누리거나 부담하게 될 법률관계의 범위를 좌우한다. 그러므로 같은 ‘혼인 관계의 해소’라 하더라도 그것이 어떤 경로로 이루어졌는지를 가려야 그에 따른 효력을 바르게 판단할 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 혼인의 무효는 혼인이 신고된 경우에도 문제 될 수 있다.</li>
+<li>② 혼인의 취소는 가정 법원에 청구하여 이루어진다.</li>
+<li>③ 이혼은 혼인이 유효하게 성립해 있었음을 전제로 한다.</li>
+<li>④ 합의에 의한 이혼은 두 사람의 의사가 합치하여 신고가 수리되면 성립한다.</li>
+<li>⑤ 무효인 혼인에서도 배우자라는 신분에 따른 권리·의무가 성립한 것으로 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+[A]에서 "무효인 혼인은 효력이 처음부터 없으므로, 그 사이에서는 배우자라는 신분도, 그에 따른 권리·의무도 애초에 발생하지 않은 것으로 본다"라고 했어요. 그런데 ⑤는 무효인 혼인에서도 권리·의무가 <em>성립</em>한 것으로 본다고 했으니 정반대라 적절하지 않아 정답입니다. ①은 <a href="신고되어도 무효 문제">A</a>, ②는 <a href="가정 법원에 청구">A</a>, ③은 3문단(이혼은 유효한 성립을 전제), ④는 3문단(합의 이혼=의사 합치+신고 수리)에서 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 혼인의 무효는 일단 발생한 효력을 장래를 향해 끊는 것이다.</li>
+<li>② 혼인할 나이에 이르지 못한 사람이 한 혼인은 무효의 사유에 해당한다.</li>
+<li>③ 취소된 혼인에서는 취소되기 전에 발생했던 효력도 처음부터 없던 것이 된다.</li>
+<li>④ 8촌 이내의 혈족 사이에서 신고된 혼인은 처음부터 효력이 발생하지 않은 것으로 본다.</li>
+<li>⑤ 혼인의 취소는 당사자의 청구가 없어도 신고만으로 효력이 사라진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>7번 — 정답 ④</strong>
+[A]에서 무효 사유로 "8촌 이내의 혈족 사이에서 혼인 신고가 이루어진 경우"를 들었고, 무효는 "처음부터 그 효력이 발생하지 않는 것"이라고 했으니 ④가 적절해 정답입니다. ① '장래를 향해 끊는 것'은 무효가 아니라 <em>취소</em>예요(방향이 바뀜). ② 혼인할 나이에 이르지 못한 사람의 혼인은 <em>취소</em>의 사유이지 무효가 아니고, ③ 취소는 "취소되기 전까지 발생했던 효력은 그대로 인정된다"라고 했으니 '처음부터 없던 것'은 틀려요. ⑤ 취소는 "당사자나 그 밖의 청구권자가 가정 법원에 청구하여" 이루어지므로 '신고만으로 사라진다'는 틀립니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>㉠～㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 혼인이 유효하게 성립해 있었음을 전제로 한다.</li>
+<li>② ㉡은 ㉠과 달리, 효력을 처음부터 없던 것으로 돌린다.</li>
+<li>③ ㉢은 ㉡과 달리, 혼인으로 맺어졌던 인척 관계를 끝내지 못한다.</li>
+<li>④ ㉠과 ㉡은 모두 사유를 따지기에 앞서 당사자의 의사로 혼인을 끝낸다.</li>
+<li>⑤ ㉠과 ㉢은 모두 효력을 처음부터 없던 것으로 돌린다는 점이 같다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+㉠은 이혼, ㉡은 혼인의 무효, ㉢은 혼인의 취소와 이혼이에요. 4문단에서 무효는 "효력을 처음부터 없던 것으로 돌리고", 이혼(㉠)은 "장래를 향해서만 효력을 끊는다"라고 했으니, ㉡(무효)이 ㉠(이혼)과 달리 효력을 처음부터 없앤다는 ②가 적절해 정답입니다. ① 유효한 성립을 전제로 하는 것은 이혼(㉠)이 맞지만 취소·이혼(㉢)도 성립을 전제로 하므로 '㉢과 달리'가 틀려요. ③ 이혼(㉢에 포함)은 인척 관계를 끝낸다고 3문단에 나오니 '끝내지 못한다'는 틀리고, ④ 사유를 따지기에 앞서 의사로 끝내는 것은 이혼이지 무효(㉡)가 아니며, ⑤ 처음부터 효력을 없애는 것은 무효뿐이라 이혼(㉠)·취소(㉢)에는 해당하지 않습니다.</p>
+<p><strong>9번 [3점] — 정답 ⑤</strong>
+정과 무는 "이미 다른 사람과 법적으로 혼인한 상태"에서 다시 신고했으니 중혼으로 <em>취소</em>의 대상이에요(①·②). 취소는 "취소가 확정된 때부터 효력을 잃을 뿐, 취소되기 전까지 발생했던 효력은 그대로 인정된다"라고 [A]에 나오죠. 그런데 ⑤는 취소되기 전 효력도 <em>처음부터 없던 것으로 돌린다</em>고 했으니, 이는 취소가 아니라 무효의 효과여서 적절하지 않아 정답입니다. ③·④ 기와 경은 "부부가 될 의사가 전혀 없이" 신고했으므로 의사 합치가 없어 <em>무효</em>이고, 무효에서는 권리·의무가 처음부터 발생하지 않으므로 모두 적절한 이해입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+정과 무는 혼인 신고를 마치고 부부로 함께 살아 왔다. 그런데 정은 신고 당시 이미 다른 사람과 법적으로 혼인한 상태였음이 나중에 밝혀졌다. 한편 같은 시기에 신고를 한 기와 경의 경우, 두 사람은 애초에 부부가 될 의사가 전혀 없이 오직 체류 자격을 얻을 목적으로만 신고를 하였다는 사실이 드러났다.</p>
+</blockquote>
+<ul>
+<li>① 정과 무의 혼인은 이미 배우자가 있는 사람이 거듭하여 한 혼인이므로 취소의 대상이 되겠군.</li>
+<li>② 정과 무의 혼인이 취소되면, 취소가 확정된 때부터 그 효력을 잃게 되겠군.</li>
+<li>③ 기와 경의 혼인은 부부가 될 진정한 의사의 합치가 없었으므로 처음부터 효력이 없는 것으로 다루어지겠군.</li>
+<li>④ 기와 경의 혼인에서는 배우자라는 신분에 따른 권리·의무가 처음부터 발생하지 않은 것으로 보겠군.</li>
+<li>⑤ 정과 무의 혼인은 취소되기 전까지 발생했던 효력도 처음부터 없던 것으로 돌려지겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 회의에서 내년도 사업의 방향이 정해졌다.</li>
+<li>② 그는 마음을 굳게 정하고 길을 나섰다.</li>
+<li>③ 우리는 만날 장소를 학교 앞으로 정했다.</li>
+<li>④ 심판은 규정에 따라 승부를 정하였다.</li>
+<li>⑤ 학생들은 회장을 투표로 정하기로 하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>10번 — 정답 ①</strong>
+ⓐ'정해지기'는 "법률관계가 정해지다", 곧 '어떻게 할지가 결정되어 자리 잡다'의 뜻으로, 주어가 스스로 결정하는 것이 아니라 결과로서 <em>정해지는</em> 쓰임이에요. ①의 '정해졌다'(방향이 결정됨)가 가장 가깝습니다. ②는 '마음을 굳히다', ③·④·⑤는 모두 사람이 능동적으로 '결정하다'의 뜻이라 문맥이 달라요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>혼인의 무효</strong>: 신고가 되었어도 처음부터 효력이 없는 것. 의사 합치가 없거나 8촌 이내 혈족 사이의 혼인이 해당돼요.</li>
+<li><strong>혼인의 취소</strong>: 일단 유효하게 성립한 혼인을, 일정한 사유가 있을 때 청구하여 <em>장래를 향해</em> 깨뜨리는 것. 그전까지의 효력은 남아요.</li>
+<li><strong>이혼</strong>: 유효하게 성립한 혼인을 두 사람의 합의나 재판으로 끝내는 것. 역시 장래를 향해 효력이 끊겨요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>무효</th>
+<th>취소</th>
+<th>이혼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>효력이 사라지는 시점</td>
+<td>처음부터 (소급)</td>
+<td>취소 확정 때부터 (장래)</td>
+<td>이혼 성립 때부터 (장래)</td>
+</tr>
+<tr>
+<td>유효한 성립을 전제로?</td>
+<td>아니요</td>
+<td>예</td>
+<td>예</td>
+</tr>
+<tr>
+<td>대표 사유·방법</td>
+<td>의사 합치 없음, 8촌 이내 혈족</td>
+<td>혼인 적정 연령 미달, 중혼</td>
+<td>합의 신고, 재판 청구</td>
+</tr>
+<tr>
+<td>그전까지 발생한 효력은?</td>
+<td>없던 것으로 봄</td>
+<td>그대로 인정됨</td>
+<td>그대로 인정됨</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>셋 다 '혼인 관계가 풀린다'는 점은 같지만, <strong>무효는 처음부터 없던 일</strong>, <strong>취소·이혼은 그전까지는 있었던 일</strong>이라는 점에서 갈립니다. 효력이 <em>언제부터</em> 사라지느냐가 핵심이에요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>무효와 취소의 가장 큰 차이는 무엇인가요?</div><div class='qa-a'>무효는 효력을 처음부터(소급해) 없애고, 취소는 그전까지의 효력은 남긴 채 장래의 효력만 끊습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>혼인할 나이에 이르지 못한 사람의 혼인은 무효인가요, 취소 대상인가요?</div><div class='qa-a'>취소의 대상입니다(무효 사유가 아니에요).</div></div>
+<div class='qa-item'><div class='qa-q'>이혼이 취소와 다른 점은?</div><div class='qa-a'>이혼은 사유를 따지기에 앞서 두 사람의 의사나 재판으로 혼인을 끝낸다는 점에서, 사유를 들어 깨뜨리는 취소와 다릅니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [27~31]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>물건을 사용하고 있는 사람이 그 물건의 주인일까? 점유란 물건에 대한 사실상의 지배 상태를 뜻한다. 이에 비해 소유란 어떤 물건을 사용ㆍ수익ㆍ처분할 수 있는 권리를 가진 상태라고 정의된다. 따라서 점유자와 소유자가 항상 일치하지는 않는다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>물건을 빌려 쓰거나 보관하고 있는 것을 포함하여 물건을 물리적으로 지배하는 상태를 직접점유라고 한다. 이에 비해 어떤 물건을 빌려 쓰거나 보관하는 사람에게 그 물건의 반환을 청구할 수 있는 권리를 가진 사람도 사실상의 지배를 한다고 볼 수 있다. 이와 같이 반환청구권을 가진 상태를 간접점유라고 한다. 직접점유와 간접점유는 모두 점유에 해당한다. 점유는 소유자를 공시하는 기능도 수행한다. 공시란 물건에 대해 누가 어떤 권리를 가지고 있는지를 알려 주는 것이다. 물건 중에서 피아노, 금반지, 가방 등과 같은 대부분의 동산은 점유에 의해 소유권이 공시된다.</p></div>
+
+<p>물건의 소유권이 양도되려면, 소유자가 양도인이 되어 양수인과 유효한 양도 계약을 하고 이에 더하여 소유권 양도를 공시해야 한다. ㉠점유로 소유권이 공시되는 동산의 소유권 양도는 점유를 넘겨주는 점유 인도로 공시된다. 양수인이 간접점유를 하여 소유권 이전이 공시되는 경우로서 ‘점유개정’과 ‘반환청구권 양도’가 있다. 예를 들어 A가 B에게 피아노의 소유권을 양도하기로 계약하되 사흘간 빌려 쓰는 것으로 합의한 경우, B는 A에게 피아노를 사흘 후 돌려 달라고 요구할 수 있는 반환청구권을 가지게 된다. 이처럼 양도인이 직접점유를 유지하지만, 양수인에게 점유 인도가 이루어진 것으로 간주되는 경우를 점유개정이라고 한다. 한편 C가 자신이 소유한 가방을 D에게 맡겨 두어 이에 대한 반환청구권을 가지게 되었는데, 이 가방의 소유권을 E에게 양도하는 계약을 체결하였다고 하자. 이때 C가 D에게 통지하여 가방 주인이 바뀌었으니 가방을 E에게 반환하라고 알려 주면 D가 보관 중인 가방에 대한 반환청구권은 C로부터 E에게로 넘어간다. 이 경우를 반환청구권 양도라고 한다.</p>
+<p>양도인이 소유자가 아니더라도 양수인이 점유 인도를 받으면 소유권을 취득할 수 있을까? 점유로 공시되는 동산의 경우 양수인이 충분히 주의를 했는데도 양도인이 소유자가 아님을 알지 못한 채 양도인과 유효한 계약을 하고, 점유 인도로 공시를 했다면 양수인은 소유권을 취득한다. 이것을 ‘선의취득’이라 한다. 다만 간접점유에 의한 인도 방법 중 점유개정으로는 선의취득을 하지 못한다. 선의취득으로 양수인이 소유권을 취득하면 원래 소유자는 원하지 않아도 소유권을 상실하게 된다.</p>
+<p>반면에 국가가 관리하는 공적 기록인 등기ㆍ등록으로 공시되어야 하는 물건은 아예 선의취득 대상이 아니다. ㉡법률이 등록 대상으로 규정한 자동차, 항공기 등의 동산은 등록으로 공시되는 물건이고, ㉢토지ㆍ건물과 같은 부동산은 등기로 공시되는 물건이다. 이러한 고가의 재산에 대해 선의취득을 허용하게 되면 원래 소유자의 의사에 반하는 소유권 박탈이 ⓐ일어나게 된다. 이것은 거래 안전에만 치중하고 원래 소유자의 권리 보호를 경시한 것이 되어 바람직하지 않다고 볼 수 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 가방을 사용하고 있는 사람은 그 가방의 점유자이다.</li>
+<li>② 가방을 점유하고 있더라도 그 가방의 소유자가 아닐 수 있다.</li>
+<li>③ 가방의 소유권이 유효한 계약으로 이전되려면 점유 인도가 있어야 한다.</li>
+<li>④ 가방에 대해 누가 소유권을 가지고 있는지를 알게 해 주는 방법은 점유이다.</li>
+<li>⑤ 가방의 소유권을 양도하는 유효한 계약을 체결하면 공시 방법이 갖춰지지 않아도 소유권은 이전된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>27번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 물리적 지배를 해야 동산의 간접점유자가 될 수 있다.</li>
+<li>② 간접점유는 피아노 소유권에 대한 공시 방법이 아니다.</li>
+<li>③ 하나의 동산에 직접점유자가 있으려면 간접점유자도 있어야 한다.</li>
+<li>④ 피아노의 직접점유자가 있으면 그 피아노의 간접점유자는 소유자가 아니다.</li>
+<li>⑤ 유효한 양도 계약으로 피아노의 소유자가 되려면 피아노에 대해 직접점유나 간접점유 중 하나를 갖춰야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p>㉠～㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 국가가 관리하는 공적 기록에 의해 소유권 양도가 공시될 수 있다.</li>
+<li>② ㉡은 ㉠과 달리, 원래 소유자의 권리 보호가 거래 안전보다 중시되는 대상이다.</li>
+<li>③ ㉢은 ㉠과 달리, 물리적 지배의 대상이 아니므로 점유로 공시될 수 없다.</li>
+<li>④ ㉠과 ㉡은 모두 양도인이 소유자가 아니더라도 소유권 이전이 가능하다.</li>
+<li>⑤ ㉠과 ㉢은 모두 점유개정으로 소유권 양도가 공시될 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑과 을은, 갑이 끼고 있었던 금반지의 소유권을 을에게 양도하기로 하는 유효한 계약을 했다. 갑과 을은, 갑이 이 금반지를 보관하다가 을이 요구할 때 넘겨주기로 합의했다. 을은 소유권 양도 계약을 할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다. 을은 일주일 후 병과 유효한 소유권 양도 계약을 했고, 갑에게 통지하여 사흘 후 병에게 금반지를 넘겨주라고 알려 주었다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 금반지 소유자였다면, 병이 금반지의 물리적 지배를 넘겨받지 않았으나 병은 소유권을 취득한다.</li>
+<li>② 갑이 금반지 소유자였다면, 을은 갑으로부터 물리적 지배를 넘겨받지 않았으나 점유 인도를 받은 것으로 간주된다.</li>
+<li>③ 갑이 금반지 소유자가 아니었더라도, 병은 을로부터 을이 가진 소유권을 양도받아 취득한다.</li>
+<li>④ 갑이 금반지 소유자가 아니었더라도, 을은 반환청구권 양도로 병에게 점유 인도를 한 것으로 간주된다.</li>
+<li>⑤ 갑이 금반지 소유자가 아니었더라도, 병이 계약할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다면, 병은 소유권을 취득한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>31</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 작년은 우리나라에서 수많은 사건이 일어난 해였다.</li>
+<li>② 청중 사이에서는 기쁨으로 인해 환호성이 일어났다.</li>
+<li>③ 형님의 강한 의지력으로 집안이 다시 일어나게 되었다.</li>
+<li>④ 나는 그 사람에 대해 경계심이 일어나지 않을 수 없었다.</li>
+<li>⑤ 사회는 구성원들이 부조리에 맞서 일어남으로써 발전한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>혼인이 성립하면 두 사람 사이에는 신분에 관한 효력뿐 아니라 재산에 관한 법률관계도 발생한다. 부부는 한집에서 살림을 함께 꾸리므로 누구의 재산인지, 누가 빚을 갚아야 하는지가 뒤섞이기 쉽고, 이를 둘러싼 다툼은 부부뿐 아니라 그들과 거래한 제삼자에게도 영향을 미친다. 그래서 부부의 재산 관계를 어떻게 다스릴 것인지에 대해 민법은 두 가지 방식을 ⓐ<u>두고</u> 있다. 하나는 부부가 혼인이 성립하기 전에 재산에 관한 사항을 미리 약정해 두는 부부 재산 계약이고, 다른 하나는 그러한 약정이 없을 때 법이 정한 내용이 그대로 적용되는 법정 재산제이다. 부부 재산 계약을 맺으려면 혼인 신고 전에 그 내용을 정하여 등기해야 하며, 이를 통해 제삼자에게도 그 내용을 ⓑ<u>알릴</u> 수 있다. 일단 혼인이 성립한 뒤에는 부부 재산 계약의 내용을 원칙적으로 바꿀 수 없는데, 이는 부부의 재산 관계가 수시로 흔들려 제삼자가 뜻하지 않은 불이익을 입는 일을 막기 위한 것이다. 약정이 등기되지 않았거나 처음부터 약정이 없었다면, 부부의 재산 관계에는 법정 재산제가 적용된다.</p>
+<p>법정 재산제에서 부부의 재산은 특유 재산과 공유로 추정되는 재산으로 나뉜다. 부부의 한쪽이 혼인 전부터 가진 재산과 혼인 중에 자기 명의로 ⓒ<u>얻은</u> 재산은 그 사람의 특유 재산으로, 각자가 따로 관리하고 사용하며 그에 관한 처분도 스스로 한다. 특유 재산을 가진 사람은 그 재산에서 생기는 이익을 자기 것으로 하고, 그에 관한 빚도 원칙적으로 혼자 부담한다. 그러나 부부 가운데 누구의 것인지 분명하지 않은 재산은 두 사람의 공유로 추정된다. ‘추정된다’는 것은 일단 공유로 보되, 어느 한쪽이 자기 재산임을 증명하면 그 추정이 ⓓ<u>뒤집힌다</u>는 뜻이다. 따라서 분명하지 않은 재산이라도 한쪽이 자신의 자금만으로 마련하였음을 증명하면, 그 재산은 공유가 아니라 그 사람의 특유 재산으로 인정된다. 거꾸로 그러한 증명이 이루어지지 않으면 그 재산은 여전히 두 사람의 공유로 다루어져, 어느 한쪽이 단독으로 자기 것이라고 주장할 수 없다.</p>
+<p>부부의 재산 관계에는 일상적인 살림을 위한 특별한 규정도 있다. 부부는 일상적인 가사에 관하여 서로를 대리할 수 있는데, 이를 일상 가사 대리권이라 한다. ㉠<u>일상 가사 대리권</u>에 따라 부부의 한쪽이 일상적인 가사의 범위에서 한 법률 행위에 대해서는, 그로 인한 채무를 두 사람이 함께 지는 연대 책임을 부담한다. 가령 부부의 한쪽이 생활에 필요한 물품을 외상으로 사들였다면, 그 대금은 다른 한쪽도 함께 갚을 책임이 있다. 이는 부부가 공동의 생활을 ⓔ<u>꾸려</u> 가는 단위라는 점을 고려하여, 거래 상대방을 보호하고 가정생활의 안정을 꾀하기 위한 것이다. 여기서 일상적인 가사란 식료품 구입이나 생활용품 마련처럼 부부가 함께 살아가는 데 통상적으로 필요한 거래를 가리키며, 그 부부의 생활 수준과 형편에 비추어 통상의 범위를 넘는 거래는 일상적인 가사에 해당하지 않는다. 따라서 한쪽이 가정의 살림과 무관하게 고액의 재산을 처분한 경우에는 그로 인한 채무를 다른 한쪽이 함께 질 책임이 없다. 다만 부부의 한쪽이 자기의 책임을 묻지 않겠다는 뜻을 거래 상대방에게 미리 밝힌 경우에는, 그 거래가 일상적인 가사의 범위에 들더라도 그 책임을 지지 않는다.</p>
+<p>이처럼 부부의 재산 관계는 당사자의 약정과 법의 규정이 함께 작용하여 정해진다. 부부 재산 계약이 있으면 그 약정이 우선하고, 약정이 없으면 법정 재산제와 일상 가사에 관한 규정이 적용되어 부부의 재산과 책임의 범위가 정해진다. 어떤 재산이 누구의 것인지, 어떤 빚을 누가 책임지는지는 이러한 원칙에 따라 판단된다. 이러한 재산 관계는 혼인이 성립해 있는 동안 부부 사이뿐 아니라 그들과 거래하는 제삼자와의 관계에서도 기준이 되며, 혼인이 풀릴 때 그동안 쌓인 재산을 어떻게 나눌 것인지를 가리는 바탕이 되기도 한다. 결국 혼인은 두 사람을 신분으로 묶을 뿐 아니라, 그들의 재산과 책임을 일정한 원칙 아래 함께 묶는 법적 단위를 만들어 내는 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 부부 재산 계약은 혼인 신고 전에 그 내용을 정하여 등기하여야 한다.</li>
+<li>② 부부의 한쪽이 혼인 전부터 가지고 있던 재산은 그 사람의 특유 재산이다.</li>
+<li>③ 부부 재산 계약에 관한 약정이 없으면 법정 재산제가 적용된다.</li>
+<li>④ 부부 가운데 누구의 것인지 분명하지 않은 재산은 그 한쪽의 특유 재산으로 본다.</li>
+<li>⑤ 일상 가사 대리권에 따른 거래로 생긴 채무는 부부가 함께 지는 것이 원칙이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+2문단에서 "누구의 것인지 분명하지 않은 재산은 두 사람의 공유로 추정된다"라고 했어요. 그런데 ④는 이를 '그 한쪽의 <em>특유 재산</em>으로 본다'라고 했으니 정반대라 일치하지 않아 정답입니다. ①은 1문단(신고 전 등기), ②는 2문단(혼인 전 재산=특유 재산), ③은 1문단(약정 없으면 법정 재산제), ⑤는 3문단(연대 책임)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 일상 가사 대리권은 부부 재산 계약을 등기해야만 발생한다.</li>
+<li>② 일상 가사의 범위를 벗어난 법률 행위에 대해서도 부부는 언제나 연대 책임을 진다.</li>
+<li>③ 부부의 한쪽이 일상 가사의 범위에서 한 거래로 생긴 채무는 다른 한쪽도 함께 갚을 책임이 있다.</li>
+<li>④ 일상 가사 대리권은 거래 상대방의 이익보다 부부 한쪽의 재산을 보호하기 위한 것이다.</li>
+<li>⑤ 부부의 한쪽이 책임을 묻지 않겠다는 뜻을 밝혔더라도 그는 연대 책임을 면할 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+㉠은 일상 가사 대리권이에요. 3문단에서 "일상적인 가사의 범위에서 한 법률 행위에 대해서는, 그로 인한 채무를 두 사람이 함께 지는 연대 책임을 부담한다"라고 했고, 외상 대금도 다른 한쪽이 함께 갚을 책임이 있다고 했으니 ③이 적절해 정답입니다. ① 일상 가사 대리권은 부부 재산 계약과 별개로 발생하고, ② 연대 책임은 <em>일상 가사의 범위 안</em>에서의 일이지 '언제나'가 아니에요. ④ 이 제도는 3문단에서 "거래 상대방을 보호하고 가정생활의 안정을 꾀하기 위한 것"이라 했으니 '부부 한쪽의 재산 보호'는 틀리고, ⑤ 3문단 끝에서 책임을 묻지 않겠다는 뜻을 미리 밝히면 책임을 지지 않는다고 했으니 '면할 수 없다'는 틀립니다.</p>
+<p><strong>13번 [3점] — 정답 ③</strong>
+(나)의 가구는 본래 분명하지 않아 공유로 추정되지만, 2문단에서 "어느 한쪽이 자기 재산임을 증명하면 그 추정이 뒤집힌다"라고 했어요. 을이 자기 자금만으로 마련했음을 증명했으니 그 추정이 깨져 <em>을의 특유 재산</em>으로 인정됩니다(③). ① (가)의 예금은 갑이 자기 명의 급여로 마련한 것이라 갑의 특유 재산이지 공유가 아니에요. ② (나)는 증명이 되었으므로 추정이 그대로 유지되지 않고, ④ (다)는 일상 가사의 범위에서의 외상이므로 을도 연대 책임을 져 함께 갚아야 하며, ⑤ (가)·(다)는 모두 약정이 없으므로 <em>법정 재산제가 적용되는</em> 경우입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑과 을은 부부이며, 두 사람 사이에는 재산에 관한 약정이 등기되어 있지 않다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑이 자기 명의의 급여만으로 마련한 예금이 있다.
+(나) 누구의 것인지 분명하지 않은 가구가 있는데, 을이 자신의 자금만으로 마련하였음을 증명하였다.
+(다) 갑이 일상적인 살림에 필요한 물품을 가게에서 외상으로 사들였다.
+(단, 위의 모든 상황에서 부부 재산 계약은 맺어지지 않았고, 책임을 면하겠다는 사전 통지도 없었다.)</p>
+</blockquote>
+<ul>
+<li>① (가)의 예금은 갑과 을의 공유로 추정되어 두 사람이 함께 관리한다.</li>
+<li>② (나)의 가구는 분명하지 않은 재산이므로 공유로 추정된 채 그대로 유지된다.</li>
+<li>③ (나)의 가구는 을이 자기 자금만으로 마련하였음이 증명되었으므로 을의 특유 재산으로 인정된다.</li>
+<li>④ (다)의 외상 대금은 갑이 단독으로 거래하였으므로 을은 함께 갚을 책임이 없다.</li>
+<li>⑤ (가)와 (다)에서는 모두 법정 재산제가 적용되지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 그는 책상 위에 두툼한 사전을 두고 공부하였다.</li>
+<li>② ⓑ: 새 학기 일정을 학생들에게 미리 알렸다.</li>
+<li>③ ⓒ: 그는 무리한 일정 끝에 그만 병을 얻었다.</li>
+<li>④ ⓓ: 배가 큰 파도에 그만 뒤집히고 말았다.</li>
+<li>⑤ ⓔ: 그는 여행을 떠나기 전 짐을 단단히 꾸려 두었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>14번 — 정답 ②</strong>
+ⓑ'알릴'은 "제삼자에게도 알릴", 곧 '어떤 사실을 다른 사람이 알게 하다(통지하다)'의 뜻이에요. ②의 '알렸다'(일정을 학생들에게 알게 함)가 가장 가깝습니다. ① ⓐ'두고'는 '제도를 마련해 두다'인데 ①은 '물건을 어떤 자리에 놓다', ③ ⓒ'얻은'은 '재산을 취득하다'인데 ③은 '병에 걸리다'의 뜻이고, ④ ⓓ'뒤집힌다'는 '추정이 깨지다'인데 ④는 '배가 엎어지다', ⑤ ⓔ'꾸려'는 '생활을 이끌어 가다'인데 ⑤는 '짐을 싸다(챙기다)'로 각각 문맥이 달라 적절하지 않아요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>부부 재산 계약</strong>: 부부가 혼인 신고 전에 재산에 관한 사항을 미리 약정해 두고 등기하는 것. 약정이 있으면 이것이 우선해요.</li>
+<li><strong>법정 재산제</strong>: 약정이 없을 때 법이 정한 내용이 그대로 적용되는 부부 재산 제도.</li>
+<li><strong>특유 재산 / 공유 추정</strong>: 혼인 전부터 가졌거나 자기 명의로 얻은 재산은 '특유 재산', 누구 것인지 분명하지 않은 재산은 '공유로 추정'(증명하면 뒤집힘).</li>
+<li><strong>일상 가사 대리권</strong>: 부부가 일상적인 살림에 관해 서로를 대리할 수 있는 권리. 그 범위의 거래로 생긴 빚은 두 사람이 함께 지는 연대 책임이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>재산의 종류</th>
+<th>어떻게 다루나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>혼인 전 재산·자기 명의로 얻은 재산</td>
+<td>특유 재산 — 각자 따로 관리</td>
+</tr>
+<tr>
+<td>누구 것인지 분명하지 않은 재산</td>
+<td>공유로 추정 (증명하면 특유 재산으로 뒤집힘)</td>
+</tr>
+<tr>
+<td>일상 가사 범위의 거래로 생긴 빚</td>
+<td>부부의 연대 책임 (사전 통지 시 면책 가능)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>부부 재산은 <strong>약정(부부 재산 계약)이 먼저, 없으면 법(법정 재산제)</strong>이라는 순서로 정해져요. 그리고 살림에 관한 빚은 두 사람이 함께 지는 것이 원칙이라는 점도 꼭 기억하세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>부부 재산 계약과 법정 재산제 중 어느 것이 먼저 적용되나요?</div><div class='qa-a'>부부 재산 계약(약정)이 있으면 그것이 우선하고, 없으면 법정 재산제가 적용됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>'공유로 추정된다'는 말은 무슨 뜻인가요?</div><div class='qa-a'>일단 부부 공유로 보되, 한쪽이 자기 재산임을 증명하면 그 추정이 뒤집혀 특유 재산이 된다는 뜻입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>부부 한쪽이 살림에 필요한 물품을 외상으로 샀다면 그 빚은 누가 지나요?</div><div class='qa-a'>일상 가사의 범위라면 부부가 함께 지는 연대 책임을 집니다(사전에 면책을 통지한 경우는 제외).</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2023학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과 효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가 항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야 그 상황에 ⓐ맞는 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한 경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ들 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해 배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.</p>
+<p>채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이 발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ받을 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를 증명하면 손해 배상금도 받을 수 있다.</p>
+<p>불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이 구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는 특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ고를 수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.</p>
+<p>행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠재량 준칙이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ지켜야 하기 때문이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.</li>
+<li>② 법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.</li>
+<li>③ 불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.</li>
+<li>④ 불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.</li>
+<li>⑤ 불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+3~4문단에 따르면 법령에서 불확정 개념이 사용되면 그에 근거한 행정 작용은 ‘대개 재량 행위’이다. 따라서 기속 행위인 경우가 많다는 ④는 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,561명 — ①2.6% ②4.6% ③4.2% ④81.5% ⑤6.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.</li>
+<li>② 재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.</li>
+<li>③ 재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.</li>
+<li>④ 재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.</li>
+<li>⑤ 재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+4문단에 따르면 재량 준칙대로 적법한 행정 작용이 반복되어 ‘행정 관행’이 생긴 후에야 행정청이 동일한 행정 작용을 해야 한다. 따라서 선례(관행)가 없으면 같은 요건이라도 재량 준칙을 따르지 않을 수 있다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①11.4% ②8.8% ③21.4% ④9.8% ⑤49.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑과 을 사이에 위약금 약정이 없었다.
+(나) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.
+(다) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.
+(단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① (가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>② (나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>③ (나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>④ (다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>⑤ (다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>12번 — 정답 ②</strong><br />
+(나)는 위약금의 성격이 증명되지 못했으므로 위약금 100은 ‘손해 배상 예정액’으로 다루어진다. 손해가 80으로 증명되어도 정해진 예정액 100을 지급해야 하며, ‘부당히 과다하면 법원이 감액할 수 있다’는 조문에 따라 법원이 감액할 수 있다. 따라서 ②가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①5.3% ②39.0% ③19.3% ④25.6% ⑤10.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이것이 네가 찾는 자료가 맞는지 확인해 보아라.</li>
+<li>② ⓑ: 그 부부는 노후 대책으로 적금을 들고 안심했다.</li>
+<li>③ ⓒ: 그의 파격적인 주장은 학계의 큰 주목을 받았다.</li>
+<li>④ ⓓ: 형은 땀 흘려 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+<li>⑤ ⓔ: 그분은 우리에게 한 약속을 반드시 지킬 것이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+ⓔ‘지키다(평등 원칙을 지켜야)’와 ⑤의 ‘지키다(약속을 지킬)’는 모두 ‘규정·약속·법·예의 따위를 어기지 아니하고 그대로 실행하다’의 뜻으로 쓰였다. 나머지는 본문과 의미가 다르다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①4.3% ②1.2% ③0.8% ④1.3% ⑤93.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>법적 관점에서 본 혼인 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='법적 관점에서 본 혼인 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

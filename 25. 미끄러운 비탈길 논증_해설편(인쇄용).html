@@ -1,0 +1,333 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>미끄러운 비탈길 논증 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+</tr><tr><td>정답</td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+1문단에서 이 논증은 "첫 발걸음과 비탈길의 끝 사이에 멈추어 설 만한 중간 지점이 없다고 전제한다"라고 했으므로 ④가 일치해 정답이에요. ① 2문단을 보면 '필연적'은 경로가 <em>하나뿐</em>이라는 뜻이 아니라 <em>모든</em> 경로가 그 결과로 귀결된다는 뜻이니 어긋납니다. ② 3문단은 차이가 미세해 경계가 <em>안 보일</em> 뿐, 경계가 실제로 <em>없는 것은 아니라고</em> 했으니 반대예요. ③·⑤ 2문단은 비탈길의 끝이 '가능'하기만 해서는 안 되고 '필연'이어야 강한 금지가 정당화되며, 가능성 경고는 신중하라는 <em>권고일 뿐</em> 금지 근거가 못 된다고 했으니 모두 틀립니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong>
+㉠은 '중간 지점', ㉡은 '어떤 단계에서는 멈출 수 있다'는 진술이에요. 1문단에서 ㉠이 <em>없다는</em> 전제와 ㉡은 "양립할 수 없다"라고 분명히 했죠. 그런데 ⑤는 ㉠이 없으면 ㉡도 <em>함께 성립</em>한다고 했으니, 둘이 동시에 참일 수 없다는 본문과 정반대라서 적절하지 않아 정답입니다. ①은 "그래야 결론이 성립한다", ③은 "양립할 수 없다", ②·④는 "멈출 수 있는 단계가 있다면 반드시 이어진다고 단정할 수 없다(=연쇄의 불가피성이 무너진다)"라는 1·4문단 서술에 각각 들어맞아요.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ②</strong>
+ⓐ는 "이 논증이 흔히 설득력 있게 들리는 까닭"을 묻는 물음이에요. 바로 다음 문장에서 그 까닭을 "연쇄의 각 단계 사이에 또렷한 경계가 보이지 않는다는 점"이라고 짚었으니 ②가 답입니다. ①은 <em>실제로</em> 끊기지 않는다는 것으로, 본문이 "경계가 안 보이는 것과 없는 것은 구별해야 한다"라고 한 것과 어긋나요(설득력의 <em>근거</em>가 아니라 논증이 <em>참이 되는</em> 조건). ③은 결과의 심각성을 말한 것으로 '설득력의 까닭'과는 다른 조건이고, ④는 그것이 입증되어 있다면 애초에 설득력을 따로 설명할 필요가 없으며, ⑤는 2문단이 경고와 금지를 <em>구별</em>한 것과 정면으로 어긋납니다.</p>
+<p><strong>4번 [3점] — 정답 ④</strong>
+두 번째 사서는 "‘소리·냄새’의 선을 그으면 과자·도시락에서 멈출 수 있다(연쇄의 불가피성 부정)"라고 했고, 동시에 "사탕을 허용해도 식당이 될 만큼 나쁜 일은 안 벌어진다(결과의 심각성 부정)"라고 했어요. 즉 두 조건을 모두 <em>부정</em>한 것이죠. 그런데 ④는 두 조건을 모두 <em>인정</em>했다고 했으니 정반대라서 적절하지 않아 정답입니다. ①은 첫 발걸음·비탈길의 끝 대응(1문단), ②는 중간 지점 부재 전제(1문단), ③은 의미 있는 구분 점의 제시(3문단), ⑤는 두 조건 중 하나만 무너져도 강한 금지가 정당화되지 않는다는 4문단에 각각 정확히 대응하는 적절한 이해예요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>첫 발걸음</strong>: 미끄러운 비탈길 논증에서 ‘아주 사소한 것의 허용’을 가리키는 말. 비탈길의 출발점이에요.</li>
+<li><strong>중간 지점(구분 점)</strong>: 연쇄가 진행되는 도중 ‘여기서부터는 안 된다’라고 멈추어 설 수 있는 단계.</li>
+<li><strong>가능 vs 필연</strong>: ‘가능’은 그 결과에 이르는 경로가 <em>적어도 하나</em> 있다는 것, ‘필연’은 <em>모든</em> 경로가 그 결과로 귀결된다는 것.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>논증이 성립하려면</th>
+<th>반박하려면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>연쇄의 불가피성</td>
+<td>어느 단계에서도 멈출 수 없어야 함(중간 지점 없음)</td>
+<td>멈출 수 있는 구분 점이 하나라도 있음을 보임</td>
+</tr>
+<tr>
+<td>결과의 심각성</td>
+<td>비탈길의 끝이 도저히 받아들일 수 없는 것이어야 함</td>
+<td>그 끝이 그렇게까지 나쁘지는 않음을 보임</td>
+</tr>
+<tr>
+<td>결론</td>
+<td>두 조건이 모두 충족되면 ‘첫 발걸음 금지’ 정당화</td>
+<td>둘 중 하나만 무너져도 금지는 정당화 안 됨</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>비탈길의 끝이 ‘가능’하기만 해도 첫 발걸음을 금지할 수 있나요?</div><div class='qa-a'>아니요. ‘필연’임이 보여야 강한 금지가 정당화되고, 가능성만으로는 신중하라는 권고에 그칩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>단계 사이의 차이가 미세하면 멈출 지점이 없는 것인가요?</div><div class='qa-a'>아니요. 경계가 <em>안 보이는 것</em>과 경계가 <em>없는 것</em>은 다릅니다. 미세하다고 멈출 수 없는 것은 아니에요.</div></div>
+<div class='qa-item'><div class='qa-q'>이 논증을 반박하려면 무엇을 보이면 되나요?</div><div class='qa-a'>연쇄의 불가피성과 결과의 심각성 중 <em>어느 하나라도</em> 성립하지 않음을 보이면 됩니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 수능 [39~42] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+(마)는 두 비판을 <em>요약</em>하면서, 그 비판들이 모두 미끄러운 비탈길 논증이 '가능'을 '필연'으로 부풀린 혼동에서 비롯되었다고 정리한 부분이에요. 즉 안락사 찬성 쪽의 <em>현실적 한계</em>를 논증의 차원을 <em>넘어서</em> 살핀 것이 아니라, 비판의 핵심을 논증의 차원 <em>안에서</em> 묶어 낸 것이죠. 그래서 ⑤가 적절하지 않아 정답입니다. ①~④는 (가) 개념·세 요소 소개, (나) 반대 쪽의 논증 활용, (다) 개연성 조건 설명, (라) 찬성 쪽의 비판 소개로 각 문단의 기능과 정확히 들어맞아요.</p></div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+(라)에서 찬성 쪽(㉡)은 "‘자발적 동의’, ‘회복 가능성’ 같은 기준을 세우면 멈출 수 있다"라며 단계마다 허용 여부를 가를 기준이 <em>실제로 있다</em>고 보았으므로 ④가 적절해 정답입니다. ① (다)는 개연성이 단순한 비슷함이 아니라 <em>허용 여부와 관련된</em> 차이가 흐릿할 때 높아진다고 했어요. ②도 (다)에서 허용 여부와 <em>무관한</em> 차이는 연쇄를 막는 데 쓸 수 없다고 했으니 반대고요. ③·⑤는 (라)에서 위험의 '가능'은 신중하라는 근거일 뿐 금지의 근거가 못 되며, 가능이 곧 필연의 입증도 아니라고 했으므로 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong>
+㉠은 안락사 <em>반대</em> 쪽, ㉡은 안락사 <em>찬성</em> 쪽이에요. (라)·(마)에서 찬성 쪽(㉡)은 반대 쪽이 나쁜 결과의 '가능'을 '필연'으로 다룬다고 비판했으므로 ③이 적절해 정답입니다. ① 또렷한 기준이 없다고 보는 쪽은 ㉠뿐이고 ㉡은 기준이 있다고 봐요(둘 다가 아님). ② ㉠은 (나)에서 안락사 자체는 문제가 <em>안 된다</em>고 인정했으니 ②는 ㉠의 입장과 어긋나고요. ④ 반드시 미끄러진다고 보는 쪽은 ㉠이지 ㉡이 아니며, ⑤ 의미 있는 구분 점이 있다고 보는 쪽은 ㉡이지 ㉠이 아니므로 두 선지는 주체가 뒤바뀌었습니다.</p>
+<p><strong>8번 [3점] — 정답 ①</strong>
+(가)에서 미끄러운 비탈길 논증은 ⓐ첫 발걸음(사소한 것의 허용), ⓑ연쇄(한 단계의 허용이 다음 단계의 허용으로 옮아감), ⓒ몹시 나쁜 결과(그 사슬의 종착점)의 세 요소로 이루어진다고 했어요. 〈보기〉에서 ㉮'자료 검색을 위해 잠깐 쓰는 것 정도의 허용'은 맨 처음의 사소한 허용이므로 ⓐ=㉮, ㉯'메시지 확인·게임까지 차례로 허용하게 됨'은 한 허용이 다음 허용으로 잇따라 번지는 연쇄이므로 ⓑ=㉯, ㉰'수업이 무너지고 만다'는 그 사슬의 끝에 놓인 나쁜 결과이므로 ⓒ=㉰입니다. 따라서 ⓐ㉮·ⓑ㉯·ⓒ㉰로 짝지은 ①이 정답이에요. ㉱'검색을 위한 잠깐의 사용도 허용해서는 안 된다'는 세 요소가 아니라 이 논증이 이끌어 내는 <em>결론(첫 발걸음 금지 주장)</em>이므로 ⓐ~ⓒ 어디에도 해당하지 않습니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong>
+ⓓ가 들어간 (마)의 문맥은 미끄러운 비탈길 논증이 '혼동을 <em>끼쳤다</em>', 곧 <em>생기게 했다·가져왔다</em>는 뜻이에요. ① '빚은', ② '자아낸', ③ '일으킨', ④ '가져온'은 모두 '어떤 결과를 <em>생기게 했다</em>'는 뜻으로 자연스럽게 바꿔 쓸 수 있어요. 그러나 ⑤ '떠맡은'은 <em>책임이나 일을 자기가 짊어졌다</em>는 뜻이어서, 혼동을 <em>생기게 했다</em>는 문맥과 호응하지 않으므로 바꿔 쓰기에 적절하지 않아 정답입니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>개연성</strong>: 한 단계의 허용이 다음 단계의 허용으로 넘어갈 <em>그럴 법함</em>. 두 단계 사이의 ‘허용 여부’ 차이가 흐릿할수록 높아져요.</li>
+<li><strong>구분 점(기준)</strong>: ‘자발적 동의’, ‘회복 가능성’처럼 ‘여기까지는 허용, 여기부터는 금지’를 가르는 의미 있는 선.</li>
+<li><strong>가능과 필연의 혼동</strong>: 나쁜 결과가 ‘일어날 수 있음(가능)’을 ‘반드시 일어남(필연)’으로 부풀려 다루는 잘못.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>안락사 반대 쪽(㉠)</th>
+<th>안락사 찬성 쪽(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단계 사이 기준</td>
+<td>또렷한 기준이 없다</td>
+<td>‘동의·회복 가능성’ 같은 기준이 있다</td>
+</tr>
+<tr>
+<td>연쇄의 불가피성</td>
+<td>첫 허용이 곧 다음 허용을 부른다</td>
+<td>기준을 세우면 도중에 멈출 수 있다</td>
+</tr>
+<tr>
+<td>나쁜 결과</td>
+<td>필연적으로 이른다</td>
+<td>가능할 뿐 필연은 아니다</td>
+</tr>
+<tr>
+<td>결론</td>
+<td>첫 발걸음(안락사 허용)을 금지하라</td>
+<td>절차를 신중히 마련하면 된다</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>이 논증의 개연성은 두 단계가 그저 비슷하기만 하면 높아지나요?</div><div class='qa-a'>아니요. ‘허용 여부’와 관련된 차이가 흐릿할 때 높아집니다. 허용과 무관한 차이는 연쇄를 막지도, 부추기지도 못해요.</div></div>
+<div class='qa-item'><div class='qa-q'>찬성 쪽의 두 비판은 각각 무엇을 겨냥하나요?</div><div class='qa-a'>첫째 비판은 ‘연쇄의 불가피성’(기준이 있어 멈출 수 있다), 둘째 비판은 ‘결과의 필연성’(가능할 뿐 필연이 아니다)을 겨냥합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>위험이 ‘가능’하다는 사실은 무엇의 근거가 되나요?</div><div class='qa-a'>첫 발걸음을 <em>금지</em>할 근거가 아니라, 절차를 <em>신중히 마련</em>하라는 근거가 됩니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 6월 [20~24] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>20번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>21번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>22번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>23번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>24번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+이 글은 '미끄러운 비탈길 논증 소개 → 대머리 논증과 같다는 비판 → 그 비판이 성급하다는 일부 학자의 견해 → 정당성을 가르는 두 조건 → 맥락을 따져야 한다는 의의'로 짜여 있어요. 하나의 논증을 오류로 보는 비판과 그에 맞서는 견해를 <em>검토</em>하고, 그 논증이 정당해지는 <em>조건</em>을 밝히므로 ③이 적절해 정답입니다. ① 대등한 두 논증의 장단점 비교가 아니고, ② 절충해 <em>새 논증</em>을 만들지 않았으며, ④ 비판이 시대순도 아니고 글은 부당함 <em>주장</em>으로 끝나지 않아요. ⑤ 응용 사례로 효용을 <em>입증</em>하는 글도 아닙니다.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+2문단에서 대머리 논증은 "한 올의 차이만으로는 대머리 여부가 바뀌지 않는다는 전제가 옳아 보이는데도 결론은 틀렸"다고 했으므로 ②가 적절해 정답입니다. ① 한 올의 차이가 대머리 여부를 <em>결정한다고</em> 보는 것이 아니라, <em>결정하지 못한다고</em> 전제해요(반대). ③ 단계 사이의 차이가 <em>또렷해서</em>가 아니라 <em>미세해서</em> 멈출 곳이 없어 보이는 것이고요. ④ 이 추론은 <em>결론이 틀렸으므로</em> 오류인 것이지 결론이 참이어서 전제가 참인 것이 아니며, ⑤ 비판하는 쪽은 두 논증이 <em>같은 구조(형식)</em>를 지닌다고 했으니 "형식은 다르다"는 ⑤도 어긋납니다.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+2문단에서 비판하는 쪽은 "차이가 미세하다는 것이 곧 어디서도 멈출 수 없음을 뜻하지는 않는다"라고 했으므로, 차이가 미세해도 멈출 곳이 없는 것은 아니라고 본 ④가 적절해 정답입니다. ① 일부 학자(3문단)는 이 논증이 <em>언제나</em> 오류는 아니라고 했으니 "모두 언제나 오류로 본다"는 틀려요. ② 비판하는 쪽은 끝의 심각성만으로 정당해진다고 본 적이 없으며(그건 3·4문단의 조건), ③ 일부 학자는 <em>인과적 힘이 있는지에 따라</em> 정당성이 갈린다고 했으니 "무관하게 늘 정당"은 어긋나고요. ⑤ 일부 학자는 같은 형식이라도 <em>경우에 따라 평가가 갈린다</em>고 했으니 "어떤 경우에도 같은 평가"는 정반대입니다.</p>
+<p><strong>13번 [3점] — 정답 ②</strong>
+4문단은 "구분 점이 분명히 존재하면 그 논증은 대머리 논증처럼 오류에 가깝다"라고 했어요. 을이 제시한 '앉아 쉬는 시설만 허용'이라는 기준이 실제로 단계를 가를 수 있다면, 갑의 논증은 멈출 구분 점이 있는 셈이므로 오류에 가까워집니다. 따라서 ②가 적절해 정답이에요. ① 4문단에 따르면 인과의 힘이 <em>있을 때</em> 정당한 경고가 될 수 있으므로 "없을 때에만 정당"은 반대고요. ③ 병의 관행은 한 허가가 다음 허가를 끌어당기는 <em>인과의 힘</em>을 보이는 것이지 구분 점이 분명함을 보이는 것이 아니라 갑의 논증을 <em>강화</em>해요. ④ 을의 반박은 <em>구분 점의 존재</em>를, 병의 사실은 <em>인과의 힘</em>을 보이는 것이지 둘 다 끝의 심각성을 부정하는 것이 아니며, ⑤ 병의 관행이 작동한다면 인과의 힘이 <em>있는</em> 것이므로 "없어서 오류"라는 ⑤는 정반대입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>대머리 논증</strong>: ‘한 올 빠진다고 대머리가 되지 않는다’를 끝없이 이어 ‘한 올만 남아도 대머리가 아니다’라는 이상한 결론에 이르는, 오류로 취급되는 추론.</li>
+<li><strong>인과의 힘</strong>: 한 단계의 허용이 그다음 허용을 실제로 끌어당기는 힘(예: 한 번의 규제 완화가 선례가 되어 다음 완화 압력을 키움).</li>
+<li><strong>맥락 의존성</strong>: 같은 형식의 논증이라도 어떤 사안에 쓰이느냐에 따라 오류가 되기도, 정당한 경고가 되기도 함.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>비판하는 쪽:  "대머리 논증과 같은 구조다</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>멈출 곳이 안 보일 뿐, 없는 건 아니다"</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>대머리 논증은 왜 오류인가요?</div><div class='qa-a'>‘한 올의 차이’라는 단계가 <em>어떤 경우에도</em> 결과(대머리 여부)를 바꾸지 못하는데, 그 추론을 이으면 받아들이기 어려운 결론에 이르기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>일부 학자는 미끄러운 비탈길 논증을 어떻게 보나요?</div><div class='qa-a'>언제나 오류는 아니며, 단계 사이에 다음 허용을 끌어당기는 <em>인과의 힘</em>이 있는지에 따라 정당성이 갈린다고 봅니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 형식의 논증이 오류도 되고 타당한 경고도 되는 까닭은?</div><div class='qa-a'>멈출 구분 점이 있는지, 끝이 실제로 심각한지가 <em>사안마다 다르기</em> 때문입니다. 그래서 쓰인 맥락을 따져야 해요.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 수능 [16~19] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+글의 구성은 '아리스토텔레스의 목적론 소개 → 근대 학자들(갈릴레이·베이컨·스피노자)의 비판 → 일부 현대 학자들(볼로틴·우드필드)의 반박 → 목적론의 의의 제시'이다. 비판들을 검토하고 목적론에 대한 해석을 제시하며 의의(과학적 탐구의 출발점)를 밝히므로 ⑤가 적절하다. ① 대등한 두 이론의 소개·장단점 비교가 없다. ② 절충 방안 모색이 없다. ③ 새로운 이론을 도출하지 않았다. ④ 비판이 시대순으로 제시되지 않았고, 글은 부당성 주장이 아니라 긍정적 의의를 부각하며 끝맺는다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①4.7% ②1.7% ③3.8% ④6.8% ⑤81.8%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ③</strong><br />
+1문단에서 아리스토텔레스는 자연물이 '단순히 목적을 갖는 데 그치는 것이 아니라 목적을 실현할 능력도 타고난다'고 했으므로 ③이 적절하다. ① 아리스토텔레스는 인간만이 이성을 지닌다고 보았으므로 개미는 이성을 지니지 못한 존재다. ② 본성적 목적의 실현은 운동 주체에 항상 바람직한 결과를 가져온다고 믿었다. ④ 모든 자연물이 목적을 추구하는 본성을 타고난다고 했으므로 낙엽도 포함된다. ⑤ 외적 원인이 아니라 내재적 본성에 따른 운동을 한다고 보았다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①2.3% ②0.8% ③95.0% ④1.5% ⑤1.0%</p></div>
+<div class='exp'><p><strong>18번 — 정답 ②</strong><br />
+갈릴레이는 '목적론적 설명이 과학적 설명으로 사용될 수 없다'고 주장했고, 우드필드는 '목적론적 설명이 과학적 설명은 아니지만' 옳고 그름을 확인할 수 없어 거짓이라 할 수도 없다고 지적했다. 두 사람 모두 목적론적 설명이 과학적 설명이 아니라는 데 동의하므로 ②가 적절하다. ① 기계론적 모형은 근대 학자들의 입장이지 목적론이 아니다. ③ 교조적 믿음에 의존했다고 비판받은 쪽은 근대 사상가들이다. ④ 스피노자는 목적론이 자연에 대한 이해를 왜곡한다고 비판했다. ⑤ 우드필드는 목적론이 거짓이라 할 수 없다고 지적했다.</p>
+<p><em>선택률</em> — 응시 98,549명 — ①1.6% ②94.7% ③2.1% ④1.3% ⑤0.9%</p></div>
+<div class='exp'><p><strong>19번 — 정답 ③</strong><br />
+아리스토텔레스는 '구성 요소를 알면 본성을 모두 설명할 수 있다'는 엠페도클레스의 견해를 반박해 자연물의 본성이 물리·화학적으로 환원되지 않는다고 보았고, 마이어도 '구성 요소에 관한 지식만으로는 예측할 수 없는 특성들이 나타난다'며 물리·화학적 법칙으로 모두 설명되지 않는다고 본다. 따라서 ③이 적절하다. ①② 마이어는 생명체가 물질만으로 구성된다고 보지만 아리스토텔레스는 그 반대 입장이며, 창발론은 엠페도클레스의 견해와도 상충한다. ④ 모든 자연물의 목적 지향적 운동은 아리스토텔레스의 견해이고, 마이어는 생명체(세포 이상의 단계)에 한정한다. ⑤ 두 사람 모두 물리·화학적 환원을 인정하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①2.0% ②3.7% ③87.1% ④3.1% ⑤2.7%</p></div>
+</div></div>
+</body></html>

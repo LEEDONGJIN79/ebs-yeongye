@@ -1,0 +1,344 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>이동식 크레인 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr><tr><td>정답</td>
+<td><b>④</b></td>
+<td><b>④</b></td>
+<td><b>①</b></td>
+<td><b>③</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+4문단에서 "아웃트리거를 넓게 펼쳐 받침점 사이를 벌리면 전도 축이 본체에서 멀어지므로 A가 커진다"라고 했으므로 ④가 일치합니다. ① 전도 축 안쪽으로 눌러 <em>버티는</em> 효과는 양중 모멘트가 아니라 <strong>안정 모멘트</strong>예요(2문단에서 둘을 맞바꿔 놓았습니다). ② 모멘트는 힘의 크기를 거리로 <em>나눈</em> 값이 아니라 힘과 거리를 <strong>곱한</strong> 값이고요(2문단). ③ 정격 하중은 "작업 반경이 커질수록 <em>작아지는</em> 값"이라 했으니 정반대(5문단). ⑤ 양중 능력은 "지렛대의 원리에 따라 결정"되고 본체 중량만으로 정해지지 않으므로(1문단) 어긋납니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+3문단은 "안정 모멘트가 양중 모멘트보다 크거나 같아야" 전도되지 않는다고 했어요. 그러니 ④처럼 <em>양중 모멘트가 안정 모멘트보다 큰</em> 상태는 오히려 전도되는 위험한 상태이지, "더욱 안정적으로 버티는" 상태가 아니므로 적절하지 않아 정답입니다. ① 붐을 멀리 뻗으면 B가 커지고 양중 모멘트(무게×B)도 커집니다(4문단). ② 안정 모멘트가 일정한데 양중 모멘트만 커지면 균형이 깨지기 쉬우니 맞고, ③ A가 크면 안정 모멘트가 커져 더 무거운 물체를 들 수 있으며(4문단), ⑤ B가 작으면 양중 모멘트가 작아 전도 위험이 줄어듭니다(4문단) — 모두 타당한 추론이에요.</p>
+<p><strong>3번 [3점] — 정답 ①</strong>
+두 크레인은 본체 중량이 같고 거리 A만 다른데, Q가 A가 더 크죠. 안정 모멘트는 '중량 × A'이므로 A가 작은 P의 안정 모멘트가 더 작습니다. 그래서 같은 작업 반경(=같은 B, 같은 양중 모멘트)에서 P가 먼저 전도되려 한 것이니 ①이 적절해 정답입니다. ② 같은 물체를 같은 작업 반경에서 들면 B가 같아 양중 모멘트(무게×B)도 <em>서로 같으므로</em> P가 더 크다는 말은 틀립니다. ③ 〈보기〉에서 두 크레인은 작업 반경이 같으니 거리 B도 같아, B가 다르다는 설명은 어긋나요. ④ P가 전도되려 한 순간은 양중 모멘트가 안정 모멘트와 같아지거나 <em>더 커진</em> 때이므로, "양중 모멘트가 안정 모멘트보다 작다"는 정반대입니다. ⑤ 작업 반경을 줄이면 B가 작아져 양중 모멘트가 <em>작아지고</em> 전도 위험은 <em>낮아지므로</em> 방향이 반대예요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+ⓐ '결정된다'는 <em>여러 조건이 작용해 어떤 값이 정해진다</em>는 뜻이고, ⓑ '설명된다'는 <em>어떤 현상이 까닭과 함께 밝혀진다</em>는 뜻이에요. ③에서 ⓐ "승패가 마지막 한 점으로 결정되었다"는 결과가 정해지는 쪽, ⓑ "길을 자세히 설명해 주었다"는 내용을 밝혀 알려 주는 쪽이라 둘 다 들어맞아 정답입니다. ①·②·④·⑤의 ⓐ는 모두 "마음을/진로를/안건을 <em>결정했다</em>"처럼 <em>주체가 의지로 골라 정하는</em> 뜻이라 지문의 '결정되다(저절로 정해지다)'와 결이 다르고, ②·④·⑤의 ⓑ는 "이론·입장을 <em>설명한다</em>"로 무난하나 ⓐ가 어긋나며, ①의 ⓑ "경위를 설명했다"는 적절하나 ⓐ가 어긋나, 짝이 모두 맞는 것은 ③뿐입니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>전도(顚倒)</strong>: 힘의 균형이 깨져 크레인이 한쪽으로 기울어 넘어지는 것.</li>
+<li><strong>전도 축</strong>: 크레인이 넘어질 때 회전의 기준이 되는 선. 아웃트리거 받침점들을 잇는 선이 이 축이 됩니다.</li>
+<li><strong>모멘트</strong>: '힘의 크기 × 회전축까지의 수평 거리'. 같은 무게라도 멀수록 커지는, 돌리는 힘의 효과예요.</li>
+<li><strong>안정 모멘트 / 양중 모멘트</strong>: 안정 모멘트(크레인 중량 × A)는 버티는 힘, 양중 모멘트(물체 무게 × B)는 넘어뜨리는 힘.</li>
+<li><strong>정격 하중</strong>: 안정 모멘트가 양중 모멘트 이상으로 유지되는 범위에서 크레인이 들 수 있도록 보장된 무게.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>↑ A 커짐(아웃트리거 넓힘)</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>안정 모멘트 ↑</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>더 무거운 물체 OK</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>모멘트는 어떻게 구하나요?</div><div class='qa-a'>힘(무게)의 크기에 회전축까지의 수평 거리를 곱해서 구합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>붐을 더 멀리 뻗으면 들 수 있는 무게는 어떻게 되나요?</div><div class='qa-a'>거리 B가 커져 양중 모멘트가 커지므로, 들 수 있는 무게는 줄어듭니다.</div></div>
+<div class='qa-item'><div class='qa-q'>아웃트리거를 넓게 펼치면 왜 더 무거운 물체를 들 수 있나요?</div><div class='qa-a'>전도 축이 본체에서 멀어져 거리 A가 커지고, 안정 모멘트(중량×A)가 커지기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2026학년도 수능 [10~13] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+5문단에서 반응 완료 시간(온도를 올리기 시작한 시점부터 띠의 끝이 최대 이동 거리에 도달하기까지의 시간)은 띠의 두께가 얇을수록 짧다고 했으므로 ⑤가 일치한다. ①은 열팽창이 길이·부피 모두의 변화(1문단), ②는 길이 변화율의 정의와 혼동(선형 열팽창 계수는 길이 변화율을 온도 변화량으로 나눈 값), ③은 대부분의 물질이 양수(1문단), ④는 열에너지를 기계적 동작으로 변환하는 장치(4문단)이므로 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①2.1% ②9.3% ③10.3% ④10.5% ⑤69.3%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+온도를 올리면 선형 열팽창 계수가 큰 쪽이 더 팽창하여 계수가 <strong>작은</strong> 물질 쪽으로 휘지만, 온도를 <strong>내리면</strong> 계수가 큰 쪽이 더 수축하므로 계수가 <strong>큰</strong> 물질 쪽으로 휜다. 따라서 ③이 적절하지 않다. ①은 변화량(나중 값-처음 값)이 음수가 됨, ②는 인바의 계수가 매우 작음(1문단), ④는 변화량이 같으면 처음 길이가 길수록 변화율이 작음, ⑤는 같은 곡률이면 긴 띠가 더 많은 구간이 휘어 이동 거리가 커짐에서 추론된다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①5.6% ②9.9% ③51.3% ④18.7% ⑤13.5%</p></div>
+<div class='exp'><p><strong>12번 — 정답 ①</strong><br />
+외부에 가할 수 있는 힘이 소멸되는 시점은 최대 이동 거리, 곧 최대 곡률에 도달했을 때다(5문단). 온도 변화가 클수록 띠가 더 휘므로(3문단), T₂까지 올리면 a·b 모두 그 시점의 곡률이 T₁까지 올렸을 때보다 크다 — ① 적절. ② 계수 차이가 큰 b가 더 심하게 휘므로 a의 곡률 반지름이 b보다 크다. ③ 동작이 멈추는 데 걸린 시간이 같았다면 반응 완료 시간도 같다. ④ B는 T₁에서 이미 물체를 잡았으므로 T₂에서 b의 최대 이동 거리가 a 이상이다. ⑤ T₂가 되어야 A가 잡을 수 있었던 것은 a의 휨 민감도가 b보다 <strong>작기</strong> 때문이다.</p>
+<p><em>선택률</em> — 응시 98,589명 — ①26.6% ②19.0% ③28.1% ④18.9% ⑤6.7%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+ⓐ‘얻는’은 ‘구하거나 찾아서 가지다’, ⓑ‘돌아온다’는 ‘원래 있던 곳으로 다시 오거나 다시 그 상태가 되다’의 의미다. 이 두 의미가 모두 들어맞는 짝은 ①(근사치를 얻었다 / 고향으로 돌아왔다)이다. ②④⑤의 ‘얻다’는 ‘긍정적인 태도·반응·상태를 가지게 되다’, ②의 ‘돌아오다’는 ‘차례가 닥치다’, ③은 ‘둘러서 오다’, ④는 ‘되풀이되는 것이 다시 닥치다’, ⑤는 ‘몫 따위를 받다’의 의미다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①85.1% ②1.6% ③3.2% ④5.1% ⑤4.6%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>5번 — 정답 ③</strong>
+이 글은 1~3문단에서 유압식 붐의 길이 조절, 기복, 선회 같은 <em>붐의 작동 방식</em>을 설명하고, 4문단에서 그 붐을 떠받치는 <em>아웃트리거의 구실</em>을 소개해요. 그래서 ③이 적절해 정답입니다. ① 붐의 종류를 <em>시대순</em>으로 늘어놓지 않았고, ② 유압식 붐의 <em>장단점 대비·절충안</em>은 없으며, ④ 작업 환경에 따른 <em>분류·사용 절차</em>도 다루지 않았고, ⑤ 도달 범위의 <em>측정 방법·오차 규명</em>은 글에 없습니다.</p></div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+1문단에서 유압식 붐은 "유압 실린더를 이용해 붐의 길이를 늘이거나 줄이는" 것이라고 분명히 밝혔어요. 그런데 ⑤는 "유압 실린더 <em>없이</em> 와이어로프만으로" 길이를 조절한다고 했으니 정반대라 적절하지 않아 정답입니다. ① 보조 붐 부착으로 도달 범위 확장(2문단), ② 선회로 본체를 옮기지 않고 방향 전환(3문단), ③ 아웃트리거가 기울거나 흔들리는 것을 막음(4문단), ④ 붐·보조 붐 따로 기복 시 도달 범위가 넓어짐(3문단)은 모두 글에서 확인됩니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+㉠은 유압식 붐이에요. 2문단은 유압식 붐이 길이를 "늘이거나 줄임으로써 작업 대상까지의 거리에 맞추어 도달 범위를 조절한다"라고 했죠. 그러니 ②처럼 "길이를 늘이거나 줄일 수 없어 도달 범위를 맞추기 어렵다"는 것은 정반대라 적절하지 않아 정답입니다. ① 망원경처럼 겹쳐진 여러 단의 구조, ③ 기름의 압력이 막대로 전달, ④ 막대가 관을 밀어내 길이가 길어짐, ⑤ 압력을 줄이면 안쪽 단이 들어가 짧아짐은 모두 2문단에 나와 있어요.</p>
+<p><strong>8번 [3점] — 정답 ⑤</strong>
+보조 붐의 <em>각을 조절</em>하는 것은 3문단에서 붐과 보조 붐을 따로 <em>기복</em>해 후크의 도달 범위를 넓히는 일이에요. 그런데 ⑤는 이를 "유압 실린더로 붐 전체의 <em>길이를 줄여</em> 작업 반경을 좁힌 것"이라고 엉뚱하게 연결했으니, 각 조절(기복)과 길이 조절을 뒤섞은 셈이라 적절하지 않아 정답입니다. ① 아웃트리거를 넓게 펼쳐 받침점 간격을 넓힘=더 무거운 자재 안정(4문단), ② 붐을 세우면 후크가 본체에 가까워지며 높아짐(3문단), ③ 와이어로프를 풀어 후크를 내리고 감아 올림, ④ 본체를 둔 채 붐을 수평으로 돌림=선회(3문단)에 정확히 대응하는 적절한 추론입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>붐</strong>: 물체를 옮기는 도달 범위와 높이를 결정하는 크레인의 긴 팔.</li>
+<li><strong>유압식 붐</strong>: 유압 실린더로 길이를 늘이거나 줄이는 붐. 굵기가 다른 관이 망원경처럼 겹쳐 있어요.</li>
+<li><strong>기복 / 선회</strong>: 기복은 붐을 세우거나 눕히는 수직 움직임, 선회는 붐을 좌우로 돌리는 수평 움직임.</li>
+<li><strong>보조 붐</strong>: 붐 끝에 덧붙여 도달 범위를 더 늘리는 붐. 따로 기복하면 범위가 더 넓어집니다.</li>
+<li><strong>아웃트리거</strong>: 본체에서 옆으로 뻗어 지면을 짚는 받침다리. 받침점 간격을 넓혀 크레인을 안정시켜요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>움직임</th>
+<th>방향</th>
+<th>작동 방식</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>길이 조절</td>
+<td>붐을 늘임/줄임</td>
+<td>유압 실린더가 겹친 관을 밀고 당김</td>
+<td>작업 거리에 맞춰 도달 범위 조절</td>
+</tr>
+<tr>
+<td>기복</td>
+<td>위아래(수직)</td>
+<td>와이어로프나 유압 실린더로 세움/눕힘</td>
+<td>후크의 높이·본체와의 거리 조절</td>
+</tr>
+<tr>
+<td>선회</td>
+<td>좌우(수평)</td>
+<td>붐을 수평으로 회전</td>
+<td>본체를 안 옮기고 방향 전환</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>붐은 <strong>길이·기복·선회</strong> 세 움직임으로 후크를 원하는 자리에 보내고, <strong>아웃트리거</strong>가 그 작업을 안전하게 떠받칩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>유압식 붐은 어떻게 길이를 늘이나요?</div><div class='qa-a'>유압 실린더가 기름의 압력으로 막대를 밀어 겹쳐진 관의 안쪽 단을 빼내면서 늘입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>기복과 선회는 어떻게 다른가요?</div><div class='qa-a'>기복은 붐을 세우거나 눕히는 수직 움직임, 선회는 붐을 좌우로 돌리는 수평 움직임입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>아웃트리거를 펼치면 무엇이 좋아지나요?</div><div class='qa-a'>받침점 간격이 넓어져 더 무거운 물체를 안정적으로 들 수 있고, 작업 중 흔들림도 줄어듭니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 9월 [8~11] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong><br />
+2~3문단에서 압전 효과의 개념과 이를 이용한 초정밀 저울(수정 진동자)의 작동 원리를 설명하고, 4~5문단에서 그 원리가 적용된 기체 농도 측정 방법을 소개하므로 ⑤가 적절하다. 압전체 자체의 제작 방법·유의점(①), 장단점 분석(②), 분류에 따른 구조 비교(③), 유형 구분 기준(④)은 제시되어 있지 않다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①2.3% ②5.1% ③4.0% ④5.1% ⑤83.5%</p></div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong><br />
+3문단에서 같은 재료의 압전체라도 모양과 크기에 따라 고유 주파수가 달라진다고 했으므로, 크기가 달라도 고유 주파수가 같다는 ④는 적절하지 않다. ①은 압전체로 수정이 ‘주로’ 쓰인다는 데서, ②는 수정의 절단·가공과 미세 질량 측정에서, ③은 1문단의 전기 저항 변화 측정에서, ⑤는 질량 민감도의 정의에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①2.0% ②5.1% ③5.4% ④80.7% ⑤7.4%</p></div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+전압의 주파수를 수정의 고유 주파수와 일치시키면 진동 폭이 커질 뿐, 고유 주파수 값 자체가 커지는 것은 아니므로 ⑤가 적절하지 않다. 수정은 1·2차 압전 효과가 모두 생기는 압전체이므로 ①·②가 성립하고, ③·④는 3문단의 수정 진동자 제작 방식에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①4.5% ②12.2% ③5.3% ④7.0% ⑤70.9%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong><br />
+진동자에 붙는 물질의 질량이 늘수록 주파수는 더 감소한다. 알코올에 더해 다른 기체가 함께 달라붙으면 질량이 더 증가하므로, 일정하게 유지되는 주파수 값은 알코올만 붙었을 때보다 작다(②). ①은 고유 주파수 측정만으로는 농도를 알 수 없고 농도별 주파수 변화를 미리 측정해 놓아야 하므로 부적절, ③은 처리 목적이 농도 측정이지 큰 폭의 진동이 아니므로 부적절, ④는 주파수 변화 정도가 크면 민감도도 더 큰 것이므로 부적절, ⑤는 일정량까지 달라붙는 시간이 짧은 B의 반응 시간이 더 짧은 것이므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,570명 — ①20.0% ②45.4% ③14.0% ④12.3% ⑤8.6%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>9번 — 정답 ③</strong>
+1문단에서 "와이어로프를 여러 번 감아 걸면 물체의 무게가 여러 가닥으로 나뉘어 걸린다"라고 했으므로 ③이 일치합니다. ① 와이어로프는 한 가닥 굵은 철사가 아니라 <em>여러 가닥의 가는 철사</em>를 꼬아 만들고(1문단), ② 격자형 붐은 <em>스스로</em> 길이를 늘이거나 줄일 수 없으며(2문단), ④ 같은 길이라면 유압식 붐이 격자형 붐보다 <em>무겁고</em>(3문단), ⑤ 트러스 구조는 <em>적은 재료</em>로 큰 힘을 견디면서 무게가 가벼운 것이 특징(2문단)이라 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong>
+㉠은 와이어로프예요. 1문단은 와이어로프가 "같은 굵기에서 한 가닥의 굵은 철사보다 <em>잘 끊어지지 않고</em> 잘 휘어진다"라고 했죠. 그러니 ④처럼 "잘 끊어진다"는 것은 정반대라 적절하지 않아 정답입니다. ① 가는 철사를 합쳐 꼬아 만듦, ② 여러 가닥이 힘을 나누어 큰 장력을 견딤, ③ 꼬여 있어 도르래·드럼에 부드럽게 휨, ⑤ 드럼에 감기고 풀리며 후크를 오르내림은 모두 1문단에서 확인됩니다.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+㉡은 격자형 붐이에요. 2문단은 격자형 붐이 "유압 실린더처럼 <em>스스로 길이를 늘이거나 줄일 수 없어</em>, 길이를 바꾸려면 부재를 더 잇거나 떼어 내야 한다"라고 했죠. 그러니 ②처럼 "유압 실린더를 갖추고 있어 길이를 늘이거나 줄이기 쉽다"는 것은 정반대라 적절하지 않아 정답입니다. ① 삼각형 그물 모양의 트러스 구조, ③ 같은 무게의 유압식 붐보다 길게 만들 수 있음, ④ 작업 중 도달 범위 조절이 어려움, ⑤ 가볍고 길어 높은 곳 작업에 쓰임은 모두 2문단에 나와 있어요.</p>
+<p><strong>12번 [3점] — 정답 ⑤</strong>
+3문단에서 유압식 붐은 같은 길이라면 격자형 붐보다 <em>무겁고</em>, 무거우면 양중 능력에 부담이 되어 <em>아주 길게 만들기 어렵다</em>고 했어요. 높은 곳까지 닿는 데 유리한 것은 가볍고 길게 만들 수 있는 <em>격자형 붐</em>이지요. 그런데 ⑤는 유압식 붐이 "더 가벼우므로 더 높은 곳까지 닿기에 유리하다"라고 무게 관계와 결론을 모두 뒤집었으니 적절하지 않아 정답입니다. ① ㉮의 유압식 붐은 길이 조절이 쉬워 거리가 바뀌는 현장에 적합(3문단), ② ㉯의 격자형 붐은 가볍고 길어 높은 곳에 적합(2·3문단), ③ 격자형 붐은 부재를 잇거나 떼어 내야 길이를 바꿈(2문단), ④ 여러 번 감아 걸면 같은 굵기로 더 무거운 물체를 듦(1문단)에 정확히 대응하는 적절한 설명입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>와이어로프</strong>: 여러 가닥의 가는 강철 철사를 꼬아 만든 줄. 큰 장력을 견디면서도 부드럽게 휘어 도르래에 감깁니다.</li>
+<li><strong>도르래·드럼</strong>: 와이어로프를 감아 거는 바퀴와 통. 여러 번 감으면 무게가 여러 가닥으로 나뉘어요.</li>
+<li><strong>유압식 붐 / 격자형 붐</strong>: 유압식은 실린더로 길이를 조절(무겁지만 융통성 ↑), 격자형은 트러스 구조(가볍고 길지만 길이 조절 ✕).</li>
+<li><strong>트러스 구조</strong>: 삼각형이 이어진 짜임. 적은 재료로 큰 힘을 견디며 가벼운 것이 특징.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>유압식 붐</th>
+<th>격자형 붐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>길이 조절</td>
+<td>유압 실린더로 작업 중 자유롭게</td>
+<td>부재를 잇거나 떼어 내야 함</td>
+</tr>
+<tr>
+<td>무게(같은 길이)</td>
+<td>더 무거움</td>
+<td>더 가벼움</td>
+</tr>
+<tr>
+<td>도달 높이·범위</td>
+<td>길게 만들기 어려움</td>
+<td>매우 길게 만들 수 있음</td>
+</tr>
+<tr>
+<td>알맞은 현장</td>
+<td>거리가 자주 바뀌는 현장</td>
+<td>매우 높은 곳까지 닿는 현장</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>와이어로프가 물체를 <em>매달고</em>, 붐이 도달 범위를 <em>정하며</em>, 후크가 물체를 <em>겁니다</em>. 세 부분의 역할이 맞물려야 무거운 물체를 안전하게 들어 올릴 수 있어요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>와이어로프를 한 가닥 굵은 철사가 아니라 여러 가닥을 꼬아 만드는 까닭은?</div><div class='qa-a'>가는 가닥이 힘을 나누어 받아 잘 끊어지지 않고, 꼬여 있어 도르래에 감길 만큼 부드럽게 휘기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>격자형 붐이 유압식 붐보다 길게 만들 수 있는 까닭은?</div><div class='qa-a'>트러스 구조라 적은 재료로 큰 힘을 견디면서 가볍기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>와이어로프를 여러 번 감아 걸면 무엇이 좋아지나요?</div><div class='qa-a'>물체의 무게가 여러 가닥으로 나뉘어 걸려, 같은 굵기로도 더 무거운 물체를 들 수 있습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 9월 [29~32] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>32번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+</body></html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>찻주전자 효과와 젖음성 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr><tr><td>정답</td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+3문단에서 "곡률 반경이 큰 가장자리는 두툼하고 둥글며, 곡률 반경이 작은 가장자리는 얇고 날카롭다"라고 했어요. 그러니 곡률 반경이 <em>큰</em> 가장자리를 "얇고 날카롭다"고 한 ④는 거꾸로라서 일치하지 않아 정답입니다. ①은 1문단(속력이 줄면 흐름), ②는 1문단(젖음성↔얇게 퍼짐), ③은 2문단(이탈 각이 작을수록 벽에 붙음), ⑤는 4문단(점성만 다를 때 차이 없음)에 그대로 나와요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠은 "효과를 막을 방법이 점성을 바꾸는 데 있지 않다"는 부분이죠. 그 까닭은 같은 문단에서 "이탈 각을 정하는 것은 유속과 젖음성, 그리고 가장자리의 곡률"이며 찻주전자 효과가 점성과 무관하다고 한 데 있어요. 곧 이탈 각을 정하는 데 점성이 관여하지 않으니, 점성을 바꿔 봐야 소용이 없는 것이므로 ②가 정답입니다. ①은 점성이 느리게 따라지는 것과 관련 있다는 통념일 뿐 ㉠의 근거가 아니고(오히려 지문은 그 통념을 부정해요), ③·④는 각각 젖음성·유속의 작용을 말할 뿐 '점성을 손봐도 소용없는' 이유가 아니며, ⑤는 곡률 반경의 손상 문제로 ㉠과 직접 이어지지 않아요.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+그래프에서 ㉮는 곡률 반경이 작고 이탈 각이 큰 쪽, ㉯는 곡률 반경이 크고 이탈 각이 작은 쪽이에요. 3문단에 따르면 곡률 반경을 줄이면 원심력이 커져 이탈 각이 <em>커지고</em> 효과가 <em>약해집니다</em>. ⑤는 "㉯에서 ㉮ 쪽으로(=곡률 반경을 줄이면) 이탈 각이 작아진다"고 했는데, 곡률 반경을 줄이면 이탈 각은 오히려 커지므로 방향이 반대라서 적절하지 않아 정답입니다. ① 곡률 반경이 작은 ㉮가 더 얇고 날카롭고(3문단), ② 이탈 각이 큰 ㉮가 효과가 약하며(2문단), ③ 곡률 반경이 작은 ㉮에서 원심력이 더 크게 작용하고(3문단), ④ 곡률 반경이 큰 ㉯가 가공·사용에 무리가 적다(3문단)는 모두 적절한 이해예요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>이탈 각</strong>: 주둥이를 떠나는 액체가 연직선(똑바로 아래 방향)과 이루는 각. 작을수록 벽에 바싹 붙어 흘러 찻주전자 효과가 큼.</li>
+<li><strong>곡률 반경</strong>: 주둥이 가장자리가 휜 정도를 나타내는 값. 작을수록 가장자리가 얇고 날카롭고, 클수록 두툼하고 둥글다. 곡률은 곡률 반경에 반비례.</li>
+<li><strong>원심력</strong>: 곡면을 도는 물체를 바깥으로 떼어 내려는 힘. 유속이 빠를수록, 곡률 반경이 작을수록 크게 작용해 액체를 가장자리에서 이탈시킴.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>곡률 반경을 줄이면</th>
+<th>그래서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>가장자리가 얇고 날카로워짐</td>
+<td>원심력 ↑</td>
+</tr>
+<tr>
+<td>원심력이 커짐</td>
+<td>액체가 벽에 못 붙고 이탈 → 이탈 각 ↑</td>
+</tr>
+<tr>
+<td>이탈 각이 커짐</td>
+<td>찻주전자 효과 ↓ (새는 게 줄어듦)</td>
+</tr>
+<tr>
+<td>단, 지나치게 줄이면</td>
+<td>가공 어려움·손상·방향 조준 곤란</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>곡률 반경은 작을수록 효과를 잘 막지만, 너무 작으면 만들기도 쓰기도 어려워요. 그래서 "충분히 막으면서도 무리가 없는" 적절한 값을 고르는 설계 문제가 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>이탈 각이 커지면 찻주전자 효과는 어떻게 되나요?</div><div class='qa-a'>액체가 벽에서 떨어져 나가므로 효과가 약해집니다(덜 샙니다).</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 줄이면 왜 효과가 약해지나요?</div><div class='qa-a'>원심력이 커져 액체가 가장자리에 붙지 못하고 이탈하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 한없이 줄이지 못하는 까닭은?</div><div class='qa-a'>가장자리가 너무 얇고 날카로우면 가공이 어렵고 쉽게 손상되며 따르는 방향을 겨누기 어렵기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 6월 [8~11] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+1문단에서 화학 산업에서 고체 촉매가 주로 이용되는 이유는 액체나 기체인 생성물을 촉매로부터 분리하는 <strong>별도의 공정이 필요 없기</strong> 때문이라고 했으므로 ②는 일치하지 않는다. ①은 새로운 반응 경로 제공(1문단), ③은 탈착으로 반응 완결(2문단), ④는 흡착된 반응물이 전자를 금속 표면 원자와 공유(2문단), ⑤는 증진제·지지체를 포함하지 않기도 함(4문단)과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,571명 — ①2.5% ②83.9% ③7.1% ④3.5% ⑤2.9%</p></div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+2문단에서 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다고 했으므로 ①이 적절하다. 소결 촉진(②)과 입자 뭉침(⑤)은 표면적을 줄여 활성을 낮추고, 반응 속도를 늦추는 것(③)은 촉매 활성(반응 속도를 빠르게 하는 능력)과 반대이며, 활성화 에너지를 크게 하면(④) 반응이 느려진다.</p>
+<p><em>선택률</em> — 응시 98,584명 — ①54.3% ②5.8% ③20.5% ④11.2% ⑤7.5%</p></div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+실리카는 표면적이 넓고 열적 안정성이 높은 지지체로, 금속 입자를 분산해 소결로 인한 촉매 활성 저하를 억제하는 역할을 한다. 활성 성분을 소결하는 것이 아니므로 ④가 적절하지 않다. 에틸렌으로 변환되는 아세틸렌은 반응물(①), 반응물을 흡착시키는 팔라듐은 활성 성분(②), 표면 구조를 변화시켜 소결을 억제하는 규소와 전자 밀도를 변화시켜 흡착 세기를 조절하는 은은 증진제(③), 실리카는 지지체로서 활성 저하 억제(⑤).</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.8% ②5.4% ③17.2% ④64.9% ⑤10.6%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+2문단에 따르면 흡착이 너무 강하면 반응물이 지나치게 안정화되어 촉매 활성이 낮아진다. ⓓ는 ⓐ보다 흡착 세기가 훨씬 강하므로 <span class="boxmark">[가]</span>가 안정화되는 정도가 더 크다(③). ⓑ는 ⓐ보다 촉매 활성이 높으므로 반응이 더 빠르고(①), ⓒ는 ⓐ보다 흡착이 강해 흡착량이 더 많으며(②), ⓒ는 ⓑ보다 흡착이 더 강하고(④), 촉매 활성이 가장 높은 금속은 ⓓ가 아니라 ⓒ이다(⑤).</p>
+<p><em>선택률</em> — 응시 98,576명 — ①6.3% ②5.5% ③73.0% ④9.4% ⑤7.0%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>4번 — 정답 ①</strong>
+2문단에서 "유속이 충분히 클 때에는 이탈 각이 90°에 가깝게 유지"된다고 했으니 ①이 일치해 정답이에요. ② 점성은 이탈 각을 정하는 데 관여하지 않으므로(4문단) "점성이 클수록 이탈 각이 작아진다"는 틀렸고, ③ 젖음성이 클수록 이탈 각은 <em>작아지므로</em>(3문단) "커진다"는 거꾸로이며, ④ 원심력은 곡률 반경이 <em>작을수록</em> 커지므로(4문단) "큰 가장자리일수록"은 반대예요. ⑤ 초소수성 코팅은 젖음성을 작게 하는 방법이지 점성을 키우는 게 아니므로(3문단) 틀렸습니다.</p></div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+2문단에 따르면 유속이 충분히 <em>클</em> 때에는 액체가 주둥이에서 <em>곧장 이탈</em>하고, 가장자리의 곡면을 따라 벽으로 돌아 흐르는 것은 유속이 어떤 속력 값보다 <em>느릴</em> 때예요. ⑤는 유속이 충분히 클 때 벽으로 돌아 흐른다고 했으니 빠를 때와 느릴 때를 뒤바꾼 것이라 적절하지 않아 정답입니다. ①②③은 2문단(유속이 줄 때의 흐름·경계 속력·일정 속력 이상에서 효과 없음), ④는 4문단(유속이 빠를수록 원심력 증가)에 부합해요.</p>
+<p><strong>6번 [3점] — 정답 ③</strong>
+그림에서 ㉮는 이탈 각 θ가 커서 줄기가 옆으로 뻗고, ㉯는 θ가 작아 벽 쪽으로 휘어 있어요. 2문단에서 유속이 줄면 이탈 각이 작아져 액체가 벽 쪽으로 휜다고 했으니, ㉯처럼 벽으로 휘는 것은 유속이 줄었기 때문이라는 ③이 적절해 정답입니다. ① 이탈 각이 <em>큰</em> ㉮는 효과가 <em>작고</em>(2문단) "작아 효과가 크다"는 거꾸로고, ② 줄기가 곧장 이탈한 쪽은 θ가 큰 ㉮이므로 ㉯가 유속이 크다는 진술은 ㉮·㉯를 맞바꿨으며, ④ 초소수성 코팅은 젖음성을 줄여 액체가 벽에 <em>덜</em> 붙게 하므로 ㉯를 ㉮ 쪽으로(덜 휘게) 돌릴 뿐 "더 휜다"는 반대예요. ⑤ 점성은 이탈 각과 무관하므로(4문단) 점성을 키워도 ㉮가 ㉯처럼 휘지는 않습니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>유속</strong>: 흐름의 속도. 충분히 크면 이탈 각이 90°에 가깝고, 줄면 이탈 각이 작아져 벽을 탄다.</li>
+<li><strong>친수성 / 소수성</strong>: 물에 대한 젖음성이 큰 정도(친수성)와 작은 정도(소수성). 초소수성은 젖음성이 매우 작은 상태.</li>
+<li><strong>원심력</strong>: 곡면을 도는 액체를 바깥으로 떼어 내려는 힘. 유속이 빠를수록, 곡률 반경이 작을수록 커진다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>요인</th>
+<th>이탈 각에 미치는 작용</th>
+<th>찻주전자 효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>유속 ↑</td>
+<td>이탈 각 ↑ (90°에 가까움)</td>
+<td>약해짐</td>
+</tr>
+<tr>
+<td>젖음성 ↑ (친수성)</td>
+<td>이탈 각 ↓</td>
+<td>강해짐</td>
+</tr>
+<tr>
+<td>곡률 반경 ↓ (날카로움)</td>
+<td>원심력 ↑ → 이탈 각 ↑</td>
+<td>약해짐</td>
+</tr>
+<tr>
+<td>점성 변화</td>
+<td>영향 없음</td>
+<td>무관</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>네 요인 중 유속·젖음성·곡률은 이탈 각을 바꾸지만, 점성은 아무리 달라도 이탈 각을 흔들지 못해요. "그럴듯한데 사실은 무관한" 점성을 가려내는 것이 이 세트의 핵심입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>젖음성이 큰 주둥이에서 찻주전자 효과가 더 심한 까닭은?</div><div class='qa-a'>같은 유속에서 이탈 각이 작아져 액체가 벽에 더 잘 붙어 흐르기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>초소수성 코팅이 새는 것을 막는 원리는?</div><div class='qa-a'>주둥이의 젖음성을 매우 작게 만들어, 느린 속력에서도 액체가 바깥 면을 타고 흐르지 못하게 하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>점성은 찻주전자 효과에 어떤 영향을 주나요?</div><div class='qa-a'>유속·젖음성을 같게 하면 점성만 달라도 이탈 각에 유의미한 차이가 없어, 사실상 영향을 주지 않습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 9월 [38~41] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>39번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>40번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+1문단 끝에서 "액체가 어느 쪽으로 향하는지는 가장자리에서 액체에 작용하는 힘들의 경쟁으로 정해진다"라고 했으니 ①이 정답이에요. ② 원심력은 곡률 반경이 <em>작을수록</em> 커지므로(2문단) "클수록"은 거꾸로고, ③ 젖음성이 큰 표면은 액체를 <em>붙드는</em> 작용이 강하지 떼어 내는 작용이 강한 게 아니며(2문단), ④ 유속이 클 때는 <em>떼어 내려는 힘</em>이 압도하므로(3문단) 붙들려는 작용이 압도한다는 건 반대예요. ⑤ 초소수성 코팅은 붙들려는 작용을 <em>약하게</em> 하는 방법이므로(4문단) "더 잘 붙든다"는 정반대입니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ③</strong>
+㉠은 "액체가 주둥이 벽을 타고 흐르기 시작한다"는 부분이죠. 3문단 마지막에서 그 까닭을 "유속이 줄어 원심력이 약해진 결과 붙들려는 작용이 상대적으로 우세해지는 데 있다"고 분명히 밝혔으니 ③이 정답입니다. ②(곡률 반경 감소로 원심력 증가)와 ⑤(유속이 커져 90° 유지)는 오히려 액체가 <em>이탈하는</em> 쪽의 이야기라 벽을 타는 까닭과 반대고, ①(코팅)은 효과를 <em>막는</em> 방법이라 ㉠과 어긋나며, ④(점성)는 지문에서 효과와 무관하다고 본 요소라 이유가 될 수 없어요.</p>
+<p><strong>9번 [3점] — 정답 ①</strong>
+㉠(벽을 타고 흐름)이 일어나는 상황을 채우는 문제예요. 2·3문단에 따르면 액체를 가장자리에서 <em>떼어 내려는</em> 것은 원심력이고, 표면의 젖음성에서 비롯해 액체를 <em>붙들려는</em> 것은 붙들려는 작용이에요. 벽을 타려면 떼어 내려는 원심력(㉮)이 약해지고 붙들려는 작용(㉯)이 우세해져야 하므로 ①이 정답입니다. ㉮에 '붙들려는 작용'을 넣은 ③④는 약해지는 힘과 우세해지는 힘을 뒤바꾼 것이고, '중력'(②)·'점성'(④⑤)은 지문이 이 경쟁의 두 축으로 든 힘이 아니에요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+4문단에서 초소수성 코팅을 하면 액체가 방울방울 떨어질 때에도 바깥 면을 타고 <em>흐르지 않는다</em>고 했어요. ⑤는 코팅이 바깥 면을 타고 흐르도록 <em>돕는다</em>고 했으니 정반대라서 적절하지 않아 정답입니다. ①은 속력 유지로 원심력 증가(4문단), ②는 곡률 반경 감소(4문단), ③은 코팅으로 붙들려는 작용 약화(4문단), ④는 속력 유지가 원심력을 키워 이탈시킴(3·4문단)으로 모두 적절해요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>힘의 경쟁</strong>: 가장자리에서 액체를 <em>떼어 내려는</em> 원심력과 <em>붙들려는</em> 작용이 겨루는 것. 우세한 쪽이 액체의 향방을 정한다.</li>
+<li><strong>붙들려는 작용</strong>: 표면의 젖음성에서 비롯해 액체를 가장자리에 달라붙게 하는 작용. 젖음성이 클수록 강하다.</li>
+<li><strong>이탈 각</strong>: 힘의 경쟁 결과로 드러나는 각. 떼어 내려는 힘이 우세하면 커지고, 붙들려는 작용이 우세하면 작아진다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>이탈 각 90°에 가까움</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>곧장 이탈</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>효과 없음</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>유속이 충분히 클 때 액체가 곧장 이탈하는 까닭은?</div><div class='qa-a'>빠른 유속이 원심력을 크게 키워 떼어 내려는 힘이 붙들려는 작용을 압도하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>곡률 반경을 줄이는 것과 속력을 유지하는 것은 무엇을 공통으로 키우나요?</div><div class='qa-a'>둘 다 액체를 가장자리에서 떼어 내려는 원심력을 키웁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>초소수성 코팅이 다른 방법과 다른 점은?</div><div class='qa-a'>원심력을 키우는 대신, 붙들려는 작용 자체를 약하게 만들어 효과를 막습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 수능 [33~36] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>33번 — 정답 ⑤</strong><br />
+2문단에 따르면 F는 효소 복합체로 셀룰로스를 노출시켜 포도당으로 분해한 뒤, 그 포도당을 자신의 세포 내 대사 과정을 거쳐 에너지원으로 이용해 생장한다. 따라서 ⑤가 적절하다. ① 섬유소는 사람의 소장에서 이용되지 못한다. ② 셀룰로스를 분해하는 것은 반추 동물의 효소가 아니라 미생물(F)이다. ③ 반추위 미생물은 산소가 없는 환경에서 왕성히 생장한다. ④ 산성증은 과도한 ‘비섬유소’ 섭취가 유발한다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①4.6% ②6.9% ③4.4% ④8.2% ⑤75.9%</p></div>
+<div class='exp'><p><strong>34번 — 정답 ④</strong><br />
+ⓑ(S)는 산성도에 따라 아세트산·에탄올 또는 젖산을 배출하지만, ⓒ(L)는 젖산 생성 미생물로서 산성도에 따라 젖산의 배출량이 달라질 뿐 ‘다양한 종류’의 대사산물을 배출하지는 않는다. 따라서 ⓒ도 다양한 대사산물을 배출한다고 본 ④는 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①7.7% ②13.8% ③11.9% ④58.2% ⑤9.0%</p></div>
+<div class='exp'><p><strong>35번 — 정답 ①</strong><br />
+섬유소·비섬유소는 미생물에 의해 ‘포도당으로 분해’되는 것이지 미생물에 의해 ‘합성’되는 것이 아니므로 ㉮에는 ‘반추위 미생물의 에너지원이 되고’가 적절하다(③④⑤ 배제). 또 반추 동물의 에너지원으로 이용되는 것은 미생물이 대사 과정에서 생성한 대사산물(아세트산·젖산 등)이므로 ㉯에는 ‘반추위 미생물이 대사 과정을 통해 생성한 대사산물’이 적절하다(②의 ‘포도당’ 배제). 따라서 ①.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①39.0% ②10.4% ③6.0% ④33.5% ⑤11.5%</p></div>
+<div class='exp'><p><strong>36번 — 정답 ③</strong><br />
+숙신산은 섬유소 분해 과정에서 F가 배출하는 대사산물로 반추위의 산성도와는 관련이 없고, 젖산은 비섬유소(녹말)가 충분하고 산성도가 높을 때 배출되므로 중성일 때보다 산성일 때 더 많이 배출된다. 따라서 ‘산성일 때보다 중성일 때 더 많이 배출된다’는 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①6.5% ②5.3% ③77.7% ④5.0% ⑤5.0%</p></div>
+</div></div>
+</body></html>

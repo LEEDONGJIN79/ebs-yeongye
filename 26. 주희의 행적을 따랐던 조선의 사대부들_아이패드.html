@@ -1,0 +1,861 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>주희의 행적을 따랐던 조선의 사대부들 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>주희의 행적을 따랐던 조선의 사대부들 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 존경하는 사람이 생기면 그 사람을 어떻게 따라 하게 되나요? 어떤 사람은 그가 입던 옷, 그가 쓰던 물건을 똑같이 갖추며 "그분의 모습 그대로"를 닮으려 하죠. 또 어떤 사람은 그가 살았던 <em>방식</em>을 자기 자리로 가져와, 자기 나름대로 다시 살아 봅니다. 같은 존경인데도 따르는 모습이 이렇게 갈립니다. 조선의 선비들이 중국의 큰 학자 <strong>주희</strong>를 따른 모습도 바로 이렇게 두 갈래로 나뉘었어요.</p>
+<p><strong>주희</strong>는 성리학을 하나로 모아 완성한 학자입니다(성리학은 사람의 마음을 닦고 세상의 이치를 따지는 유학의 한 갈래라고 생각하면 돼요). 주희는 무이산이라는 아름다운 산에 들어가 <strong>무이정사</strong>라는 집을 짓고, 제자를 기르며 공부했어요. 그곳 계곡의 굽이굽이 빼어난 경치를 노래한 시가 「<strong>무이도가</strong>」이고, 그 경치를 그린 그림이 「<strong>무이구곡도</strong>」입니다. 조선의 선비들은 "주희처럼 자연 속에서 마음을 닦고 학문에 힘쓰는 것"을 선비의 가장 이상적인 모습으로 여겼습니다.</p>
+<p>그런데 그 따르는 방식이 학통(학문을 이어받은 계보)에 따라 달랐어요. <strong>이황의 학통</strong>을 따른 선비들은 「무이도가」를 본떠 시를 짓고 「무이구곡도」를 거듭 그리며, 주희의 모습을 <em>빠짐없이 그대로 옮겨 담는 일</em>에 힘을 쏟았습니다. 반면 <strong>이이의 학통</strong>을 따른 선비들은 거기서 한 걸음 더 나아가, 조선 땅의 빼어난 곳에 자기들의 정사를 짓고 직접 <strong>조선식 구곡</strong>을 만들어 시를 짓고 그림을 그렸어요. 나아가 그중 노론 계열은 이 구곡 경영으로 "주희 → 이이 → 우리 노론"으로 이어지는 학문의 정통 계보를 드러내려 했습니다.</p>
+<blockquote>
+<p>한마디로: <strong>같은 주희를 존경하면서도, 한쪽은 "그대로 본떠 담기"로, 다른 한쪽은 "조선 땅에 다시 짓기"로 그 존경을 표현했다</strong>는 것이 이 단원의 핵심입니다. 같은 뿌리에서 어떻게 다른 가지가 뻗어 나오는지를 보는 눈을 길러 봅시다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>하나의 본보기(주희의 행적)를 두 학통이 서로 다르게 받아들인 양상</strong>이 있습니다. 똑같은 대상을 우러러보더라도, 받아들이는 사람의 생각에 따라 그 결과물이 달라지거든요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>주희의 행적(무이정사·무이도가·무이구곡도)<small>조선 사대부의 본보기</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>이황 학통과 이이 학통이 주희를 받아들인 방식이 어떻게 갈렸는지, 곧 <em>모사</em>와 <em>구곡 경영</em>이라는 두 길을 나란히 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>그 두 길이 시간이 흐르며 <em>조선식 구곡 경영</em>으로 자라나는 과정을 따라갑니다. 노론이 구곡을 통해 학문의 정통 계보를 드러내려 한 의도까지 짚습니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>같은 「무이도가」를 한쪽은 <em>흥의 발현</em>으로, 다른 한쪽은 <em>학문의 순서</em>로 본 두 시선의 차이를, 새로운 사례에 적용해 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 하나의 본보기가 어떻게 두 갈래로 갈라져 수용되고 또 조선 고유의 문화로 자라났는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>조선의 성리학자들은 주희의 행적을 이상적인 학자의 모습으로 인식하였다. 주희는 무이산에 은거하여 무이정사를 짓고 후학을 양성하며, 무이산 계류의 아홉 굽이 경치를 노래한 「무이도가」를 지었다. 이러한 행적은 자연 속에서 심신을 수양한다는 주희의 성리학적 자연관을 ⓐ담고 있는 것으로 여겨졌고, 조선에서는 주희를 따라 심신을 닦고 학문에 정진하는 것이 사대부 사회의 문화적 유행이 되었다. 다만 그 수용 양상은 학통에 따라 차이를 보였다.</p>
+<p>이황의 학통을 따랐던 사대부들은 주희의 「무이도가」를 차운한 시를 자주 짓고 「무이구곡도」를 반복적으로 제작하였다. 이들은 「무이도가」를 자연을 마주하여 느끼는 흥(興)의 발현이자 성정을 닦는 내용을 담은 시로 보았다. 또한 「무이구곡도」를 주희의 성리학적 이상이 구현된 공간인 무이산을 대신하는 시각적 이미지로 인식하였다. 그리하여 이들은 무이산의 실제 경치를 빠짐없이 옮겨 담는 모사에 치중하였다. 이익이 「무이구곡도」를 주희의 초상화에 견주어 자세히 그려 내어야 한다고 한 것은 이러한 인식을 잘 보여 준다. 이황의 학통에서 「무이도가」를 차운하고 「무이구곡도」를 그리거나 소장하는 행위는 주희의 이상을 곁에 두고 우러르는 일이었다.</p>
+<p><strong>(나)</strong></p>
+<p>이이의 학통을 따랐던 사대부들은 주희의 무이정사나 「무이도가」를 동경하는 단계를 넘어 조선식 구곡을 경영하는 양상을 보였다. 이들은 「무이도가」를 학문으로 나아가는 순서를 담은 시로 보았다. 그리하여 경관이 빼어난 조선의 특정 지역에 정사를 짓고 학문을 닦으며 후학을 양성하는 한편, 주희를 따라 그 지역에 직접 구곡을 설정하여 경영하였다. 이들은 그곳에서 구곡시를 짓고, 무이산이 아니라 자신들이 경영하는 지역의 실제 경관을 바탕으로 구곡도를 그렸다. 이이가 황해도 고산군에 정사를 짓고 「고산구곡가」를 지은 뒤, 그의 학통을 따랐던 사대부들이 이를 주제로 「고산구곡도」를 그린 것이 그 예이다. 조선식 구곡의 경영은 중국에서 비슷한 사례를 거의 찾아볼 수 없는, 주희에 대한 조선 성리학자들의 존경을 보여 주는 독자적 양상이었다.</p>
+<p>이이의 학통을 따랐던 사대부들 가운데 노론 계열 문인들은 구곡 경영을 통해 주희로부터 이이로 이어지는 학문적 계보를 노론이 이어받았다는 점을 드러내려 하였다. 주희의 학문을 계승하였다는 정통성을 상징적으로 보여 줄 수 있는 것이 구곡의 재현이라고 보았기 때문이다. 노론 출신 김수증은 강원도 화천군 곡운에 농수정을 짓고 후학을 양성하였으며, 화가 조세걸에게 현장을 돌아보게 한 뒤 「곡운구곡도」를 그리게 하였다. 그는 아들·조카들과 「무이도가」를 차운한 「곡운구곡가」를 지어 그 그림과 엮어 시화첩을 만들었다. 한편 김홍도·김득신 등 여러 화가가 실제 경관으로 짐작되는 장면을 각각 그리고 시를 적어 표구한 「고산구곡시화도」 병풍에는 이이의 「고산구곡가」와 송시열의 시 등 노론 계열 문인들의 글이 포함되었다. 이는 이이가 주희의 학문을 계승하였고 그 계보가 다시 송시열로 이어진다는 것을 드러내어 노론의 결속을 강화하려는 목적을 지닌 것이었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 「무이도가」의 문학사적 위상을 평가하고 「무이도가」와 「무이구곡도」의 예술적 우열을 비교하고 있다.</li>
+<li>② (가)는 이황 학통이 추구한 이상적 경지를 소개하고 그 실현을 위해 주희를 수용한 입장의 한계를 설명하고 있다.</li>
+<li>③ (나)는 구곡 경영이라는 행위를 중심으로 이이 학통의 활동을 여러 사례와 함께 제시하고 있다.</li>
+<li>④ (나)는 여러 문인이 구곡도를 제작한 의도를 제시하고 그 차이에서 비롯된 학파 간 갈등을 절충하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 주희의 행적에 대한 비판이 심화되는 과정을 구체적 사례와 함께 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+(나)는 '구곡 경영'이라는 행위를 중심에 두고, 이이의 「고산구곡가」와 「고산구곡도」, 김수증의 「곡운구곡도」·「곡운구곡가」, 「고산구곡시화도」 병풍 등 여러 사례를 들어 이이 학통의 활동을 보여 줍니다. 그래서 ③이 맞아요. ①은 (가)가 「무이도가」와 「무이구곡도」의 예술적 <em>우열</em>을 비교한 적이 없고, ④는 (나)가 학파 간 <em>갈등을 절충</em>하지 않으며, ⑤는 (가)·(나) 모두 주희의 행적을 <em>비판</em>한 것이 아니라 존경하며 따른 양상을 다루므로 적절하지 않습니다. ②는 (가)에 이황 학통 수용의 <em>한계</em>를 지적한 내용이 없어 부적절해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 이황 학통의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 「무이도가」는 자연을 마주하여 느끼는 흥의 발현을 담은 시로 이해된다.</li>
+<li>② 「무이구곡도」는 주희의 성리학적 이상이 구현된 공간을 대신하는 이미지로 여겨진다.</li>
+<li>③ 「무이구곡도」는 무이산의 실제 경치를 빠짐없이 옮겨 담아야 하는 대상으로 인식된다.</li>
+<li>④ 「무이도가」를 차운하고 「무이구곡도」를 소장하는 일은 주희의 이상을 우러르는 행위에 해당한다.</li>
+<li>⑤ 「무이구곡도」는 조선의 특정 지역 경관을 직접 관찰하여 새롭게 구성해야 하는 대상으로 다루어진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong>
+2문단에서 이황 학통은 「무이구곡도」를 <em>무이산의 실제 경치</em>를 빠짐없이 옮겨 담는 모사의 대상으로 보았다고 했어요. <em>조선의 특정 지역 경관</em>을 직접 관찰해 새롭게 구성하는 것은 (나)의 이이 학통이 한 일이지요. 그래서 두 학통의 행위를 뒤바꿔 놓은 ⑤가 적절하지 않아 정답입니다. ①(흥의 발현)·②(무이산을 대신하는 이미지)·③(빠짐없이 모사)·④(곁에 두고 우러름)는 모두 2문단에서 그대로 확인됩니다.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+갑 서원(이황 학통에 대응)과 을 서원(이이 학통에 대응)은 모두 한 음악가를 <em>본보기로 존경</em>해 따른 것이지, 본보기를 비판해서 새 본보기를 세운 것이 아니에요. 지문에서도 두 학통은 주희를 <em>비판</em>한 것이 아니라 존경하며 수용했습니다. 그래서 ⑤가 적절하지 않아 정답입니다. ①은 악보를 그대로 베낌 = 빠짐없는 모사(2문단), ②는 초상이 걸린 방에서 연주 = 곁에 두고 우러름(2문단), ③은 자기 고을 경관으로 새 악보 = 실제 경관으로 구곡도(3문단), ④는 새 악보에 자기 스승들의 글 = 구곡의 글에 자기 계열 문인의 시 포함(4문단)에 정확히 대응하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 고을의 두 서원이 같은 음악가를 본보기로 삼았다. 갑 서원은 그 음악가가 남긴 악보를 한 음도 빠뜨리지 않고 그대로 베껴 보관하고, 그의 초상이 걸린 방에서 그 곡을 되풀이해 연주하며 그를 기렸다. 을 서원은 그 음악가가 고향의 풍경을 곡으로 옮긴 방식을 본받아, 자기 고을의 산과 물을 직접 거닐며 그 경관을 새 악보로 지었다. 을 서원의 한 문중은 그 새 악보 끝에 자기 스승들의 글을 나란히 실어, 그 음악가의 정신이 자기 문중으로 이어졌음을 드러내었다.</p>
+</blockquote>
+<ul>
+<li>① 갑 서원이 악보를 그대로 베껴 보관한 것은 이황 학통이 「무이구곡도」를 빠짐없이 옮겨 담으려 한 태도와 통하겠군.</li>
+<li>② 갑 서원이 초상이 걸린 방에서 곡을 되풀이해 연주한 것은 본보기를 곁에 두고 우러르는 수용 방식에 해당하겠군.</li>
+<li>③ 을 서원이 자기 고을의 경관을 새 악보로 지은 것은 이이 학통이 조선의 실제 경관으로 구곡도를 그린 것과 통하겠군.</li>
+<li>④ 을 서원의 한 문중이 새 악보에 자기 스승들의 글을 실은 것은 노론 계열이 구곡의 글에 자기 계열 문인의 시를 포함한 것과 통하겠군.</li>
+<li>⑤ 갑 서원과 을 서원이 한 음악가를 본보기로 삼은 것은 본보기에 대한 비판이 심화되어 새로운 본보기를 세우는 과정에 해당하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 그 항아리에는 잘 익은 김치가 <u>담겨</u> 있다.</li>
+<li>② 바구니에 사과가 가득 <u>담겨</u> 있다.</li>
+<li>③ 이 노래에는 어머니에 대한 그리움이 <u>담겨</u> 있다.</li>
+<li>④ 대접에 맑은 물이 찰랑찰랑 <u>담겨</u> 있다.</li>
+<li>⑤ 소금물에 매실이 며칠째 <u>담겨</u> 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+ⓐ '담고'는 '어떤 생각·정서·내용이 작품이나 말 속에 들어 있다'는 뜻이에요(주희의 자연관을 담고 있다). ③의 '노래에 그리움이 담겨 있다'가 같은 뜻이지요. ①·②·④는 '그릇 안에 무엇을 넣다', ⑤는 '액체에 무엇을 잠가 두다'의 뜻이라 본문과 달라요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>차운시</strong>: 남이 지은 시의 운자(韻字)를 따서 짓는 시. 이황 학통은 「무이도가」를 차운한 시를 즐겨 지었어요.</li>
+<li><strong>모사</strong>: 원래의 것을 그대로 본떠 옮겨 그리는 일. 이황 학통이 「무이구곡도」를 대한 방식이에요.</li>
+<li><strong>구곡 경영</strong>: 빼어난 지역에 직접 구곡을 설정하고 시·그림으로 가꾸는 일. 이이 학통의 독자적 양상이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>이황 학통 (가)</th>
+<th>이이 학통 (나)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「무이도가」를 보는 눈</td>
+<td>흥의 발현·성정 도야의 시</td>
+<td>학문으로 나아가는 순서의 시</td>
+</tr>
+<tr>
+<td>그림에 대한 태도</td>
+<td>무이산을 빠짐없이 모사</td>
+<td>조선의 실제 경관으로 구곡도</td>
+</tr>
+<tr>
+<td>행위의 무게중심</td>
+<td>주희를 곁에 두고 우러름</td>
+<td>조선식 구곡을 직접 경영</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>이황 학통이 「무이구곡도」 모사에 치중한 까닭은?</div><div class='qa-a'>「무이구곡도」를 주희의 이상이 구현된 무이산을 대신하는 시각적 이미지로 보았기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이이 학통이 동경의 단계를 넘어선 결과 한 일은?</div><div class='qa-a'>조선의 빼어난 지역에 정사를 짓고 직접 구곡을 설정·경영하며 그 지역 경관으로 구곡도를 그렸습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 학통이 같은 「무이도가」를 다르게 본 점은?</div><div class='qa-a'>이황 학통은 흥의 발현으로, 이이 학통은 학문으로 나아가는 순서로 보았습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>『한비자』는 중국 전국 시대의 한비자가 제시한 사상이 ⓐ담긴 저작이다. 여러 나라가 패권을 다투던 혼란기를 맞아 엄격한 법치를 통해 부국강병을 꾀한 한비자는 『노자』에 대한 해석을 통해 자신의 법치 사상을 뒷받침했고, 이러한 면모는 『한비자』의 「해로」, 「유로」 등에서 확인할 수 있다.</p>
+<p>『노자』에서 ‘도(道)’는 만물 생성의 근원으로 묘사된다. 도를 천지 만물의 존재와 본질의 근거라고 본 한비자의 이해도 이와 다르지 않다. 그는 자연과 인간 사회의 모든 현상은 도의 영향을 받지 않을 수 없다고 보고, 인간 사회의 일은 도에 따라 제대로 행했는가의 여부에 따라 그 성패가 드러나는 것이라고 이해했다.</p>
+<p>한비자는 『노자』에 제시된 영구불변하는 도의 항상성에 대해 도가 천지와 더불어 영원히 존재한다는 것을 의미하는 것이지, 도가 모습과 이치를 일정하게 유지하는 것은 아니라고 이해했다. 그리고 도는 형체가 없을 뿐 아니라 일정하게 고정되어 있지 않기 때문에 때와 상황에 따라 유연하게 변화하는 것이라고 파악했다. 도가 가변성을 가지고 있어야 도가 일정한 곳에만 있지 않게 되고, 그래야만 도가 모든 사물의 존재와 본질의 근거가 될 수 있다고 파악한 것이다. 그는 도가 가변적이기 때문에 통치술도 고정되어서는 안 된다고 주장했다.</p>
+<p>한편, 한비자는 도를 구체적인 사물과 사건에 내재한 개별 법칙의 통합으로 보고, 『노자』의 도에 시비 판단의 근거라는 새로운 의미를 부여했다. 항상 존재하는 도는 개별 법칙을 포괄하기 때문에 다양한 개별 사건의 시비를 판단하는 기준이 될 수 있고, 이러한 도에 근거해서 입법해야 다양한 사건을 판단할 수 있다고 본 것이다. 이러한 이해를 바탕으로 그는 만족을 모르는 인간의 욕망을 사회 혼란의 원인으로 지목한 『노자』의 견해에 동의하면서도, 『노자』에서처럼 욕망을 없애야 한다고 주장하지 않고 인간은 욕망을 필연적으로 가질 수밖에 없음을 지적하며 욕망을 제어하기 위해 법이 필요하다고 강조했다.</p>
+<p><strong>(나)</strong></p>
+<p>유학자들은 도를 인간 삶의 올바른 길을 의미하는 것이라고 보았다. 중국 송나라 이후, 유학자들은 이러한 유학의 도를 기반으로 현상 세계 너머의 근원으로서 도가의 도에 주목하여 『노자』 주석을 전개했다.</p>
+<p>혼란기를 거친 송나라 초기에 중앙집권화가 추진된 이후 정치적 갈등이 드러나면서 개혁의 분위기가 조성됐다. 이러한 분위기하에서 유학자이자 개혁 사상가인 왕안석은 『노자주』를 저술했다. 그는 『노자』의 도를 만물의 물질적 근원인 ‘기(氣)’라고 파악하고, 현상 세계에 앞서 존재하는 기의 작용에 의해 사물이 형성된다고 보았다. 그는 기가 시시각각 변화하듯 현상 세계도 변화한다고 이해했다. 인위적인 것을 제거해야만 도가 드러나고 인간 사회가 안정된다는 『노자』를 비판한 그는 자연과 달리 인간 사회의 안정을 위해서는 제도와 규범의 제정과 같은 인간의 적극적인 개입이 필요하다고 주장했다. 지혜와 덕이 뛰어난 사람이 제정한 사회 제도와 규범도 현실 사회의 변화에 따라 새롭게 해야 한다고 주장한 것이다. 『노자』의 이상 정치가 실현되려면 유학 이념이 실질적 수단으로 사용되어야 한다고 주장하는 등 왕안석은 『노자』를 유학의 실천적 측면과 결부하여 이해했다.</p>
+<p>송 이후 원나라에 이르러 성행하던 도교는 유학과 불교 등을 받아들여 체계화되었지만, 오징에게는 주술적인 종교에 불과했다. ㉠유학자의 입장에서 그는 잘못된 가르침을 펴는 도교에 사람들이 빠지는 것을 경계했다. 그는 도교의 시조로 간주된 노자의 가르침이 공자의 학문과 크게 다르지 않음을 밝히고자 『도덕진경주』를 저술했다. 그는 도와 유학 이념을 관련짓는 구절을 추가하는 등 『노자』의 일부 내용을 바꾸고 기존 구성 체제를 재편했다. 『노자』의 도를 근원적인 불변하는 도로 본 그는 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 이해했다. 이런 관점에서 그는 유학의 인의예지가 도의 쇠퇴 때문에 나타난 것이라는 『노자』와 달리 도가 현실화하여 드러난 것으로 해석하고, 인간이 마땅히 따라야 할 사회 규범과 사회 질서 체계도 도가 현실화한 결과로 파악했다.</p>
+<p>원이 쇠퇴하고 명나라가 들어선 이후 유학과 도가 등 여러 사상이 합류하는 사조가 무르익는 가운데, 유학자인 설혜는 자신의 ㉡학문적 소신에 따라 『노자』를 주석한 『노자집해』를 저술했다. 그는 공자도 존중했던 스승이 노자이므로 노자 사상에 대한 오해를 불식해야 한다고 보았다. 그는 기존의 주석서가 『노자』의 진정한 의미를 제대로 밝히지 못했기 때문에 유학자들이 노자 사상을 이단으로 치부했다고 파악한 것이다. 다양한 경전을 인용하여 『노자』를 해석하면서 그는 『노자』의 도를 인간의 도덕 본성과 그것의 근거인 천명으로 이해하고, 본성과 천명의 이치를 탐구한다는 점에서 노자 사상과 유학이 다르지 않다고 보았다. 또한 그는 『노자』에서 인의 등을 비판한 것은 도덕을 근본으로 삼게 하기 위한 충고라고 파악했다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 『한비자』의 철학사적 의의를 설명하고 『한비자』와 『노자』의 사회적 파급력을 비교하고 있다.</li>
+<li>② (가)는 한비자가 추구한 이상적인 사회를 소개하고 그 실현을 위해 『노자』를 수용한 입장의 한계를 설명하고 있다.</li>
+<li>③ (나)는 특정 개념을 중심으로 『노자』에 대한 여러 학자의 견해를 시간의 흐름에 따라 제시하고 있다.</li>
+<li>④ (나)는 여러 유학자가 『노자』를 해석한 의도를 각각 제시하고 그 차이로 인해 발생한 학자 간의 이견을 절충하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 『노자』에 대해 다양한 시각에서 제시된 비판이 심화되는 과정을 구체적 사례와 함께 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong><br />
+(나)는 ‘도’라는 특정 개념을 중심으로 송나라 왕안석 → 원나라 오징 → 명나라 설혜의 『노자』 해석을 시간의 흐름에 따라 제시한다. ①은 사회적 파급력 비교가 없고, ④는 학자 간 이견을 절충하지 않으며, ⑤는 (가)가 한비자의 견해만 제시하므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,626명 — ①3.3% ②4.8% ③77.8% ④6.6% ⑤7.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 한비자의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사건의 시비에 따라 달라지는 도에 근거하여 법이 제정되어야 한다.</li>
+<li>② 인간은 무엇을 가지거나 누리고자 하는 마음에서 벗어날 수 없다.</li>
+<li>③ 도는 고정된 모습 없이 때와 형편에 따라 변화하며 영원히 존재한다.</li>
+<li>④ 인간 사회의 흥망성쇠는 사람이 도에 따라 올바르게 행하였는가의 여부에 좌우되는 것이다.</li>
+<li>⑤ 도는 만물의 근원이면서 동시에 현실 사회의 개별 사물과 사건에 내재한 법칙을 포괄하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+4문단에서 한비자는 항상 존재하는 도가 개별 법칙을 포괄하기에 다양한 개별 사건의 시비를 판단하는 ‘기준’이 된다고 보았다. 도가 사건의 시비에 따라 달라지는 것이 아니므로 ①이 부적절하다. ②는 욕망의 필연성(4문단), ③은 도의 가변성과 항상성(3문단), ④는 성패가 도에 따라 행했는가에 좌우됨(2문단), ⑤는 2·4문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,624명 — ①51.6% ②6.6% ③7.2% ④18.4% ⑤16.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 유학 덕목의 등장을 긍정적으로 평가한 『노자』의 견해를 수용하는, ㉡은 유학 덕목에 대한 『노자』의 비판에 담긴 긍정적 의도를 밝히려는 것으로 표출되었다.</li>
+<li>② ㉠은 유학에 유입되고 있는 주술성을 제거하는, ㉡은 노자 사상이 탐구하는 대상에 대한 이해를 근거로 노자 사상과 유학의 공통점을 제시하려는 것으로 표출되었다.</li>
+<li>③ ㉠은 유학의 가르침을 차용한 종교가 사람들을 현혹하는 상황에 대응하는, ㉡은 『노자』를 해석한 경전들을 참고하여 유학 이론의 독창성을 밝히려는 것으로 표출되었다.</li>
+<li>④ ㉠은 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인하는, ㉡은 유학에서 이단으로 치부하는 사상의 진의를 밝혀 오해를 바로잡으려는 것으로 표출되었다.</li>
+<li>⑤ ㉠은 특정 종교에서 추앙하는 사상가와 유학 이론의 관련성을 제시하는, ㉡은 유학의 사상적 우위를 입증하여 다른 학문을 통합할 수 있는 근거를 제시하려는 것으로 표출되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+㉠(오징)은 노자의 가르침이 공자의 학문과 다르지 않음을 밝히고 인의예지·사회 규범을 도의 현실화로 해석했으므로, 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인한 것이다. ㉡(설혜)은 이단으로 치부된 노자 사상의 진정한 의미를 밝혀 오해를 불식하고자 했다. ②는 주술성이 유학에 유입된 것이 아니고, ⑤는 설혜가 유학의 사상적 우위를 입증하려 한 것이 아니어서 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,620명 — ①5.3% ②26.1% ③10.0% ④47.9% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>(나)의 왕안석과 오징의 입장에서 다음의 ㄱ～ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p>ㄱ. 도는 만물을 통해 드러나는 것이지 만물에 앞서서 존재하는 것은 아니다.
+ㄴ. 인간 사회의 규범은 이치를 내재한 근원적 존재인 도가 현실에 드러난 것이다.
+ㄷ. 도는 현상 세계의 너머에만 머물러 있지 않고 세상일과 유기적으로 관련되는 것이다.
+ㄹ. 도가 변화하듯이 현상 세계가 변하니, 현실 사회의 변화에 따라 인간 사회의 규범도 변해야 한다.</p>
+</blockquote>
+<ul>
+<li>① 왕안석은 ㄱ에 동의하지 않고 ㄴ에 동의하겠군.</li>
+<li>② 왕안석은 ㄴ과 ㄹ에 동의하겠군.</li>
+<li>③ 왕안석은 ㄷ에 동의하고 ㄹ에 동의하지 않겠군.</li>
+<li>④ 오징은 ㄱ과 ㄹ에 동의하지 않겠군.</li>
+<li>⑤ 오징은 ㄴ에 동의하고 ㄷ에 동의하지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong><br />
+오징은 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 보므로 ㄱ(도가 만물에 앞서 존재하지 않음)에 동의하지 않고, 도를 근원적인 불변하는 도로 보므로 ㄹ(도의 변화)에도 동의하지 않는다. 왕안석은 기(도)가 현상 세계에 앞서 존재한다고 보아 ㄱ에 동의하지 않고, 규범은 인간의 적극적 개입으로 제정된다고 보아 ㄴ에 동의하지 않으며, ㄹ에는 동의한다.</p>
+<p><em>선택률</em> — 응시 98,649명 — ①11.1% ②22.0% ③10.5% ④34.8% ⑤21.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉를 참고할 때, (가), (나)의 사상가에 대한 왕부지의 평가로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+청나라 초기의 유학자 왕부지는 『노자』의 본래 뜻을 드러내어 노자 사상을 비판하고자 『노자연』을 저술했다. 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하고자 했던 그는 기존의 『노자』 주석서가 노자 사상이 아닌 사상을 기준으로 삼았기 때문에 『노자』뿐만 아니라 주석자의 사상마저 왜곡했다고 비판했다. 『노자』에서 아무런 행동을 하지 않아도 천하가 다스려진다고 한 것 등을 비판한 그는, 『노자』에서처럼 단순히 인간의 이기적 욕망을 없애는 것이 아니라 사회 질서 유지를 위해 유학 규범을 활용해야 한다고 강조했다.</p>
+</blockquote>
+<ul>
+<li>① 왕부지는 인간의 욕망에 대한 『노자』의 대응 방식을 부정적으로 보았으므로, (가)의 한비자가 『노자』와 달리 사회에 대한 인위적 개입이 필요하다고 한 것에 대해서는 수긍하겠군.</li>
+<li>② 왕부지는 『노자』에 제시된 소극적인 삶의 태도를 부정적으로 보았으므로, (나)의 왕안석이 사회 제도에 대한 『노자』의 견해를 비판하며 유학 이념의 활용을 주장한 것은 긍정하겠군.</li>
+<li>③ 왕부지는 『노자』의 본래 뜻을 파악해야 한다고 보았으므로, (나)의 오징이 『노자』를 주석하면서 자신의 이해에 따라 원문의 구성과 내용을 수정한 것이 잘못이라고 보겠군.</li>
+<li>④ 왕부지는 주석자가 유학을 기준으로 『노자』를 이해하면 주석자의 사상도 왜곡된다고 보았으므로, (나)의 오징이 유학의 인의예지를 『노자』의 도가 현실화한 것으로 본 것을 비판하겠군.</li>
+<li>⑤ 왕부지는 『노자』에 담긴 비현실성을 드러내야 한다고 보았으므로, (나)의 설혜가 기존의 『노자』 주석서들을 비판하며 드러낸 학문적 입장이 유학의 실용적 가치를 부각한다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+설혜의 학문적 입장은 노자 사상과 유학이 다르지 않음을 밝혀 노자 사상에 대한 오해를 불식하려는 것으로, 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하려 한 왕부지의 시각과 대비된다. 따라서 ⑤가 부적절하다. ①~④는 각각 욕망 제어를 위한 법의 필요(한비자), 유학 이념의 실질적 수단화(왕안석), 원문 수정(오징), 유학 기준의 해석(오징)에 대한 왕부지의 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,629명 — ①6.5% ②9.0% ③19.6% ④21.2% ⑤43.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 과일이 접시에 예쁘게 담겨 있다.</li>
+<li>② 상자에 탁구공이 가득 담겨 있다.</li>
+<li>③ 시원한 계곡물에 수박이 담겨 있다.</li>
+<li>④ 화폭에 봄 경치가 그대로 담겨 있다.</li>
+<li>⑤ 매실이 설탕물에 한 달째 담겨 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓐ ‘담긴’은 ‘어떤 내용이나 사상이 그림, 글, 말 따위 속에 포함되거나 반영되다’의 의미로, ④의 ‘화폭에 봄 경치가 담겨 있다’와 같다. ①·②는 그릇 따위에 넣어지다, ③은 액체 속에 넣어지다, ⑤는 익거나 삭도록 보관되다의 의미이다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.4% ②0.6% ③1.0% ④95.0% ⑤2.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>조선에서는 16세기 이후 사림 계열의 성리학 연구가 심화되면서, 주희의 행적을 따르는 일이 사대부 사회에 자리 잡았다. 주희가 무이산에 은거하며 후학을 기르고 「무이도가」를 지은 일은 자연 속에서 심신을 수양한다는 성리학적 자연관의 본보기로 받아들여졌다. 한편 이러한 수용은 주희의 「무이도가」를 차운하고 「무이구곡도」를 제작하는 형태로 나타났다. 이는 주희의 성리학적 이상이 구현된 공간인 무이산을 시각적 이미지로 곁에 두고 우러르는 일이었다. 이익이 「무이구곡도」를 주희의 초상화에 견주어 빠짐없이 자세히 그려 내어야 한다고 한 것은, 이 단계의 수용이 <span class="boxmark">[모사]</span>에 ⓐ기울어 있었음을 보여 준다.</p>
+<p>또 다른 방향에서 이이의 학통은 「무이도가」를 학문으로 나아가는 순서를 담은 시로 받아들이면서, 주희를 동경하는 단계를 넘어 조선식 구곡을 직접 경영하는 양상으로 나아갔다. 이이가 황해도 고산군에 정사를 짓고 「고산구곡가」를 지은 일이 그 출발점이었다. 그의 학통을 따랐던 사대부들은 빼어난 조선의 지역에 정사를 짓고 학문을 닦으며 후학을 기르는 한편, 그 지역에 구곡을 설정하여 구곡시를 짓고 실제 경관을 바탕으로 구곡도를 그렸다. 이이가 죽은 뒤 그의 학통을 따랐던 사대부들이 「고산구곡가」를 주제로 「고산구곡도」를 그린 것은 이러한 흐름의 산물이었다. 조선식 구곡의 경영은 중국에서 비슷한 사례를 거의 찾아볼 수 없는, 조선 성리학자들의 독자적 수용 방식으로 굳어졌다.</p>
+<p>나아가 조선식 구곡 경영은 학문적 계보의 정통성을 드러내는 수단으로까지 확장되었다. 이이의 학통 가운데 노론 계열 문인들은 주희로부터 이이로 이어지는 계보를 노론이 계승하였음을 구곡의 재현으로 상징하고자 하였다. ㉠<u>노론 출신 김수증은 강원도 화천군 곡운에 농수정을 짓고 후학을 기르며, 화가 조세걸에게 현장을 돌아보게 한 뒤 「곡운구곡도」를 그리게 하였다.</u> 10년 뒤 그는 아들·조카들과 「무이도가」를 차운한 「곡운구곡가」를 지어 그 그림과 엮어 시화첩을 만들었다. 이렇게 구곡 경영은 주희의 행적을 본뜨는 데서 출발하여, 조선의 경관을 담는 독자적 문화로, 다시 한 계열의 계보를 드러내는 수단으로 그 의미를 넓혀 갔다.</p>
+<p><strong>(나)</strong></p>
+<p>노론 계열의 구곡 경영이 계보의 정통성을 드러내는 일과 결합한 양상은 「고산구곡시화도」 병풍에서 분명하게 나타난다. 이 병풍은 김홍도·김득신 등 여러 화가가 실제 경관으로 짐작되는 장면을 각각 그리고, 거기에 시를 적어 표구한 것이다. 병풍에 포함된 글은 이이의 「고산구곡가」와 송시열의 시 등 노론 계열 문인들의 시나 발문이었다.</p>
+<p>㉡<u>병풍에 실린 글의 구성</u>은 그 자체로 하나의 계보를 이루었다. 주희의 「무이도가」를 차운한 「고산구곡가」를 이이가 지었고, 그 「고산구곡가」와 송시열의 글이 한 병풍에 나란히 놓임으로써, 주희에서 이이로, 다시 송시열로 이어지는 학문적 흐름이 시각적으로 제시된 것이다. 이는 단순히 경관을 감상하기 위한 그림이 아니라, 노론이 주희의 학문을 정통으로 계승하였음을 드러내고 그 결속을 강화하려는 의도를 지닌 것이었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가): 주희의 행적을 따르는 일은 16세기 이후 사림의 성리학 연구가 심화되며 자리 잡았다.</li>
+<li>② (가): 조선식 구곡을 직접 경영하는 양상은 이이의 학통에서 나타나기 시작하였다.</li>
+<li>③ (가): 주희를 동경하는 단계를 넘어선 수용이 「무이구곡도」를 제작하는 단계보다 앞서 등장하였다.</li>
+<li>④ (나): 「고산구곡시화도」 병풍에는 노론 계열 문인들의 시나 발문이 포함되었다.</li>
+<li>⑤ (나): 병풍에 실린 글의 구성은 주희에서 이이를 거쳐 송시열로 이어지는 흐름을 보여 주었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong>
+(가)는 수용이 「무이구곡도」 제작(모사) → 조선식 구곡 경영 → 계보의 정통성 드러내기로 <em>그 의미를 넓혀 가는</em> 흐름으로 서술돼요. 주희를 동경하는 단계를 넘어선 수용(구곡 경영)은 모사 단계보다 <em>나중에</em> 나타났지요. 그래서 둘의 순서를 뒤집은 ③이 적절하지 않아 정답입니다. ①(16세기 이후 사림)·②(이이 학통에서 시작)는 (가) 1~2문단, ④·⑤는 (나)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[모사]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 주희의 「무이도가」를 차운하고 「무이구곡도」를 제작하는 형태로 나타났다.</li>
+<li>② 무이산을 시각적 이미지로 곁에 두고 우러르는 수용과 관련이 있었다.</li>
+<li>③ 주희의 성리학적 이상이 구현된 공간을 빠짐없이 옮겨 담으려는 태도와 이어졌다.</li>
+<li>④ 이익이 「무이구곡도」를 주희의 초상화에 견준 인식에서 그 성격이 드러났다.</li>
+<li>⑤ 조선의 실제 경관을 직접 관찰하여 새 구곡도를 그리는 단계에 이르러 완성되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+<span class="boxmark">[모사]</span>는 (가) 1문단에서 「무이도가」 차운과 「무이구곡도」 제작으로, 무이산을 곁에 두고 우러르며 빠짐없이 옮겨 담는 태도로 설명됩니다. <em>조선의 실제 경관을 직접 관찰해 새 구곡도를 그리는 단계</em>는 모사가 아니라 그 다음 단계인 <em>구곡 경영</em>에 해당하므로, 이를 모사의 완성으로 본 ⑤가 적절하지 않아 정답입니다. ①~④는 모두 1문단에서 확인돼요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 구곡 경영이 후학 양성과 무관하게 이루어졌음을, ㉡은 병풍이 경관 감상만을 목적으로 했음을 보여 준다.</li>
+<li>② ㉠은 구곡 경영이 현장 관찰을 바탕으로 한 그림 제작을 포함했음을, ㉡은 글의 구성이 학문적 계보를 시각적으로 제시했음을 보여 준다.</li>
+<li>③ ㉠은 구곡 경영이 중국의 사례를 그대로 옮긴 것임을, ㉡은 병풍이 노론 외 여러 계열의 글을 고루 실었음을 보여 준다.</li>
+<li>④ ㉠은 구곡 경영이 주희를 동경하는 단계에 머물렀음을, ㉡은 병풍의 글이 계보와 무관하게 배열되었음을 보여 준다.</li>
+<li>⑤ ㉠은 구곡도가 무이산의 경치를 모사한 것임을, ㉡은 병풍이 이이의 글만으로 구성되었음을 보여 준다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+㉠(김수증)은 화가에게 <em>현장을 돌아보게 한 뒤</em> 「곡운구곡도」를 그리게 했으니, 구곡 경영이 현장 관찰을 바탕으로 한 그림 제작을 포함했음을 보여 줍니다. ㉡(병풍 글의 구성)은 주희→이이→송시열의 흐름이 한 병풍에 나란히 놓여 <em>학문적 계보를 시각적으로 제시</em>했음을 보여 주지요. 그래서 ②가 적절합니다. ①·③·④·⑤는 각각 후학 양성·중국 사례 모방·동경에 머묾·이이의 글만으로 구성 등 지문과 어긋나는 진술이라 부적절해요.</p>
+<p><strong>8번 [3점] — 정답 ⑤</strong>
+〈보기〉의 장인 집단은 옛 대장장이를 <em>본보기로 존경</em>해 따른 것이지, 그를 <em>비판하며</em> 새 작업장을 세운 것이 아니에요. 지문에서도 노론은 주희의 행적을 <em>부정</em>한 것이 아니라 그 계승의 정통성을 드러내려 했지요. 그래서 ⑤가 적절하지 않아 정답입니다. ①은 도구를 본떠 걺=모사 단계, ②는 고장 재료로 직접 벼림=실제 경관으로 구곡 경영, ③은 가문 어른들의 글을 이어 붙임=병풍 글로 계보 드러내기, ④는 본뜨기→직접 만들기→계보 드러내기의 확장=구곡 경영 의미의 확장에 각각 대응하는 적절한 반응이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 지방의 장인 집단은 옛 대장장이의 작업장을 본보기로 삼았다. 처음에는 그 대장장이가 남긴 도구를 그대로 본떠 만들어 작업장 벽에 걸고 그를 기렸다. 세월이 흐르자 한 무리는 그 대장장이가 고장의 흙과 물로 연장을 벼린 방식을 본받아, 자기 고장의 재료로 새 연장을 직접 벼리고 그 과정을 기록으로 남겼다. 그중 한 가문은 그 기록의 끝에 자기 가문 어른들의 글을 차례로 이어 붙여, 그 대장장이의 솜씨가 자기 가문으로 전해졌음을 내보였다.</p>
+</blockquote>
+<ul>
+<li>① 도구를 그대로 본떠 벽에 걸고 기린 것은, 주희를 곁에 두고 우러르며 「무이구곡도」를 모사한 단계와 통하겠군.</li>
+<li>② 자기 고장의 재료로 새 연장을 직접 벼린 것은, 조선의 실제 경관으로 구곡을 직접 경영한 양상과 통하겠군.</li>
+<li>③ 한 가문이 기록 끝에 어른들의 글을 이어 붙인 것은, 노론이 병풍의 글로 학문적 계보를 드러낸 일과 통하겠군.</li>
+<li>④ 본보기를 따르는 방식이 본뜨기에서 직접 만들기로, 다시 가문의 계보 드러내기로 옮겨 간 것은, 구곡 경영의 의미가 넓어진 흐름과 통하겠군.</li>
+<li>⑤ 장인 집단이 처음부터 옛 대장장이를 비판하며 새 작업장을 세운 것은, 노론이 주희의 행적을 부정하고 독자적 계보를 세운 일과 통하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 그는 한쪽으로 몸을 <u>기울여</u> 창밖을 내다보았다.</li>
+<li>② 비탈을 따라 길이 가파르게 <u>기울어</u> 있었다.</li>
+<li>③ 그의 관심은 점차 음악보다 미술 쪽으로 <u>기울었다</u>.</li>
+<li>④ 오후가 되자 해가 서쪽으로 <u>기울기</u> 시작했다.</li>
+<li>⑤ 가세가 <u>기울어</u> 집을 팔 수밖에 없었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong>
+ⓐ '기울어'는 '마음이나 관심·형세가 어느 한쪽으로 쏠리다'의 뜻이에요(수용이 모사에 기울어 있었다). ③의 '관심이 미술 쪽으로 기울었다'가 같은 뜻이지요. ①은 '비스듬히 굽히다', ②는 '한쪽이 낮아지도록 비스듬해지다(지형)', ④는 '해가 지다', ⑤는 '집안 형편이 어려워지다'의 뜻이라 본문과 달라요. ②·④는 모두 물체나 지형이 한쪽으로 비스듬해진다는 <em>물리적 기울기</em>라 '마음·관심의 쏠림'과 의미축이 다릅니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>구곡 경영</strong>: 빼어난 곳에 직접 구곡을 정하고 시·그림으로 가꾸며 학문과 후학 양성을 겸하는 일.</li>
+<li><strong>계보(학통)</strong>: 학문을 이어받은 줄기. 주희→이이→송시열처럼 누가 누구를 계승했는지를 잇는 흐름이에요.</li>
+<li><strong>정통성</strong>: 어떤 흐름을 바르게 이어받았다고 인정받는 자격. 노론은 구곡 재현으로 이를 상징하려 했어요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>수용의 모습</th>
+<th>무게중심</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1단계</td>
+<td>「무이도가」 차운·「무이구곡도」 모사</td>
+<td>주희를 곁에 두고 우러름</td>
+</tr>
+<tr>
+<td>2단계</td>
+<td>조선식 구곡을 직접 경영</td>
+<td>조선의 경관을 담는 독자성</td>
+</tr>
+<tr>
+<td>3단계</td>
+<td>구곡 재현으로 계보 정통성 표상</td>
+<td>한 계열의 결속·정통성</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>조선식 구곡 경영이 등장하기 전의 수용 방식은?</div><div class='qa-a'>「무이도가」를 차운하고 「무이구곡도」를 모사하며 무이산을 곁에 두고 우러르는 방식이었습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>노론이 구곡 재현을 계보의 상징으로 본 까닭은?</div><div class='qa-a'>주희의 학문을 계승했다는 정통성을 상징적으로 보여 줄 수 있다고 보았기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>「고산구곡시화도」 병풍에 실린 글들의 의미는?</div><div class='qa-a'>주희→이이→송시열로 이어지는 학문적 계보를 시각적으로 드러내 노론의 결속을 강화하려는 것이었습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 수능 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>서양의 과학과 기술, 천주교의 수용을 반대했던 이항로를 비롯한 척사파의 주장은 개항 이후에도 지속되었지만, <span class="boxmark">[개화]</span>는 거스를 수 없는 대세로 자리 잡았다. 개물성무(開物成務)와 화민성속(化民成俗)의 앞 글자를 딴 개화는 개항 이전에는 통치자의 통치 행위로서 변화하는 세상에 대한 지식 확장과 피통치자에 대한 교화를 의미했다.</p>
+<p>개항 이후 서양 문명에 대한 긍정적 인식이 확산되면서 서양 문명의 수용을 뜻하는 개화 개념이 자리 잡았다. 임오군란 이후, 고종은 자강 정책을 추진하면서 반(反)서양 정서의 교정을 위해 『한성순보』를 발간했다. 이 신문의 개화 개념은 서양 기술과 제도의 도입을 통한 인지의 발달과 풍속의 진보를 뜻했다. 이 개념에는 인민이 국가의 독립 주권의 소중함을 깨닫는 의식의 변화가 내포되었고, 통치자의 입장에서 수용 가능한 문명의 장점을 받아들여 국가의 진보를 달성한다는 의미도 담겼다.</p>
+<p>개화당의 한 인사가 제시한 개화 개념은 성문화된 규정에 따른 대민 정치에서의 법적 처리 절차 실현 등 서양 근대 국가의 통치 방식으로의 변화를 내포하는 것이었다. 그는 개화 실행 주체를 여전히 왕으로 생각했고, 개화 실행 주체로서 왕의 역할이 사라진 것은 갑신정변에서였다. 풍속의 진보와 통치 방식 변화라는 의미를 내포한 갑신정변의 개화 개념은 통치권에 대한 도전으로뿐 아니라 개인의 사욕을 위한 것으로 표상되었다. 이후 개화 개념은 국가 구성원을 조직하고 동원하기 위해 부정적 이미지에서 벗어나야 했고, 유길준은 『서유견문』을 저술하며 개화 개념에 덧씌워진 부정적 이미지를 떼어 내고자 했다. 이후 간행된 『대한매일신보』 등의 개화 개념은 국가 구성원 전체를 실행 주체로 하여 근대 국가 주권을 향해 그들을 조직하고 동원하는 것을 의미했다.</p>
+<p>을사늑약 이후, 개화 논의는 문명에 대한 본격적인 논의로 이어졌다. 대한 자강회의 주요 인사들은 서양 근대 문명을 수용하여 근대 국가를 건설하고자, 앞서 문명화를 이룬 일본의 지도를 받아야 한다고 보았다. 이들은 서양 근대 문명의 주체를 주체 인식의 준거로 삼았기 때문에 민족 주체성을 간과했다. 이러한 상황에서 박은식은 ㉠근대 국가 건설과 새로운 주체의 형성에 주목하여 문명에 대한 견해를 제시했다. 그의 기본 전략은 문명의 물질적 측면인 과학은 서양으로부터 수용하되, 문명의 정신적 측면인 철학은 유학을 혁신하여 재구성하는 것이었다. 그는 생존과 편리 증진을 위해 과학 연구가 시급하지만, 가치관 정립과 인격 수양을 위해 철학 또한 필수적이라고 보았다. 자국 철학 전통의 정립이라는 당시 동아시아의 사상적 흐름 속에서 그가 제시한 근대 주체는 과학적ㆍ철학적 인식의 주체이자 실천적 도덕 수양의 주체로서의 성격을 띠는 것이었다.</p>
+<p>(나)</p>
+<p>중국이 서양의 과학과 기술에 전면적인 관심을 기울인 때는 아편 전쟁 이후였다. 전쟁 패배에 따른 위기감은 반세기에 걸쳐 근대화의 추진과 함께 의욕적인 기술 수용으로 이어졌지만, 청일 전쟁의 패배는 기술 수용만으로는 부족하다는 인식을 낳았다. 이에 따라 20세기 초반 진정한 근대를 이루기 위해 기술 배후에서 작용하는 과학 정신을 사회 전체에 이식하려는 시도가 구체화되었다.</p>
+<p>옌푸는 국가 간에 벌어지는 약육강식의 경쟁을 부각하고, 경쟁에서 승리하려면 기술뿐 아니라 국민의 정신적 자질이 뒷받침되어야 한다고 보았다. 정신적 자질 중 과학적 사유 능력이 가장 중요하다고 파악한 그에게 과학 정신이 전제되지 않은 정치적 변혁은 뿌리내릴 수 없는 것이었다. 그는 인과 실증의 방법에 근거한 근대 학문 전체를 과학이라 파악하고, 과학을 습득하여 전통 학문의 폐단에서 벗어나야 한다고 주장했다. 그의 입장은 1910년대 후반 신문화 운동을 주도한 천두슈에게 이어졌다.</p>
+<p>천두슈를 비롯한 신문화 운동의 지식인들은 ㉡과학의 근거 위에서만 민주 정치의 실현이 가능하다고 주장했다. 중국이 달성해야 할 신문화는 과학 및 과학의 방법에 근거한 문화라 보고, 신문화를 이루기 위해 전통문화 전반에 대해 철저한 부정과 비판을 시도했다. 사상이나 철학이 과학의 방법을 이용하지 않으면 공상(空想)에 ⓐ그칠 뿐이라고 주장한 천두슈는 사회와 인간의 삶에 대한 연구도 과학의 연구 방법을 이용해야 한다고 보았다. 그는 제1차 세계 대전의 비극은 과학을 이용해 저지른 죄악의 결과일 뿐 과학 자체의 죄악이 아니라고 주장하며 과학에 대한 자신의 생각을 지속했다.</p>
+<p>한편, 제1차 세계 대전 이후 유럽을 시찰했던 장쥔마이는 통제되지 않은 과학이 불러온 역작용을 목도한 후, 과학이 어떻게 발달하든 그것이 인생관의 문제를 해결할 수는 없다며 서양 근대 문명을 비판했다. 근대 과학 문명에서 초래된 사상적 위기가 주체의 책임 부재에서 비롯된 것이라는 주장에 동의했던 그는 과학적 방법을 부정하지 않았지만, 인생관의 문제에는 과학적 방법이 적용될 수 없다고 지적했다. 그는 인생관을 과학과 별개로 파악했고, 과학만능주의에 기초한 신문화 운동에 의해 부정된 중국 전통 가치관의 수호를 내세웠다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① (가) : 서양 과학과 기술의 국내 유입을 반대하는 주장이 개항 이후에도 이어졌다.</li>
+<li>② (가) : 유학을 혁신하여 철학으로 재구성하는 것이 필요하다는 견해가 을사늑약 이후에 제기되었다.</li>
+<li>③ (나) : 진정한 근대를 이루려면 기술 수용의 차원을 넘어서야 한다는 인식이 등장하였다.</li>
+<li>④ (나) : 과학 정신이 사회에 자리 잡으려면 정치적 변혁이 선행되어야 한다는 주장이 제기되었다.</li>
+<li>⑤ (나) : 근대 과학 문명에 대한 비판적 인식을 바탕으로 전통 가치관에 주목하는 견해가 제시되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong><br />
+(나) 2문단에서 옌푸는 과학 정신이 전제되지 않은 정치적 변혁은 뿌리내릴 수 없다고 보았다. 이는 정치적 변혁이 아니라 과학 정신이 선행되어야 한다는 주장이므로 ④는 적절하지 않다. ①은 (가) 1문단(척사파), ②는 (가) 4문단(박은식), ③은 (나) 1문단(청일 전쟁 패배 후 인식), ⑤는 (나) 4문단(장쥔마이)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,586명 — ①8.4% ②3.8% ③5.1% ④70.1% ⑤13.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[개화]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 개항 이전의 개화 개념은 백성을 다스리는 통치자로서의 역할과 관련 있었다.</li>
+<li>② 『한성순보』의 개화 개념은 서양 기술과 제도의 선별적 수용을 통한 국가 진보의 의미를 포함하였다.</li>
+<li>③ 『한성순보』와 개화당의 한 인사의 개화 개념은 통치권자인 왕을 개화의 실행 주체로 상정하였다.</li>
+<li>④ 개화의 실행 주체로 왕에게 역할을 부여하지 않은 갑신정변의 개화 개념은 통치권에 대한 도전으로 이해되었다.</li>
+<li>⑤ 『대한매일신보』의 발간에 이르러서야 국가의 주권과 결부한 개화 개념이 제기되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong><br />
+(가) 2문단에서 그보다 앞서 발간된 『한성순보』의 개화 개념에 이미 '인민이 국가의 독립 주권의 소중함을 깨닫는 의식의 변화'가 내포되어 있었으므로, 『대한매일신보』 발간에 이르러서야 주권과 결부한 개념이 제기되었다는 ⑤는 적절하지 않다. ①은 1문단, ②·③은 2~3문단(통치자 입장의 수용 가능한 장점 수용, 개화당 인사의 왕 주체 상정), ④는 3문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,585명 — ①4.2% ②14.9% ③10.5% ④7.0% ⑤64.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(나)의 '천두슈'와 '장쥔마이'가 모두 동의할 수 있는 진술로 가장 적절한 것은?</p>
+<ul>
+<li>① 전통 사상은 과학 및 과학 정신과 양립할 수 없는 관계에 놓여 있다.</li>
+<li>② 전통 사상의 폐단은 과학 정신이 뿌리내리지 못한 사회 체질에서 비롯된 것이다.</li>
+<li>③ 과학을 이용하는 과정에서 문제가 발생했다고 해도 과학적 방법을 부정할 수 없다.</li>
+<li>④ 서양의 과학 정신을 전면적으로 도입하면 당면한 국가의 위기를 충분히 극복할 수 있다.</li>
+<li>⑤ 국가의 위기는 과학적 방법으로 사상을 재구성할 필요가 있다는 인식이 부재한 데에서 비롯된 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>6번 — 정답 ③</strong><br />
+천두슈는 제1차 세계 대전의 비극이 과학을 이용해 저지른 죄악의 결과일 뿐 과학 자체의 죄악이 아니라고 했고, 장쥔마이도 서양 근대 문명을 비판하면서도 과학적 방법 자체는 부정하지 않았다. 따라서 ③에 둘 다 동의할 수 있다. ①·②·④·⑤는 천두슈는 동의할 수 있으나 전통 가치관 수호를 내세운 장쥔마이는 동의할 수 없는 진술이다.</p>
+<p><em>선택률</em> — 응시 98,586명 — ①7.4% ②5.8% ③70.0% ④6.8% ⑤10.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 인격의 수양을 동반하는 근대 주체의 정립에, ㉡은 전통적 사유 방식에 기반을 둔 신문화의 달성에 동의하는 입장이다.</li>
+<li>② ㉠은 주체 인식의 준거가 서양 근대 문명의 주체라는 인식에, ㉡은 철학이 과학의 방법에 근거할 수 없다는 생각에 반대하는 입장이다.</li>
+<li>③ ㉠은 생존과 편리 증진을 위한 과학 연구의 시급성을, ㉡은 과학의 방법에 영향 받지 않는 사상이나 철학을 부인하는 입장이다.</li>
+<li>④ ㉠은 앞서 근대 문명을 이룬 국가를 추종하는 태도를, ㉡은 전쟁의 폐해가 과학을 오용한 자들의 탓이라는 주장을 비판하는 입장이다.</li>
+<li>⑤ ㉠은 과학과 철학이 문명의 두 축을 이루는 학문이라는 견해에, ㉡은 철학보다 과학이 우위임을 인정할 수 없다는 견해에 동의하는 입장이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong><br />
+㉠(박은식)은 서양 근대 문명의 주체를 주체 인식의 준거로 삼아 민족 주체성을 간과한 대한 자강회 인사들과 달리 자국 철학 전통의 정립을 지향했으므로, 그 인식에 반대하는 입장이다. ㉡(천두슈)은 사상이나 철학이 과학의 방법을 이용하지 않으면 공상에 그칠 뿐이라 했으므로 '철학이 과학의 방법에 근거할 수 없다'는 생각에 반대한다. 따라서 ②가 적절하다. 최다 오답 ③은 ㉠ 쪽이 틀렸다 — 박은식은 과학 연구의 시급성을 인정했으므로 이를 '부인'하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,902명 — ①6.0% ②31.0% ③31.9% ④11.2% ⑤19.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 이해한 학생이 〈보기〉에 대해 보인 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+A 마을은 가난했지만 전통문화와 공동체적 삶을 중시하며 이웃 마을들과 조화롭게 살아왔다. 오래전, 정부는 마을의 경제 발전을 목표로 서양의 생산 기술을 도입하는 정책을 시행했다. 마을 사람들은 정책의 필요성에 공감하면서도 자신들이 발전을 이뤄 낼 수 있다는 확신이 부족했다. 이에 정부는 마을 사람들을 독려하기 위해 마을의 역량으로 달성할 수 있는 미래상을 지속해서 홍보했다. 이후 마을은 물질적 풍요를 누리게 되었지만 경제적 이권을 두고 이웃 마을들과 경쟁하며 갈등하게 되었다. 격화된 경쟁에서 A 마을은 새로운 기술의 수용만을 우선시했고, 과거에 중시되었던 협력과 나눔의 인생관은 낡은 관념이 되었다. 젊은이들에게 전통문화는 서양 문화에 비해 열등한 것으로 여겨졌다.</p>
+</blockquote>
+<ul>
+<li>① (가)에서 『한성순보』를 간행한 취지는 서양에 대한 반감을 줄이는 데에 있다는 점에서, 〈보기〉에서 정부가 서양의 생산 기술 도입으로 변화하게 될 마을을 홍보한 취지와 부합하겠군.</li>
+<li>② (가)에서 개화당의 한 인사의 개화 개념에 내포된 개화의 지향점은 통치 방식의 변화와 관련 있다는 점에서, 〈보기〉에서 정부가 서양의 생산 기술을 도입하며 내세운 목표와 다르겠군.</li>
+<li>③ (가)에서 박은식은 과학과 구별되는 철학의 중요성을 강조했으므로, 〈보기〉에서 젊은이들의 자문화에 대한 인식 변화는 가치관 정립을 위한 철학이 부재했기 때문이라고 보겠군.</li>
+<li>④ (나)에서 옌푸는 경쟁에서 승리하기 위한 조건으로 기술과 정신적 자질을 강조했으므로, 〈보기〉에서 마을이 기술의 수용만을 중시하면 마을 간 경쟁에서 승리할 수 없다고 보겠군.</li>
+<li>⑤ (나)에서 장쥔마이는 과학적 방법의 한계를 지적했으므로, 〈보기〉에서 마을이 과거에 중시했던 인생관이 더 이상 유효하지 않게 된 문제는 과학적 방법으로 해결할 수 없다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong><br />
+『한성순보』 발간 취지는 반(反)서양 정서의 교정이다. 반면 〈보기〉의 정부 홍보는 정책 필요성에 이미 공감하는 마을 사람들에게 발전을 이뤄 낼 수 있다는 확신을 심어 주기 위한 것이므로 두 취지는 부합하지 않는다. 따라서 ①이 적절하지 않다. ② 개화당 인사의 지향점(통치 방식 변화)은 〈보기〉 정부의 목표(경제 발전)와 다르고, ③ 박은식의 철학 중시, ④ 옌푸의 정신적 자질 강조, ⑤ 장쥔마이의 과학적 방법 한계 지적과 각각 부합한다. 전 선지 선택률이 13~25%에 걸친 최고난도 문항.</p>
+<p><em>선택률</em> — 응시 98,648명 — ①21.5% ②24.7% ③14.8% ④24.9% ⑤13.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 다행히 비는 그사이에 <u>그쳐</u> 있었다.</li>
+<li>② 우리 학교는 이번에 16강에 <u>그쳤다</u>.</li>
+<li>③ 아이 울음이 좀처럼 <u>그치지</u> 않았다.</li>
+<li>④ 그는 만류에도 말을 <u>그치지</u> 않았다.</li>
+<li>⑤ 저 사람들은 불평이 <u>그칠</u> 날이 없다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong><br />
+'공상에 그칠'과 '16강에 그쳤다'의 '그치다'는 모두 '더 이상의 진전이 없이 어떤 상태에 머무르다'의 의미다. ①·③·④·⑤는 '계속되던 일이나 움직임이 멈추거나 끝나다'의 의미다.</p>
+<p><em>선택률</em> — 응시 98,597명 — ①1.3% ②84.9% ③0.9% ④2.3% ⑤11.3%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>조선의 성리학자들은 주희가 무이산 계류의 아홉 굽이 경치를 노래한 「무이도가」를 이상적 학자의 자취로 받아들였다. 그런데 같은 「무이도가」를 두고 학통에 따라 해석이 갈렸다. 이황의 학통을 따랐던 사대부들은 「무이도가」를 자연을 마주하여 느끼는 흥(興)의 발현이자 성정을 닦는 ⓐ내용을 담은 시로 보았다. 반면 이이의 학통을 따랐던 사대부들은 「무이도가」를 학문으로 나아가는 순서를 담은 시로 보았다. 이렇듯 하나의 작품에 대한 해석은 그것을 받아들이는 학통의 관점에 따라 달라질 수 있다.</p>
+<p>해석의 차이는 그림을 대하는 태도로 ⓑ이어졌다. 이황의 학통은 「무이구곡도」를 주희의 성리학적 이상이 구현된 무이산을 대신하는 시각적 이미지로 보았다. 이들에게 「무이구곡도」는 주희의 초상화와 같아서, 무이산의 실제 경치를 빠짐없이 자세히 옮겨 담아야 하는 대상이었다. 따라서 이 학통에서는 새로운 경관을 ⓒ창안하기보다 원래의 무이산을 충실히 모사하는 일이 중시되었다.</p>
+<p>이와 달리 이이의 학통은 「무이도가」를 학문의 순서로 ⓓ여겼기에, 주희를 동경하는 데 그치지 않고 조선의 빼어난 지역에 직접 구곡을 설정하여 경영하였다. 이들은 무이산이 아니라 자신들이 경영하는 지역의 실제 경관을 바탕으로 구곡도를 그렸다. 「무이도가」를 학문으로 나아가는 길로 본 관점이, 주희의 자취를 조선 땅에서 다시 실천하는 구곡 경영으로 ⓔ나아간 것이다. 이처럼 한 작품을 어떻게 해석하느냐는 그 작품을 따르는 행위의 방향까지 다르게 만들었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 조선의 성리학자들은 주희의 「무이도가」를 이상적 학자의 자취로 받아들였다.</li>
+<li>② 이황의 학통은 「무이도가」를 흥의 발현이자 성정을 닦는 내용을 담은 시로 보았다.</li>
+<li>③ 이이의 학통은 「무이도가」를 학문으로 나아가는 순서를 담은 시로 보았다.</li>
+<li>④ 이황의 학통은 조선의 빼어난 지역에 직접 구곡을 설정하여 경영하였다.</li>
+<li>⑤ 하나의 작품에 대한 해석은 그것을 받아들이는 학통의 관점에 따라 달라질 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong>
+조선의 빼어난 지역에 직접 구곡을 설정해 경영한 것은 3문단의 <em>이이의 학통</em>이 한 일이에요. 이를 이황의 학통이 한 것처럼 바꿔 놓은 ④가 일치하지 않아 정답입니다. ①은 1문단(이상적 학자의 자취), ②·③은 1문단(흥의 발현 / 학문의 순서), ⑤는 1문단 끝 문장에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 통해 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 「무이도가」에 대한 해석의 차이는 그림을 대하는 태도의 차이로 이어졌다.</li>
+<li>② 이황의 학통은 「무이구곡도」를 그릴 때 무이산보다 조선의 경관을 우선하였다.</li>
+<li>③ 이이의 학통은 주희를 동경하는 단계에 머물러 구곡을 경영하지 않았다.</li>
+<li>④ 이황의 학통은 새로운 경관을 창안하는 일을 무이산 모사보다 중시하였다.</li>
+<li>⑤ 이이의 학통은 무이산의 실제 경치를 빠짐없이 옮겨 담는 일을 중시하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>11번 — 정답 ①</strong>
+2문단 첫 문장에서 "해석의 차이는 그림을 대하는 태도로 이어졌다"라고 분명히 밝혔어요. 그래서 ①이 맞습니다. ②는 이황 학통이 무이산을 충실히 모사했으므로 틀리고, ③은 이이 학통이 구곡을 경영했으므로 틀리며, ④는 이황 학통이 <em>모사</em>를 창안보다 중시했으므로 틀리고, ⑤는 무이산을 빠짐없이 옮겨 담는 일은 <em>이황</em> 학통이 중시한 것이라 틀려요.</p>
+<p><strong>12번 [3점] — 정답 ③</strong>
+갑은 옛 그림의 <em>본래 모습을 그대로 옮겨 보존</em>하려 했으니, 무이산을 빠짐없이 모사하려 한 이황 학통과 대응합니다. 그래서 ③이 맞아요. ①·②는 갑·을과 두 학통의 짝을 뒤바꿔 놓았고(갑=흥/보존=이황, 을=순서/직접 가꿈=이이), ④는 을의 행위를 이황 학통의 이미지 인식에 잘못 연결했으며, ⑤는 두 사람의 차이가 <em>서로 다른 관점</em>에서 비롯된 것이지 한 학통 안의 시기적 변화가 아니므로 부적절해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 옛 정원이 후대 사람들에게 본보기가 되었다. 갑은 그 정원을 노래한 옛 시를 '아름다운 풍경에서 우러나온 감흥의 표현'으로 읽었고, 을은 같은 시를 '뜰을 가꾸어 가는 차례를 담은 안내'로 읽었다. 한편 그 정원의 모습을 그린 옛 그림을 두고, 갑은 정원의 본래 모습을 그대로 옮겨 보존하는 일을 중시하였고, 을은 자기 고을의 뜰을 직접 가꾸며 그 실제 모습을 새 그림으로 남기는 일을 중시하였다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 옛 시를 감흥의 표현으로 읽은 것은, 이이의 학통이 「무이도가」를 학문의 순서로 본 것에 대응하겠군.</li>
+<li>② 을이 옛 시를 차례를 담은 안내로 읽은 것은, 이황의 학통이 「무이도가」를 흥의 발현으로 본 것에 대응하겠군.</li>
+<li>③ 갑이 옛 그림의 본래 모습을 그대로 옮겨 보존하려 한 것은, 이황의 학통이 무이산을 빠짐없이 모사하려 한 태도에 대응하겠군.</li>
+<li>④ 을이 자기 고을의 뜰을 직접 가꾼 것은, 이황의 학통이 무이산을 대신하는 이미지로 「무이구곡도」를 본 것에 대응하겠군.</li>
+<li>⑤ 갑과 을이 같은 시를 다르게 읽은 것은, 한 학통 안에서 시기에 따라 해석이 바뀐 경우에 대응하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이 상자에는 오래된 사진이 가득 들어 있다.</li>
+<li>② ⓑ: 두 사건은 시간상으로 잇닿아 일어났다.</li>
+<li>③ ⓒ: 그는 새로운 조리법을 처음으로 만들어 냈다.</li>
+<li>④ ⓓ: 사람들은 그를 마을의 지도자로 우러러보았다.</li>
+<li>⑤ ⓔ: 회담은 합의 없이 결렬로 치달아 끝났다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong>
+ⓒ '창안하기'는 '전에 없던 것을 처음으로 생각해 만들어 내다'의 뜻이에요. ③의 '새로운 조리법을 처음으로 만들어 냈다'가 같은 뜻이지요. ①은 ⓐ '내용을 담다'를 단순히 '물건이 들어 있다'로, ②는 ⓑ '태도로 이어지다'를 '시간상 잇닿다'로, ④는 ⓓ '~로 여기다(생각하다)'를 '우러러보다'로, ⑤는 ⓔ '구곡 경영으로 나아가다(발전하다)'를 '결렬로 치닫다'로 바꿔 본문과 의미가 다릅니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>흥(興)</strong>: 자연을 마주하여 절로 우러나는 감흥. 이황 학통은 「무이도가」를 이 흥의 발현으로 보았어요.</li>
+<li><strong>성정 도야</strong>: 마음과 성품을 닦아 기르는 일. '도야'는 좋은 사람이 되도록 몸과 마음을 닦는다는 뜻이에요.</li>
+<li><strong>관점</strong>: 대상을 바라보는 처지나 생각의 틀. 같은 작품도 관점이 다르면 다르게 해석됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>이황 학통</th>
+<th>이이 학통</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「무이도가」 해석</td>
+<td>흥의 발현·성정 도야</td>
+<td>학문으로 나아가는 순서</td>
+</tr>
+<tr>
+<td>그림을 대하는 태도</td>
+<td>무이산을 빠짐없이 모사</td>
+<td>조선의 경관으로 새 구곡도</td>
+</tr>
+<tr>
+<td>따르는 행위의 방향</td>
+<td>원래의 무이산을 충실히 보존</td>
+<td>조선 땅에서 구곡을 직접 경영</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>같은 「무이도가」가 두 학통에서 다르게 해석된 까닭은?</div><div class='qa-a'>작품을 받아들이는 학통의 관점이 서로 달랐기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이황 학통이 새로운 경관 창안보다 중시한 것은?</div><div class='qa-a'>원래의 무이산을 충실히 옮겨 담는 모사입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>해석의 차이가 결국 무엇까지 다르게 만들었나요?</div><div class='qa-a'>그 작품을 따르는 행위의 방향(보존이냐 직접 경영이냐)까지 다르게 만들었습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2023학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과 효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가 항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야 그 상황에 ⓐ맞는 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한 경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ들 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해 배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.</p>
+<p>채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이 발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ받을 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를 증명하면 손해 배상금도 받을 수 있다.</p>
+<p>불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이 구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는 특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ고를 수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.</p>
+<p>행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠재량 준칙이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ지켜야 하기 때문이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.</li>
+<li>② 법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.</li>
+<li>③ 불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.</li>
+<li>④ 불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.</li>
+<li>⑤ 불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+3~4문단에 따르면 법령에서 불확정 개념이 사용되면 그에 근거한 행정 작용은 ‘대개 재량 행위’이다. 따라서 기속 행위인 경우가 많다는 ④는 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,561명 — ①2.6% ②4.6% ③4.2% ④81.5% ⑤6.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.</li>
+<li>② 재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.</li>
+<li>③ 재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.</li>
+<li>④ 재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.</li>
+<li>⑤ 재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+4문단에 따르면 재량 준칙대로 적법한 행정 작용이 반복되어 ‘행정 관행’이 생긴 후에야 행정청이 동일한 행정 작용을 해야 한다. 따라서 선례(관행)가 없으면 같은 요건이라도 재량 준칙을 따르지 않을 수 있다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①11.4% ②8.8% ③21.4% ④9.8% ⑤49.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑과 을 사이에 위약금 약정이 없었다.
+(나) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.
+(다) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.
+(단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① (가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>② (나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>③ (나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>④ (다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>⑤ (다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>12번 — 정답 ②</strong><br />
+(나)는 위약금의 성격이 증명되지 못했으므로 위약금 100은 ‘손해 배상 예정액’으로 다루어진다. 손해가 80으로 증명되어도 정해진 예정액 100을 지급해야 하며, ‘부당히 과다하면 법원이 감액할 수 있다’는 조문에 따라 법원이 감액할 수 있다. 따라서 ②가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①5.3% ②39.0% ③19.3% ④25.6% ⑤10.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이것이 네가 찾는 자료가 맞는지 확인해 보아라.</li>
+<li>② ⓑ: 그 부부는 노후 대책으로 적금을 들고 안심했다.</li>
+<li>③ ⓒ: 그의 파격적인 주장은 학계의 큰 주목을 받았다.</li>
+<li>④ ⓓ: 형은 땀 흘려 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+<li>⑤ ⓔ: 그분은 우리에게 한 약속을 반드시 지킬 것이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+ⓔ‘지키다(평등 원칙을 지켜야)’와 ⑤의 ‘지키다(약속을 지킬)’는 모두 ‘규정·약속·법·예의 따위를 어기지 아니하고 그대로 실행하다’의 뜻으로 쓰였다. 나머지는 본문과 의미가 다르다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①4.3% ②1.2% ③0.8% ④1.3% ⑤93.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>주희의 행적을 따랐던 조선의 사대부들 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='주희의 행적을 따랐던 조선의 사대부들 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

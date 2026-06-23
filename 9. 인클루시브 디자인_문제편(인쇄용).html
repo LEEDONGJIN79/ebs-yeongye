@@ -1,0 +1,412 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>인클루시브 디자인 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 지하철역에서 계단 옆에 슬쩍 놓인 경사로를 본 적 있나요? 처음엔 휠체어를 타는 분을 위한 것이라고만 생각하기 쉽지만, 막상 보면 무거운 캐리어를 끄는 여행자도, 유아차를 미는 부모도, 다리를 다친 친구도 그 경사로를 함께 씁니다. <strong>누군가 한 사람을 위해 만든 길이 사실은 모두에게 편한 길이었던</strong> 셈이죠. 디자인이라는 활동은 바로 이렇게 "누가 이걸 쓰게 될까"를 묻는 데서 출발합니다.</p>
+<p>그런데 옛날에는 디자인이 "보통 사람"만을 머릿속에 그리고 만들어진 경우가 많았어요. 키가 평균쯤 되고, 눈도 잘 보이고, 손도 자유로운 사람 말이죠. 문제는 세상에 그런 "평균 사람"은 사실 별로 없다는 겁니다. 그래서 사람들은 <strong>될 수 있으면 많은 사람이 똑같이 쓸 수 있게</strong> 하나의 표준을 만들자는 생각을 했어요(이걸 흔히 '보편적 디자인'이라고 부릅니다). 앞서 본 경사로처럼요. 좋은 시도였지만, 사람마다 몸도 다르고 생활도 다르고 문화도 달라서, <strong>하나의 답만으로는 모두를 만족시킬 수 없다</strong>는 한계가 드러났습니다.</p>
+<p>여기서 한 걸음 더 나아간 것이 바로 <strong>인클루시브 디자인(Inclusive Design)</strong>입니다. "하나의 길"이 아니라 <strong>여러 길을 동시에 깔아 두어</strong> 누구든 자기에게 맞는 길을 고를 수 있게 하자는 거예요. 이때 꼭 챙겨야 할 두 가지가 있습니다. 하나는 <strong>접근성</strong> — 누구든 일단 그 물건이나 시설에 '닿아서 쓸 수 있게' 보장하는 것이고요. 다른 하나는 <strong>포용성</strong> — 사람마다 다른 사정을 미리 헤아려 '각자의 방식으로 편하게' 쓰도록 배려하는 마음과 실천입니다. 이 둘은 <strong>한쪽만으로는 안 되고, 손을 잡아야</strong> 비로소 목표가 이루어져요.</p>
+<blockquote>
+<p>한마디로: <strong>인클루시브 디자인은 "특별한 누군가를 위한 덤"이 아니라, "누구나 언제든 소외될 수 있다"는 생각에서 처음부터 모두를 위해 설계하는 태도</strong>입니다. 접근성이 '들어올 문을 열어 주는 것'이라면, 포용성은 '들어온 사람이 저마다 편히 머물게 하는 것'이라고 기억해 두면 좋아요.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>인클루시브 디자인</strong>이라는 하나의 설계 태도가 있습니다. 세 세트는 이 개념의 서로 다른 면을 비춰 줍니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>인클루시브 디자인<small>"누구나 언제든 소외될 수 있다 → 처음부터 모두를 위해"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>인클루시브 디자인의 두 기둥인 <strong>접근성</strong>과 <strong>포용성</strong>이 각각 무엇이고, 설계 과정에서 둘이 어떻게 맞물리는지를 구성 요소로 나누어 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>평균만 전제하던 디자인에서 표준화된 단일 방식(보편적 디자인)을 거쳐 인클루시브 디자인으로 <strong>나아가는 흐름</strong>과, 그 장단점·보완을 양면으로 따집니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>인클루시브 디자인이 지향하는 <strong>원칙(처음부터 모두를 위해)</strong>을 깊이 들여다보고, 이 관점에 던질 수 있는 비판까지 검토합니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 인클루시브 디자인이 무엇을 겨누는지, 그리고 왜 '배려'를 넘어 '설계 원칙'이라고 부르는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>인클루시브 디자인은 물리적·사회적 조건과 무관하게 모든 사용자가 인공물을 안전하고 편리하게 경험하도록 하는 것을 목적으로 하는 설계 접근법이다. 이 목적을 실현하기 위해 핵심적으로 고려되는 성질은 접근성과 포용성이다. 두 성질은 사용자 경험의 서로 다른 국면을 ⓐ<u>겨냥하지만</u>, 어느 하나만으로는 목적이 달성되지 않으며 함께 충족될 때 비로소 인클루시브 디자인이 성립한다. 접근성이 사용자가 인공물에 닿아 그것을 쓸 수 있게 하는 물음에 답한다면, 포용성은 그렇게 닿은 사용자가 자신에게 맞는 방식으로 그것을 쓰게 하는 물음에 답한다.</p>
+<p>접근성은 신체적 조건이나 환경적 제약과 상관없이 사용자가 인공물에 도달하고 이를 기본적으로 사용할 수 있는 상태를 보장하는 성질이다. 접근성은 제품이나 시설의 물리적 구조, 정보 전달 방식, 사용자 인터페이스 등이 장애 요인 없이 작동하도록 하는 기술적 기반을 포함한다. 가령 단차가 있는 곳에 경사로를 두면 계단 이용이 어려운 사용자도 통로에 도달하게 되고, 화면의 글자를 음성으로 변환하면 화면을 보기 어려운 사용자도 정보에 닿게 된다. 이때 중요한 것은 특정 사용자만을 위한 별도의 통로가 아니라, 가능한 한 많은 사용자가 같은 경로로 도달하도록 하는 데 있다. 접근성은 사용자가 인공물을 쓸 수 있는 출발선에 서도록 한다는 점에서, 기본적 사용을 보장하는 기술적 조건에 해당한다. 접근성을 확보하려면 물리적 구조뿐 아니라 정보가 전달되는 방식과 사용자가 조작하는 인터페이스까지 장애 요인을 점검해야 하므로, 접근성은 인공물의 한 부분이 아니라 도달에서 조작에 이르는 전 과정을 대상으로 삼는다. 그러나 접근성이 보장되었다고 해서 모든 사용자가 똑같이 편리한 것은 아니며, 같은 경로로 도달하더라도 그 이후의 경험은 사용자마다 크게 달라질 수 있다.</p>
+<p>이러한 차이를 다루는 성질이 포용성이다. 포용성은 다양한 사용자의 차이와 요구를 전제로, 사용자가 각자의 방식으로 인공물을 편리하게 경험하고 적극적으로 참여하도록 설계하는 성질이다. 포용성은 단지 기능적 사용 가능성에 머무르지 않고, 사용자의 배경·능력·문화적 조건을 고려하여 여러 선택지와 대응 방식을 마련하려는 실천적 태도를 포함한다. 같은 경사로라 하더라도 폭과 손잡이 높이가 사용자에 따라 달리 조정되어야 한다고 보는 것, 안내를 점자와 음성 가운데 사용자가 고르게 하는 것이 포용성의 작동 방식이다. 곧 포용성은 하나의 해결책을 모든 사용자에게 똑같이 적용하기보다, 사용자가 처한 조건에 맞추어 여러 대응을 함께 마련하려 한다. 또한 포용성은 사용자가 단지 인공물을 쓰는 데 그치지 않고 자신의 요구를 설계에 반영하며 적극적으로 참여하도록 하는 것까지 포함한다. 접근성이 사용 가능한 상태를 보장하는 데 그친다면, 포용성은 그 위에서 사용자별로 적합한 경험을 마련한다는 점에서 두 성질은 서로를 떠받친다. 접근성이 미흡하면 포용성을 위한 여러 대응도 사용자에게 닿지 못하고, 접근성만 갖추어진 채 포용성이 빠지면 도달은 하되 저마다 다른 불편이 남는다. 그래서 두 성질은 어느 한쪽이 다른 쪽을 대신할 수 없으며 함께 갖추어져야 한다.</p>
+<div class="ablock"><span class="atag">[A]</span>접근성과 포용성을 함께 충족하기 위해 설계자는 사용자들의 다양한 배경과 능력을 사전에 조사·분석하고, 설계 단계마다 그들의 의견을 수렴하여 여러 번의 수정 과정을 거친다. 조사·분석은 어떤 사용자가 어디에서 배제되는지를 드러내어 접근성의 사각지대를 확인하게 하고, 의견 수렴과 수정은 그 사각지대를 사용자별 대응 방식으로 메워 포용성을 끌어올린다. 가령 휠체어 이용자에게는 경사로의 폭과 손잡이 높이가, 시각 장애인에게는 점자 표지나 음성 안내의 구현 방식이 편의성을 좌우하므로, 설계자는 이러한 요소를 조정 대상으로 삼아 거듭 다듬는다. 이때 한 사용자를 위한 조정이 다른 사용자의 사용을 가로막지 않도록 조정들 사이의 균형이 함께 검토된다. 예컨대 점자 표지를 손이 닿기 쉬운 높이에 맞추다 보면 키가 작은 사용자에게는 오히려 높아질 수 있으므로, 한 조정이 다른 사용자에게 새로운 사각지대를 만들지 않는지가 함께 점검되어야 한다. 이러한 세밀한 조정을 통해 서로 다른 조건을 지닌 사용자 모두에게 적절한 기능과 환경이 제공되며, 결과물에 대한 불편함이나 소외감이 줄어든다. </div></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 인클루시브 디자인은 모든 사용자가 인공물을 안전하고 편리하게 경험하도록 하는 것을 목적으로 한다.</li>
+<li>② 접근성은 인공물의 물리적 구조나 정보 전달 방식이 장애 요인 없이 작동하도록 하는 기술적 기반을 포함한다.</li>
+<li>③ 포용성은 사용자의 배경이나 문화적 조건을 고려하여 여러 선택지와 대응 방식을 마련하려는 태도를 포함한다.</li>
+<li>④ 접근성과 포용성은 둘 중 하나만 충족되어도 인클루시브 디자인의 목적이 달성될 수 있는 성질이다.</li>
+<li>⑤ 설계자는 사용자들의 배경과 능력을 사전에 조사·분석하여 설계에 반영한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>[A]에 대한 이해로 적절한 것은?</p>
+<ul>
+<li>① 조사·분석은 사용자별 대응 방식을 마련하는 일이고, 의견 수렴과 수정은 배제되는 사용자를 확인하는 일이다.</li>
+<li>② 경사로의 폭과 손잡이 높이는 시각 장애인의 편의성을 좌우하는 조정 대상으로 다루어진다.</li>
+<li>③ 한 사용자를 위한 조정이 다른 사용자의 사용을 가로막지 않도록 조정들 사이의 균형이 검토된다.</li>
+<li>④ 설계자는 사용자의 의견을 한 차례 수렴한 뒤에는 더 이상 수정 과정을 거치지 않는다.</li>
+<li>⑤ 사용자의 사각지대를 메우는 일은 접근성을 끌어올릴 뿐 포용성과는 관련되지 않는다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 박물관이 전시관을 새로 단장하면서 인클루시브 디자인을 적용하였다. 우선 입구의 턱을 없애고 좁았던 출입문을 넓혀 휠체어 이용자도 다른 관람객과 같은 통로로 들어오게 하였다. 전시 설명은 벽면의 글, 손으로 만져 읽는 점자판, 버튼을 누르면 나오는 음성 안내 가운데 관람객이 골라 이용하도록 세 가지를 함께 두었다. 단장 과정에서 박물관은 관람객 면담을 여러 차례 진행하였는데, 점자판을 너무 높이 달면 키가 작은 관람객이 닿지 못한다는 의견이 나와 점자판의 높이를 다시 조정하였다.</p>
+</blockquote>
+<ul>
+<li>① 입구의 턱을 없애고 출입문을 넓혀 같은 통로로 들어오게 한 것은, 사용자가 인공물에 도달하여 기본적으로 사용하게 하는 접근성을 보장한 것이겠군.</li>
+<li>② 전시 설명을 글·점자판·음성 안내 가운데 골라 이용하게 한 것은, 사용자가 각자의 방식으로 경험하도록 한 포용성의 사례이겠군.</li>
+<li>③ 관람객 면담을 여러 차례 진행하여 설계에 반영한 것은, 설계 단계마다 의견을 수렴하며 수정 과정을 거치는 일에 해당하겠군.</li>
+<li>④ 점자판의 높이가 너무 높아 닿지 못하는 관람객이 있었다는 점은, 한 사용자를 위한 조정이 다른 사용자의 사용을 가로막을 수 있음을 보여 주겠군.</li>
+<li>⑤ 점자판의 높이를 다시 조정한 것은, 음성 안내라는 기술적 기반을 제거하여 포용성을 접근성으로 대체한 것이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 사냥꾼은 멀리 있는 표적을 향해 총구를 겨냥하였다.</li>
+<li>② 그 회사는 젊은 소비자층을 겨냥하여 신제품을 내놓았다.</li>
+<li>③ 그는 과녁의 한복판을 겨냥하여 활시위를 힘껏 당겼다.</li>
+<li>④ 야당은 정부의 약점을 겨냥하여 거센 공세를 퍼부었다.</li>
+<li>⑤ 재단사는 천을 손님의 몸에 겨냥해 보며 길이를 가늠하였다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 9월 [14~17]</div>
+<div class='passage exam-ps'><p>‘메타버스(metaverse)’는 ‘초월’이라는 의미의 ‘메타(meta)’와 ‘세계’를 뜻하는 ‘유니버스(universe)’의 합성어로, 현실 세계와 가상 공간이 적극적으로 상호 작용하는 공간을 의미한다. 감각 전달 장치는 메타버스 속에서 사용자를 대신하는 아바타가 보고 만지는 것으로 설정된 감각을 사용자에게 전달하는 장치이다. 사용자는 이를 통하여 가상 공간을 현실감 있게 체험하면서 메타버스에 몰입하게 된다.</p>
+<p>시각을 전달하는 장치인 HMD<em>는 사용자의 양쪽 눈에 가상 공간을 표현하는, 시차</em>가 있는 영상을 전달한다. 전달된 영상을 뇌에서 조합하는 과정에서 사용자는 공간과 물체의 입체감을 느낄 수 있다. 가상 공간에서 물체를 접촉하는 것처럼 사용자의 손에 감각 반응을 직접 전달하는 장치로는 가상 현실 장갑이 있다. 가상 현실 장갑은 가상 공간에서 아바타가 만지는 가상 물체의 크기, 형태, 온도 등을 사용자가 느낄 수 있도록 설계되어 있다. 이 외에도 가상 현실 장갑은 사용자의 손가락 및 팔의 움직임에 따라 아바타를 움직이게 할 수 있다.</p>
+<p>한편 사용자의 움직임을 아바타에게 전달하는 공간 이동 장치를 이용하면, 사용자는 몰입도 높은 메타버스 체험을 할 수 있다. 공간 이동 장치인 가상 현실 트레드밀은 일정한 공간에 설치되어 360도 방향으로 사용자의 이동이 가능하도록 바닥의 움직임을 지원한다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>가상 현실 트레드밀과 함께 사용되는 모션 트래킹 시스템은 사용자의 동작에 따라 아바타가 동일하게 움직일 수 있도록 동기화하는 시스템으로, 동작 추적 센서, 관성 측정 센서, 압력 센서 등으로 구성된다. 동작 추적 센서는 사용자의 동작을 파악하며, 관성 측정 센서는 사용자의 이동 속도 변화율 및 회전 속도를 측정한다. 압력 센서는 서로 다른 물체 간에 작용하는 압력을 측정한다. 만약 바닥에 압력 센서가 부착된 신발을 사용자가 신고 뛰면, 압력 센서는 지면과 발바닥 사이의 압력을 감지하여 사용자가 뛰는 힘을 파악할 수 있다. 모션 트래킹 시스템이 사용자의 동작 정보를 컴퓨터에 전달하면, 컴퓨터는 사용자가 움직이는 방향과 속도에 ⓐ맞춰 트레드밀의 바닥을 제어한다. 이와 같이 사용자의 이동 동작에 따라 트레드밀의 움직임이 변경되기도 하지만, 아바타가 존재하는 가상 공간의 환경 변화에 따라 트레드밀 바닥의 진행 속도 및 방향, 기울기 등이 변경되기도 한다. 또한 사용자의 움직임이나 트레드밀의 작동 변화에 따라 HMD에 표시되는 가상 공간의 장면이 변경되어 사용자는 더욱 현실감 높은 체험을 할 수 있다.</p></div>
+
+<ul>
+<li>HMD: 머리에 쓰는 3D 디스플레이의 한 종류.</li>
+<li>시차: 한 물체를 서로 다른 두 지점에서 보았을 때 방향의 차이.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>14</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 감각 전달 장치와 공간 이동 장치는 사용자가 메타버스에 몰입할 수 있게 한다.</li>
+<li>② 공간 이동 장치는 현실 세계 사용자의 움직임을 메타버스의 아바타에게 전달한다.</li>
+<li>③ HMD는 사용자가 시각을 통해 메타버스의 공간과 물체의 입체감을 느끼도록 한다.</li>
+<li>④ 감각 전달 장치는 아바타가 느끼는 것으로 설정된 감각을 사용자에게 전달하는 장치이다.</li>
+<li>⑤ 가상 현실 장갑을 착용하면 사용자와 아바타는 상호 간에 감각 반응을 주고받을 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>15</span>[A]에 대한 이해로 적절한 것은?</p>
+<ul>
+<li>① 관성 측정 센서는 사용자의 이동 속도와 뛰는 힘을 측정할 수 있다.</li>
+<li>② HMD에 표시되는 가상 공간 장면의 변경에 따라 HMD는 가상 현실 트레드밀을 제어한다.</li>
+<li>③ 가상 공간에서 아바타가 경사로를 만나면 가상 현실 트레드밀 바닥의 기울기가 변경될 수 있다.</li>
+<li>④ 모션 트래킹 시스템은 아바타의 동작에 따라 사용자가 동일하게 움직일 수 있도록 동기화한다.</li>
+<li>⑤ 아바타가 이동 방향을 바꾸면 가상 현실 트레드밀 바닥의 진행 방향이 변경되어 사용자의 이동 방향이 바뀌게 된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+동작 추적 센서의 하나인 키넥트 센서는 적외선 카메라와 RGB 카메라 등으로 구성된다. 적외선 카메라는 광원에서 발산된 적외선이 피사체의 표면에서 반사되어 수신되기까지 걸리는 시간을 측정하여, 피사체의 입체 정보를 포함하는 저해상도 단색 이미지를 제공한다. 반면 RGB 카메라는 피사체의 고해상도 컬러 이미지를 제공한다. 키넥트 센서는 저해상도 입체 이미지를 고해상도 컬러 이미지에 투영하여 사용자가 검출되는 경우, 〈그림〉과 같이 신체 부위에 대응되는 25개의 연결점을 선으로 이은 3D 골격 이미지를 제공한다.</p>
+<p><strong><span class="boxmark">[그림: 3D 골격 이미지]</span></strong> (원문: 〈보기〉 글의 왼쪽에 배치) 정면을 향해 두 팔을 몸통에서 약간 벌리고 서 있는 사람의 몸 윤곽(머리·몸통·양팔·양다리)이 회색 점선으로 그려져 있다. 그 윤곽 안에 신체 부위에 대응되는 검은 점(연결점)들이 굵은 실선으로 이어져 골격을 이룬다. 머리에 1점, 목과 어깨 중앙에 각 1점, 양쪽 어깨·팔꿈치·손목에 각 1점씩 있고 양 손끝에는 손가락에 해당하는 점 여러 개가 모여 있다. 척추 중간에 1점, 골반 중앙에 1점과 양쪽 골반에 각 1점, 양 무릎·발목·발끝에 각 1점씩 찍혀 있다. 점선 윤곽 아래에 ‘〈그림〉’ 캡션이 있다.</p>
+</blockquote>
+<ul>
+<li>① 키넥트 센서는 가상 공간에 있는 물체들 간의 거리를 측정하여 입체감을 구현할 수 있다.</li>
+<li>② 키넥트 센서가 확보한, 사용자의 춤추는 동작 정보를 바탕으로 아바타의 춤추는 동작이 구현될 수 있다.</li>
+<li>③ 키넥트 센서와 관성 측정 센서를 이용하여 사용자의 걷는 자세 및 이동 속도 변화율을 파악할 수 있다.</li>
+<li>④ 연결점의 수와 위치의 제약 때문에 사용자의 골격 이미지로는 사용자의 얼굴 표정 변화를 아바타에게 전달할 수 없다.</li>
+<li>⑤ 적외선 카메라의 입체 이미지와 RGB 카메라의 컬러 이미지 정보로부터 생성된 골격 이미지가 사용자의 동작 정보를 파악하는 데 사용된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 그 연주자는 피아노를 언니의 노래에 정확히 맞추어 쳤다.</li>
+<li>② 아내는 집 안에 있는 물건들의 색깔을 조화롭게 맞추었다.</li>
+<li>③ 우리는 다음 주까지 손발을 맞추어 작업을 마치기로 했다.</li>
+<li>④ 그 동아리는 신입 회원을 한 명 더 뽑아 인원을 맞추었다.</li>
+<li>⑤ 동생은 중간고사를 보고 나서 친구와 답을 맞추어 보았다.</li>
+</ul></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>디자인은 의류·제품·건축물 등 다양한 인공물을 설계하는 활동으로, 미적 요소뿐 아니라 기능·사용성·상징성 등을 종합적으로 고려한다. 과거에는 특정 사용자나 평균적인 조건만을 전제로 한 디자인이 많았다. 키·시력·손의 움직임 등이 평균에 가까운 사용자를 상정하고 설계하면 설계가 단순해지지만, 평균에서 벗어난 사용자의 특성은 충분히 반영되지 못한다. 그 결과 사용자 개개인의 다양한 특성이 누락되어 소외되는 사람이 생기는 문제가 있었다.</p>
+<p>이러한 문제를 줄이기 위해 신체적·환경적 제약을 낮추고 가능한 한 많은 사람이 공통으로 사용할 수 있도록 하는 설계가 시도되었다. 단차가 있는 곳에 계단 대신 경사로를 설치하면 계단 이용이 불편한 사용자나 휠체어 사용자도 동일한 통로를 이용하게 되는 것이 그 예이다. 이처럼 <span class="boxmark">[표준화된 단일 방식]</span>은 별도의 보조 시설을 따로 두지 않고 하나의 형태로 다양한 사람들의 보편적 사용을 추구할 수 있다는 장점을 지닌다. 또한 하나의 표준을 활용하므로 설치와 활용이 용이하고, 형태가 통일되어 있어 설계와 관리에 드는 비용을 줄일 수 있다는 이점도 있다. 사용자가 사용법을 따로 익힐 필요가 적다는 점도 이 방식의 강점이다.</p>
+<p>그러나 <span class="boxmark">[표준화된 단일 방식]</span>에는 한계도 있다. 사람마다 신체 능력·생활 패턴·문화적 배경 등이 달라, 하나의 해결책만으로는 모두에게 적합한 조건을 마련하기 어렵기 때문이다. 동일한 경사로라 하더라도 그 폭이나 경사가 어떤 사용자에게는 편하지만 다른 사용자에게는 불편할 수 있다. 표준을 어느 한 사용자에게 맞추면 다른 사용자에게서 멀어지고, 모두의 평균에 맞추면 누구에게도 꼭 맞지 않는 일이 생긴다. 가령 경사로의 경사를 완만하게 하면 휠체어 사용자에게는 편하지만 통로의 길이가 늘어 보행자에게는 불편할 수 있고, 반대로 경사를 가파르게 하면 그 반대가 된다. 하나의 표준으로는 이처럼 상충하는 요구를 동시에 만족시키기 어렵다. 이처럼 단일한 표준은 평균에서 멀리 떨어진 사용자의 요구를 충분히 충족시키지 못하여, 소외를 줄이려는 본래 취지에도 불구하고 결과적으로 또 다른 소외를 낳기도 한다.</p>
+<p>이러한 한계를 보완하기 위해, 표준화된 하나의 방식이 아니라 여러 방식을 동시에 제공하여 누구나 사용할 수 있도록 하는 인클루시브 디자인이 등장하였다. 인클루시브 디자인은 사용자의 다양성을 처음부터 전제하여, 접근성과 포용성을 함께 충족함으로써 서로 다른 조건의 사용자에게 각기 적합한 경험을 제공하려 한다. 단일 방식이 '하나의 길'을 모두에게 권하는 것이라면, 인클루시브 디자인은 '여러 길'을 함께 깔아 사용자가 자신에게 맞는 길을 고르게 하는 것이다. 앞서의 경사로에 더하여 음성 안내와 점자 표지를 함께 갖추고 사용자가 그중에서 고르게 하는 것이 그 방향이다. 단일 방식이 평균을 기준으로 하나의 형태를 정해 두는 것과 달리, 인클루시브 디자인은 평균에서 벗어난 사용자까지 설계의 대상으로 포함하여 그들이 다른 사용자와 동등하게 인공물을 경험하도록 한다. 이 점에서 인클루시브 디자인은 단일 방식이 남긴 사각지대를 메우는 방향으로 작동한다.</p>
+<p>다만 여러 방식을 동시에 제공하려면 단일 방식보다 더 많은 조사·설계·관리가 요구되며, 그만큼 비용과 시간이 늘어난다. 마련해야 할 대응이 늘수록 그것들을 관리하고 갱신하는 부담도 커지며, 어떤 대응을 우선할지 판단하는 일도 단일 방식보다 복잡해진다. 그럼에도 인클루시브 디자인은 소외되는 사용자를 줄여 더 많은 사람이 동등하게 참여하게 한다는 점에서, 늘어난 비용을 감수하더라도 추구할 가치가 있는 방향으로 여겨진다. 그리하여 인클루시브 디자인은 단순한 편의의 추가를 넘어 설계의 원칙으로 받아들여지고 있다. 이를 실현하기 위해 설계자는 사용자들의 배경과 능력을 사전에 조사·분석하고, 설계 단계마다 의견을 수렴하여 여러 번의 수정을 거친다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 한 설계 방식의 장점과 한계를 짚고 이를 보완하는 방식을 소개하고 있다.</li>
+<li>② 서로 대립하는 두 이론의 근거가 시대에 따라 변천하는 과정을 설명하고 있다.</li>
+<li>③ 유사한 여러 설계 원리를 분석하여 하나의 통합된 이론으로 종합하고 있다.</li>
+<li>④ 설계에 관한 가설을 세우고 이를 구체적인 실험을 통해 검증하고 있다.</li>
+<li>⑤ 하나의 설계 문제를 두고 맞서는 두 입장의 우열을 가려 결론을 내리고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span><span class="boxmark">[표준화된 단일 방식]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 다양한 사람들의 보편적 사용을 추구할 수 있다는 장점을 지닌다.</li>
+<li>② 하나의 표준을 활용하므로 설치와 활용이 용이하고 비용을 줄일 수 있다.</li>
+<li>③ 평균에서 멀리 떨어진 사용자의 요구를 충분히 충족시키지 못할 수 있다.</li>
+<li>④ 사용자마다 다른 신체 능력이나 문화적 배경을 모두 만족시키기 어렵다.</li>
+<li>⑤ 사용자의 다양성을 처음부터 전제하여 여러 방식을 동시에 제공한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 평균적인 조건만을 전제한 과거의 디자인에서는 평균에서 벗어난 사용자가 소외되기 쉬웠을 것이다.</li>
+<li>② 표준화된 단일 방식은 경사로처럼 한 형태를 모든 사용자에게 동일하게 적용하는 데 강점이 있을 것이다.</li>
+<li>③ 인클루시브 디자인은 단일 방식보다 조사·설계·관리의 부담이 작아 비용과 시간이 적게 들 것이다.</li>
+<li>④ 여러 방식을 함께 제공하면 평균에서 멀리 떨어진 사용자의 요구도 단일 방식보다 잘 반영될 수 있을 것이다.</li>
+<li>⑤ 인클루시브 디자인이 설계의 원칙으로 받아들여지는 것은 소외되는 사용자를 줄이려는 지향과 관련될 것이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 도시가 버스 정류장을 새로 만들면서 두 방안을 두고 논의하였다. 정류장의 도착 정보는 원래 화면의 글자로만 안내되어 왔다. 설계자 갑과 을은 다음과 같은 대화를 나누었다.</p>
+<p>갑: 정류장마다 똑같은 규격의 표준 안내 화면 하나만 설치합시다. 규격이 통일되면 설치와 관리가 쉽고 예산도 아낄 수 있으니까요.
+을: 글자 안내만으로는 화면을 보기 어려운 분들이 정보를 얻지 못합니다. 글자 화면에 더해 음성 안내와 큰 글씨 모드를 함께 두어, 이용자가 골라 쓰게 합시다.</p>
+</blockquote>
+<ul>
+<li>① 갑의 방안은 하나의 표준을 활용하여 설치와 관리의 부담을 줄이려 한다는 점에서 표준화된 단일 방식의 이점에 주목하고 있다.</li>
+<li>② 갑의 방안은 여러 안내 방식을 동시에 제공한다는 점에서 사용자의 다양성을 처음부터 전제하고 있다.</li>
+<li>③ 을의 방안은 안내 방식을 하나로 통일한다는 점에서 평균에서 멀리 떨어진 사용자의 소외를 줄이려 한다.</li>
+<li>④ 을의 방안은 글자 안내를 없애고 음성 안내로 대체한다는 점에서 접근성보다 포용성을 우선한다.</li>
+<li>⑤ 갑의 방안은 을의 방안보다 더 많은 조사·설계·관리를 요구하므로 비용과 시간이 더 많이 든다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2025학년도 6월 [4~7]</div>
+<div class='passage exam-ps'><p>정당과 같은 정치 조직이 민주적 방식과 절차로 운영되어야 하는 것은 당연하다. 그런데 민주적 운영 체제를 갖추었으면서도 실제로는 일부 소수에게 권력이 집중되어 있는 경우도 적지 않다. 조직 운영에서 보이는 이러한 현상을 흔히 과두제라 한다. 이는 정치 조직에서뿐만 아니라 기업 경영에서도 나타난다.</p>
+<p>모든 주주가 경영진을 이루어 상호 협력 관계를 기반으로 기업을 운영하며 의사 결정권도 균등하게 행사하는 경우에 이를 '공동체적 경영'이라 부르기도 한다. 이런 기업에서 경영진은 모두 업무와 관련하여 전문성을 가지며, 경영 수익에 관련된 중요한 사항은 주주들이 공동으로 결정한다. 그러나 기업의 규모가 성장하고 사업이 다양해지면, 소수의 의사 결정에 따른 수직적 경영으로 효율성을 지향하는 '과두제적 경영'으로 나아가는 일도 있다.</p>
+<p><span class="boxmark">[과두제적 경영]</span>은 소수의 경영자로 이루어진 경영진이 강한 결속력을 가지면서 실질적 권한과 정보를 독점하며 기업을 운영하는 것을 말한다. 이런 체제는 전문성과 경험을 갖춘 경영진을 중심으로 안정적 경영권이 확보될 수 있도록 하여, 기업 전략을 장기적으로 수립하고, 이에 맞춰 과감하고 지속적인 투자를 할 수 있어서 첨단 핵심 기술의 개발에도 유리한 면이 있다. 그리고 기업과 경영진 간의 높은 일체성은 위기 상황에서 신속한 의사 결정으로 효율적인 대처를 하는 데 도움을 주기도 한다.</p>
+<p>그런데 대체로 주주의 수가 많으면 개별 주주의 결정권은 약하고, 소수의 경영진이 기업을 장악하는 힘은 크다. 이를 이용하여 정보와 권한이 집중된 소수의 경영진이 사익에 치중하면 다수 주주의 이익이 침해되는 폐해가 나타날 수 있다. 경영 성과를 실제보다 부풀려 투자를 유치한 뒤 주주들에게 회복하기 어려운 손해를 입히는 경우도 있으며, 기업 운영에 중대한 영향을 미치는 주요 정보들을 은폐하거나 경영 상황을 조작하여 발표함으로써 결과적으로 기업의 가치에 심각한 타격을 주는 사례도 종종 보게 된다.</p>
+<p>이러한 문제점을 완화하기 위해 기업이 경영자와 계약을 체결하여 급여 이외의 경제적 이익을 동기로 부여하는 방안이 있다. 예를 들면, 일정 수량의 주식을 계약 시에 정한 가격으로 미래에 매수할 수 있도록 하는 스톡옵션의 권리를 경영자에게 부여하는 방식이 있다. 이 권리를 행사할지 말지는 자유이고, 경영자는 매수 시점을 유리하게 선택할 수 있다. 또 아직 우리나라에 도입되지는 않았지만, 기업의 주식 가치가 목표치 이상으로 올랐을 때 경영자가 그에 상응하는 보상을 받는 주식 평가 보상권의 방식도 있다.</p>
+<p>기업 경영의 건전성을 확보하기 위해 마련된 공적 제도들은 과두제적 경영의 폐해를 방지하는 기능도 한다. 기업의 주식 가치에 영향을 미칠 수 있는 정보 제공을 법적으로 의무화한 경영 공시 제도는 경영 투명성을 높이려는 것이다. 이를 통해 경영진과 주주들 간 정보 격차가 줄어들 수 있다. 기업의 이사회에 외부 인사를 이사로 참여시키도록 하는 사외 이사 제도는 독단적인 의사 결정을 견제함으로써 폐쇄적 경영으로 인한 정보와 권한의 집중을 억제하는 효과를 거둘 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대상의 개념과 장단점을 제시하고 보완책을 소개한다.</li>
+<li>② 유사한 원리들을 분석하고 이를 하나의 이론으로 통합한다.</li>
+<li>③ 대립하는 유형을 들어 이론적 근거의 변천 과정을 설명한다.</li>
+<li>④ 가설을 세우고 그에 대해 현실적인 사례를 들어 가며 검토한다.</li>
+<li>⑤ 문제 상황의 근본 원인을 진단하고 해결책에 대한 상반된 입장을 해설한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span><span class="boxmark">[과두제적 경영]</span>에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 소수의 경영진이 내린 의사 결정이 수직적으로 집행되는 효율성을 추구한다.</li>
+<li>② 강한 결속력을 가진 소수의 경영자로 경영진을 이루어 경영권 유지에 강점이 있다.</li>
+<li>③ 경영권이 안정되어 중요 기술 개발에 적극적인 투자를 계속하는 데에 유리하다는 장점이 있다.</li>
+<li>④ 경영진이 투자자의 유입을 유도하기 위하여 경영 성과를 부풀릴 위험성이 있어 이에 대비할 필요가 있다.</li>
+<li>⑤ 경영진과 다수 주주 사이의 이해가 일치하는 경우에는 그렇지 않은 경우보다 기업 가치가 훼손될 위험성이 높아진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 스톡옵션의 권리를 가진 경영자는 주식 가격이 미리 정해 놓은 것보다 하락하더라도 손실을 입지 않을 수 있다.</li>
+<li>② 스톡옵션은 경영자의 성과 보상에 미래의 주식 가치가 관련된다는 점에서 주식 평가 보상권과 차이가 있다.</li>
+<li>③ 경영 공시는 주주가 기업 경영 상황을 파악하여 기업 가치를 평가하는 데 유용한 제도가 될 수 있다.</li>
+<li>④ 사외 이사 제도는 기업의 의사 결정에 외부 인사를 참여시켜 경영의 개방성을 높일 수 있는 제도라 평가할 수 있다.</li>
+<li>⑤ 경영 공시 제도와 사외 이사 제도는 기업의 중요 정보에 대한 경영진의 독점을 완화할 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+X사는 정밀 부품 분야에서 독보적인 기술을 장기간 보유하여 발전시켜 온 기업으로서 시장 점유율도 높다. 원래 X사의 주주들은 모두 함께 경영진이 되어 중요 사항에 대하여 동등한 결정권을 보유하였으나, 기업이 성장하면서 효율성 증진을 위하여 소수의 주주만으로 경영진을 구성하였다. 경영진은 주기적으로 다른 주주들로 교체되어 전체 주주는 기업의 경영 상태를 파악할 수 있으며, 경영 이익의 분배와 같은 주요 사항은 전체 주주가 공동으로 의결한다. X사의 주주 A와 B는 회사의 진로에 관하여 다음과 같은 대화를 나누었다.</p>
+<p>A: 최근 치열해진 경쟁에 대응하려면, 경영진의 구성원을 변동시키지 않고 경영 결정권도 경영진이 전적으로 행사하도록 하는 게 좋겠습니다.
+B: 시장 점유율도 잘 유지되고 있고 우리 주주들의 전문성도 탁월하니, 예전처럼 회사를 운영한다고 하더라도 문제없을 듯합니다.</p>
+</blockquote>
+<ul>
+<li>① X사는 주주들 사이의 평등성이 강하여 과도한 정보 격차나 권한 집중과 같은 폐해를 보이지 않는다.</li>
+<li>② X사는 현재 경영진이 고정되는 구조로 바뀌었지만 주주가 실적에 대한 이익 분배를 결정할 수 있기 때문에 수직적 경영의 부작용은 나타나지 않는다.</li>
+<li>③ A는 결속력이 강한 소수의 경영진을 중심으로 운영되는 경영 방식을 현행대로 유지하여야 시장의 점유율을 지킬 수 있다고 보는 입장이다.</li>
+<li>④ B는 수평적인 의사 결정 구조로의 전환을 최소한으로 하여 효율적 경영을 유지해야 한다고 보는 입장이다.</li>
+<li>⑤ A와 B는 현재 X사가 경험과 전문성을 바탕으로 안정적인 과두제적 경영을 하고 있다는 전제에서 논의를 한다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>특정 집단을 위한 보조적 장치를 나중에 덧붙이는 설계와 달리, <span class="boxmark">[인클루시브 디자인]</span>은 누구나 언제든 배제될 수 있다는 전제에서 처음부터 모든 사용자를 위해 설계하는 것을 원칙으로 한다. 보조적 장치를 사후에 덧붙이는 방식은 그 장치를 쓰는 사용자를 예외적 존재로 표시하기 쉽고, 본래의 설계에서 빠진 부분을 메우는 데 그친다. 여기서 ㉠<u>배제</u>란 사용자의 신체적·환경적 조건이나 문화적 배경이 설계에 반영되지 못하여, 그 사용자가 인공물을 안전하고 편리하게 경험하지 못하게 되는 상태를 뜻한다. 인클루시브 디자인은 이러한 배제가 특정 약자에게만 일어나는 예외가 아니라 누구에게나 닥칠 수 있는 일이라고 본다. 한 사람도 평생 동일한 조건에 머무르지 않으며, 나이가 들거나 일시적으로 다치는 등 누구든 어느 순간에는 평균에서 벗어날 수 있기 때문이다. 무거운 짐을 든 사람이 계단 앞에서 잠시 겪는 불편도, 휠체어 사용자가 일상적으로 겪는 불편과 본질이 다르지 않다는 것이다. 이처럼 배제를 누구에게나 닥칠 수 있는 일로 보면, 다양한 사용자를 위한 설계는 일부를 위한 특별한 배려가 아니라 모두를 위한 기본 조건이 된다. 인클루시브 디자인은 이 점에 주목하여 인간의 다양성을 폭넓게 수용하고자 한다.</p>
+<p>인클루시브 디자인이 추구하는 가치를 실현하기 위해 핵심적으로 요구되는 성질은 접근성과 포용성이다. 접근성은 신체적·환경적 제약과 상관없이 사용자가 인공물에 도달하여 기본적으로 사용할 수 있는 상태를 보장하는 것이고, 포용성은 사용자의 차이와 요구를 전제로 각자의 방식으로 편리하게 경험하고 참여하도록 설계하는 것이다. 접근성이 사용자를 출발선에 세운다면 포용성은 그 위에서 사용자별로 적합한 경험을 마련하므로, 두 성질은 상호 보완적이어서 어느 하나만으로는 목적이 달성되지 않고 함께 충족될 때 비로소 인클루시브 디자인이 성립한다. 이를 위해 설계자는 사용자들의 배경과 능력을 사전에 조사·분석하고 설계 단계마다 의견을 수렴하여 여러 번의 수정을 거친다. 이 과정은 어떤 사용자가 어디에서 배제되는지를 드러내고, 그 배제를 사용자별 대응으로 메우는 방향으로 이루어진다. 이때 접근성과 포용성은 별개로 추구되기보다 함께 끌어올려진다. 한 사용자를 도달하게 하는 일이 곧바로 그 사용자에게 적합한 경험을 보장하지는 않으므로, 설계자는 도달의 보장과 경험의 적합성을 동시에 점검하며 조정한다. 또한 한 사용자를 위한 조정이 다른 사용자에게 새로운 배제를 만들지 않는지도 함께 검토되어야, 다양성의 수용이라는 원칙이 특정 사용자에 대한 편향으로 기울지 않는다.</p>
+<p>이러한 원칙에서 인클루시브 디자인은 특정 계층이나 약자를 위한 배려에 그치는 것이 아니라, 더 많은 사람이 더 쉽게 접근하고 동시에 포용되는 사회를 지향하는 설계 접근법이라고 평가된다. 모든 이가 동등하게 참여하고 그 이익을 함께 누리는 것을 겨냥한다는 점에서, 인클루시브 디자인은 인공물의 설계를 넘어 사회적 가치를 담는 실천으로 이해된다. 특정 사용자를 위한 조정이 결과적으로 다른 사용자에게도 편익을 주는 경우가 적지 않다는 점도, 인클루시브 디자인이 일부가 아니라 전체를 위한 설계로 평가되는 근거가 된다. 다만 사용자의 다양성을 모두 사전에 헤아리는 데에는 한계가 있어, 아무리 폭넓게 조사하더라도 어떤 사용자의 요구는 설계 이후에야 드러나기도 한다. 처음부터 모든 사용자를 위한다는 원칙이 곧 모든 요구를 빠짐없이 예측한다는 뜻은 아닌 것이다. 사용자의 조건은 시간이 지나며 달라지고, 인공물이 쓰이는 환경도 변하므로, 설계 시점에 충분했던 대응이 나중에는 또 다른 배제를 남길 수 있다. 따라서 인클루시브 디자인은 한 번의 완결된 설계가 아니라, 드러나는 배제를 반영하여 거듭 고쳐 나가는 지속적 과정으로 받아들여진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span><span class="boxmark">[인클루시브 디자인]</span>에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 특정 약자를 위한 보조적 장치를 설계가 끝난 뒤에 덧붙이는 것을 원칙으로 한다.</li>
+<li>② 접근성과 포용성 가운데 어느 하나만 충족되어도 그 목적을 달성할 수 있다.</li>
+<li>③ 사용자의 속성과 행위를 정보로 환원하여 모든 사용자를 동일한 존재로 다룬다.</li>
+<li>④ 누구나 언제든 배제될 수 있다는 전제에서 처음부터 모든 사용자를 위해 설계한다.</li>
+<li>⑤ 사용자의 다양성을 모두 사전에 헤아릴 수 있어 한 번의 설계로 완결된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠의 의미로 가장 적절한 것은?</p>
+<ul>
+<li>① 사용자가 자신의 조건과 무관하게 인공물을 동등하게 경험하는 상태이다.</li>
+<li>② 사용자의 조건이나 배경이 설계에 반영되지 못해 인공물을 편리하게 경험하지 못하는 상태이다.</li>
+<li>③ 설계자가 사용자의 의견을 수렴하여 설계를 여러 번 수정하는 과정이다.</li>
+<li>④ 특정 약자를 위한 보조적 장치를 인공물에 추가로 덧붙이는 일이다.</li>
+<li>⑤ 사용자가 여러 방식 가운데 자신에게 맞는 것을 스스로 고르는 행위이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글의 <span class="boxmark">[인클루시브 디자인]</span>에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 배제를 누구에게나 닥칠 수 있는 일로 보았을 뿐, 그것을 특정 약자의 문제로 한정하지 못하였다.</li>
+<li>② 접근성과 포용성이 상호 보완적이라고 보았을 뿐, 두 성질이 서로 충돌하는 경우를 인정하지 못하였다.</li>
+<li>③ 사용자의 다양성을 사전에 모두 헤아릴 수 없다고 인정하면서도, 설계 이후에 드러나는 요구를 어떤 절차로 반영할지를 충분히 제시하지 못하였다.</li>
+<li>④ 설계자가 사용자의 의견을 수렴한다고 보았을 뿐, 사용자가 설계에 참여할 권리가 있음을 밝히지 못하였다.</li>
+<li>⑤ 모든 이가 이익을 함께 누리는 사회를 지향한다고 보았을 뿐, 인공물의 미적 요소를 고려하지 못하였다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 〈보기〉는 인클루시브 디자인 전문가와 학생이 나눈 가상의 대화이다. 윗글을 참고할 때, ㉮에 들어갈 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>학생:</strong> 선생님, 저희 학교가 새 도서관을 지으면서 모두를 위한 설계를 한다고 들었습니다. 그런데 아무리 미리 조사해도, 막상 문을 연 뒤에야 불편을 호소하는 이용자가 꼭 생기지 않을까요?
+<strong>전문가:</strong> 좋은 지적이에요. 설계 전에 다양한 이용자를 조사하고 의견을 수렴하더라도, 모든 요구를 다 헤아릴 수는 없지요. 그래서 인클루시브 디자인은 한 번에 끝나는 설계가 아니라, 문을 연 뒤 드러나는 배제까지 반영해 거듭 고쳐 나가는 과정으로 봅니다. 그렇게 접근성과 포용성을 함께 끌어올려, 처음부터 특정 약자만이 아니라 누구나를 위한 공간을 지향하는 것이고요.
+<strong>학생:</strong> 선생님께서는 [ ㉮ ] 보시는군요.</p>
+</blockquote>
+<ul>
+<li>① 설계 전의 조사와 의견 수렴만으로는 모든 사용자의 요구를 다 헤아리기 어렵다고</li>
+<li>② 인클루시브 디자인을 한 번에 완결되는 설계가 아니라 거듭 고쳐 나가는 지속적 과정으로</li>
+<li>③ 문을 연 뒤에 드러나는 배제까지 반영하여 접근성과 포용성을 함께 끌어올려야 한다고</li>
+<li>④ 도서관이 특정 약자만이 아니라 누구나를 위한 공간이 되도록 처음부터 설계해야 한다고</li>
+<li>⑤ 막상 문을 연 뒤에 불편을 호소하는 이용자가 생긴다면 그 설계는 인클루시브 디자인이라 할 수 없다고</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2026학년도 6월 [14~17]</div>
+<div class='passage exam-ps'><p>인간은 정보와 독립적으로 존재하며 정보는 인간의 도구에 불과하다는 인간중심주의와 달리, <span class="boxmark">[플로리디의 정보 철학]</span>은 인간을 정보적 존재의 하나로 간주한다. 인간을 포함한 세계 내 모든 존재는 속성과 행위가 정보로 환원된다는 것이다. 가령 내가 빵을 사는 행위를 하는 것은, '내가 빵을 산다'는 정보이다. 이렇듯 속성과 행위가 정보로 환원되는 정보적 존재를 플로리디는 '인포그'라고 부른다. 인포그는 정보적으로 상호 연결되어 영향을 주고받는 존재이다. 상호 연결되었다는 것의 의미는, 다른 정보를 변화시키는 행위자 즉 주체인 동시에 다른 정보에 의해 변화되는 대상이라는 것이다. 내가 친구에게 빵이 맛있다고 말해서 친구가 그 빵을 샀다면, 나의 음성 정보는 그 빵이 지닌 속성이라는 정보에 의해 촉발된 대상이자 친구의 행위라는 정보를 발생시킨 주체이다. 플로리디는 인간을 정보적 상호 연결에 의해 구현되는 인포그의 하나로 본다는 점에서, 인간을 별도의 범주로 분류하는 인간중심주의와 대비된다.</p>
+<p>인간을 바라보는 관점의 차이는 윤리적 견해의 차이로 이어진다. 존재함 즉 '있음'을 '경험될 수 있다'는 뜻으로 정의하는 경험주의와 달리, 인포그의 '있음'은 '상호 연결의 주체와 대상이 될 수 있다'는 뜻으로 정의된다. 그러한 연결 속에서 인간을 비롯한 모든 인포그들은, 동일한 권리는 아니지만 각자의 본성에 적합한 방식으로 '있을' 나름의 권리를 가진다고 플로리디는 주장한다. 자유 의지를 지닌 인간만을 도덕 행위자로 인정하는 칸트 윤리학과 생명에 절대적인 가치를 부여하는 생명 중심 윤리학은 도덕적 주체 및 도덕적으로 대해야 하는 대상의 범위에서 인공물을 제외하지만, 플로리디는 존재하는 것의 내재적 가치를 '있음'에서 찾음으로써 인공물로까지 그 범위를 확장한다.</p>
+<p>플로리디는 인포그와 그 상호 연결을 망라하는 공간을 '인포스피어'라 칭한다. 온라인 공간과 오프라인 공간이 중첩되어 가는 오늘날, 우리의 생활 환경 전체가 인포스피어에 해당한다. 이 공간은 기존의 공간 개념과는 다른 이해를 요구한다. 예를 들어 뉴턴이 생각한 공간은 주체나 대상과 관계없는 절대적인 것이었으나, 인포스피어는 대상과 주체가 서로 의존함으로써 존재하는 공간이자 대상이 추상화 층위를 통해서 인식되는 공간이다. 추상화 층위란 주체의 목적이나 관심을 반영함으로써 주체와 대상 사이의 인식적 관계를 매개하는 경로이다. 추상화 층위에서는 그 층위를 선택한 주체의 목적에 부합하는 속성만 정보로 인식되고 나머지 정보는 생략된다. 예컨대 차량 구매 시, 안전성을 목적으로 추상화 층위를 선택했을 때는 에어백 성능 등의 정보가, 경제성을 목적으로 했을 때는 유지 비용 등의 정보가 인식된다. 이처럼 ㉠추상화 층위를 통해 인식되는 정보는 '구성'된 것이다. 여기서 구성이란, 주어진 세계를 주체가 택한 경로에 따라 해석하여 이해하는 것을 말한다. 즉, 플로리디에 따르면 인포스피어라는 공간은 주체가 발견한 것도 주체가 만들어 낸 허구도 아니다. 정보 철학은 삶의 터전이 온라인으로 확장되는 한편 인공 지능 등의 비인간 행위자가 인간과 공존하는 현대의 변화를 통찰한다는 의의를 가진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>14</span><span class="boxmark">[플로리디의 정보 철학]</span>에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① '있음'의 개념은 경험주의에서 정의하는 것과 같은 뜻을 지닌다.</li>
+<li>② 인간과 영향을 주고받는 정보는 모두 음성 정보의 형태로 전달된다.</li>
+<li>③ 사물이 지닌 속성과 마찬가지로 인간이 지닌 속성 또한 정보로 환원될 수 있다.</li>
+<li>④ 추상화 층위에서 생략되는 정보는 층위를 선택한 주체의 목적에 부합하는 정보이다.</li>
+<li>⑤ 하나의 정보적 존재는 다른 정보적 존재들과의 상호 연결 관계를 둘 이상 맺을 수 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>15</span>㉠의 의미로 가장 적절한 것은?</p>
+<ul>
+<li>① 인포그가 속한 공간은, 오프라인 공간이 아닌 온라인 공간이다.</li>
+<li>② 주체가 어떤 추상화 층위를 택하는가에 따라, 인포그는 행위자와 대상 중 어느 하나에만 해당한다.</li>
+<li>③ 추상화 층위에 의한 주체와 대상 사이의 매개는, 인포그가 가지는 속성에 대한 인식이 객관적임을 보장한다.</li>
+<li>④ 인포그들이 서로 의존함으로써 존재하는 공간은, 추상화 층위를 통해 주체가 전적으로 만들어 낸 허구이다.</li>
+<li>⑤ 인포그가 지닌 속성이라는 정보는, 주체가 자신을 둘러싼 세계를 어떤 관점을 통해서 인식하는가에 의존한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span>윗글을 바탕으로 다음의 ㄱ~ㅁ에 대해 판단한 것으로 적절하지 않은 것은?</p>
+<blockquote>
+<p>ㄱ. 인간은 무엇이 그 본성에 적합한가와 무관하게 다른 인공물들과 동일한 권리를 가진다.
+ㄴ. 모든 정보는 인간의 행위에 의해 발생한다.
+ㄷ. 정보는 도구일 뿐이며 인간은 정보와 별개로 존재한다.
+ㄹ. 주체가 속한 공간은 그 주체가 어떤 인식적 매개 경로를 택하는가에 의해 영향을 받는다.
+ㅁ. 인공물은 도덕적으로 대해야 하는 대상이 아니다.</p>
+</blockquote>
+<ul>
+<li>① ㄱ은 플로리디의 입장과 상충하지 않는다.</li>
+<li>② ㄴ은 플로리디의 입장과 상충한다.</li>
+<li>③ ㄷ은 인간중심주의의 입장과 상충하지 않는다.</li>
+<li>④ ㄹ은 뉴턴의 입장과 상충하지만, 플로리디의 입장과는 상충하지 않는다.</li>
+<li>⑤ ㅁ은 생명 중심 윤리학의 입장과 상충하지 않지만, 플로리디의 입장과는 상충한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span><span class="pts">[3점]</span> 〈보기〉는 플로리디와 학생이 나눈 가상의 대화이다. 윗글을 참고할 때, ㉮에 들어갈 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>학생:</strong> 선생님의 강연을 칸트와 비교하여 듣고, '책임의 소재'에 대해 궁금해졌습니다. 자동으로 작동하며 작동 규칙도 변경할 수 있지만, 자유 의지는 없는 인공 지능 교통 통제 시스템(AI-TCS)이 교통 혼란을 일으켰다고 해 보죠. 이 경우에 대한 선생님의 견해를 듣고 싶습니다.
+<strong>플로리디:</strong> 칸트에 따르면 자유 의지가 있음은 행위에 대해 도덕적 책임을 질 수 있음을 뜻합니다. 학생이 예로 든 시스템이 혼란에 대한 책임을 질 수는 없지만 나는 칸트와 달리 그 시스템이 도덕 행위자에 포함될 뿐 아니라 도덕적 옳고 그름까지 평가될 수 있다고 봐요. 이처럼 정보화 사회에서는 책임을 질 수 없는 도덕 행위자가 늘어나는 한편, 더 많은 정보를 보유하게 된 인간은 예상되는 결과를 예방적으로 관리하고 전체 인포스피어의 번영을 감독할 책임이 그만큼 커지지요. 인포스피어의 책임 있는 관리자로서의 인간을 나는 '호모포이에티쿠스'라 부릅니다.
+<strong>학생:</strong> 선생님께서는 [ ㉮ ] 보시는군요.</p>
+</blockquote>
+<ul>
+<li>① AI-TCS는 호모포이에티쿠스에 속하지 않으며, 칸트 윤리학에서 도덕 행위자로서의 지위가 인정될 자격을 갖지 않는다고</li>
+<li>② 칸트와는 대조적으로, 자유 의지를 지니지 않은 비인간 행위자인 AI-TCS에는 교통 혼란에 대한 책임을 지울 수 없다고</li>
+<li>③ AI-TCS와 같은 인공물이 운전자와 보행자에게 바람직하지 않은 결과를 초래하지 않게끔 예방적으로 관리할 책임이 호모포이에티쿠스에게 있다고</li>
+<li>④ 도로의 교통 통제에 대한 규칙을 입력된 프로그램에 따라 변경한 AI-TCS에 대해 도덕적 옳고 그름을 평가하는 것이 칸트와 달리 가능하다고</li>
+<li>⑤ AI-TCS와 같은 인포그들이 상호 의존함으로써 존재하는 생활 환경으로서의 인포스피어를 더 나은 공간으로 가꿔 나가는 데 호모포이에티쿠스가 책임을 다해야 한다고</li>
+</ul></div>
+</div>
+</body></html>

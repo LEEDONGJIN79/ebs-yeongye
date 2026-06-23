@@ -1,0 +1,841 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>이동식 크레인 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>이동식 크레인 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>공사 현장 옆을 지나다가, 긴 팔을 쭉 뻗어 무거운 철근 다발이나 콘크리트 더미를 번쩍 들어 올리는 커다란 기계를 본 적 있나요? 바로 <strong>이동식 크레인</strong>입니다. 바퀴나 무한궤도를 달아 작업할 곳까지 직접 굴러갈 수 있고, 사람 힘으로는 꿈도 못 꿀 무게의 자재를 들어 올려 원하는 자리에 척척 놓아 주는 장비예요.</p>
+<p>크레인의 가장 눈에 띄는 부분은 길게 뻗은 팔, 곧 <strong>붐(boom)</strong>입니다. 붐은 "얼마나 멀리, 얼마나 높이 닿을 수 있는가"를 결정하지요. 붐을 위아래로 세우거나 눕히는 움직임을 <strong>기복</strong>, 좌우로 빙 돌리는 움직임을 <strong>선회</strong>라고 불러요. 붐 끝에는 갈고리(<strong>후크</strong>)가 달려 있고, 여러 가닥의 강철 철사를 꼬아 만든 튼튼한 줄(<strong>와이어로프</strong>)로 물체를 매달아 올립니다. 또 크레인이 일할 때 땅을 단단히 짚어 몸을 버텨 주는 다리 같은 장치가 있는데, 이것이 <strong>아웃트리거</strong>예요.</p>
+<p>그런데 무거운 걸 들수록 위험한 일이 하나 있어요. 바로 크레인이 앞으로 <strong>꽈당 넘어지는</strong> 것! 이렇게 힘의 균형이 깨져 크레인이 기울어 넘어지는 것을 <strong>전도(顚倒)</strong>라고 합니다. 크레인이 넘어지지 않으려면, 크레인 자신의 무게가 버텨 주는 힘이 들어 올린 물체가 크레인을 앞으로 잡아당기는 힘보다 크거나 같아야 해요.</p>
+<p>여기서 핵심이 <strong>지렛대의 원리</strong>입니다. 시소를 떠올려 보세요. 가벼운 사람도 받침점에서 멀찍이 앉으면 무거운 사람을 들어 올릴 수 있죠? "무게 × 받침점까지의 거리"가 시소의 기울기를 정하니까요. 이 "무게 × 거리"를 어려운 말로 <strong>모멘트(moment)</strong>라고 합니다. 크레인에서는 넘어지는 기준선(<strong>전도 축</strong>)을 시소의 받침점처럼 두고, 두 개의 모멘트가 줄다리기를 해요.</p>
+<blockquote>
+<p>한마디로: 크레인이 안 넘어지려면 — <strong>(크레인 무게 × 거리) ≥ (물체 무게 × 거리)</strong>.
+앞쪽(크레인 몸체)이 버티는 힘을 <strong>안정 모멘트</strong>, 들어 올린 물체가 앞으로 당기는 힘을 <strong>양중 모멘트</strong>라고 부릅니다. 안정 모멘트가 양중 모멘트보다 크거나 같아야 안전한 거예요. 이 시소 게임을 이해하면 크레인 단원은 다 푼 셈입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>이동식 크레인이 어떻게 무거운 물체를 안전하게 들어 올리는가</strong>가 있습니다. "들어 올리는 힘(양중)"과 "넘어지지 않는 힘(안정)"이 어떻게 균형을 이루는지가 큰 그림이에요. 세 세트는 이 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>이동식 크레인<small>"붐·와이어로프로 무거운 물체를 들어 올린다"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>크레인이 왜 안 넘어지는지, 곧 <strong>전도·안정 모멘트·양중 모멘트</strong>의 줄다리기를 <em>수치로 따져</em> 봅니다. 거리와 무게를 곱해 비교하는 이 단원의 핵심이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>크레인의 팔이 <em>어떻게 움직이는지</em>를 들여다봅니다. <strong>유압식 붐</strong>의 작동과 기복·선회, 아웃트리거의 구실을 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>물체를 매달아 올리는 <em>장치들의 구성</em>을 봅니다. <strong>와이어로프·후크</strong>와 두 종류 붐(유압식·격자형)의 역할을 견주어 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 크레인이 무거운 물체를 들어 올리면서도 어떻게 균형을 잃지 않는지, 그 힘과 구조의 짜임이 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>이동식 크레인이 어떤 물체를 들어 올릴 수 있는 능력을 양중 능력이라 한다. 양중 능력은 지렛대의 원리에 따라 결정되며, 크레인의 설계 및 안정성과 밀접하게 관련된다. 크레인은 작업 중 힘의 균형이 무너지면 한쪽으로 기울어져 넘어질 수 있는데, 이렇게 크레인이 기울어 넘어지는 것을 전도라 한다. 전도는 크레인이 어느 한 선이나 점을 축으로 삼아 회전하듯 기울 때 일어나며, 이 축을 전도 축이라 한다. 아웃트리거를 펼쳐 지면을 짚은 크레인에서는 지면에 닿은 받침점들을 잇는 선이 전도 축이 되고, 크레인은 이 축을 넘어 앞으로 회전하려는 경향을 갖는다. 물체를 들어 올리는 동안 크레인에는 본체 자신의 무게와 들어 올린 물체의 무게가 함께 작용하는데, 이 두 무게는 전도 축을 사이에 두고 서로 반대쪽에서 크레인을 기울이려 한다. 본체의 무게는 크레인을 전도 축 안쪽으로 눌러 넘어지지 않게 하는 쪽으로, 물체의 무게는 크레인을 전도 축 바깥으로 끌어내려 넘어뜨리는 쪽으로 작용한다. 따라서 양중 능력의 크기는 이처럼 전도 축을 기준으로 서로 맞서는 두 힘의 작용으로 ⓐ<u>결정된다</u>.</p>
+<p>지렛대에서 물체를 돌리려는 힘의 효과는 가한 힘의 크기 하나만으로 정해지지 않는다. 같은 힘이라도 회전축에서 먼 곳에 작용하면 물체를 더 크게 돌리고, 가까운 곳에 작용하면 덜 돌린다. 그래서 돌리려는 힘의 효과는 가한 힘의 크기와, 회전축에서 힘이 작용하는 지점까지의 수평 거리를 곱한 값으로 나타나는데, 이 값을 모멘트라 한다. 같은 무게라도 회전축에서 멀리 떨어진 지점에 작용할수록 모멘트는 커지고, 가까이 작용할수록 작아진다. 크레인의 전도 역시 전도 축을 회전축으로 하는 두 모멘트의 크기 관계로 ⓑ<u>설명된다</u>. 〈그림〉과 같이, 크레인 본체의 무게 중심에서 전도 축까지의 수평 거리를 A, 들어 올리는 물체의 중심축에서 전도 축까지의 수평 거리를 B라 하자. 크레인 본체의 중량과 거리 A를 곱한 값을 안정 모멘트라 하고, 물체의 무게와 거리 B를 곱한 값을 양중 모멘트라 한다. 안정 모멘트는 크레인을 전도 축 안쪽으로 눌러 넘어지지 않게 버티는 효과를, 양중 모멘트는 크레인을 전도 축 바깥으로 끌어내려 넘어뜨리려는 효과를 나타낸다. 두 모멘트는 모두 무게와 거리의 곱이므로, 무게가 같더라도 전도 축에서의 거리가 달라지면 그 크기가 달라진다.</p>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈크레인 전도의 모멘트〉 — 아웃트리거로 지면을 짚은 이동식 크레인을 옆에서 본 단면 도식. 지면에 닿은 앞쪽 받침점에 ‘전도 축’ 표지가 있고, 그 축을 기준으로 본체 쪽(축 안쪽)에 크레인 무게 중심을 나타내는 아래 방향 화살표(‘크레인 중량’)가, 붐 끝에 매달린 물체 쪽(축 바깥쪽)에 또 하나의 아래 방향 화살표(‘물체의 무게’)가 그려져 있다. 전도 축에서 무게 중심까지의 수평 거리에 ‘A’, 전도 축에서 물체 중심축까지의 수평 거리에 ‘B’ 치수선이 표시되어 있다.</figure>
+
+<p>크레인이 전도되지 않으려면 안정 모멘트가 양중 모멘트보다 크거나 같아야 한다. 즉 ‘크레인 중량 × A’가 ‘물체 무게 × B’ 이상이어야 한다. 이 관계로부터 크레인이 안전하게 들어 올릴 수 있는 물체의 무게가 정해지는데, 양중 모멘트가 안정 모멘트와 같아지는 경계에서의 물체 무게가 그 작업 조건에서 들 수 있는 최대 무게가 된다. 거리 B는 붐이 물체를 어디까지 뻗어 들었는지에 따라 달라지는 값으로, 붐을 멀리 뻗어 작업 반경이 커질수록 B가 커진다. 같은 물체라도 B가 커지면 양중 모멘트가 커지므로, 붐을 멀리 뻗을수록 들 수 있는 무게는 줄어든다. 반대로 붐을 세워 작업 반경을 줄이면 B가 작아져 더 무거운 물체를 들 수 있다. 한편 거리 A는 크레인의 구조로 정해지는데, 아웃트리거를 넓게 펼쳐 받침점 사이를 벌리면 전도 축이 본체에서 멀어지므로 A가 커진다.</p>
+<p>이처럼 크레인의 안정성은 들어 올리는 물체의 무게 하나로 정해지지 않고, 그 물체를 어느 거리에서 드는지, 그리고 크레인이 얼마나 넓게 몸을 버티는지에 따라 함께 결정된다. 같은 무게의 물체라도 붐을 멀리 뻗어 들면 전도되지만 가까이서 들면 안전할 수 있고, 같은 작업 반경이라도 아웃트리거를 넓게 펼친 크레인은 안전하지만 좁게 펼친 크레인은 전도될 수 있다. 그래서 작업 현장에서는 들어 올릴 물체의 무게와 작업 반경을 미리 따져, 안정 모멘트가 양중 모멘트 이상으로 유지되는 범위 안에서만 작업하도록 정해 둔다. 이 범위 안에서 크레인이 들 수 있도록 보장된 무게를 정격 하중이라 하며, 정격 하중은 작업 반경이 커질수록 작아지는 값으로 제시된다. 작업자는 들어 올릴 물체의 무게가 그 작업 반경에서의 정격 하중을 넘지 않도록 하여, 안정 모멘트가 양중 모멘트보다 작아지는 일을 막아야 한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 양중 모멘트는 크레인을 전도 축 안쪽으로 눌러 크레인이 넘어지지 않게 버티는 효과를 나타낸다.</li>
+<li>② 모멘트는 가한 힘의 크기를 회전축에서 힘이 작용하는 지점까지의 수평 거리로 나눈 값이다.</li>
+<li>③ 정격 하중은 작업 반경이 커질수록 더 큰 값으로 제시된다.</li>
+<li>④ 아웃트리거를 넓게 펼쳐 받침점 사이를 벌리면 거리 A가 커진다.</li>
+<li>⑤ 양중 능력은 지렛대의 원리와 무관하게 크레인 본체의 중량만으로 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+4문단에서 "아웃트리거를 넓게 펼쳐 받침점 사이를 벌리면 전도 축이 본체에서 멀어지므로 A가 커진다"라고 했으므로 ④가 일치합니다. ① 전도 축 안쪽으로 눌러 <em>버티는</em> 효과는 양중 모멘트가 아니라 <strong>안정 모멘트</strong>예요(2문단에서 둘을 맞바꿔 놓았습니다). ② 모멘트는 힘의 크기를 거리로 <em>나눈</em> 값이 아니라 힘과 거리를 <strong>곱한</strong> 값이고요(2문단). ③ 정격 하중은 "작업 반경이 커질수록 <em>작아지는</em> 값"이라 했으니 정반대(5문단). ⑤ 양중 능력은 "지렛대의 원리에 따라 결정"되고 본체 중량만으로 정해지지 않으므로(1문단) 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글에서 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 같은 물체를 들 때 붐을 더 멀리 뻗어 작업 반경을 키우면 양중 모멘트가 커진다.</li>
+<li>② 크레인 중량과 거리 A가 일정할 때, 들어 올린 물체의 무게가 무거울수록 전도가 일어나기 쉬워진다.</li>
+<li>③ 작업 반경이 같다면 거리 A가 큰 크레인일수록 더 무거운 물체를 들어 올릴 수 있다.</li>
+<li>④ 양중 모멘트가 안정 모멘트보다 큰 상태에서 작업하면 크레인은 더욱 안정적으로 버틸 수 있다.</li>
+<li>⑤ 들어 올리는 물체의 무게가 같다면 거리 B가 작을수록 크레인이 전도될 위험이 줄어든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+3문단은 "안정 모멘트가 양중 모멘트보다 크거나 같아야" 전도되지 않는다고 했어요. 그러니 ④처럼 <em>양중 모멘트가 안정 모멘트보다 큰</em> 상태는 오히려 전도되는 위험한 상태이지, "더욱 안정적으로 버티는" 상태가 아니므로 적절하지 않아 정답입니다. ① 붐을 멀리 뻗으면 B가 커지고 양중 모멘트(무게×B)도 커집니다(4문단). ② 안정 모멘트가 일정한데 양중 모멘트만 커지면 균형이 깨지기 쉬우니 맞고, ③ A가 크면 안정 모멘트가 커져 더 무거운 물체를 들 수 있으며(4문단), ⑤ B가 작으면 양중 모멘트가 작아 전도 위험이 줄어듭니다(4문단) — 모두 타당한 추론이에요.</p>
+<p><strong>3번 [3점] — 정답 ①</strong>
+두 크레인은 본체 중량이 같고 거리 A만 다른데, Q가 A가 더 크죠. 안정 모멘트는 '중량 × A'이므로 A가 작은 P의 안정 모멘트가 더 작습니다. 그래서 같은 작업 반경(=같은 B, 같은 양중 모멘트)에서 P가 먼저 전도되려 한 것이니 ①이 적절해 정답입니다. ② 같은 물체를 같은 작업 반경에서 들면 B가 같아 양중 모멘트(무게×B)도 <em>서로 같으므로</em> P가 더 크다는 말은 틀립니다. ③ 〈보기〉에서 두 크레인은 작업 반경이 같으니 거리 B도 같아, B가 다르다는 설명은 어긋나요. ④ P가 전도되려 한 순간은 양중 모멘트가 안정 모멘트와 같아지거나 <em>더 커진</em> 때이므로, "양중 모멘트가 안정 모멘트보다 작다"는 정반대입니다. ⑤ 작업 반경을 줄이면 B가 작아져 양중 모멘트가 <em>작아지고</em> 전도 위험은 <em>낮아지므로</em> 방향이 반대예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+동일한 사양의 이동식 크레인 두 대 P와 Q가 있다. 두 크레인의 본체 중량은 서로 같다. P는 아웃트리거를 좁게 펼쳐 거리 A가 작고, Q는 아웃트리거를 넓게 펼쳐 거리 A가 P보다 크다. 두 크레인으로 오른쪽 그림과 같이 같은 무게의 물체를 들어 올리는 작업을 한다. 작업 반경을 점차 늘려 가며 같은 물체를 들었더니, P는 작업 반경이 일정 값에 이르자 전도되려 하였으나, Q는 같은 작업 반경에서도 아직 전도되지 않았다. (단, 본체 중량·물체 무게·거리 A 외에 전도에 영향을 주는 다른 요소는 고려하지 않는다.)</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 2]</span> 〈두 크레인의 작업 모식도〉 — 같은 물체를 든 두 크레인을 나란히 옆에서 본 도식. 왼쪽 크레인 P는 아웃트리거가 좁게 벌어져 받침점(전도 축)이 본체에 가깝고, 오른쪽 크레인 Q는 아웃트리거가 넓게 벌어져 받침점이 본체에서 멀다. 두 크레인 모두 붐 끝에 같은 크기의 직육면체 물체가 같은 작업 반경으로 매달려 있으며, 각 크레인의 전도 축에서 본체 무게 중심까지 거리 ‘A’가, 물체 중심축까지 거리 ‘B’가 치수선으로 표시되어 있다.</figure></p>
+</blockquote>
+<ul>
+<li>① 같은 작업 반경에서 P가 Q보다 먼저 전도되려 한 것은, P의 안정 모멘트가 Q의 안정 모멘트보다 작기 때문이겠군.</li>
+<li>② 같은 작업 반경에서 두 크레인의 양중 모멘트를 비교하면, P의 양중 모멘트가 Q의 양중 모멘트보다 크겠군.</li>
+<li>③ Q가 같은 작업 반경에서 전도되지 않은 것은, Q의 거리 B가 P의 거리 B보다 작기 때문이겠군.</li>
+<li>④ P가 전도되려 한 작업 반경에서, P의 양중 모멘트는 P의 안정 모멘트보다 작겠군.</li>
+<li>⑤ 작업 반경을 더 줄이면, 두 크레인 모두 양중 모멘트가 커져 전도 위험이 높아지겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ, ⓑ의 의미로 쓰인 예가 바르게 짝지어진 것은?</p>
+<ul>
+<li>① ⓐ: 오랜 토론 끝에 회의의 결론이 그렇게 결정되었다. / ⓑ: 그는 사고의 경위를 차분히 설명했다.</li>
+<li>② ⓐ: 그는 진학 대신 취업을 하기로 마음을 결정했다. / ⓑ: 이 그래프는 두 변수의 관계를 잘 설명한다.</li>
+<li>③ ⓐ: 경기의 승패는 마지막 한 점으로 결정되었다. / ⓑ: 안내원이 길을 자세히 설명해 주었다.</li>
+<li>④ ⓐ: 그는 망설임 없이 곧바로 진로를 결정했다. / ⓑ: 이 이론은 현상의 원인을 설득력 있게 설명한다.</li>
+<li>⑤ ⓐ: 위원회는 표결로 안건의 통과를 결정했다. / ⓑ: 그는 자신의 입장을 길게 설명했다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+ⓐ '결정된다'는 <em>여러 조건이 작용해 어떤 값이 정해진다</em>는 뜻이고, ⓑ '설명된다'는 <em>어떤 현상이 까닭과 함께 밝혀진다</em>는 뜻이에요. ③에서 ⓐ "승패가 마지막 한 점으로 결정되었다"는 결과가 정해지는 쪽, ⓑ "길을 자세히 설명해 주었다"는 내용을 밝혀 알려 주는 쪽이라 둘 다 들어맞아 정답입니다. ①·②·④·⑤의 ⓐ는 모두 "마음을/진로를/안건을 <em>결정했다</em>"처럼 <em>주체가 의지로 골라 정하는</em> 뜻이라 지문의 '결정되다(저절로 정해지다)'와 결이 다르고, ②·④·⑤의 ⓑ는 "이론·입장을 <em>설명한다</em>"로 무난하나 ⓐ가 어긋나며, ①의 ⓑ "경위를 설명했다"는 적절하나 ⓐ가 어긋나, 짝이 모두 맞는 것은 ③뿐입니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>전도(顚倒)</strong>: 힘의 균형이 깨져 크레인이 한쪽으로 기울어 넘어지는 것.</li>
+<li><strong>전도 축</strong>: 크레인이 넘어질 때 회전의 기준이 되는 선. 아웃트리거 받침점들을 잇는 선이 이 축이 됩니다.</li>
+<li><strong>모멘트</strong>: '힘의 크기 × 회전축까지의 수평 거리'. 같은 무게라도 멀수록 커지는, 돌리는 힘의 효과예요.</li>
+<li><strong>안정 모멘트 / 양중 모멘트</strong>: 안정 모멘트(크레인 중량 × A)는 버티는 힘, 양중 모멘트(물체 무게 × B)는 넘어뜨리는 힘.</li>
+<li><strong>정격 하중</strong>: 안정 모멘트가 양중 모멘트 이상으로 유지되는 범위에서 크레인이 들 수 있도록 보장된 무게.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>↑ A 커짐(아웃트리거 넓힘)</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>안정 모멘트 ↑</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>더 무거운 물체 OK</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>모멘트는 어떻게 구하나요?</div><div class='qa-a'>힘(무게)의 크기에 회전축까지의 수평 거리를 곱해서 구합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>붐을 더 멀리 뻗으면 들 수 있는 무게는 어떻게 되나요?</div><div class='qa-a'>거리 B가 커져 양중 모멘트가 커지므로, 들 수 있는 무게는 줄어듭니다.</div></div>
+<div class='qa-item'><div class='qa-q'>아웃트리거를 넓게 펼치면 왜 더 무거운 물체를 들 수 있나요?</div><div class='qa-a'>전도 축이 본체에서 멀어져 거리 A가 커지고, 안정 모멘트(중량×A)가 커지기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2026학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>열팽창이란 물체의 온도 변화에 따라 그 길이, 부피가 변화하는 현상을 말한다. 그중 길이의 변화를 수치화한 것이 선형 열팽창 계수인데, 이는 온도 변화에 따른 길이 변화율을 온도 변화량으로 나눈 값이다. 여기에서 길이 변화율은 길이의 변화량을 처음 길이로 나누어 ⓐ얻는 값이며, 변화량이란 나중 값에서 처음 값을 뺀 것이다. 대부분의 물질은 선형 열팽창 계수가 양수이며 물질마다 그 값이 다르다. 합금인 인바(invar)와 순수한 금속인 알루미늄은 선형 열팽창 계수가 양수인 물질이며 인바는 알루미늄에 비해 매우 작은 선형 열팽창 계수를 갖는다.</p>
+<p>선형 열팽창 계수가 다른, 두 종류의 물질 P와 Q를 서로 같은 두께의 두 층으로 접합하여 평평한 띠를 만든다고 하자. 이때 Q가 P보다 선형 열팽창 계수가 크다면 온도를 올렸을 때 Q층은 P층보다 더 팽창하려고 한다. 그러나 두 층이 접합되어 있어 독립적인 팽창이 억제되므로, 〈그림〉과 같이 띠가 P층 쪽으로 원의 호 형태로 휘면서 팽창한 후 그 상태를 유지한다. 이후 다시 처음의 온도로 내리면 띠는 원래 모양으로 ⓑ돌아온다.</p>
+<blockquote>
+<p><strong><span class="boxmark">[그림]</span></strong> 두 층으로 접합된 띠가 원의 호 형태로 휜 모습의 입체 그림. 띠는 양 끝이 위로 들리고 가운데가 아래로 처진 형태로, 위층(오목한 안쪽)이 P층, 아래층(볼록한 바깥쪽, 어둡게 칠해짐)이 Q층이며 각 층을 가리키는 화살표와 함께 ‘P층’, ‘Q층’ 표지가 붙어 있다. 그림 아래에 〈그림〉 표제. (원문에서는 이 문단 오른쪽에 배치)</p>
+</blockquote>
+<p>물체의 휨의 정도는 곡률로 수치화할 수 있는데, 띠 또한 휨의 정도를 곡률로 나타낸다. 띠의 길이에 비해 두께가 매우 얇고 폭이 좁아 띠를 하나의 곡선이라고 간주하면, 띠를 원의 호로 생각할 수 있다. 이때 이 원의 호를 포함하는 원의 반지름을 휘어진 띠의 곡률 반지름이라 하는데, 곡률은 이 곡률 반지름의 역수이다. 즉, 곡률 반지름이 작을수록 더 심하게 휘어진 것이다. 다른 조건이 동일하다면, 두 물질의 선형 열팽창 계수 차이가 크거나 온도 변화가 클수록 띠가 더 휘어진다. 온도 변화량이 같아도 띠를 이루는 물질에 따라 띠가 휘는 정도는 달라지며, 이를 나타내는 것이 휨 민감도이다. 휨 민감도가 더 크다는 것은 같은 온도 변화량에서 띠가 더 심하게 휨을 의미한다.</p>
+<p>띠의 한쪽 끝을 고정하고 열을 가하면 띠가 휘면서 반대쪽 끝이 움직이는 액추에이터가 된다. 액추에이터란 열에너지 등을 기계적 동작으로 변환하는 장치로, 액추에이터의 설계에는 최대 이동 거리, 띠가 외부에 가할 수 있는 힘, 반응 완료 시간 등이 고려된다.</p>
+<p>띠가 휠수록 고정되지 않은 끝의 이동 거리는 커진다. 최대 이동 거리는 휨을 방해하는 외부의 힘이 없다고 가정할 때, 주어진 온도 변화량에서 띠의 끝이 최대로 이동할 수 있는 거리이다. 이 값은 띠의 길이에 따라 달라진다. 띠가 휘면서 띠의 끝이 외부에 힘을 가할 수 있는데, 이 힘은 띠의 끝이 최대 이동 거리에 도달하여 휨이 완료되었을 때 소멸된다. 따라서 띠가 외부에 가할 수 있는 힘이 소멸되는 시점은 최대 이동 거리에 도달했을 때이고, 이는 띠가 휘는 과정에서 최대의 곡률에 도달했을 때와 같다. 반응 완료 시간 또한 고려해야 하는데, 반응 완료 시간은 온도를 올리기 시작한 시점부터 띠의 끝이 최대 이동 거리에 도달하기까지의 시간이고, 띠의 두께가 얇을수록 짧다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 온도의 변화에 따라 물체의 길이는 변하지만 부피는 변하지 않는다.</li>
+<li>② 물질의 선형 열팽창 계수는 열을 가해 변화되었을 때의 길이를 열을 가하기 전의 길이로 나눈 값이다.</li>
+<li>③ 선형 열팽창 계수가 음수인 물질이 선형 열팽창 계수가 양수인 물질보다 그 종류가 더 많다.</li>
+<li>④ 액추에이터는 열에너지를 얻기 위해 기계적 움직임을 이용하는 장치이다.</li>
+<li>⑤ 서로 다른 물질을 두께가 같은 두 층으로 접합해 만든 띠의 온도를 올릴 때, 띠의 두께가 얇을수록 휨이 빨리 완료된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+5문단에서 반응 완료 시간(온도를 올리기 시작한 시점부터 띠의 끝이 최대 이동 거리에 도달하기까지의 시간)은 띠의 두께가 얇을수록 짧다고 했으므로 ⑤가 일치한다. ①은 열팽창이 길이·부피 모두의 변화(1문단), ②는 길이 변화율의 정의와 혼동(선형 열팽창 계수는 길이 변화율을 온도 변화량으로 나눈 값), ③은 대부분의 물질이 양수(1문단), ④는 열에너지를 기계적 동작으로 변환하는 장치(4문단)이므로 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①2.1% ②9.3% ③10.3% ④10.5% ⑤69.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글에서 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 선형 열팽창 계수가 음수인 물질에 열을 가하면 길이가 줄어든다.</li>
+<li>② 온도에 따라 길이 변화가 작아야 하는 부품에는 알루미늄보다 인바가 더 적합하다.</li>
+<li>③ 두 물질을 접합하여 두 층으로 이루어진 띠를 만들고 온도를 내리면 선형 열팽창 계수가 작은 물질 쪽으로 휜다.</li>
+<li>④ 열팽창으로 길이가 늘어난 두 물체의 길이의 변화량이 같다면 팽창 전의 길이가 더 긴 물체의 길이 변화율이 더 작다.</li>
+<li>⑤ 한쪽 끝이 고정되고 길이가 다른 평평한 두 띠가 동일한 곡률로 휘었다면 길이가 긴 띠의 끝의 이동 거리가 더 길다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+온도를 올리면 선형 열팽창 계수가 큰 쪽이 더 팽창하여 계수가 <strong>작은</strong> 물질 쪽으로 휘지만, 온도를 <strong>내리면</strong> 계수가 큰 쪽이 더 수축하므로 계수가 <strong>큰</strong> 물질 쪽으로 휜다. 따라서 ③이 적절하지 않다. ①은 변화량(나중 값-처음 값)이 음수가 됨, ②는 인바의 계수가 매우 작음(1문단), ④는 변화량이 같으면 처음 길이가 길수록 변화율이 작음, ⑤는 같은 곡률이면 긴 띠가 더 많은 구간이 휘어 이동 거리가 커짐에서 추론된다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①5.6% ②9.9% ③51.3% ④18.7% ⑤13.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+두 물질을 접합하여 두 층으로 만든, 두 종류의 띠 a와 b가 있다. 두 물질의 선형 열팽창 계수의 차이는 b가 a보다 크고, 두께와 길이는 a, b 모두 같다. 이 띠를 활용하여 오른쪽 그림과 같이 띠가 안으로 휘어 물체를 잡는 집게를 만들었다. a를 두 개 사용한 것은 집게 A이고, b를 두 개 사용한 것은 집게 B이다. 온도 T₀에서 A와 B의 모든 띠는 평평한 형태였다. 이후 온도를 T₁로 올렸을 때는 B만 물체를 잡을 수 있었다. 그런데 T₀에서 T₁보다 높은 온도인 T₂로 온도를 올렸을 때는 A도 물체를 잡을 수 있었다. (단, 선형 열팽창 계수 차이, 온도 변화 외에 휨에 영향을 주는 다른 요소는 고려하지 않음.)</p>
+<p><strong><span class="boxmark">[그림: 집게 모식도]</span></strong> 위쪽에 가로 판이 있고 그 위에 원기둥 모양 부품이 놓여 있다. 가로 판의 양 끝에서 두 개의 띠가 아래로 드리워져 있고, 점선 호들이 두 띠가 안쪽으로 휘어 들어가는 경로를 나타낸다. 두 띠의 아래쪽 끝에는 안쪽을 향한 검은 화살표가 있으며, 두 띠 사이 바닥 중앙에 작은 직육면체 물체가 세워져 있다. (원문에서는 〈보기〉 글 오른쪽에 배치)</p>
+</blockquote>
+<ul>
+<li>① T₀에서 T₁로 올렸을 때보다 T₀에서 T₂로 올렸을 때, a와 b 모두 외부에 가할 수 있는 힘이 소멸되는 시점의 곡률은 더 크겠군.</li>
+<li>② T₀에서 T₁로 올렸을 때, a와 b 각각의 휨이 멈춘 시점에서의 a의 곡률 반지름은 b의 곡률 반지름보다 작겠군.</li>
+<li>③ T₀에서 T₁로 올렸을 때, A와 B 각각의 동작이 멈추는 데 걸린 시간이 서로 같았다면 b의 반응 완료 시간이 a보다 짧겠군.</li>
+<li>④ T₀에서 T₂로 올렸을 때, a의 최대 이동 거리가 b보다 더 크겠군.</li>
+<li>⑤ B와 달리, T₂가 되어야 A가 물체를 잡을 수 있었던 것은 a가 b보다 휨 민감도가 크기 때문이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>12번 — 정답 ①</strong><br />
+외부에 가할 수 있는 힘이 소멸되는 시점은 최대 이동 거리, 곧 최대 곡률에 도달했을 때다(5문단). 온도 변화가 클수록 띠가 더 휘므로(3문단), T₂까지 올리면 a·b 모두 그 시점의 곡률이 T₁까지 올렸을 때보다 크다 — ① 적절. ② 계수 차이가 큰 b가 더 심하게 휘므로 a의 곡률 반지름이 b보다 크다. ③ 동작이 멈추는 데 걸린 시간이 같았다면 반응 완료 시간도 같다. ④ B는 T₁에서 이미 물체를 잡았으므로 T₂에서 b의 최대 이동 거리가 a 이상이다. ⑤ T₂가 되어야 A가 잡을 수 있었던 것은 a의 휨 민감도가 b보다 <strong>작기</strong> 때문이다.</p>
+<p><em>선택률</em> — 응시 98,589명 — ①26.6% ②19.0% ③28.1% ④18.9% ⑤6.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>ⓐ, ⓑ의 의미로 쓰인 예가 바르게 짝지어진 것은?</p>
+<ul>
+<li>① ⓐ: 그는 이 실험에서 예측한 근사치를 얻었다. / ⓑ: 그는 은퇴한 후 고향으로 돌아왔다.</li>
+<li>② ⓐ: 그는 친구의 도움에 용기를 얻었다. / ⓑ: 곧 그에게 발표할 차례가 돌아온다.</li>
+<li>③ ⓐ: 그는 열심히 일해 지금의 결과를 얻었다. / ⓑ: 그는 지름길을 두고 먼 길로 돌아왔다.</li>
+<li>④ ⓐ: 그는 자신이 하는 일에서 보람을 얻었다. / ⓑ: 모임이 한 달에 한 번씩 돌아온다.</li>
+<li>⑤ ⓐ: 그는 가족의 열렬한 호응에 자신감을 얻었다. / ⓑ: 우리 부서에 적은 돈이 몫으로 돌아왔다.</li>
+</ul>
+<p>(원문에서는 각 예문의 ‘얻-’, ‘돌아오-’ 활용형에 밑줄이 그어져 있다.)</p>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+ⓐ‘얻는’은 ‘구하거나 찾아서 가지다’, ⓑ‘돌아온다’는 ‘원래 있던 곳으로 다시 오거나 다시 그 상태가 되다’의 의미다. 이 두 의미가 모두 들어맞는 짝은 ①(근사치를 얻었다 / 고향으로 돌아왔다)이다. ②④⑤의 ‘얻다’는 ‘긍정적인 태도·반응·상태를 가지게 되다’, ②의 ‘돌아오다’는 ‘차례가 닥치다’, ③은 ‘둘러서 오다’, ④는 ‘되풀이되는 것이 다시 닥치다’, ⑤는 ‘몫 따위를 받다’의 의미다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①85.1% ②1.6% ③3.2% ④5.1% ⑤4.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>이동식 크레인에서 물체를 들어 올리고 옮기는 일은 대부분 긴 팔 모양의 붐을 움직여 이루어진다. 물체는 붐 끝에 매달린 후크에 걸리며, 크레인은 와이어로프를 감거나 풀어 이 후크를 끌어 올리거나 내린다. 붐은 물체를 옮기는 데 필요한 도달 범위와 높이를 결정하는 부분으로, 그 길이와 자세를 어떻게 조절하느냐에 따라 작업할 수 있는 영역이 달라진다. 붐이 짧으면 가까운 곳밖에 닿지 못하고, 길면 멀고 높은 곳까지 닿을 수 있다. 또 같은 길이의 붐이라도 어느 각도로 세우느냐, 어느 방향으로 돌리느냐에 따라 후크가 닿는 자리가 달라진다. 그래서 크레인은 붐의 길이와 자세를 작업 상황에 맞게 조절하는 여러 방식을 갖추고 있다. 붐의 길이를 조절하는 방식에 따라 크레인은 여러 종류로 나뉘는데, 그중 유압 실린더를 이용해 붐의 길이를 늘이거나 줄이는 것이 ㉠<u>유압식 붐</u>이다.</p>
+<p>유압식 붐은 굵기가 다른 여러 단의 관이 망원경처럼 겹쳐진 구조로 되어 있고, 그 안에 유압 실린더가 들어 있다. 유압 실린더는 밀폐된 관 속의 기름에 압력을 가하면 그 압력이 기름을 통해 그대로 전달되어 실린더의 막대를 밀어내는 장치이다. 액체는 잘 압축되지 않아서, 한쪽에서 가한 압력이 줄어들지 않고 기름 전체에 고르게 전달되기 때문에 작은 힘으로도 막대를 큰 힘으로 밀어낼 수 있다. 이 막대가 겹쳐진 관들을 밀어내면 안쪽 단이 바깥쪽 단에서 빠져나오며 붐 전체의 길이가 길어지고, 기름의 압력을 줄이면 안쪽 단이 다시 들어가 붐이 짧아진다. 이렇게 붐의 길이를 늘이거나 줄임으로써 크레인은 작업 대상까지의 거리에 맞추어 도달 범위를 조절한다. 작업 도중에도 길이를 자유롭게 바꿀 수 있어, 작업 대상까지의 거리가 자주 바뀌는 현장에서도 붐을 일일이 바꿔 달지 않고 곧바로 대응할 수 있다. 붐의 길이를 더 늘려야 할 때에는 붐 끝에 별도의 보조 붐을 부착하여 도달 범위를 한층 확장하기도 한다.</p>
+<p>붐은 길이뿐 아니라 자세도 바꿀 수 있다. 붐이 수직 방향으로 세워지거나 눕는 움직임을 기복이라 하는데, 기복은 와이어로프를 감거나 풀어 붐을 당기고 늦추는 방식이나 별도의 유압 실린더로 붐을 밀어 올리고 내리는 방식으로 이루어진다. 붐을 세울수록 후크가 닿는 위치는 크레인 본체에 가까워지면서 높아지고, 붐을 눕힐수록 후크는 본체에서 멀어지면서 낮아진다. 따라서 높은 곳에 물체를 올려야 할 때에는 붐을 세우고, 본체에서 멀리 떨어진 곳에 물체를 놓아야 할 때에는 붐을 눕혀, 기복만으로도 후크가 닿는 높이와 거리를 함께 조절할 수 있다. 한편 붐이나 보조 붐이 수평 방향으로 회전하는 움직임을 선회라 하며, 선회를 통해 크레인은 본체를 옮기지 않고도 둘레의 여러 방향으로 물체를 옮길 수 있다. 본체를 옮기려면 바퀴를 움직여야 하고 아웃트리거도 다시 펼쳐야 하지만, 선회를 이용하면 본체를 고정한 채 붐만 돌려 물체를 원하는 방향으로 옮길 수 있다. 일부 크레인은 붐과 보조 붐을 각각 따로 기복할 수 있어, 두 붐이 이루는 각을 조절하면 하나의 붐만 움직일 때보다 후크가 도달할 수 있는 범위가 훨씬 넓어진다. 이렇게 붐의 길이 조절과 기복·선회가 어우러져, 크레인은 본체를 움직이지 않고도 넓은 영역의 여러 자리로 물체를 옮길 수 있다.</p>
+<p>붐을 움직여 무거운 물체를 들어 올릴 때, 크레인은 그 힘과 무게를 안정적으로 지면에 전달해야 한다. 무거운 물체를 붐 끝에 매달면 크레인은 물체 쪽으로 기울어지려 하기 때문이다. 이를 막기 위한 장치가 아웃트리거이다. 아웃트리거는 본체의 네 귀퉁이에서 옆으로 뻗어 나와 지면을 짚는 받침다리로, 바퀴만으로 지면에 닿아 있던 크레인을 넓은 범위에서 단단히 떠받친다. 바퀴만으로 서 있을 때는 크레인이 지면을 짚는 자리가 좁아 조금만 기울어져도 균형을 잃기 쉽지만, 아웃트리거를 펼쳐 지면을 짚으면 크레인이 지면에 닿아 버티는 받침점들의 간격이 넓어진다. 받침점 간격이 넓어지면 크레인은 더 잘 기울지 않으므로, 같은 크레인이라도 바퀴로만 서 있을 때보다 더 무거운 물체를 안정적으로 들어 올릴 수 있다. 또한 아웃트리거는 무거운 물체를 들 때 한쪽으로 쏠리는 힘을 여러 받침점으로 나누어 받아, 작업 중 크레인이 기울거나 흔들리는 것을 막는 구실도 한다. 이처럼 붐이 물체를 들어 올리는 동안 아웃트리거가 크레인을 떠받쳐야 비로소 크레인은 무거운 물체를 안전하게 다룰 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 붐의 종류를 시대순으로 나열하고 각 종류가 등장하게 된 배경을 분석하고 있다.</li>
+<li>② 유압식 붐의 장점과 단점을 대비한 뒤 두 가지를 절충하는 방안을 제안하고 있다.</li>
+<li>③ 크레인이 물체를 옮기는 데 쓰이는 붐의 작동 방식을 설명하고 이를 떠받치는 장치의 구실을 소개하고 있다.</li>
+<li>④ 크레인의 종류를 작업 환경에 따라 분류하고 각 환경에서의 사용 절차를 단계별로 제시하고 있다.</li>
+<li>⑤ 붐의 도달 범위를 측정하는 방법을 정의하고 측정 과정에서 생기는 오차의 원인을 규명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong>
+이 글은 1~3문단에서 유압식 붐의 길이 조절, 기복, 선회 같은 <em>붐의 작동 방식</em>을 설명하고, 4문단에서 그 붐을 떠받치는 <em>아웃트리거의 구실</em>을 소개해요. 그래서 ③이 적절해 정답입니다. ① 붐의 종류를 <em>시대순</em>으로 늘어놓지 않았고, ② 유압식 붐의 <em>장단점 대비·절충안</em>은 없으며, ④ 작업 환경에 따른 <em>분류·사용 절차</em>도 다루지 않았고, ⑤ 도달 범위의 <em>측정 방법·오차 규명</em>은 글에 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 보조 붐을 부착하면 붐의 도달 범위를 한층 확장할 수 있다.</li>
+<li>② 선회를 이용하면 크레인 본체를 옮기지 않고도 둘레의 여러 방향으로 물체를 옮길 수 있다.</li>
+<li>③ 아웃트리거는 작업 중 크레인이 기울거나 흔들리는 것을 막는 구실을 한다.</li>
+<li>④ 붐과 보조 붐을 각각 따로 기복할 수 있으면 후크가 도달할 수 있는 범위가 넓어진다.</li>
+<li>⑤ 유압식 붐은 유압 실린더 없이 와이어로프만으로 붐의 길이를 늘이거나 줄인다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+1문단에서 유압식 붐은 "유압 실린더를 이용해 붐의 길이를 늘이거나 줄이는" 것이라고 분명히 밝혔어요. 그런데 ⑤는 "유압 실린더 <em>없이</em> 와이어로프만으로" 길이를 조절한다고 했으니 정반대라 적절하지 않아 정답입니다. ① 보조 붐 부착으로 도달 범위 확장(2문단), ② 선회로 본체를 옮기지 않고 방향 전환(3문단), ③ 아웃트리거가 기울거나 흔들리는 것을 막음(4문단), ④ 붐·보조 붐 따로 기복 시 도달 범위가 넓어짐(3문단)은 모두 글에서 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 굵기가 다른 여러 단의 관이 망원경처럼 겹쳐진 구조로 되어 있다.</li>
+<li>② 붐의 길이를 늘이거나 줄일 수 없어 도달 범위를 작업 대상에 맞추기 어렵다.</li>
+<li>③ 밀폐된 관 속의 기름에 가한 압력이 기름을 통해 실린더의 막대로 전달된다.</li>
+<li>④ 실린더의 막대가 겹쳐진 관들을 밀어내면 붐 전체의 길이가 길어진다.</li>
+<li>⑤ 기름의 압력을 줄이면 빠져나왔던 안쪽 단이 다시 들어가 붐이 짧아진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+㉠은 유압식 붐이에요. 2문단은 유압식 붐이 길이를 "늘이거나 줄임으로써 작업 대상까지의 거리에 맞추어 도달 범위를 조절한다"라고 했죠. 그러니 ②처럼 "길이를 늘이거나 줄일 수 없어 도달 범위를 맞추기 어렵다"는 것은 정반대라 적절하지 않아 정답입니다. ① 망원경처럼 겹쳐진 여러 단의 구조, ③ 기름의 압력이 막대로 전달, ④ 막대가 관을 밀어내 길이가 길어짐, ⑤ 압력을 줄이면 안쪽 단이 들어가 짧아짐은 모두 2문단에 나와 있어요.</p>
+<p><strong>8번 [3점] — 정답 ⑤</strong>
+보조 붐의 <em>각을 조절</em>하는 것은 3문단에서 붐과 보조 붐을 따로 <em>기복</em>해 후크의 도달 범위를 넓히는 일이에요. 그런데 ⑤는 이를 "유압 실린더로 붐 전체의 <em>길이를 줄여</em> 작업 반경을 좁힌 것"이라고 엉뚱하게 연결했으니, 각 조절(기복)과 길이 조절을 뒤섞은 셈이라 적절하지 않아 정답입니다. ① 아웃트리거를 넓게 펼쳐 받침점 간격을 넓힘=더 무거운 자재 안정(4문단), ② 붐을 세우면 후크가 본체에 가까워지며 높아짐(3문단), ③ 와이어로프를 풀어 후크를 내리고 감아 올림, ④ 본체를 둔 채 붐을 수평으로 돌림=선회(3문단)에 정확히 대응하는 적절한 추론입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 작업에 대해 추론한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 작업자가 유압식 붐을 갖춘 이동식 크레인으로 건물 옥상에 자재를 올리는 작업을 하였다. 먼저 아웃트리거를 네 방향으로 넓게 펼쳐 지면을 짚게 하였다. 이어 붐을 충분히 세운 뒤 와이어로프를 풀어 후크를 지상의 자재까지 내려 자재를 걸고 다시 감아 끌어 올렸다. 그런 다음 본체를 그대로 둔 채 붐을 수평 방향으로 돌려 자재를 옥상 쪽으로 옮겼고, 마지막으로 보조 붐의 각을 조절하여 후크가 옥상 안쪽까지 닿게 한 뒤 자재를 내려놓았다.</p>
+</blockquote>
+<ul>
+<li>① 아웃트리거를 네 방향으로 넓게 펼친 것은, 받침점들의 간격을 넓혀 더 무거운 자재를 안정적으로 들기 위한 것이겠군.</li>
+<li>② 붐을 충분히 세운 것은, 붐을 세울수록 후크가 본체에 가까워지면서 높아지는 성질을 이용한 것이겠군.</li>
+<li>③ 와이어로프를 풀었다가 다시 감은 것은, 후크를 자재까지 내렸다가 자재를 끌어 올리기 위한 것이겠군.</li>
+<li>④ 본체를 그대로 둔 채 붐을 수평으로 돌린 것은, 선회를 이용해 자재의 방향을 옮긴 것이겠군.</li>
+<li>⑤ 보조 붐의 각을 조절해 옥상 안쪽까지 닿게 한 것은, 유압 실린더로 붐 전체의 길이를 줄여 작업 반경을 좁힌 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>붐</strong>: 물체를 옮기는 도달 범위와 높이를 결정하는 크레인의 긴 팔.</li>
+<li><strong>유압식 붐</strong>: 유압 실린더로 길이를 늘이거나 줄이는 붐. 굵기가 다른 관이 망원경처럼 겹쳐 있어요.</li>
+<li><strong>기복 / 선회</strong>: 기복은 붐을 세우거나 눕히는 수직 움직임, 선회는 붐을 좌우로 돌리는 수평 움직임.</li>
+<li><strong>보조 붐</strong>: 붐 끝에 덧붙여 도달 범위를 더 늘리는 붐. 따로 기복하면 범위가 더 넓어집니다.</li>
+<li><strong>아웃트리거</strong>: 본체에서 옆으로 뻗어 지면을 짚는 받침다리. 받침점 간격을 넓혀 크레인을 안정시켜요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>움직임</th>
+<th>방향</th>
+<th>작동 방식</th>
+<th>효과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>길이 조절</td>
+<td>붐을 늘임/줄임</td>
+<td>유압 실린더가 겹친 관을 밀고 당김</td>
+<td>작업 거리에 맞춰 도달 범위 조절</td>
+</tr>
+<tr>
+<td>기복</td>
+<td>위아래(수직)</td>
+<td>와이어로프나 유압 실린더로 세움/눕힘</td>
+<td>후크의 높이·본체와의 거리 조절</td>
+</tr>
+<tr>
+<td>선회</td>
+<td>좌우(수평)</td>
+<td>붐을 수평으로 회전</td>
+<td>본체를 안 옮기고 방향 전환</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>붐은 <strong>길이·기복·선회</strong> 세 움직임으로 후크를 원하는 자리에 보내고, <strong>아웃트리거</strong>가 그 작업을 안전하게 떠받칩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>유압식 붐은 어떻게 길이를 늘이나요?</div><div class='qa-a'>유압 실린더가 기름의 압력으로 막대를 밀어 겹쳐진 관의 안쪽 단을 빼내면서 늘입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>기복과 선회는 어떻게 다른가요?</div><div class='qa-a'>기복은 붐을 세우거나 눕히는 수직 움직임, 선회는 붐을 좌우로 돌리는 수평 움직임입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>아웃트리거를 펼치면 무엇이 좋아지나요?</div><div class='qa-a'>받침점 간격이 넓어져 더 무거운 물체를 안정적으로 들 수 있고, 작업 중 흔들림도 줄어듭니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 9월 [8~11]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>저울은 흔히 지렛대의 원리를 이용하거나 전기 저항 변화를 측정하여 질량을 잰다. 그렇다면 초정밀 저울은 기체 분자나 DNA와 같은 미세 물질의 질량을 어떻게 잴까? 이에 답하기 위해서는 압전 효과에 대한 이해가 필요하다.</p>
+<p>압전 효과에는 재료에 기계적 변형이 생기면 재료에 전압이 발생하는 1차 압전 효과와, 재료에 전압을 걸면 재료에 기계적 변형이 생기는 2차 압전 효과가 있다. 두 압전 효과가 모두 생기는 재료를 압전체라 하며, 수정이 주로 쓰인다.</p>
+<p>압전체로 사용하는 수정은 특정 방향으로 절단 및 가공하여 납작한 원판 모양으로 만든다. 이후 원판의 양면에 전극을 만든 후 (＋)와 (－) 극이 교대로 바뀌는 전압을 가하면 수정이 진동한다. 이때 전압의 주파수*를 수정의 고유 주파수와 일치시켜 수정이 큰 폭으로 진동하도록 하여 진동을 측정하기 쉽게 만든 것이 ㉠수정 진동자이다. 고유 주파수란 어떤 물체가 갖는 고유한 진동 주파수인데, 같은 재료의 압전체라도 압전체의 모양과 크기에 따라 달라진다. 수정 진동자에 어떤 물질이 달라붙어 질량이 증가하면 고유 주파수에서 진동하던 수정 진동자의 주파수가 감소한다. 수정 진동자의 주파수는 매우 작은 질량 변화에 민감하게 변하므로 기체 분자나 DNA와 같은 미세한 물질의 질량을 측정할 수 있다. 진동자에서 질량 민감도는 주파수의 변화 정도를 측정된 질량으로 나눈 값인데, 수정 진동자의 질량 민감도는 매우 크다.</p>
+<p>수정 진동자로 질량을 측정하는 원리를 응용하면 특정 기체의 농도를 감지할 수 있다. 수정 진동자를 특정 기체가 붙도록 처리하면, 여기에 특정 기체가 달라붙으며 질량 변화가 생겨 수정 진동자의 주파수는 감소한다. 일정 시점이 되면 수정 진동자의 주파수가 더 감소하지 않고 일정한 값을 유지한다. 이렇게 일정한 값을 유지하는 이유는 특정 기체가 일정량 이상 달라붙지 않기 때문이다. 혼합 기체에서 특정 기체의 농도가 클수록 더 작은 주파수에서 주파수가 일정하게 유지된다. 특정 기체가 얼마나 빨리 수정 진동자에 붙어서 주파수가 일정한 값이 되는가의 척도를 반응 시간이라 하는데, 반응 시간이 짧을수록 특정 기체의 농도를 더 빨리 잴 수 있다.</p>
+<p>그런데 측정 대상이 아닌 기체가 함께 붙으면 측정하려는 대상 기체의 정확한 농도 측정이 어렵다. 또한 대상 기체만 붙더라도 그 기체의 농도를 알 수는 없다. 이 때문에 대상 기체의 농도에 따라 수정 진동자의 주파수 변화를 미리 측정해 놓아야 한다. 그 후 대상 기체의 농도를 모르는 혼합 기체에서 주파수 변화를 측정하면 대상 기체의 농도를 알 수 있다. 수정 진동자의 주파수 변화 정도를 농도로 나누면 농도에 대한 민감도를 구할 수 있다.</p>
+<ul>
+<li>주파수: 진동이 1초 동안 반복하는 횟수 또는 전압의 (＋)와 (－) 극이 1초 동안, 서로 바뀌고 다시 원래대로 되는 횟수.</li>
+</ul></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 압전체의 제작 방법을 소개하고 제작 시 유의점을 나열하고 있다.</li>
+<li>② 압전 효과의 개념을 정의하고 압전체의 장단점을 분석하고 있다.</li>
+<li>③ 압전 효과의 종류를 분류하고 그 분류에 따른 압전체의 구조를 비교하고 있다.</li>
+<li>④ 압전체의 유형을 구분하는 기준을 제시하고 초정밀 저울의 작동 과정을 단계별로 설명하고 있다.</li>
+<li>⑤ 압전 효과에 기반한 초정밀 저울의 작동 원리를 설명하고 이 원리가 적용된 기체 농도 측정 방법을 소개하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong><br />
+2~3문단에서 압전 효과의 개념과 이를 이용한 초정밀 저울(수정 진동자)의 작동 원리를 설명하고, 4~5문단에서 그 원리가 적용된 기체 농도 측정 방법을 소개하므로 ⑤가 적절하다. 압전체 자체의 제작 방법·유의점(①), 장단점 분석(②), 분류에 따른 구조 비교(③), 유형 구분 기준(④)은 제시되어 있지 않다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①2.3% ②5.1% ③4.0% ④5.1% ⑤83.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 수정 이외에도 압전 효과를 보이는 재료가 존재한다.</li>
+<li>② 수정을 절단하고 가공하여 미세 질량 측정에 사용한다.</li>
+<li>③ 전기 저항 변화를 이용하여 물체의 질량을 측정하는 경우가 있다.</li>
+<li>④ 같은 방향으로 절단한 수정은 크기가 달라도 고유 주파수가 서로 같다.</li>
+<li>⑤ 진동자의 주파수 변화 정도를 측정된 질량으로 나누면 질량에 대한 민감도를 구할 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong><br />
+3문단에서 같은 재료의 압전체라도 모양과 크기에 따라 고유 주파수가 달라진다고 했으므로, 크기가 달라도 고유 주파수가 같다는 ④는 적절하지 않다. ①은 압전체로 수정이 ‘주로’ 쓰인다는 데서, ②는 수정의 절단·가공과 미세 질량 측정에서, ③은 1문단의 전기 저항 변화 측정에서, ⑤는 질량 민감도의 정의에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①2.0% ②5.1% ③5.4% ④80.7% ⑤7.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠에는 1차 압전 효과를 보일 수 있는 재료가 있다.</li>
+<li>② ㉠에서는 전압에 의해 압전체의 기계적 변형이 일어난다.</li>
+<li>③ ㉠에는 전극이 양면에 있는 원판 모양의 수정이 사용된다.</li>
+<li>④ ㉠에서는 전극에 가하는 전압의 주파수를 수정의 고유 주파수에 맞춘다.</li>
+<li>⑤ ㉠의 전극에 가해지는 특정 주파수의 전압은 압전체의 고유 주파수 값을 더 크게 만든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+전압의 주파수를 수정의 고유 주파수와 일치시키면 진동 폭이 커질 뿐, 고유 주파수 값 자체가 커지는 것은 아니므로 ⑤가 적절하지 않다. 수정은 1·2차 압전 효과가 모두 생기는 압전체이므로 ①·②가 성립하고, ③·④는 3문단의 수정 진동자 제작 방식에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①4.5% ②12.2% ③5.3% ④7.0% ⑤70.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+알코올 감지기 A와 B를 이용하여 어떤 밀폐된 공간에 있는 혼합 기체의 알코올 농도를 측정하였다. 이때 A와 B는 모두 진동자에 알코올이 달라붙을 수 있도록 처리되어 있다. A와 B 모두, 시간이 흐름에 따라 주파수가 감소하다가 더 이상 감소하지 않고 일정하게 유지되었다.
+(단, 측정하는 동안 밀폐된 공간의 상황은 변동 없음.)</p>
+</blockquote>
+<ul>
+<li>① A의 진동자에 있는 압전체의 고유 주파수를 알코올만 있는 기체에서 미리 측정해 놓으면, 혼합 기체에서의 알코올의 농도를 알 수 있겠군.</li>
+<li>② B에 달라붙은 알코올의 양은 변하지 않고 다른 기체가 함께 달라붙은 후 진동자의 주파수가 일정하게 유지된다면, 이때 주파수의 값은 알코올만 붙었을 때보다 더 작겠군.</li>
+<li>③ A와 B에서 알코올이 달라붙도록 진동자를 처리한 것은 알코올이 달라붙음에 따라 진동자가 최대한 큰 폭으로 진동할 수 있게 하려는 것이겠군.</li>
+<li>④ A가 B에 비해 동일한 양의 알코올이 달라붙은 후에 생기는 주파수 변화 정도가 크다면, A가 B보다 알코올 농도에 대한 민감도가 더 작다고 할 수 있겠군.</li>
+<li>⑤ B가 A보다 알코올이 일정량까지 달라붙는 시간이 더 짧더라도 알코올이 달라붙은 양이 서로 같다면, A와 B의 반응 시간은 서로 같겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong><br />
+진동자에 붙는 물질의 질량이 늘수록 주파수는 더 감소한다. 알코올에 더해 다른 기체가 함께 달라붙으면 질량이 더 증가하므로, 일정하게 유지되는 주파수 값은 알코올만 붙었을 때보다 작다(②). ①은 고유 주파수 측정만으로는 농도를 알 수 없고 농도별 주파수 변화를 미리 측정해 놓아야 하므로 부적절, ③은 처리 목적이 농도 측정이지 큰 폭의 진동이 아니므로 부적절, ④는 주파수 변화 정도가 크면 민감도도 더 큰 것이므로 부적절, ⑤는 일정량까지 달라붙는 시간이 짧은 B의 반응 시간이 더 짧은 것이므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,570명 — ①20.0% ②45.4% ③14.0% ④12.3% ⑤8.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>이동식 크레인은 무거운 물체를 후크에 걸고 줄로 매달아 들어 올린다. 이때 물체를 매다는 데 쓰이는 줄이 ㉠<u>와이어로프</u>이다. 와이어로프는 여러 가닥의 가는 강철 철사를 여러 겹으로 합쳐 꼬아 만든 줄로, 한 가닥의 굵은 철사보다 같은 굵기에서 잘 끊어지지 않고 잘 휘어진다. 줄은 무거운 물체를 매달면 양 끝으로 늘어나려는 큰 힘인 장력을 받는데, 한 가닥의 굵은 철사는 이 장력을 한 곳에서 모두 견뎌야 해 쉽게 끊어진다. 이에 비해 와이어로프는 가는 철사 여러 가닥이 함께 힘을 나누어 받으므로 큰 장력을 견딜 수 있고, 가닥이 꼬여 있어 도르래나 드럼에 감길 만큼 부드럽게 휜다. 크레인은 이 와이어로프를 드럼에 감거나 풀어 후크를 올리고 내린다. 또한 붐 끝과 후크 사이에 여러 개의 도르래를 두어 와이어로프를 위아래 도르래에 번갈아 여러 번 감아 거는 경우가 많다. 와이어로프를 여러 번 감아 걸면 물체의 무게가 여러 가닥으로 나뉘어 걸리므로, 한 가닥이 받는 힘이 줄어들어 같은 굵기의 와이어로프로도 더 무거운 물체를 들어 올릴 수 있다.</p>
+<p>후크에 걸린 물체를 실제로 들어 올리고 옮기는 것은 붐이다. 붐은 길이를 조절하는 방식에 따라 크게 두 가지로 나뉜다. 하나는 유압 실린더로 길이를 늘이거나 줄이는 유압식 붐이고, 다른 하나는 ㉡<u>격자형 붐</u>이다. 격자형 붐은 가는 강재를 삼각형이 이어진 그물 모양으로 얽어 만든 트러스 구조의 붐이다. 트러스 구조는 힘을 받는 부재들이 삼각형을 이루도록 짜여 있어, 힘이 가해져도 모양이 잘 일그러지지 않는다. 삼각형은 세 변의 길이가 정해지면 모양이 하나로 고정되어, 사각형과 달리 옆에서 힘을 받아도 찌그러지지 않기 때문이다. 그래서 트러스 구조는 적은 재료로도 큰 힘을 견디면서 무게는 가벼운 것이 특징이다. 격자형 붐은 이런 트러스 구조 덕분에 같은 무게의 유압식 붐보다 훨씬 길게 만들 수 있어, 높은 곳까지 닿아야 하는 작업에 쓰인다. 다만 격자형 붐은 유압 실린더처럼 스스로 길이를 늘이거나 줄일 수 없어, 길이를 바꾸려면 부재를 더 잇거나 떼어 내야 한다. 이 때문에 작업 중에 도달 범위를 곧바로 조절하기는 어렵다.</p>
+<p>두 붐은 길이를 바꾸는 방식뿐 아니라 무게와 도달 범위에서도 차이가 있다. 유압식 붐은 작업 중에도 길이를 자유롭게 조절할 수 있어 도달 범위를 작업 대상에 맞추기 쉽지만, 여러 단의 관과 유압 실린더가 들어 있어 같은 길이라면 격자형 붐보다 무겁다. 붐 자체가 무거우면 그만큼 크레인이 버텨야 할 무게가 늘어 양중 능력에 부담이 되므로, 유압식 붐은 아주 길게 만들기 어렵다. 반대로 격자형 붐은 가볍고 길게 만들 수 있어 도달 높이와 범위가 크지만, 길이를 곧바로 조절할 수 없어 작업의 융통성은 떨어진다. 즉 한 붐의 장점이 다른 붐의 단점이 되는 셈이어서, 두 붐 가운데 어느 것이 더 낫다고 단정할 수는 없다. 작업의 성격에 따라 알맞은 붐이 달라지기 때문이다. 그래서 작업 대상까지의 거리가 자주 바뀌어 길이를 자주 조절해야 하는 현장에는 유압식 붐이, 거리는 거의 일정하지만 매우 높은 곳까지 닿아야 하는 현장에는 격자형 붐이 주로 쓰인다.</p>
+<p>붐과 와이어로프, 후크가 함께 작동할 때 크레인은 비로소 물체를 들어 올린다. 붐은 도달 범위와 높이를 정하고, 와이어로프는 후크를 오르내리며 물체를 매달고, 후크는 물체를 거는 구실을 한다. 세 부분은 저마다 맡은 일이 다르지만, 어느 하나라도 제 구실을 하지 못하면 물체를 안전하게 들어 올릴 수 없다. 특히 어느 한 부분이라도 견딜 수 있는 힘을 넘어서면 작업은 위험해지므로, 와이어로프의 굵기와 감는 횟수, 붐의 종류와 길이는 들어 올릴 물체의 무게와 작업 높이에 맞추어 선택된다. 무거운 물체를 들 때에는 더 굵은 와이어로프를 쓰거나 감는 횟수를 늘려 한 가닥이 받는 힘을 줄이고, 높은 곳에 올릴 때에는 더 길게 만들 수 있는 격자형 붐을 고르는 식이다. 이렇게 각 부분의 역할이 맞물려야 크레인은 무거운 물체를 안전하게 들어 올릴 수 있다.</p>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 3]</span> 〈와이어로프 걸기 도식〉 — 붐 끝과 후크 사이에 와이어로프가 걸린 모습을 옆에서 본 도식. 위쪽 붐 끝에 도르래 한 쌍이, 아래쪽 후크 위에 도르래 한 쌍이 있고, 한 가닥의 와이어로프가 위·아래 도르래를 번갈아 여러 번 감아 걸려 후크를 매달고 있다. 와이어로프의 한쪽 끝은 크레인 본체의 드럼으로 이어지며, 후크에는 아래 방향으로 ‘물체의 무게’ 화살표가 표시되어 있다.</figure></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 와이어로프는 한 가닥의 굵은 강철 철사를 그대로 사용해 만든 줄이다.</li>
+<li>② 격자형 붐은 유압 실린더로 작업 중에 스스로 길이를 늘이거나 줄일 수 있다.</li>
+<li>③ 와이어로프를 여러 번 감아 걸면 물체의 무게가 여러 가닥으로 나뉘어 걸린다.</li>
+<li>④ 같은 길이라면 유압식 붐이 격자형 붐보다 가볍다.</li>
+<li>⑤ 트러스 구조는 많은 재료를 써야 하므로 붐의 무게를 무겁게 만든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong>
+1문단에서 "와이어로프를 여러 번 감아 걸면 물체의 무게가 여러 가닥으로 나뉘어 걸린다"라고 했으므로 ③이 일치합니다. ① 와이어로프는 한 가닥 굵은 철사가 아니라 <em>여러 가닥의 가는 철사</em>를 꼬아 만들고(1문단), ② 격자형 붐은 <em>스스로</em> 길이를 늘이거나 줄일 수 없으며(2문단), ④ 같은 길이라면 유압식 붐이 격자형 붐보다 <em>무겁고</em>(3문단), ⑤ 트러스 구조는 <em>적은 재료</em>로 큰 힘을 견디면서 무게가 가벼운 것이 특징(2문단)이라 모두 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 여러 가닥의 가는 강철 철사를 합쳐 꼬아 만든다.</li>
+<li>② 가는 철사 여러 가닥이 함께 힘을 나누어 받아 큰 장력을 견딘다.</li>
+<li>③ 가닥이 꼬여 있어 도르래나 드럼에 감길 만큼 부드럽게 휜다.</li>
+<li>④ 같은 굵기에서 한 가닥의 굵은 철사보다 잘 끊어진다.</li>
+<li>⑤ 드럼에 감기고 풀리면서 후크를 올리고 내리는 데 쓰인다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong>
+㉠은 와이어로프예요. 1문단은 와이어로프가 "같은 굵기에서 한 가닥의 굵은 철사보다 <em>잘 끊어지지 않고</em> 잘 휘어진다"라고 했죠. 그러니 ④처럼 "잘 끊어진다"는 것은 정반대라 적절하지 않아 정답입니다. ① 가는 철사를 합쳐 꼬아 만듦, ② 여러 가닥이 힘을 나누어 큰 장력을 견딤, ③ 꼬여 있어 도르래·드럼에 부드럽게 휨, ⑤ 드럼에 감기고 풀리며 후크를 오르내림은 모두 1문단에서 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 가는 강재를 삼각형이 이어진 그물 모양으로 얽어 만든다.</li>
+<li>② 유압 실린더를 갖추고 있어 길이를 늘이거나 줄이기 쉽다.</li>
+<li>③ 트러스 구조 덕분에 같은 무게의 유압식 붐보다 길게 만들 수 있다.</li>
+<li>④ 작업 중에 도달 범위를 곧바로 조절하기 어렵다.</li>
+<li>⑤ 가볍고 길게 만들 수 있어 높은 곳까지 닿는 작업에 쓰인다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+㉡은 격자형 붐이에요. 2문단은 격자형 붐이 "유압 실린더처럼 <em>스스로 길이를 늘이거나 줄일 수 없어</em>, 길이를 바꾸려면 부재를 더 잇거나 떼어 내야 한다"라고 했죠. 그러니 ②처럼 "유압 실린더를 갖추고 있어 길이를 늘이거나 줄이기 쉽다"는 것은 정반대라 적절하지 않아 정답입니다. ① 삼각형 그물 모양의 트러스 구조, ③ 같은 무게의 유압식 붐보다 길게 만들 수 있음, ④ 작업 중 도달 범위 조절이 어려움, ⑤ 가볍고 길어 높은 곳 작업에 쓰임은 모두 2문단에 나와 있어요.</p>
+<p><strong>12번 [3점] — 정답 ⑤</strong>
+3문단에서 유압식 붐은 같은 길이라면 격자형 붐보다 <em>무겁고</em>, 무거우면 양중 능력에 부담이 되어 <em>아주 길게 만들기 어렵다</em>고 했어요. 높은 곳까지 닿는 데 유리한 것은 가볍고 길게 만들 수 있는 <em>격자형 붐</em>이지요. 그런데 ⑤는 유압식 붐이 "더 가벼우므로 더 높은 곳까지 닿기에 유리하다"라고 무게 관계와 결론을 모두 뒤집었으니 적절하지 않아 정답입니다. ① ㉮의 유압식 붐은 길이 조절이 쉬워 거리가 바뀌는 현장에 적합(3문단), ② ㉯의 격자형 붐은 가볍고 길어 높은 곳에 적합(2·3문단), ③ 격자형 붐은 부재를 잇거나 떼어 내야 길이를 바꿈(2문단), ④ 여러 번 감아 걸면 같은 굵기로 더 무거운 물체를 듦(1문단)에 정확히 대응하는 적절한 설명입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 설명으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 무게의 물체를 들어 올리려는 세 작업 현장 ㉮~㉰가 있다. ㉮는 작업 대상까지의 거리가 수시로 바뀌는 평지 현장이고, ㉯는 매우 높은 송전탑 꼭대기까지 자재를 올려야 하는 현장이며, ㉰는 굵기가 서로 다른 두 와이어로프 중 하나를 골라 같은 후크에 거는 현장이다. 아래 표는 각 현장에서 쓸 수 있는 장비의 정보이다. (단, 제시되지 않은 조건은 모든 현장에서 동일하다.)</p>
+<table>
+<thead>
+<tr>
+<th>현장</th>
+<th>붐의 종류</th>
+<th>와이어로프</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>㉮</td>
+<td>유압식 붐</td>
+<td>한 줄로 한 번 감아 걸기</td>
+</tr>
+<tr>
+<td>㉯</td>
+<td>격자형 붐</td>
+<td>한 줄로 한 번 감아 걸기</td>
+</tr>
+<tr>
+<td>㉰</td>
+<td>유압식 붐</td>
+<td>여러 번 감아 걸기</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① ㉮ 현장에 유압식 붐이 적합한 것은, 작업 중에도 길이를 조절해 도달 범위를 작업 대상에 맞추기 쉽기 때문이겠군.</li>
+<li>② ㉯ 현장에 격자형 붐이 적합한 것은, 가볍고 길게 만들 수 있어 높은 곳까지 닿을 수 있기 때문이겠군.</li>
+<li>③ ㉯ 현장에서 도달 범위를 바꾸려면 붐의 부재를 더 잇거나 떼어 내야 하겠군.</li>
+<li>④ ㉰ 현장에서 와이어로프를 여러 번 감아 걸면, 같은 굵기라도 더 무거운 물체를 들 수 있겠군.</li>
+<li>⑤ ㉮ 현장의 유압식 붐은 ㉯ 현장의 격자형 붐보다 같은 길이에서 더 가벼우므로, 더 높은 곳까지 닿기에 유리하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>와이어로프</strong>: 여러 가닥의 가는 강철 철사를 꼬아 만든 줄. 큰 장력을 견디면서도 부드럽게 휘어 도르래에 감깁니다.</li>
+<li><strong>도르래·드럼</strong>: 와이어로프를 감아 거는 바퀴와 통. 여러 번 감으면 무게가 여러 가닥으로 나뉘어요.</li>
+<li><strong>유압식 붐 / 격자형 붐</strong>: 유압식은 실린더로 길이를 조절(무겁지만 융통성 ↑), 격자형은 트러스 구조(가볍고 길지만 길이 조절 ✕).</li>
+<li><strong>트러스 구조</strong>: 삼각형이 이어진 짜임. 적은 재료로 큰 힘을 견디며 가벼운 것이 특징.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>유압식 붐</th>
+<th>격자형 붐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>길이 조절</td>
+<td>유압 실린더로 작업 중 자유롭게</td>
+<td>부재를 잇거나 떼어 내야 함</td>
+</tr>
+<tr>
+<td>무게(같은 길이)</td>
+<td>더 무거움</td>
+<td>더 가벼움</td>
+</tr>
+<tr>
+<td>도달 높이·범위</td>
+<td>길게 만들기 어려움</td>
+<td>매우 길게 만들 수 있음</td>
+</tr>
+<tr>
+<td>알맞은 현장</td>
+<td>거리가 자주 바뀌는 현장</td>
+<td>매우 높은 곳까지 닿는 현장</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>와이어로프가 물체를 <em>매달고</em>, 붐이 도달 범위를 <em>정하며</em>, 후크가 물체를 <em>겁니다</em>. 세 부분의 역할이 맞물려야 무거운 물체를 안전하게 들어 올릴 수 있어요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>와이어로프를 한 가닥 굵은 철사가 아니라 여러 가닥을 꼬아 만드는 까닭은?</div><div class='qa-a'>가는 가닥이 힘을 나누어 받아 잘 끊어지지 않고, 꼬여 있어 도르래에 감길 만큼 부드럽게 휘기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>격자형 붐이 유압식 붐보다 길게 만들 수 있는 까닭은?</div><div class='qa-a'>트러스 구조라 적은 재료로 큰 힘을 견디면서 가볍기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>와이어로프를 여러 번 감아 걸면 무엇이 좋아지나요?</div><div class='qa-a'>물체의 무게가 여러 가닥으로 나뉘어 걸려, 같은 굵기로도 더 무거운 물체를 들 수 있습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2019학년도 9월 [29~32]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠주사 터널링 현미경(STM)에서는 끝이 첨예한 금속 탐침과 도체 또는 반도체 시료 표면 간에 적당한 전압을 걸어 주고 둘 간의 거리를 좁히게 된다. 탐침과 시료의 거리가 매우 가까우면 양자 역학적 터널링 효과에 의해 둘이 접촉하지 않아도 전류가 흐른다. 이때 탐침과 시료 표면 간의 거리가 원자 단위 크기에서 변하더라도 전류의 크기는 민감하게 달라진다. 이 점을 이용하면 시료 표면의 높낮이를 원자 단위에서 측정할 수 있다. 하지만 전류가 흐를 수 없는 시료의 표면 상태는 STM을 이용하여 관찰할 수 없다. 이렇게 민감한 STM도 진공 기술의 뒷받침이 있었기에 널리 사용될 수 있었다.</p>
+<p>STM은 대체로 진공 통 안에 설치되어 사용되는데 그 이유는 무엇일까? 기체 분자는 끊임없이 떠돌아다니다가 주변과 충돌한다. 이때 일부 기체 분자들은 관찰하려는 시료의 표면에 붙어 표면과 반응하거나 표면을 덮어 시료 표면의 관찰을 방해한다. 따라서 용이한 관찰을 위해 STM을 활용한 실험에서는 관찰하려고 하는 시료와 기체 분자의 접촉을 최대한 차단할 필요가 있어 진공이 요구되는 것이다. 진공이란 기체 압력이 대기압보다 낮은 상태를 통칭하며 기체 압력이 낮을수록 진공도가 높다고 한다. 진공 통 내부의 온도가 일정하고 한 종류의 기체 분자만 존재할 경우, 기체 분자의 종류와 상관없이 통 내부의 기체 압력은 단위 부피당 떠돌아다니는 기체 분자의 수에 비례한다. 따라서 기체 분자들을 진공 통에서 뽑아내거나 진공 통 내부에서 움직이지 못하게 고정하면 진공 통 내부의 기체 압력을 낮출 수 있다.</p>
+<p>STM을 활용하는 실험에서 어느 정도의 진공도가 요구되는지를 이해하기 위해서는 ‘단분자층 형성 시간’의 개념을 이해할 필요가 있다. 진공 통 내부에서 떠돌아다니던 기체 분자들이 관찰하려는 시료의 표면에 달라붙어 한 층의 막을 형성하기까지 걸리는 시간을 단분자층 형성 시간이라 한다. 이 시간은 시료의 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률이 클수록, 단위 면적당 기체 분자의 충돌 빈도가 높을수록 짧다. 또한 기체 운동론에 따르면 고정된 온도에서 기체 분자의 질량이 크거나 기체의 압력이 낮을수록 단분자층 형성 시간은 길다. 가령 질소의 경우 20℃, 760토르* 대기압에서 단분자층 형성 시간은 3 × 10⁻⁹초이지만, 같은 온도에서 압력이 10⁻⁹토르로 낮아지면 대략 2,500초로 증가한다. 이런 이유로 STM에서는 시료의 관찰 가능 시간을 확보하기 위해 통상 10⁻⁹토르 이하의 초고진공이 요구된다.</p>
+<p>초고진공을 얻기 위해서는 ㉡스퍼터 이온 펌프가 널리 쓰인다. 스퍼터 이온 펌프는 진공 통 내부의 기체 분자가 펌프 내부로 유입되도록 진공 통과 연결하여 사용한다. 스퍼터 이온 펌프는 영구 자석, 금속 재질의 속이 뚫린 원통 모양 양극, 타이타늄으로 만든 판 형태의 음극으로 구성되어 있다. 자석 때문에 생기는 자기장이 원통 모양 양극의 축 방향으로 걸려 있고, 양극과 음극 간에는 2~7 kV의 고전압이 걸려 있다. 양극과 음극 간에 걸린 고전압의 영향으로 음극에서 방출된 전자는 자기장의 영향을 받아 복잡한 형태의 궤적을 그리며 양극으로 이동한다. 이 과정에서 음극에서 방출된 전자는 주변의 기체 분자와 충돌하여 기체 분자를 그것의 구성 요소인 양이온과 전자로 분리시킨다. 여기서 자기장은 전자가 양극까지 이동하는 거리를 자기장이 없을 때보다 증가시켜 주어 전자와 기체 분자와의 충돌 빈도를 높여 준다. 이 과정에서 생성된 양이온은 전기력에 의해 음극으로 당겨져 음극에 박히게 되어 이동 불가능한 상태가 된다. 이 과정이 1차 펌프 작용이다. 또한 양이온이 음극에 충돌하면 타이타늄이 떨어져 나와 충돌 지점 주변에 들러붙는다. 이렇게 들러붙은 타이타늄은 높은 화학 반응성 때문에 여러 기체 분자와 쉽게 반응하여, 떠돌아다니던 기체 분자를 흡착한다. 이는 떠돌아다니는 기체 분자의 수를 줄이는 효과가 있으므로 이를 2차 펌프 작용이라 부른다. 이렇듯 1, 2차 펌프 작용을 통해 스퍼터 이온 펌프는 초고진공 상태를 만들 수 있다.</p>
+<p><strong><span class="boxmark">[그림: 스퍼터 이온 펌프]</span></strong> (원본에서는 마지막 문단 중간, 단의 오른쪽에 배치된 입체 도해) 가운데에 속이 뚫린 원통 4개가 세로로 나란히 쌓여 묶음을 이루고 있으며, 오른쪽 위의 ‘양극’ 표지가 화살표로 이 원통 묶음을 가리킨다. 원통 묶음의 양옆에는 얇은 판 두 장이 마주 보고 세워져 있는데, 아래쪽의 ‘음극’ 표지가 화살표로 이 두 판을 가리킨다. 그 바깥 양쪽에는 두꺼운 직육면체 블록이 하나씩 놓여 있고 각각 ‘자석’이라 표시되어 있다. 맨 위에는 ‘−’, ‘+’ 단자가 표시된 ‘전원 장치’ 상자가 있으며 전선이 전극 쪽으로 연결되어 있다. 그림 아래에 ‘스퍼터 이온 펌프’라는 제목이 붙어 있다.</p>
+<p>* 토르(torr): 기체 압력의 단위.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 대기압보다 진공도가 낮은 상태가 진공이다.</li>
+<li>② 스퍼터 이온 펌프는 초고진공을 만드는 역할을 한다.</li>
+<li>③ 단분자층 형성 시간이 짧을수록 STM을 이용한 관찰이 용이하다.</li>
+<li>④ 일정한 온도와 부피의 진공 통 안에서 떠돌아다니는 기체 분자의 수는 기체 압력에 반비례한다.</li>
+<li>⑤ 단분자층 형성 시간은 시료 표면과 충돌한 기체 분자들이 표면에 달라붙을 확률과 무관하게 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 시료 표면의 높낮이를 원자 단위까지 측정할 수 없다.</li>
+<li>② 시료의 전기 전도 여부에 관계없이 시료를 관찰할 수 있다.</li>
+<li>③ 시료의 관찰 가능 시간을 늘리려면 진공 통 안의 기체 압력을 낮추어야 한다.</li>
+<li>④ 시료 표면의 관찰을 위해서는 시료 표면에 기체의 단분자층 형성이 필요하다.</li>
+<li>⑤ 양자 역학적 터널링 효과를 이용하여 탐침을 시료 표면에 접촉시킨 후 흐르는 전류를 측정한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>31</div><div class='q-stem'></div></div>
+<p>㉡의 ‘음극’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고전압과 전자의 상호 작용으로 자기장을 만든다.</li>
+<li>② 떠돌아다니던 기체 분자를 흡착하는 물질을 내놓는다.</li>
+<li>③ 기체 분자에서 분리된 양이온을 전기력으로 끌어당긴다.</li>
+<li>④ 전자와 기체 분자의 충돌로 만들어진 양이온을 고정시킨다.</li>
+<li>⑤ 기체 분자를 양이온과 전자로 분리시키는 전자를 방출한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>32</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉에 대한 설명으로 옳지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+STM을 사용하여 규소의 표면을 관찰하는 실험을 하려고 한다. 동일한 사양의 STM이 설치된, 동일한 부피의 진공 통 A~E가 있고, 각 진공 통 내부에 있는 기체 분자의 정보는 다음 표와 같다. 진공 통 A 안의 기체 압력은 10⁻⁹토르이며, 모든 진공 통의 내부 온도는 20℃이다. (단, 기체 분자가 규소 표면과 충돌하여 달라붙을 확률은 기체의 종류와 관계없이 일정하며, 제시되지 않은 모든 조건은 각 진공 통에서 동일하다. N은 일정한 자연수이다.)</p>
+<table>
+<thead>
+<tr>
+<th>진공 통</th>
+<th>기체</th>
+<th>분자의 질량(amu*)</th>
+<th>단위 부피당 기체 분자 수(개/cm³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>질소</td>
+<td>28</td>
+<td>4N</td>
+</tr>
+<tr>
+<td>B</td>
+<td>질소</td>
+<td>28</td>
+<td>2N</td>
+</tr>
+<tr>
+<td>C</td>
+<td>질소</td>
+<td>28</td>
+<td>7N</td>
+</tr>
+<tr>
+<td>D</td>
+<td>산소</td>
+<td>32</td>
+<td>N</td>
+</tr>
+<tr>
+<td>E</td>
+<td>이산화 탄소</td>
+<td>44</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>* amu: 원자 질량 단위.</p>
+</blockquote>
+<ul>
+<li>① A 내부에서의 단분자층 형성 시간은 대략 2,500초이겠군.</li>
+<li>② B 내부의 기체 압력은 10⁻⁹토르보다 낮겠군.</li>
+<li>③ C 내부의 진공도는 B 내부의 진공도보다 낮겠군.</li>
+<li>④ D 내부에서의 단분자층 형성 시간은 A의 경우보다 길겠군.</li>
+<li>⑤ E 내부의 시료 표면에 대한 단위 면적당 기체 분자의 충돌 빈도는 D의 경우보다 높겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>32번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>이동식 크레인 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='이동식 크레인 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

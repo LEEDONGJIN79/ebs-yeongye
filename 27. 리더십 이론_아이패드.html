@@ -1,0 +1,878 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>리더십 이론 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>리더십 이론 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 조별 과제를 할 때를 한번 떠올려 볼까요? 어떤 조장은 "역할 나눠서 언제까지 뭐 해 와"라고 딱 부러지게 지시하고, 또 어떤 조장은 "다들 어떻게 생각해? 부담 없이 말해 봐"라며 분위기를 먼저 챙기죠. 둘 다 조를 이끄는 방식이지만 색깔이 아주 다릅니다. <strong>리더십</strong>이란 바로 이렇게 <strong>목표를 이루기 위해 사람들을 이끌고, 그들에게 영향을 미치는 힘</strong>을 말해요.</p>
+<p>그런데 학자들이 오래 고민한 질문은 이거였어요. "그럼 <em>어떤</em> 리더십이 가장 효과적일까?" 처음에는 "리더가 갖춘 성격이나 능력이 중요하다"고 생각했지만, 연구가 쌓이면서 생각이 점점 바뀌어 갑니다. 이 단원에서 만날 세 갈래의 생각은 마치 <strong>이어달리기</strong>처럼 앞 사람의 어깨를 딛고 다음 사람이 나아가는 모양을 하고 있어요.</p>
+<ul>
+<li><strong>첫 번째 생각(피들러)</strong> — "정답인 리더십은 따로 없다. <em>상황</em>에 맞아야 한다." 리더의 스타일은 잘 안 바뀌는 것이니, 그 스타일이 상황과 <em>맞아떨어지는지</em>가 중요하다고 봤어요. 그래서 리더십은 능력이 아니라 <strong>적합성</strong>이라고 말합니다.</li>
+<li><strong>두 번째 생각(허시와 블랜차드)</strong> — "리더의 스타일이 고정돼 있다고? 아니, 리더가 <em>바꿔야</em> 한다." 함께 일하는 구성원이 얼마나 무르익었는지(성숙도)에 따라 리더가 자기 방식을 <strong>유연하게</strong> 갈아 끼워야 한다고 봤어요.</li>
+<li><strong>세 번째 생각(번스)</strong> — "리더와 구성원의 관계를 <em>거래</em>로만 보면 안 된다." 잘하면 상을, 못하면 벌을 주는 <strong>거래적 리더십</strong>을 넘어서, 구성원의 마음과 창의성을 끌어올리는 <strong>변혁적 리더십</strong>을 이야기합니다.</li>
+</ul>
+<blockquote>
+<p>한마디로: <strong>리더십 연구는 "타고난 능력"에서 "상황과의 맞춤", 다시 "유연한 변신", 끝으로 "사람의 마음을 바꾸는 힘"으로 한 걸음씩 옮겨 왔어요.</strong> 앞 이론의 빈틈을 뒤 이론이 메우며 발전한 그 흐름을 따라가는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>"효과적인 리더십이란 무엇인가"라는 물음을 두고 이어진 이론들의 흐름</strong>이 있습니다. 한 이론이 답을 내놓으면, 다음 이론이 그 한계를 짚으며 새 답을 더하는 식이죠. 세 세트는 이 큰 흐름을 서로 다른 각도에서 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>"효과적인 리더십이란?" (앞 이론의 한계를 뒤 이론이 보완)▶ 리더십 이론의 흐름</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>피들러, 허시와 블랜차드, 번스의 세 이론을 <em>하나의 줄기</em>로 이어 읽습니다. 앞 이론이 뒤 이론에게 어떻게 디딤돌이 되는지를 봅니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>상황에 맞는 리더십을 말한 <em>앞의 이론</em>((가))과, 그것을 비판하며 등장한 <em>뒤의 두 이론</em>((나))을 짝지어, 같은 물음에 대한 서로 다른 대답을 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>세 이론을 나란히 놓고, 구체적인 조직 상황에 <em>적용</em>하며 각 이론이 무엇을 설명하고 무엇을 놓치는지를 따집니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 리더십에 대한 생각이 어떻게 한 걸음씩 깊어져 왔는지, 그리고 각 이론이 어떤 상황에서 힘을 발휘하는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>리더는 조직의 목표를 이루기 위해 구성원들을 이끌고 그들에게 영향력을 미치는 핵심 인물이며, 리더로서의 그러한 능력을 리더십이라 한다. 어떠한 리더십이 효과적인지에 대한 연구는 오래전부터 이어졌다. 초기 연구를 대표하는 피들러는 리더의 스타일을 업무의 목표 달성을 ⓐ<u>앞세우는</u> 업무 지향적 스타일과 구성원들과의 관계나 소통을 중시하는 관계 지향적 스타일로 구분하고, 이러한 스타일은 쉽게 바뀌지 않는 고정된 것이라고 보았다. 그는 리더가 자신의 집단에 영향을 미칠 수 있는 정도를 상황의 호의성이라 ⓑ<u>부르</u>고, 그것이 리더와 구성원의 관계, 업무의 구조화 정도, 리더의 공식적 권한이라는 세 변수로 결정된다고 보았다. 그리고 상황의 호의성이 매우 낮거나 매우 높을 때에는 업무 지향적 리더가, 중간 정도일 때에는 관계 지향적 리더가 더 좋은 성과를 낸다고 주장하였다. "리더십은 능력이 아니라 적합성이다."라는 말에 그의 관점이 잘 드러난다.</p>
+<p>피들러의 모형을 진척시킨 허시와 블랜차드는 리더의 스타일을 고정된 것으로 ⓒ<u>여겼다</u>는 점을 비판하며, 리더가 구성원의 성숙도에 따라 스타일을 바꾸어야 한다는 상황적 리더십 이론을 제시하였다. 그들은 구성원의 성숙도를 능력과 경험을 뜻하는 업무 성숙도, 즉 역량과, 책임을 받아들이려는 마음 상태를 뜻하는 심리적 성숙도, 즉 의지로 구분하였다. 그리고 리더가 구체적인 지시를 내리고 감독하는 과업 행동과, 구성원과 인간적 관계를 ⓓ<u>맺</u>고 동기를 부여하는 관계 행동의 높고 낮음에 따라 리더십 스타일을 넷으로 나누었다. 그들에 따르면 역량과 의지가 모두 낮을 때에는 높은 과업 행동과 낮은 관계 행동으로 확실한 방향을 제시하는 지시형이, 의지만 높을 때에는 두 행동을 모두 높여 관계를 형성하면서도 명확히 지시하는 코치형이, 역량만 높을 때에는 지시를 줄이고 공동으로 의사를 결정하는 지원형이, 둘 다 높을 때에는 두 행동을 모두 낮추어 구성원에게 권한을 넘기는 위임형이 효과적이다. "유연성은 성공적인 리더십의 상징이다."라는 허시의 말에 이 이론이 강조하는 자질이 ⓔ<u>담겨</u> 있다.</p>
+<p>이러한 흐름을 이어 번스는 기존 이론들이 리더와 구성원의 관계를 타산적 이해관계, 곧 거래로만 보아 리더십을 거래적 리더십으로만 인식하였다고 비판하였다. 거래적 리더십은 구성원에 대한 보상과 처벌을 명확히 하는 데 중점을 두는 것으로, 이러한 리더는 구성원이 목표를 달성하거나 기준을 만족하면 보상을 제공하고 규율을 위반하면 일탈 행위를 하지 못하도록 감시하며, 업무 역할과 요구 사항을 명확히 전달하여 안정적인 상태를 지향한다. 번스는 이를 비판하며, 리더가 구성원의 창의성을 자극하고 책임의 분권화를 지향하는 변혁적 리더십을 제시하였다. 변혁적 리더십을 지닌 리더는 보상과 감시에 기대기보다 구성원이 조직의 목표를 자신의 것으로 받아들이게 하고, 더 높은 차원의 동기를 일깨워 스스로 기대 이상의 성과를 내도록 이끈다.</p>
+<p>이처럼 효과적인 리더십을 묻는 연구는, 리더십을 상황과의 적합성으로 본 관점에서 구성원의 성숙도에 따른 유연성으로, 다시 구성원의 욕구와 동기를 변화시키는 힘으로 그 초점을 옮겨 왔다. 뒤의 이론이 앞의 이론이 부른 한계를 보완하며 이어졌다는 점에서, 이러한 연구들은 리더십에 대한 이해를 단계적으로 넓혀 온 흐름으로 평가된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 리더십에 대한 상반된 정의들을 하나의 기준으로 통합하고 있다.</li>
+<li>② 리더십에 관한 이론들을 앞선 이론과 연결하여 설명하고 있다.</li>
+<li>③ 리더십 유형을 분류하는 기준이 지닌 문제점을 검토하고 있다.</li>
+<li>④ 리더십 연구가 등장하게 된 사회적 배경을 분석하고 있다.</li>
+<li>⑤ 리더십에 대한 여러 이론을 소개한 뒤 남은 연구 과제를 제시하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+이 글은 피들러의 이론을 소개한 뒤, 허시와 블랜차드가 그것을 비판하며 이론을 발전시키고, 다시 번스가 그 흐름을 이어 새 이론을 내놓는 식으로 전개돼요. 즉 리더십에 관한 이론들을 <em>앞선 이론과 연결하여</em> 설명하고 있으니 ②가 맞습니다. ① 상반된 정의를 하나로 통합하지 않았고(이론이 <em>발전</em>하는 흐름이에요), ③ 분류 기준의 문제점을 따로 검토하지 않았으며, ④ 연구의 사회적 배경 분석도, ⑤ 남은 연구 과제 제시도 글에 나타나지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생의 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 피들러는 상황의 호의성이 중간일 때보다 매우 높을 때에 효과적인 리더의 스타일이 다르다고 보았겠군.</li>
+<li>② 허시와 블랜차드는 같은 리더라도 구성원의 성숙도가 달라지면 스타일을 바꾸어야 한다고 보았겠군.</li>
+<li>③ 허시와 블랜차드는 의지만 높은 구성원에게는 지시를 줄이고 공동으로 의사를 결정하는 지원형 리더십이 효과적이라고 보았겠군.</li>
+<li>④ 번스는 보상과 처벌을 명확히 하는 데 중점을 두는 리더십만으로는 충분하지 않다고 보았겠군.</li>
+<li>⑤ 번스는 변혁적 리더십을 지닌 리더가 구성원의 창의성을 자극한다고 보았겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+허시와 블랜차드의 네 스타일을 정확히 짝지어야 풀려요. <em>의지만 높을 때</em>(역량은 낮음)에는 두 행동을 모두 <em>높이는</em> <strong>코치형</strong>이 효과적이고, 지시를 줄이고 공동으로 의사를 결정하는 <strong>지원형</strong>은 <em>역량만 높을 때</em>(의지는 낮음) 효과적이에요(2문단). 그런데 ③은 "의지만 높은" 구성원에게 지원형을 연결했으니, 코치형과 지원형을 뒤바꿔 놓은 셈이라 적절하지 않아 정답입니다. ① 피들러는 호의성이 중간일 때 관계 지향, 매우 높을 때 업무 지향이라 했으니 스타일이 다르고, ② 같은 리더가 성숙도 변화에 맞춰 스타일을 바꾼다는 것이 상황적 리더십의 핵심이며, ④ 번스는 거래적 리더십만으로는 부족하다고 비판했고, ⑤ 변혁적 리더는 창의성을 자극한다고 했습니다. (네 스타일과 성숙도의 짝은 아래 '개념 한눈에' 표로 한 번 더 확인해 두세요. ③은 의지만 높을 때의 답인 <em>코치형</em>과 역량만 높을 때의 답인 <em>지원형</em>을 헷갈리도록 만든 함정이에요.)</p>
+<p><strong>3번 [3점] — 정답 ④</strong>
+피들러는 상황의 호의성이 리더와 구성원의 관계, 업무 구조, 리더의 권한 세 가지로 결정되며, <em>매우 낮거나 매우 높을 때</em> 업무 지향이 낫다고 했어요. 발표 자리는 "신뢰는 높지만(관계 ↑) 공식적 권한은 거의 없는(권한 ↓)" 상황이라 세 변수가 한쪽으로 쏠리지 않으므로, <em>가장 낮은</em> 경우라고 단정할 수 없습니다. 따라서 ④가 적절하지 않아 정답이에요. ① 가 모둠은 역량·의지 모두 높아 위임형, ② 나 모둠은 둘 다 낮아 지시형, ③ 같은 리더가 모둠마다 스타일을 바꾸는 것은 상황적 리더십에 부합, ⑤ 회원이 발표를 자기 일로 받아들이게 이끄는 것은 변혁적 리더십에 해당하므로 모두 적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 사례에 대해 추론한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 봉사 단체의 운영을 맡은 리더가 두 모둠을 이끌게 되었다. 가 모둠은 활동 경험이 풍부하고 일에 자신이 있어 맡은 일을 능숙하게 해내지만, 새로 꾸려진 나 모둠은 활동 경험이 거의 없고 일에 대한 의욕도 낮은 편이다. 한편 이 단체는 후원자와 외부 단체가 함께 지켜보는 자리에서 성과를 발표해야 하는데, 평소 단체 안에서는 리더와 회원들이 서로 깊이 신뢰하지만 발표 자리에서는 리더가 회원들에게 행사할 수 있는 공식적 권한이 거의 없다.</p>
+</blockquote>
+<ul>
+<li>① 가 모둠은 역량과 의지가 모두 높은 편이므로, 허시와 블랜차드에 따르면 리더가 권한을 넘기는 위임형이 효과적이겠군.</li>
+<li>② 나 모둠은 역량과 의지가 모두 낮은 편이므로, 허시와 블랜차드에 따르면 확실한 방향을 제시하는 지시형이 효과적이겠군.</li>
+<li>③ 같은 리더가 두 모둠에 서로 다른 스타일을 적용하는 것은, 구성원의 성숙도에 따라 스타일을 바꾸어야 한다는 관점에 부합하겠군.</li>
+<li>④ 발표 자리는 리더와 회원의 신뢰는 높으나 리더의 공식적 권한이 작은 상황이므로, 피들러에 따르면 상황의 호의성이 가장 낮은 경우에 해당하겠군.</li>
+<li>⑤ 만약 리더가 회원들이 발표를 자신의 일로 여기고 더 높은 의욕을 내도록 이끈다면, 번스에 따르면 변혁적 리더십을 발휘한 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 중시(重視)하는</li>
+<li>② ⓑ: 명명(命名)하고</li>
+<li>③ ⓒ: 간주(看做)하였다는</li>
+<li>④ ⓓ: 형성(形成)하고</li>
+<li>⑤ ⓔ: 누락(漏落)되어</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>4번 — 정답 ⑤</strong>
+ⓔ"담겨 있다"는 "어떤 뜻이나 자질이 말 속에 들어 있다"는 의미예요. 그런데 '누락(漏落)되다'는 "마땅히 있어야 할 것이 빠지거나 빠뜨려지다"라는 뜻이라, 자질이 말 속에 <em>들어 있다</em>는 ⓔ와는 정반대 방향이라 호응이 완전히 어긋납니다. "허시의 말에 자질이 누락되어 있다"고 하면 오히려 자질이 <em>빠져 있다</em>는 말이 되어 버리죠. 그래서 ⑤가 바꾸어 쓰기에 적절하지 않아 정답입니다. ⓐ'중시하다(중요하게 여겨 앞세우다)', ⓑ'명명하다(이름을 붙이다)', ⓒ'간주하다(그렇다고 여기다)', ⓓ'형성하다(이루어 만들다)'는 각각 문맥에 자연스럽게 들어맞습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상황의 호의성</strong>: 리더가 자기 집단에 영향을 미칠 수 있는 정도. 리더-구성원 관계, 업무 구조, 리더 권한 세 가지로 정해져요.</li>
+<li><strong>성숙도</strong>: 구성원이 일에 얼마나 무르익었는지. <em>역량</em>(능력·경험)과 <em>의지</em>(책임을 받아들이려는 마음)로 나뉩니다.</li>
+<li><strong>거래적 / 변혁적 리더십</strong>: 보상·처벌로 움직이는 리더십이 거래적, 마음과 창의성을 끌어올려 스스로 변하게 하는 리더십이 변혁적이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 허시와 블랜차드의 네 스타일</div>
+<table>
+<thead>
+<tr>
+<th>구성원의 상태</th>
+<th>과업 행동</th>
+<th>관계 행동</th>
+<th>알맞은 스타일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>역량 ↓ · 의지 ↓</td>
+<td>높음</td>
+<td>낮음</td>
+<td>지시형 (방향을 확실히)</td>
+</tr>
+<tr>
+<td>역량 ↓ · 의지 ↑</td>
+<td>높음</td>
+<td>높음</td>
+<td>코치형 (관계 + 지시)</td>
+</tr>
+<tr>
+<td>역량 ↑ · 의지 ↓</td>
+<td>낮음</td>
+<td>높음</td>
+<td>지원형 (공동 결정·동기 부여)</td>
+</tr>
+<tr>
+<td>역량 ↑ · 의지 ↑</td>
+<td>낮음</td>
+<td>낮음</td>
+<td>위임형 (권한을 넘김)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>헷갈림 주의</strong>: '의지만 높음'은 <em>코치형</em>, '역량만 높음'은 <em>지원형</em>이에요. 한 글자 차이로 답이 갈리니 표를 손으로 짚어 가며 외워 두세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>피들러는 리더의 스타일을 어떻게 보았나요?</div><div class='qa-a'>쉽게 바뀌지 않는 <em>고정된 것</em>으로 보고, 그 스타일이 상황과 맞는지(적합성)를 중요하게 여겼습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>상황적 리더십 이론이 피들러를 비판한 핵심은?</div><div class='qa-a'>스타일이 고정돼 있다는 전제예요. 리더가 구성원의 성숙도에 따라 스타일을 <em>바꿔야</em> 한다고 보았습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>변혁적 리더십이 거래적 리더십과 다른 점은?</div><div class='qa-a'>보상·처벌·감시에 기대지 않고, 구성원의 창의성을 자극하며 책임을 분권화해 스스로 더 높은 성과를 내게 한다는 점입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [4~7]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>공포 소구는 그 메시지에 담긴 권고를 따르지 않을 때의 해로운 결과를 강조하여 수용자를 설득하는 것으로, 1950년대 초부터 설득 전략 연구자들의 연구 대상이 되었다. 초기 연구를 대표하는 재니스는 기존 연구에서 다루어지지 않았던 공포 소구의 설득 효과에 주목하였다. 그는 수용자에게 공포 소구를 세 가지 수준으로 달리 제시하는 실험을 한 결과, 중간 수준의 공포 소구가 가장 큰 설득 효과를 보인다는 것을 발견하였다.</p>
+<p>공포 소구 연구를 진척시킨 레벤달은 재니스의 연구가 인간의 감정적 측면에만 ㉠치우쳤다고 비판하며, 공포 소구의 효과는 수용자의 감정적 반응만이 아니라 인지적 반응과도 관련된다고 하였다. 그는 감정적 반응을 ‘공포 통제 반응’, 인지적 반응을 ‘위험 통제 반응’이라 ㉡불렀다. 그리고 후자가 작동하면 수용자들은 공포 소구의 권고를 따르게 되지만, 전자가 작동하면 공포 소구로 인한 두려움의 감정을 통제하기 위해 오히려 공포 소구에 담긴 위험을 무시하려는 반응을 보이게 된다고 하였다.</p>
+<p>이러한 선행 연구들을 종합한 위티는 우선 공포 소구의 설득 효과를 좌우하는 두 요인으로 ‘위협’과 ‘효능감’을 설정하였다. 수용자가 공포 소구에 담긴 위험을 자신이 ㉢겪을 수 있는 것이고 그 위험의 정도가 크다고 느끼면, 그 공포 소구는 위협의 수준이 높다. 그리고 공포 소구에 담긴 권고를 이행하면 자신의 위험을 예방할 수 있고 자신에게 그 권고를 이행할 능력이 있다고 느끼면, 효능감의 수준이 높다. 한 동호회에서 회원들에게 ‘모임에 꼭 참석해 주세요. 불참 시 회원 자격이 사라집니다.’라는 안내문을 ㉣보냈다고 하자. 회원 자격이 사라진다는 것은 그 동호회 활동에 강한 애착을 가지고 있는 사람에게는 높은 수준의 위협이 된다. 그리고 그가 동호회 모임에 참석하는 일이 어렵지 않다고 느낄 때, 안내문의 권고는 그에게 높은 수준의 효능감을 주게 된다.</p>
+<p>위티는 이 두 요인을 레벤달이 말한 두 가지 통제 반응과 관련지어 다음과 같은 결론을 도출하였다. 위협과 효능감의 수준이 모두 높을 때에는 위험 통제 반응이 작동하고, 위협의 수준은 높지만 효능감의 수준이 낮을 때에는 공포 통제 반응이 작동한다. 그러나 위협의 수준이 낮으면, 수용자는 그 위협이 자신에게 아무 영향을 ㉤주지 않는다고 느껴 효능감의 수준에 관계없이 공포 소구에 대한 반응이 없게 된다. 이렇게 정리된 결론은 그간의 공포 소구 이론을 통합한 결과라는 점에서 후속 연구의 중요한 디딤돌이 되었다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 화제에 대한 연구들이 시작된 사회적 배경을 분석하고 있다.</li>
+<li>② 화제에 대한 연구들을 선행 연구와 연결하여 설명하고 있다.</li>
+<li>③ 화제에 대한 연구들을 분류하는 기준의 문제점을 검토하고 있다.</li>
+<li>④ 화제에 대한 연구들을 소개한 후 남겨진 연구 과제를 제시하고 있다.</li>
+<li>⑤ 화제에 대한 연구들이 봉착했던 난관과 그 극복 과정을 소개하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 정답 ②</strong><br />
+재니스는 기존 연구에서 다루지 않았던 설득 효과에 주목했고, 레벤달은 재니스의 연구를 비판하며 진척시켰으며, 위티는 선행 연구들을 종합해 결론을 도출했다. 즉 공포 소구에 대한 연구들을 선행 연구와 연결하여 설명하고 있으므로 ②가 적절하다. 사회적 배경 분석(①), 분류 기준의 문제점 검토(③), 남겨진 연구 과제 제시(④), 난관과 극복 과정 소개(⑤)는 나타나지 않는다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①1.1% ②90.5% ③2.6% ④3.2% ⑤2.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생의 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재니스는 공포 소구의 효과를 연구하는 실험에서 공포 소구의 수준을 달리하며 수용자의 변화를 살펴보았겠군.</li>
+<li>② 레벤달은 재니스의 연구 결과에 대하여 수용자의 감정적 반응과 인지적 반응을 모두 고려하여 살펴보았겠군.</li>
+<li>③ 레벤달은 공포 소구의 설득 효과가 나타나려면 공포 통제 반응보다 위험 통제 반응이 작동해야 한다고 보았겠군.</li>
+<li>④ 위티는 수용자가 공포 소구에 담긴 위험을 느끼지 않아야 공포 소구의 권고를 따르게 된다고 보았겠군.</li>
+<li>⑤ 위티는 공포 소구의 위협 수준이 그 공포 소구의 효능감 수준에 따라 달라지는 것은 아니라고 보았겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>5번 — 정답 ④</strong><br />
+위티에 따르면 권고를 따르게 되는 위험 통제 반응은 위협과 효능감의 수준이 모두 높을 때 작동하며, 위협의 수준이 높으려면 수용자가 위험을 자신이 겪을 수 있고 그 정도가 크다고 느껴야 한다. 위험을 느끼지 않으면 위협 수준이 낮아 반응 자체가 없게 되므로 ④는 적절하지 않다. ①은 1문단의 세 수준 실험, ②는 2문단의 비판 근거, ③은 2문단의 두 반응 서술, ⑤는 3문단에서 위협과 효능감이 각각 독립적으로 정의된다는 점과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.4% ②1.3% ③5.0% ④86.0% ⑤7.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 실험에 대해 추론한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 모임에서 공포 소구 실험을 진행한 결과, 수용자들의 반응은 위티의 결론과 부합하였다. 이 실험에서는 위협의 수준(높음/ 낮음), 효능감의 수준(높음/ 낮음)의 조합을 달리하여 피실험자들을 네 집단으로 나누었다. 집단1과 집단2는 공포 소구에 대한 반응이 없었고, 집단3은 위험 통제 반응, 집단4는 공포 통제 반응이 작동하였다.</p>
+</blockquote>
+<ul>
+<li>① 집단1은 위협의 수준이 낮았을 것이다.</li>
+<li>② 집단3은 효능감의 수준이 높았을 것이다.</li>
+<li>③ 집단4는 위협과 효능감의 수준이 서로 달랐을 것이다.</li>
+<li>④ 집단2와 집단4는 위협의 수준이 서로 달랐을 것이다.</li>
+<li>⑤ 집단3과 집단4는 효능감의 수준이 서로 같았을 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong><br />
+위험 통제 반응이 작동한 집단3은 위협·효능감이 모두 높고, 공포 통제 반응이 작동한 집단4는 위협은 높지만 효능감이 낮다. 따라서 두 집단의 효능감 수준은 서로 다르므로 ⑤가 적절하지 않다. 반응이 없었던 집단1·2는 위협의 수준이 낮았던 집단(①), 집단3의 효능감은 높음(②), 집단4는 위협 높음·효능감 낮음(③), 집단2(위협 낮음)와 집단4(위협 높음)는 위협 수준이 다름(④).</p>
+<p><em>선택률</em> — 응시 98,571명 — ①1.1% ②2.9% ③4.8% ④4.5% ⑤87.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>문맥상 ㉠～㉤과 바꾸어 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠: 편향(偏向)되었다고</li>
+<li>② ㉡: 명명(命名)하였다</li>
+<li>③ ㉢: 경험(經驗)할</li>
+<li>④ ㉣: 발송(發送)했다고</li>
+<li>⑤ ㉤: 기여(寄與)하지</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong><br />
+‘기여(寄與)하다’는 ‘도움이 되도록 이바지하다’의 뜻인데, ‘아무 영향을 주지 않는다’의 ‘주다’는 도움의 의미를 내포하지 않으므로 ⑤는 바꾸어 쓰기에 적절하지 않다. ‘편향되다(한쪽으로 치우치게 되다)’, ‘명명하다(이름을 지어 붙이다)’, ‘경험하다(실제로 해 보거나 겪어 보다)’, ‘발송하다(우편 등으로 보내다)’는 각각 ㉠~㉣과 바꿔 쓸 수 있다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①2.0% ②8.4% ③2.2% ④2.4% ⑤86.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>리더는 목표 달성을 위해 구성원을 이끌고 그들에게 영향을 미치는 인물이며, 효과적인 리더십을 찾으려는 연구는 오래전부터 이어져 왔다. 피들러는 어떤 리더십이 언제나 옳은 것은 아니며, 리더십의 효과는 리더가 놓인 상황에 따라 달라진다고 보았다. 그는 리더를 업무의 목표 달성을 중시하는 업무 지향적 리더와 구성원과의 관계나 소통을 중시하는 관계 지향적 리더로 ⓐ<u>나누고</u>, 이러한 리더의 스타일은 쉽게 바뀌지 않는 고정된 것이라고 ⓑ<u>보았다</u>.</p>
+<p>피들러는 리더가 자신의 집단에 영향을 미칠 수 있는 정도를 ㉠<u>상황의 호의성</u>이라 하고, 그것이 세 변수로 결정된다고 파악하였다. 리더와 구성원이 서로 믿고 존중하는 관계일수록, 업무가 명확하게 구조화되어 있을수록, 채용이나 승진 등에 대한 리더의 공식적 권한이 클수록 상황의 호의성이 높고, 그 반대의 경우에는 낮다. 그는 상황의 호의성에 따라 적합한 리더십이 다르다고 보았는데, 호의성이 매우 낮거나 매우 높을 때에는 업무 지향적 리더가, 중간 정도일 때에는 관계 지향적 리더가 더 좋은 성과를 낸다고 주장하였다.</p>
+<p>피들러는 이러한 이해를 바탕으로, 리더십의 성패는 리더 개인의 능력보다 리더의 스타일과 상황이 맞아떨어지는지에 달려 있다고 ⓒ<u>여겼다</u>. 그가 "리더십은 능력이 아니라 적합성이다."라고 말한 것은 이 때문이다. 그는 리더의 스타일이 고정되어 있으므로, 효과를 높이려면 리더를 그의 스타일에 맞는 상황에 ⓓ<u>두거나</u> 상황의 호의성을 조정하는 편이 낫다고 보았다. 즉 그는 리더가 자신의 스타일을 바꾸기보다, 스타일과 상황의 적합성을 맞추는 데에서 효과적인 리더십의 길을 찾은 것이다.</p>
+<p><strong>(나)</strong></p>
+<p>피들러의 모형이 제시된 이후, 리더의 스타일을 고정된 것으로 본 그의 전제를 비판하며 새로운 이론들이 등장하였다. 허시와 블랜차드는 리더가 구성원의 성숙도에 따라 리더십 스타일을 바꾸어야 한다는 상황적 리더십 이론을 제시하였다. 그들은 구성원의 성숙도를 능력과 경험을 뜻하는 ㉡<u>역량</u>과, 책임을 받아들이려는 마음 상태를 뜻하는 의지로 ⓔ<u>분류하였다</u>. 그리고 구체적인 지시와 감독에 해당하는 과업 행동과, 인간적 관계 형성과 동기 부여에 해당하는 관계 행동의 높고 낮음에 따라 리더십 스타일을 네 가지로 나누었다. 역량과 의지가 모두 낮으면 지시형이, 의지만 높으면 코치형이, 역량만 높으면 지원형이, 둘 다 높으면 위임형이 효과적이라는 것이다. 그들은 리더가 스타일을 상황에 맞게 바꾸는 유연성을 성공적인 리더십의 조건으로 보았다.</p>
+<p>한편 번스는 앞선 이론들이 리더와 구성원의 관계를 타산적 이해관계로만 보았다고 비판하였다. 그는 보상과 처벌을 명확히 하여 구성원을 움직이는 리더십을 거래적 리더십이라 하였다. 거래적 리더십을 지닌 리더는 구성원이 목표를 달성하면 보상을 제공하고 규율을 위반하면 조치를 취하여 일탈을 감시하며, 업무 역할과 요구 사항을 명확히 전달하고 안정적인 상태를 지향한다. 번스는 이러한 리더십이 구성원을 일정한 틀 안에 머무르게 할 뿐 그 이상을 끌어내지 못한다고 보았다. 그래서 그는 리더가 구성원의 창의성을 자극하고 책임의 분권화를 지향하는 변혁적 리더십을 제시하였다. 변혁적 리더는 구성원이 조직의 목표를 자신의 것으로 받아들이게 하고 더 높은 차원의 동기를 일깨워, 기대 이상의 성과를 스스로 내도록 이끈다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 피들러 이론의 한계를 지적하고 그 한계를 보완한 이론과 비교하고 있다.</li>
+<li>② (가)는 효과적인 리더십에 대한 피들러의 관점을 그가 사용한 핵심 개념을 중심으로 제시하고 있다.</li>
+<li>③ (나)는 리더십에 대한 두 이론을 절충하여 하나의 새로운 이론으로 종합하고 있다.</li>
+<li>④ (나)는 피들러 이론을 계승한 이론들이 서로 대립하며 발전하는 과정을 설명하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 리더십 이론들이 등장하게 된 시대적 배경을 구체적 사례와 함께 분석하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+(가)는 피들러의 관점을, 그가 쓴 핵심 개념인 <em>상황의 호의성</em>과 <em>적합성</em>을 중심으로 차분히 설명해요. 그래서 ②가 맞습니다. ① (가)는 피들러의 한계를 지적하거나 다른 이론과 <em>비교</em>하지 않고 그의 견해만 다루고, ③ (나)는 두 이론(상황적 리더십·변혁적 리더십)을 하나로 <em>종합</em>하지 않으며, ④ (나)의 두 이론은 서로 <em>대립</em>하기보다 각각 앞 이론의 한계를 보완하는 흐름이고, ⑤ 두 글 모두 시대적 배경을 사례와 함께 분석하지는 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 피들러의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 효과적인 리더십은 리더 개인의 능력보다 스타일과 상황의 적합성에 달려 있다.</li>
+<li>② 리더의 스타일은 쉽게 바뀌지 않는 고정된 것이다.</li>
+<li>③ 업무가 명확하게 구조화되어 있을수록 상황의 호의성이 높아진다.</li>
+<li>④ 상황의 호의성이 중간 정도일 때에는 업무 지향적 리더가 더 좋은 성과를 낸다.</li>
+<li>⑤ 리더십의 효과를 높이려면 리더를 그의 스타일에 맞는 상황에 두는 것이 낫다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+피들러는 상황의 호의성이 <em>중간 정도일 때</em>에는 업무 지향적 리더가 아니라 <em>관계 지향적 리더</em>가 더 좋은 성과를 낸다고 했어요(2문단). ④는 중간일 때 업무 지향적 리더가 낫다고 거꾸로 말했으니 적절하지 않아 정답입니다. ① 3문단(능력보다 적합성), ② 1문단(고정된 스타일), ③ 2문단(업무 구조화 ↑ → 호의성 ↑), ⑤ 3문단(스타일에 맞는 상황에 두기)에서 각각 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 리더가 갖춘 고정된 스타일을 가리키고, ㉡은 그 스타일을 바꾸는 능력을 가리킨다.</li>
+<li>② ㉠은 세 변수로 결정되는 외부 조건이고, ㉡은 구성원이 지닌 능력과 경험에 관한 것이다.</li>
+<li>③ ㉠은 구성원의 마음 상태를 뜻하고, ㉡은 리더가 행사하는 공식적 권한을 뜻한다.</li>
+<li>④ ㉠은 리더의 스타일과 무관하게 정해지지 않고, ㉡은 리더의 보상과 처벌에 따라 달라진다.</li>
+<li>⑤ ㉠은 구성원의 성숙도를 이루는 한 요소이고, ㉡은 상황의 호의성을 이루는 한 변수이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+㉠상황의 호의성은 리더-구성원 관계, 업무 구조, 리더 권한이라는 <em>세 변수로 결정되는 외부 조건</em>이고, ㉡역량은 구성원이 지닌 <em>능력과 경험</em>을 뜻해요. 그래서 둘을 바르게 풀이한 ②가 정답입니다. ① ㉠은 리더의 스타일이 아니라 상황 조건이고, ③ ㉠은 구성원의 마음 상태가 아니며, ④ ㉡은 보상·처벌로 달라지는 것이 아니라 구성원의 능력에 관한 것이고, ⑤ ㉠과 ㉡의 소속을 서로 뒤바꿔 놓았습니다(㉠은 호의성, ㉡은 성숙도의 요소).</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>(나)의 허시·블랜차드와 번스의 입장에서 다음의 ㄱ~ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p>ㄱ. 효과적인 리더가 되려면 구성원의 상태에 맞추어 리더의 행동 방식을 바꾸어야 한다.
+ㄴ. 리더와 구성원의 관계는 보상과 처벌을 주고받는 거래로만 이해하기 어렵다.
+ㄷ. 리더가 구성원을 안정적으로 통제하려면 업무 역할과 요구 사항을 명확히 전달해야 한다.
+ㄹ. 구성원의 역량과 의지가 모두 높을 때에는 리더가 권한을 넘기는 것이 효과적이다.</p>
+</blockquote>
+<ul>
+<li>① 허시·블랜차드는 ㄱ에 동의하고 ㄹ에 동의하지 않겠군.</li>
+<li>② 허시·블랜차드는 ㄱ과 ㄹ에 동의하겠군.</li>
+<li>③ 번스는 ㄴ에 동의하지 않고 ㄷ에 동의하겠군.</li>
+<li>④ 번스는 ㄴ과 ㄷ에 모두 동의하지 않겠군.</li>
+<li>⑤ 허시·블랜차드와 번스는 모두 ㄷ에 동의하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+허시와 블랜차드는 ㄱ(구성원 상태에 맞춰 리더 행동을 바꿈)을 핵심 주장으로 삼고, ㄹ(역량·의지 모두 높을 때 위임형)도 그들의 이론 그대로이므로 둘 다 동의합니다. 따라서 ②가 정답이에요. ① ㄹ에 동의하지 않는다는 부분이 틀렸고, ③ 번스는 ㄴ(거래로만 보기 어렵다)에 <em>동의</em>하고 ㄷ(안정적 통제를 위한 명확한 전달)은 그가 비판한 거래적 리더십의 특징이라 동의하지 않으므로 틀렸으며, ④ 번스는 ㄴ에 동의하므로 "ㄴ에도 동의하지 않는다"는 틀렸고, ⑤ ㄷ은 번스가 비판한 거래적 리더십의 모습이라 번스는 동의하지 않으므로 "모두 동의"는 성립하지 않습니다.</p>
+<p><strong>9번 [3점] — 정답 ⑤</strong>
+팀장이 운영 방식을 바꾼 것은, 거래적 리더십에서 변혁적 리더십으로 옮겨 간 <em>번스</em>의 논의로 설명되는 변화예요. 그런데 피들러는 "리더의 스타일은 <em>고정되어 바뀌지 않는다</em>"고 보았으므로(1·3문단), 팀장이 스타일을 바꾼 것을 "피들러가 말한 대로"라고 한 ⑤는 피들러의 견해와 정면으로 어긋나 적절하지 않습니다. ① 상여금 차등·규정 점검은 거래적 리더십, ② 창의적 시도·목표 내면화는 변혁적 리더십, ③ 역량·의지 모두 높음 → 위임형, ④ 공식적 권한이 작음은 호의성을 낮추는 요인이므로 모두 적절한 탐구입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 회사의 신임 팀장이 팀을 맡았다. 팀원들은 업무 능력이 뛰어나고 일에 대한 의욕도 높지만, 팀장은 회사로부터 인사나 평가에 관한 공식적 권한을 거의 부여받지 못한 상태이다. 팀장은 처음에는 팀원들의 성과에 따라 상여금을 차등 지급하고 규정 위반을 엄격히 점검하는 방식으로 팀을 운영하였다. 그러나 이후 그는 팀원들이 회사의 목표를 자신의 일처럼 여기고 새로운 시도를 자유롭게 하도록 분위기를 바꾸어, 팀원들이 기대 이상의 성과를 내게 하였다.</p>
+</blockquote>
+<ul>
+<li>① 팀장이 처음에 상여금을 차등 지급하고 규정 위반을 점검한 것은, 번스가 말한 거래적 리더십에 해당하는 운영 방식이겠군.</li>
+<li>② 팀장이 팀원들의 창의적 시도를 끌어내고 목표를 자신의 일로 여기게 한 것은, 번스가 말한 변혁적 리더십을 발휘한 것이겠군.</li>
+<li>③ 팀원들이 역량과 의지가 모두 높은 상태라면, 허시와 블랜차드에 따르면 팀장이 권한을 넘기는 위임형 리더십이 효과적이겠군.</li>
+<li>④ 팀장이 공식적 권한을 거의 부여받지 못한 것은, 피들러에 따르면 상황의 호의성을 낮추는 요인 중 하나로 볼 수 있겠군.</li>
+<li>⑤ 팀장이 운영 방식을 바꾼 것은, 피들러가 말한 대로 리더가 자신의 고정된 스타일을 상황에 맞게 바꾼 사례이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 구분(區分)하고</li>
+<li>② ⓑ: 간주(看做)하였다</li>
+<li>③ ⓒ: 표명(表明)하였다</li>
+<li>④ ⓓ: 배치(配置)하거나</li>
+<li>⑤ ⓔ: 대별(大別)하였다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+ⓒ"여겼다"는 "마음속으로 그러하다고 생각하거나 판단하다"라는 뜻이에요. '표명(表明)하다'는 "의사나 태도를 <em>겉으로 드러내어</em> 밝히다"라는 뜻이라, 속으로 판단한다는 ⓒ의 의미와 어긋나 바꾸어 쓰기에 적절하지 않으므로 정답입니다. ⓐ"나누고"→'구분하고', ⓑ"보았다"→'간주하였다(그렇다고 여기다)', ⓓ"두거나"→'배치하거나(자리에 두다)', ⓔ"분류하였다"→'대별하였다(크게 나누다)'는 각각 문맥에 자연스럽게 들어맞습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>적합성</strong>: 리더의 스타일과 그가 놓인 상황이 맞아떨어지는 정도. 피들러는 이것이 리더십의 성패를 가른다고 보았어요.</li>
+<li><strong>유연성</strong>: 구성원의 성숙도에 맞춰 리더가 자기 스타일을 갈아 끼우는 능력. 허시와 블랜차드가 강조한 자질입니다.</li>
+<li><strong>분권화</strong>: 책임과 권한을 한 사람이 쥐지 않고 구성원에게 나누어 주는 것. 변혁적 리더십이 지향하는 방향이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 세 이론은 무엇을 핵심으로 보았나</div>
+<table>
+<thead>
+<tr>
+<th>이론(학자)</th>
+<th>효과적 리더십의 열쇠</th>
+<th>리더의 스타일은?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상황 적합 이론 (피들러)</td>
+<td>스타일과 상황의 <em>적합성</em></td>
+<td>고정 — 안 바뀜</td>
+</tr>
+<tr>
+<td>상황적 리더십 (허시·블랜차드)</td>
+<td>성숙도에 따른 <em>유연성</em></td>
+<td>바꿔야 함</td>
+</tr>
+<tr>
+<td>변혁적 리더십 (번스)</td>
+<td>구성원의 동기·창의성을 <em>변화</em></td>
+<td>(거래 → 변혁으로)</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>피들러가 말한 상황의 호의성을 결정하는 세 변수는?</div><div class='qa-a'>리더와 구성원의 관계, 업무의 구조화 정도, 리더의 공식적 권한입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>허시와 블랜차드와 피들러의 가장 큰 견해 차이는?</div><div class='qa-a'>피들러는 스타일이 고정됐다고 보고 상황을 맞추려 했지만, 허시와 블랜차드는 리더가 스타일을 <em>유연하게 바꿔야</em> 한다고 보았습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>번스가 거래적 리더십을 비판한 까닭은?</div><div class='qa-a'>보상·처벌·감시에 기대는 거래적 리더십은 구성원을 일정한 틀에 머무르게 할 뿐, 그 이상의 창의성과 동기를 끌어내지 못한다고 보았기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>『한비자』는 중국 전국 시대의 한비자가 제시한 사상이 ⓐ담긴 저작이다. 여러 나라가 패권을 다투던 혼란기를 맞아 엄격한 법치를 통해 부국강병을 꾀한 한비자는 『노자』에 대한 해석을 통해 자신의 법치 사상을 뒷받침했고, 이러한 면모는 『한비자』의 「해로」, 「유로」 등에서 확인할 수 있다.</p>
+<p>『노자』에서 ‘도(道)’는 만물 생성의 근원으로 묘사된다. 도를 천지 만물의 존재와 본질의 근거라고 본 한비자의 이해도 이와 다르지 않다. 그는 자연과 인간 사회의 모든 현상은 도의 영향을 받지 않을 수 없다고 보고, 인간 사회의 일은 도에 따라 제대로 행했는가의 여부에 따라 그 성패가 드러나는 것이라고 이해했다.</p>
+<p>한비자는 『노자』에 제시된 영구불변하는 도의 항상성에 대해 도가 천지와 더불어 영원히 존재한다는 것을 의미하는 것이지, 도가 모습과 이치를 일정하게 유지하는 것은 아니라고 이해했다. 그리고 도는 형체가 없을 뿐 아니라 일정하게 고정되어 있지 않기 때문에 때와 상황에 따라 유연하게 변화하는 것이라고 파악했다. 도가 가변성을 가지고 있어야 도가 일정한 곳에만 있지 않게 되고, 그래야만 도가 모든 사물의 존재와 본질의 근거가 될 수 있다고 파악한 것이다. 그는 도가 가변적이기 때문에 통치술도 고정되어서는 안 된다고 주장했다.</p>
+<p>한편, 한비자는 도를 구체적인 사물과 사건에 내재한 개별 법칙의 통합으로 보고, 『노자』의 도에 시비 판단의 근거라는 새로운 의미를 부여했다. 항상 존재하는 도는 개별 법칙을 포괄하기 때문에 다양한 개별 사건의 시비를 판단하는 기준이 될 수 있고, 이러한 도에 근거해서 입법해야 다양한 사건을 판단할 수 있다고 본 것이다. 이러한 이해를 바탕으로 그는 만족을 모르는 인간의 욕망을 사회 혼란의 원인으로 지목한 『노자』의 견해에 동의하면서도, 『노자』에서처럼 욕망을 없애야 한다고 주장하지 않고 인간은 욕망을 필연적으로 가질 수밖에 없음을 지적하며 욕망을 제어하기 위해 법이 필요하다고 강조했다.</p>
+<p><strong>(나)</strong></p>
+<p>유학자들은 도를 인간 삶의 올바른 길을 의미하는 것이라고 보았다. 중국 송나라 이후, 유학자들은 이러한 유학의 도를 기반으로 현상 세계 너머의 근원으로서 도가의 도에 주목하여 『노자』 주석을 전개했다.</p>
+<p>혼란기를 거친 송나라 초기에 중앙집권화가 추진된 이후 정치적 갈등이 드러나면서 개혁의 분위기가 조성됐다. 이러한 분위기하에서 유학자이자 개혁 사상가인 왕안석은 『노자주』를 저술했다. 그는 『노자』의 도를 만물의 물질적 근원인 ‘기(氣)’라고 파악하고, 현상 세계에 앞서 존재하는 기의 작용에 의해 사물이 형성된다고 보았다. 그는 기가 시시각각 변화하듯 현상 세계도 변화한다고 이해했다. 인위적인 것을 제거해야만 도가 드러나고 인간 사회가 안정된다는 『노자』를 비판한 그는 자연과 달리 인간 사회의 안정을 위해서는 제도와 규범의 제정과 같은 인간의 적극적인 개입이 필요하다고 주장했다. 지혜와 덕이 뛰어난 사람이 제정한 사회 제도와 규범도 현실 사회의 변화에 따라 새롭게 해야 한다고 주장한 것이다. 『노자』의 이상 정치가 실현되려면 유학 이념이 실질적 수단으로 사용되어야 한다고 주장하는 등 왕안석은 『노자』를 유학의 실천적 측면과 결부하여 이해했다.</p>
+<p>송 이후 원나라에 이르러 성행하던 도교는 유학과 불교 등을 받아들여 체계화되었지만, 오징에게는 주술적인 종교에 불과했다. ㉠유학자의 입장에서 그는 잘못된 가르침을 펴는 도교에 사람들이 빠지는 것을 경계했다. 그는 도교의 시조로 간주된 노자의 가르침이 공자의 학문과 크게 다르지 않음을 밝히고자 『도덕진경주』를 저술했다. 그는 도와 유학 이념을 관련짓는 구절을 추가하는 등 『노자』의 일부 내용을 바꾸고 기존 구성 체제를 재편했다. 『노자』의 도를 근원적인 불변하는 도로 본 그는 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 이해했다. 이런 관점에서 그는 유학의 인의예지가 도의 쇠퇴 때문에 나타난 것이라는 『노자』와 달리 도가 현실화하여 드러난 것으로 해석하고, 인간이 마땅히 따라야 할 사회 규범과 사회 질서 체계도 도가 현실화한 결과로 파악했다.</p>
+<p>원이 쇠퇴하고 명나라가 들어선 이후 유학과 도가 등 여러 사상이 합류하는 사조가 무르익는 가운데, 유학자인 설혜는 자신의 ㉡학문적 소신에 따라 『노자』를 주석한 『노자집해』를 저술했다. 그는 공자도 존중했던 스승이 노자이므로 노자 사상에 대한 오해를 불식해야 한다고 보았다. 그는 기존의 주석서가 『노자』의 진정한 의미를 제대로 밝히지 못했기 때문에 유학자들이 노자 사상을 이단으로 치부했다고 파악한 것이다. 다양한 경전을 인용하여 『노자』를 해석하면서 그는 『노자』의 도를 인간의 도덕 본성과 그것의 근거인 천명으로 이해하고, 본성과 천명의 이치를 탐구한다는 점에서 노자 사상과 유학이 다르지 않다고 보았다. 또한 그는 『노자』에서 인의 등을 비판한 것은 도덕을 근본으로 삼게 하기 위한 충고라고 파악했다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 『한비자』의 철학사적 의의를 설명하고 『한비자』와 『노자』의 사회적 파급력을 비교하고 있다.</li>
+<li>② (가)는 한비자가 추구한 이상적인 사회를 소개하고 그 실현을 위해 『노자』를 수용한 입장의 한계를 설명하고 있다.</li>
+<li>③ (나)는 특정 개념을 중심으로 『노자』에 대한 여러 학자의 견해를 시간의 흐름에 따라 제시하고 있다.</li>
+<li>④ (나)는 여러 유학자가 『노자』를 해석한 의도를 각각 제시하고 그 차이로 인해 발생한 학자 간의 이견을 절충하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 『노자』에 대해 다양한 시각에서 제시된 비판이 심화되는 과정을 구체적 사례와 함께 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong><br />
+(나)는 ‘도’라는 특정 개념을 중심으로 송나라 왕안석 → 원나라 오징 → 명나라 설혜의 『노자』 해석을 시간의 흐름에 따라 제시한다. ①은 사회적 파급력 비교가 없고, ④는 학자 간 이견을 절충하지 않으며, ⑤는 (가)가 한비자의 견해만 제시하므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,626명 — ①3.3% ②4.8% ③77.8% ④6.6% ⑤7.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 한비자의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사건의 시비에 따라 달라지는 도에 근거하여 법이 제정되어야 한다.</li>
+<li>② 인간은 무엇을 가지거나 누리고자 하는 마음에서 벗어날 수 없다.</li>
+<li>③ 도는 고정된 모습 없이 때와 형편에 따라 변화하며 영원히 존재한다.</li>
+<li>④ 인간 사회의 흥망성쇠는 사람이 도에 따라 올바르게 행하였는가의 여부에 좌우되는 것이다.</li>
+<li>⑤ 도는 만물의 근원이면서 동시에 현실 사회의 개별 사물과 사건에 내재한 법칙을 포괄하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+4문단에서 한비자는 항상 존재하는 도가 개별 법칙을 포괄하기에 다양한 개별 사건의 시비를 판단하는 ‘기준’이 된다고 보았다. 도가 사건의 시비에 따라 달라지는 것이 아니므로 ①이 부적절하다. ②는 욕망의 필연성(4문단), ③은 도의 가변성과 항상성(3문단), ④는 성패가 도에 따라 행했는가에 좌우됨(2문단), ⑤는 2·4문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,624명 — ①51.6% ②6.6% ③7.2% ④18.4% ⑤16.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 유학 덕목의 등장을 긍정적으로 평가한 『노자』의 견해를 수용하는, ㉡은 유학 덕목에 대한 『노자』의 비판에 담긴 긍정적 의도를 밝히려는 것으로 표출되었다.</li>
+<li>② ㉠은 유학에 유입되고 있는 주술성을 제거하는, ㉡은 노자 사상이 탐구하는 대상에 대한 이해를 근거로 노자 사상과 유학의 공통점을 제시하려는 것으로 표출되었다.</li>
+<li>③ ㉠은 유학의 가르침을 차용한 종교가 사람들을 현혹하는 상황에 대응하는, ㉡은 『노자』를 해석한 경전들을 참고하여 유학 이론의 독창성을 밝히려는 것으로 표출되었다.</li>
+<li>④ ㉠은 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인하는, ㉡은 유학에서 이단으로 치부하는 사상의 진의를 밝혀 오해를 바로잡으려는 것으로 표출되었다.</li>
+<li>⑤ ㉠은 특정 종교에서 추앙하는 사상가와 유학 이론의 관련성을 제시하는, ㉡은 유학의 사상적 우위를 입증하여 다른 학문을 통합할 수 있는 근거를 제시하려는 것으로 표출되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+㉠(오징)은 노자의 가르침이 공자의 학문과 다르지 않음을 밝히고 인의예지·사회 규범을 도의 현실화로 해석했으므로, 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인한 것이다. ㉡(설혜)은 이단으로 치부된 노자 사상의 진정한 의미를 밝혀 오해를 불식하고자 했다. ②는 주술성이 유학에 유입된 것이 아니고, ⑤는 설혜가 유학의 사상적 우위를 입증하려 한 것이 아니어서 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,620명 — ①5.3% ②26.1% ③10.0% ④47.9% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>(나)의 왕안석과 오징의 입장에서 다음의 ㄱ～ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p>ㄱ. 도는 만물을 통해 드러나는 것이지 만물에 앞서서 존재하는 것은 아니다.
+ㄴ. 인간 사회의 규범은 이치를 내재한 근원적 존재인 도가 현실에 드러난 것이다.
+ㄷ. 도는 현상 세계의 너머에만 머물러 있지 않고 세상일과 유기적으로 관련되는 것이다.
+ㄹ. 도가 변화하듯이 현상 세계가 변하니, 현실 사회의 변화에 따라 인간 사회의 규범도 변해야 한다.</p>
+</blockquote>
+<ul>
+<li>① 왕안석은 ㄱ에 동의하지 않고 ㄴ에 동의하겠군.</li>
+<li>② 왕안석은 ㄴ과 ㄹ에 동의하겠군.</li>
+<li>③ 왕안석은 ㄷ에 동의하고 ㄹ에 동의하지 않겠군.</li>
+<li>④ 오징은 ㄱ과 ㄹ에 동의하지 않겠군.</li>
+<li>⑤ 오징은 ㄴ에 동의하고 ㄷ에 동의하지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong><br />
+오징은 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 보므로 ㄱ(도가 만물에 앞서 존재하지 않음)에 동의하지 않고, 도를 근원적인 불변하는 도로 보므로 ㄹ(도의 변화)에도 동의하지 않는다. 왕안석은 기(도)가 현상 세계에 앞서 존재한다고 보아 ㄱ에 동의하지 않고, 규범은 인간의 적극적 개입으로 제정된다고 보아 ㄴ에 동의하지 않으며, ㄹ에는 동의한다.</p>
+<p><em>선택률</em> — 응시 98,649명 — ①11.1% ②22.0% ③10.5% ④34.8% ⑤21.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉를 참고할 때, (가), (나)의 사상가에 대한 왕부지의 평가로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+청나라 초기의 유학자 왕부지는 『노자』의 본래 뜻을 드러내어 노자 사상을 비판하고자 『노자연』을 저술했다. 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하고자 했던 그는 기존의 『노자』 주석서가 노자 사상이 아닌 사상을 기준으로 삼았기 때문에 『노자』뿐만 아니라 주석자의 사상마저 왜곡했다고 비판했다. 『노자』에서 아무런 행동을 하지 않아도 천하가 다스려진다고 한 것 등을 비판한 그는, 『노자』에서처럼 단순히 인간의 이기적 욕망을 없애는 것이 아니라 사회 질서 유지를 위해 유학 규범을 활용해야 한다고 강조했다.</p>
+</blockquote>
+<ul>
+<li>① 왕부지는 인간의 욕망에 대한 『노자』의 대응 방식을 부정적으로 보았으므로, (가)의 한비자가 『노자』와 달리 사회에 대한 인위적 개입이 필요하다고 한 것에 대해서는 수긍하겠군.</li>
+<li>② 왕부지는 『노자』에 제시된 소극적인 삶의 태도를 부정적으로 보았으므로, (나)의 왕안석이 사회 제도에 대한 『노자』의 견해를 비판하며 유학 이념의 활용을 주장한 것은 긍정하겠군.</li>
+<li>③ 왕부지는 『노자』의 본래 뜻을 파악해야 한다고 보았으므로, (나)의 오징이 『노자』를 주석하면서 자신의 이해에 따라 원문의 구성과 내용을 수정한 것이 잘못이라고 보겠군.</li>
+<li>④ 왕부지는 주석자가 유학을 기준으로 『노자』를 이해하면 주석자의 사상도 왜곡된다고 보았으므로, (나)의 오징이 유학의 인의예지를 『노자』의 도가 현실화한 것으로 본 것을 비판하겠군.</li>
+<li>⑤ 왕부지는 『노자』에 담긴 비현실성을 드러내야 한다고 보았으므로, (나)의 설혜가 기존의 『노자』 주석서들을 비판하며 드러낸 학문적 입장이 유학의 실용적 가치를 부각한다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+설혜의 학문적 입장은 노자 사상과 유학이 다르지 않음을 밝혀 노자 사상에 대한 오해를 불식하려는 것으로, 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하려 한 왕부지의 시각과 대비된다. 따라서 ⑤가 부적절하다. ①~④는 각각 욕망 제어를 위한 법의 필요(한비자), 유학 이념의 실질적 수단화(왕안석), 원문 수정(오징), 유학 기준의 해석(오징)에 대한 왕부지의 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,629명 — ①6.5% ②9.0% ③19.6% ④21.2% ⑤43.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 과일이 접시에 예쁘게 담겨 있다.</li>
+<li>② 상자에 탁구공이 가득 담겨 있다.</li>
+<li>③ 시원한 계곡물에 수박이 담겨 있다.</li>
+<li>④ 화폭에 봄 경치가 그대로 담겨 있다.</li>
+<li>⑤ 매실이 설탕물에 한 달째 담겨 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓐ ‘담긴’은 ‘어떤 내용이나 사상이 그림, 글, 말 따위 속에 포함되거나 반영되다’의 의미로, ④의 ‘화폭에 봄 경치가 담겨 있다’와 같다. ①·②는 그릇 따위에 넣어지다, ③은 액체 속에 넣어지다, ⑤는 익거나 삭도록 보관되다의 의미이다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.4% ②0.6% ③1.0% ④95.0% ⑤2.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>리더는 조직의 목표 달성을 위해 구성원을 이끌고 그들에게 영향력을 미치는 인물이며, 어떤 리더십이 효과적인지에 대한 견해는 시대에 따라 달라져 왔다. 피들러는 효과적인 리더십이 따로 정해져 있는 것이 아니라, 리더의 스타일과 그가 놓인 상황이 맞아떨어질 때 성과가 난다고 보았다. 그는 리더를 업무 지향적 리더와 관계 지향적 리더로 구분하고, 이러한 스타일은 쉽게 바뀌지 않는 고정된 것이라고 보았다. 또한 리더가 집단에 영향을 미칠 수 있는 정도를 상황의 호의성이라 하고, 그것이 리더와 구성원의 관계, 업무의 구조화 정도, 리더의 공식적 권한으로 결정된다고 파악하였다. 그에 따르면 호의성이 매우 낮거나 매우 높을 때에는 업무 지향적 리더가, 중간일 때에는 관계 지향적 리더가 더 좋은 성과를 낸다. 리더십을 능력이 아니라 적합성으로 본 그의 관점이 여기에 담겨 있다.</p>
+<p>피들러가 리더의 스타일을 고정된 것으로 본 데 대한 비판에서 상황적 리더십 이론이 출발한다.</p>
+<div class="ablock"><span class="atag">[A]</span>허시와 블랜차드는 리더가 구성원의 성숙도에 따라 리더십 스타일을 바꾸어야 한다고 보았다. 그들은 성숙도를 능력과 경험을 뜻하는 역량과, 책임을 받아들이려는 마음 상태를 뜻하는 의지로 구분하였다. 그리고 구체적인 지시·감독에 해당하는 과업 행동과, 인간적 관계 형성·동기 부여에 해당하는 관계 행동의 높고 낮음에 따라 리더십을 네 가지로 나누었다. 역량과 의지가 모두 낮을 때에는 높은 과업 행동과 낮은 관계 행동으로 방향을 확실히 제시하는 지시형이, 의지만 높을 때에는 두 행동을 모두 높여 관계를 형성하면서도 명확히 지시하는 코치형이 효과적이다. 역량만 높을 때에는 지시를 줄이고 공동으로 의사를 결정하는 지원형이, 둘 다 높을 때에는 두 행동을 모두 낮추어 구성원에게 책임과 권한을 넘기고 자율성을 부여하는 위임형이 효과적이다. 같은 리더라도 마주한 구성원의 성숙도가 다르면 그에 맞는 스타일을 달리 적용해야 한다는 것이 이 이론의 요지이다. </div>
+
+<p>이후 번스는 리더십을 구성원의 욕구를 만족시키는 것으로 보는 관점을 내놓았다. 그는 기존 이론들이 리더와 구성원의 관계를 타산적 이해관계, 곧 거래로만 보았다고 비판하였다. 보상과 처벌을 명확히 하는 데 중점을 두는 거래적 리더십은, 구성원이 목표를 달성하면 보상하고 규율을 위반하면 일탈을 감시하며 업무 역할을 명확히 전달해 안정적인 상태를 지향한다. 번스는 이러한 거래적 리더십이 구성원을 정해진 틀 안에 머무르게 할 뿐임을 지적하고, 리더가 구성원의 창의성을 자극하고 책임의 분권화를 지향하는 변혁적 리더십을 제시하였다. 변혁적 리더는 구성원이 조직의 목표를 자신의 것으로 받아들이게 하고 더 높은 차원의 동기를 일깨워, 기대 이상의 성과를 스스로 내도록 이끈다.</p>
+<p>이처럼 리더십에 대한 이론은 상황과의 적합성, 구성원의 성숙도에 따른 유연성, 구성원의 동기를 변화시키는 힘으로 그 초점을 옮기며 발전해 왔다. 다만 이러한 이론들이 리더십의 효과를 결정하는 모든 요인을 설명하는 것은 아니다. 각 이론은 상황, 구성원, 동기 가운데 어느 한 측면에 주목하여 효과적인 리더십의 조건을 밝히지만, 리더 개인의 윤리성이나 조직이 처한 문화적 환경처럼 그 밖의 요인이 리더십에 어떤 영향을 미치는지는 충분히 다루지 않는다. 그럼에도 이들 이론은 효과적인 리더십이 리더 한 사람의 자질로 환원되지 않으며 상황·구성원·동기와의 관계 속에서 형성된다는 점을 밝혔다는 데 의의가 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 번스에 따르면 거래적 리더십은 구성원을 정해진 틀 안에 머무르게 하는 한계가 있다.</li>
+<li>② 피들러에 따르면 상황의 호의성이 중간 정도일 때에는 업무 지향적 리더가 더 좋은 성과를 낸다.</li>
+<li>③ 허시와 블랜차드에 따르면 구성원의 의지만 높을 때에는 위임형 리더십이 효과적이다.</li>
+<li>④ 피들러에 따르면 효과적인 리더십의 종류는 상황과 무관하게 하나로 정해져 있다.</li>
+<li>⑤ 윗글의 이론들은 리더 개인의 윤리성이 리더십에 미치는 영향을 충분히 다루고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>11번 — 정답 ①</strong>
+번스는 거래적 리더십이 구성원을 "정해진 틀 안에 머무르게 할 뿐"이라고 그 한계를 지적했어요(3문단). 그래서 ①이 일치해 정답입니다. ② 호의성이 <em>중간</em>일 때에는 업무 지향이 아니라 <em>관계 지향</em>적 리더가 낫다고 했고, ③ <em>의지만</em> 높을 때에는 위임형이 아니라 <em>코치형</em>이 효과적이며, ④ 피들러는 효과적 리더십이 <em>상황에 따라</em> 다르다고 보았고, ⑤ 윗글의 이론들은 리더 개인의 윤리성은 <em>충분히 다루지 않는다</em>고 4문단에서 밝혔으므로 모두 일치하지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>[A]와 윗글을 바탕으로 할 때, 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 피들러는 상황의 호의성이 무엇에 의해 결정된다고 보았는가?</li>
+<li>② 허시와 블랜차드는 구성원의 성숙도를 어떻게 구분하였는가?</li>
+<li>③ 번스가 제시한 변혁적 리더십은 구성원을 어떻게 이끄는가?</li>
+<li>④ 피들러가 구분한 두 리더십 스타일은 각각 언제 처음 제시되었는가?</li>
+<li>⑤ 리더십에 대한 이론들이 충분히 다루지 못한 요인에는 어떤 것이 있는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+①은 1문단(관계·업무 구조·권한), ②는 <a href="역량과 의지">A</a>, ③은 3문단(목표 내면화·동기 일깨움), ⑤는 4문단(윤리성·문화적 환경)에서 각각 답을 찾을 수 있어요. 특히 ②는 [A]가 성숙도를 <em>역량과 의지</em>로 나눈다고 분명히 밝히고 있죠. 그러나 ④ "두 리더십 스타일이 각각 <em>언제 처음 제시되었는가</em>"는 글이 다루지 않은 정보라, 답을 찾을 수 없으므로 ④가 정답입니다. 글은 스타일의 <em>내용</em>과 <em>적합한 상황</em>은 설명하지만, 그것이 등장한 시점은 말하지 않거든요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 아래의 핵심 개념에 대해 윗글에 제시된 학자들이 보일 수 있는 입장을 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[핵심 개념 1]</span> 리더의 스타일은 바뀔 수 있는가</strong>
+∙ 피들러: 리더의 스타일은 고정되어 있으므로, 효과를 높이려면 스타일과 상황을 맞추어야 한다고 본다. ·········· ①
+∙ 허시·블랜차드: 리더는 구성원의 성숙도에 따라 자신의 스타일을 바꾸어야 한다고 본다. ·········· ②</p>
+<p><strong><span class="boxmark">[핵심 개념 2]</span> 리더와 구성원의 관계를 무엇으로 보는가</strong>
+∙ 번스: 리더와 구성원의 관계를 보상과 처벌을 주고받는 거래로만 이해하는 것에 동의하지 않는다.
+∙ 거래적 리더십: 구성원이 기준을 만족하면 보상하고 규율을 위반하면 감시하는 데 중점을 둔다. ·········· ③</p>
+<p><strong><span class="boxmark">[핵심 개념 3]</span> 리더십의 효과는 무엇으로 결정되는가</strong>
+∙ 피들러: 리더십의 효과가 리더 개인의 능력만으로 결정된다고 본다. ·········· ④
+∙ 세 이론: 리더십의 효과가 상황·구성원·동기와의 관계 속에서 형성된다고 보는 흐름에 놓여 있다. ·········· ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong>
+④는 피들러가 "리더십의 효과가 리더 개인의 <em>능력만으로</em> 결정된다고 본다"고 했는데, 피들러는 정반대로 "리더십은 능력이 아니라 <em>적합성</em>"이라며 능력보다 스타일과 상황의 적합성을 강조했어요(1문단). 따라서 ④가 적절하지 않아 정답입니다. ① 피들러는 스타일을 고정으로 보고 상황을 맞추려 했고(1문단), ② 허시·블랜차드는 성숙도에 따라 스타일을 바꿔야 한다고 했으며([A]), ③ 거래적 리더십은 보상·감시에 중점을 두고(3문단), ⑤ 세 이론은 효과가 상황·구성원·동기와의 관계에서 형성된다고 보는 흐름(4문단)이라 모두 적절합니다.</p>
+<p><strong>14번 [3점] — 정답 ②</strong>
+을 병원의 팀장은 <em>공식적 권한이 거의 없고</em>(권한 ↓) <em>신뢰도 아직 없는</em>(관계 ↓) 상황이라, 세 변수가 모두 낮은 쪽으로 쏠려 상황의 호의성이 <em>매우 낮은</em> 편이에요. 피들러는 호의성이 <em>매우 낮을 때</em> 업무 지향적 리더가 낫다고 했으니 ②가 적절해 정답입니다. ① 갑 병원은 호의성이 <em>매우 높은</em> 편이고, 피들러는 매우 높을 때 <em>업무 지향</em>적 리더가 낫다고 했으므로 "관계 지향"은 틀렸어요. ③ 갑 병원 팀원은 역량·의지가 모두 <em>높으므로</em> 지시형이 아니라 위임형이 맞고, ④ 을 병원 팀원은 역량·의지가 모두 <em>낮으므로</em> 위임형이 아니라 지시형이 맞으며, ⑤ 보상·처벌로 운영하는 것은 변혁적이 아니라 <em>거래적</em> 리더십이므로 모두 적절하지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+두 병원이 같은 규모의 간호팀을 새로 꾸렸다. 갑 병원의 팀은 경력이 길고 자신감도 높은 간호사들로 이루어졌고, 팀장은 인사·평가에 관한 공식적 권한을 충분히 부여받았으며 팀원들과의 신뢰도 두텁다. 을 병원의 팀은 갓 입사해 경험이 적고 일에 대한 의욕도 낮은 간호사들로 이루어졌고, 팀장은 공식적 권한이 거의 없는 데다 팀원들과 아직 신뢰가 쌓이지 않았다. 두 팀장은 모두 좋은 성과를 내고자 하였다.</p>
+</blockquote>
+<ul>
+<li>① 갑 병원의 팀장은 상황의 호의성이 매우 높은 편이므로, 피들러에 따르면 관계 지향적 리더가 더 좋은 성과를 내겠군.</li>
+<li>② 을 병원의 팀장은 상황의 호의성이 매우 낮은 편이므로, 피들러에 따르면 업무 지향적 리더가 더 좋은 성과를 내겠군.</li>
+<li>③ 갑 병원의 팀원들은 역량과 의지가 모두 낮으므로, 허시와 블랜차드에 따르면 지시형 리더십이 효과적이겠군.</li>
+<li>④ 을 병원의 팀원들은 역량은 높지만 의지가 낮으므로, 허시와 블랜차드에 따르면 위임형 리더십이 효과적이겠군.</li>
+<li>⑤ 두 팀장이 보상과 처벌을 명확히 하여 팀을 운영한다면, 번스에 따르면 변혁적 리더십을 발휘한 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>업무 지향적 / 관계 지향적 리더</strong>: 일의 목표 달성을 앞세우는 리더가 업무 지향적, 구성원과의 관계·소통을 앞세우는 리더가 관계 지향적이에요.</li>
+<li><strong>과업 행동 / 관계 행동</strong>: 구체적으로 지시·감독하는 행동이 과업 행동, 인간적 관계를 맺고 동기를 북돋는 행동이 관계 행동입니다.</li>
+<li><strong>변혁적 리더십</strong>: 보상·처벌이 아니라 구성원의 동기와 창의성을 끌어올려, 스스로 기대 이상의 성과를 내게 하는 리더십.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 상황의 호의성과 알맞은 리더 (피들러)</div>
+<table>
+<thead>
+<tr>
+<th>상황의 호의성</th>
+<th>알맞은 리더 스타일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매우 낮음</td>
+<td>업무 지향적</td>
+</tr>
+<tr>
+<td>중간</td>
+<td>관계 지향적</td>
+</tr>
+<tr>
+<td>매우 높음</td>
+<td>업무 지향적</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>호의성이 <em>양 극단</em>(매우 낮거나 매우 높을 때)에서는 업무 지향, <em>중간</em>에서는 관계 지향 — 이 'U자 모양'의 짝을 기억해 두면 사례 문제를 빠르게 풀 수 있어요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>상황의 호의성이 "매우 높을 때" 피들러가 추천한 리더는?</div><div class='qa-a'>업무 지향적 리더입니다(중간일 때만 관계 지향).</div></div>
+<div class='qa-item'><div class='qa-q'>허시와 블랜차드의 위임형 리더십은 언제 효과적인가요?</div><div class='qa-a'>구성원의 역량과 의지가 <em>모두 높을 때</em>입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이 글이 밝힌 리더십 이론들의 의의는?</div><div class='qa-a'>리더십의 효과가 리더 한 사람의 자질로 환원되지 않고, 상황·구성원·동기와의 관계 속에서 형성된다는 점을 보여 주었다는 것입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2026학년도 수능 [14~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>철학에서 특정한 개인으로서의 인간을 ‘인격’, 그중 ‘나’를 ‘자아’라고 한다. 인격의 동일성은 모든 생각의 기반이다. 우리는 과거의 내가 현재의 나와 동일한 인격이기에 과거에 내가 한 약속을 현재의 내가 지켜야 한다고 판단한다. 칸트 이전까지 인격의 동일성을 설명하는 유력한 견해는, ‘생각하는 나’인 영혼이 단일한 주관으로서 시간의 흐름 속에 지속한다는 것이었다. ‘주관’은 인식의 주체를 가리키며, ‘인식’은 ‘앎’을 말한다.</p>
+<p>그러나 칸트는 ‘나는 생각한다.’, 즉 ‘자기의식’은 인식이 이루어지는 것을 가능하게 하는 조건 중 하나에 불과하다고 본다. 그러한 조건 자체는 무언가가 실재함을 보장하지 않는다. 그렇기에 자기의식은 ‘생각하는 나’가 단일한 주관으로서 실제로 존재한다는 것, 즉 ‘영혼의 실재함’을 보장하지 않고, ‘영혼이 실재할 가능성’을 열어둘 뿐이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>이를 바탕으로 칸트는 영혼이 인격이라는 견해를 반박한다. 칸트는 ‘시간의 흐름 속에서 스스로의 동일성을 의식하는 것은 인격이다.’와 ‘영혼이 자기의식을 한다.’라는 두 전제 모두 납득할 수 있다고 보지만, 그 전제들로부터 ‘영혼이 인격이다.’라는 결론은 도출되지 않는다고 지적한다. 첫 번째 전제에 등장하는 ‘의식’은 실제로 존재하는 무언가에 대해 의식한다는 뜻이지만, ‘생각하는 나는 생각한다.’와 다름없는 두 번째 전제에 등장하는 ‘의식’은 무언가가 꼭 실재함을 뜻하지는 않기 때문이다.</p></div>
+
+<p>칸트는 통시적으로 동일한 인격의 존재를 직접 증명하는 대신 ‘시간의 흐름 속에서 마주치는 복수의 주관이 동일한 인격으로 인식된다.’라는 가정이 반드시 선행되어야 한다고 제안한다. 그래야 경험적 판단, 윤리적 판단 등의 생각이 가능하기 때문이다. 생각의 구성은 시간의 흐름을 따르는데, 이러한 구성은 통시적으로 동일한 인격을 반드시 필요로 한다는 것이다.</p>
+<p>스트로슨은 자아를 인식하는 방식이 경험적 인식의 방식과 구별된다는 칸트의 견해에 동의하지만, 복수의 주관이 동일한 인격으로 인식된다고 가정하는 것은 철학적 상상에 불과하다고 칸트를 비판한다. 인격의 문제에서 신체를 간과한 칸트와 달리, 스트로슨은 인격을 의식과 신체의 복합체로 본다. 스트로슨에 따르면, 시공간적 세계 안에서 우리의 신체를 매개로 대상이 경험된다는 것은 과학적 사실이며 자아에 대한 인식은 경험적 인식들로부터 추상화되는 것이다. 그러므로 시공간적 세계에서의 경험이 인격의 통시적 동일성을 뒷받침한다고 그는 주장한다. 자기의식도 마찬가지로 경험에 의존하기에, 자기의식이 인식을 가능하게 하는 조건이라는 칸트의 견해는 잘못이라는 것이다.</p>
+<p>롱게네스는 통시적으로 동일한 자아가 없이는 경험적 인식이 성립할 수조차 없으므로, 자아에 대한 인식은 경험으로부터 추상화된 것이 아니라고 본다. 하지만 그는 자아와 인격이 시공간적 세계를 경험하는 인간에만 적용되는 개념이라고 주장한다. 롱게네스는 인간은 도덕적 존재이며 도덕적 존재로서의 인간은 자율성을 지닌 존재라는 칸트의 견해를 인정한다. 그러나 자율성을 지닌다는 것은 시공간적 세계를 살아가는 동안 경험하는 것들 사이에서 스스로 선택한다는 것을 뜻한다. 그러려면 신체가 있고 살아 있어야 하므로, 인격의 동일성의 기준은 각자가 자신의 것이라고 통시적으로 인식하는 신체라고 롱게네스는 주장한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 칸트에 따르면 자기의식은 영혼의 실재를 보장한다.</li>
+<li>② 칸트에 따르면 생각의 구성은 시간의 흐름과 독립적이다.</li>
+<li>③ 스트로슨에 따르면 자기의식은 인식을 가능하게 하는 조건이다.</li>
+<li>④ 스트로슨에 따르면 의식을 매개로 대상이 경험된다는 것은 과학적 사실이다.</li>
+<li>⑤ 롱게네스에 따르면 살아 있다는 것은 시공간적 세계 안에서의 선택에 필수적이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong><br />
+6문단에서 롱게네스는 시공간적 세계에서 경험하는 것들 사이에서 스스로 선택하려면 신체가 있고 살아 있어야 한다고 보았으므로 ⑤가 일치한다. ① 칸트에게 자기의식은 영혼의 실재함을 보장하지 않음(2문단), ② 생각의 구성은 시간의 흐름을 따름(4문단), ③ 스트로슨은 자기의식이 인식의 조건이라는 칸트의 견해를 잘못이라 봄(5문단), ④ 과학적 사실은 ‘신체를 매개로’ 대상이 경험된다는 것(5문단)이므로 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,555명 — ①2.0% ②6.7% ③11.3% ④17.3% ⑤63.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>[A]에서 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① ‘두 전제’를 연결하는 개념의 함의는 실재성과 관련하여 어떤 점에서 서로 다를까?</li>
+<li>② ‘복수의 주관이 동일한 인격으로 인식된다.’라는 가정은 어떤 점에서 반박되고 있을까?</li>
+<li>③ ‘영혼이 실재할 가능성’이 열려 있다는 것이 납득할 수 없는 견해인 근거는 무엇일까?</li>
+<li>④ 인격의 통시적 동일성이 ‘직접 증명’될 수 있다는 견해를 받아들여야 하는 근거는 무엇일까?</li>
+<li>⑤ ‘영혼이 자기의식을 한다.’라는 전제가 ‘생각하는 나는 생각한다.’라는 전제와 다름없는 근거는 무엇일까?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>15번 — 정답 ①</strong><br />
+[A]에서 칸트는 두 전제를 연결하는 개념인 ‘의식’의 함의를 실재성과 관련해 구분한다 — 첫 번째 전제의 ‘의식’은 실재하는 무언가에 대한 의식이지만, 두 번째 전제의 ‘의식’은 실재를 꼭 뜻하지 않는다. 따라서 ①의 답을 [A]에서 찾을 수 있다. ②의 가정에 대한 반박은 5문단(스트로슨), ③의 ‘영혼이 실재할 가능성’은 2문단의 칸트가 수용하는 견해, ④는 칸트가 직접 증명 대신 가정의 선행을 제안(4문단), ⑤의 재진술 근거는 1·2문단에서 확인되므로 [A]에서 답을 찾을 수 없다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①40.5% ②10.1% ③17.3% ④9.4% ⑤23.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 아래의 핵심 개념에 대해 윗글에 제시된 학자들이 보일 수 있는 입장을 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[핵심 개념 1]</span> 자아에 대한 인식과 경험적 인식</strong>
+∙ 칸트: 자아를 인식하는 방식과 시공간적 세계의 대상들을 경험적으로 인식하는 방식은 다르다고 본다. ·········· ①
+∙ 스트로슨: 시공간적 세계에서 이루어지는 경험적 인식은 자아에 대한 인식에 의존한다고 본다. ·········· ②</p>
+<p><strong><span class="boxmark">[핵심 개념 2]</span> 추상화 과정</strong>
+∙ 스트로슨: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의하지 않는다.
+∙ 롱게네스: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의한다. ·········· ③</p>
+<p><strong><span class="boxmark">[핵심 개념 3]</span> 통시적 인격과 도덕적 존재</strong>
+∙ 칸트, 롱게네스: 도덕적 존재로서의 인간이 자율성을 지닌다는 것을 수용한다. ·········· ④
+∙ 칸트, 스트로슨, 롱게네스: ‘시간의 흐름 속 동일한 인격으로서의 나’라는 개념을 수용한다. ·········· ⑤</p>
+</blockquote>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+5문단에서 스트로슨은 자아에 대한 인식이 신체를 매개로 한 경험적 인식들로부터 추상화되는 것이라고 보았다. 즉 경험적 인식이 자아에 대한 인식에 의존하는 것이 아니라 그 반대이므로 ②가 적절하지 않다. ①은 스트로슨이 동의한 칸트의 견해(5문단 첫 문장), ③은 6문단 첫 문장, ④는 6문단(칸트의 견해 인정), ⑤는 세 학자 모두 통시적 동일성 논의를 전개한다는 점(4·5·6문단)에서 적절하다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①3.9% ②51.1% ③17.8% ④10.6% ⑤16.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑: 두뇌에서 일어나는 의식을 스캔하여 프로그램으로 재현한다고 상상해 보자. 그런 경우, 본래의 자신과 재현된 의식은 동일한 인격이 아니야. 두뇌에서 일어나는 의식은 신체 전체의 기여로 일어난 것이기 때문이지. 즉, 프로그램으로 재현된 의식은 인격일 수 없어. ‘생각하는 나’의 지속만으로는 인격의 동일성이 보장될 수 없고, 살아 있는 신체도 인격의 구성 요소에 포함되어야 하거든.
+을: 그렇지 않아. 프로그램으로 재현된 의식은 본래의 자신과 동일한 인격이야. 비록 프로그램은 신체가 없지만 우리 두뇌와 프로그램이 수행하는 사고 기능에는 근본적인 차이가 없거든. 인격의 동일성은 어떤 가정도 두지 않고 이러한 사고 기능의 동일성만을 기준으로 판단해야 해.</p>
+</blockquote>
+<ul>
+<li>① 롱게네스의 견해에 의하면, 프로그램으로 재현된 의식만으로 인격이 될 수 있다는 갑의 입장은 옳겠군.</li>
+<li>② 스트로슨의 견해에 의하면, 신체를 지니지 않은 존재에게 인격이 귀속될 수 없다는 을의 입장은 옳지 않겠군.</li>
+<li>③ 칸트 이전까지 유력했던 견해에 의하면, ‘생각하는 나’의 지속만으로는 인격의 동일성을 보장하지 않는다는 갑의 입장은 옳지 않겠군.</li>
+<li>④ 칸트의 견해에 의하면, 인격의 통시적 동일성은 그것에 대한 가정이 선행될 필요 없이 사고 기능의 동일성을 통해 판단된다는 을의 입장은 옳겠군.</li>
+<li>⑤ 롱게네스의 견해에 의하면, 인간과 상이한 존재에 의해서도 동일하게 수행될 수 있는 사고 기능이 인격의 동일성을 판단하는 기준이라는 을의 입장은 옳겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>17번 — 정답 ③</strong><br />
+칸트 이전까지 유력했던 견해는 ‘생각하는 나’인 영혼이 단일한 주관으로서 시간의 흐름 속에 지속한다는 것으로, 이 견해에서는 ‘생각하는 나’의 지속이 곧 인격의 동일성을 설명한다. 따라서 그 지속만으로는 동일성이 보장될 수 없다는 갑의 입장을 옳지 않다고 볼 것이므로 ③이 적절하다. ① 롱게네스는 인격을 인간에만 적용되는 개념으로 봄 — 갑의 입장이 아니라도 재현된 의식만으로는 인격이 될 수 없다고 볼 것. ② 스트로슨은 인격을 의식과 신체의 복합체로 보므로 을의 입장을 옳다고 볼 것. ④ 칸트는 가정의 선행이 반드시 필요하다고 봄. ⑤ 롱게네스에게 동일성의 기준은 통시적으로 인식하는 신체다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①7.6% ②14.1% ③42.0% ④24.4% ⑤11.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>리더십 이론 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='리더십 이론 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

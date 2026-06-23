@@ -1,0 +1,374 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>후성 유전학을 이용한 항암 치료 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.07pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 똑같은 설계도를 가진 집인데 어떤 방은 불이 켜져 있고 어떤 방은 불이 꺼져 있다면 신기하지 않을까요? 우리 몸의 세포도 비슷합니다. 모든 세포는 똑같은 유전 정보(DNA)를 가지고 있는데도, 어떤 유전자는 켜지고 어떤 유전자는 꺼져요. 바로 이 "유전자의 스위치를 켜고 끄는 일"을 다루는 분야가 <strong>후성 유전학</strong>입니다.</p>
+<p><strong>후성 유전이란 DNA의 글자(염기 서열) 자체는 그대로 둔 채, 거기에 작은 화학 표시를 붙이거나 떼어서 유전자가 일하는 정도(발현)를 조절하는 것</strong>을 말해요. 대표적인 방법이 두 가지 있습니다. 하나는 <strong>DNA 메틸화</strong>예요. DNA의 특정 자리에 '메틸기'라는 작은 꼬리표를 붙이면, 그 유전자를 읽으려는 일꾼(전사 인자)이 다가오지 못해 유전자가 <em>꺼집니다</em>. 마치 문에 '출입 금지' 딱지를 붙이는 것과 같죠. 다른 하나는 <strong>히스톤 아세틸화</strong>입니다. DNA는 히스톤이라는 단백질 실패에 칭칭 감겨 있는데, 여기에 '아세틸기'를 붙이면 감긴 실이 느슨해져서 일꾼이 쉽게 들어와 유전자가 <em>켜져요</em>. 반대로 그 아세틸기를 떼어 내는 효소(HDAC)가 작동하면 실이 다시 단단히 감겨 유전자가 꺼집니다.</p>
+<p>이 스위치가 잘못 눌리면 어떻게 될까요? 우리 몸에는 세포가 함부로 늘어나지 못하게 막는 <strong>종양 억제 유전자</strong>라는 브레이크가 있어요. 그런데 이 브레이크 유전자에 메틸기가 잔뜩 붙어 꺼져 버리면, 세포는 브레이크 없는 자동차처럼 끝없이 불어나 결국 <strong>암세포</strong>가 됩니다. 바로 여기서 희망이 생겨요. 잘못 붙은 화학 표시는 <strong>다시 떼어 낼 수 있기 때문</strong>입니다(이를 '되돌릴 수 있다', 곧 <em>가역적</em>이라고 해요). 잘못 붙은 메틸기를 떼어 내는 약, 떨어진 아세틸기를 지켜 주는 약을 쓰면 꺼졌던 브레이크 유전자를 다시 켤 수 있어요. 이렇게 후성 유전의 오류를 바로잡아 암을 치료하려는 것이 <strong>후성 유전학을 이용한 항암 치료</strong>입니다.</p>
+<blockquote>
+<p>한마디로: <strong>암은 DNA 글자가 망가져서만 생기는 게 아니라, 멀쩡한 유전자의 '스위치'가 잘못 눌려서도 생긴다</strong>는 것, 그리고 그 스위치는 <em>되돌릴 수 있어서</em> 약으로 다시 켤 수 있다는 것 — 이 두 가지가 이 단원의 핵심이에요.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>후성 유전(DNA 메틸화·히스톤 아세틸화)이 유전자 발현을 조절하고, 그 오류가 암을 일으키며, 다시 그 오류를 약으로 바로잡는다</strong>는 큰 줄기가 있습니다. 같은 화학 변형이라도 어디에 붙느냐·붙느냐 떼이느냐에 따라 유전자를 켜기도 끄기도 한다는 점이 이 단원의 묘미예요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>후성 유전적 조절  (오류)▶  정상 세포 → 암세포  (교정)▶  후성 유전적 항암 치료<small>"메틸화=억제 / 아세틸화=촉진"     "브레이크 유전자가 꺼짐"        "약으로 스위치를 다시 켬"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>메틸화는 왜 유전자를 <em>끄고</em>, 아세틸화는 왜 <em>켜는지</em>, 같은 세포 안에서 두 화학 변형이 어떻게 반대로 작동하는지를 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>잘못된 스위치를 <em>바로잡는 약</em>을 들여다봅니다. 빠르게 분열하는 세포를 무차별 공격하던 기존 항암제의 한계와, 효소를 저해해 꺼진 유전자를 되살리는 새 항암제의 작동·전망을 따집니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>후성 유전적 오류의 <em>갈래</em>(메틸화 과다·아세틸화 상실)와 약물이 그것을 바로잡는 <em>두 가지 방식</em>을 나누어, 어떤 오류에 어떤 약이 듣는지를 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 후성 유전이 유전자를 어떻게 켜고 끄는지, 그 오류가 어떻게 암이 되는지, 그리고 그 오류를 어떻게 약으로 되돌리는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>생명체의 유전 정보는 DNA의 염기 서열에 저장되어 있다. 동일한 염기 서열을 가진 세포라도 어떤 유전자가 발현되는지는 서로 다를 수 있는데, 이러한 차이는 후성 유전으로 설명된다. 후성 유전이란 DNA의 염기 서열은 바꾸지 않은 채, 화학적 변형을 통해 유전자의 전사를 조절하는 과정이다. 전사는 DNA의 유전 정보가 전령 RNA로 옮겨지는 과정으로, 이 전령 RNA를 바탕으로 단백질이 합성되므로 전사가 억제되면 해당 유전자의 발현도 억제된다. 전사가 시작되려면 전사 인자라 불리는 단백질들이 유전자의 특정 부위에 결합하여 전사 장치를 불러 모아야 하므로, 전사 인자가 그 부위에 접근하고 결합할 수 있는지가 발현 여부를 좌우한다. 후성 유전적 변형은 바로 이 접근과 결합의 조건을 바꾸어 전사를 조절한다. 후성 유전의 대표적인 방식으로는 DNA 메틸화와 히스톤의 아세틸화가 있으며, 이 둘은 전사를 조절한다는 점에서는 같지만 그 효과가 서로 반대된다. 한 방식은 전사를 가로막아 유전자를 침묵시키고, 다른 한 방식은 전사를 촉진하여 유전자를 활성화한다. 이처럼 화학적 변형이 어디에 어떻게 일어나는지에 따라 같은 염기 서열을 가진 유전자가 켜지기도 하고 꺼지기도 한다.</p>
+<p>㉠<u>DNA 메틸화</u>는 유전자의 전사 조절 부위인 프로모터 안에 있는 사이토신에 메틸기가 부착되는 변형이다. 메틸화는 주로 사이토신과 구아닌이 나란히 놓인 서열에서 일어나며, DNA 메틸화 효소의 촉매 작용으로 진행된다. 메틸기가 부착된 DNA는 전사 인자들이 결합하기 어려운 구조를 이루므로, 전사 인자가 프로모터에 달라붙어 전사를 시작하는 일이 가로막힌다. 그 결과 해당 유전자의 발현이 차단된다. 메틸화는 유전자에 일종의 정지 신호를 붙이는 셈이어서, 메틸화가 일어난 유전자는 침묵하게 된다. 반면 ㉡<u>히스톤의 아세틸화</u>는 전사를 촉진하는 변형이다. 히스톤은 DNA가 감겨 있는 단백질 구조체로, 그 꼬리 부분에 있는 라이신 잔기에 아세틸기가 결합하면 히스톤과 DNA 사이의 결합이 느슨해진다. 단단히 감겨 있던 실타래가 풀리듯 구조가 헐거워지면, 전사 인자들이 DNA에 한결 쉽게 접근할 수 있게 되어 전사가 촉진되고 유전자 발현이 늘어난다. 그런데 히스톤 탈아세틸화 효소는 라이신 잔기에서 아세틸기를 다시 떼어 낸다. 아세틸기가 제거되면 히스톤과 DNA의 결합이 다시 조밀해져 전사 인자의 접근이 어려워지므로, 결국 유전자 발현이 억제된다. 이처럼 아세틸화는 발현을 촉진하지만 탈아세틸화는 발현을 억제하여, 아세틸기의 부착과 제거가 유전자의 활성을 양방향으로 조절한다.</p>
+<p>DNA 메틸화에 의한 억제와 히스톤 아세틸화에 의한 촉진은 한 세포 안에서 함께 작동하면서 유전자의 발현 수준을 정교하게 조율한다. 어떤 유전자가 충분히 발현되려면 그 프로모터에 메틸기가 과도하게 붙지 않아야 하고, 동시에 그 부위의 히스톤이 아세틸화된 상태로 유지되어야 한다. 메틸기가 과도하게 부착되면 전사 인자의 결합이 막히고, 아세틸기가 제거되면 DNA가 조밀하게 감겨 접근이 어려워지므로, 두 변화가 함께 일어나면 유전자는 강하게 침묵한다. 반대로 메틸기가 적게 유지되고 히스톤이 아세틸화된 상태이면 전사 인자가 자유롭게 접근하여 유전자가 활발히 발현된다. 두 변형이 서로 반대로 기울 때, 곧 메틸기는 적은데 아세틸기도 제거되어 있거나 메틸기는 많은데 아세틸기는 유지된 경우에는, 한 변형은 발현을 높이는 쪽으로 다른 변형은 낮추는 쪽으로 작용하여 발현 수준이 그 사이에서 정해진다. 따라서 한 유전자의 발현 정도는 메틸화와 아세틸화라는 두 변형이 어느 쪽으로 기울어 있는가에 따라 결정된다. 같은 효소라도 작용 방향에 따라 결과가 갈리는데, 메틸화 효소는 메틸기를 붙여 발현을 낮추고, 탈아세틸화 효소는 아세틸기를 떼어 발현을 낮추는 반면, 아세틸화가 유지되면 발현이 높아진다. 이처럼 부착과 제거라는 반대 방향의 작용이 같은 화학 변형 축에서 일어나, 하나의 표지가 어느 방향으로 변하느냐에 따라 유전자가 켜지기도 꺼지기도 한다. 이렇듯 후성 유전적 조절은 염기 서열을 그대로 둔 채 화학적 표지의 부착과 제거만으로 유전자의 작동을 여닫는, 세포의 정교한 조절 장치라 할 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 후성 유전은 DNA의 염기 서열을 바꾸지 않고 유전자의 전사를 조절한다.</li>
+<li>② 전사가 억제되면 해당 유전자를 바탕으로 한 단백질의 합성도 억제된다.</li>
+<li>③ 히스톤의 라이신 잔기에 아세틸기가 결합하면 히스톤과 DNA의 결합이 조밀해진다.</li>
+<li>④ DNA 메틸화는 주로 사이토신과 구아닌이 나란히 놓인 서열에서 일어난다.</li>
+<li>⑤ 메틸기가 부착된 DNA는 전사 인자들이 결합하기 어려운 구조를 이룬다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 전사 인자가 프로모터에 결합하는 일을 수월하게 한다.</li>
+<li>② ㉡은 ㉠과 달리 히스톤과 DNA의 결합을 느슨하게 하여 전사를 촉진한다.</li>
+<li>③ ㉠은 히스톤의 꼬리 부분에, ㉡은 프로모터의 사이토신에 화학적 표지를 붙인다.</li>
+<li>④ ㉠과 ㉡은 모두 화학적 표지를 부착함으로써 유전자의 발현을 억제한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 DNA의 염기 서열을 변화시켜 유전자의 전사를 조절한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구진이 동일한 유전자 G를 가진 세포 ㉮와 세포 ㉯에서 G의 발현 정도를 비교하였다. 세포 ㉮에서는 G의 프로모터에 있는 사이토신에 메틸기가 거의 붙어 있지 않았고, 그 부위의 히스톤은 아세틸기가 결합된 상태로 유지되고 있었다. 반면 세포 ㉯에서는 같은 프로모터의 사이토신에 메틸기가 과도하게 붙어 있었고, 그 부위의 히스톤에서는 아세틸기가 제거되어 있었다. 측정 결과 유전자 G는 세포 ㉮에서는 활발히 발현되었으나 세포 ㉯에서는 거의 발현되지 않았다.</p>
+</blockquote>
+<ul>
+<li>① 세포 ㉮의 히스톤이 아세틸화 상태로 유지된 것과 세포 ㉯에서 메틸기가 과도하게 붙은 것은 G의 발현을 같은 방향으로 이끌었겠군.</li>
+<li>② 세포 ㉮에서 G가 활발히 발현된 것은 전사 인자가 프로모터에 비교적 자유롭게 접근할 수 있었기 때문이겠군.</li>
+<li>③ 세포 ㉯에서 사이토신에 메틸기가 과도하게 붙은 것은 G의 전사를 가로막는 방향으로 작용하였겠군.</li>
+<li>④ 세포 ㉯에서 히스톤의 아세틸기가 제거된 것은 DNA가 조밀하게 감겨 전사 인자의 접근을 어렵게 하였겠군.</li>
+<li>⑤ 동일한 유전자 G의 발현 차이는 염기 서열의 차이가 아니라 화학적 표지의 부착과 제거의 차이에서 비롯되었겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2023학년도 6월 [10~13]</div>
+<div class='passage exam-ps'><p>혈액은 세포에 필요한 물질을 공급하고 노폐물을 제거한다. 만약 혈관 벽이 손상되어 출혈이 생기면 손상 부위의 혈액이 응고되어 혈액 손실을 막아야 한다. 혈액 응고는 섬유소 단백질인 피브린이 모여 형성된 섬유소 그물이 혈소판이 응집된 혈소판 마개와 뭉쳐 혈병이라는 덩어리를 만드는 현상이다. 혈액 응고는 혈관 속에서도 일어나는데, 이때의 혈병을 혈전이라 한다. 이물질이 쌓여 동맥 내벽이 두꺼워지는 동맥 경화가 일어나면 그 부위에 혈전 침착, 혈류 감소 등이 일어나 혈관 질환이 발생하기도 한다. 이러한 혈액의 응고 및 원활한 순환에 비타민 K가 중요한 역할을 한다.</p>
+<p>비타민 K는 혈액이 응고되도록 돕는다. 지방을 뺀 사료를 먹인 병아리의 경우, 지방에 녹는 어떤 물질이 결핍되어 혈액 응고가 지연된다는 사실을 발견하고 그 물질을 비타민 K로 명명했다. 혈액 응고는 단백질로 이루어진 다양한 인자들이 관여하는 연쇄 반응에 의해 일어난다. 우선 여러 혈액 응고 인자들이 활성화된 이후 프로트롬빈이 활성화되어 트롬빈으로 전환되고, 트롬빈은 혈액에 녹아 있는 피브리노겐을 불용성인 피브린으로 바꾼다. 비타민 K는 프로트롬빈을 비롯한 혈액 응고 인자들이 간세포에서 합성될 때 이들의 활성화에 관여한다. 활성화는 칼슘 이온과의 결합을 통해 이루어지는데, 이들 혈액 단백질이 칼슘 이온과 결합하려면 카르복실화되어 있어야 한다. 카르복실화는 단백질을 구성하는 아미노산 중 글루탐산이 감마-카르복시글루탐산으로 전환되는 것을 말한다. 이처럼 비타민 K에 의해 카르복실화되어야 활성화가 가능한 표적 단백질을 비타민 K-의존성 단백질이라 한다.</p>
+<p>비타민 K는 식물에서 합성되는 ㉠비타민 K1과 동물 세포에서 합성되거나 미생물 발효로 생성되는 ㉡비타민 K2로 나뉜다. 녹색 채소 등은 비타민 K1을 충분히 함유하므로 일반적인 권장 식단을 따르면 혈액 응고에 차질이 생기지 않는다.</p>
+<p>그런데 혈관 건강과 관련된 비타민 K의 또 다른 중요한 기능이 발견되었고, 이는 칼슘의 역설과도 관련이 있다. 나이가 들면 뼈 조직의 칼슘 밀도가 낮아져 골다공증이 생기기 쉬운데, 이를 방지하고자 칼슘 보충제를 섭취한다. 하지만 칼슘 보충제를 섭취해서 혈액 내 칼슘 농도는 높아지나 골밀도는 높아지지 않고, 혈관 벽에 칼슘염이 침착되는 혈관 석회화가 진행되어 동맥 경화 및 혈관 질환이 발생하는 경우가 생긴다. 혈관 석회화는 혈관 근육 세포 등에서 생성되는 MGP라는 단백질에 의해 억제되는데, 이 단백질이 비타민 K-의존성 단백질이다. 비타민 K가 부족하면 MGP 단백질이 활성화되지 못해 혈관 석회화가 유발된다는 것이다.</p>
+<p>비타민 K1과 K2는 모두 비타민 K-의존성 단백질의 활성화를 유도하지만 K1은 간세포에서, K2는 그 외의 세포에서 활성이 높다. 그러므로 혈액 응고 인자의 활성화는 주로 K1이, 그 외의 세포에서 합성되는 단백질의 활성화는 주로 K2가 담당한다. 이에 따라 일부 연구자들은 비타민 K의 권장량을 K1과 K2로 구분하여 설정해야 하며, K2가 함유된 치즈, 버터 등의 동물성 식품과 발효 식품의 섭취를 늘려야 한다고 권고한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 혈전이 형성되면 섬유소 그물이 뭉쳐 혈액의 손실을 막는다.</li>
+<li>② 혈액의 응고가 이루어지려면 혈소판 마개가 형성되어야 한다.</li>
+<li>③ 혈관 손상 부위에 혈병이 생기려면 혈소판이 응집되어야 한다.</li>
+<li>④ 혈관 경화를 방지하려면 이물질이 침착되지 않게 해야 한다.</li>
+<li>⑤ 혈관 석회화가 계속되면 동맥 내벽과 혈류에 변화가 생긴다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>칼슘의 역설에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 칼슘 보충제를 섭취하면 오히려 비타민 K1의 효용성이 감소된다는 것이겠군.</li>
+<li>② 칼슘 보충제를 섭취해도 뼈 조직에서는 칼슘이 여전히 필요하다는 것이겠군.</li>
+<li>③ 칼슘 보충제를 섭취해도 골다공증은 막지 못하나 혈관 건강은 개선되는 경우가 있다는 것이겠군.</li>
+<li>④ 칼슘 보충제를 섭취하면 혈액 내 단백질이 칼슘과 결합하여 혈관 벽에 칼슘이 침착된다는 것이겠군.</li>
+<li>⑤ 칼슘 보충제를 섭취해도 혈액으로 칼슘이 흡수되지 않아 골다공증 개선이 안 되는 경우가 있다는 것이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 우리 몸의 간세포에서 합성된다.</li>
+<li>② ㉡은 ㉠과 달리 지방과 함께 섭취해야 한다.</li>
+<li>③ ㉡은 ㉠과 달리 표적 단백질의 아미노산을 변형하지 않는다.</li>
+<li>④ ㉠과 ㉡은 모두 표적 단백질의 활성화 이전 단계에 작용한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 일반적으로는 결핍이 발생해 문제가 되는 경우는 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 참고할 때 〈보기〉의 (가)～(다)를 투여함에 따라 체내에서 일어나는 반응을 예상한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 혈전으로 인한 질환을 예방 또는 치료하는 약물이다.
+(가) 와파린: 트롬빈에는 작용하지 않고 비타민 K의 작용을 방해함.
+(나) 플라스미노겐 활성제: 피브리노겐에는 작용하지 않고 피브린을 분해함.
+(다) 헤파린: 비타민 K-의존성 단백질에는 작용하지 않고 트롬빈의 작용을 억제함.</p>
+</blockquote>
+<ul>
+<li>① (가)의 지나친 투여는 혈관 석회화를 유발할 수 있겠군.</li>
+<li>② (나)는 이미 뭉쳐 있던 혈전이 풀어지도록 할 수 있겠군.</li>
+<li>③ (다)는 혈액 응고 인자와 칼슘 이온의 결합을 억제하겠군.</li>
+<li>④ (가)와 (다)는 모두 피브리노겐이 전환되는 것을 억제하겠군.</li>
+<li>⑤ (나)와 (다)는 모두 피브린 섬유소 그물의 형성을 억제하겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>정상적인 세포에서는 종양 억제 유전자가 발현되어 세포의 분열을 조절하고 무제한 증식을 막는다. 종양 억제 유전자가 만들어 내는 단백질은 세포 주기를 점검하여 손상된 세포가 함부로 분열하지 못하게 하고, 수명을 다한 세포가 스스로 사멸하도록 하는 세포 자살 프로그램을 작동시킨다. 세포 주기는 세포가 분열을 준비하고 실제로 나뉘는 일련의 단계로, 이 점검 기능은 단계마다 세포의 상태를 확인하여 이상이 있으면 분열을 멈추게 한다. 그런데 후성 유전적 조절에 오류가 생겨 종양 억제 유전자의 프로모터에 메틸화가 과도하게 일어나거나 그 부위의 히스톤에서 아세틸기가 제거되면, 전사 인자가 결합하거나 DNA에 접근하기 어려워져 종양 억제 유전자의 전사가 억제되고 그 기능이 상실된다. 이렇게 브레이크 구실을 하던 유전자가 침묵하면 세포 주기 점검이 무너져 이상이 있는 세포도 분열을 계속하고, 세포 자살 프로그램이 비활성화되어 수명을 다한 세포도 사멸하지 않는다. 그 결과 세포는 끝없이 증식하는 암세포로 변질된다. 이때 염기 서열 자체가 손상된 것이 아니라 그 위에 붙은 화학적 표지가 잘못 놓였을 뿐이라는 점이, 후성 유전적 항암 치료가 성립하는 출발점이 된다.</p>
+<p>㉠<u>기존의 항암제</u>는 주로 비정상적으로 빠르게 분열하는 암세포의 특성을 표적으로 삼아 암세포를 공격하는 방식이었다. 빠르게 분열하는 세포일수록 손상에 취약하므로, 분열이 왕성한 암세포가 우선적으로 파괴되리라 기대한 것이다. 그러나 이 방식은 분열 자체를 표적으로 삼는 까닭에, 정상 세포 가운데 분열 속도가 빠른 세포에도 손상을 입혀 심각한 부작용을 일으킨다는 한계가 있었다. 이러한 한계를 넘어서기 위해 후성 유전적 오류 자체를 바로잡는 ㉡<u>새로운 항암제</u>가 등장하였다. 새로운 항암제는 암세포를 무차별적으로 파괴하는 대신, 잘못 눌린 후성 유전적 스위치를 복원하여 암세포가 정상 세포처럼 행동하도록 유도한다. 후성 유전적 항암제인 5-아자사이티딘과 같은 약물은 DNA 메틸화 효소를 저해하는 작용을 한다. 메틸화 효소가 새 메틸기를 붙이지 못하게 막으면, 종양 억제 유전자의 프로모터에 과도하게 쌓여 있던 메틸기가 점차 줄어들어 전사 인자가 다시 결합할 수 있게 된다. 이 약물은 이렇게 메틸화를 제거하여 전사 기능을 회복시키며, 그 결과 억제되어 있던 종양 억제 유전자의 발현이 다시 활성화되어 암세포의 증식이 저지된다. 한편 보리노스타트와 같은 약물은 히스톤 탈아세틸화 효소를 저해하여 히스톤의 아세틸화 상태를 유지시킨다. 탈아세틸화 효소가 아세틸기를 떼어 내지 못하면 히스톤은 아세틸화된 상태로 남아 DNA와의 결합이 느슨하게 유지되므로, 전사 인자가 접근하기 쉬운 구조가 보존된다. 그리하여 억제되어 있던 종양 억제 유전자의 발현이 촉진되고, 암세포에서 세포 자살 프로그램이 다시 작동하여 암세포가 사멸하게 된다. 이처럼 두 약물은 작용하는 효소는 다르지만, 꺼져 있던 종양 억제 유전자를 다시 켠다는 점에서는 같은 목표를 향한다.</p>
+<p>새로운 항암제가 효과를 낼 수 있는 까닭은 후성 유전적 오류가 돌연변이와 달리 ㉮<u>되돌릴 수 있는 성질</u>을 지니기 때문이다. 염기 서열 자체가 바뀌는 돌연변이는 본래 상태로 복구하기 어렵지만, 화학적 표지가 잘못 붙거나 떨어진 후성 유전적 오류는 효소의 작용을 조절하여 바로잡을 수 있다. 따라서 적절한 약물 치료를 통해 잘못된 표지를 제거하거나 유지시키면, 암세포는 종양 억제 유전자의 기능을 회복하여 원래의 정상 세포에 가까운 상태로 돌아올 수 있다. 다만 이러한 후성 유전적 항암제가 모든 암에 똑같이 듣는 것은 아니다. 후성 유전적 오류가 암 발생에 크게 관여한 암종에서는 효과가 두드러지지만, 그렇지 않은 경우에는 효과가 제한적일 수 있다. 현재 후성 유전적 항암제는 일부 암종에서 치료 효과를 보이고 있으며, 더 다양한 암종에 적용하기 위한 임상 연구가 진행되고 있다. 이렇듯 후성 유전적 항암 치료는 암을 일으킨 조절의 오류를 직접 겨냥한다는 점에서, 빠르게 분열하는 세포를 공격하던 기존 방식과 구별되는 새로운 길을 열어 가고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 종양 억제 유전자가 만드는 단백질은 세포 주기를 점검하는 기능을 한다.</li>
+<li>② 5-아자사이티딘은 종양 억제 유전자의 프로모터에 메틸기를 추가로 부착한다.</li>
+<li>③ 종양 억제 유전자의 프로모터에 메틸화가 과도하게 일어나면 그 전사가 억제된다.</li>
+<li>④ 기존의 항암제는 분열 속도가 빠른 정상 세포에도 손상을 입힐 수 있다.</li>
+<li>⑤ 후성 유전적 항암제는 일부 암종에서 치료 효과를 보이고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 후성 유전적 오류를 바로잡아 암세포가 정상 세포처럼 행동하도록 유도한다.</li>
+<li>② ㉡은 빠르게 분열하는 세포의 특성을 표적으로 삼아 암세포를 공격한다.</li>
+<li>③ ㉠은 ㉡과 달리 정상 세포 중 분열이 빠른 세포에도 손상을 줄 수 있다.</li>
+<li>④ ㉡은 ㉠과 달리 암세포를 무차별적으로 파괴하여 증식을 막는다.</li>
+<li>⑤ ㉠과 ㉡은 모두 종양 억제 유전자의 메틸화를 강화하여 암세포를 사멸시킨다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span><span class="pts">[3점]</span> 다음은 어느 과학 잡지 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉰에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 과학 잡지〉</strong>
+최근 연구진은 종양 억제 유전자의 프로모터가 과도하게 메틸화되어 발현이 꺼진 어느 암세포에, 히스톤 탈아세틸화 효소를 저해하는 약물과 DNA 메틸화 효소를 저해하는 약물을 함께 투여하는 ㉰병용 치료를 시도하였다. 그 결과 종양 억제 유전자의 발현이 단독 투여보다 더 크게 회복되었으며, 암세포의 증식이 억제되고 일부 암세포에서는 세포 자살 프로그램이 다시 작동하였다고 보고하였다.</p>
+</blockquote>
+<ul>
+<li>① ㉰에서 DNA 메틸화 효소를 저해하는 약물은 프로모터에 과도하게 붙은 메틸기를 제거하는 방향으로 작용하였겠군.</li>
+<li>② ㉰에서 히스톤 탈아세틸화 효소를 저해하는 약물은 히스톤의 아세틸화 상태를 유지시키는 방향으로 작용하였겠군.</li>
+<li>③ ㉰로 종양 억제 유전자의 발현이 회복된 것은 ㉮가 보여 주듯 후성 유전적 오류가 되돌릴 수 있는 성질을 지니기 때문이겠군.</li>
+<li>④ ㉰에서 세포 자살 프로그램이 다시 작동한 것은 종양 억제 유전자의 기능이 회복된 것과 관련되겠군.</li>
+<li>⑤ ㉰에서 발현이 단독 투여보다 더 크게 회복된 것은 두 약물이 모두 프로모터의 메틸기를 추가로 부착하였기 때문이겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29]</div>
+<div class='passage exam-ps'><p>신체의 세포, 조직, 장기가 손상되어 더 이상 제 기능을 하지 못할 때에 이를 대체하기 위해 이식을 실시한다. 이때 이식으로 옮겨 붙이는 세포, 조직, 장기를 이식편이라 한다. 자신이나 일란성 쌍둥이의 이식편을 이용할 수 없다면 다른 사람의 이식편으로 ‘동종 이식’을 실시한다. 그런데 우리의 몸은 자신의 것이 아닌 물질이 체내로 유입될 경우 면역 반응을 일으키므로, 유전적으로 동일하지 않은 이식편에 대해 항상 거부 반응을 일으킨다. 면역적 거부 반응은 면역 세포가 표면에 발현하는 주조직적합복합체(MHC) 분자의 차이에 의해 유발된다. 개체마다 MHC에 차이가 있는데 서로 간의 유전적 거리가 멀수록 MHC에 차이가 커져 거부 반응이 강해진다. 이를 막기 위해 면역 억제제를 사용하는데, 이는 면역 반응을 억제하여 질병 감염의 위험성을 높인다.</p>
+<p>이식에는 많은 비용이 소요될 뿐만 아니라 이식이 가능한 동종 이식편의 수가 매우 부족하기 때문에 이를 대체하는 방법이 개발되고 있다. 우선 인공 심장과 같은 ‘전자 기기 인공 장기’를 이용하는 방법이 있다. 하지만 이는 장기의 기능을 일시적으로 대체하는 데 사용되며, 추가 전력 공급 및 정기적 부품 교체 등이 요구되는 단점이 있고, 아직 인간의 장기를 완전히 대체할 만큼 정교한 단계에 이르지는 못했다.</p>
+<p>다음으로는 사람의 조직 및 장기와 유사한 다른 동물의 이식편을 인간에게 이식하는 ‘이종 이식’이 있다. 그런데 이종 이식은 동종 이식보다 거부 반응이 훨씬 심하게 일어난다. 특히 사람이 가진 자연항체는 다른 종의 세포에서 발현되는 항원에 반응하는데, 이로 인해 이종 이식편에 대해서 초급성 거부 반응 및 급성 혈관성 거부 반응이 일어난다. 이런 거부 반응을 일으키는 유전자를 제거한 형질 전환 미니돼지에서 얻은 이식편을 이식하는 실험이 성공한 바 있다. 미니돼지는 장기의 크기가 사람의 것과 유사하고 번식력이 높아 단시간에 많은 개체를 생산할 수 있다는 장점이 있어, 이를 이용한 이종 이식편을 개발하기 위한 연구가 진행되고 있다.</p>
+<p>이종 이식의 또 다른 문제는 ㉠내인성 레트로바이러스이다. 내인성 레트로바이러스는 생명체의 DNA의 일부분으로, 레트로바이러스로부터 유래된 것으로 여겨지는 부위들이다. 이는 바이러스의 활성을 가지지 않으며 사람을 포함한 모든 포유류에 존재한다. ㉡레트로바이러스는 자신의 유전 정보를 RNA에 담고 있고 역전사 효소를 갖고 있는 바이러스로서, 특정한 종류의 세포를 감염시킨다. 유전 정보가 담긴 DNA로부터 RNA가 생성되는 전사 과정만 일어날 수 있는 다른 생명체와는 달리, 레트로바이러스는 다른 생명체의 세포에 들어간 후 역전사 과정을 통해 자신의 RNA를 DNA로 바꾸고 그 세포의 DNA에 끼어들어 감염시킨다. 이후에는 다른 바이러스와 마찬가지로 자신이 속해 있는 생명체를 숙주로 삼아 숙주 세포의 시스템을 이용하여 복제, 증식하고 일정한 조건이 되면 숙주 세포를 파괴한다.</p>
+<p>그런데 정자, 난자와 같은 생식 세포가 레트로바이러스에 감염되고도 살아남는 경우가 있었다. 이런 세포로부터 유래된 자손의 모든 세포가 갖게 된 것이 내인성 레트로바이러스이다. 내인성 레트로바이러스는 세대가 지나면서 돌연변이로 인해 염기 서열의 변화가 일어나며 해당 세포 안에서는 바이러스로 활동하지 않는다. 그러나 내인성 레트로바이러스를 떼어 내어 다른 종의 세포 속에 주입하면 이는 레트로바이러스로 변환되어 그 세포를 감염시키기도 한다. 따라서 미니돼지의 DNA에 포함된 내인성 레트로바이러스를 효과적으로 제거하는 기술이 개발 중에 있다.</p>
+<p>그동안의 대체 기술과 관련된 연구 성과를 토대로 ⓐ이상적인 이식편을 개발하기 위해 많은 연구가 수행되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동종 간보다 이종 간이 MHC 분자의 차이가 더 크다.</li>
+<li>② 면역 세포의 작용으로 인해 장기 이식의 거부 반응이 일어난다.</li>
+<li>③ 이종 이식을 하는 것만으로도 바이러스 감염의 원인이 될 수 있다.</li>
+<li>④ 포유동물은 과거에 어느 조상이 레트로바이러스에 의해 감염된 적이 있다.</li>
+<li>⑤ 레트로바이러스는 숙주 세포의 역전사 효소를 이용하여 RNA를 DNA로 바꾼다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이식편의 비용을 낮추어서 정기 교체가 용이해야 한다.</li>
+<li>② 이식편은 대체를 하려는 장기와 크기가 유사해야 한다.</li>
+<li>③ 이식편과 수혜자 사이의 유전적 거리를 극복해야 한다.</li>
+<li>④ 이식편은 짧은 시간에 대량으로 생산이 가능해야 한다.</li>
+<li>⑤ 이식편이 체내에서 거부 반응을 유발하지 않아야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근에 줄기 세포 연구와 3D 프린팅 기술이 급속도로 발전하고 있다. 줄기 세포는 인체의 모든 세포나 조직으로 분화할 수 있다. 그러므로 수혜자 자신의 줄기 세포만을 이용하여 3D 바이오 프린팅 기술로 제작한 ㉮세포 기반 인공 이식편을 만들 수 있을 것으로 전망된다. 이미 미니 폐, 미니 심장 등의 개발 성공 사례도 보고되었다.</p>
+</blockquote>
+<ul>
+<li>① 전자 기기 인공 장기와 달리 전기 공급 없이도 기능을 유지할 수 있겠군.</li>
+<li>② 동종 이식편과 달리 이식 후 면역 억제제를 사용할 필요가 없겠군.</li>
+<li>③ 동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없겠군.</li>
+<li>④ 이종 이식편과 달리 유전자를 조작하는 과정이 필요하지는 않겠군.</li>
+<li>⑤ 이종 이식편과 달리 자연항체에 의한 초급성 거부 반응이 일어나지 않겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자신이 속해 있는 생명체의 모든 세포의 DNA에 존재한다.</li>
+<li>② ㉡은 ㉠과 달리 자신의 유전 정보를 DNA에 담을 수 없다.</li>
+<li>③ ㉡은 ㉠과 달리 자신이 속해 있는 생명체에 면역 반응을 일으키지 않는다.</li>
+<li>④ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 유전 정보를 가지고 있다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 세포를 감염시켜 파괴한다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>후성 유전적 오류에 의한 암 발생은 종양 억제 유전자의 발현이 어떻게 차단되는가에 따라 여러 갈래로 나뉜다. 종양 억제 유전자가 정상적으로 발현되려면 그 프로모터에 메틸기가 과도하게 붙지 않아야 하고 그 부위의 히스톤이 아세틸화된 상태로 유지되어야 한다. 그런데 ㉠<u>프로모터의 과도한 메틸화</u>가 일어나면 전사 인자의 결합이 막혀 유전자가 침묵하고, ㉡<u>히스톤의 아세틸기 제거</u>가 일어나면 DNA가 조밀하게 감겨 전사 인자의 접근이 어려워져 역시 유전자가 침묵한다. 두 오류는 모두 종양 억제 유전자를 꺼지게 한다는 결과는 같지만, 발현을 차단하는 방식은 서로 다르다. 또한 두 오류는 한쪽만으로도, 또는 함께 작용해서도 암 발생에 관여할 수 있어 암 발생의 경로를 다양하게 만든다.</p>
+<p>후성 유전적 항암제는 이렇게 갈라진 오류를 각각의 방식에 맞추어 바로잡는다. 항암제의 작용기제는 크게 잘못 붙은 표지를 제거하는 방식과 떨어진 표지를 유지시키는 방식으로 나눌 수 있다. 잘못 붙은 표지를 제거하는 약물은 DNA 메틸화 효소를 저해하여, 종양 억제 유전자의 프로모터에 과도하게 부착된 메틸기를 제거함으로써 막혀 있던 전사를 회복시킨다. 이 방식은 메틸화가 전사 인자의 결합을 가로막아 유전자를 끈 첫째 오류에 대응한다. 떨어진 표지를 유지시키는 약물은 히스톤 탈아세틸화 효소를 저해하여, 제거되려던 아세틸기를 히스톤에 유지시킴으로써 헐거워진 구조를 통해 전사를 촉진한다. 이 방식은 아세틸기가 제거되어 DNA가 조밀하게 감겨 유전자를 끈 둘째 오류에 대응한다. 두 방식은 작용하는 효소와 표지가 다르지만, 결국 꺼져 있던 종양 억제 유전자를 다시 켠다는 점에서는 같은 목표를 향한다. 어떤 오류가 암 발생을 주도했는가에 따라 어느 방식의 약물이 더 효과적인지가 달라지므로, 오류의 갈래를 가려내는 일이 치료의 방향을 정하는 데 중요하다. 두 오류가 함께 작용한 경우에는 두 방식의 약물을 함께 써서 양쪽 표지를 모두 바로잡으려는 시도가 이루어지기도 한다.</p>
+<p>한편 암 발생의 경로에 대한 설명은 후성 유전학의 발전에 따라 넓어졌다. 종양 억제 유전자에는 부모로부터 물려받은 두 개의 대립 유전자가 있는데, 기존의 설명에서는 이 두 대립 유전자 모두에 돌연변이가 일어나야 종양이 생긴다고 보았다. 그러나 후성 유전적 오류가 알려지면서, 하나의 대립 유전자에는 돌연변이가, 다른 하나에는 후성 유전적 오류가 일어나도 종양이 생길 수 있고, 나아가 두 대립 유전자 모두에 후성 유전적 오류만 일어나도 암이 발병할 수 있음이 밝혀졌다. 이처럼 암의 발생 기전이 돌연변이 하나로 설명되던 것보다 훨씬 다양하고 복잡하다는 점이 드러났다. 특히 두 대립 유전자 모두에 후성 유전적 오류만 일어난 경우는, 염기 서열 자체는 손상되지 않았으므로 후성 유전적 항암제로 발현을 회복시킬 여지가 크다.</p>
+<p>다만 후성 유전적 항암제가 모든 암을 동일하게 치료할 수 있는 것은 아니다. 후성 유전적 오류가 발병에 크게 관여한 암종에서는 잘못된 표지를 바로잡아 종양 억제 유전자를 되살릴 수 있으나, 돌연변이가 발병을 주도한 경우에는 염기 서열 자체가 바뀌어 있어 화학적 표지를 조절하는 것만으로는 기능을 온전히 회복시키기 어렵다. 돌연변이로 손상된 염기 서열은 화학적 표지를 떼거나 붙이는 작용으로는 본래대로 되돌릴 수 없기 때문이다. 그럼에도 후성 유전적 오류가 되돌릴 수 있는 성질을 지닌다는 점은, 암 치료에서 새로운 가능성을 연다. 어떤 오류가 어떤 방식으로 유전자를 껐는지를 밝히고 그에 맞는 약물을 고른다면, 암세포를 정상에 가까운 상태로 되돌릴 길이 넓어지기 때문이다. 특히 두 대립 유전자 모두에 후성 유전적 오류만 일어난 경우라면, 두 방식의 약물을 적절히 조합하여 양쪽 표지를 모두 바로잡음으로써 발현을 회복시킬 여지가 크다. 현재 여러 암종을 대상으로 한 임상 연구가 진행되고 있으며, 오류의 갈래에 따라 약물을 선택하거나 병용하는 전략이 함께 모색되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 종양 억제 유전자가 정상적으로 발현되려면 어떤 조건이 갖추어져야 할까?</li>
+<li>② 프로모터의 과도한 메틸화는 어떤 방식으로 유전자의 발현을 차단할까?</li>
+<li>③ 후성 유전적 항암제의 작용기제는 어떻게 나눌 수 있을까?</li>
+<li>④ 종양 억제 유전자의 대립 유전자 수는 사람마다 어떻게 달라질까?</li>
+<li>⑤ 두 대립 유전자 모두에 후성 유전적 오류만 일어나도 암이 생길 수 있을까?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 돌연변이가 발병을 주도한 암은 화학적 표지를 조절하는 약물만으로 기능을 온전히 회복시키기 쉽다.</li>
+<li>② 프로모터의 과도한 메틸화와 히스톤의 아세틸기 제거는 모두 종양 억제 유전자를 침묵시킨다.</li>
+<li>③ DNA 메틸화 효소를 저해하는 약물은 프로모터에 붙은 메틸기를 제거하여 전사를 회복시킨다.</li>
+<li>④ 두 대립 유전자 모두에 후성 유전적 오류만 일어난 경우에는 염기 서열이 손상되지 않은 상태이다.</li>
+<li>⑤ 어떤 오류가 암 발생을 주도했는지에 따라 더 효과적인 약물의 방식이 달라질 수 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span><span class="pts">[3점]</span> ㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 전사 인자가 프로모터에 결합하는 것을 가로막는다.</li>
+<li>② ㉡은 ㉠과 달리 종양 억제 유전자의 발현을 활성화한다.</li>
+<li>③ ㉠은 히스톤의 아세틸기를 제거하고, ㉡은 프로모터에 메틸기를 부착한다.</li>
+<li>④ ㉠과 ㉡은 모두 종양 억제 유전자의 염기 서열을 변형시켜 발현을 차단한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 종양 억제 유전자가 발현되지 않는 결과로 이어진다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 9월 [34~37]</div>
+<div class='passage exam-ps'><p>질병을 유발하는 병원체에는 세균, 진균, 바이러스 등이 있다. 생명체의 기본 구조에 속하는 세포막은 지질을 주성분으로 하는 이중층이다. 세균과 진균은 일반적으로 세포막 바깥 부분에 세포벽이 있고, 바이러스의 표면은 세포막 대신 캡시드라고 부르는 단백질로 이루어져 있다. 바이러스의 종류에 따라 캡시드 외부가 지질을 주성분으로 하는 피막으로 덮인 경우도 있다. 한편 진균과 일부 세균은 다른 병원체에 비해 건조, 열, 화학 물질에 저항성이 강한 포자를 만든다.</p>
+<p>생활 환경에서 병원체의 수를 억제하고 전염병을 예방하기 위한 목적으로 사용하는 방역용 화학 물질을 ‘항(抗)미생물 화학제’라 한다. 항미생물 화학제는 다양한 병원체가 공통으로 갖는 구조를 구성하는 성분들에 화학 작용을 일으키므로 광범위한 살균 효과가 있다. 그러나 병원체의 구조와 성분은 병원체의 종류에 따라 완전히 같지는 않으므로, 동일한 항미생물 화학제라도 그 살균 효과는 다를 수 있다.</p>
+<p>항미생물 화학제 중 ㉠멸균제는 포자를 포함한 모든 병원체를 파괴한다. ㉡감염방지제는 포자를 제외한 병원체를 사멸시키는 화합물로 병원, 공공시설, 가정의 방역에 사용된다. 감염방지제 중 독성이 약해 사람의 피부나 상처 소독에도 사용이 가능한 항미생물 화학제를 ㉢소독제라 한다. 사람의 세포막도 지질 성분으로 이루어져 있어 소독제라 하더라도 사람의 세포를 죽일 수 있으므로, 눈이나 호흡기 등의 점막에 접촉하지 않도록 주의해야 한다. 따라서 항미생물 화학제는 병원체에 대한 최대의 방역 효과와 인체 및 환경에 대한 최고의 안전성을 확보할 수 있도록 종류별 사용법을 지켜야 한다.</p>
+<p>항미생물 화학제의 작용기제는 크게 병원체의 표면을 손상시키는 방식과 병원체 내부에서 대사 기능을 저해하는 방식으로 나눌 수 있지만, 많은 경우 두 기제가 함께 작용한다. 고농도 에탄올 등의 알코올 화합물은 세포막의 기본 성분인 지질을 용해시키고 단백질을 변성시키며, 병원성 세균에서는 세포벽을 약화시킨다. 또한 알코올 화합물은 지질 피막이 없는 바이러스보다 지질 피막이 있는 병원성 바이러스에서 방역 효과가 크다. 지질 피막은 병원성 바이러스가 사람을 감염시키는 과정에서 중요한 역할을 하기 때문에, 지질을 손상시키는 기능을 가진 항미생물 화학제만으로도 병원성 바이러스에 대한 방역 효과가 있다. 지질 피막의 유무와 관계없이 다양한 바이러스의 감염 예방을 위해서는 하이포염소산 소듐 등의 산화제가 널리 사용된다. 병원성 바이러스의 방역에 사용되는 산화제는 바이러스의 공통적인 표면 구조를 이루는 캡시드를 손상시키는 기능이 있어 바이러스를 파괴하거나 바이러스의 감염력을 잃게 한다.</p>
+<p>병원체의 표면에 생긴 약간의 손상이 병원체를 사멸시키는 데 충분하지 않더라도, 항미생물 화학제가 내부로 침투하면 살균 효과가 증가한다. 알킬화제와 산화제는 병원체의 내부로 침투하면 필수적인 물질 대사를 정지시킨다. 글루타르 알데하이드와 같은 알킬화제가 알킬 작용기를 단백질에 결합시키면 단백질을 변성시켜 기능을 상실하게 하고, 핵산의 염기에 결합시키면 핵산을 비정상 구조로 변화시켜 유전자 복제와 발현을 교란한다. 산화제인 하이포염소산 소듐은 병원체 내에서 불특정한 단백질들을 산화시켜 단백질로 이루어진 효소들의 기능을 비활성화하고 병원체를 사멸에 이르게 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 병원성 세균은 어떤 작용기제로 사람을 감염시킬까?</li>
+<li>② 알코올 화합물은 병원성 세균의 살균에 효과가 있을까?</li>
+<li>③ 바이러스와 세균의 표면 구조는 어떤 차이가 있을까?</li>
+<li>④ 병원성 바이러스 감염 예방을 위한 방역에 사용되는 물질에는 무엇이 있을까?</li>
+<li>⑤ 항미생물 화학제가 병원체에 대해 광범위한 살균 효과를 나타내는 이유는 무엇일까?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>35</span>윗글을 읽고 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고농도 에탄올은 지질 피막이 있는 바이러스에 방역 효과가 있다.</li>
+<li>② 하이포염소산 소듐은 병원체의 내부가 아니라 표면의 단백질을 손상시킨다.</li>
+<li>③ 진균의 포자는 바이러스에 비해서 화학 물질에 대한 저항성이 더 강하다.</li>
+<li>④ 알킬화제는 병원체 내 핵산의 염기에 알킬 작용기를 결합시켜 유전자의 발현을 방해한다.</li>
+<li>⑤ 산화제가 다양한 바이러스를 사멸시키는 것은 그 산화제가 바이러스의 공통적인 구조를 구성하는 성분들에 작용하기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>36</span>㉠～㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두, 질병의 원인이 되는 진균의 포자와 바이러스를 사멸시킬 수 있다.</li>
+<li>② ㉠과 ㉢은 모두, 생활 환경의 방역뿐 아니라 사람의 상처 소독에 적용 가능하다.</li>
+<li>③ ㉡과 ㉢은 모두, 바이러스의 종류에 따라 살균 효과가 달라질 수 있다.</li>
+<li>④ ㉠은 ㉡과 달리, 세포막이 있는 병원성 세균은 사멸시킬 수 있으나 피막이 있는 병원성 바이러스는 사멸시킬 수 없다.</li>
+<li>⑤ ㉡은 ㉢과 달리, 인체에 해로우므로 사람의 점막에 직접 닿아서는 안 된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>37</span><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 ‘가상의 실험 결과’를 보고 추론한 내용이다. <span class="boxmark">[가]</span>에 들어갈 말로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦가상의 실험 결과
+항미생물 화학제로 사용되는 알코올 화합물 A를 변환시켜 다음과 같은 결과를 얻었다.
+<span class="boxmark">[결과1]</span> A에서 지질을 손상시키는 기능만을 약화시켜 B를 얻었다.
+<span class="boxmark">[결과2]</span> A에서 캡시드를 손상시키는 기능만을 강화시켜 C를 얻었다.
+<span class="boxmark">[결과3]</span> B에서 캡시드를 손상시키는 기능만을 강화시켜 D를 얻었다.
+◦학생의 추론: 화합물들의 방역 효과와 안전성을 비교해 보면, <span class="boxmark">[가]</span> 고 추론할 수 있어.
+(단, 지질 손상 기능과 캡시드 손상 기능은 서로 독립적이며, 화합물 A, B, C, D의 비교 조건은 모두 동일하다고 가정함.)</p>
+</blockquote>
+<ul>
+<li>① B는 A에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 작고, 인체에 대한 안전성은 높다</li>
+<li>② C는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>③ C는 B에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>④ D는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 높다</li>
+<li>⑤ D는 B에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+</ul></div>
+</div>
+</body></html>

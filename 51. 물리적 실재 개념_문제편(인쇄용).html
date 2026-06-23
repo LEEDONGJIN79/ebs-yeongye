@@ -1,0 +1,406 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>물리적 실재 개념 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.07pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, "세상이 무엇으로 이루어져 있을까?"라는 물음을 떠올려 본 적 있나요? 눈앞의 책상, 저 멀리 떠 있는 달, 우리가 살아가는 이 모든 바깥 세계를 통틀어 <strong>물리적 실재</strong>라고 불러요. 그런데 재미있는 건, 과학자들이 이 물리적 실재가 "정확히 어떤 모습인지"를 두고 시대마다 서로 다르게 그려 왔다는 점입니다. 이 단원에서 우리가 공부할 내용이 바로 그거예요.</p>
+<p>왜 그림이 자꾸 바뀔까요? 우리의 감각 기관은 세상을 <strong>있는 그대로 다 보여 주지 못하기</strong> 때문이에요. 눈에 보이는 건 빛의 일부일 뿐이고, 손에 닿는 건 표면뿐이죠. 그래서 과학자들은 보이지 않는 부분을 <strong>추론</strong>으로 메워서 "세상은 이런 식으로 되어 있을 것이다"라는 그림(개념)을 만듭니다. 추론으로 만든 그림이니, 새로운 실험 증거가 나오면 그림을 고쳐 그릴 수밖에 없어요. 그래서 물리적 실재 개념은 결코 "최종 완성본"이 될 수 없고, 늘 <strong>고쳐질 수 있는 임시 지도</strong> 같은 것입니다.</p>
+<p>이 단원의 주인공은 두 개의 서로 다른 "세상 지도"예요.</p>
+<ul>
+<li><strong>뉴턴의 그림</strong> — 세상은 텅 빈 공간(진공) 속을 떠다니는 작은 알갱이들(질점)로 되어 있고, 이 알갱이들은 멀리 떨어진 채로도 서로를 곧장 끌어당긴다(원격 작용으로서의 중력). 비유하자면, 아무것도 없는 무대 위에서 배우(알갱이)들이 서로 보이지 않는 끈으로 직접 당기고 당겨지며 움직이는 그림이에요.</li>
+<li><strong>전자기 연구가 불러온 다른 그림</strong> — 패러데이와 맥스웰이 전기·자기 현상을 파고들면서, 알갱이 사이의 빈 공간이 사실은 "텅 빈" 것이 아니라 무언가로 <strong>채워져 있고</strong>, 그 채워진 것(이를 <em>장(場)</em>이라 부릅니다)을 통해 힘이 한 칸 한 칸 전해진다는 새로운 그림이 떠올랐어요. 무대가 비어 있는 게 아니라, 물이 가득 찬 수영장 같아서 한쪽에서 물결을 일으키면 그 물결이 옆으로 퍼져 가 다른 쪽 배우를 움직이는 셈이죠.</li>
+</ul>
+<blockquote>
+<p>한마디로: <strong>물리적 실재 개념은 "세상의 진짜 모습"에 다가가려는 과학의 지도이고, 그 지도는 새 증거 앞에서 고쳐 그려진다.</strong> 뉴턴의 알갱이·원격 작용 그림이 어떻게 세워졌고, 왜 전자기 연구가 그것과 다른 그림을 불러왔는지를 따라가는 것이 이 단원의 핵심이에요.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>"물리적 실재 개념은 하나로 고정된 것이 아니라, 증거에 따라 세워지고 또 도전받는다"</strong>는 큰 그림이 있습니다. 같은 자연을 두고도 어떤 알갱이·공간·힘의 그림으로 보느냐에 따라 세상의 모습이 달라지거든요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>물리적 실재 개념<small>"감각으로 다 알 수 없어 추론으로 구성 → 고쳐질 수 있다"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>뉴턴의 <strong>입자·원격 작용</strong> 그림과, 전자기 연구가 불러온 <strong>장(場)·근접 작용</strong> 그림을 나란히 놓고 두 입장이 어떻게 갈라지는지 따져 봅니다. 두 그림이 같은 질문에 어떻게 다르게 답하는지를 잡아내는 연습이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>뉴턴의 실재 개념이 <strong>어떻게 세워졌고</strong>, 전자기 현상이라는 새 증거 앞에서 <strong>어떻게 흔들리는지</strong>를 시간 순서로 따라갑니다. 개념이 성립하고 도전받는 흐름을 추적하는 연습이에요.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>뉴턴의 실재 개념에 쏟아진 <strong>비판들을 검토</strong>하고, 그럼에도 그 개념이 지닌 의의를 다시 새깁니다. 한 이론을 둘러싼 비판과 재평가를 읽어 내는 연습이에요.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, "세상은 무엇으로 되어 있는가"라는 그림이 왜 하나로 고정되지 않는지, 그리고 그 그림이 어떻게 세워지고 도전받고 다시 자리매김하는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>물리적 실재는 지각 주체와 독립적으로 존재하며, 인간은 감각 기관을 통해 그것에 접촉한다. 그런데 감각 기관은 물리적 실재에 대한 온전한 정보를 주지 못하므로, 인간은 추론을 거쳐 물리적 실재의 개념을 구성한다. 이 개념은 최종적인 것이 아니어서 새로운 경험적 증거가 도출되면 그것을 설명하기 위해 개정될 수 있다. 물리적 실재를 어떤 것으로 보느냐를 두고 두 가지 그림이 대립한다. ㉠<u>뉴턴 역학에 기초한 그림</u>은 물리적 실재를 텅 빈 공간 속 입자와 그 입자들 사이에 직접 작용하는 힘으로 본다. 반면 ㉡<u>전자기 현상의 탐구에서 대두된 그림</u>은 입자들 사이의 공간이 비어 있지 않으며, 그 공간에 퍼져 있는 어떤 것을 통해 힘이 전달된다고 본다.</p>
+<p>㉠에 따르면 물리적 실재는 공간, 시간, 입자, 그리고 입자 간 상호 작용인 힘이라는 개념으로 ⓐ<u>짜인다</u>. 여기서 입자는 형태나 연장(延長), 물성 등을 모두 덜어 내고 오직 관성과 병진 운동만을 갖는 물체로 ⓑ<u>상정되며</u>, 이렇게 추상된 입자를 질점이라 한다. 질점은 텅 빈 공간인 진공 속에서 다른 질점으로부터 직접 당겨지는 원격 작용으로서의 중력을 받아 운동한다. 태양과 행성도 각각 질점으로 이루어져, 그 사이에 직접 작용하는 중력에 따라 움직인다. 이 그림에서 두 질점은 아무 매개도 거치지 않고 떨어진 거리만큼을 뛰어넘어 곧바로 서로를 당긴다. 힘이 전달되는 데에 시간이 걸리거나 중간의 공간이 관여한다고는 보지 않는다. 한편 뉴턴은 미적분학을 ⓒ<u>개발하여</u> 물리량이 시간에 따라 달라지는 정도인 변화율을 수학적으로 표현하였고, 시간에 대한 미분과 적분으로 위치, 속도, 가속도를 연결하여 물리적 실재를 다루는 길을 열었다.</p>
+<p>㉡은 전기와 자기의 현상을 설명하는 과정에서 ⓓ<u>대두되었다</u>. 전기를 띤 물체나 자석은 서로 닿지 않고도 힘을 주고받는데, 이 그림은 그러한 힘이 빈 공간을 단번에 가로지르는 것이 아니라 공간 자체에 퍼져 있는 상태를 거쳐 한 자리에서 이웃한 자리로 차례로 전달된다고 본다. 곧 ㉠이 힘을 떨어진 두 입자 사이의 직접적인 당김으로 ⓔ<u>여기는</u> 데 비해, ㉡은 힘을 공간을 채운 상태가 이웃으로 이어지며 전해지는 것으로 여긴다. 이 차이로 인해 두 그림은 힘이 전달되는 데 시간이 걸리는가, 그리고 입자들 사이의 공간이 비어 있는가를 두고 상반된 답을 내놓는다. ㉠에서는 힘의 작용이 거리에 상관없이 즉각적이며 그 사이의 공간은 비어 있는 무대일 뿐이지만, ㉡에서는 힘이 공간을 거쳐 차례로 전해지므로 전달에 시간이 걸리고 그 공간 자체가 물리적 실재의 일부가 된다.</p>
+<p>이처럼 ㉡은 ㉠과는 다른 종류의 물리적 실재 개념을 제시한다. 다만 ㉡이 대두되었다고 해서 ㉠이 곧바로 폐기되는 것은 아니다. ㉠은 행성의 운동과 같이 입자들이 비교적 천천히, 멀리 떨어져 운동하는 영역에서 여전히 정확한 예측을 내놓기 때문이다. 그러나 ㉡을 받아들이는 쪽에서는, 빈 공간과 즉각적 원격 작용을 전제하는 ㉠이 전자기 현상까지 포괄하는 보편적인 물리적 실재 개념이 되기에는 한계가 있다고 본다. 떨어진 두 물체 사이에 아무 매개 없이 힘이 곧바로 미친다는 가정은, 힘이 공간을 거쳐 전달되는 현상이 관찰되는 한 그대로 유지되기 어렵다는 것이다. 물리적 실재 개념이 새 증거 앞에서 개정될 수 있다는 점은 바로 이 대목에서 드러난다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 '아니요'라고 답변할 질문은?</p>
+<ul>
+<li>① 물리적 실재는 지각 주체와 독립적으로 존재하는가?</li>
+<li>② 물리적 실재의 개념은 감각 기관이 제공하는 정보만으로 완성되는가?</li>
+<li>③ 물리적 실재의 개념은 새로운 증거에 따라 개정될 수 있는가?</li>
+<li>④ 힘은 입자들 사이의 상호 작용으로 설명될 수 있는가?</li>
+<li>⑤ 인간은 감각 기관을 통해 물리적 실재에 접촉하는가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 질점은 형태와 물성을 지닌 채 관성과 병진 운동을 함께 갖는 물체이다.</li>
+<li>② ㉠에서 태양과 행성은 그 사이를 채운 공간을 매개로 하여 중력을 주고받는다.</li>
+<li>③ 뉴턴은 미적분학을 통해 위치, 속도, 가속도를 시간에 대한 미분과 적분으로 연결하였다.</li>
+<li>④ ㉡에 따르면 떨어진 두 물체 사이에 작용하는 힘은 거리에 상관없이 즉각적으로 전달된다.</li>
+<li>⑤ 감각 기관이 물리적 실재의 온전한 정보를 제공하므로 그 개념은 추론 없이 구성된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> ㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 입자들 사이의 공간을 물리적 실재의 일부로 보지만, ㉡은 그 공간을 빈 무대로 본다.</li>
+<li>② ㉡은 힘의 전달에 시간이 걸린다고 보지만, ㉠은 힘이 즉각적으로 작용한다고 본다.</li>
+<li>③ ㉠은 전기를 띤 물체 사이의 힘을 설명하기 위해 제시되었고, ㉡은 행성의 운동을 설명하기 위해 제시되었다.</li>
+<li>④ ㉠과 ㉡은 모두 입자들 사이의 공간이 어떤 것으로 채워져 있다고 본다.</li>
+<li>⑤ ㉡이 대두된 뒤 ㉠은 어떤 영역에서도 정확한 예측을 내놓지 못하게 되었다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글의 ㉠에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 입자의 운동을 위치, 속도, 가속도로 나누어 다루는 것은 물리적 실재를 지나치게 단순화한다.</li>
+<li>② 물리적 실재의 개념이 추론을 통해 구성된다고 보는 것은 감각 기관의 역할을 과소평가한 것이다.</li>
+<li>③ 빈 공간을 가로질러 힘이 곧바로 미친다는 가정은, 힘이 공간을 거쳐 전달되는 현상을 설명하기 어렵다.</li>
+<li>④ 입자에서 형태와 물성을 덜어 내고 질점으로 추상한 것은 태양과 행성의 운동을 설명하는 데 부적절하다.</li>
+<li>⑤ 미적분학으로 변화율을 표현한 것은 물리적 실재를 수학적으로만 다루어 그 본성을 왜곡한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 구성된다</li>
+<li>② ⓑ: 가정되며</li>
+<li>③ ⓒ: 고안하여</li>
+<li>④ ⓓ: 제기되었다</li>
+<li>⑤ ⓔ: 결부하는</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 수능 [16~20]</div>
+<div class='passage exam-ps'><p>㉠논리실증주의자와 포퍼는 지식을 수학적 지식이나 논리학 지식처럼 경험과 무관한 것과 과학적 지식처럼 경험에 의존하는 것으로 구분한다. 그중 과학적 지식은 과학적 방법에 의해 누적된다고 주장한다. 가설은 과학적 지식의 후보가 되는 것인데, 그들은 가설로부터 논리적으로 도출된 예측을 관찰이나 실험 등의 경험을 통해 맞는지 틀리는지 판단함으로써 그 가설을 시험하는 과학적 방법을 제시한다. 논리실증주의자는 예측이 맞을 경우에, 포퍼는 예측이 틀리지 않는 한, 그 예측을 도출한 가설이 하나씩 새로운 지식으로 추가된다고 주장한다.</p>
+<p>하지만 ㉡콰인은 가설만 가지고서 예측을 논리적으로 도출할 수 없다고 본다. 예를 들어 ⓐ새로 발견된 금속 M은 열을 받으면 팽창한다는 가설만 가지고는 ⓑ열을 받은 M이 팽창할 것이라는 예측을 이끌어낼 수 없다. 먼저 지금까지 관찰한 모든 금속은 열을 받으면 팽창한다는 기존의 지식과 M에 열을 가했다는 조건 등이 필요하다. 이렇게 예측은 가설, 기존의 지식들, 여러 조건 등을 모두 합쳐야만 논리적으로 도출된다는 것이다. 그러므로 예측이 거짓으로 밝혀지면 정확히 무엇 때문에 예측에 실패한 것인지 알 수 없다는 것이다. 이로부터 콰인은 개별적인 가설뿐만 아니라 ⓒ기존의 지식들과 여러 조건 등을 모두 포함하는 전체 지식이 경험을 통한 시험의 대상이 된다는 총체주의를 제안한다.</p>
+<p>논리실증주의자와 포퍼는 수학적 지식이나 논리학 지식처럼 경험과 무관하게 참으로 판별되는 분석 명제와, 과학적 지식처럼 경험을 통해 참으로 판별되는 종합 명제를 서로 다른 종류라고 구분한다. 그러나 콰인은 총체주의를 정당화하기 위해 이 구분을 부정하는 논증을 다음과 같이 제시한다. 논리실증주의자와 포퍼의 구분에 따르면 “총각은 총각이다.”와 같은 동어 반복 명제와, “총각은 미혼의 성인 남성이다.”처럼 동어 반복 명제로 환원할 수 있는 것은 모두 분석 명제이다. 그런데 후자가 분석 명제인 까닭은 전자로 환원할 수 있기 때문이다. 이러한 환원이 가능한 것은 ‘총각’과 ‘미혼의 성인 남성’이 동의적 표현이기 때문인데 그게 왜 동의적 표현인지 물어보면, 이 둘을 서로 대체하더라도 명제의 참 또는 거짓이 바뀌지 않기 때문이라고 할 것이다. 하지만 이것만으로는 두 표현의 의미가 같다는 것을 보장하지 못해서, 동의적 표현은 언제나 반드시 대체 가능해야 한다는 필연성 개념에 다시 의존하게 된다. 이렇게 되면 동의적 표현이 동어 반복 명제로 환원 가능하게 하는 것이 되어, 필연성 개념은 다시 분석 명제 개념에 의존하게 되는 순환론에 빠진다. 따라서 콰인은 종합 명제와 구분되는 분석 명제가 존재한다는 주장은 근거가 없다는 결론에 ㉢도달한다.</p>
+<p>콰인은 분석 명제와 종합 명제로 지식을 엄격히 구분하는 대신, 경험과 직접 충돌하지 않는 중심부 지식과, 경험과 직접 충돌할 수 있는 주변부 지식을 상정한다. 경험과 직접 충돌하여 참과 거짓이 쉽게 바뀌는 주변부 지식과 달리 주변부 지식의 토대가 되는 중심부 지식은 상대적으로 견고하다. 그러나 이 둘의 경계를 명확히 나눌 수 없기 때문에, 콰인은 중심부 지식과 주변부 지식을 다른 종류라고 하지 않는다. 수학적 지식이나 논리학 지식은 중심부 지식의 한가운데에 있어 경험에서 가장 멀리 떨어져 있지만 그렇다고 경험과 무관한 것은 아니라는 것이다. 그런데 주변부 지식이 경험과 충돌하여 거짓으로 밝혀지면 전체 지식의 어느 부분을 수정해야 할지 고민하게 된다. 주변부 지식을 수정하면 전체 지식의 변화가 크지 않지만 중심부 지식을 수정하면 관련된 다른 지식이 많기 때문에 전체 지식도 크게 변화하게 된다. 그래서 대부분의 경우에는 주변부 지식을 수정하는 쪽을 선택하겠지만 실용적 필요 때문에 중심부 지식을 수정하는 경우도 있다. 그리하여 콰인은 중심부 지식과 주변부 지식이 원칙적으로 모두 수정의 대상이 될 수 있고, 지식의 변화도 더 이상 개별적 지식이 단순히 누적되는 과정이 아니라고 주장한다.</p>
+<p>총체주의는 특정 가설에 대해 제기되는 반박이 결정적인 것처럼 보이더라도 그 가설이 실용적으로 필요하다고 인정되면 언제든 그와 같은 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 그러나 총체주의는 “A이면서 동시에 A가 아닐 수는 없다.”와 같은 논리학의 법칙처럼 아무도 의심하지 않는 지식은 분석 명제로 분류해야 하는 것이 아니냐는 비판에 답해야 하는 어려움이 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 ‘아니요’라고 답변할 질문은?</p>
+<ul>
+<li>① 과학적 지식은 개별적으로 누적되는가?</li>
+<li>② 경험을 통하지 않고 가설을 시험할 수 있는가?</li>
+<li>③ 경험과 무관하게 참이 되는 지식이 존재하는가?</li>
+<li>④ 예측은 가설로부터 논리적으로 도출될 수 있는가?</li>
+<li>⑤ 수학적 지식과 과학적 지식은 종류가 다른 것인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 포퍼가 제시한 과학적 방법에 따르면, 예측이 틀리지 않았을 경우보다는 맞을 경우에 그 예측을 도출한 가설이 지식으로 인정된다.</li>
+<li>② 논리실증주의자에 따르면, “총각은 미혼의 성인 남성이다.”가 분석 명제인 것은 총각을 한 명 한 명 조사해 보니 모두 미혼의 성인 남성으로 밝혀졌기 때문이다.</li>
+<li>③ 콰인은 관찰과 실험에 의존하는 지식이 관찰과 실험에 의존하지 않는 지식과 근본적으로 다르다고 한다.</li>
+<li>④ 콰인은 분석 명제가 무엇인지는 동의적 표현이란 무엇인지에 의존하고, 다시 이는 필연성 개념에, 필연성 개념은 다시 분석 명제 개념에 의존한다고 본다.</li>
+<li>⑤ 콰인은 어떤 명제에, 의미가 다를 뿐만 아니라 서로 대체할 경우 그 명제의 참 또는 거짓이 바뀌는 표현을 사용할 수 있으면, 그 명제는 동어 반복 명제라고 본다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>18</span><span class="pts">[3점]</span> 윗글을 바탕으로 총체주의의 입장에서 ⓐ～ⓒ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓑ가 거짓으로 밝혀지더라도 그것이 ⓐ 때문이라고 단정하지 못하겠군.</li>
+<li>② ⓑ가 거짓으로 밝혀지면 ⓒ의 어느 부분을 수정하느냐는 실용적 필요에 따라 달라지겠군.</li>
+<li>③ ⓑ는 ⓐ와 ⓒ로부터 논리적으로 도출된다고 하겠군.</li>
+<li>④ ⓑ가 거짓으로 밝혀지면 ⓑ는 ⓒ의 주변부에서 경험과 직접 충돌한 것이라고 하겠군.</li>
+<li>⑤ ⓑ가 거짓으로 밝혀지면 ⓒ를 수정하는 방법으로는 ⓐ를 받아들일 수 없다고 하겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>19</span>윗글의 총체주의에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 가설로부터 논리적으로 도출된 예측이 경험과 충돌하더라도 그 충돌 때문에 가설이 틀렸다고 할 수 없다.</li>
+<li>② 논리학 지식이나 수학적 지식이 중심부 지식의 한가운데에 위치한다고 해서 경험과 무관한 것은 아니다.</li>
+<li>③ 전체 지식은 어떤 결정적인 반박일지라도 피할 수 있기 때문에 수정 대상을 주변부 지식으로 한정하는 것은 잘못이다.</li>
+<li>④ 중심부 지식을 수정하면 주변부 지식도 수정해야 하겠지만, 주변부 지식을 수정한다고 해서 중심부 지식을 수정해야 하는 것은 아니다.</li>
+<li>⑤ 중심부 지식과 주변부 지식 간의 경계가 불분명하다 해도 중심부 지식 중에는 주변부 지식들과 종류가 다른 지식이 존재한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>20</span>문맥상 ㉢과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 잇따른다</li>
+<li>② 다다른다</li>
+<li>③ 봉착한다</li>
+<li>④ 회귀한다</li>
+<li>⑤ 기인한다</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>물리적 실재는 지각 주체와 독립적으로 존재한다는 것이 자연 과학의 기본 가정이다. 그러나 인간의 감각 기관은 물리적 실재에 대한 온전한 정보를 제공하지 못하므로, 인간은 물리적 실재의 개념을 추론을 통해 구성한다. 1687년 뉴턴은 역학 이론을 세우면서 공간, 시간, 입자와 입자 간 상호 작용인 힘이라는 개념으로 물리적 실재 개념의 기초를 놓았다. 이후 전자기 현상에 대한 패러데이와 맥스웰의 연구로 그와는 다른 종류의 물리적 실재 개념이 대두되었다.</p>
+<p>㉠뉴턴 역학의 물리적 실재 개념에서 입자는 형태, 연장, 물성을 모두 덜어 내고 오직 관성과 병진 운동만을 갖는 물체로 상정되며, 이렇게 추상된 입자를 질점이라 한다. 질점은 텅 빈 공간인 진공 속에서 다른 질점으로부터 직접 당겨지는 원격 작용으로서의 중력을 받으며, 시간에 따라 달라지는 위치, 속도, 가속도를 갖고 운동함으로써 모든 물리적 사건을 만들어 낸다. 이 개념에서 두 질점은 사이의 공간이나 시간의 경과와 무관하게 떨어진 거리를 뛰어넘어 즉각적으로 서로를 당긴다. 뉴턴은 미적분학을 개발하여 물리량의 시간에 따른 변화인 변화율을 수학적으로 표현하였고, 시간 변수에 대한 미분과 적분으로 위치, 속도, 가속도를 연결하여 물리적 실재를 다루는 길을 열었다. 이 개념은 행성의 운동을 정밀하게 예측하는 데 성공하여 오랫동안 물리적 실재의 표준적인 그림으로 받아들여졌다.</p>
+<p>그러나 전기와 자기의 현상이 자세히 탐구되면서 뉴턴의 개념으로는 매끄럽게 설명되지 않는 영역이 드러났다. 전기를 띤 물체나 자석은 서로 닿지 않고도 힘을 주고받는데, 패러데이는 이 힘이 빈 공간을 단번에 가로지르는 것이 아니라 공간에 퍼져 있는 어떤 상태를 거쳐 전달된다고 보았다. ㉡전자기 연구에서 대두된 물리적 실재 개념은 입자들 사이의 공간이 비어 있지 않으며, 그 공간을 채운 상태가 이웃한 자리로 차례차례 이어지면서 힘을 전달한다고 본다. 이 개념에 따르면 힘이 한 자리에서 다른 자리로 전해지는 데에는 시간이 걸리며, 공간 자체가 물리적 실재의 일부가 된다. 맥스웰은 이러한 통찰을 수학적으로 정밀하게 다듬어, 전기와 자기가 하나의 체계로 묶이며 그 작용이 공간을 거쳐 일정한 빠르기로 퍼져 나간다는 결론에 이르렀다.</p>
+<p>이로써 물리적 실재의 그림은 ㉢두 개념이 공존하며 경쟁하는 국면으로 들어섰다. 떨어진 입자가 빈 공간을 뛰어넘어 즉각 당긴다는 ㉠과, 공간을 채운 상태가 시간을 들여 힘을 전한다는 ㉡은 같은 자연을 서로 다르게 그린다. ㉠은 행성의 운동처럼 입자들이 멀리 떨어져 천천히 운동하는 영역에서 여전히 정확하지만, 전자기 현상까지 아우르지는 못한다. 반대로 ㉡은 전자기 현상을 자연스럽게 설명하면서 공간과 시간을 물리적 실재 안으로 끌어들인다. 물리적 실재 개념이 최종적일 수 없고 새 증거에 따라 개정된다는 점은, 뉴턴의 개념이 전자기라는 새로운 경험적 증거 앞에서 다른 개념과 나란히 서게 된 이 과정에서 잘 드러난다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 뉴턴 역학에서 질점은 어떤 성질만을 갖는 것으로 상정되는가?</li>
+<li>② 전자기 연구에서 대두된 개념은 입자 사이의 공간을 어떻게 보는가?</li>
+<li>③ 뉴턴은 물리량의 변화율을 무엇을 통해 수학적으로 표현하였는가?</li>
+<li>④ 패러데이와 맥스웰의 연구 이후 새로운 물리적 실재 개념은 누구에 의해 폐기되었는가?</li>
+<li>⑤ 물리적 실재의 개념이 인간에게 추론을 통해 구성되는 까닭은 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 자연 과학은 물리적 실재가 지각 주체와 독립적으로 존재한다고 가정한다.</li>
+<li>② 뉴턴 역학에서 질점은 진공 속에서 원격 작용으로서의 중력을 받아 운동한다.</li>
+<li>③ 맥스웰은 전기와 자기가 하나의 체계로 묶인다는 결론에 이르렀다.</li>
+<li>④ 뉴턴의 개념은 행성의 운동을 예측하는 데 성공하여 표준적인 그림으로 받아들여졌다.</li>
+<li>⑤ 전자기 연구에서 대두된 개념에서는 힘이 떨어진 거리를 즉각적으로 뛰어넘어 전달된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서는 입자 사이의 공간이 힘의 전달을 매개하는 물리적 실재의 일부가 된다.</li>
+<li>② ㉡에서는 힘이 전달되는 데 시간이 걸리지 않으며 그 공간은 비어 있는 무대일 뿐이다.</li>
+<li>③ ㉢에 이르러 ㉡이 대두되면서 ㉠은 모든 영역에서 예측에 실패하게 되었다.</li>
+<li>④ ㉢은 ㉠과 ㉡이 같은 자연을 서로 다르게 그리며 나란히 경쟁하는 국면을 가리킨다.</li>
+<li>⑤ ㉠과 ㉡은 모두 공간 자체를 물리적 실재의 일부로 끌어들인다는 점에서 일치한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 별 S가 자리를 옮기면, 멀리 떨어진 별 T의 운동에도 그에 따른 영향이 미친다. 이때 ㉠뉴턴 역학의 개념을 따르는 관찰자 갑과 ㉡전자기 연구에서 대두된 개념을 따르는 관찰자 을이 같은 현상을 두고 서로 다르게 예측한다. 갑은 S의 이동이 일으키는 영향이 T에 미치는 시점을 한 가지로 본다. 반면 을은 그 영향이 공간을 거쳐 전해지므로, S와 T 사이의 거리가 멀수록 영향이 T에 닿기까지 더 오래 걸린다고 본다.</p>
+</blockquote>
+<ul>
+<li>① 갑은 S와 T 사이의 공간이 영향의 전달을 매개한다고 보겠군.</li>
+<li>② 갑은 S의 이동이 T에 미치는 영향이 거리가 멀수록 더 오래 걸린다고 보겠군.</li>
+<li>③ 을은 S의 이동이 T에 즉각적으로 미친다고 보아 전달에 걸리는 시간을 고려하지 않겠군.</li>
+<li>④ 갑과 을은 S와 T 사이의 거리가 영향이 닿는 시점과 무관하다는 데 의견이 일치하겠군.</li>
+<li>⑤ 을은 S와 T 사이의 거리가 두 배로 멀어지면 영향이 T에 닿기까지 걸리는 시간도 더 길어진다고 보겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 수능 [10~13]</div>
+<div class='passage exam-ps'><p>기축 통화는 국제 거래에 결제 수단으로 통용되고 환율 결정에 기준이 되는 통화이다. 1960년 트리핀 교수는 브레턴우즈 체제에서의 기축 통화인 달러화의 구조적 모순을 지적했다. 한 국가의 재화와 서비스의 수출입 간 차이인 경상 수지는 수입이 수출을 초과하면 적자이고, 수출이 수입을 초과하면 흑자이다. 그는 "미국이 경상 수지 적자를 허용하지 않아 국제 유동성 공급이 중단되면 세계 경제는 크게 위축될 것"이라면서도 "반면 적자 상태가 지속돼 달러화가 과잉 공급되면 준비 자산으로서의 신뢰도가 저하되고 고정 환율 제도도 붕괴될 것"이라고 말했다.</p>
+<p>이러한 트리핀 딜레마는 국제 유동성 확보와 달러화의 신뢰도 간의 문제이다. 국제 유동성이란 국제적으로 보편적인 통용력을 갖는 지불 수단을 말하는데, ㉠금 본위 체제에서는 금이 국제 유동성의 역할을 했으며, 각 국가의 통화 가치는 정해진 양의 금의 가치에 고정되었다. 이에 따라 국가 간 통화의 교환 비율인 환율은 자동적으로 결정되었다. 이후 ㉡브레턴우즈 체제에서는 국제 유동성으로 달러화가 추가되어 '금 환 본위제'가 되었다. 1944년에 성립된 이 체제는 미국의 중앙은행에 '금 태환 조항'에 따라 금 1온스와 35달러를 언제나 맞교환해 주어야 한다는 의무를 지게 했다. 다른 국가들은 달러화에 대한 자국 통화의 가치를 고정했고, 달러화로만 금을 매입할 수 있었다. 환율은 경상 수지의 구조적 불균형이 있는 예외적인 경우를 제외하면 ±1% 내에서의 변동만을 허용했다. 이에 따라 기축 통화인 달러화를 제외한 다른 통화들 간 환율인 교차 환율은 자동적으로 결정되었다.</p>
+<p>1970년대 초에 미국은 경상 수지 적자가 누적되기 시작하고 달러화가 과잉 공급되어 미국의 금 준비량이 급감했다. 이에 따라 미국은 달러화의 금 태환 의무를 더 이상 감당할 수 없는 상황에 도달했다. 이를 해결할 수 있는 방법은 달러화의 가치를 내리는 평가 절하, 또는 달러화에 대한 여타국 통화의 환율을 하락시켜 그 가치를 올리는 평가 절상이었다. 하지만 브레턴우즈 체제하에서 달러화의 평가 절하는 규정상 불가능했고, 당시 대규모 대미 무역 흑자 상태였던 독일, 일본 등 주요국들은 평가 절상에 나서려고 하지 않았다. 이 상황이 유지되기 어려울 것이라는 전망으로 독일의 마르크화와 일본의 엔화에 대한 투기적 수요가 증가했고, 결국 환율의 변동 압력은 더욱 커질 수밖에 없었다. 이러한 상황에서 각국은 보유한 달러화를 대규모로 금으로 바꾸기를 원했다. 미국은 결국 1971년 달러화의 금 태환 정지를 선언한 닉슨 쇼크를 단행했고, 브레턴우즈 체제는 붕괴되었다.</p>
+<p>그러나 붕괴 이후에도 달러화의 기축 통화 역할은 계속되었다. 그 이유로 규모의 경제를 생각할 수 있다. 세계의 모든 국가에서 ㉢어떠한 기축 통화도 없이 각각 다른 통화가 사용되는 경우 두 국가를 짝짓는 경우의 수만큼 환율의 가짓수가 생긴다. 그러나 하나의 기축 통화를 중심으로 외환 거래를 하면 비용을 절감하고 규모의 경제를 달성할 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 브레턴우즈 체제 붕괴 이후에도 달러화가 기축 통화로서 역할을 할 수 있었던 이유는 무엇인가?</li>
+<li>② 브레턴우즈 체제 붕괴 이후의 세계 경제 위축에 대해 트리핀은 어떤 전망을 했는가?</li>
+<li>③ 브레턴우즈 체제에서 미국 중앙은행은 어떤 의무를 수행해야 했는가?</li>
+<li>④ 브레턴우즈 체제에서 국제 유동성의 역할을 한 것은 무엇인가?</li>
+<li>⑤ 브레턴우즈 체제에서 달러화 신뢰도 하락의 원인은 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 닉슨 쇼크가 단행된 이후 달러화의 고평가 문제를 해결할 수 있는 달러화의 평가 절하가 가능해졌다.</li>
+<li>② 브레턴우즈 체제에서 마르크화와 엔화의 투기적 수요가 증가한 것은 이들 통화의 평가 절상을 예상했기 때문이다.</li>
+<li>③ 금의 생산량 증가를 통한 국제 유동성 공급량의 증가는 트리핀 딜레마 상황을 완화하는 한 가지 방법이 될 수 있다.</li>
+<li>④ 트리핀 딜레마는 달러화를 통한 국제 유동성 공급을 중단할 수도 없고 공급량을 무한정 늘릴 수도 없는 상황을 말한다.</li>
+<li>⑤ 브레턴우즈 체제에서 마르크화가 달러화에 대해 평가 절상되면, 같은 금액의 마르크화로 구입 가능한 금의 양은 감소한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>미국을 포함한 세 국가가 존재하고 각각 다른 통화를 사용할 때, ㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서 자동적으로 결정되는 환율의 가짓수는 금에 자국 통화의 가치를 고정한 국가 수보다 하나 적다.</li>
+<li>② ㉡이 붕괴된 이후에도 여전히 달러화가 기축 통화라면 ㉡에 비해 교차 환율의 가짓수는 적어진다.</li>
+<li>③ ㉢에서 국가 수가 하나씩 증가할 때마다 환율의 전체 가짓수도 하나씩 증가한다.</li>
+<li>④ ㉠에서 ㉡으로 바뀌면 자동적으로 결정되는 환율의 가짓수가 많아진다.</li>
+<li>⑤ ㉡에서 교차 환율의 가짓수는 ㉢에서 생기는 환율의 가짓수보다 적다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+브레턴우즈 체제가 붕괴된 이후 두 차례의 석유 가격 급등을 겪으면서 기축 통화국인 A국의 금리는 인상되었고 통화 공급은 감소했다. 여기에 A국 정부의 소득세 감면과 군비 증대는 A국의 금리를 인상시켰으며, 높은 금리로 인해 대량으로 외국 자본이 유입되었다. A국은 이로 인한 상황을 해소하기 위한 국제적 합의를 주도하여, 서로 교역을 하며 각각 다른 통화를 사용하는 세 국가 A, B, C는 외환 시장에 대한 개입을 합의했다. 이로 인해 A국 통화에 대한 B국 통화와 C국 통화의 환율은 각각 50%, 30% 하락했다.</p>
+</blockquote>
+<ul>
+<li>① A국의 금리 인상과 통화 공급 감소로 인해 A국 통화의 신뢰도가 낮아진 것은 외국 자본이 대량으로 유입되었기 때문이겠군.</li>
+<li>② 국제적 합의로 인한 A국 통화에 대한 B국 통화의 환율 하락으로 국제 유동성 공급량이 증가하여 A국 통화의 가치가 상승했겠군.</li>
+<li>③ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국 통화의 환율과 B국 통화에 대한 C국 통화의 환율은 모두 하락했겠군.</li>
+<li>④ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국과 C국 통화의 환율이 하락하여, B국에 대한 C국의 경상 수지는 개선되었겠군.</li>
+<li>⑤ 다른 모든 조건이 변하지 않았다면, A국의 소득세 감면과 군비 증대로 A국의 경상 수지가 악화되며, 그 완화 방안 중 하나는 A국 통화에 대한 B국 통화의 환율을 상승시키는 것이겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>물리적 실재가 지각 주체와 독립적으로 존재한다는 것은 자연 과학의 기본 가정이다. 인간은 감각 기관으로 물리적 실재에 접촉하지만 그 정보는 온전하지 않으므로, 물리적 실재의 개념은 추론을 통해 구성된다. 뉴턴은 역학 이론을 세우면서 공간, 시간, 입자, 그리고 입자 간 상호 작용인 힘이라는 개념으로 물리적 실재 개념의 기초를 놓았다. 그가 그린 물리적 실재는 텅 빈 진공 속의 질점들이 원격 작용으로서의 중력을 주고받으며 운동하는 세계였다. 질점은 형태와 물성을 덜어 낸 추상적 입자였고, 두 질점은 사이의 공간과 무관하게 떨어진 거리를 즉각적으로 뛰어넘어 서로를 당겼다. 뉴턴은 미적분학으로 변화율을 표현하여 위치·속도·가속도를 연결함으로써 이 세계를 정밀하게 다루었다.</p>
+<p>전자기 현상이 탐구되면서 뉴턴의 물리적 실재 개념은 여러 비판에 직면한다. 전기를 띤 물체나 자석은 서로 닿지 않고도 힘을 주고받는데, 패러데이는 이 힘이 빈 공간을 단번에 가로지른다는 설명에 의문을 던졌다. 그는 떨어진 두 물체 사이에 아무 매개 없이 힘이 곧바로 미친다는 원격 작용의 가정이 전자기 현상을 설명하기에 부적절하다고 보았다. 맥스웰은 한 걸음 더 나아가, 입자들 사이의 공간이 비어 있지 않으며 그 공간을 채운 상태가 이웃으로 차례차례 이어지면서 힘을 전달한다고 보았다. 이 관점에서 힘은 공간을 거쳐 일정한 빠르기로 퍼지므로 전달에 시간이 걸리며, 빈 공간을 즉각적으로 가로지른다는 뉴턴의 가정은 받아들여지지 않는다. 이들의 비판은 뉴턴의 개념이 진공과 원격 작용을 전제하여 전자기 현상까지 포괄하지 못한다는 것이다.</p>
+<p>그러나 이러한 비판이 뉴턴의 물리적 실재 개념을 곧바로 무의미한 것으로 만드는 것은 아니다. 뉴턴의 개념은 행성의 운동처럼 입자들이 멀리 떨어져 천천히 운동하는 영역에서는 여전히 정확한 예측을 내놓는다. 비판의 핵심은 뉴턴의 개념이 틀렸다는 것이 아니라, 그것이 모든 영역을 아우르는 보편적인 그림이 되기에는 한계가 있다는 것이다. 또한 뉴턴의 개념과 전자기 연구에서 대두된 개념은 모두 물리적 실재를 입자 간 힘의 작용으로 다룬다는 점, 그리고 수학적 표현으로 자연을 정밀하게 기술하려 한다는 점에서 공통의 뿌리를 지닌다. 전자기 연구의 개념도 뉴턴이 연 길 위에서 그 한계를 넘어서려는 시도로 볼 수 있다.</p>
+<p>첨단 과학에 이른 지금도 물리적 실재가 무엇인가를 묻는 과제는 끝나지 않았다. 새로운 경험적 증거가 도출될 때마다 물리적 실재의 개념은 그것을 설명하기 위해 개정되어 왔으며, 그런 점에서 어떤 개념도 최종적일 수 없다. 뉴턴이 공간·시간·입자·힘으로 물리적 실재의 기초를 놓은 일은, 그 뒤로 이어진 개정과 경쟁의 출발점이라 할 수 있다. 뉴턴의 개념에 쏟아진 비판은 그 개념을 폐기하기 위한 것이 아니라, 물리적 실재를 더 넓게 설명하려는 탐구가 그로부터 시작되었음을 보여 준다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대립하는 두 이론을 소개하고 각 이론의 장단점을 항목별로 비교하고 있다.</li>
+<li>② 하나의 개념을 제시한 뒤 그에 대한 비판을 검토하고 그 개념의 의의를 밝히고 있다.</li>
+<li>③ 여러 개념을 시대순으로 나열하여 가장 나중에 등장한 개념의 우월성을 주장하고 있다.</li>
+<li>④ 하나의 개념이 제기된 배경을 분석한 뒤 그 개념을 대체할 새로운 이론을 도출하고 있다.</li>
+<li>⑤ 상반된 두 입장을 제시하고 두 입장을 통합하는 절충적 견해를 모색하고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글에 나타난 뉴턴의 물리적 실재 개념에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 질점은 형태와 물성을 갖춘 채로 진공 속에서 운동한다.</li>
+<li>② 두 질점은 사이의 공간을 매개로 하여 시간을 들여 힘을 주고받는다.</li>
+<li>③ 행성의 운동을 예측하는 데에는 더 이상 쓰일 수 없게 되었다.</li>
+<li>④ 떨어진 두 질점은 거리를 즉각적으로 뛰어넘어 서로를 당긴다.</li>
+<li>⑤ 감각 기관이 제공하는 온전한 정보에 의존하여 추론 없이 구성된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>윗글에 나타난 비판에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 패러데이는 빈 공간을 단번에 가로지른다는 힘의 설명에 의문을 제기하였다.</li>
+<li>② 맥스웰은 입자들 사이의 공간이 비어 있다는 전제를 받아들여 전자기를 설명하였다.</li>
+<li>③ 비판의 핵심은 뉴턴의 개념이 행성의 운동조차 설명하지 못한다는 것이다.</li>
+<li>④ 전자기 연구의 개념은 뉴턴의 개념과 공통의 뿌리를 전혀 갖지 않는다.</li>
+<li>⑤ 비판은 뉴턴의 개념을 폐기하여 무의미한 것으로 만들기 위한 것이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+물리학자 헤르츠는 전자기 현상을 설명하는 한 이론을 검토한다. 그는 떨어진 두 물체 사이의 힘이 빈 공간을 즉각 가로지르는 것이 아니라, 공간에 퍼진 상태가 흔들리며 일정한 빠르기로 퍼져 나가 다른 물체에 닿는다고 본다. 그는 이 흔들림이 실제로 시간을 들여 공간을 가로질러 전해짐을 실험으로 확인하려 한다. 다만 그는 이 이론이 물체를 입자와 그에 작용하는 힘으로 다루고 자연을 수학적으로 기술하려 한다는 점은 받아들인다.</p>
+</blockquote>
+<ul>
+<li>① 헤르츠는 뉴턴처럼, 힘이 떨어진 거리를 즉각적으로 뛰어넘어 전달된다고 보겠군.</li>
+<li>② 헤르츠는 뉴턴처럼, 입자들 사이의 공간을 텅 빈 진공으로 보겠군.</li>
+<li>③ 헤르츠는 뉴턴과 달리, 물체를 입자와 그에 작용하는 힘으로 다루는 방식을 거부하겠군.</li>
+<li>④ 헤르츠는 뉴턴과 달리, 힘이 공간을 거쳐 시간을 들여 전달된다고 보겠군.</li>
+<li>⑤ 헤르츠는 뉴턴과 달리, 자연을 수학적으로 기술하려는 시도를 받아들이지 않겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 수능 [16~19]</div>
+<div class='passage exam-ps'><p>자연에서 발생하는 모든 일은 목적 지향적인가? 자기 몸통보다 더 큰 나뭇가지나 잎사귀를 허둥대며 운반하는 개미들은 분명히 목적을 가진 듯이 보인다. 그런데 가을에 지는 낙엽이나 한밤중에 쏟아지는 우박도 목적을 가질까? 아리스토텔레스는 모든 자연물이 목적을 추구하는 본성을 타고나며, 외적 원인이 아니라 내재적 본성에 따른 운동을 한다는 목적론을 제시한다. 그는 자연물이 단순히 목적을 갖는 데 그치는 것이 아니라 목적을 실현할 능력도 타고나며, 그 목적은 방해받지 않는 한 반드시 실현될 것이고, 그 본성적 목적의 실현은 운동 주체에 항상 바람직한 결과를 가져온다고 믿는다. 아리스토텔레스는 이러한 자신의 견해를 "자연은 헛된 일을 하지 않는다!"라는 말로 요약한다.</p>
+<p>근대에 접어들어 모든 사물이 생명력을 갖지 않는 일종의 기계라는 견해가 강조되면서, 아리스토텔레스의 목적론은 비과학적이라는 이유로 많은 비판에 직면한다. 갈릴레이는 목적론적 설명이 과학적 설명으로 사용될 수 없다고 주장하며, 베이컨은 목적에 대한 탐구가 과학에 무익하다고 평가하고, 스피노자는 목적론이 자연에 대한 이해를 왜곡한다고 비판한다. 이들의 비판은 목적론이 인간 이외의 자연물도 이성을 갖는 것으로 의인화한다는 것이다. 그러나 이런 비판과는 달리 아리스토텔레스는 자연물을 생물과 무생물로, 생물을 식물․동물․인간으로 나누고, 인간만이 이성을 지닌다고 생각했다.</p>
+<p>일부 현대 학자들은, 근대 사상가들이 당시 과학에 기초한 기계론적 모형이 더 설득력을 갖는다는 일종의 교조적 믿음에 의존했을 뿐, 아리스토텔레스의 목적론을 거부할 충분한 근거를 제시하지 못했다고 비판한다. 이런 맥락에서 볼로틴은 근대 과학이 자연에 목적이 없음을 보이지도 못했고 그렇게 하려는 시도조차 하지 않았다고 지적한다. 또한 우드필드는 목적론적 설명이 과학적 설명은 아니지만, 목적론의 옳고 그름을 확인할 수 없기 때문에 목적론이 거짓이라 할 수도 없다고 지적한다.</p>
+<p>17세기의 과학은 실험을 통해 과학적 설명의 참․거짓을 확인할 것을 요구했고, 그런 경향은 생명체를 비롯한 세상의 모든 것이 물질로만 구성된다는 물질론으로 이어졌으며, 물질론 가운데 일부는 모든 생물학적 과정이 물리․화학 법칙으로 설명된다는 환원론으로 이어졌다. 이런 환원론은 살아 있는 생명체가 죽은 물질과 다르지 않음을 함축한다. 하지만 아리스토텔레스는 자연물의 물질적 구성 요소를 알면 그것의 본성을 모두 설명할 수 있다는 엠페도클레스의 견해를 반박했다. 이 반박은 자연물이 단순히 물질로만 이루어진 것이 아니며, 또한 그것의 본성이 단순히 물리․화학적으로 환원되지도 않는다는 주장을 내포한다.</p>
+<p>첨단 과학의 발전에도 불구하고 생명체의 존재 원리와 이유를 정확히 규명하는 과제는 아직 진행 중이다. 자연물의 구성 요소에 대한 아리스토텔레스의 탐구는 자연물이 존재하고 운동하는 원리와 이유를 밝히려는 것이었고, 그의 목적론은 지금까지 이어지는 그러한 탐구의 출발점이라 할 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span>윗글의 논지 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대립되는 두 이론을 소개하고 각 이론의 장단점을 비교하고 있다.</li>
+<li>② 특정 이론에 대한 상반된 주장을 제시하여 절충 방안을 모색하고 있다.</li>
+<li>③ 특정 이론에 대한 다양한 비판의 타당성을 검토한 후 새로운 이론을 도출하고 있다.</li>
+<li>④ 특정 이론에 대한 비판들을 시대순으로 제시하여 그 이론의 부당성을 주장하고 있다.</li>
+<li>⑤ 특정 이론에 대한 비판들을 검토하고 그 이론에 대한 해석을 제시하여 의의를 밝히고 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span>윗글에 나타난 아리스토텔레스의 견해에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 개미의 본성적 운동은 이성에 의한 것으로 설명된다.</li>
+<li>② 자연물의 목적 실현은 때로는 그 자연물에 해가 된다.</li>
+<li>③ 본성적 운동의 주체는 본성을 실현할 능력을 갖고 있다.</li>
+<li>④ 낙엽의 운동은 본성적 목적 개념으로는 설명되지 않는다.</li>
+<li>⑤ 자연물의 본성적 운동은 외적 원인에 의해 야기되기도 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>18</span>윗글에 나타난 목적론에 대한 논의를 적절하게 진술한 것은?</p>
+<ul>
+<li>① 갈릴레이와 볼로틴은 목적론이 근대 과학에 기초한 기계론적 모형이라고 비판한다.</li>
+<li>② 갈릴레이와 우드필드는 목적론적 설명이 과학적 설명이 아니라는 데 동의한다.</li>
+<li>③ 베이컨과 우드필드는 목적론적 설명이 교조적 신념에 의존했다고 비판한다.</li>
+<li>④ 스피노자와 볼로틴은 목적론이 자연에 대한 이해를 확장한다고 주장한다.</li>
+<li>⑤ 스피노자와 우드필드는 목적론이 사물을 의인화하기 때문에 거짓이라고 주장한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>19</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+생물학자 마이어는 생명체의 특징을 보여 주는 이론으로 창발론을 제시한다. 그는 생명체가 분자, 세포, 조직에서 개체, 개체군에 이르기까지 단계적으로 점점 더 복잡한 체계를 구성하며, 세포 이상의 단계에서 각 체계의 고유 활동은 미리 정해진 목적을 수행한다고 생각한다. 창발론은 복잡성의 수준이 한 단계씩 오를 때마다 구성 요소에 관한 지식만으로는 예측할 수 없는 특성들이 나타난다는 이론이다. 마이어는 여전히 생명체가 물질만으로 구성된다고 보지만, 물리․화학적 법칙으로 모두 설명되지는 않는다고 본다.</p>
+</blockquote>
+<ul>
+<li>① 마이어는 아리스토텔레스처럼, 엠페도클레스의 물질론적 견해가 적절하다고 보겠군.</li>
+<li>② 마이어는 아리스토텔레스처럼, 자연물이 물질만으로 구성된다는 물질론에 동의하겠군.</li>
+<li>③ 마이어는 아리스토텔레스처럼, 생명체의 특성들은 구성 요소들에 관한 지식만으로 예측할 수 없다고 보겠군.</li>
+<li>④ 마이어는 아리스토텔레스와 달리, 모든 자연물이 목적 지향적으로 운동한다고 보겠군.</li>
+<li>⑤ 마이어는 아리스토텔레스와 달리, 모든 자연물의 본성에 대한 물리․화학적 환원을 인정하겠군.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

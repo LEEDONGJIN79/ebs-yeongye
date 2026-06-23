@@ -1,0 +1,382 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>특별 공공 행정 조직의 기능과 분류 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr><tr><td>정답</td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+1문단에서 특별 공공 행정 조직 가운데에는 "법인격을 가진 것도 있고 갖지 않은 것도 있"다고 했고, 2문단에서 선거 관리 위원회·감사원은 "독립된 법인격을 가지지 않는다"라고 분명히 밝혔어요. 그러니 "모두 독립된 법인격을 가진다"는 ③은 글과 어긋나 정답입니다. ①은 1문단(법인격을 가진 조직의 재산 소유), ②는 2문단(헌법 개정을 통해서만 설립·폐지), ④는 2문단(일반 행정 부처가 일반 행정을 폭넓게 담당), ⑤는 3문단(공법상 법인의 공공 목적)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+2문단에서 선거 관리 위원회와 감사원은 "국가 권력의 분립과 견제라는 헌법적 원리에 따라 설립된" 기관이라고 했으므로 ④가 적절해 정답입니다. ① 이들은 행정부로부터 '독립'하여 업무를 수행하므로 지휘를 받는다는 설명은 어긋나고, ② 국회의 법률 제정으로 설립되는 것은 헌법기관을 '제외한' 특별 공공 행정 조직이며, ③ 이들은 독립된 법인격을 '갖지 않는'다고 했으므로 틀렸고, ⑤ 일반 행정을 폭넓게 담당하는 것은 일반 행정 부처여서 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ⑤</strong>
+ⓔ가 놓인 문장은 "법인격의 유무라는 기준에서는 헌법기관과 공법상 법인이 서로 다른 자리에 놓이며"라는 대목이에요. 곧 법인격 유무에 '따라' 갈라진다는 뜻인데, ⑤는 이를 "법인격의 유무와 무관하게 동일한 자리에 분류"된다고 정반대로 풀이했으니 적절하지 않아 정답입니다. ①은 ⓐ(법적 행위를 자체적으로 수행), ②는 ⓑ(헌법을 설립 근거로 삼음), ③은 ⓒ(법인격을 지니지 않음), ④는 ⓓ(공익에 묶여 있음)의 문맥적 의미에 각각 들어맞습니다.</p>
+<p><strong>4번 [3점] — 정답 ⑤</strong>
+㉡은 공법상 법인이에요. 3문단은 공법상 법인이 "법률에 근거하여 설립되며" "공익 실현과 공공질서 유지라는 공공의 목적을 수행"하고, 바로 그 점에서 사법상 법인과 구별된다고 했으므로 ⑤가 적절해 정답입니다. ①은 사법상 법인의 특징을 공법상 법인에 잘못 갖다 붙였고, ②는 헌법기관(선거 관리 위원회·감사원)의 특징이며, ③ 공법상 법인은 법인격을 '가지'므로 소송 제기가 가능하고, ④ 공법상 법인은 영리가 아니라 공익을 목적으로 하므로 모두 어긋납니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>5번 — 정답 ①</strong>
+㉠'어려운'은 국가가 직접 담당하기 '쉽지 않은', 곧 감당하기 까다롭다는 뜻이에요. 이 자리에는 '사정이 몹시 까다로워 해내기 어렵다'를 뜻하는 '곤란(困難)한'이 가장 알맞아 ①이 정답입니다. ② 무망한(이루어질 가망이 없는), ③ 미흡한(흡족하지 못한), ④ 박약한(의지·근거가 굳세지 못한), ⑤ 산만한(어수선한)은 모두 '담당하기 어렵다'는 맥락과 호응하지 않습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>특별 공공 행정 조직</strong>: 법적 근거에 따라 특정 행정 분야를 전문적으로 맡는 조직. 국가 기관 형태로도, 공공 단체 형태로도 세워져요.</li>
+<li><strong>법인격</strong>: 권리와 의무의 주체가 될 수 있는 법률상의 자격. 이 자격이 있으면 조직이 스스로 계약·소유·소송을 할 수 있어요.</li>
+<li><strong>공법상 법인</strong>: 법률에 근거해 설립되어 공익을 수행하는 법인. 사익을 위해 자유롭게 세워지는 사법상 법인과 구별됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>선거 관리 위원회·감사원</th>
+<th>공법상 법인(예: 국민연금 공단)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>설립 근거</td>
+<td>헌법</td>
+<td>법률</td>
+</tr>
+<tr>
+<td>설립·폐지</td>
+<td>헌법 개정 필요</td>
+<td>법률에 의함</td>
+</tr>
+<tr>
+<td>법인격</td>
+<td>없음</td>
+<td>있음</td>
+</tr>
+<tr>
+<td>핵심 성격</td>
+<td>독립성·공정성</td>
+<td>공익 실현·국가 감독</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>선거 관리 위원회는 법인격이 있나요?</div><div class='qa-a'>아니요. 헌법기관이지만 독립된 법인격은 갖지 않습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>공법상 법인이 사법상 법인과 다른 점은?</div><div class='qa-a'>법률에 근거해 설립되고, 사익이 아니라 공익 실현을 목적으로 한다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>법인격이 있으면 조직은 무엇을 할 수 있나요?</div><div class='qa-a'>자기 이름으로 계약을 맺고 재산을 소유하며 소송을 제기할 수 있습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 9월 [35~39] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>35번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>36번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>37번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>39번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+2문단에서 "구성원의 의사만으로 설립·해산이 가능한 사단 법인"이라고 했어요. 국가의 감독을 받아야 하는 것은 사단 법인이 아니라 '공공 조합'이죠. 그러니 사단 법인이 국가의 감독을 받아야 한다고 한 ④는 글과 어긋나 정답입니다. ①은 2문단(공공 조합의 인적 결합), ②는 3문단(공법상 재단=출연 재산에 법인격 부여), ③은 2문단(대한 변호사 협회), ⑤는 3문단(한국 연구 재단)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong>
+공공 조합의 설립·해산이 국가의 감독을 받는 까닭은, 공공 조합이 단순한 사람들의 모임이 아니라 "공익 실현과 공공질서 유지 등의 법적 책무를" 지기 때문이에요(2문단). 그래서 ③이 정답입니다. ① 자율적 운영은 사단 법인의 특징이고, ② 공공 조합은 인적 결합을 바탕으로 하므로 재단의 일종이 아니며, ④ 공공 조합은 다수의 인적 결합을 바탕으로 하므로 사실과 어긋나고, ⑤ 교육·학술의 지원은 공법상 재단의 기능이라 이유가 될 수 없습니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+㉠(공공 조합)은 "공익 실현과 공공질서 유지 등의 법적 책무를 진다"라고 했어요(2문단). 그런데 ⑤는 ㉠이 공적 책무에 묶이지 않고 구성원의 사익에 따른다고 했으니, 이는 ㉠이 아니라 사단 법인의 특징을 잘못 갖다 붙인 것이라 적절하지 않아 정답입니다. ①은 인적 결합 대 출연 재산(2·3문단), ②는 사단 법인·재단 법인과의 유사성, ③은 둘 다 공적 책무를 지는 공법상 법인, ④는 특별법·출연에 따른 설립이라는 서술에 각각 들어맞습니다.</p>
+<p><strong>9번 [3점] — 정답 ④</strong>
+㉮는 전문가들의 인적 결합에 공적 책무가 더해진 공공 조합, ㉯는 출연 기금에 법인격을 부여한 공법상 재단, ㉰는 자율성이 높은 대학 법인이에요. ㉮와 ㉯는 모두 공적 책무를 지므로 사익을 위해 운영되는 민간의 사단 법인·재단 법인과 구별되니 ④가 정답입니다. ① ㉮는 인적 결합이 바탕이므로 공법상 재단이 아니고, ② ㉯는 재산이 바탕이므로 공공 조합이 아니며, ③ ㉰는 스스로 교육·연구를 수행하며 자율성이 높아 공법상 재단과 '구별'되고, ⑤ ㉰는 인적 결합 여부가 아니라 자율성의 정도로 구별되므로 "재산을 바탕으로"라는 묶음은 적절하지 않습니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+ⓑ'이루어지지'는 설립·해산이 조합의 임의에 따라 '진행되지' 않는다는 뜻이에요. 그런데 '완성되지'는 어떤 일을 끝마쳐 갖춘다는 의미라서, '절차에 따라 진행된다'는 맥락과 호응하지 않아 ②가 정답입니다. ① 해당한다→속한다, ③ 가능한→허용되는, ④ 담당한다는→맡는다는, ⑤ 누리기→지니기는 모두 문맥에 자연스럽게 들어맞습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>공공 조합</strong>: 자격을 갖춘 사람들이 특별법에 따라 만든 조직. 사단 법인을 닮았지만 공적 책무를 지고 국가의 감독을 받아요(예: 대한 변호사 협회).</li>
+<li><strong>공법상 재단</strong>: 국가·공공 기관이 낸 재산에 법인격을 준 조직. 재단 법인을 닮았지만 교육·학술 같은 공공 분야를 지원해요(예: 한국 연구 재단).</li>
+<li><strong>대학 법인</strong>: 특별법으로 세워진 공법상 법인이지만, 교육·연구에서 높은 자율성과 재정 독립성을 가져 공법상 재단과 구별됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>바탕</th>
+<th>닮은 민간 법인</th>
+<th>구별되는 점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공공 조합</td>
+<td>사람(인적 결합)</td>
+<td>사단 법인</td>
+<td>공적 책무·국가 감독</td>
+</tr>
+<tr>
+<td>공법상 재단</td>
+<td>재산(출연)</td>
+<td>재단 법인</td>
+<td>공공 분야 지원·육성</td>
+</tr>
+<tr>
+<td>대학 법인</td>
+<td>재산(특별법)</td>
+<td>(공법상 법인)</td>
+<td>높은 자율성·재정 독립성</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>공공 조합이 사단 법인과 다른 점은?</div><div class='qa-a'>공익 실현 등의 법적 책무를 지고, 설립·해산에 국가의 감독을 받는다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>공법상 재단은 무엇을 바탕으로 설립되나요?</div><div class='qa-a'>사람들의 결합이 아니라 국가·공공 기관이 출연한 재산을 바탕으로 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>대학 법인이 공법상 재단과 구별되는 까닭은?</div><div class='qa-a'>교육·연구를 스스로 수행하며 운영에서 높은 자율성과 재정적 독립성을 가지기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 9월 [26~30] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>26번 — 정답 ⑤</strong><br />
+1문단에 따르면 상황 변화에 즉각 대처해야 하는 행정 규제 사항이 늘어나는데, 국회보다 행정 기관이 이러한 사항을 다루기에 적합해 행정입법의 비중이 커지고 있다. 따라서 행정부가 국회보다 신속히 대응할 수 있는 사항이 행정입법 대상으로 적합하다는 ⑤가 일치한다. ① 위임명령·행정규칙은 행정부, 조례는 지방 의회가 제정하므로 제정 주체가 동일하지 않다. ② 지역의 특수성 반영은 조례에만 해당한다. ③ 행정규칙(고시·예규)은 위임받지 않아도 제정될 수 있다. ④ 조례는 포괄적 위임을 받을 수 있다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①1.6% ②4.8% ③8.7% ④8.8% ⑤72.3%</p></div>
+<div class='exp'><p><strong>27번 — 정답 ①</strong><br />
+위임명령으로 제정할 사항의 범위는 근거 법률에 의해 정해진다. 위임명령이 위임받은 범위를 벗어나거나 어구의 의미를 확대·축소해 제정되면 효력이 없는 것은, 그 부분이 법률의 근거 없이 행정 규제 사항을 규정한 셈이기 때문이다(①). ② 범위를 벗어났다는 것은 ‘위임받은 범위’가 있다는 뜻이므로 포괄적 위임이 아니다.</p>
+<p><em>선택률</em> — 응시 98,575명 — ①46.9% ②33.9% ③5.4% ④7.0% ⑤4.2%</p></div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+행정 규제 사항에 관한 행정규칙은 위임명령으로는 대응하기 어려운 예외적 경우에 제정되므로, 위임받을 수 있는 사항의 범위가 위임명령과 같지 않다. 따라서 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.5% ②1.9% ③10.9% ④14.8% ⑤67.2%</p></div>
+<div class='exp'><p><strong>29번 — 정답 ④</strong><br />
+위임명령(㉯)과 조례(㉰)는 모두 위임 근거 법률(㉮)의 어구 의미를 다르게 사용할 수 없으므로, ㉯와 ㉰의 ‘광고물’ 의미는 일치해야 한다(④). ② ㉯는 ㉮의 제16조가 아니라 제3조로부터 위임받는다. ③ ㉯(위임명령)도 ㉰(조례)도 모두 입법예고·공포 절차를 거친다. ⑤ 대통령령 ㉯는 지역과 무관하게 국민이 준수해야 하고, 조례 ㉰는 해당 지역 사안에만 적용되므로, ‘㉯를 준수하지 않아도 되는 국민’이 아니라 ‘㉰를 준수하지 않아도 되는 국민’이 있다고 해야 옳다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①8.1% ②23.7% ③11.7% ④46.4% ⑤7.3%</p></div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+‘예측하다’는 ‘미리 헤아려 짐작하다’의 의미이므로 ‘헤아리다’로 바꿔 쓸 수 있다(③). ① 실현하다≠나타나다, ② 반영하다≠드러내다, ④ 대응하다≠마주하다, ⑤ 구별되다≠달라지다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①9.9% ②4.4% ③59.1% ④9.2% ⑤15.2%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+2문단에서 "정책 기획이나 연구, 교육과 같이 간접적 서비스를 담당하는 조직은 정책 집행형"이라고 했어요. 그러니 정책 기획·연구를 담당하는 조직을 규제·감시형이라고 한 ④는 유형을 맞바꾼 것이라 일치하지 않아 정답입니다. ①은 1문단(기능·재정 구조 기준), ②는 2문단(서비스 제공형), ③은 3문단(정부 예산 의존 조직의 효율성·유연성 저하), ⑤는 3문단(수익 창출 조직의 재정 유연성)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+비판하기 문항이에요. 이 글은 조직을 기능·재정이라는 기준으로 '나누는' 데 초점을 두지만, 4문단 끝에서 스스로 밝혔듯 "하나의 조직이 시대와 정책 환경의 변화에 따라 그 기능이나 재정 구조를 바꾸어 다른 유형으로 옮겨 갈 수 있는지"는 다루지 않아요. 이 빈틈을 정확히 찌른 ③이 적절한 비판이라 정답입니다. ① 기능 분류 기준(2문단)·② 공통 과제(4문단)·⑤ 정부 예산 의존 조직의 장단점(3문단)은 모두 글에서 다루었고, ④ 둘 이상의 기능을 함께 수행하는 경우도 2문단에서 "주된 기능"으로 다루었으므로 비판이 성립하지 않습니다.</p>
+<p><strong>13번 [3점] — 정답 ⑤</strong>
+4문단은 형태가 상이해도 "모두 공적 책무를 수행한다는 점에서 하나의 성격을 공유"한다고 못 박았어요. 그런데 ⑤는 재정 구조가 다르면 공적 책무라는 공통 성격도 지니지 않는다고 했으니, 이는 글의 결론과 정반대라 적절하지 않아 정답입니다. ①은 규제·감시형(2문단), ②는 정부 예산 의존의 공공성 강화(3문단), ③은 서비스 제공형(2문단), ④는 수익자 부담의 재정 유연성(3문단)에 각각 정확히 대응하는 적절한 반응입니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>14번 — 정답 ②</strong>
+이 글은 특별 공공 행정 조직을 '기능'과 '재정 구조'라는 두 기준으로 나누고, 규제·감시형/서비스 제공형/정책 집행형, 예산 의존/수익 창출 등의 유형별 특성을 설명하고 있어요. 그러니 둘 이상의 기준으로 여러 유형을 나누어 특성을 설명한다고 한 ②가 정답입니다. ① 시간 순서 서술, ③ 두 입장의 타당성 논증, ④ 수치를 든 우열 비교, ⑤ 한 사례에서 원리 도출은 이 글의 서술 방식이 아닙니다.</p></div>
+<div class='exp'><p><strong>15번 — 정답 ⑤</strong>
+ⓔ'생긴다'는 우려가 '나타난다, 발생한다'는 뜻이에요. 그런데 '사라진다'는 정반대로 없어진다는 의미라서 문맥과 어긋나 ⑤가 정답입니다. ① 들어가므로→나뉘므로, ② 속한다→포함된다, ③ 따져→살펴, ④ 때문이다→까닭이다는 모두 문맥에 자연스럽게 들어맞습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기능별 분류</strong>: 조직이 하는 일에 따라 규제·감시형, 서비스 제공형, 정책 집행형으로 나누는 것.</li>
+<li><strong>재정별 분류</strong>: 돈을 어디서 대느냐에 따라 정부 예산 의존형과 수익 창출형으로 나누는 것.</li>
+<li><strong>공적 책무</strong>: 형태가 달라도 모든 특별 공공 행정 조직이 함께 지는, 공공의 목적을 수행해야 할 책임.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>유형</th>
+<th>특성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기능</td>
+<td>규제·감시형</td>
+<td>경쟁 질서 유지·권익 보호</td>
+</tr>
+<tr>
+<td>기능</td>
+<td>서비스 제공형</td>
+<td>전기·도로·수도 등 직접 제공</td>
+</tr>
+<tr>
+<td>기능</td>
+<td>정책 집행형</td>
+<td>기획·연구·교육 등 간접 서비스</td>
+</tr>
+<tr>
+<td>재정</td>
+<td>예산 의존형</td>
+<td>독립성·공공성 ↑ / 효율·유연성 ↓</td>
+</tr>
+<tr>
+<td>재정</td>
+<td>수익 창출형</td>
+<td>재정 유연성 ↑ / 공공성 약화 우려</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>철도 서비스를 제공하는 조직은 기능상 어떤 유형인가요?</div><div class='qa-a'>서비스 제공형입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>정부 예산에 전적으로 의존하면 어떤 점이 강화되고 약화되나요?</div><div class='qa-a'>정책적 독립성·공공성은 강화되지만 재정 효율성·유연성은 떨어집니다.</div></div>
+<div class='qa-item'><div class='qa-q'>형태가 다른 특별 공공 행정 조직들이 공유하는 성격은?</div><div class='qa-a'>모두 공적 책무를 수행한다는 점입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 수능 [26~30] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>26번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,567명 — ①5.3% ②3.4% ③9.5% ④5.7% ⑤73.3%</p></div>
+<div class='exp'><p><strong>27번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,567명 — ①8.0% ②8.0% ③44.4% ④16.9% ⑤21.4%</p></div>
+<div class='exp'><p><strong>28번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,574명 — ①40.0% ②24.2% ③21.2% ④6.8% ⑤5.3%</p></div>
+<div class='exp'><p><strong>29번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,567명 — ①8.3% ②8.0% ③20.9% ④50.0% ⑤10.1%</p></div>
+<div class='exp'><p><strong>30번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,567명 — ①8.5% ②85.8% ③2.4% ④1.1% ⑤1.2%</p></div>
+</div></div>
+</body></html>

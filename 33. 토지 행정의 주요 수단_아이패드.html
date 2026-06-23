@@ -1,0 +1,801 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>토지 행정의 주요 수단 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>토지 행정의 주요 수단 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 내 땅이라면 내 마음대로 사고팔 수 있어야 할 것 같죠? 그런데 어떤 지역에서는 땅을 사고팔 때 시장·군수에게 미리 '허가'를 받아야 한다는 말을 들으면 좀 이상하게 느껴질 거예요. "내 재산인데 왜 나라가 끼어들지?" 하고요. 바로 이 물음에서 출발하는 것이 <strong>토지 행정</strong>입니다.</p>
+<p><strong>토지 행정이란, 나라가 국토를 잘 이용·개발·보존하기 위해 토지와 관련해 펼치는 행정</strong>을 말해요. 땅은 한번 망가지면 되돌리기 어렵고, 모두가 함께 살아가는 바탕이 되기 때문에, 나라는 땅을 그냥 개인의 자유에만 맡겨 두지 않습니다. 옛날(20세기 초까지)에는 "땅 주인 마음대로 하세요" 하는 <strong>불간섭주의</strong>였지만, 지금은 국토 전체의 균형을 위해 나라가 좀 더 <strong>적극적으로 개입</strong>하는 쪽으로 바뀌었어요.</p>
+<p>그렇게 개입하는 대표적인 두 가지 '수단'이 이 단원의 주인공입니다. 하나는 <strong>토지 거래 허가제</strong>예요. 투기 때문에 땅값이 폭등할 우려가 있는 지역을 정해, 그 안에서 땅을 거래할 때는 미리 허가를 받게 하는 제도죠. 다른 하나는 <strong>부동산 가격 공시제</strong>입니다. 나라가 매년 땅의 적정한 가격(공시 지가)을 정해 알려 주어, 세금이나 보상금의 기준으로 삼게 하는 제도예요.</p>
+<p>이 두 제도를 공부하다 보면 자연스럽게 한 가지 <strong>다툼거리(쟁점)</strong>가 떠오릅니다. "이렇게 개인의 재산권을 제한해도 헌법에 어긋나지 않을까?"(합헌성 다툼), 그리고 "공시 지가에 불만이 있을 때 법으로 다툴 수 있을까?"(처분성 다툼)라는 물음이에요.</p>
+<blockquote>
+<p>한마디로: <strong>토지 행정은 '개인의 재산권'과 '공공의 이익'이 부딪치는 자리</strong>예요. 나라가 어디까지 개인의 땅에 개입할 수 있는지, 그 선이 어디인지를 따져 보는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>토지 행정의 두 수단 — 토지 거래 허가제와 부동산 가격 공시제</strong>가 있습니다. 두 제도는 모두 개인의 재산권을 어느 정도 제한하는데, 그 제한이 정당한지를 두고 법적인 다툼이 생기죠. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>토지 행정 (개인 재산권 vs 공공 이익)▶ 제도의 정당성 다툼<small>"토지 거래 허가제 · 부동산 가격 공시제"        "합헌성 · 처분성"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>토지 거래 허가제가 왜 헌법에 어긋나지 않는지, 그 근거와 한계를 살피고, 이 제도를 <em>재산권의 제한</em>으로 볼지 <em>부인</em>으로 볼지 두 입장의 대립을 봅니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>부동산 가격 공시제의 <em>공시 지가</em>가 단순한 참고 자료인지, 아니면 법으로 다툴 수 있는 행정 행위인지를 <em>처분성</em> 개념으로 따져 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>두 수단의 전체 얼개를 한눈에 잡고, 토지 거래 허가의 절차·요건과 공시 지가의 산정 방식 같은 <em>구체적 규칙</em>을 사례에 적용해 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 토지 행정이 왜 개인의 재산권을 제한할 수 있는지, 그리고 그 제한의 정당성을 법이 어떻게 따지는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>토지는 양이 한정되어 있고 한번 투기의 대상이 되면 가격이 빠르게 치솟는다는 점에서 다른 재화와 구별된다. 20세기 초까지 국가는 토지의 이용에 대하여 불간섭주의를 취하여 소유자의 자유에 맡겼으나, 20세기 중반 이후로는 국토의 균형 있는 발전을 위하여 토지에 보다 적극적으로 개입하기 시작하였다. ㉠<u>토지 거래 허가제</u>는 그러한 개입의 대표적 수단으로, 토지의 투기적 거래로 인한 급격한 지가 상승을 억제하기 위하여, 일정한 절차에 따라 지정된 규제 구역 안에서 이루어지는 토지 거래 계약에 대하여 행정청의 허가를 받도록 하는 제도이다. 허가를 받으려는 자는 거래 목적과 가격 등이 기준에 어긋나지 않음을 소명하여야 하므로, 이 제도는 실수요자가 아닌 자의 진입을 막아 지가를 안정시키고 토지가 본래의 쓰임에 맞게 이용되도록 유도하는 장점이 있다. 하지만 거래에 허가라는 문턱을 두어 토지 소유자의 처분 자유를 제약한다는 점에서, 이 제도는 개인의 재산권을 지나치게 침해하는 것이 아니냐는 의문을 불러일으키기도 한다.</p>
+<p>이러한 의문에 대응하여, 토지 거래 허가제는 여러 규범에 근거를 두고 그 정당성을 확보한다. ㉮<u>「헌법」 제23조</u>는 재산권을 보장하면서도 재산권의 행사는 공공복리에 적합하여야 한다고 규정한다. 즉 재산권은 무제한의 권리가 아니라 공동체의 이익이라는 테두리 안에서 행사되어야 하는 권리이다. 또한 ㉯<u>「헌법」 제122조</u>는 국토의 효율적이고 균형 있는 개발과 보전을 위하여 국가가 개인에게 토지에 관한 제한이나 의무를 부과할 수 있다고 규정한다. 이러한 헌법 규정에 근거하여, 입법권자는 입법 형성권에 따라 법률로써 토지 소유권의 처분을 제한할 수 있다. 그리고 허가 없이 체결된 거래 계약을 어떻게 다룰지는 ㉰<u>「부동산 거래 신고 등에 관한 법률」</u>이 정한다. 이 법률에 따르면 허가를 받지 아니하고 체결한 거래 계약은 그 효력이 발생하지 않으며, 속임수나 그 밖의 부정한 방법으로 허가를 받은 자는 처벌을 받는다. 거래의 효력을 처음부터 부정함으로써, 허가라는 절차를 우회하려는 시도 자체를 막는 것이다. 이처럼 토지 거래 허가제를 채택하는 것이 합헌적인지에 대하여, 헌법재판소는 이 제도가 재산권의 본질을 침해하지 않는 합리적 제한이라며 합헌으로 결정하였다.</p>
+<p>다만 입법 형성권이 무제한으로 허용되는 것은 아니어서, 재산권의 본질적 내용은 어떤 경우에도 침해될 수 없다. 재산권의 본질이란 소유자가 자신의 재산을 사용·수익·처분할 수 있는 핵심 권능을 가리키는데, 제한이 이 핵심을 박탈하는 데까지 이르면 그것은 더 이상 제한이 아니라 침해가 된다. 그리하여 토지 거래 허가제가 재산권의 본질을 침해하지 않으려면 일정한 한계 안에 머물러야 한다. ㉡<u>규제의 대상이 모든 사유지가 아니라 투기 우려 지역이나 지가 폭등 지역의 토지에 한정되고, 규제 기간이 일정 기간 이내로 제한되며, 기준에 어긋나지 않는 한 적법한 절차를 거쳐 허가를 받을 수 있고, 허가가 거부된 경우에는 이에 불복할 방법이 마련되어 있어야 한다는 것</u>이다. 이러한 한계가 지켜질 때, 규제는 한정된 지역에 한시적으로만 미치고 적법한 거래는 여전히 허가될 수 있으므로, 토지 소유권의 처분이 완전히 금지되는 것이 아니어서 재산권의 본질은 보전된다.</p>
+<p>이러한 한계를 어떻게 평가하느냐에 따라, 토지 거래 허가제의 성격을 두고 견해가 갈린다. ⓐ제한설은 이 제도가 재산권의 처분을 한시적·부분적으로 제약할 뿐 소유 자체를 박탈하지 않으므로, 사유 재산 제도를 부인하는 것이 아니라 그 행사를 제한하는 한 형태에 지나지 않는다고 본다. 규제가 미치는 범위가 투기 우려 지역으로 좁고, 허가가 거부되더라도 이에 불복할 절차가 갖추어져 있어 소유자가 구제받을 길이 열려 있다는 점을 근거로 삼는다. 반면 ⓑ침해설은 허가를 받지 못하면 사실상 거래가 불가능해져 소유권의 핵심인 처분 권능이 형해화된다는 점에 주목한다. 토지를 팔고자 하여도 허가가 나지 않으면 소유자는 그 토지를 처분할 길이 막히는데, 이처럼 거래의 자유가 봉쇄되면 소유권은 이름만 남을 뿐이므로, 이 제도가 재산권의 본질에 닿는 제약일 수 있다고 보는 것이다. 두 견해는 같은 제도를 두고도, 처분의 제약을 재산권의 '행사'에 대한 제한으로 볼지 '본질'에 대한 침해로 볼지에서 갈라진다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 모든 사유지의 거래를 그 대상으로 삼는다.</li>
+<li>② 토지 소유자의 처분 자유를 전혀 제약하지 않는다.</li>
+<li>③ 투기적 거래로 인한 급격한 지가 상승을 억제하려는 것이다.</li>
+<li>④ 토지의 본래 쓰임과 무관하게 거래량을 늘리는 것을 목적으로 한다.</li>
+<li>⑤ 실수요자가 아닌 자의 토지 거래를 장려하는 효과를 낸다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+1문단 첫머리에서 토지 거래 허가제는 "투기적 거래로 인한 급격한 지가 상승을 억제하기 위하여" 두는 제도라고 했으므로 ③이 적절해 정답입니다. ① 규제 구역에 한정되며 모든 사유지가 대상이 아니에요(3문단). ② 처분 자유를 '제약한다'고 했으니 '전혀 제약하지 않는다'는 반대고, ④ 본래 쓰임에 맞게 이용되도록 유도하는 것이지 거래량을 늘리려는 게 아니며, ⑤ 실수요자가 아닌 자의 진입을 '막는' 제도이므로 '장려'는 정반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재산권의 행사가 공공복리에 적합하여야 한다는 것은 헌법에 규정되어 있다.</li>
+<li>② 허가를 받지 아니하고 체결한 토지 거래 계약은 그 효력이 발생하지 않는다.</li>
+<li>③ 입법권자는 입법 형성권에 따라 법률로 토지 소유권의 처분을 제한할 수 있다.</li>
+<li>④ 헌법재판소는 토지 거래 허가제가 재산권의 본질을 침해한다고 결정한 바 있다.</li>
+<li>⑤ 재산권의 본질적 내용은 입법 형성권에 의해서도 침해될 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+2문단에서 헌법재판소는 토지 거래 허가제를 "재산권의 본질을 침해하지 않는 합리적 제한이라며 합헌으로 결정"했어요. ④는 '본질을 침해한다고 결정'했다고 정반대로 적었으니 적절하지 않아 정답입니다. ①은 2문단(헌법 제23조), ②는 2문단(허가 없는 계약은 효력 무발생), ③은 2문단(입법 형성권에 따른 처분 제한), ⑤는 3문단(본질적 내용은 침해 불가)에서 그대로 확인됩니다.</p>
+<p><strong>3번 [3점] — 정답 ②</strong>
+ⓐ제한설은 불복 절차가 갖추어져 있다는 점을 근거로 이 제도를 재산권 '행사의 제한'으로 봅니다. 그런데 ②처럼 불복하여 구제받을 길이 실제로는 거의 닫혀 있다면, 제한설이 든 근거 자체가 무너지므로 ⓐ의 입장은 약화됩니다. 따라서 ②가 정답이에요. ① 규제가 모든 사유지로 확대되는 것은 제한설이 든 '범위가 좁다'는 근거를 깨뜨리므로 ⓐ를 약화하지 강화하지 않고, ③ 규제 기간이 짧아 곧 자유롭게 처분할 수 있다는 점은 '처분이 완전히 금지되지 않는다'는 ⓐ의 근거이므로 ⓑ가 아니라 ⓐ를 강화하며, ④ 거의 모든 거래가 허가된다면 처분 권능이 살아 있다는 뜻이라 ⓑ(침해설)를 약화하고, ⑤ 처분 권능을 행사하지 못하게 된다는 점은 ⓑ(침해설)의 근거이므로 ⓐ가 아니라 ⓑ를 강화합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉡과 관련하여 ⓐ와 ⓑ의 입장에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 규제 구역이 투기 우려 지역에 한정되지 않고 모든 사유지로 확대되더라도 불복 절차만 갖추어져 있으면 된다고 한다면, ⓐ의 입장은 강화되겠군.</li>
+<li>② 허가가 거부된 토지 소유자가 이에 불복하여 구제를 받을 길이 실제로는 거의 닫혀 있다는 것이 밝혀진다면, ⓐ의 입장은 약화되겠군.</li>
+<li>③ 규제 기간이 짧게 제한되어 있어 그 기간이 지나면 소유자가 자유롭게 처분할 수 있다는 점이 부각된다면, ⓑ의 입장은 강화되겠군.</li>
+<li>④ 기준에 어긋나지 않는 한 적법한 절차를 거쳐 거의 모든 거래가 허가된다는 사실이 확인된다면, ⓑ의 입장은 강화되겠군.</li>
+<li>⑤ 허가를 받지 못한 소유자가 사실상 거래를 할 수 없어 처분 권능을 행사하지 못하게 된다는 점이 강조된다면, ⓐ의 입장은 강화되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>토지 거래 허가제</strong>: 투기로 인한 지가 폭등을 막기 위해, 규제 구역 안의 토지 거래에 행정청의 허가를 받게 하는 제도.</li>
+<li><strong>입법 형성권</strong>: 입법권자가 헌법의 테두리 안에서 법률의 내용을 정할 수 있는 권한. 무제한이 아니라 재산권의 본질을 침해할 수 없는 한계가 있어요.</li>
+<li><strong>재산권의 본질적 내용</strong>: 어떤 경우에도 침해될 수 없는 재산권의 핵심. 처분 자체를 박탈하면 이 본질을 건드리게 됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>제한설(ⓐ)</th>
+<th>침해설(ⓑ)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>제도의 성격</td>
+<td>재산권 '행사'의 제한</td>
+<td>재산권 '본질'에 닿는 침해 우려</td>
+</tr>
+<tr>
+<td>주목하는 점</td>
+<td>범위가 좁고 불복 절차가 있음</td>
+<td>거래 봉쇄 시 처분 권능이 형해화</td>
+</tr>
+<tr>
+<td>결론</td>
+<td>사유 재산의 부인이 아님</td>
+<td>소유권이 이름만 남을 수 있음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 제도라도 '어디까지가 본질이고 어디부터가 행사인가'를 어떻게 보느냐에 따라 평가가 갈려요. 합헌성 다툼은 결국 이 '선'을 어디에 긋느냐의 문제입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>토지 거래 허가제가 합헌으로 인정되려면 어떤 한계를 지켜야 하나요?</div><div class='qa-a'>규제 대상이 투기 우려 지역 등에 한정되고, 규제 기간이 제한되며, 적법 절차로 허가를 받을 수 있고, 불허가 시 불복 방법이 마련되어 있어야 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>제한설과 침해설은 무엇에서 갈리나요?</div><div class='qa-a'>처분의 제약을 재산권 '행사'에 대한 제한으로 보느냐, '본질'에 대한 침해로 보느냐에서 갈립니다.</div></div>
+<div class='qa-item'><div class='qa-q'>입법 형성권에는 한계가 없나요?</div><div class='qa-a'>아니요. 재산권의 본질적 내용은 입법 형성권으로도 침해할 수 없습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [4~7]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠경마식 보도는 경마 중계를 하듯 지지율 변화나 득표율 예측 등을 집중 보도하는 선거 방송의 한 방식이다. 경마식 보도는 선거일이 가까워질수록 증가한다. 새롭고 재미있는 정보를 원하는 시청자들의 요구에 부응하고, 방송사로서도 매일 새로운 뉴스를 제공하는 방편이 될 수 있기 때문이다. 경마식 보도는 선거와 정치에 무관심한 유권자들의 선거 참여, 정치 참여를 독려하는 장점이 있다. 하지만 흥미를 돋우는 데 치중하는 경마식 보도는 선거의 주요 의제를 도외시하고 경쟁 결과에 초점을 맞춰 선거의 공정성을 저해할 수 있다.</p>
+<p>경마식 보도의 문제점을 줄이려는 조치가 있다. ㉮「공직선거법」의 규정에 따르면, 당선인을 예상케 하는 여론조사를 실시하는 것은 언제든지 가능하지만, 그 결과의 보도는 선거일 6일 전부터 투표 마감 시각까지 금지된다. 이러한 규정이 국민의 알 권리와 언론의 자유를 침해하는지에 대해 헌법재판소는 신뢰할 수 있는 여론조사 결과라 하더라도 선거일에 임박해 보도하면 선거에 영향을 끼칠 수 있다며 합헌 결정을 내렸다. 「공직선거법」에 근거를 둔 ㉯「선거방송심의에 관한 특별규정」은 유권자에게 영향을 줄 수 있는 사실의 왜곡 보도를 금지하고, 여론조사 결과가 오차 범위 내에 있을 때에 이를 밝히지 않은 채로 서열이나 우열을 나타내는 보도도 금지하고 있다. 언론 단체의 ㉰「선거여론조사보도준칙」은 표본 오차를 감안하여 여론조사 결과를 정확하게 보도하도록 요구한다. 지지율 차이가 오차 범위 내에 있을 때 “경합”이라는 표현은 무방하지만 서열화하거나 “오차 범위 내에서 앞섰다.”라는 표현처럼 우열을 나타내어 보도할 수 없다는 것이다.</p>
+<p>경마식 보도로부터 드러난 선거 방송의 한계를 보완하는 방책 중 하나로 선거 방송 토론회가 활용될 수 있다. 이 토론회를 통해 후보자 간 정책과 자질 등의 차이가 드러날 수 있는데, 현실적인 이유로 초청 대상자는 한정된다. ㉡「공직선거법」의 선거 방송 토론회 규정은 5인 이상의 국회의원을 가진 정당이나 직전 선거에서 3% 이상 득표한 정당이 추천한 후보자, 또는 언론기관의 여론조사 결과 평균 지지율이 5% 이상인 후보자 등을 초청 기준으로 제시하고 있다. 다만 초청 대상이 아닌 후보자들을 위해 별도의 토론회 개최가 가능하고 시간이나 횟수를 다르게 할 수 있다.</p>
+<p>이러한 규정이 선거 운동의 기회균등 원칙을 침해하는지에 대해 헌법재판소는 위헌이 아니라고 결정했다. ⓐ다수 의견은 방송 토론회의 효율적 운영을 고려할 때 초청 대상 후보자 수가 너무 많으면 제한된 시간 안에 심층적인 토론이 이루어지기 어렵고, 유권자들도 관심이 큰 후보자들의 정책 및 자질을 직접 비교하기 어렵다는 점을 지적하며, 이 규정은 합리적 제한이라고 보았다. 반면 ⓑ소수 의견은 이 규정이 가장 효과적인 선거 운동의 기회를 일부 후보자에게서 박탈하며, 유권자에게도 모든 후보자를 동시에 비교하지 못하게 하고, 초청 대상 후보자 토론회에 참여한 후보자와 그렇지 못한 후보자를 차별적으로 인식하게 만든다고 지적하였다. 이 규정을 소수 정당이나 정치 신인 등에 대한 자의적이고 차별적인 침해라고 본 것이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 기간의 후반기에 비해 전반기에 더 많다.</li>
+<li>② 시청자와 방송사의 상반된 이해관계가 반영된다.</li>
+<li>③ 당선자 예측과 관련된 정보의 전파에 초점을 맞추지 않는다.</li>
+<li>④ 선거의 핵심 의제에 관한 후보자의 입장을 다룬 보도를 중시한다.</li>
+<li>⑤ 정치에 관심이 없던 유권자들이 선거에 관심을 갖도록 북돋운다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>4번 — 정답 ⑤</strong><br />
+1문단에서 경마식 보도는 선거와 정치에 무관심한 유권자들의 선거 참여·정치 참여를 독려하는 장점이 있다고 했다. ①은 선거일이 가까워질수록 증가한다고 했으므로 반대이고, ②는 시청자의 요구에 부응하고 방송사의 방편도 되므로 이해관계가 상반되지 않는다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.8% ②2.5% ③2.2% ④4.3% ⑤90.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 신뢰할 수 있는 여론조사의 결과를 보도하더라도 선거의 공정성을 위협할 수 있다.</li>
+<li>② 정당의 추천을 받지 못해도 선거 방송의 초청 대상 후보자 토론회에 참여할 수 있다.</li>
+<li>③ 국민의 알 권리와 언론의 자유가 서로 충돌하는지의 문제를 헌법재판소에서 논의한 적이 있다.</li>
+<li>④ 선거일에 당선인 예측 선거 여론조사를 실시하고 투표 마감 시각 이후에 그 결과를 보도할 수 있다.</li>
+<li>⑤ 「공직선거법」에는 선거 운동의 기회가 모든 후보자에게 균등하게 배분되지 못하도록 할 가능성이 있는 규정이 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+2문단에서 헌법재판소가 논의한 것은 여론조사 결과 보도를 일정 기간 금지하는 규정이 국민의 알 권리와 언론의 자유를 침해하는지의 문제이지, 알 권리와 언론의 자유가 서로 충돌하는지의 문제가 아니다. ②는 평균 지지율 5% 이상 기준으로, ④는 여론조사 실시는 언제든 가능하고 보도 금지가 투표 마감 시각까지라는 점에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,625명 — ①4.2% ②14.5% ③46.1% ④16.4% ⑤19.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉡과 관련하여 ⓐ와 ⓑ의 입장에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 방송 초청 대상 후보자 토론회에서 후보자들이 심층적인 토론을 하지 못한 원인이 시간의 제한이나 참여한 후보자의 수와 관계가 없다면 ⓐ의 입장은 강화되겠군.</li>
+<li>② 주요 후보자의 정책이 가진 치명적 허점을 지적하고 좋은 대안을 제시해 유명해진 정치 신인이 선거 방송 초청 대상 후보자 토론회에 초청받지 못한다면 ⓐ의 입장은 약화되겠군.</li>
+<li>③ 선거 방송 초청 대상 후보자 토론회에 참여할 적정 토론자의 수를 제한하는 기준이 국민의 합의에 의해 결정되었기 때문에 자의적인 것이 아니라고 한다면 ⓑ의 입장은 강화되겠군.</li>
+<li>④ 어떤 후보자가 지지율이 낮은 후보자 간의 별도 토론회에서 뛰어난 정치 역량을 보여 주었음에도 그 토론회에 참여했다는 이유만으로 지지율이 떨어진다면 ⓑ의 입장은 약화되겠군.</li>
+<li>⑤ 유권자들이 뛰어난 역량을 가진 소수 정당 후보자를 주요 후보자들과 동시에 비교할 수 있는 가장 효율적인 방법이 선거 방송 초청 대상 후보자 토론회라면 ⓑ의 입장은 약화되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>6번 — 정답 ②</strong><br />
+역량 있는 정치 신인이 초청받지 못하는 상황은 초청 기준 규정의 차별성을 부각하므로, 이 규정을 합리적 제한이라고 본 ⓐ(다수 의견)의 입장을 약화한다. ①은 ⓐ를 약화하는 사례이고, ③은 ⓑ를 약화, ④·⑤는 ⓑ를 강화하는 사례이므로 판단 방향이 틀렸다.</p>
+<p><em>선택률</em> — 응시 98,618명 — ①5.5% ②60.6% ③5.6% ④14.1% ⑤13.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉮～㉰에 따라 〈보기〉에 대한 언론 보도를 평가한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 ○○방송사의 의뢰로 △△여론조사 기관에서 세 차례 실시한 당선인 예측 여론조사 결과의 일부이다. (세 조사 모두 신뢰 수준 95%, 오차 범위 8.8%P임.)</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>1차 조사</th>
+<th>2차 조사</th>
+<th>3차 조사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조사일</td>
+<td>선거일 15일 전</td>
+<td>선거일 10일 전</td>
+<td>선거일 5일 전</td>
+</tr>
+<tr>
+<td>조사 결과 — A 후보</td>
+<td>42%</td>
+<td>38%</td>
+<td>39%</td>
+</tr>
+<tr>
+<td>조사 결과 — B 후보</td>
+<td>32%</td>
+<td>37%</td>
+<td>38%</td>
+</tr>
+<tr>
+<td>조사 결과 — C 후보</td>
+<td>18%</td>
+<td>17%</td>
+<td>17%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① 1차 조사 결과를 선거일 14일 전에 “A 후보, 10%P 이상의 차이로 B 후보와 C 후보에 우세”라고 보도하는 것은 ㉯와 ㉰ 중 어느 것에도 위배되지 않겠군.</li>
+<li>② 2차 조사 결과를 선거일 9일 전에 “A 후보는 B 후보에 조금 앞서고, C 후보는 3위”라고 보도하는 것은 ㉯에 위배되지만, ㉰에 위배되지 않겠군.</li>
+<li>③ 3차 조사 결과를 선거일 4일 전에 “A 후보는 오차 범위 내에서 1위”라고 보도하는 것은 ㉮와 ㉰에 모두 위배되겠군.</li>
+<li>④ 1차 조사 결과를 선거일 14일 전에 “A 후보 1위, B 후보 2위, C 후보 3위”라고 보도하는 것은 ㉯에 위배되지 않고, 2차 조사 결과를 선거일 9일 전에 같은 표현으로 보도하는 것은 ㉰에 위배되겠군.</li>
+<li>⑤ 2차 조사 결과를 선거일 9일 전에 “B 후보, A 후보와 오차 범위 내 경합”이라고 보도하는 것은 ㉰에 위배되지 않고, 3차 조사 결과를 선거일 4일 전에 같은 표현으로 보도하는 것은 ㉮에 위배되겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong><br />
+2차 조사에서 A·B 후보의 지지율 차이(1%P)는 오차 범위(8.8%P) 내에 있으므로, 이를 밝히지 않고 우열을 나타내는 보도는 ㉯와 ㉰에 모두 위배된다. ‘선거일 9일 전’이라는 시기는 ㉯·㉰의 위배 여부 판단과 무관하다. 따라서 ㉰에 위배되지 않는다고 한 ②가 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,632명 — ①10.8% ②47.0% ③7.1% ④24.8% ⑤9.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>토지의 가격은 거래 당사자의 사정이나 시장의 분위기에 따라 들쭉날쭉하기 쉬워, 같은 토지라도 누가 거래하느냐에 따라 값이 달라질 수 있다. 이러한 혼란을 줄이고 부동산의 적정한 가격 형성과 각종 조세 및 부담금의 형평성을 도모하기 위하여, 국가는 매년 일정 시점을 기준으로 토지의 적정 가격을 산정하여 이를 공시한다. 이렇게 공시되는 지가를 공시 지가라 한다. 공시 지가는 토지 가격의 적정한 기준을 나타내는 값으로, 표준지로 선정된 토지의 단위 면적당 가격인 표준지 공시 지가를 기준으로 ㉠<u>매겨진다</u>. 곧 국가가 전국의 토지 가운데 대표성 있는 토지를 표준지로 골라 그 가격을 먼저 정하고, 개별 토지의 가격은 표준지 공시 지가에 토지의 특성 차이를 반영한 토지 가격 비준표를 적용하여 산정한다. 이렇게 산정된 개별 토지의 가격을 개별 공시 지가라 한다. 표준지 공시 지가가 전체 토지 가격의 뼈대를 이루는 기준점이라면, 개별 공시 지가는 그 기준점을 각 토지의 사정에 맞게 구체화한 값인 셈이다. 이처럼 전국의 모든 토지마다 일일이 가격을 매기는 대신 표준지를 매개로 삼는 까닭은, 한정된 행정 역량으로도 토지 전체의 가격에 일관된 기준을 부여하기 위해서이다. 그 결과 공시 지가는 토지 시장에 지가 정보를 제공하여 일반적인 토지 거래의 ⓐ<u>지표</u>가 되며, 국가나 기관이 업무와 관련하여 지가를 산정하거나 감정할 때의 ⓑ<u>기준</u>이 되기도 한다.</p>
+<p>공시 지가가 갖는 기능은 어떻게 바라보느냐에 따라 그 ⓒ<u>무게</u>가 달라진다. 공시 지가를 토지 거래의 지표로만 바라본다면, 그것은 거래 당사자가 가격을 가늠할 때 참고할 수 있는 정보에 그칠 뿐, 누군가의 권리와 의무를 직접 변동시키는 것은 아니다. 거래 당사자는 공시 지가를 보고 가격을 정할 수도 있고 사정에 따라 다른 가격에 거래할 수도 있으므로, 공시 지가가 곧바로 거래를 구속하지는 않는다. 이러한 관점에서 보면 공시 지가는 처분성이 있는 행정 행위라고 인정하기 어렵다. 여기서 처분성이란, 어떤 행정 작용이 국민의 구체적인 권리나 의무에 직접 영향을 미쳐 ⓓ<u>다툼의 대상</u>이 될 수 있는 성질을 가리킨다. 행정 소송은 처분성이 인정되는 행정 작용을 대상으로 하므로, 단순한 정보 제공이나 사실의 통지에는 처분성이 인정되지 않아 그 자체를 소송으로 다투기 어려운 것이 일반적이다. 누구의 권리도 직접 변동시키지 않는 정보 제공을 두고 다툴 실익이 없기 때문이다.</p>
+<p>그러나 공시 지가의 쓰임을 자세히 들여다보면 사정이 달라진다. 공시 지가는 토지를 수용할 때의 보상액을 산정하거나 조세를 부과하는 ⓔ<u>잣대</u>가 되기 때문에, 단순한 참고 기준에 그치지 않고 사실상 한정된 금액으로 작용하여 국민에게 구속적인 기능을 갖게 된다. 공시 지가가 어떻게 정해지느냐에 따라 토지 소유자가 받을 보상액이나 부담할 세액이 직접 좌우되므로, 공시 지가는 거래의 참고 자료를 넘어 국민의 재산상 권리와 의무에 실질적으로 영향을 미치는 셈이다. 같은 공시 지가라도 거래의 지표로 쓰일 때에는 참고에 그치지만, 보상이나 과세의 기준으로 쓰일 때에는 국민을 구속하는 힘을 갖는 것이다. 이 점에 주목하여, 제한적으로 공시 지가에 처분성이 있다고 인정하는 ㉡<u>부분 행정 행위 인정설</u>이 다수설로 받아들여진다. 이 견해에 따르면, 공시 지가에 따라 세금이 부과되거나 표준지 공시 지가를 기초로 개별 공시 지가가 산정된 것에 불복하려는 자는, 부과 처분 그 자체의 위법성을 다툴 것이 아니라 공시 지가 결정의 취소를 구하는 행정 소송을 제기하여야 한다. 만약 공시 지가 자체를 다투지 못하게 한다면, 잘못 산정된 공시 지가가 그대로 보상액이나 세액의 기준이 되어 버려 국민이 부당한 부담을 떠안게 된다. 부분 행정 행위 인정설은 공시 지가의 결정 단계에서부터 그 적정성을 다툴 길을 열어 둠으로써, 구속적 기능을 갖는 공시 지가에 대해 국민이 권리를 구제받을 수 있도록 한 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 개별 공시 지가는 표준지 공시 지가를 기준으로 산정된다.</li>
+<li>② 공시 지가는 토지 시장에 지가 정보를 제공하는 기능을 한다.</li>
+<li>③ 공시 지가는 보상액을 산정하거나 조세를 부과하는 기준이 된다.</li>
+<li>④ 단순한 사실의 통지에는 일반적으로 처분성이 인정되지 않는다.</li>
+<li>⑤ 표준지 공시 지가는 개별 공시 지가에 토지 가격 비준표를 적용하여 산정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>4번 — 정답 ⑤</strong>
+1문단은 개별 공시 지가가 "표준지 공시 지가에 토지 가격 비준표를 적용하여 산정"된다고 했어요. ⑤는 그 방향을 뒤집어 '표준지 공시 지가를 개별 공시 지가로부터' 산정한다고 적었으니 적절하지 않아 정답입니다. ①은 1문단(표준지 공시 지가를 기준으로 산정), ②는 1문단(지가 정보 제공), ③은 3문단(보상액·조세의 기준), ④는 2문단(사실의 통지에는 처분성 불인정)에서 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에서 설명한 공시 지가에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 토지 거래의 지표로만 본다면 처분성이 있는 행정 행위로 인정된다.</li>
+<li>② 보상액 산정의 기준이 됨으로써 국민에게 구속적인 기능을 갖게 된다.</li>
+<li>③ 거래 당사자가 참고하는 정보일 뿐 세액에는 아무런 영향을 미치지 않는다.</li>
+<li>④ 표준지로 선정되지 않은 토지에 대해서는 개별 공시 지가가 산정되지 않는다.</li>
+<li>⑤ 매년 산정되는 것이 아니라 토지 거래가 있을 때마다 새로 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+3문단에서 공시 지가는 보상액 산정·조세 부과의 기준이 되어 "사실상 한정된 금액으로 작용하여 국민에게 구속적인 기능을 갖게 된다"라고 했으므로 ②가 적절해 정답입니다. ① 지표로만 본다면 처분성을 '인정하기 어렵다'고 했으니 반대고, ③ 세액을 직접 좌우한다고 했으므로 '아무런 영향을 미치지 않는다'는 틀렸으며, ④ 표준지가 아닌 토지에도 개별 공시 지가가 산정되므로(1문단) 틀렸고, ⑤ 매년 일정 시점을 기준으로 산정한다고 했으니 '거래가 있을 때마다'는 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>ⓐ~ⓔ의 문맥상 의미에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 거래 당사자가 가격을 가늠할 때 길잡이가 되는 값</li>
+<li>② ⓑ: 지가를 산정하거나 감정할 때 따르게 되는 근거</li>
+<li>③ ⓒ: 기능이 지니는 비중이나 효력의 정도</li>
+<li>④ ⓓ: 거래 당사자끼리 가격을 흥정하여 합의에 이르는 과정</li>
+<li>⑤ ⓔ: 보상액이나 세액을 정할 때 적용되는 척도</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+ⓓ<u>다툼의 대상</u>은 처분성을 풀이하는 자리에서 쓰였어요. 2문단은 처분성을 "국민의 권리·의무에 직접 영향을 미쳐 다툼의 대상이 될 수 있는 성질"로 설명하므로, ⓓ는 '행정 소송 등을 통해 위법성을 따질 수 있는 대상'이라는 뜻입니다. ④는 이를 '거래 당사자끼리 가격을 흥정해 합의하는 과정'으로 엉뚱하게 풀이했으니 적절하지 않아 정답이에요. ①(길잡이가 되는 값), ②(따르게 되는 근거), ③(비중·효력의 정도), ⑤(적용되는 척도)는 각각 ⓐ·ⓑ·ⓒ·ⓔ의 문맥에 들어맞습니다.</p>
+<p><strong>7번 [3점] — 정답 ①</strong>
+㉡부분 행정 행위 인정설은, 공시 지가가 구속적 기능을 갖는다는 점에 주목하여 "제한적으로 공시 지가에 처분성이 있다고 인정"하는 견해예요(3문단). 따라서 ①이 적절해 정답입니다. ② 처분성을 '전면 부정'하는 것은 지표로만 보는 관점이라 정반대고, ③ '모든 행정 작용'에 처분성을 인정하는 것이 아니라 '제한적으로' 인정하므로 틀렸으며, ④ 이 견해는 부과 처분 자체가 아니라 '공시 지가 결정의 취소'를 구해야 한다고 했으니 반대고, ⑤ 표준지·개별 공시 지가를 동일시한다는 내용은 지문에 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉡에 관한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 공시 지가가 구속적 기능을 가짐에 주목하여 그 처분성을 제한적으로 인정하는 견해이다.</li>
+<li>② 공시 지가가 단순한 정보 제공에 그친다고 보아 그 처분성을 전면적으로 부정하는 견해이다.</li>
+<li>③ 모든 행정 작용에 처분성을 인정하여 국민이 언제든 행정 소송을 제기할 수 있게 하려는 견해이다.</li>
+<li>④ 공시 지가에 불복하려는 자가 부과 처분 자체의 위법성만을 다투어야 한다고 보는 견해이다.</li>
+<li>⑤ 표준지 공시 지가와 개별 공시 지가를 구별하지 않고 동일한 하나의 값으로 취급하는 견해이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>공시 지가</strong>: 나라가 매년 일정 시점을 기준으로 산정해 공시하는 토지의 적정 가격. 표준지 공시 지가와 개별 공시 지가로 나뉩니다.</li>
+<li><strong>처분성</strong>: 어떤 행정 작용이 국민의 권리·의무에 직접 영향을 미쳐 행정 소송으로 다툴 수 있는 성질.</li>
+<li><strong>부분 행정 행위 인정설</strong>: 공시 지가의 구속적 기능에 주목해, 제한적으로나마 공시 지가에 처분성을 인정하는 다수설.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>공시 지가를 보는 관점</th>
+<th>성격</th>
+<th>처분성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거래의 지표로만 봄</td>
+<td>참고용 정보 제공</td>
+<td>인정하기 어려움</td>
+</tr>
+<tr>
+<td>보상·조세의 기준으로 봄</td>
+<td>사실상 한정액·구속적 기능</td>
+<td>제한적으로 인정(다수설)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 공시 지가라도 '단순 정보'로 보면 다툴 수 없고, '구속적 기준'으로 보면 다툴 수 있어요. 처분성을 인정하면 국민은 공시 지가 결정 단계에서부터 권리를 구제받을 길을 얻게 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>개별 공시 지가는 어떻게 산정되나요?</div><div class='qa-a'>표준지 공시 지가에 토지 가격 비준표를 적용하여 산정됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>공시 지가에 처분성을 인정하는 까닭은?</div><div class='qa-a'>보상액 산정·조세 부과의 기준이 되어 사실상 한정액으로 작용하는 구속적 기능을 갖기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>공시 지가 산정에 불복하려면 무엇을 다투어야 하나요?</div><div class='qa-a'>부과 처분 자체가 아니라 공시 지가 결정의 취소를 구하는 행정 소송을 제기해야 합니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2017학년도 9월 [35~39]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>권리와 의무의 주체가 될 수 있는 자격을 권리 능력이라 한다. 사람은 태어나면서 저절로 권리 능력을 갖게 되고 생존하는 내내 보유한다. 그리하여 사람은 재산에 대한 소유권의 주체가 되며, 다른 사람에 대하여 채권을 누리기도 하고 채무를 지기도 한다. 사람들의 결합체인 단체도 일정한 요건을 ㉠갖추면 법으로써 부여되는 권리 능력인 법인격을 취득할 수 있다. 단체 중에는 사람들이 일정한 목적을 갖고 결합한 조직체로서 구성원과 구별되어 독자적 실체로서 존재하며, 운영 기구를 두어, 구성원의 가입과 탈퇴에 관계없이 존속하는 단체가 있다. 이를 사단(社團)이라 하며, 사단이 갖춘 이러한 성질을 사단성이라 한다. 사단의 구성원은 사원이라 한다. 사단은 법인(法人)으로 등기되어야 법인격이 생기는데, 법인격을 가진 사단을 사단 법인이라 부른다. 반면에 사단성을 갖추고도 법인으로 등기하지 않은 사단은 ‘법인이 아닌 사단’이라 한다. 사람과 법인만이 권리 능력을 가지며, 사람의 권리 능력과 법인격은 엄격히 구별된다. 그리하여 사단 법인이 자기 이름으로 진 빚은 사단이 가진 재산으로 갚아야 하는 것이지 ⓐ사원 개인에게까지 ⓑ책임이 미치지 않는다.</p>
+<p>회사도 사단의 성격을 갖는 법인이다. 회사의 대표적인 유형이라 할 수 있는 주식회사는 주주들로 구성되며 주주들은 보유한 주식의 비율만큼 회사에 대한 지분을 갖는다. 그런데 2001년에 개정된 상법은 한 사람이 전액을 출자하여 일인 주주로 회사를 설립할 수 있도록 하였다. ⓒ사단성을 갖추지 못했다고 할 만한 형태의 법인을 인정한 것이다. 또 여러 주주가 있던 회사가 주식의 상속, 매매, 양도 등으로 말미암아 모든 주식이 한 사람의 소유로 되는 경우가 있다. 이런 ‘일인 주식회사’에서는 일인 주주가 회사의 대표 이사가 되는 사례가 많다. 이처럼 일인 주주가 회사를 대표하는 기관이 되면 경영의 주체가 개인인지 회사인지 모호해진다. 법인인 회사의 운영이 독립된 주체로서의 경영이 아니라 마치 ⓓ개인 사업자의 영업처럼 보이는 것이다.</p>
+<p>구성원인 사람의 인격과 법인으로서의 법인격이 잘 분간되지 않는 듯이 보이는 경우에는 간혹 문제가 일어난다. 상법상 회사는 이사들로 이루어진 이사회만을 업무 집행의 의결 기관으로 둔다. 또한 대표 이사는 이사 중 한 명으로, 이사회에서 선출되는 기관이다. 그리고 이사의 선임과 이사의 보수는 주주 총회에서 결정하도록 되어 있다. 그런데 주주가 한 사람뿐이면 사실상 그의 뜻대로 될 뿐, 이사회나 주주 총회의 기능은 퇴색하기 쉽다. 심한 경우에는 회사에서 발생한 이익이 대표 이사인 주주에게 귀속되고 회사 자체는 ⓔ허울만 남는 일도 일어난다. 이처럼 회사의 운영이 주주 한 사람의 개인 사업과 다름없이 이루어지고, 회사라는 이름과 형식은 장식에 지나지 않는 경우에는, 회사와 거래 관계에 있는 사람들이 재산상 피해를 입는 문제가 발생하기도 한다. 이때 그 특정한 거래 관계에 관련하여서만 예외적으로 회사의 법인격을 일시적으로 부인하고 회사와 주주를 동일시해야 한다는 ㉡‘법인격 부인론’이 제기된다. 법률은 이에 대하여 명시적으로 규정하고 있지 않지만, 법원은 권리 남용의 조항을 끌어들여 이를 받아들인다. 회사가 일인 주주에게 완전히 지배되어 회사의 회계, 주주 총회나 이사회 운영이 적법하게 작동하지 못하는데도 회사에만 책임을 묻는 것은 법인 제도가 남용되는 사례라고 보는 것이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>35</div><div class='q-stem'></div></div>
+<p>윗글을 통해 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사단성을 갖춘 단체는 그 단체를 운영하기 위한 기구를 둔다.</li>
+<li>② 주주가 여러 명인 주식회사의 주주는 사단의 사원에 해당한다.</li>
+<li>③ 법인격을 얻은 사단은 재산에 대한 소유권의 주체가 될 수 있다.</li>
+<li>④ 사단 법인의 법인격은 구성원의 가입과 탈퇴에 관계없이 존속한다.</li>
+<li>⑤ 사람들이 결합한 단체에 권리와 의무를 누릴 수 있는 자격을 주는 제도가 사단이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>35번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>36</div><div class='q-stem'></div></div>
+<p>윗글에서 설명한 주식회사에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 대표 이사는 주식회사를 대표하는 기관이다.</li>
+<li>② 일인 주식회사는 대표 이사가 법인격을 갖는다.</li>
+<li>③ 주식회사의 이사회에서 이사의 보수를 결정한다.</li>
+<li>④ 주식회사에서는 주주 총회가 업무 집행의 의결 기관이다.</li>
+<li>⑤ 여러 주주들이 모여 설립된 주식회사가 일인 주식회사로 바뀔 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>36번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>37</div><div class='q-stem'></div></div>
+<p>ⓐ~ⓔ의 문맥상 의미에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 법인에 속해 있지만 법인격과는 구별되는 존재</li>
+<li>② ⓑ: 사단이 진 빚을 갚아야 할 의무</li>
+<li>③ ⓒ: 여러 사람이 결합한 조직체로서의 성격</li>
+<li>④ ⓓ: 회사라는 법인격을 가진 독자적인 실체로서 운영되지 않는 경영</li>
+<li>⑤ ⓔ: 회사의 자산이 감소하여 권리 능력을 누릴 수 없게 된 상태</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>37번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>38</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉡에 관한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 회사의 경영이 이사회에 장악되어 있는 경우에만 예외적으로 법인격 부인론을 적용할 수 있다.</li>
+<li>② 법인격 부인론은 주식회사 제도의 허점을 악용하지 못하도록 법률의 개정을 통해 도입된 제도이다.</li>
+<li>③ 회사가 채권자에게 손해를 입혔다는 것이 확정되면 법원은 법인격 부인론을 받아들여 그 회사의 법인격을 영구히 박탈한다.</li>
+<li>④ 법원이 대표 이사 개인의 권리 능력을 부인함으로써 대표 이사가 회사에 대한 책임을 면하지 못하도록 하는 것이 법인격 부인론의 의의이다.</li>
+<li>⑤ 특정한 거래 관계에 법인격 부인론을 적용하여 회사의 법인격을 부인하려는 목적은 그 거래와 관련하여 회사가 진 책임을 주주에게 부담시키기 위함이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p>문맥상 ㉠과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 겸비(兼備)하면</li>
+<li>② 구비(具備)하면</li>
+<li>③ 대비(對備)하면</li>
+<li>④ 예비(豫備)하면</li>
+<li>⑤ 정비(整備)하면</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>39번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>토지 행정은 국민과 후손의 삶을 위하여 국토를 종합적으로 이용·개발·보존하는 것을 목적으로 하는, 토지와 관련된 행정을 ⓐ<u>가리킨다</u>. 토지 개발 계획을 세우고 토지 거래를 규제하며 토지의 적정 가격을 평가하거나 공시하는 일이 모두 여기에 든다. 20세기 초까지는 토지의 이용 등에 대하여 불간섭주의를 취하여 토지 소유자의 자유와 지역 주민의 자치를 보장하였다. 그러나 토지가 무분별하게 거래되고 이용되면 국토 전체의 질서가 흐트러진다는 인식이 자리 잡으면서, 20세기 중반부터는 국토 전체의 조화와 균형 있는 발전을 ⓑ<u>꾀하기</u> 위하여 각 지역이 담당해야 할 질서를 설정하고 인구나 산업의 과밀을 억제하는 등 보다 적극적인 정책을 추구하기 시작하였다. 이러한 흐름 속에서 토지 행정의 구체적 수단으로 토지 거래 허가제와 부동산 가격 공시제 등이 제시된다.</p>
+<p>토지 거래 허가제는 투기적 거래로 인한 급격한 지가 상승을 억제하기 위하여, 일정한 절차에 따라 지정된 규제 구역 안의 토지 거래 계약에 대하여 행정청의 허가를 받도록 하는 제도이다. 규제 구역은 투기가 우려되는 지역에 한하여 기간을 정하여 지정되며, 그 구역 안에서 토지를 거래하려는 자는 거래 목적과 가격 등이 기준에 ⓒ<u>어긋나지</u> 않는 한 허가를 받을 수 있다. 허가라는 절차를 거래에 앞세움으로써, 투기적 수요가 거래에 이르기 전에 미리 걸러지는 것이다. 거래가 끝난 뒤에 투기를 적발하기보다, 거래의 길목에서 미리 막는 편이 지가 안정에 효과적이기 때문이다. 만약 허가를 받지 아니하고 거래 계약을 체결하면 ㉠<u>그 계약은 효력이 발생하지 않으며</u>, 속임수나 그 밖의 부정한 방법으로 허가를 받은 자는 처벌을 받는다. 계약의 효력 자체를 부정하는 것은, 허가를 받지 않은 거래가 일단 성립한 뒤에 사후에 바로잡는 것보다 투기를 막는 데 더 확실하기 때문이다. 다만 토지 거래 허가제는 토지 소유권의 처분을 제한하지만, 규제가 특정 지역과 기간에 한정되고 허가가 거부될 경우 이에 불복할 절차가 마련되어 있어, 소유권의 처분이 완전히 금지되는 것은 아니다.</p>
+<p>부동산 가격 공시제는 부동산의 적정한 가격 형성과 조세·부담금의 형평성을 기하기 위하여, 국가가 매년 일정 시점의 토지 적정 가격을 산정하여 공시하는 제도이다. 공시되는 지가, 곧 공시 지가는 표준지로 선정된 토지의 단위 면적당 가격인 표준지 공시 지가를 기준으로 ⓓ<u>삼아</u>, 토지 가격 비준표를 적용하여 개별 토지의 개별 공시 지가를 산정하는 방식으로 정해진다. 즉 대표성 있는 표준지의 가격을 먼저 정한 뒤 개별 토지의 특성 차이를 반영하여 그 값을 조정하는 것이다. 공시 지가는 토지 거래의 지표가 될 뿐 아니라, 보상액을 산정하거나 조세를 부과하는 기준이 되어 국민에게 구속적인 기능을 ⓔ<u>갖는다</u>. 공시 지가에 따라 토지 소유자가 받을 보상액이나 부담할 세액이 달라지기 때문이다. 이처럼 공시 지가가 국민의 재산상 부담을 좌우하는 까닭에, 잘못 산정된 공시 지가를 바로잡을 길을 마련해 둘 필요가 있다. 그리하여 공시 지가의 결정에 불복하려는 자는 그 결정의 취소를 구하는 행정 소송을 제기할 수 있다.</p>
+<p>이처럼 두 수단은 모두 개인의 재산권을 일정하게 제한하면서 공공의 이익을 추구한다는 점에서 같지만, 작동하는 방식은 서로 다르다. 토지 거래 허가제가 거래라는 '행위'에 허가라는 문턱을 두어 투기를 직접 차단하는 사전적 규제라면, 부동산 가격 공시제는 가격이라는 '기준'을 제시하여 거래와 과세의 질서를 잡는 간접적 조정이다. 전자가 거래의 성립 자체에 관여한다면, 후자는 거래가 이루어지든 그렇지 않든 토지의 가격을 가늠하는 잣대를 마련해 둔다. 또한 토지 거래 허가제가 규제 구역이라는 특정한 공간에 한시적으로 미치는 데 비하여, 부동산 가격 공시제는 전국의 토지를 대상으로 매년 꾸준히 작동한다는 점에서도 차이가 있다. 두 수단은 이렇게 서로 다른 길로 국토의 균형 있는 이용이라는 토지 행정의 목적에 이바지한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 20세기 초까지 토지의 이용 등에 대하여 불간섭주의를 취하였다.</li>
+<li>② 토지 거래 허가제의 규제 구역은 기간을 정하여 지정된다.</li>
+<li>③ 공시 지가는 보상액 산정이나 조세 부과의 기준이 된다.</li>
+<li>④ 부동산 가격 공시제는 국가가 매년 토지 적정 가격을 산정하여 공시하는 제도이다.</li>
+<li>⑤ 토지 거래 허가제는 거래의 사후적 결과를 평가하여 투기를 차단하는 조정 수단이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+4문단에서 토지 거래 허가제는 거래라는 '행위'에 문턱을 두어 투기를 직접 차단하는 "사전적 규제"라고 했어요. ⑤는 이를 '사후적 결과를 평가하는 조정 수단'이라고 거꾸로 적었으니 일치하지 않아 정답입니다(사후적 조정에 가까운 것은 오히려 가격 공시제 쪽이에요). ①은 1문단, ②는 2문단, ③은 3문단, ④는 3문단에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 거래 가격이 공시 지가보다 높게 책정되었기 때문이다.</li>
+<li>② 행정청의 허가라는, 거래에 요구되는 요건을 갖추지 못하였기 때문이다.</li>
+<li>③ 거래 당사자가 규제 구역의 지정 기간을 임의로 연장하였기 때문이다.</li>
+<li>④ 토지 가격 비준표를 적용하지 않고 개별 공시 지가를 산정하였기 때문이다.</li>
+<li>⑤ 거래 목적이 기준에 부합하여 투기의 우려가 없다고 판단되었기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong>
+㉠은 '허가를 받지 아니하고 체결한 계약'이 효력을 잃는 까닭을 묻는 자리예요. 2문단에서 규제 구역 안의 거래는 행정청의 허가를 받아야 한다고 했으므로, 그 요건을 갖추지 못해 효력이 발생하지 않는 것입니다. 따라서 ②가 정답이에요. ①·④는 공시 지가에 관한 내용이라 거래 효력의 무발생 이유와 무관하고, ③ 지정 기간을 당사자가 연장한다는 내용은 지문에 없으며, ⑤ 기준에 부합하면 오히려 허가를 받을 수 있으므로 효력이 부정되는 이유가 될 수 없습니다.</p>
+<p><strong>10번 [3점] — 정답 ③</strong>
+3문단에서 개별 공시 지가는 "표준지 공시 지가를 기준으로 삼아, 토지 가격 비준표를 적용하여" 산정된다고 했어요. 〈보기〉의 ㉯도 같은 방식으로 정해지므로 ③이 적절해 정답입니다. ① 규제 구역은 투기가 우려되는 지역에 한하여 지정되므로(2문단) '무관하게 모든 지역'은 틀렸고, ② 거래 목적이 기준에 어긋나지 않으면 허가를 받을 수 있으므로 '받을 수 없다'는 반대며, ④ 공시 지가는 보상·과세의 기준이 되는 동시에 거래의 지표도 되므로(3문단) '지표가 될 수 없다'는 틀렸고, ⑤ 공시 지가 결정에 불복하려는 자는 그 결정의 취소를 구하는 소송을 제기할 수 있으므로(3문단) '제기할 수 없다'는 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 ㉮~㉰에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 자신이 사려는 땅이 토지 거래 허가가 필요한 곳인지 확인하기 위해 ○○시청에 문의하고 아래와 같은 회신을 받았다.</p>
+<p>문의하신 토지는 ㉮투기가 우려되어 기간을 정하여 지정된 규제 구역 안에 있어, 거래 계약을 체결하시기 전에 허가를 받으셔야 합니다. 거래 목적과 가격 등이 기준에 어긋나지 않으면 허가를 받으실 수 있습니다. 한편 같은 토지의 ㉯개별 공시 지가는 인근 표준지의 공시 지가를 기준으로 산정되어 공시되어 있으며, 이는 ㉰보유세를 부과할 때의 기준으로 쓰입니다. 공시된 지가에 이의가 있으시면 절차에 따라 다투실 수 있습니다.</p>
+</blockquote>
+<ul>
+<li>① ㉮의 규제 구역은 투기가 우려되는지와 무관하게 모든 지역에 지정되겠군.</li>
+<li>② ㉮에서 거래 목적이 기준에 어긋나지 않더라도 허가를 받을 수는 없겠군.</li>
+<li>③ ㉯의 개별 공시 지가는 표준지 공시 지가에 토지 가격 비준표를 적용하여 산정되겠군.</li>
+<li>④ ㉰의 보유세 부과 기준이 되는 공시 지가는 거래의 지표가 될 수는 없겠군.</li>
+<li>⑤ 공시된 지가에 이의가 있어도 그 결정의 취소를 구하는 소송은 제기할 수 없겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 지칭한다</li>
+<li>② ⓑ: 도모하기</li>
+<li>③ ⓒ: 위배되지</li>
+<li>④ ⓓ: 삼아서</li>
+<li>⑤ ⓔ: 수반한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong>
+ⓔ<u>갖는다</u>는 '구속적인 기능을 갖는다'라는 문맥이에요. '수반(隨伴)한다'는 '어떤 일과 더불어 생기거나 그에 따른다'는 뜻이므로, '기능을 지닌다'는 의미의 '갖는다'와는 호응하지 않습니다. 따라서 바꿔 쓰기에 적절하지 않은 ⑤가 정답이에요. ① 가리키다→지칭하다, ② 꾀하다→도모하다, ③ 어긋나다→위배되다, ④ 삼아→삼아서('기준으로 삼아서')는 각각 문맥에서 바꿔 쓸 수 있습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>불간섭주의</strong>: 토지의 이용 등을 소유자의 자유와 주민의 자치에 맡기고 나라가 끼어들지 않던 초기의 태도.</li>
+<li><strong>사전적 규제 vs 간접적 조정</strong>: 토지 거래 허가제는 거래 '행위'에 허가의 문턱을 두는 사전 규제, 부동산 가격 공시제는 '기준'을 제시해 질서를 잡는 간접 조정이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>토지 거래 허가제</th>
+<th>부동산 가격 공시제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>겨냥하는 것</td>
+<td>거래라는 '행위'</td>
+<td>가격이라는 '기준'</td>
+</tr>
+<tr>
+<td>작동 방식</td>
+<td>허가 문턱으로 투기 직접 차단(사전 규제)</td>
+<td>적정 가격 제시로 거래·과세 조정(간접)</td>
+</tr>
+<tr>
+<td>핵심 효과</td>
+<td>무허가 거래는 효력 무발생</td>
+<td>공시 지가가 보상·과세의 기준</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>재산권을 일정하게 제한하며 공공 이익을 도모</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 수단은 길이 다를 뿐, 모두 '개인의 재산권을 제한하면서 국토의 균형 있는 이용을 돕는다'는 같은 목적지를 향해요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>토지 행정은 어떻게 변천했나요?</div><div class='qa-a'>20세기 초까지의 불간섭주의에서, 20세기 중반부터 균형 발전을 위한 적극적 정책으로 바뀌었습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>무허가 토지 거래 계약은 왜 효력이 없나요?</div><div class='qa-a'>규제 구역 안의 거래에 요구되는 행정청의 허가라는 요건을 갖추지 못했기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 수단의 작동 방식은 어떻게 다른가요?</div><div class='qa-a'>허가제는 거래 행위를 사전에 규제하고, 공시제는 가격 기준을 제시해 간접적으로 조정합니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 9월 [26~30]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>국가, 지방 자치 단체와 같은 행정 주체가 행정 목적을 ⓐ실현하기 위해 국민의 권리를 제한하거나 국민에게 의무를 부과하는 ‘행정 규제’는 국회가 제정한 법률에 근거해야 한다. 그러나 국회가 아니라, 대통령을 수반으로 하는 행정부나 지방 자치 단체와 같은 행정 기관이 제정한 법령인 행정입법에 의한 행정 규제의 비중이 커지고 있다. 드론과 관련된 행정 규제 사항들처럼, 첨단 기술과 관련되거나, 상황 변화에 즉각 대처해야 하거나, 개별적 상황을 ⓑ반영하여 규제를 달리해야 하는 행정 규제 사항들이 늘어나고 있기 때문이다. 행정 기관은 국회에 비해 이러한 사항들을 다루기에 적합하다.</p>
+<p>행정입법의 유형에는 위임명령, 행정규칙, 조례 등이 있다. 헌법에 따르면, 국회는 행정 규제 사항에 관한 법률을 제정할 때 특정한 내용에 관한 입법을 행정부에 위임할 수 있다. 이에 따라 제정된 행정입법을 위임명령이라고 한다. 위임명령은 제정 주체에 따라 대통령령, 총리령, 부령으로 나누어진다. 이들은 모두 국민에게 적용되기 때문에 입법예고, 공포 등의 절차를 거쳐야 한다. 위임명령은 입법부인 국회가 자신의 권한의 일부를 행정부에 맡겼기 때문에 정당화될 수 있다. 그래서 특정한 행정 규제의 근거 법률이 위임명령으로 제정할 사항의 범위를 정하지 않은 채 위임하는 포괄적 위임은 헌법상 삼권 분립 원칙에 저촉된다. 위임된 행정 규제 사항의 대강을 위임 근거 법률의 내용으로부터 ⓒ예측할 수 있어야 한다는 것이다. 다만 행정 규제 사항의 첨단 기술 관련성이 클수록 위임 근거 법률이 위임할 수 있는 사항의 범위가 넓어진다. 한편, 위임명령이 법률로부터 위임받은 범위를 벗어나서 제정되거나, 위임 근거 법률이 사용한 어구의 의미를 확대하거나 축소하여 제정되어서는 안 된다. ㉠위임명령이 이러한 제한을 위반하여 제정되면 효력이 없다.</p>
+<p>행정규칙은 원래 행정부의 직제나 사무 처리 절차에 관한 행정입법으로서 고시(告示), 예규 등이 여기에 속한다. 일반 국민에게는 직접 적용되지 않기 때문에, 법률로부터 위임받지 않아도 유효하게 제정될 수 있고 위임명령 제정 시와 동일한 절차를 거칠 필요가 없다. 그러나 행정 규제 사항에 관하여 행정규칙이 제정되는 예외적인 경우도 있다. 위임된 사항이 첨단 기술과의 관련성이 매우 커서 위임명령으로는 ⓓ대응하기 어려워 불가피한 경우, 위임 근거 법률이 행정입법의 제정 주체만 지정하고 행정입법의 유형을 지정하지 않았다면 위임된 사항이 고시나 예규로 제정될 수 있다. 이런 경우의 행정규칙은 위임명령과 달리, 입법예고, 공포 등을 거치지 않고 제정된다.</p>
+<p>조례는 지방 의회가 제정하는 행정입법으로 지역의 특수성을 반영하여 제정되고 지역에서 발생하는 사안에 대해 적용된다. 제정 주체가 지방 자치 단체의 기관인 지방 의회라는 점에서 행정부에서 제정하는 위임명령, 행정규칙과 ⓔ구별된다. 조례도 행정 규제 사항을 규정하려면 법률의 위임에 근거해야 한다. 또한 법률로부터 포괄적 위임을 받을 수 있지만 위임 근거 법률이 사용한 어구의 의미를 다르게 사용할 수 없다. 조례는 입법예고, 공포 등의 절차를 거쳐 제정된다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>26</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 행정입법에 속하는 법령들은 제정 주체가 동일하다.</li>
+<li>② 행정입법에 속하는 법령들은 모두 개별적 상황과 지역의 특수성을 반영한다.</li>
+<li>③ 행정입법에 속하는 법령들은 모두 정당성을 확보하기 위하여 국회의 위임에 근거한다.</li>
+<li>④ 행정 규제 사항에 적용되는 행정입법은 모두 포괄적 위임이 금지되어 있다.</li>
+<li>⑤ 행정부가 국회보다 신속히 대응할 수 있는 행정 규제 사항은 행정입법의 대상으로 적합하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>26번 — 정답 ⑤</strong><br />
+1문단에 따르면 상황 변화에 즉각 대처해야 하는 행정 규제 사항이 늘어나는데, 국회보다 행정 기관이 이러한 사항을 다루기에 적합해 행정입법의 비중이 커지고 있다. 따라서 행정부가 국회보다 신속히 대응할 수 있는 사항이 행정입법 대상으로 적합하다는 ⑤가 일치한다. ① 위임명령·행정규칙은 행정부, 조례는 지방 의회가 제정하므로 제정 주체가 동일하지 않다. ② 지역의 특수성 반영은 조례에만 해당한다. ③ 행정규칙(고시·예규)은 위임받지 않아도 제정될 수 있다. ④ 조례는 포괄적 위임을 받을 수 있다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①1.6% ②4.8% ③8.7% ④8.8% ⑤72.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 그 위임명령이 법률의 근거 없이 행정 규제 사항을 규정했기 때문이다.</li>
+<li>② 그 위임명령이 포괄적 위임을 받아 제정된 경우에 해당하기 때문이다.</li>
+<li>③ 그 위임명령이 첨단 기술에 대한 내용을 정확히 반영하지 않았기 때문이다.</li>
+<li>④ 그 위임명령이 국민의 권리를 제한하는 권한을 행정 기관에 맡겼기 때문이다.</li>
+<li>⑤ 그 위임명령이 구체적 상황의 특성을 반영한 융통성 있는 대응을 하지 못했기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>27번 — 정답 ①</strong><br />
+위임명령으로 제정할 사항의 범위는 근거 법률에 의해 정해진다. 위임명령이 위임받은 범위를 벗어나거나 어구의 의미를 확대·축소해 제정되면 효력이 없는 것은, 그 부분이 법률의 근거 없이 행정 규제 사항을 규정한 셈이기 때문이다(①). ② 범위를 벗어났다는 것은 ‘위임받은 범위’가 있다는 뜻이므로 포괄적 위임이 아니다.</p>
+<p><em>선택률</em> — 응시 98,575명 — ①46.9% ②33.9% ③5.4% ④7.0% ⑤4.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>행정규칙에 관한 설명 중 적절하지 않은 것은?</p>
+<ul>
+<li>① 행정부의 직제나 사무 처리 절차를 규정하는 경우, 법률의 위임이 요구되지 않는다.</li>
+<li>② 행정부의 직제나 사무 처리 절차를 규정하는 경우, 일반 국민에게 직접 적용되지 않는다.</li>
+<li>③ 행정 규제 사항을 규정하는 경우, 위임명령의 제정 절차를 따르지 않는다.</li>
+<li>④ 행정 규제 사항을 규정하는 경우, 위임 근거 법률의 위임을 받은 제정 주체에 의해 제정된다.</li>
+<li>⑤ 행정 규제 사항을 규정하는 경우, 위임 근거 법률로부터 위임받을 수 있는 사항의 범위가 위임명령과 같다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+행정 규제 사항에 관한 행정규칙은 위임명령으로는 대응하기 어려운 예외적 경우에 제정되므로, 위임받을 수 있는 사항의 범위가 위임명령과 같지 않다. 따라서 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.5% ②1.9% ③10.9% ④14.8% ⑤67.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 ㉮～㉰에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 새로 개업한 자신의 가게 홍보를 위해 인근 자연 공원에 현수막을 설치하려고 한다. 현수막 설치에 관한 행정 규제의 내용을 확인하기 위해 ○○시청에 문의하고 아래와 같은 회신을 받았다.</p>
+<p>문의하신 내용에 대해 다음과 같이 알려 드립니다.
+㉮「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률」 제3조(광고물 등의 허가 또는 신고)에 따른 허가 또는 신고 대상 광고물에 관한 사항은 대통령령인 ㉯「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률 시행령」 제5조에 규정되어 있습니다. 이에 따르면 문의하신 규격의 현수막을 설치하시려면 설치 전에 신고하셔야 합니다.
+또한 위 법률 제16조(광고물 실명제)에 의하면, 신고 번호, 표시 기간, 제작자명 등을 표시하도록 규정하고 있습니다. 표시하는 방법에 대해서는 ㉰○○시 지방 의회에서 제정한 법령에 따르셔야 합니다.</p>
+</blockquote>
+<ul>
+<li>① ㉮의 제3조의 내용에서 ㉯의 제5조의 신고 대상 광고물에 관한 사항의 구체적 내용을 확인할 수 있겠군.</li>
+<li>② ㉯의 제5조는 ㉮의 제16조로부터 제정할 사항의 범위가 정해져 위임을 받았겠군.</li>
+<li>③ ㉯는 ㉰와 달리 입법예고와 공포 절차를 거쳤겠군.</li>
+<li>④ ㉯에 나오는 ‘광고물’의 의미와 ㉰에 나오는 ‘광고물’의 의미는 일치하겠군.</li>
+<li>⑤ ㉰를 준수해야 하는 국민 중에는 ㉯를 준수하지 않아도 되는 국민이 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>29번 — 정답 ④</strong><br />
+위임명령(㉯)과 조례(㉰)는 모두 위임 근거 법률(㉮)의 어구 의미를 다르게 사용할 수 없으므로, ㉯와 ㉰의 ‘광고물’ 의미는 일치해야 한다(④). ② ㉯는 ㉮의 제16조가 아니라 제3조로부터 위임받는다. ③ ㉯(위임명령)도 ㉰(조례)도 모두 입법예고·공포 절차를 거친다. ⑤ 대통령령 ㉯는 지역과 무관하게 국민이 준수해야 하고, 조례 ㉰는 해당 지역 사안에만 적용되므로, ‘㉯를 준수하지 않아도 되는 국민’이 아니라 ‘㉰를 준수하지 않아도 되는 국민’이 있다고 해야 옳다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①8.1% ②23.7% ③11.7% ④46.4% ⑤7.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 나타내기</li>
+<li>② ⓑ: 드러내어</li>
+<li>③ ⓒ: 헤아릴</li>
+<li>④ ⓓ: 마주하기</li>
+<li>⑤ ⓔ: 달라진다</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+‘예측하다’는 ‘미리 헤아려 짐작하다’의 의미이므로 ‘헤아리다’로 바꿔 쓸 수 있다(③). ① 실현하다≠나타나다, ② 반영하다≠드러내다, ④ 대응하다≠마주하다, ⑤ 구별되다≠달라지다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①9.9% ②4.4% ③59.1% ④9.2% ⑤15.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>토지 행정의 주요 수단 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='토지 행정의 주요 수단 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

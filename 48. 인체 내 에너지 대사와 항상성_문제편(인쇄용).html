@@ -1,0 +1,399 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>인체 내 에너지 대사와 항상성 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 똑같이 밥을 먹어도 어떤 친구는 살이 잘 안 찌고 어떤 친구는 금방 찌는 걸 본 적 있나요? 또 운동을 한참 한 뒤에는 몸이 후끈 달아오르고, 추운 곳에 오래 있으면 저절로 몸이 떨리죠. 이런 일들은 모두 우리 몸이 <strong>에너지를 얻고, 쓰고, 남으면 저장하는 과정</strong>에서 일어납니다. 이 과정을 통틀어 <strong>에너지 대사</strong>라고 불러요.</p>
+<p>우리가 먹은 음식은 그대로 힘이 되지 않아요. 탄수화물·단백질·지방은 소화 과정을 거쳐, 세포가 곧바로 쓸 수 있는 에너지 화폐인 <strong>ATP</strong>라는 물질로 바뀝니다. 말하자면 음식은 '지폐'고, ATP는 자판기에 바로 넣을 수 있는 '동전'인 셈이에요. 당장 안 쓰는 에너지는 그냥 버리지 않고 <strong>창고에 저장</strong>합니다. 가까운 창고는 간과 근육인데, 여기에는 포도당을 <strong>글리코겐</strong>이라는 형태로 잠깐 넣어 두었다가 필요할 때 다시 꺼내 ATP로 바꿔 써요. 그런데 먹는 양이 쓰는 양보다 계속 많으면, 남는 에너지는 <strong>지방</strong>으로 바뀌어 지방 세포에 차곡차곡 쌓입니다. 이 상태가 오래되면 지방 세포가 점점 커지고, 지방이 너무 많이 쌓이면 몸의 에너지 조절 장치가 제대로 작동하지 못해 비만 같은 대사 질환이 생기기 쉬워집니다.</p>
+<p>여기서 한 가지 더 알아야 할 것이 있어요. 우리가 <strong>얼마나 쓰는가</strong>도 사람마다 다릅니다. 가만히 숨만 쉬어도 심장이 뛰고 체온이 유지되는 데 에너지가 들죠. 이렇게 <strong>아무것도 안 해도 기본으로 나가는 에너지</strong>를 <strong>기초 대사량</strong>이라고 하는데, 하루 에너지 소비의 절반을 훌쩍 넘어요. 근육이 많을수록 이 기초 대사량이 높아져 같은 양을 먹어도 에너지가 잘 빠져나갑니다. 또 지방 세포에도 두 종류가 있어요. <strong>백색 지방 세포</strong>는 에너지를 '저장'하는 창고지만, <strong>갈색 지방 세포</strong>는 추울 때 그 에너지를 '태워' 열을 내는 난로 역할을 합니다.</p>
+<blockquote>
+<p>한마디로: 우리 몸은 <strong>들어온 에너지와 나가는 에너지의 균형</strong>을 끊임없이 맞추려 하고(이걸 <strong>항상성</strong>이라고 해요), 균형이 한쪽으로 기울면 저장하거나 태우는 방식으로 스스로를 되돌리려 합니다. 그 조절이 어떻게 작동하고, 또 어디서 무너지는지를 이해하는 것이 이 단원의 핵심이에요.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>인체가 에너지의 들어옴과 나감을 조절해 균형(항상성)을 지키는 방식</strong>이 있습니다. 같은 '에너지 대사'라도 어느 단계를 들여다보느냐에 따라 보이는 그림이 달라지죠. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>인체의 에너지 대사와 항상성<small>"들어온 에너지 ⇄ 쓰는 에너지 ⇄ 저장·방출의 균형"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>음식이 ATP로 바뀌고, 남으면 글리코겐·지방으로 저장되며, 그 저장이 과해지면 어떻게 조절이 무너지는지 <em>에너지의 흐름과 연쇄</em>를 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>혈당이 오르내릴 때 <strong>인슐린</strong>과 <strong>글루카곤</strong>이라는 두 호르몬이 저장과 방출을 <em>양방향으로 맞추는</em> 조절(항상성)의 짜임을 봅니다. 같은 '조절'이 모자라거나 무뎌지면 무슨 일이 생기는지도요.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>같은 양을 먹어도 사람마다 살이 다르게 찌는 까닭을, <strong>기초 대사량</strong>과 <strong>갈색 지방 세포</strong>라는 두 갈래의 <em>에너지 소비</em> 측면에서 따져 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 우리 몸이 에너지를 어떻게 얻고 저장하고 태우며 균형을 지키는지, 그리고 그 조절이 어디서 흔들리는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>에너지 대사는 생명 유지에 필요한 에너지를 얻고 쓰는 일련의 과정이며, 인체가 쓰는 에너지는 대부분 음식물 섭취로 충당된다. 체내에 들어온 음식물은 그대로 소비되지 않고 소화 과정을 거쳐 작은 단위로 분해된 뒤 각 조직에 공급된다. 음식물에 든 탄수화물, 단백질, 지방은 종류에 따라 서로 다른 경로를 거치지만, 결국 세포 안에서 일어나는 일련의 대사 과정을 통해 세포 활동에 직접 쓰이는 에너지원인 ATP로 전환된다는 점은 같다. 가령 탄수화물은 포도당으로 분해되어 흡수된 뒤 세포 안에서 단계적으로 산화되며 ATP를 만들어 내고, 이렇게 만들어진 ATP는 필요한 조직에서 곧바로 사용된다. ATP는 세포가 활동하는 순간에 쓰이고 소비되는 물질이므로, 인체는 에너지를 미리 ATP의 형태로 잔뜩 만들어 쌓아 두지는 못한다.</p>
+<p>그래서 곧바로 쓰이지 않은 에너지는 다른 형태로 보관된다. 곧바로 쓰이지 않은 탄수화물의 일부는 포도당이 사슬처럼 이어진 글리코겐의 형태로 간이나 근육에 저장되었다가, 에너지가 필요할 때 다시 포도당으로 분해되어 ATP로 전환된다. 이처럼 ATP로의 전환은 에너지를 즉시 쓰는 통로이고, 글리코겐으로의 저장은 가까운 시일 안에 쓸 에너지를 잠시 보관하는 통로이다. 두 통로는 서로 맞물려 작동하여, 인체는 에너지가 남을 때 글리코겐으로 저장하고 모자랄 때 다시 꺼내 ATP로 바꿔 씀으로써, 세포에 공급되는 에너지를 일정한 수준으로 유지하려 한다. 이렇게 일정한 수준을 유지하려는 작용은 인체가 에너지의 들어옴과 나감을 조절하는 가장 기본적인 방식이다.</p>
+<p>㉠섭취한 에너지의 양과 인체가 소비하는 에너지의 양은 균형을 이루어야 하지만, 섭취량이 소비량보다 많은 상태가 이어지면 균형이 한쪽으로 기운다. 이때 인체는 남는 에너지를 곧장 내버리지 않고 저장으로 돌리는데, 그 저장에는 순서와 한계가 있다. 간과 근육의 글리코겐 저장 용량에는 한계가 있어, 일정량까지는 남는 에너지를 글리코겐으로 받아들이지만 그 한계를 넘으면 더 이상 글리코겐으로 받아들이지 못한다. 글리코겐으로 저장하고도 남는 에너지는 지방산으로 전환되어 지방 세포에 중성 지방의 형태로 축적된다. 글리코겐이 가까운 시일에 꺼내 쓰는 단기 저장고라면, 지방은 용량이 크고 더 오래 보관하는 장기 저장고에 해당한다. 따라서 과잉 섭취가 지속되면 에너지는 먼저 글리코겐으로 채워지고, 글리코겐 저장의 한계를 넘어선 뒤에야 점차 지방의 형태로 쌓이게 된다. 이러한 상태가 심화되면 지방 세포의 크기가 커지고, 지방 세포에 들어찬 지방의 양도 늘어난다. 단기 저장고가 가득 찬 뒤에는 남는 에너지가 갈 곳이 장기 저장고밖에 없으므로, 균형이 한쪽으로 기운 상태가 길어질수록 지방의 축적은 더 빠르게 진행된다.</p>
+<p>지방의 축적은 일정 수준까지는 남는 에너지를 안전하게 보관하는 정상적인 저장 작용이지만, 그 정도를 넘어서면 조절의 부담으로 바뀐다. 지방산이 과도하게 축적되면 체내의 에너지 조절 체계가 정상적으로 작동하지 못하게 되고, 비만을 비롯한 여러 대사 질환의 발생 가능성이 높아진다. 즉 저장을 맡던 작용이 일정 한계를 넘으면 도리어 조절을 어지럽히는 방향으로 작용하게 되는 것이다. 이때 중요한 점은, 이러한 불균형이 섭취한 음식물의 양만으로 결정되지는 않는다는 사실이다. 같은 양을 먹더라도 인체가 그 에너지를 얼마나 소비하는지에 따라 남는 에너지의 양은 달라지며, 따라서 저장으로 흘러가는 에너지의 양도 달라진다. 결국 에너지의 균형은 섭취와 소비가 함께 결정하는 문제이다.</p>
+<p>이 과정에서 세 물질은 저마다 다른 자리를 맡는다. ⓐ<u>ATP</u>는 세포가 직접 쓰는 에너지원으로, 저장되지 않고 그때그때 소비된다. ⓑ<u>글리코겐</u>은 곧 쓸 에너지를 간·근육에 잠시 보관하는 단기 저장 물질이며, 저장 용량에 한계가 있어 일정량을 넘는 에너지는 받아들이지 못한다. ⓒ<u>지방</u>은 용량이 크고 오래 보관할 수 있는 장기 저장 물질로, 과잉 에너지를 받아들여 지방 세포에 축적한다. 평상시 세 물질은 에너지가 ATP로 소비되고 남으면 글리코겐으로, 글리코겐의 한계를 넘으면 지방으로 차례로 흘러가는 순서로 맞물려, 들어온 에너지와 나가는 에너지 사이의 균형을 떠받친다. 그러나 과잉 섭취가 길게 이어져 지방의 축적이 과도해지면, 이 순서의 끝에 자리한 지방의 과다 축적이 도리어 조절 체계 전체를 흔들어 균형을 무너뜨리는 단계로 접어들게 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글을 읽고 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 음식물에 든 탄수화물·단백질·지방은 소화 과정 없이 곧바로 ATP로 전환된다.</li>
+<li>② 간과 근육에 저장된 글리코겐은 포도당으로 분해되어 ATP로 전환될 수 있다.</li>
+<li>③ 글리코겐의 저장 용량은 한계가 없어 남는 에너지를 모두 받아들인다.</li>
+<li>④ 에너지의 불균형은 섭취한 음식물의 양에 의해서만 결정된다.</li>
+<li>⑤ ATP는 세포에서 쓰이지 않고 지방 세포에 중성 지방으로 축적된다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>ⓐ~ⓒ에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ와 ⓑ는 모두 포도당으로부터 만들어지거나 포도당을 거쳐 에너지로 쓰일 수 있겠군.</li>
+<li>② ⓐ와 ⓒ는 모두 인체가 평상시에 에너지를 보관해 두는 저장 물질에 해당하겠군.</li>
+<li>③ ⓑ와 ⓒ는 모두 에너지가 남을 때 그 일부를 받아들여 보관하는 자리를 맡겠군.</li>
+<li>④ ⓑ는 ⓒ와 달리 저장 용량에 한계가 있어 일정량을 넘는 에너지를 받아들이지 못하겠군.</li>
+<li>⑤ ⓒ는 ⓐ와 달리 과잉 에너지를 오래 보관하다가 과도해지면 조절의 부담이 되겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span><span class="pts">[3점]</span> 윗글을 바탕으로 ㉠과 같이 균형이 기우는 까닭을 진술한다고 할 때, 〈보기〉의 ㉮, ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+섭취한 에너지가 소비되고 남으면 먼저 간·근육에 ( ㉮ )(으)로 저장되는데, 그 저장에는 한계가 있어 이를 넘는 에너지는 ( ㉯ )(으)로 전환되어 지방 세포에 쌓이기 때문이다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 글리코겐 / ㉯: 지방산</li>
+<li>② ㉮: 글리코겐 / ㉯: ATP</li>
+<li>③ ㉮: ATP / ㉯: 지방산</li>
+<li>④ ㉮: 지방산 / ㉯: 글리코겐</li>
+<li>⑤ ㉮: 지방산 / ㉯: ATP</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글로 볼 때, 에너지가 저장되는 두 물질인 글리코겐과 지방에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 글리코겐은 지방보다 가까운 시일 안에 꺼내 쓰는 단기 저장에 해당한다.</li>
+<li>② 지방은 글리코겐보다 용량이 크고 더 오래 에너지를 보관할 수 있다.</li>
+<li>③ 글리코겐과 지방은 모두 곧바로 쓰이지 않고 남은 에너지를 받아들여 만들어진다.</li>
+<li>④ 글리코겐과 지방은 모두 저장량이 많을수록 에너지 조절 체계를 안정시킨다.</li>
+<li>⑤ 과잉 섭취가 지속되면 에너지는 글리코겐 저장의 한계를 넘어 지방으로 쌓인다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 수능 [33~36]</div>
+<div class='passage exam-ps'><p>탄수화물은 사람을 비롯한 동물이 생존하는 데 필수적인 에너지원이다. 탄수화물은 섬유소와 비섬유소로 구분된다. 사람은 체내에서 합성한 효소를 이용하여 곡류의 녹말과 같은 비섬유소를 포도당으로 분해하고 이를 소장에서 흡수하여 에너지원으로 이용한다. 반면, 사람은 풀이나 채소의 주성분인 셀룰로스와 같은 섬유소를 포도당으로 분해하는 효소를 합성하지 못하므로, 섬유소를 소장에서 이용하지 못한다. ㉠소, 양, 사슴과 같은 반추 동물도 섬유소를 분해하는 효소를 합성하지 못하는 것은 마찬가지이지만, 비섬유소와 섬유소를 모두 에너지원으로 이용하며 살아간다.</p>
+<p>위(胃)가 넷으로 나누어진 반추 동물의 첫째 위인 반추위에는 여러 종류의 미생물이 서식하고 있다. 반추 동물의 반추위에는 산소가 없는데, 이 환경에서 왕성하게 생장하는 반추위 미생물들은 다양한 생리적 특성을 가지고 있다. 그중 ⓐ피브로박터 숙시노젠(F)은 섬유소를 분해하는 대표적인 미생물이다. 식물체에서 셀룰로스는 그것을 둘러싼 다른 물질과 복잡하게 얽혀 있는데, F가 가진 효소 복합체는 이 구조를 끊어 셀룰로스를 노출시킨 후 이를 포도당으로 분해한다. F는 이 포도당을 자신의 세포 내에서 대사 과정을 거쳐 에너지원으로 이용하여 생존을 유지하고 개체 수를 늘림으로써 생장한다. 이런 대사 과정에서 아세트산, 숙신산 등이 대사산물로 발생하고 이를 자신의 세포 외부로 배출한다. 반추위에서 미생물들이 생성한 아세트산은 반추 동물의 세포로 직접 흡수되어 생존에 필요한 에너지를 생성하는 데 주로 이용되고 체지방을 합성하는 데에도 쓰인다. 한편 반추위에서 숙신산은 프로피온산을 대사산물로 생성하는 다른 미생물의 에너지원으로 빠르게 소진된다. 이 과정에서 생성된 프로피온산은 반추 동물이 간(肝)에서 포도당을 합성하는 대사 과정에서 주요 재료로 이용된다.</p>
+<p>반추위에는 비섬유소인 녹말을 분해하는 ⓑ스트렙토코쿠스 보비스(S)도 서식한다. 이 미생물은 반추 동물이 섭취한 녹말을 포도당으로 분해하고, 이 포도당을 자신의 세포 내에서 대사 과정을 통해 자신에게 필요한 에너지원으로 이용한다. 이때 S는 자신의 세포 내의 산성도에 따라 세포 외부로 배출하는 대사산물이 달라진다. 산성도를 알려 주는 수소 이온 농도 지수(pH)가 7.0 정도로 중성이고 생장 속도가 느린 경우에는 아세트산, 에탄올 등이 대사산물로 배출된다. 반면 산성도가 높아져 pH가 6.0 이하로 떨어지거나 녹말의 양이 충분하여 생장 속도가 빠를 때는 젖산이 대사산물로 배출된다. 반추위에서 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물에게 필요한 에너지를 생성하는 데 이용되거나 아세트산 또는 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용된다.</p>
+<p>그런데 S의 과도한 생장이 반추 동물에게 악영향을 끼치는 경우가 있다. 반추 동물이 짧은 시간에 과도한 양의 비섬유소를 섭취하면 S의 개체 수가 급격히 늘고 과도한 양의 젖산이 배출되어 반추위의 산성도가 높아진다. 이에 따라 산성의 환경에서 왕성히 생장하며 항상 젖산을 대사산물로 배출하는 ⓒ락토바실러스 루미니스(L)와 같은 젖산 생성 미생물들의 생장이 증가하며 다량의 젖산을 배출하기 시작한다. F를 비롯한 섬유소 분해 미생물들은 자신의 세포 내부의 pH를 중성으로 일정하게 유지하려는 특성이 있는데, 젖산 농도의 증가로 자신의 세포 외부의 pH가 낮아지면 자신의 세포 내의 항상성을 유지하기 위해 에너지를 사용하므로 생장이 감소한다. 만일 자신의 세포 외부의 pH가 5.8 이하로 떨어지면 에너지가 소진되어 생장을 멈추고 사멸하는 단계로 접어든다. 이와 달리 S와 L은 상대적으로 산성에 견디는 정도가 강해 자신의 세포 외부의 pH가 5.5 정도까지 떨어지더라도 이에 맞춰 자신의 세포 내부의 pH를 낮출 수 있어 자신의 에너지를 세포 내부의 pH를 유지하는 데 거의 사용하지 않고 생장을 지속하는 데 사용한다. 그러나 S도 자신의 세포 외부의 pH가 그 이하로 더 떨어지면 생장을 멈추고 사멸하는 단계로 접어들고, 산성에 더 강한 L을 비롯한 젖산 생성 미생물들이 반추위 미생물의 많은 부분을 차지하게 된다. 그렇게 되면 반추위의 pH가 5.0 이하가 되는 급성 반추위 산성증이 발병한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>33</span>윗글을 읽고 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 섬유소는 사람의 소장에서 포도당의 공급원으로 사용된다.</li>
+<li>② 반추 동물의 세포에서 합성한 효소는 셀룰로스를 분해한다.</li>
+<li>③ 반추위 미생물은 산소가 없는 환경에서 생장을 멈추고 사멸한다.</li>
+<li>④ 반추 동물의 과도한 섬유소 섭취는 급성 반추위 산성증을 유발한다.</li>
+<li>⑤ 피브로박터 숙시노젠(F)은 자신의 세포 내에서 포도당을 에너지원으로 이용하여 생장한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>윗글로 볼 때, ⓐ～ⓒ에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ와 ⓑ는 모두 급성 반추위 산성증에 걸린 반추 동물의 반추위에서는 생장하지 못하겠군.</li>
+<li>② ⓐ와 ⓑ는 모두 반추위에서 반추 동물의 체지방을 합성하는 물질을 생성할 수 있겠군.</li>
+<li>③ 반추위의 pH가 6.0일 때, ⓐ는 ⓒ보다 자신의 세포 내의 산성도를 유지하는 데 더 많은 에너지를 쓰겠군.</li>
+<li>④ ⓑ와 ⓒ는 모두 반추위의 산성도에 따라 다양한 종류의 대사산물을 배출하겠군.</li>
+<li>⑤ 반추위에서 녹말의 양과 ⓑ의 생장이 증가할수록, ⓐ의 생장은 감소하고 ⓒ의 생장은 증가하겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>35</span><span class="pts">[3점]</span> 윗글을 바탕으로 ㉠이 가능한 이유를 진술한다고 할 때, 〈보기〉의 ㉮, ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+반추 동물이 섭취한 섬유소와 비섬유소는 반추위에서 ( ㉮ ), 이를 이용하여 생장하는 ( ㉯ )은 반추 동물의 에너지원으로 이용되기 때문이다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>② ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+<li>③ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추 동물이 대사 과정을 통해 생성한 포도당</li>
+<li>④ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>⑤ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>36</span>윗글로 볼 때, 반추위 미생물에서 배출되는 숙신산과 젖산에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 숙신산이 많이 배출될수록 반추 동물의 간에서 합성되는 포도당의 양도 늘어난다.</li>
+<li>② 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물의 에너지원으로 이용될 수 있다.</li>
+<li>③ 숙신산과 젖산은 반추위가 산성일 때보다 중성일 때 더 많이 배출된다.</li>
+<li>④ 숙신산과 젖산은 반추위 미생물의 세포 내에서 대사 과정을 거쳐 생성된다.</li>
+<li>⑤ 숙신산과 젖산은 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용되기도 한다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>인체는 혈액 속 포도당의 농도, 곧 혈당을 좁은 범위 안에서 일정하게 유지한다. 혈당은 세포가 에너지원으로 쓰는 포도당이 혈액에 녹아 있는 정도를 가리키므로, 혈당이 지나치게 낮으면 세포에 에너지가 충분히 공급되지 못하고 지나치게 높으면 그 자체가 인체에 부담이 된다. 그래서 혈당은 음식물을 섭취한 뒤 올라가고 활동이나 공복으로 에너지가 소비되면 내려가지만, 어느 쪽으로 치우치든 곧바로 조절이 작동하여 본래의 수준으로 되돌아온다. 이처럼 어떤 값이 일정한 범위에서 벗어나면 이를 다시 되돌리려는 인체의 성질을 항상성이라 한다. 혈당의 항상성은 두 호르몬이 서로 반대 방향으로 작용하는 조절을 통해 이루어진다. 호르몬은 특정 기관에서 분비되어 혈액을 타고 표적 기관에 이르러 그 작용을 일으키는 물질로, 분비량에 따라 표적 기관의 반응 정도가 달라진다. 따라서 같은 호르몬이라도 많이 분비되면 표적 기관의 반응이 커지고, 적게 분비되면 반응이 작아진다. 혈당 조절을 맡는 두 호르몬은 모두 이자에서 분비되지만, 하나는 혈당을 낮추는 방향으로, 다른 하나는 혈당을 높이는 방향으로 작용한다.</p>
+<p>식사 후 혈당이 올라가면 이자에서 ㉠<u>인슐린</u>이 분비된다. 인슐린은 표적 기관인 간·근육·지방 조직에 작용하여 혈액 속 포도당을 세포 안으로 받아들이게 한다. 이때 간과 근육은 받아들인 포도당을 글리코겐으로 합성해 저장하고, 지방 조직은 남는 에너지를 지방으로 저장한다. 그 결과 혈액 속 포도당이 세포로 옮겨 가 혈당이 내려간다. 즉 인슐린은 혈당이 높을 때 포도당을 '거두어 저장하는' 방향으로 작용하여 혈당을 낮춘다. 반대로 공복이나 활동으로 혈당이 내려가면 이자에서 ㉡<u>글루카곤</u>이 분비된다. 글루카곤은 주로 간에 작용하여, 저장되어 있던 글리코겐을 다시 포도당으로 분해해 혈액으로 내보내게 한다. 그 결과 혈액 속 포도당이 늘어 혈당이 올라간다. 즉 글루카곤은 혈당이 낮을 때 저장된 에너지를 '꺼내 내보내는' 방향으로 작용하여 혈당을 높인다.</p>
+<p>이처럼 인슐린과 글루카곤은 같은 글리코겐 저장고를 두고 한쪽은 채우고 한쪽은 꺼내는, 서로 맞서는 작용을 한다. 두 호르몬은 혈당의 높낮이에 따라 분비량이 조절되어, 혈당이 높으면 인슐린이 많아지고 글루카곤이 줄며, 혈당이 낮으면 그 반대가 된다. 주목할 점은 두 호르몬의 작용이 그 작용을 일으킨 원인을 도로 줄이는 방향으로 이어진다는 것이다. 혈당이 높아 인슐린이 분비되면 그 인슐린이 혈당을 낮추고, 혈당이 낮아 글루카곤이 분비되면 그 글루카곤이 혈당을 높인다. 그 결과 어느 호르몬이 작용하든 혈당은 본래의 수준으로 되돌아오고, 본래 수준에 가까워지면 그 호르몬의 분비도 줄어들어 조절이 멈춘다. 이렇게 한 값을 두 호르몬이 양방향에서 밀고 당기므로, 혈당은 지나치게 높아지지도 낮아지지도 않는 좁은 범위 안에 머무른다. 한 호르몬만으로 한 방향으로만 조절한다면 반대쪽으로 치우친 값을 되돌리기 어렵지만, 방향이 반대인 두 호르몬이 함께 작용하면 어느 쪽으로 기울든 균형으로 돌아올 수 있다. 인체가 혈당의 항상성을 안정적으로 지킬 수 있는 까닭이 여기에 있다.</p>
+<p>그런데 이 조절은 호르몬의 분비량뿐 아니라 표적 기관이 호르몬에 반응하는 정도에도 좌우된다. 인슐린이 정상적으로 분비되더라도 간·근육·지방 조직이 인슐린에 둔하게 반응하면, 같은 양의 인슐린으로도 포도당이 세포로 충분히 들어가지 못해 혈당이 잘 내려가지 않는다. 이처럼 표적 기관의 인슐린에 대한 반응이 약해진 상태를 인슐린 저항성이라 한다. 인슐린 저항성이 생기면 인체는 혈당을 낮추기 위해 더 많은 인슐린을 분비하게 되고, 그래도 혈당이 충분히 내려가지 않으면 항상성을 유지하던 균형이 무너져 혈당이 높은 상태가 이어진다. 특히 지방이 과도하게 축적되면 인슐린 저항성이 커지는 경향이 있어, 과잉의 에너지 저장이 혈당 조절의 부담으로까지 이어질 수 있다. 결국 혈당의 항상성은 두 호르몬이 양방향으로 작용하는 조절과, 표적 기관이 그 호르몬에 제대로 반응하는 것이 함께 갖추어질 때 유지된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 인슐린과 글루카곤은 모두 이자에서 분비되는 호르몬이다.</li>
+<li>② 호르몬은 표적 기관에 이르러 작용하며, 분비량에 따라 반응 정도가 달라진다.</li>
+<li>③ 글루카곤은 간에 작용하여 글리코겐을 포도당으로 분해해 혈액으로 내보내게 한다.</li>
+<li>④ 인슐린은 혈당이 낮을 때 분비되어 저장된 에너지를 꺼내 혈당을 높인다.</li>
+<li>⑤ 혈당은 음식물 섭취 후 올라가고 활동이나 공복으로 에너지가 소비되면 내려간다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>인슐린 저항성에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 이자가 인슐린을 분비하지 못하게 되어 혈당이 높아지는 상태이겠군.</li>
+<li>② 인슐린이 정상적으로 분비되어도 표적 기관이 둔하게 반응해 혈당이 잘 내려가지 않는 상태이겠군.</li>
+<li>③ 표적 기관이 인슐린에 지나치게 민감해져 혈당이 과도하게 낮아지는 상태이겠군.</li>
+<li>④ 글루카곤의 분비가 늘어 저장된 글리코겐이 과도하게 분해되는 상태이겠군.</li>
+<li>⑤ 인슐린의 분비량이 줄어들어 더 적은 인슐린으로도 혈당이 내려가는 상태이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 혈당이 낮을 때 분비되어 혈당을 높이는 방향으로 작용한다.</li>
+<li>② ㉡은 ㉠과 달리 표적 기관에 작용하지 않고 혈액 속에서 직접 포도당을 만든다.</li>
+<li>③ ㉡은 ㉠과 달리 저장된 글리코겐을 포도당으로 분해해 혈액으로 내보내게 한다.</li>
+<li>④ ㉠과 ㉡은 모두 혈당이 높을 때 분비량이 늘어 혈당을 낮추는 방향으로 작용한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 이자가 아닌 간에서 분비되어 서로 같은 방향으로 작용한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 (가)~(다)가 작용함에 따라 인체에서 일어나는 반응을 예상한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 혈당 조절과 관련된 작용을 인위적으로 일으키거나 막는 처치이다. (가)는 인슐린과 같은 작용을 하여 포도당을 세포 안으로 들어가게 하는 약물이고, (나)는 표적 기관이 인슐린에 반응하는 정도를 높여 인슐린 저항성을 낮추는 약물이며, (다)는 글루카곤의 작용을 막아 간에서 글리코겐이 포도당으로 분해되는 것을 억제하는 약물이다.</p>
+</blockquote>
+<ul>
+<li>① (가)를 투여하면 혈액 속 포도당이 세포로 옮겨 가 혈당이 내려가겠군.</li>
+<li>② (나)를 투여하면 같은 양의 인슐린으로도 포도당이 세포로 더 잘 들어가겠군.</li>
+<li>③ (다)를 투여하면 공복 상태에서 혈당이 올라가는 작용이 억제되겠군.</li>
+<li>④ (가)와 (나)는 모두 혈당을 낮추는 방향의 조절을 돕는 작용을 하겠군.</li>
+<li>⑤ (나)와 (다)는 모두 간에서 글리코겐이 합성되어 저장되는 것을 직접 억제하겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2023학년도 6월 [10~13]</div>
+<div class='passage exam-ps'><p>혈액은 세포에 필요한 물질을 공급하고 노폐물을 제거한다. 만약 혈관 벽이 손상되어 출혈이 생기면 손상 부위의 혈액이 응고되어 혈액 손실을 막아야 한다. 혈액 응고는 섬유소 단백질인 피브린이 모여 형성된 섬유소 그물이 혈소판이 응집된 혈소판 마개와 뭉쳐 혈병이라는 덩어리를 만드는 현상이다. 혈액 응고는 혈관 속에서도 일어나는데, 이때의 혈병을 혈전이라 한다. 이물질이 쌓여 동맥 내벽이 두꺼워지는 동맥 경화가 일어나면 그 부위에 혈전 침착, 혈류 감소 등이 일어나 혈관 질환이 발생하기도 한다. 이러한 혈액의 응고 및 원활한 순환에 비타민 K가 중요한 역할을 한다.</p>
+<p>비타민 K는 혈액이 응고되도록 돕는다. 지방을 뺀 사료를 먹인 병아리의 경우, 지방에 녹는 어떤 물질이 결핍되어 혈액 응고가 지연된다는 사실을 발견하고 그 물질을 비타민 K로 명명했다. 혈액 응고는 단백질로 이루어진 다양한 인자들이 관여하는 연쇄 반응에 의해 일어난다. 우선 여러 혈액 응고 인자들이 활성화된 이후 프로트롬빈이 활성화되어 트롬빈으로 전환되고, 트롬빈은 혈액에 녹아 있는 피브리노겐을 불용성인 피브린으로 바꾼다. 비타민 K는 프로트롬빈을 비롯한 혈액 응고 인자들이 간세포에서 합성될 때 이들의 활성화에 관여한다. 활성화는 칼슘 이온과의 결합을 통해 이루어지는데, 이들 혈액 단백질이 칼슘 이온과 결합하려면 카르복실화되어 있어야 한다. 카르복실화는 단백질을 구성하는 아미노산 중 글루탐산이 감마-카르복시글루탐산으로 전환되는 것을 말한다. 이처럼 비타민 K에 의해 카르복실화되어야 활성화가 가능한 표적 단백질을 비타민 K-의존성 단백질이라 한다.</p>
+<p>비타민 K는 식물에서 합성되는 ㉠비타민 K1과 동물 세포에서 합성되거나 미생물 발효로 생성되는 ㉡비타민 K2로 나뉜다. 녹색 채소 등은 비타민 K1을 충분히 함유하므로 일반적인 권장 식단을 따르면 혈액 응고에 차질이 생기지 않는다.</p>
+<p>그런데 혈관 건강과 관련된 비타민 K의 또 다른 중요한 기능이 발견되었고, 이는 칼슘의 역설과도 관련이 있다. 나이가 들면 뼈 조직의 칼슘 밀도가 낮아져 골다공증이 생기기 쉬운데, 이를 방지하고자 칼슘 보충제를 섭취한다. 하지만 칼슘 보충제를 섭취해서 혈액 내 칼슘 농도는 높아지나 골밀도는 높아지지 않고, 혈관 벽에 칼슘염이 침착되는 혈관 석회화가 진행되어 동맥 경화 및 혈관 질환이 발생하는 경우가 생긴다. 혈관 석회화는 혈관 근육 세포 등에서 생성되는 MGP라는 단백질에 의해 억제되는데, 이 단백질이 비타민 K-의존성 단백질이다. 비타민 K가 부족하면 MGP 단백질이 활성화되지 못해 혈관 석회화가 유발된다는 것이다.</p>
+<p>비타민 K1과 K2는 모두 비타민 K-의존성 단백질의 활성화를 유도하지만 K1은 간세포에서, K2는 그 외의 세포에서 활성이 높다. 그러므로 혈액 응고 인자의 활성화는 주로 K1이, 그 외의 세포에서 합성되는 단백질의 활성화는 주로 K2가 담당한다. 이에 따라 일부 연구자들은 비타민 K의 권장량을 K1과 K2로 구분하여 설정해야 하며, K2가 함유된 치즈, 버터 등의 동물성 식품과 발효 식품의 섭취를 늘려야 한다고 권고한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 혈전이 형성되면 섬유소 그물이 뭉쳐 혈액의 손실을 막는다.</li>
+<li>② 혈액의 응고가 이루어지려면 혈소판 마개가 형성되어야 한다.</li>
+<li>③ 혈관 손상 부위에 혈병이 생기려면 혈소판이 응집되어야 한다.</li>
+<li>④ 혈관 경화를 방지하려면 이물질이 침착되지 않게 해야 한다.</li>
+<li>⑤ 혈관 석회화가 계속되면 동맥 내벽과 혈류에 변화가 생긴다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>칼슘의 역설에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 칼슘 보충제를 섭취하면 오히려 비타민 K1의 효용성이 감소된다는 것이겠군.</li>
+<li>② 칼슘 보충제를 섭취해도 뼈 조직에서는 칼슘이 여전히 필요하다는 것이겠군.</li>
+<li>③ 칼슘 보충제를 섭취해도 골다공증은 막지 못하나 혈관 건강은 개선되는 경우가 있다는 것이겠군.</li>
+<li>④ 칼슘 보충제를 섭취하면 혈액 내 단백질이 칼슘과 결합하여 혈관 벽에 칼슘이 침착된다는 것이겠군.</li>
+<li>⑤ 칼슘 보충제를 섭취해도 혈액으로 칼슘이 흡수되지 않아 골다공증 개선이 안 되는 경우가 있다는 것이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 우리 몸의 간세포에서 합성된다.</li>
+<li>② ㉡은 ㉠과 달리 지방과 함께 섭취해야 한다.</li>
+<li>③ ㉡은 ㉠과 달리 표적 단백질의 아미노산을 변형하지 않는다.</li>
+<li>④ ㉠과 ㉡은 모두 표적 단백질의 활성화 이전 단계에 작용한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 일반적으로는 결핍이 발생해 문제가 되는 경우는 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 참고할 때 〈보기〉의 (가)～(다)를 투여함에 따라 체내에서 일어나는 반응을 예상한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 혈전으로 인한 질환을 예방 또는 치료하는 약물이다.
+(가) 와파린: 트롬빈에는 작용하지 않고 비타민 K의 작용을 방해함.
+(나) 플라스미노겐 활성제: 피브리노겐에는 작용하지 않고 피브린을 분해함.
+(다) 헤파린: 비타민 K-의존성 단백질에는 작용하지 않고 트롬빈의 작용을 억제함.</p>
+</blockquote>
+<ul>
+<li>① (가)의 지나친 투여는 혈관 석회화를 유발할 수 있겠군.</li>
+<li>② (나)는 이미 뭉쳐 있던 혈전이 풀어지도록 할 수 있겠군.</li>
+<li>③ (다)는 혈액 응고 인자와 칼슘 이온의 결합을 억제하겠군.</li>
+<li>④ (가)와 (다)는 모두 피브리노겐이 전환되는 것을 억제하겠군.</li>
+<li>⑤ (나)와 (다)는 모두 피브린 섬유소 그물의 형성을 억제하겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>같은 양의 음식을 먹어도 어떤 사람은 에너지가 남고 어떤 사람은 남지 않는다. 인체 내 에너지의 불균형이 섭취한 음식물의 양만으로 결정되지 않는 까닭은, 인체가 에너지를 소비하는 정도가 사람마다 다르기 때문이다. 인체의 에너지 소비는 기초 대사량, 음식물을 소화하는 중에 발생하는 열, 신체 활동 등으로 이루어진다. 이 가운데 신체 활동에 따른 소비는 사람이 얼마나 움직이느냐에 따라 크게 달라지지만, 기초 대사량은 활동과 무관하게 늘 일정하게 나가는 몫이라는 점에서 성격이 다르다. 기초 대사량은 생명을 유지하기 위해 안정된 상태에서 기본적으로 소비되는 에너지로, 심장을 뛰게 하고 체온을 유지하는 것과 같이 가만히 있어도 끊임없이 일어나는 작용에 쓰인다. 그래서 기초 대사량은 전체 에너지 소비의 약 60~70%를 차지할 만큼 가장 큰 몫을 이룬다. 기초 대사량은 개인의 근육량과 대사율에 따라 달라지는데, 근육은 가만히 있을 때에도 에너지를 쓰는 조직이므로 근육량이 많을수록 대사율이 높아 기초 대사량도 높아진다. 따라서 기초 대사량이 낮은 사람은 높은 사람에 비해 에너지 소비가 충분히 이루어지지 않아, 동일한 양의 음식물을 섭취하더라도 남는 에너지가 많아 에너지 과잉 상태로 이어지기 쉽다.</p>
+<p>에너지 소비의 차이는 지방 조직의 특성에서도 비롯된다. 지방 세포는 모두 에너지와 관련된 세포이지만, 맡은 역할에 따라 크게 두 종류로 나뉜다. ㉠백색 지방 세포는 에너지를 중성 지방의 형태로 저장하는 세포로, 과잉 섭취가 계속되면 이 세포에 에너지가 축적되어 세포의 크기가 커진다. 백색 지방 세포는 에너지를 '저장하는' 쪽을 맡으므로, 그 양이 늘어날수록 인체에 쌓이는 에너지의 양도 늘어난다. 반면 ㉡갈색 지방 세포는 추위에 노출되었을 때 활성화되어, 저장된 에너지를 열로 바꾸어 소비함으로써 체온을 유지한다. 곧 같은 지방이라도 백색 지방 세포에서는 에너지를 거두어 보관하는 데 쓰이고, 갈색 지방 세포에서는 그 에너지를 태워 열로 내보내는 데 쓰이는 셈이다. 갈색 지방 세포는 에너지를 저장하기보다 '소비하는' 쪽을 맡으므로, 그 활성이 높을수록 같은 양을 먹어도 소비되는 에너지가 늘어나고, 그만큼 저장으로 돌아가는 에너지는 줄어든다. 이처럼 두 지방 세포는 같은 지방 조직에 속하면서도 에너지에 대해 서로 반대되는 역할을 한다.</p>
+<p>이를 종합하면, 인체가 소비하는 에너지의 양은 기초 대사량의 높낮이와 갈색 지방 세포의 활성 정도에 따라 달라진다. 기초 대사량이 높고 갈색 지방 세포의 활성이 높은 사람은 같은 양을 먹더라도 소비되는 에너지가 많아 남는 에너지가 적고, 그 반대인 사람은 남는 에너지가 많다. 두 요인은 서로 다른 방식으로 소비를 늘리지만, 소비를 늘려 남는 에너지를 줄인다는 결과에서는 같은 방향으로 작용한다. 남는 에너지는 곧바로 쓰이지 못한 채 저장으로 돌아가는데, 글리코겐 저장의 한계를 넘으면 지방으로 전환되어 백색 지방 세포에 축적된다. 따라서 소비가 적은 사람일수록 저장으로 흘러가는 에너지가 많아, 백색 지방 세포에 에너지가 더 많이 쌓이는 경향이 있다. 곧 같은 섭취량이라도 소비의 차이가 저장의 차이를 낳고, 저장의 차이가 다시 에너지 균형의 차이로 이어지는 것이다. 이는 에너지의 불균형을 따질 때 들어온 에너지의 양뿐 아니라 나가는 에너지의 양을 함께 살펴야 함을 보여 준다.</p>
+<p>다만 이러한 설명이 음식물 섭취를 줄이는 일이 무의미하다는 뜻은 아니다. 에너지의 균형은 섭취와 소비가 함께 결정하는 문제이므로, 소비를 늘리는 일과 섭취를 조절하는 일은 어느 한쪽으로 대신할 수 없는 별개의 방향이다. 근육량을 늘려 기초 대사량을 높이거나 갈색 지방 세포의 활성을 높여 소비를 늘리는 것은 균형의 한쪽 축을 다루는 일이고, 섭취량을 조절하는 것은 다른 한쪽 축을 다루는 일이다. 두 축은 서로를 완전히 대신하지 못하므로, 에너지의 균형을 이해하는 일은 소비와 섭취 가운데 어느 하나만을 강조하기 위해서가 아니라 두 축을 함께 고려하는 태도를 마련하기 위한 토대가 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 기초 대사량은 전체 에너지 소비에서 가장 큰 비중을 차지한다.</li>
+<li>② 근육량이 많을수록 대사율이 높아 기초 대사량이 높아진다.</li>
+<li>③ 백색 지방 세포는 에너지를 중성 지방의 형태로 저장한다.</li>
+<li>④ 갈색 지방 세포는 추위에 노출되면 활성화되어 에너지를 열로 바꾼다.</li>
+<li>⑤ 기초 대사량이 낮은 사람은 높은 사람보다 같은 양을 먹어도 남는 에너지가 적다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>에너지 소비의 차이를 중심으로 한 위와 같은 설명에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 에너지 소비가 사람마다 다르다고 보면서도 그 차이를 만드는 요인을 전혀 제시하지 않았다.</li>
+<li>② 기초 대사량이 에너지 소비에서 차지하는 비중을 다루면서 그 수치적 근거를 밝히지 않았다.</li>
+<li>③ 소비 조절과 섭취 조절이 서로를 대신할 수 없는 별개의 방향이라고 보면서도, 그 둘을 실제로 어떻게 병행해야 하는지는 구체적으로 다루지 않았다.</li>
+<li>④ 에너지 소비가 저장에 영향을 준다고 보면서도 저장된 에너지가 다시 소비되는 경우는 언급하지 않았다.</li>
+<li>⑤ 에너지 소비의 차이가 개인의 노력만으로 조절될 수 있는지를 다루지 않고 소비 요인만 나열하였다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구진이 같은 양·같은 종류의 식사를 한동안 동일하게 제공한 갑과 을을 비교하였다. 갑은 을보다 근육량이 많아 기초 대사량이 높았고, 추운 환경에 두었을 때 갑은 을보다 갈색 지방 세포가 더 활발하게 활성화되었다. 일정 기간이 지난 뒤 측정하니, 을은 갑보다 백색 지방 세포에 축적된 에너지의 양이 더 많았고 체지방도 더 늘어나 있었다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 을보다 기초 대사량이 높은 것은, 갑이 안정된 상태에서 기본적으로 소비하는 에너지가 더 많음을 뜻하겠군.</li>
+<li>② 추운 환경에서 갑의 갈색 지방 세포가 더 활발히 활성화된 것은, 갑이 저장된 에너지를 열로 더 많이 소비한 것과 관련되겠군.</li>
+<li>③ 을이 갑보다 백색 지방 세포에 축적된 에너지가 많은 것은, 을이 소비하고 남은 에너지가 더 많았던 것과 관련되겠군.</li>
+<li>④ 같은 양을 먹었는데도 을의 체지방이 더 늘어난 것은, 소비의 차이가 저장의 차이로 이어진 결과로 볼 수 있겠군.</li>
+<li>⑤ 을이 갑보다 체지방이 더 늘어난 것은, 을의 갈색 지방 세포가 에너지를 중성 지방으로 더 많이 저장했기 때문이겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 추위에 노출되었을 때 활성화되어 체온을 유지한다.</li>
+<li>② ㉡은 ㉠과 달리 에너지를 중성 지방의 형태로 저장하여 세포의 크기를 키운다.</li>
+<li>③ ㉡은 ㉠과 달리 저장된 에너지를 열로 바꾸어 소비하는 역할을 한다.</li>
+<li>④ ㉠과 ㉡은 모두 에너지를 저장하는 쪽을 맡아 인체에 에너지를 축적한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 지방 조직이 아닌 근육 조직에 속해 대사율을 결정한다.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29]</div>
+<div class='passage exam-ps'><p>신체의 세포, 조직, 장기가 손상되어 더 이상 제 기능을 하지 못할 때에 이를 대체하기 위해 이식을 실시한다. 이때 이식으로 옮겨 붙이는 세포, 조직, 장기를 이식편이라 한다. 자신이나 일란성 쌍둥이의 이식편을 이용할 수 없다면 다른 사람의 이식편으로 ‘동종 이식’을 실시한다. 그런데 우리의 몸은 자신의 것이 아닌 물질이 체내로 유입될 경우 면역 반응을 일으키므로, 유전적으로 동일하지 않은 이식편에 대해 항상 거부 반응을 일으킨다. 면역적 거부 반응은 면역 세포가 표면에 발현하는 주조직적합복합체(MHC) 분자의 차이에 의해 유발된다. 개체마다 MHC에 차이가 있는데 서로 간의 유전적 거리가 멀수록 MHC에 차이가 커져 거부 반응이 강해진다. 이를 막기 위해 면역 억제제를 사용하는데, 이는 면역 반응을 억제하여 질병 감염의 위험성을 높인다.</p>
+<p>이식에는 많은 비용이 소요될 뿐만 아니라 이식이 가능한 동종 이식편의 수가 매우 부족하기 때문에 이를 대체하는 방법이 개발되고 있다. 우선 인공 심장과 같은 ‘전자 기기 인공 장기’를 이용하는 방법이 있다. 하지만 이는 장기의 기능을 일시적으로 대체하는 데 사용되며, 추가 전력 공급 및 정기적 부품 교체 등이 요구되는 단점이 있고, 아직 인간의 장기를 완전히 대체할 만큼 정교한 단계에 이르지는 못했다.</p>
+<p>다음으로는 사람의 조직 및 장기와 유사한 다른 동물의 이식편을 인간에게 이식하는 ‘이종 이식’이 있다. 그런데 이종 이식은 동종 이식보다 거부 반응이 훨씬 심하게 일어난다. 특히 사람이 가진 자연항체는 다른 종의 세포에서 발현되는 항원에 반응하는데, 이로 인해 이종 이식편에 대해서 초급성 거부 반응 및 급성 혈관성 거부 반응이 일어난다. 이런 거부 반응을 일으키는 유전자를 제거한 형질 전환 미니돼지에서 얻은 이식편을 이식하는 실험이 성공한 바 있다. 미니돼지는 장기의 크기가 사람의 것과 유사하고 번식력이 높아 단시간에 많은 개체를 생산할 수 있다는 장점이 있어, 이를 이용한 이종 이식편을 개발하기 위한 연구가 진행되고 있다.</p>
+<p>이종 이식의 또 다른 문제는 ㉠내인성 레트로바이러스이다. 내인성 레트로바이러스는 생명체의 DNA의 일부분으로, 레트로바이러스로부터 유래된 것으로 여겨지는 부위들이다. 이는 바이러스의 활성을 가지지 않으며 사람을 포함한 모든 포유류에 존재한다. ㉡레트로바이러스는 자신의 유전 정보를 RNA에 담고 있고 역전사 효소를 갖고 있는 바이러스로서, 특정한 종류의 세포를 감염시킨다. 유전 정보가 담긴 DNA로부터 RNA가 생성되는 전사 과정만 일어날 수 있는 다른 생명체와는 달리, 레트로바이러스는 다른 생명체의 세포에 들어간 후 역전사 과정을 통해 자신의 RNA를 DNA로 바꾸고 그 세포의 DNA에 끼어들어 감염시킨다. 이후에는 다른 바이러스와 마찬가지로 자신이 속해 있는 생명체를 숙주로 삼아 숙주 세포의 시스템을 이용하여 복제, 증식하고 일정한 조건이 되면 숙주 세포를 파괴한다.</p>
+<p>그런데 정자, 난자와 같은 생식 세포가 레트로바이러스에 감염되고도 살아남는 경우가 있었다. 이런 세포로부터 유래된 자손의 모든 세포가 갖게 된 것이 내인성 레트로바이러스이다. 내인성 레트로바이러스는 세대가 지나면서 돌연변이로 인해 염기 서열의 변화가 일어나며 해당 세포 안에서는 바이러스로 활동하지 않는다. 그러나 내인성 레트로바이러스를 떼어 내어 다른 종의 세포 속에 주입하면 이는 레트로바이러스로 변환되어 그 세포를 감염시키기도 한다. 따라서 미니돼지의 DNA에 포함된 내인성 레트로바이러스를 효과적으로 제거하는 기술이 개발 중에 있다.</p>
+<p>그동안의 대체 기술과 관련된 연구 성과를 토대로 ⓐ이상적인 이식편을 개발하기 위해 많은 연구가 수행되고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 동종 간보다 이종 간이 MHC 분자의 차이가 더 크다.</li>
+<li>② 면역 세포의 작용으로 인해 장기 이식의 거부 반응이 일어난다.</li>
+<li>③ 이종 이식을 하는 것만으로도 바이러스 감염의 원인이 될 수 있다.</li>
+<li>④ 포유동물은 과거에 어느 조상이 레트로바이러스에 의해 감염된 적이 있다.</li>
+<li>⑤ 레트로바이러스는 숙주 세포의 역전사 효소를 이용하여 RNA를 DNA로 바꾼다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>ⓐ가 갖추어야 할 조건으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이식편의 비용을 낮추어서 정기 교체가 용이해야 한다.</li>
+<li>② 이식편은 대체를 하려는 장기와 크기가 유사해야 한다.</li>
+<li>③ 이식편과 수혜자 사이의 유전적 거리를 극복해야 한다.</li>
+<li>④ 이식편은 짧은 시간에 대량으로 생산이 가능해야 한다.</li>
+<li>⑤ 이식편이 체내에서 거부 반응을 유발하지 않아야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 다음은 신문 기사의 일부이다. 윗글을 참고할 때, 기사의 ㉮에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈○○ 신문〉</strong>
+최근에 줄기 세포 연구와 3D 프린팅 기술이 급속도로 발전하고 있다. 줄기 세포는 인체의 모든 세포나 조직으로 분화할 수 있다. 그러므로 수혜자 자신의 줄기 세포만을 이용하여 3D 바이오 프린팅 기술로 제작한 ㉮세포 기반 인공 이식편을 만들 수 있을 것으로 전망된다. 이미 미니 폐, 미니 심장 등의 개발 성공 사례도 보고되었다.</p>
+</blockquote>
+<ul>
+<li>① 전자 기기 인공 장기와 달리 전기 공급 없이도 기능을 유지할 수 있겠군.</li>
+<li>② 동종 이식편과 달리 이식 후 면역 억제제를 사용할 필요가 없겠군.</li>
+<li>③ 동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없겠군.</li>
+<li>④ 이종 이식편과 달리 유전자를 조작하는 과정이 필요하지는 않겠군.</li>
+<li>⑤ 이종 이식편과 달리 자연항체에 의한 초급성 거부 반응이 일어나지 않겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>29</span>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 자신이 속해 있는 생명체의 모든 세포의 DNA에 존재한다.</li>
+<li>② ㉡은 ㉠과 달리 자신의 유전 정보를 DNA에 담을 수 없다.</li>
+<li>③ ㉡은 ㉠과 달리 자신이 속해 있는 생명체에 면역 반응을 일으키지 않는다.</li>
+<li>④ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 유전 정보를 가지고 있다.</li>
+<li>⑤ ㉠과 ㉡은 둘 다 자신이 속해 있는 생명체의 세포를 감염시켜 파괴한다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

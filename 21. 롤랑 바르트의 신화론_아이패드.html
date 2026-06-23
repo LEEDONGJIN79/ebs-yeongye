@@ -1,0 +1,962 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>롤랑 바르트의 신화론 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>롤랑 바르트의 신화론 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 거리에서 흔히 보던 광고 한 장을 떠올려 볼까요? 푸른 들판을 배경으로 한 가족이 환하게 웃으며 우유를 마시는 사진이요. 우리는 그 사진을 보고 "아, 우유 광고구나" 하고 지나칩니다. 그런데 잠깐만요. 그 사진은 정말 '우유'에 대해서만 말하고 있을까요? 자세히 보면 그 한 장은 <strong>"화목한 가정", "건강한 자연", "이걸 마시면 너도 행복해진다"</strong> 같은 메시지를 슬그머니 함께 건네고 있어요. 그런데 신기하게도, 우리는 그 숨은 메시지를 '누가 일부러 심어 놓은 것'이 아니라 '그냥 원래 그런 것'처럼 자연스럽게 받아들이죠. 바로 이 현상을 파고든 사람이 이 단원의 주인공, 프랑스의 학자 <strong>롤랑 바르트</strong>입니다.</p>
+<p>바르트의 출발점을 이해하려면 먼저 '기호'라는 말을 알아야 해요. 어렵지 않습니다. <strong>기호란 '무언가를 가리키는 것'</strong>이에요. 예를 들어 '나무'라는 말을 봅시다. 입으로 내는 '나무'라는 소리, 종이에 적힌 '나무'라는 글자 — 이렇게 <strong>눈이나 귀로 느낄 수 있는 겉모습</strong>을 '기표'라고 불러요. 그리고 그 말이 가리키는 <strong>'줄기와 가지를 가진 식물'이라는 머릿속 뜻</strong>을 '기의'라고 부릅니다. 기표(겉모습)와 기의(뜻)가 짝을 이루면 하나의 기호가 되는 거예요. 재미있는 건, '나무'라는 소리가 꼭 그 식물을 가리켜야 할 이유는 전혀 없다는 점이에요. 그저 사람들끼리 "이 소리는 이 뜻으로 쓰자"라고 약속했을 뿐이죠.</p>
+<p>바르트의 빛나는 생각은 여기서 한 걸음 더 나아갑니다. <strong>"광고, 사진, 영화도 결국 무언가를 가리키는 기호 아닐까?"</strong> 그렇다면 기호에는 두 층이 있다는 거예요.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>무엇인가</th>
+<th>우유 광고로 보면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1차 (겉뜻)</strong></td>
+<td>사진 그대로의 단순한 의미</td>
+<td>"들판에서 우유를 마시는 가족"</td>
+</tr>
+<tr>
+<td><strong>2차 (속뜻 = 신화)</strong></td>
+<td>1차 기호 전체에 사회가 덧씌운 의미</td>
+<td>"우유 = 건강·화목·행복"</td>
+</tr>
+</tbody>
+</table>
+<p>바르트는 이 2차 층을 <strong>'현대의 신화'</strong>라고 불렀어요. '신화'라고 하니 그리스 신들의 이야기 같지만, 그게 아니라 <strong>"인위적으로 만들어진 의미인데도 마치 원래부터 당연한 진실인 양 받아들여지는 것"</strong>을 가리키는 말이에요. 만들어진 티를 싹 감추고 자연스러운 척한다고 해서 바르트는 이걸 <strong>'자연화'</strong>라고 했습니다. 그래서 우리는 그 의미가 누군가의 의도로 '구성된 것'임을 깨닫지 못한 채 슬그머니 받아들이게 되는 거죠.</p>
+<blockquote>
+<p>한마디로: <strong>광고·사진·영화 같은 일상의 이미지에는 겉뜻(1차) 위에 사회가 덧씌운 속뜻(2차=신화)이 숨어 있고, 그 속뜻은 '만들어진 것'을 '자연스러운 것'처럼 위장한다.</strong> 그래서 바르트는 우리에게 그 배후를 꿰뚫어 보는 '비판적 읽기'를 권합니다.</p>
+</blockquote>
+<p>이 개념이 왜 중요할까요? 우리는 하루에도 수백 장의 이미지와 텍스트를 만나며 살아요. 그 모두가 1차 의미만이 아니라 사회적·이념적 속뜻을 품고 있다면, 그것을 그냥 삼키는 '수동적 수용자'로 남느냐, 배후를 읽어 내는 '능동적 해석자'가 되느냐는 큰 차이예요. 이 단원은 바로 그 눈을 길러 줍니다.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것 (개념 지도)</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>바르트의 신화론</strong>이 있습니다. 일상의 기호에 숨은 2차 의미(현대의 신화)와 그 자연화의 작동 방식을 읽어 내는 이론이죠. 세 세트는 이 큰 개념의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>바르트의 신화론<small>"일상의 기호에 숨은 2차 의미(신화)와 그 자연화"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>기표·기의에서 출발해, 1차 기호 위에 2차 의미(신화)가 어떻게 얹히고 '자연화'되는지, 그리고 그 배후를 읽는 비판적 태도까지 이론의 흐름을 차근차근 따라갑니다. 영화·사진 같은 시각 기호에 적용해 보는 연습도 함께해요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>같은 '이미지 기호'라도 그것이 대상과 어떻게 닮았는지(도상), 어떻게 이어졌는지(지표)에 따라 의미가 달라집니다. 두 작품 사진을 놓고 작가들이 서로의 관점을 비평하게 하며, 1차·2차 의미의 차이를 또렷이 가려 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>한 학생이 정리한 학습 메모를 함께 점검하고, 새로운 광고 이미지에 신화론을 적용·비판해 봅니다. 개념을 '아는 것'에서 '쓰는 것'으로 넘어가는 단계예요.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, '왜 평범한 이미지 한 장이 우리에게 특정 생각을 자연스럽게 심어 주는가'라는 물음에 스스로 답할 수 있게 될 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>프랑스의 기호학자 바르트는 우리가 일상에서 마주하는 이미지나 텍스트가 단순한 오락거리가 아니라 특정한 사회적·이념적 의미를 담고 있다고 본다. 그는 그러한 의미가 수용자에게 자연스러운 사실처럼 받아들여지는 현상을 ‘현대의 신화’라 부르고, 일상의 기호에 숨은 이념의 작동 방식을 분석하고자 한다. 바르트는 이를 위해 언어를 기호로 본 소쉬르의 이론을 분석 도구로 ⓐ<u>삼는다</u>. 소쉬르에 따르면 기호는 감각으로 지각되는 형태인 ‘기표’와 그것이 가리키는 개념적 내용인 ‘기의’가 결합한 것이다. 가령 ‘나무’라는 말은 말소리나 문자라는 기표와 ‘줄기와 가지를 가진 식물’이라는 기의가 묶인 하나의 기호이며, 그 둘의 관계는 필연적이지 않고 다만 사회적 약속에 의해 그렇게 기능할 뿐이다.</p>
+<p>바르트는 이미지나 텍스트 역시 언어처럼 기호로 볼 수 있다고 보고, 단일한 의미를 전달하는 기호를 ㉠<u>1차 기호 체계</u>라 한다. 그런데 1차 기호 체계는 그것이 놓인 사회적·역사적 맥락과 결합하여 또 다른 층위의 의미를 ⓑ<u>낳는다</u>. 곧 기존의 기호 전체가 다시 하나의 기표처럼 작용하고, 거기에 새로운 기의가 덧붙어 새로운 의미가 형성되는 것이다. 바르트는 이렇게 형성된 ㉡<u>2차 기호 체계</u>를 ‘현대의 신화’라 부른다. 현대의 신화는 원래의 의미 위에 사회적·이념적 함의가 덧씌워져 생겨난 것이지만, 사람들에게는 마치 처음부터 자연스러운 사실인 양 받아들여진다는 특징이 있다.</p>
+<p>바르트는 현대의 신화가 단순한 허구가 아니라 일정 부분 현실에 ⓒ<u>기대고</u> 있기에 더욱 설득력을 갖는다고 본다. 신화는 현실을 특정한 관점에서 선택하고 재구성한 의미를 마치 객관적이고 보편적인 진실인 것처럼 제시한다. 바르트는 인위적으로 구성된 의미가 그 구성 과정을 감춘 채 스스로를 순수하고 중립적인 것처럼 드러내는 이러한 현상을 ‘자연화’라 한다. 자연화를 통해 신화는 이념을 한층 공고히 하여, 수용자가 그것을 사회적 구성물로 인식하지 못하도록 만든다. 강제로 이념을 주입하는 전통적 선전과 달리, 신화는 일상적 기호를 통해 은밀하면서도 더 효과적으로 이념을 전파한다.</p>
+<p>이를 설명하기 위해 바르트는 한 잡지 표지를 예로 ⓓ<u>든다</u>. 그 표지에는 국기를 향해 경례하는 한 군인의 사진이 실려 있다. 1차 기호 체계에서 이 사진은 ‘경례하는 군인’이라는 단일한 의미를 전한다. 그러나 이 기호 전체가 2차 기호 체계에서는 다시 하나의 기표로 작동하고, 여기에 ‘이 나라는 차별 없이 모두를 포용하는 정의로운 국가’라는 기의가 덧붙는다. 이렇게 표지 이미지는 국가의 포용성과 구성원의 충성심을 암묵적으로 전하는 하나의 신화가 된다. 정교한 연출과 반복적인 노출을 통해 그 사회적·이념적 의미는 독자에게 본래부터 당연한 사실처럼 수용된다.</p>
+<p>바르트는 대중 매체나 문화 산업이 결코 중립적이지 않으며 특정 이념을 자연스럽게 재생산하는 장치가 될 수 있음을 ⓔ<u>강조한다</u>. 광고, 기사, 영화, 포스터 등 우리가 접하는 모든 문화 콘텐츠는 1차 의미뿐 아니라 사회적·이념적 함의를 담고 있다. 따라서 대중은 어떤 이미지나 텍스트를 해석할 때 2차 기호 체계가 작동하고 있을 수 있음을 인지하고, 그 배후의 사회적 맥락과 이념적 작용을 파악하는 능력을 갖추어야 한다. 이를 통해 비로소 특정 의도를 무비판적으로 받아들이는 수동적 수용자에서 벗어나 능동적인 해석자로 나아갈 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 신화의 개념을 정의한 뒤 그것을 비판하는 상반된 이론들을 시대순으로 나열하고 있다.</li>
+<li>② 기호에 대한 이론을 활용해 신화의 형성 원리를 밝히고 그 비판적 수용의 필요성을 제시하고 있다.</li>
+<li>③ 신화의 사회적 기능을 유형별로 분류하고 각 유형이 지닌 효과의 우열을 평가하고 있다.</li>
+<li>④ 신화 개념의 변천 과정을 통시적으로 추적하여 현대에 이르러 그 의미가 축소되었음을 밝히고 있다.</li>
+<li>⑤ 신화에 대한 서로 다른 정의를 대조하여 어느 관점이 더 타당한지를 논증하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+이 글은 소쉬르의 기호 이론(기표·기의)을 끌어와 1차·2차 기호 체계로 신화가 어떻게 형성되는지를 밝히고(2~4문단), 마지막에 그것을 비판적으로 읽어야 한다고 권하죠(5문단). 이 흐름을 정확히 옮긴 ②가 정답입니다. ①·④·⑤는 '상반된 이론들의 나열·대조·통시적 변천'을 말하지만, 이 글은 바르트라는 하나의 관점을 펼친 글이라 어긋나요. ③의 '유형 분류와 우열 평가'도 글에 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 기표와 기의의 결합은 필연적인 것이어서 사회가 달라져도 바뀌지 않는다.</li>
+<li>② 현대의 신화는 현실과 무관한 허구를 지어냄으로써 설득력을 얻는다.</li>
+<li>③ 자연화는 구성된 의미가 그 구성 과정을 감추고 중립적인 것처럼 드러나는 현상이다.</li>
+<li>④ 전통적 선전은 일상적 기호를 통해 이념을 은밀하게 전파한다는 점에서 신화와 같다.</li>
+<li>⑤ 1차 기호 체계는 사회적 맥락과 결합하지 않고도 그 자체로 이념적 함의를 전달한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+3문단에 자연화는 "인위적으로 구성된 의미가 그 구성 과정을 감춘 채 스스로를 순수하고 중립적인 것처럼 드러내는" 현상이라고 했어요. 이를 옮긴 ③이 정답입니다. ①은 기표·기의의 관계가 "필연적이지 않"다는 1문단과 반대, ②는 신화가 "일정 부분 현실에 기대고 있"다는 3문단과 충돌해요. ④는 신화가 "전통적 선전과 달리" 은밀하다고 한 3문단을 거꾸로 말했고, ⑤는 1차 기호가 "사회적·역사적 맥락과 결합"해야 2차 의미가 생긴다는 2문단과 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 기표와 기의가 결합하여 단일한 의미를 전달하는 기호이다.</li>
+<li>② ㉡은 ㉠ 전체가 다시 하나의 기표처럼 작용하여 형성된 의미 층위이다.</li>
+<li>③ ㉡에서 ㉠에 덧붙는 기의는 사회적·역사적 맥락에서 비롯된 것이다.</li>
+<li>④ ㉠과 달리 ㉡은 수용자에게 자연스러운 사실처럼 받아들여진다.</li>
+<li>⑤ ㉡은 ㉠의 의미를 폐기함으로써 비로소 새로운 의미를 만들어 낸다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>3번 — 정답 ⑤</strong>
+2문단에서 2차 기호 체계(㉡)는 1차 기호(㉠) "전체가 다시 하나의 기표처럼 작용하고, 거기에 새로운 기의가 덧붙어" 형성된다고 했어요. 즉 ㉠의 의미를 '폐기'하는 것이 아니라 그 위에 '덧씌우는' 것이죠. 그래서 "㉠의 의미를 폐기"한다는 ⑤가 적절하지 않아 정답입니다. ①②③은 1~2문단, ④는 2문단('자연스러운 사실처럼')과 그대로 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉢, ㉣의 사례로 적절한 것만을 〈보기〉에서 있는 대로 찾아 바르게 짝지은 것은?</p>
+<blockquote>
+<p>윗글의 마지막 문단에서, 바르트는 신화를 대하는 태도를 두 가지로 나누어 설명한다. 하나는 ㉢<u>이미지의 1차 의미만을 그대로 받아들이는 태도</u>이고, 다른 하나는 ㉣<u>이미지의 배후에서 작동하는 2차 의미와 그 이념적 작용까지 읽어 내는 태도</u>이다.</p>
+<p><strong>〈보기〉</strong>
+ㄱ. 어느 청량음료 광고에서 젊은이들이 해변에서 웃으며 음료를 마시는 장면을 보고, '저 음료를 마시면 시원하겠다'라고만 생각하였다.
+ㄴ. 한 자동차 광고에 도심을 질주하는 차가 등장하는 것을 보고, 그 광고가 '성공한 삶'이라는 관념을 자동차에 결부시켜 구매 욕망을 부추긴다고 분석하였다.
+ㄷ. 명절 귀성 행렬을 담은 신문 사진을 보고, 그것이 '화목한 가족'이라는 가치를 당연한 것으로 전제하여 특정한 가족상을 자연스러운 것으로 만든다고 비평하였다.
+ㄹ. 운동화 광고에 유명 선수가 등장한 것을 보고, '저 선수가 신는 운동화구나'라고 이해하는 데 그쳤다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉢</th>
+<th>㉣</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>ㄱ, ㄴ</td>
+<td>ㄷ, ㄹ</td>
+</tr>
+<tr>
+<td>②</td>
+<td>ㄱ, ㄹ</td>
+<td>ㄴ, ㄷ</td>
+</tr>
+<tr>
+<td>③</td>
+<td>ㄴ, ㄷ</td>
+<td>ㄱ, ㄹ</td>
+</tr>
+<tr>
+<td>④</td>
+<td>ㄷ</td>
+<td>ㄱ, ㄴ, ㄹ</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>ㄹ</td>
+<td>ㄱ, ㄴ, ㄷ</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 정답 ②</strong>
+㉢은 1차 의미만 받아들이는 태도, ㉣은 2차 의미와 이념 작용까지 읽는 태도예요. ㄱ('시원하겠다'에 그침)과 ㄹ('저 선수가 신는 운동화'에 그침)은 1차 의미에 머문 ㉢의 사례입니다. ㄴ('성공한 삶' 관념을 결부시켜 욕망을 부추긴다고 분석)과 ㄷ('화목한 가족'을 당연한 것으로 만든다고 비평)은 2차 의미와 자연화를 읽어 낸 ㉣의 사례예요. 그래서 ㉢=ㄱ·ㄹ, ㉣=ㄴ·ㄷ인 ②가 정답입니다.</p>
+<p><strong>5번 [3점] — 정답 ④</strong>
+이 문항의 핵심 함정은 '신화와 현실의 관계'예요. 3문단은 신화가 "단순한 허구가 아니라 일정 부분 현실에 기대고 있"어 설득력을 갖는다고 했죠. 〈보기〉의 생수도 '실제로 마실 수 있는 물'이라는 현실에 기반합니다. 그런데 ④는 "현실과 전혀 무관한 허구에 기반"한다고 정반대로 말했으니 적절하지 않아 정답이에요. ①은 1차→2차 형성, ②는 반복 노출과 자연화, ③은 자연화의 정의, ⑤는 능동적 해석자로의 전환을 정확히 적용한 적절한 이해입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 생수 브랜드의 광고 포스터에는 맑은 계곡물을 두 손으로 받아 마시는 사람의 모습이 담겨 있다. 포스터 아래쪽에는 작은 글씨로 브랜드 이름만이 적혀 있다. 이 포스터는 여러 매체에 반복적으로 노출되어, 사람들은 이 브랜드의 생수를 '오염되지 않은 청정한 자연 그 자체'로 여기게 되었다. 그러나 실제로 그 생수는 대규모 공장에서 정수 처리를 거쳐 생산된다.</p>
+</blockquote>
+<ul>
+<li>① 계곡물을 마시는 모습이라는 1차 기호 체계 위에 '청정한 자연'이라는 기의가 덧붙어 2차 기호 체계가 형성된 것이겠군.</li>
+<li>② 포스터가 여러 매체에 반복적으로 노출된 것은 그 이념적 의미가 자연스러운 사실처럼 수용되도록 하는 데 기여하겠군.</li>
+<li>③ 사람들이 이 생수를 '청정한 자연'으로 여기게 된 것은 구성된 의미가 그 구성 과정을 감추는 자연화가 일어났기 때문이겠군.</li>
+<li>④ 실제로는 공장에서 정수 처리를 거치는데도 '자연 그 자체'로 받아들여진다는 점에서, 이 신화는 현실과 전혀 무관한 허구에 기반해 설득력을 얻은 것이겠군.</li>
+<li>⑤ 이 포스터의 의미가 사회적으로 구성된 것임을 인지하고 그 배후를 따져 묻는다면, 수동적 수용자에서 능동적 해석자로 나아가는 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 원용(援用)한다</li>
+<li>② ⓑ: 파생(派生)시킨다</li>
+<li>③ ⓒ: 의존(依存)하고</li>
+<li>④ ⓓ: 예시(例示)한다</li>
+<li>⑤ ⓔ: 묵과(默過)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+ⓔ '강조한다'는 어떤 점을 힘주어 드러낸다는 뜻인데, '묵과(默過)한다'는 잘못을 알고도 모르는 체 넘긴다는 뜻이라 정반대예요. 그래서 바꿔 쓰기에 적절하지 않은 ⑤가 정답입니다. ① 삼는다→원용한다(끌어다 쓴다), ② 낳는다→파생시킨다(갈라져 나오게 한다), ③ 기대고→의존하고, ④ 든다→예시한다는 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기표 / 기의</strong>: 기호의 두 부분. 기표는 눈·귀로 느끼는 겉모습(소리·글자·이미지), 기의는 그것이 가리키는 머릿속 뜻이에요.</li>
+<li><strong>1차 기호 체계</strong>: 단일한 겉뜻을 전달하는 기호. ('경례하는 군인' 같은 그대로의 의미)</li>
+<li><strong>2차 기호 체계(현대의 신화)</strong>: 1차 기호 전체가 다시 기표가 되어, 거기에 사회적·이념적 기의가 덧붙어 생긴 의미 층위.</li>
+<li><strong>자연화</strong>: 만들어진 의미가 그 구성 과정을 감춘 채 '원래 당연한 것'처럼 보이게 되는 현상.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>[자연화]      "원래부터 당연한 사실"처럼 수용</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>이념의 은밀한 전파</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>2차 기호 체계는 1차 기호의 의미를 없애고 만들어지나요?</div><div class='qa-a'>아니요. 1차 기호의 의미는 그대로 둔 채, 그 기호 전체가 다시 기표가 되어 새 기의가 덧붙는 방식으로 만들어집니다.</div></div>
+<div class='qa-item'><div class='qa-q'>신화는 거짓말(허구)인가요?</div><div class='qa-a'>완전한 허구는 아니에요. 일정 부분 현실에 기반하기 때문에 오히려 더 설득력을 갖습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>'자연화'가 무서운 까닭은 무엇인가요?</div><div class='qa-a'>만들어진 의미를 '당연한 사실'로 위장해, 수용자가 그것이 사회적 구성물임을 알아채지 못하게 만들기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [21~26]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>과거는 지나가 버렸기 때문에 역사가가 과거의 사실과 직접 만나는 것은 불가능하다. 역사가는 사료를 매개로 과거와 만난다. 사료는 과거를 그대로 재현하는 것은 아니기 때문에 불완전하다. 사료의 불완전성은 역사 연구의 범위를 제한하지만, 그 불완전성 때문에 역사학이 학문이 될 수 있으며 역사는 끝없이 다시 서술된다. 매개를 거치지 않은 채 손실되지 않은 과거와 ⓐ만날 수 있다면 역사학이 설 자리가 없을 것이다. 역사학은 전통적으로 문헌 사료를 주로 활용해 왔다. 그러나 유물, 그림, 구전 등 과거가 남긴 흔적은 모두 사료로 활용될 수 있다. 역사가들은 새로운 사료를 발굴하기 위해 노력한다. 알려지지 않았던 사료를 찾아내기도 하지만, 중요하지 않게 ⓑ여겨졌던 자료를 새롭게 사료로 활용하거나 기존의 사료를 새로운 방향에서 파악하기도 한다. 평범한 사람들의 삶의 모습을 중점적인 주제로 다루었던 미시사 연구에서 재판 기록, 일기, 편지, 탄원서, 설화집 등의 이른바 ‘서사적’ 자료에 주목한 것도 사료 발굴을 위한 노력의 결과이다.</p>
+<p>시각 매체의 확장은 사료의 유형을 더욱 다양하게 했다. 이에 따라 역사학에서 영화를 통한 역사 서술에 대한 관심이 일고, 영화를 사료로 파악하는 경향도 ⓒ나타났다. 역사가들이 주로 사용하는 문헌 사료의 언어는 대개 지시 대상과 물리적ㆍ논리적 연관이 없는 추상화된 상징적 기호이다. 반면 영화는 카메라 앞에 놓인 물리적 현실을 이미지화하기 때문에 그 자체로 물질성을 띤다. 즉, 영화의 이미지는 닮은꼴로 사물을 지시하는 도상적 기호가 된다. 광학적 메커니즘에 따라 피사체로부터 비롯된 영화의 이미지는 그 피사체가 있었음을 지시하는 지표적 기호이기도 하다. 예를 들어 다큐멘터리 영화는 피사체와 밀접한 연관성을 갖기 때문에 피사체의 진정성에 대한 믿음을 고양하여 언어적 서술에 비해 호소력 있는 서술로 비춰지게 된다.</p>
+<p>그렇다면 영화는 역사와 어떻게 관계를 맺고 있을까? 역사에 대한 영화적 독해와 영화에 대한 역사적 독해는 영화와 역사의 관계에 대한 두 축을 ⓓ이룬다. 역사에 대한 영화적 독해는 영화라는 매체로 역사를 해석하고 평가하는 작업과 연관된다. 영화인은 자기 나름의 시선을 서사와 표현 기법으로 녹여내어 역사를 비평할 수 있다. 역사를 소재로 한 역사 영화는 역사적 고증에 충실한 개연적 역사 서술 방식을 취할 수 있다. 혹은 역사적 사실을 자원으로 삼되 상상력에 의존하여 가공의 인물과 사건을 덧대는 상상적 역사 서술 방식을 취할 수도 있다. 그러나 비단 역사 영화만이 역사를 재현하는 것은 아니다. 모든 영화는 명시적이거나 우회적인 방법으로 역사를 증언한다. 영화에 대한 역사적 독해는 영화에 담겨 있는 역사적 흔적과 맥락을 검토하는 것과 연관된다. 역사가는 영화 속에 나타난 풍속, 생활상 등을 통해 역사의 외연을 확장할 수 있다. 나아가 제작 당시 대중이 공유하던 욕망, 강박, 믿음, 좌절 등의 집단적 무의식과 더불어 이상, 지배적 이데올로기 같은 미처 파악하지 못했던 가려진 역사를 끌어내기도 한다.</p>
+<p>영화는 주로 허구를 다루기 때문에 역사 서술과는 거리가 있다고 보는 사람도 있다. 왜냐하면 역사가들은 일차적으로 사실을 기록한 자료에 기반해서 연구를 ⓔ펼치기 때문이다. 또한 역사가는 ㉠자료에 기록된 사실이 허구일지도 모른다는 의심을 버리지 않고 이를 확인하고자 한다. 그러나 문헌 기록을 바탕으로 하는 역사 서술에서도 허구가 배격되어야 할 대상만은 아니다. 역사가는 ㉮허구의 이야기 속에서 그 안에 반영된 당시 시대적 상황을 발견하여 사료로 삼으려고 노력하기도 한다. 지어낸 이야기는 실제 있었던 사건에 대한 기록이 아니지만 사고방식과 언어, 물질문화, 풍속 등 다양한 측면을 반영하며, 작가의 의도와 상관없이 혹은 작가의 의도 이상으로 동시대의 현실을 전달해 주기도 한다. 어떤 역사가들은 허구의 이야기에 반영된 사실을 확인하는 것에서 더 나아가 ㉯사료에 직접적으로 나타나지 않은 과거를 재현하기 위해 허구의 이야기를 활용하여 사료에 기반한 역사적 서술을 보완하기도 한다. 역사가가 허구를 활용하는 것은 실제로 존재했던 과거에 접근하고자 하는 고민의 결과이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>영화는 허구적 이야기에 역사적 사실을 담아냄으로써 새로운 사료의 원천이 될 뿐 아니라, 대안적 역사 서술의 가능성까지 지니고 있다. 영화는 공식 제도가 배제했던 역사를 사회에 되돌려 주는 ‘아래로부터의 역사’의 형성에 기여한다. 평범한 사람들의 회고나 증언, 구전 등의 비공식적 사료를 토대로 영화를 만드는 작업은 빈번하게 이루어지고 있다. 그리하여 영화는 하층 계급, 피정복 민족처럼 역사 속에서 주변화된 집단의 묻혀 있던 목소리를 표현해 낸다. 이렇듯 영화는 공식 역사의 대척점에서 활동하면서 역사적 의식 형성에 참여한다는 점에서 역사 서술의 한 주체가 된다.</p></div></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 역사의 개념을 밝히면서 영화와 역사 간의 공통점과 차이점을 비교하고 있다.</li>
+<li>② 영화의 변천 과정을 통시적으로 밝혀 사료로서 영화가 지닌 의의를 강조하고 있다.</li>
+<li>③ 역사에 대한 서로 다른 견해를 대조하여 사료로서 영화가 지닌 한계를 비판하고 있다.</li>
+<li>④ 영화의 사료로서의 특성을 밝히면서 역사 서술로서 영화가 지닌 가능성을 제시하고 있다.</li>
+<li>⑤ 다양한 영화의 유형별 장단점을 분석하여 영화가 역사 서술의 대안이 될 수 있는지에 대해 평가하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>21번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 개인적 기록은 사료로 활용하기에 적절하지 않다.</li>
+<li>② 역사가가 활용하는 공식적 문헌 사료는 매개를 거치지 않은 과거의 사실이다.</li>
+<li>③ 기존의 사료를 새로운 방향에서 파악하는 것은 사료의 발굴이라고 할 수 있다.</li>
+<li>④ 문헌 사료의 언어는 다큐멘터리 영화의 이미지에 비해 지시 대상에 대한 지표성이 강하다.</li>
+<li>⑤ 카메라를 매개로 얻어진 영화의 이미지는 지시 대상과 닮아 있다는 점에서 상징적 기호이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>22번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>23</div><div class='q-stem'></div></div>
+<p>㉮, ㉯의 사례로 적절한 것만을 〈보기〉에서 있는 대로 찾아 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+ㄱ. 조선 후기 유행했던 판소리를 자료로 활용하여 당시 음식 문화의 실상을 파악하고자 했다.
+ㄴ. B. C. 3세기경에 편찬된 것으로 알려진 경전의 일부에 사용된 어휘를 면밀히 분석하여, 그 경전의 일부가 후대에 첨가되었을 가능성을 검토했다.
+ㄷ. 중국 명나라 때의 상거래 관행을 연구하기 위해 명나라 때 유행한 다양한 소설들에서 상업 활동과 관련된 내용을 모아 공통된 요소를 분석했다.
+ㄹ. 17세기의 사건 기록에서 찾아낸 한 평범한 여성의 삶에 대한 역사서를 쓰면서 그 여성의 심리를 묘사하기 위해 같은 시대에 나온 설화집의 여러 곳에서 문장을 차용했다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉮</th>
+<th>㉯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>ㄱ, ㄷ</td>
+<td>ㄹ</td>
+</tr>
+<tr>
+<td>②</td>
+<td>ㄱ, ㄹ</td>
+<td>ㄴ</td>
+</tr>
+<tr>
+<td>③</td>
+<td>ㄴ, ㄷ</td>
+<td>ㄱ</td>
+</tr>
+<tr>
+<td>④</td>
+<td>ㄷ</td>
+<td>ㄴ, ㄹ</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>ㄹ</td>
+<td>ㄱ, ㄴ</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>23번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>24</div><div class='q-stem'></div></div>
+<p>㉠에 나타난 역사가의 관점에서 [A]를 비판한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 영화는 많은 사실 정보를 담고 있기 때문에 사료로서의 가능성을 가지고 있다.</li>
+<li>② 하층 계급의 역사를 서술하기 위해서는 영화와 같이 허구를 포함하는 서사적 자료에 주목해야 한다.</li>
+<li>③ 영화가 늘 공식 역사의 대척점에 있는 것은 아니며, 공식 역사의 입장에서 지배적 이데올로기를 선전하는 수단으로 활용되곤 한다.</li>
+<li>④ 주변화된 집단의 목소리는 그 집단의 이해관계를 반영하기 때문에 그것에 바탕을 둔 영화는 주관에 매몰된 역사 서술일 뿐이다.</li>
+<li>⑤ 기억이나 구술 증언은 거짓이거나 변형될 가능성이 있기 때문에 다른 자료와 비교하여 진위 여부를 검증한 후에야 사료로 사용이 가능하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>24번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>25</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+1982년 작 영화 「마르탱 게르의 귀향」은 16세기 중엽 프랑스 농촌의 보통 사람들 간의 사건에 관한 재판 기록을 토대로 한다. 당시 사건의 정황과 생활상에 관한 고증을 맡은 한 역사가는 영화 제작 이후 재판 기록을 포함한 다양한 문서들을 근거로 동명의 역사서를 출간했다. 1993년, 영화 「마르탱 게르의 귀향」은 19세기 중엽 미국을 배경으로 하여 허구적 인물과 사건으로 재구성한 영화 「서머스비」로 탈바꿈되었다. 두 작품에서는 여러 해 만에 귀향한 남편이 재판 과정에서 가짜임이 드러난다. 전자는 당시 생활상을 있는 그대로 복원하는 데 치중했다. 반면 후자는 가짜 남편을 마을에 바람직한 변화를 가져온 지도자로 묘사하면서 미국 근대사를 긍정적으로 평가하고자 하는 대중의 욕망을 반영했다.</p>
+</blockquote>
+<ul>
+<li>① 「서머스비」에 반영된, 미국 근대사를 긍정적으로 평가하려는 대중의 욕망은 영화가 제작된 당시 사회의 집단적 무의식에 해당하는군.</li>
+<li>② 실화에 바탕을 둔 영화 「마르탱 게르의 귀향」을 가공의 인물과 사건으로 재구성한 「서머스비」에서는 영화에 대한 역사적 독해를 시도하기 어렵겠군.</li>
+<li>③ 영화 「마르탱 게르의 귀향」은 실제 사건의 재판 기록을 토대로 제작됐지만, 그 속에도 역사에 대한 영화인 나름의 시선이 표현 기법으로 나타났겠군.</li>
+<li>④ 영화 「마르탱 게르의 귀향」은 역사적 고증에 바탕을 두고 당시 사건과 생활상을 충실히 재현하기 위해 노력했다는 점에서 개연적 역사 서술 방식에 가깝겠군.</li>
+<li>⑤ 역사서 『마르탱 게르의 귀향』은 16세기 프랑스 농촌의 평범한 사람들의 삶의 모습을 서사적 자료에 근거하여 다루었다는 점에서 미시사 연구의 방식을 취했다고 볼 수 있군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>25번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>26</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 대면(對面)할</li>
+<li>② ⓑ: 간주(看做)되었던</li>
+<li>③ ⓒ: 대두(擡頭)했다</li>
+<li>④ ⓓ: 결합(結合)한다</li>
+<li>⑤ ⓔ: 전개(展開)하기</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>26번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>바르트는 사진이나 그림 같은 시각 이미지도 언어처럼 의미를 전달하는 기호로 본다. 그런데 이미지가 대상과 맺는 관계는 한결같지 않다. 이미지가 ㉠<u>대상을 닮은 모습으로 그것을 가리킬 때</u>, 그 이미지는 도상적 성격을 띤다. 초상화가 인물을 닮게 그려 그 인물을 가리키는 것이 그 예이다. 한편 이미지가 ㉡<u>대상과의 물리적 연관을 통해 그것이 거기 있었음을 가리킬 때</u>, 그 이미지는 지표적 성격을 띤다. 사진은 카메라 앞의 실재가 빛을 통해 ⓐ<u>찍힌</u> 것이므로, 그 대상이 실제로 있었음을 가리키는 지표가 된다. 같은 이미지라도 도상성과 지표성을 함께 지닐 수 있으며, 이 두 성격은 이미지가 1차적으로 무엇을 어떻게 가리키는지를 ⓑ<u>드러낸다</u>.</p>
+<p>그러나 바르트가 주목한 것은 이러한 1차적 의미에 ⓒ<u>머물지</u> 않는다. 이미지가 대상을 닮은꼴로 또는 물리적 연관으로 가리키는 데 그치지 않고, 그 위에 사회적·이념적 의미가 덧씌워지는 순간 이미지는 ‘현대의 신화’가 된다. 곧 ‘이것이 무엇을 가리키는가’라는 1차 의미를 발판으로, ‘이것이 무엇을 의미하는가’라는 2차 의미가 ⓓ<u>생겨나는</u> 것이다. 이때 2차 의미는 인위적으로 구성된 것임에도 마치 이미지가 본래부터 품고 있던 자연스러운 뜻인 양 받아들여진다. 사진의 강한 지표성, 곧 ‘실제로 그곳에 있었다’는 믿음은 이러한 자연화를 더욱 ⓔ<u>거든다</u>. 사진이 현실을 그대로 ‘증언’하는 것처럼 보일수록, 거기 얹힌 이념적 의미도 의심 없이 진실로 수용되기 때문이다.</p>
+<p>따라서 바르트의 관점에서 이미지를 읽는다는 것은 두 층을 함께 보는 일이다. 먼저 그 이미지가 대상을 어떻게 가리키는지(도상·지표)를 살피고, 다음으로 거기에 어떤 사회적 의미가 덧씌워졌는지를 따져 그 구성 과정을 드러내야 한다. 1차 의미에만 머물면 신화의 자연화에 그대로 포섭되지만, 2차 의미의 작동을 인지하면 그 이미지를 비판적으로 해석할 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡을 중심으로 윗글을 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 인물을 닮게 그려 그 인물을 가리키는 초상화는 ㉡의 성격이 두드러진다.</li>
+<li>② 카메라 앞의 실재가 빛을 통해 찍힌 사진은 그 대상이 있었음을 가리킨다는 점에서 ㉡에 해당한다.</li>
+<li>③ 하나의 이미지는 ㉠의 성격과 ㉡의 성격 중 어느 하나만을 지닐 수 있다.</li>
+<li>④ ㉠과 ㉡은 모두 이미지에 덧씌워진 사회적·이념적 의미를 가리키는 성격이다.</li>
+<li>⑤ 사진의 지표성이 강할수록 거기 얹힌 이념적 의미는 오히려 의심을 받게 된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+㉠(도상)은 '대상을 닮은 모습으로' 가리키는 성격, ㉡(지표)은 '대상과의 물리적 연관으로 거기 있었음을' 가리키는 성격이에요. 1문단에 사진은 "실재가 빛을 통해 찍힌 것이므로 그 대상이 실제로 있었음을 가리키는 지표가 된다"라고 했으니, 이를 옮긴 ②가 정답입니다. ①은 초상화가 '닮게 그린' 것이라 ㉡이 아니라 ㉠의 예이고, ③은 "두 성격을 함께 지닐 수 있"다는 진술과 충돌해요. ④는 ㉠㉡이 '1차적으로' 가리키는 성격이지 덧씌워진 의미가 아니므로 틀렸고, ⑤는 지표성이 강할수록 자연화를 '거든다(돕는다)'는 2문단과 반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 이미지의 도상성과 지표성은 그 이미지가 1차적으로 무엇을 어떻게 가리키는지를 드러낸다.</li>
+<li>② 이미지에 사회적·이념적 의미가 덧씌워지면 그 이미지는 현대의 신화가 된다.</li>
+<li>③ 이미지의 2차 의미는 1차 의미를 발판으로 삼아 생겨난다.</li>
+<li>④ 사진이 현실을 그대로 증언하는 것처럼 보일수록 거기 얹힌 이념적 의미도 진실로 수용되기 쉽다.</li>
+<li>⑤ 1차 의미에 충실하게 머무는 태도야말로 신화의 자연화에서 벗어나는 비판적 해석이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+3문단은 "1차 의미에만 머물면 신화의 자연화에 그대로 포섭"되고, "2차 의미의 작동을 인지"해야 비판적 해석이 가능하다고 했어요. 그런데 ⑤는 "1차 의미에 충실하게 머무는 태도"가 비판적 해석이라며 정반대로 말했으니 적절하지 않아 정답입니다. ①②③은 1~2문단, ④는 2문단(지표성과 자연화)과 그대로 맞아요.</p>
+<p><strong>9번 [3점] — 정답 ③</strong>
+작가 나는 "어떤 정해진 의미도 자연스럽게 받아들이지 않도록" 의도했어요. 이 입장에서 작가 가의 사진(연출+문구로 '승리·가족애'를 덧씌움)을 보면, 그것은 구성된 의미를 자연스러운 사실처럼 받아들이게 하는 '신화'로 작동한다고 비판할 수 있죠. 그래서 ③이 정답입니다. ①은 도상성을 '전혀 없다'고 단정해 1문단과 어긋나고, ②는 연출·문구가 '지표성'을 준다는 잘못된 인과예요(지표성은 물리적 연관에서 옴). ④는 사진에 지표성이 없다는 틀린 전제이고, ⑤는 작가 가의 입장이지만 '의미가 대상에 이미 정해져 있다'는 것은 지문(의미는 사회적으로 구성됨)과 충돌하는 부적절한 평가입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 작가들이 자신의 입장에서 상대의 작품을 평가하는 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림]</span> 〈사진 작품 2점〉 — 왼쪽: 작가 가의 「귀향」. 전쟁에서 돌아온 군인이 가족과 포옹하는 장면을 따뜻한 색감으로 연출해 촬영한 사진. 사진 아래 "우리는 끝내 지켜 냈다"라는 문구가 인쇄되어 있다. 오른쪽: 작가 나의 「표면」. 같은 군인의 군화 밑창만을 아무 연출 없이 클로즈업해 흑백으로 찍은 사진. 어떤 문구도 설명도 없다.</figure></p>
+<p>작가 가는 인물과 상황을 따뜻하게 연출하고 문구를 더해, 사진이 '승리'와 '가족애'라는 가치를 전하도록 의도하였다. 작가 나는 일체의 연출과 설명을 배제하고 대상의 표면만을 제시하여, 보는 이가 어떤 정해진 의미도 자연스럽게 받아들이지 않도록 의도하였다.</p>
+</blockquote>
+<ul>
+<li>① 작가 가가 작가 나에게: 사진은 대상을 닮은꼴로 가리키는 도상적 성격이 전혀 없으므로, 대상의 표면을 찍는 것만으로는 작품이 될 수 없습니다.</li>
+<li>② 작가 가가 작가 나에게: 연출과 문구로 사회적 의미를 분명히 덧씌워야 사진이 비로소 지표적 성격을 얻게 됩니다.</li>
+<li>③ 작가 나가 작가 가에게: 연출과 문구로 특정한 가치를 덧씌운 당신의 사진은, 구성된 의미를 자연스러운 사실처럼 받아들이게 한다는 점에서 신화로 작동합니다.</li>
+<li>④ 작가 나가 작가 가에게: 당신의 사진은 대상이 실제로 있었음을 가리키는 지표성이 없으므로, 1차 의미조차 전달하지 못합니다.</li>
+<li>⑤ 작가 가가 작가 나에게: 사진의 의미는 보는 이가 만드는 것이 아니라 대상 자체에 이미 정해져 있으므로, 연출은 불필요합니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 촬영(撮影)된</li>
+<li>② ⓑ: 표출(表出)한다</li>
+<li>③ ⓒ: 한정(限定)되지</li>
+<li>④ ⓓ: 발생(發生)하는</li>
+<li>⑤ ⓔ: 저지(沮止)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+ⓔ '거든다'는 옆에서 일을 도와준다는 뜻이라, 거기에 호응하려면 '돕다·뒷받침하다' 계열의 말이 와야 해요. 그런데 '저지(沮止)한다'는 막아서 못 하게 한다는 뜻이라 정반대입니다. '사진의 지표성이 자연화를 거든다'를 '자연화를 저지한다'로 바꾸면 뜻이 거꾸로 뒤집히죠. 그래서 바꿔 쓰기에 적절하지 않은 ⑤가 정답입니다. ① 찍힌→촬영된, ② 드러낸다→표출한다, ③ 머물지→한정되지, ④ 생겨나는→발생하는은 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>도상적 성격</strong>: 이미지가 대상을 '닮은꼴'로 가리키는 성격. (초상화가 인물을 닮게 그린 경우)</li>
+<li><strong>지표적 성격</strong>: 이미지가 대상과의 '물리적 연관'으로 그것이 있었음을 가리키는 성격. (사진은 실재가 빛으로 찍힌 것)</li>
+<li><strong>자연화(이미지에서)</strong>: 사진의 '실제로 있었다'는 믿음(지표성)이 거기 얹힌 이념적 의미까지 진실로 보이게 하는 작용.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>무엇을 본다</th>
+<th>핵심 물음</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1차 의미 (도상·지표)</td>
+<td>이미지가 대상을 어떻게 가리키나</td>
+<td>"이것이 무엇을 가리키는가?"</td>
+</tr>
+<tr>
+<td>2차 의미 (신화)</td>
+<td>거기 덧씌워진 사회적 의미</td>
+<td>"이것이 무엇을 의미하는가?"</td>
+</tr>
+<tr>
+<td>비판적 읽기</td>
+<td>두 층을 함께, 구성 과정까지</td>
+<td>"이 의미는 어떻게 만들어졌나?"</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>헷갈리기 쉬운 점: <strong>사진의 지표성('실제로 있었다')은 신화를 막아 주는 것이 아니라 오히려 거든다는 점</strong>을 꼭 기억하세요. 진짜처럼 보일수록 거기 얹힌 의미도 의심 없이 받아들여지니까요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>한 이미지는 도상적 성격과 지표적 성격 중 하나만 가지나요?</div><div class='qa-a'>아니요. 두 성격을 함께 지닐 수 있습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>사진이 '진짜 같다'는 점은 비판적 읽기에 도움이 되나요?</div><div class='qa-a'>오히려 반대예요. 강한 지표성은 거기 얹힌 이념적 의미까지 진실로 보이게 해 자연화를 거듭니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이미지를 비판적으로 읽는다는 건 무엇인가요?</div><div class='qa-a'>1차 의미(무엇을 가리키나)에 더해 2차 의미(어떤 사회적 의미가 덧씌워졌나)와 그 구성 과정까지 따져 보는 것입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2018학년도 9월 [16~19]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>미술관에서 오랫동안 움직이지 않고 서 있는 관광객 차림의 부부를 본다면 사람들은 다시 한 번 바라볼 것이다. 그리고 그것이 미술 작품이라는 것을 알면 놀랄 것이다. 이처럼 현실에 존재하는 것을 실재라고 믿을 수 있도록 재현하는 유파를 하이퍼리얼리즘이라고 한다.</p>
+<p>관광객처럼 우리 주변에서 흔히 볼 수 있는 것을 대상으로 고르면 ㉠현실성이 높다고 하고, 그 대상을 시각적 재현에 ⓐ기대어 실재와 똑같이 표현하면 ㉡사실성이 높다고 한다. 대상의 현실성과 표현의 사실성을 모두 추구한 하이퍼리얼리즘은 같은 리얼리즘 경향에 ⓑ드는 팝아트와 비교하면 그 특성이 잘 드러난다. 이들은 1960년대 미국에서 발달하여 현재까지 유행하고 있는 유파로, 당시 자본주의 사회의 일상의 모습을 대상으로 삼은 점에서는 공통적이다. 팝아트는 대상을 함축적으로 변형했지만 하이퍼리얼리즘은 대상을 정확하게 재현하려고 하였다. 그래서 팝아트는 주로 대상의 현실성을 추구하지만, 하이퍼리얼리즘은 대상의 현실성뿐만 아니라 트롱프뢰유*의 흐름을 ⓒ이어 표현의 사실성도 추구한다. 팝아트는 대상의 정확한 재현보다는 대중과 쉽게 소통할 수 있는 인쇄 매체를 주로 활용한 반면에, 하이퍼리얼리즘은 새로운 재료나 기계적인 방식을 적극 사용하여 대상을 정확히 재현하는 방법을 추구하였다.</p>
+<p>자본주의 일상을 사실적으로 표현한 하이퍼리얼리즘의 대표적인 작가에는 핸슨이 있다. 그의 작품 ㉢｢쇼핑 카트를 밀고 가는 여자｣(1969)는 물질적 풍요함 속에 매몰되어 살아가는 당시 현대인을 비판적 시각에서 표현한 작품으로 해석할 수 있다. 이 작품의 대상은 상품이 가득한 쇼핑 카트와 여자이다. 그녀는 욕망의 주체이며 물질에 대한 탐욕을 상징하고 있고, 상품이 가득한 쇼핑 카트는 욕망의 객체이며 물질을 상징하고 있다. 그래서 여자가 상품이 넘칠 듯이 가득한 쇼핑 카트를 밀고 있는 구도는 물질적 풍요 속에서의 과잉 소비 성향을 보여 준다.</p>
+<p>이 작품의 기법을 ⓓ보면, 생활공간에 전시해도 자연스럽도록 작품을 전시 받침대 없이 제작하였다. 사람을 보고 찰흙으로 형태를 만드는 방법 대신 사람에게 직접 석고를 덧발라 형태를 뜨는 실물 주형 기법을 사용하여 사람의 형태와 크기를 똑같이 재현하였다. 또한 기존 입체 작품의 재료인 청동의 금속재 대신에 합성수지, 폴리에스터, 유리 섬유 등을 사용하고 에어브러시로 채색하여 사람 피부의 질감과 색채를 똑같이 재현하였다. 여기에 오브제*인 가발, 목걸이, 의상 등을 덧붙이고 쇼핑 카트, 식료품 등을 그대로 사용하여 사실성을 ⓔ높였다.</p>
+<p>리얼리즘 미술의 가장 큰 목적은 현실을 포착하고 그것을 효과적으로 전달하는 것이다. 작가가 포착한 현실을 전달하는 표현 방법은 다양하다. 하이퍼리얼리즘과 팝아트 등의 리얼리즘 작가들은 대상들을 그대로 재현하거나 함축적으로 변형하는 등 자신만의 방법으로 현실을 전달하여 감상자와 소통하고 있다.</p>
+<ul>
+<li>트롱프뢰유(trompe-l’oeil) : ‘속임수 그림’이란 말로 감상자가 실물처럼 착각할 정도로 정밀하게 재현하는 것.</li>
+<li>오브제(objet) : 일상 용품이나 물건을 본래의 용도로 쓰지 않고 예술 작품에 사용하는 기법 또는 그 물체.</li>
+</ul></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡을 중심으로 윗글을 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 팝아트와 하이퍼리얼리즘은 모두 당시 자본주의의 일상을 대상으로 삼아 ㉠을 높였다.</li>
+<li>② 팝아트는 대상을 함축적으로 변형했다는 점에서 하이퍼리얼리즘과 달리 ㉡이 높다고 할 수 있다.</li>
+<li>③ 하이퍼리얼리즘이 팝아트와 달리 트롱프뢰유의 전통을 이은 것은 ㉠을 추구하기 위해서이다.</li>
+<li>④ 팝아트와 하이퍼리얼리즘이 주로 인쇄 매체를 활용한 것은 ㉡을 추구하기 위한 것이다.</li>
+<li>⑤ 팝아트와 하이퍼리얼리즘은 모두 ㉠과 ㉡을 동시에 추구한다는 점에서 리얼리즘 유파에 해당한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>㉢에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재현한 인체에 실제 사물인 오브제를 덧붙이고 받침대 없이 전시하여 실재처럼 보이게 하였다.</li>
+<li>② 찰흙으로 원형을 만들지 않고 사람에게 석고를 덧발라 외형을 뜨는 기법을 사용하여 형태를 정확히 재현하였다.</li>
+<li>③ 현실을 효과적으로 전달하기 위해 욕망의 주체는 실물과 똑같은 크기로, 욕망의 객체는 실재 그대로 제시하였다.</li>
+<li>④ 인체의 피부 질감을 재현할 수 있었던 것은 합성수지, 폴리에스터, 유리 섬유 따위의 신재료를 사용했기 때문이다.</li>
+<li>⑤ 당시 자본주의 사회에서의 합리적인 소비 성향을 반영하기 위해 주변에서 흔히 볼 수 있는 소비자와 상품을 제시하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>17번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 ‘핸슨’의 작품과 〈보기〉의 작품을 바탕으로 할 때, 작가들이 자신의 입장에서 상대를 비평하는 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong><span class="boxmark">[그림: 사진 2점]</span></strong> 왼쪽 사진(설명: 쿠넬리스, ｢무제｣) — 흰 벽에 타일 바닥인 화랑 내부, 양쪽 벽을 따라 살아 있는 말 여러 마리가 벽에 매인 채 줄지어 서 있는 장면. 오른쪽 사진(설명: 코수스, ｢하나, 그리고 세 개의 의자｣) — 흰 벽 앞 가운데에 실제 나무 의자 1개가 놓여 있고, 그 왼쪽 벽에 같은 의자를 찍은 사진이, 오른쪽 벽에 ‘의자’에 대한 언어적 설명이 인쇄된 텍스트 패널이 걸려 있는 장면.</p>
+<p>쿠넬리스는 주변에서 흔히 볼 수 있는 살아 있는 말 12마리를 화랑 벽에 매어 놓고, 감상자가 화랑이라는 환경 안에 놓인 실제 말들의 존재와 말들의 온기와 냄새, 그리고 소리를 체험해서 다양하게 작품의 의미를 만들도록 하였다.
+코수스는 ‘의자의 사진’, ‘실제 의자’, ‘의자의 언어적인 개념’ 세 가지 모두를 한 공간에 배치하여, 대상을 나타내는 여러 가지 방식이 존재할 수 있음을 보여 주었다.</p>
+</blockquote>
+<ul>
+<li>① 핸슨이 쿠넬리스에게: 미술은 시각적인 체험뿐만 아니라 청각, 후각 등 다양한 체험이 감상의 기준이 되어야 한다.</li>
+<li>② 핸슨이 코수스에게: 미술에서 대상은 일상적이고 평범한 것이 아니라 역사적으로나 정치적으로 가치 있어야 한다.</li>
+<li>③ 쿠넬리스가 핸슨에게: 미술에서 재현의 가장 효과적인 방법은 실물 주형의 기법보다 대상을 그대로 제시하는 것이어야 한다.</li>
+<li>④ 쿠넬리스가 코수스에게: 미술에서 작품의 의미는 감상자가 실제 대상을 대면해서 만들어지는 것이 아니라 작가에 의해서 만들어지는 것이어야 한다.</li>
+<li>⑤ 코수스가 쿠넬리스에게: 미술에서 대상을 재현할 때는 대상의 이미지보다 그 대상 자체만을 제시해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>18번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 누나가 그린 그림을 벽면 한쪽에 기대어 놓았다.</li>
+<li>② ⓑ: 그때는 언니도 노래를 잘 부르는 축에 들었다.</li>
+<li>③ ⓒ: 1학년이 출발한 데 이어 2학년도 바로 출발했다.</li>
+<li>④ ⓓ: 사무실에는 회계를 보는 직원만 혼자 들어갔다.</li>
+<li>⑤ ⓔ: 그는 이번 조치에 대해 비판의 목소리를 높였다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>19번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>바르트의 신화론은 일상의 기호가 어떻게 이념을 전파하는지를 두 층의 의미로 ⓐ<u>밝힌다</u>. 그가 분석 도구로 끌어온 소쉬르의 기호 이론에서, 기호는 감각으로 지각되는 기표와 그것이 가리키는 기의가 결합한 것이다. 바르트는 단일한 의미를 전하는 이 기호를 1차 기호 체계라 하고, 여기에 사회적 맥락이 결합해 또 다른 의미가 ⓑ<u>얹히는</u> 층위를 2차 기호 체계, 곧 ‘현대의 신화’라 한다. 신화의 핵심은 ‘자연화’에 있다. 인위적으로 구성된 2차 의미가 그 구성 과정을 감춘 채 본래부터 자연스러운 사실인 것처럼 ⓒ<u>받아들여지는</u> 것이다.</p>
+<p>바르트가 보기에 신화는 강제로 이념을 주입하지 않는다. 그것은 광고나 사진처럼 사람들이 매일 ⓓ<u>접하는</u> 친숙한 기호를 통해 작동하기에 한층 은밀하고 효과적이다. 더구나 신화는 현실과 동떨어진 허구가 아니라 일정 부분 현실에 기대고 있어, 수용자는 그 의미를 별다른 저항 없이 받아들인다. 이렇게 신화에 무비판적으로 포섭되는 수용자를 바르트는 ‘수동적 수용자’라 부른다.</p>
+<p>그렇다면 신화에서 벗어나는 길은 무엇인가. 바르트는 수용자가 어떤 이미지나 텍스트를 만날 때 2차 기호 체계가 작동하고 있을 수 있음을 먼저 인지해야 한다고 ⓔ<u>본다</u>. 그리고 그 배후의 사회적 맥락과 이념적 작용을 따져 의미가 ‘구성된 것’임을 드러낼 때, 수용자는 비로소 자연화의 효과를 무력화할 수 있다. 이처럼 기호의 배후를 읽어 내는 수용자를 바르트는 ‘능동적 해석자’라 한다. 신화론의 궁극적 목표는 대중이 수동적 수용자에서 능동적 해석자로 나아가도록 ‘비판적 읽기’의 안목을 기르는 데 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 신화의 작동 원리를 밝힌 뒤 그것에서 벗어나는 수용 태도를 제시하고 있다.</li>
+<li>② 신화를 분석하는 서로 다른 학파의 입장을 대조하여 절충안을 제시하고 있다.</li>
+<li>③ 신화 개념이 시대에 따라 변화해 온 과정을 통시적으로 추적하고 있다.</li>
+<li>④ 신화의 긍정적 기능과 부정적 기능을 견주어 그 효용을 평가하고 있다.</li>
+<li>⑤ 신화의 사례들을 유형별로 분류하고 각각의 발생 빈도를 분석하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>11번 — 정답 ①</strong>
+이 글은 먼저 신화가 자연화를 통해 작동하는 원리를 밝히고(1~2문단), 이어 거기서 벗어나 능동적 해석자로 나아가는 수용 태도를 제시하죠(3문단). 이 흐름을 옮긴 ①이 정답입니다. ②·④·⑤의 '학파 대조·효용 평가·유형별 빈도 분석'은 글에 없고, ③의 '통시적 변천 추적'도 이 글의 전개와 맞지 않아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<blockquote>
+<p>윗글의 둘째 문단에서 바르트는 신화에 무비판적으로 포섭되는 수용자를 ㉠<u>수동적 수용자</u>라 부른다.</p>
+</blockquote>
+<ul>
+<li>① 친숙한 기호를 통해 작동하는 신화의 은밀함에 그대로 노출된다.</li>
+<li>② 신화가 전하는 의미를 별다른 저항 없이 받아들인다.</li>
+<li>③ 신화의 2차 의미가 사회적으로 구성된 것임을 인지하지 못한다.</li>
+<li>④ 강제로 주입된 이념에 저항하지 못해 신화에 포섭된다.</li>
+<li>⑤ 신화가 일정 부분 현실에 기대고 있기 때문에 그 의미를 쉽게 수용한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+2문단에 바르트는 신화가 "강제로 이념을 주입하지 않는다"라고 분명히 했어요. 그런데 ④는 "강제로 주입된 이념에 저항하지 못해" 포섭된다고 했으니, 신화의 전파 방식 자체를 잘못 짚어 적절하지 않아 정답입니다. ①은 2문단(친숙한 기호의 은밀함), ②는 2문단(별다른 저항 없이 수용), ③은 1·3문단(구성된 것임을 인지 못 함), ⑤는 2문단(현실에 기댄 설득력)과 맞아요.</p>
+<p><strong>13번 [3점] — 정답 ②</strong>
+㉯는 자연화가 "구성 과정을 드러냄으로써 이루어진다"라고 했는데, 1문단에 따르면 자연화는 정반대로 "구성 과정을 감춘 채" 자연스러운 사실처럼 보이게 하는 것이에요. 구성 과정을 '드러내는' 것은 오히려 능동적 해석자의 비판적 읽기(㉱)에 해당하죠. 그래서 ㉯가 적절하지 않아 정답입니다. ㉮(1·2차 기호 체계), ㉰(은밀한 전파), ㉱(비판적 읽기)는 모두 지문과 정확히 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 윗글을 읽고 학생이 작성한 학습 활동지의 일부이다. ㉮~㉱ 중 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈학습 활동지〉</strong>
+주제: 바르트의 신화론으로 일상의 이미지 읽기
+‧ 1차 기호 체계와 2차 기호 체계
+- 1차 기호 체계는 기표와 기의가 결합해 단일한 의미를 전하고, 2차 기호 체계는 그 위에 사회적 의미가 덧붙어 형성된다. … ㉮
+‧ 자연화의 작동
+- 신화는 구성된 의미를 자연스러운 사실처럼 보이게 하는데, 이는 그 구성 과정을 드러냄으로써 이루어진다. … ㉯
+‧ 신화의 전파 방식
+- 신화는 강제적 주입이 아니라 친숙한 기호를 통해 작동하므로 더 은밀하고 효과적이다. … ㉰
+‧ 비판적 읽기
+- 능동적 해석자는 이미지의 배후에서 작동하는 사회적 맥락과 이념적 작용을 따져 의미가 구성된 것임을 드러낸다. … ㉱</p>
+</blockquote>
+<ul>
+<li>① ㉮</li>
+<li>② ㉯</li>
+<li>③ ㉰</li>
+<li>④ ㉱</li>
+<li>⑤ 적절하지 않은 것이 없다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 가전 회사가 신제품 청소기 광고를 만들었다. 광고에는 넓고 햇살이 가득한 거실에서 한 사람이 청소기를 가볍게 밀며 환하게 웃는 장면이 담겼다. 광고는 여러 매체에 반복 노출되었고, 사람들은 이 청소기를 '여유롭고 행복한 삶'과 자연스럽게 연결 지어 떠올리게 되었다. 한 시청자가 이 광고를 보고 다음과 같이 말하였다. "청소는 원래 힘든 일인데, 이 광고는 청소를 여유로운 행복처럼 보이게 만드네. 청소기를 팔려고 '행복한 삶'이라는 의미를 슬쩍 붙여 놓은 거잖아."</p>
+</blockquote>
+<ul>
+<li>① 청소기를 미는 장면이라는 1차 기호 체계는, '여유롭고 행복한 삶'이라는 2차 의미가 덧붙기 전에는 어떤 의미도 전하지 못한다.</li>
+<li>② 사람들이 청소기를 '행복한 삶'과 연결 지어 떠올리게 된 것은, 광고가 그 의미의 구성 과정을 드러냈기 때문이다.</li>
+<li>③ 광고가 여러 매체에 반복 노출된 것은, 덧씌워진 의미가 자연스러운 사실처럼 수용되도록 하는 자연화에 기여한다.</li>
+<li>④ 이 광고는 '행복한 삶'이라는 의미를 강제로 주입한다는 점에서, 일상적 기호를 통한 은밀한 전파와 구별된다.</li>
+<li>⑤ 시청자가 광고의 의도를 간파하고 비판한 것은, 능동적 해석자가 아니라 수동적 수용자의 태도에 해당한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>14번 — 정답 ③</strong>
+〈보기〉의 광고가 "여러 매체에 반복 노출"되어 사람들이 청소기를 '행복한 삶'과 자연스럽게 연결 짓게 된 것은, 덧씌워진 의미가 당연한 사실처럼 받아들여지도록 하는 자연화의 작용이에요. 이를 옮긴 ③이 정답입니다. ①은 1차 기호가 그 자체로 '청소기를 미는 장면'이라는 의미를 전하므로 "어떤 의미도 전하지 못한다"는 틀렸고, ②는 자연화가 구성 과정을 '감춘다'는 점과 충돌해요. ④는 신화가 강제 주입이 '아니'라는 2문단과 반대이고, ⑤는 의도를 간파·비판한 시청자야말로 '능동적 해석자'이므로 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 해명(解明)한다</li>
+<li>② ⓑ: 부가(附加)되는</li>
+<li>③ ⓒ: 통용(通用)되는</li>
+<li>④ ⓓ: 대면(對面)하는</li>
+<li>⑤ ⓔ: 간주(看做)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong>
+ⓓ '접하는'은 무언가를 가까이 대하거나 자주 마주한다는 뜻인데, '대면(對面)하는'은 주로 사람과 얼굴을 마주 본다는 뜻이라 '매일 접하는 친숙한 기호'라는 맥락에 정확히 호응하지 않아요. 그래서 바꿔 쓰기에 적절하지 않은 ④가 정답입니다. ① 밝힌다→해명한다, ② 얹히는→부가되는, ③ 받아들여지는→통용되는, ⑤ 본다→간주한다는 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>수동적 수용자</strong>: 신화의 2차 의미가 구성된 것임을 인지하지 못하고 별다른 저항 없이 받아들이는 사람.</li>
+<li><strong>능동적 해석자</strong>: 이미지의 배후 맥락과 이념 작용을 따져 의미가 '구성된 것'임을 드러내는 사람.</li>
+<li><strong>비판적 읽기</strong>: 2차 기호 체계가 작동함을 인지하고 그 구성 과정을 밝혀 자연화를 무력화하는 읽기 태도.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>친숙한 기호로 은밀히 전파</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>2차 체계 작동을 '인지'</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>신화는 이념을 강제로 주입하나요?</div><div class='qa-a'>아니요. 친숙한 일상 기호를 통해 은밀하게 전파하므로 오히려 더 효과적입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>자연화와 비판적 읽기는 구성 과정을 어떻게 다루나요?</div><div class='qa-a'>자연화는 구성 과정을 '감추고', 비판적 읽기는 그것을 '드러냅니다'. 방향이 정반대예요.</div></div>
+<div class='qa-item'><div class='qa-q'>능동적 해석자가 되려면 무엇부터 해야 하나요?</div><div class='qa-a'>이미지나 텍스트를 볼 때 2차 기호 체계가 작동하고 있을 수 있음을 먼저 '인지'하는 것에서 출발합니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 9월 [20~25]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>미학은 예술과 미적 경험에 관한 개념과 이론에 대해 논의하는 철학의 한 분야로서, 미학의 문제들 가운데 하나가 바로 예술의 정의에 대한 문제이다. 예술이 자연에 대한 모방이라는 아리스토텔레스의 말에서 비롯된 모방론은, 대상과 그 대상의 재현이 닮은꼴이어야 한다는 재현의 투명성 이론을 ⓐ전제한다. 그러나 예술가의 독창적인 감정 표현을 중시하는 한편 외부 세계에 대한 왜곡된 표현을 허용하는 낭만주의 사조가 18세기 말에 등장하면서, 모방론은 많이 쇠퇴했다. 이제 모방을 필수 조건으로 삼지 않는 낭만주의 예술가의 작품을 예술로 인정해 줄 수 있는 새로운 이론이 필요했다.</p>
+<p>20세기 초에 콜링우드는 진지한 관념이나 감정과 같은 예술가의 마음을 예술의 조건으로 규정하는 표현론을 제시하여 이 문제를 해결하였다. 그에 따르면, 진정한 예술 작품은 물리적 소재를 통해 구성될 필요가 없는 정신적 대상이다. 또한 이와 비슷한 ⓑ시기에 외부 세계나 작가의 내면보다 작품 자체의 고유 형식을 중시하는 형식론도 발전했다. 벨의 형식론은 예술 감각이 있는 비평가들만이 직관적으로 식별할 수 있고 정의는 불가능한 어떤 성질을 일컫는 ‘의미 있는 형식’을 통해 그 비평가들에게 미적 정서를 유발하는 작품을 예술 작품이라고 보았다.</p>
+<p>20세기 중반에, 뒤샹이 변기를 가져다 전시한 「샘」이라는 작품은 예술 작품으로 인정되지만 그것과 형식적인 면에서 차이가 없는 일반적인 변기는 예술 작품으로 인정되지 않는 이유를 설명하지 못하게 되자 두 가지 대응 이론이 나타났다. 하나는 우리가 흔히 예술 작품으로 분류하는 미술, 연극, 문학, 음악 등이 서로 이질적이어서 그것들 전체를 아울러 예술이라 정의할 수 있는 공통된 요소를 갖지 않는다는 웨이츠의 예술 정의 불가론이다. 그의 이론은 예술의 정의에 대한 기존의 이론들이 겉보기에는 명제의 형태를 취하고 있으나 사실은 참과 거짓을 판정할 수 없는 사이비 명제이므로, 예술의 정의에 대한 논의 자체가 불필요하다는 견해를 대변한다.</p>
+<p>다른 하나는 예술계라는 어떤 사회 제도에 속하는 한 사람 또는 여러 사람에 의해 감상의 후보 자격을 수여받은 인공물을 예술 작품으로 규정하는 디키의 제도론이다. 하나의 작품이 어떤 특정한 기준에서 훌륭하므로 예술 작품이라고 부를 수 있다는 평가적 ⓒ이론들과 달리, 디키의 견해는 일정한 절차와 관례를 거치기만 하면 모두 예술 작품으로 볼 수 있다는 분류적 이론이다. 예술의 정의와 관련된 이 논의들은 예술로 분류할 수 있는 작품들의 공통된 본질을 찾는 시도이자 예술의 필요충분조건을 찾는 시도이다.</p>
+<p>(나)</p>
+<p>예술 작품을 어떻게 감상하고 비평해야 하는지에 대해 다양한 논의들이 있다. 예술 작품의 의미와 가치에 대한 해석과 판단은 작품을 비평하는 목적과 태도에 따라 달라진다. 예술 작품에 대한 주요 비평 방법으로는 맥락주의 비평, 형식주의 비평, 인상주의 비평이 있다.</p>
+<p>㉠맥락주의 비평은 주로 예술 작품이 창작된 사회적·역사적 배경에 관심을 갖는다. 비평가 텐은 예술 작품이 창작된 당시 예술가가 살던 시대의 환경, 정치·경제·문화적 상황, 작품이 사회에 미치는 효과 등을 예술 작품 비평의 중요한 ⓓ근거로 삼는다. 그 이유는 예술 작품이 예술가가 속해 있는 문화의 상징과 믿음을 구체화하며, 예술가가 속한 사회의 특성들을 반영한다고 보기 때문이다. 또한 맥락주의 비평에서는 작품이 창작된 시대적 상황 외에 작가의 심리적 상태와 이념을 포함하여 가급적 많은 자료를 바탕으로 작품을 분석하고 해석한다.</p>
+<p>그러나 객관적 자료를 중심으로 작품을 비평하려는 맥락주의는 자칫 작품 외적인 요소에 치중하여 작품의 핵심적 본질을 훼손할 우려가 있다는 비판을 받는다. 이러한 맥락주의 비평의 문제점을 극복하기 위한 방법으로는 형식주의 비평과 인상주의 비평이 있다. 형식주의 비평은 예술 작품의 외적 요인 대신 작품의 형식적 요소와 그 요소들 간 구조적 유기성의 분석을 중요하게 생각한다. 프리드와 같은 형식주의 비평가들은 작품 속에 표현된 사물, 인간, 풍경 같은 내용보다는 선, 색, 형태 등의 조형 요소와 비례, 율동, 강조 등과 같은 조형 원리를 예술 작품의 우수성을 판단하는 기준이라고 주장한다.</p>
+<p>㉡인상주의 비평은 모든 분석적 비평에 대해 회의적인 ⓔ시각을 가지고 있어 예술을 어떤 규칙이나 객관적 자료로 판단할 수 없다고 본다. “훌륭한 비평가는 대작들과 자기 자신의 영혼의 모험들을 관련시킨다.”라는 비평가 프랑스의 말처럼, 인상주의 비평은 비평가가 다른 저명한 비평가의 관점과 상관없이 자신의 생각과 느낌에 대하여 자율성과 창의성을 가지고 비평하는 것이다. 즉, 인상주의 비평가는 작가의 의도나 그 밖의 외적인 요인들을 고려할 필요 없이 비평가의 자유 의지로 무한대의 상상력을 가지고 작품을 해석하고 판단한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>(가)와 (나)의 공통적인 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 대립되는 관점들이 수렴되어 가는 역사적 과정을 밝히고 있다.</li>
+<li>② 화제에 대한 이론들을 평가하여 종합적 결론을 도출하고 있다.</li>
+<li>③ 화제가 사회에 미치는 영향들을 분석하여 서로 간의 차이를 밝히고 있다.</li>
+<li>④ 화제와 관련된 관점의 문제점을 제시하고 대안적 관점을 소개하고 있다.</li>
+<li>⑤ 화제와 관련된 하나의 사례를 중심으로 다양한 이론을 시대순으로 나열하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>20번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,575명 — ①2.5% ②5.3% ③12.2% ④57.9% ⑤19.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>(가)의 형식론에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 미적 정서를 유발할 수 있는 어떤 성질을 근거로 예술 작품의 여부를 판단한다.</li>
+<li>② 모든 관람객이 직관적으로 식별할 수 있는 형식을 통해 예술 작품의 여부를 판단한다.</li>
+<li>③ 감정을 표현하는 모든 작품은 그 작품이 정신적 대상이더라도 예술 작품이라고 주장한다.</li>
+<li>④ 외부 세계의 형식적 요소를 작가 내면의 관념으로 표현하는 것을 예술의 조건이라고 주장한다.</li>
+<li>⑤ 특정한 사회 제도에 속하는 모든 예술가와 비평가가 자격을 부여한 작품을 예술 작품으로 판단한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>21번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①81.0% ②4.3% ③1.7% ④3.1% ⑤6.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p>(가)에 등장하는 이론가와 예술가들이 상대의 견해나 작품을 평가할 수 있는 말로 적절하지 않은 것은?</p>
+<ul>
+<li>① 모방론자가 뒤샹에게: 당신의 작품 「샘」은 변기를 닮은 것이 아니라 변기 그 자체라는 점에서 예술 작품이 되기 위한 필요충분조건을 갖추고 있습니다.</li>
+<li>② 낭만주의 예술가가 모방론자에게: 대상을 재현하기만 하면 예술가의 감정을 표현하지 않은 작품도 예술 작품으로 인정하는 당신의 견해는 받아들일 수 없습니다.</li>
+<li>③ 표현론자가 낭만주의 예술가에게: 당신의 작품은 예술가의 마음을 표현했으니 대상을 있는 그대로 표현하지 않았더라도 예술 작품입니다.</li>
+<li>④ 뒤샹이 제도론자에게: 예술계에서 일정한 절차와 관례를 거치면 예술 작품이라는 당신의 주장은 저의 작품 「샘」 외에 다른 변기들도 예술 작품이 될 수 있음을 인정하는 것입니다.</li>
+<li>⑤ 예술 정의 불가론자가 표현론자에게: 당신이 예술가의 관념을 예술 작품의 조건으로 규정할 때 사용하는 명제는 참과 거짓을 판단할 수 없기 때문에 받아들일 수 없습니다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>22번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①53.2% ②5.7% ③8.5% ④17.2% ⑤12.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>23</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 다음은 비평문을 쓰기 위해 미술 전람회에 다녀온 학생이 (가)와 (나)를 읽은 후 작성한 메모의 일부이다. 메모의 내용이 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈메모〉</strong>
+■ 작품 정보 요약
+‧ 작품 제목: 「그리움」
+‧ 팸플릿의 설명
+- 화가 A가, 화가였던 자기 아버지가 생전에 신던 낡고 색이 바랜 신발을 보고 그린 작품임.
+- 화가 A의 예술가 정신은 궁핍하게 살면서도 예술혼을 잃지 않고 작품 활동을 했던 아버지의 삶에서 영향을 받았음.
+‧ 작품 전체에 따뜻한 계열의 색이 주로 사용됨.</p>
+<p>■ 비평문 작성을 위한 착안점
+- 콜링우드의 관점을 적용하면, 화가 A가 낡은 신발을 그린 것에서 아버지에 대한 그리움을 갖고 있었으리라는 점을 제시할 수 있겠군. … ①
+- 디키의 관점을 적용하면, 평범한 신발이 특별한 이유는 신발의 원래 주인이 화가였다는 사실에 있음을 언급하여 이 그림을 예술 작품으로 평가할 수 있겠군. … ②
+- 텐의 관점을 적용하면, 이 작품에서 아버지의 낡은 신발은 화가 A가 추구하는 예술가 정신의 상징임을 팸플릿 정보를 근거로 해석할 수 있겠군. … ③
+- 프리드의 관점을 적용하면, 따뜻한 계열의 색들을 유기적으로 구성한 점에서 이 그림이 우수한 작품임을 언급할 수 있겠군. … ④
+- 프랑스의 관점을 적용하면, 그림 속의 낡고 색이 바랜 신발을 보고, 지친 나의 삶에서 편안함과 여유를 느꼈음을 서술할 수 있겠군. … ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>23번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①4.7% ②69.0% ③15.6% ④3.8% ⑤4.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>24</div><div class='q-stem'></div></div>
+<p>피카소의 「게르니카」에 대해 〈보기〉의 A는 ㉠의 관점, B는 ㉡의 관점에서 비평한 내용이다. (나)를 바탕으로 A, B를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong><span class="boxmark">[그림: 피카소, 「게르니카」]</span></strong> 흑백 톤의 가로로 긴 벽화. 울부짖는 말, 부러진 칼을 든 인물, 고통을 호소하며 양팔을 뻗은 아이, 뿔 달린 동물(소) 등 비극적·기괴한 형상들이 화면에 배치되어 있다.</p>
+<p>A : 1937년 히틀러가 바스크 산악 마을인 ‘게르니카’에 30여 톤의 폭탄을 퍼부어 수많은 인명을 살상한 비극적 사건의 참상을, 울부짖는 말과 부러진 칼 등의 상징적 이미지를 사용하여 전 세계에 고발한 기념비적인 작품이다.
+B : 뿔 달린 동물은 슬퍼 보이고, 아이는 양팔을 뻗어 고통을 호소하고 있다. 우울한 색과 기괴한 형태들이 나를 그 속으로 끌어들이는 듯하다. 그러나 빛이 보인다. 고통과 좌절감이 느껴지지만 희망을 갈구하는 훌륭한 작품이다.</p>
+</blockquote>
+<ul>
+<li>① A에서 ‘1937년’에 ‘게르니카’에서 발생한 사건을 언급한 것은 역사적 정보를 바탕으로 작품을 해석하기 위한 것이겠군.</li>
+<li>② A에서 비극적 참상을 ‘전 세계에 고발’하였다고 서술한 것은 작품이 사회에 미치는 효과를 드러내고자 한 것이겠군.</li>
+<li>③ B에서 ‘슬퍼 보이고’와 ‘고통을 호소하고’라고 서술한 것은 작가의 심리적 상태를 표현하려는 것이겠군.</li>
+<li>④ B에서 ‘우울한 색과 기괴한 형태’를 언급한 것은 비평가의 주관적 인상을 반영하기 위한 것이겠군.</li>
+<li>⑤ B에서 ‘희망을 갈구하는’이라고 서술한 것은 비평가의 자유로운 상상력이 반영된 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>24번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.0% ②5.0% ③76.7% ④11.1% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>25</div><div class='q-stem'></div></div>
+<p>문맥을 고려할 때, 밑줄 친 말이 ⓐ～ⓔ의 동음이의어인 것은?</p>
+<ul>
+<li>① ⓐ: 모든 인간은 평등하다고 전제(前提)해야 한다.</li>
+<li>② ⓑ: 가을은 오곡백과가 무르익는 시기(時期)이다.</li>
+<li>③ ⓒ: 이 문제에 대해서는 이론(異論)의 여지가 없다.</li>
+<li>④ ⓓ: 이 소설은 사실을 근거(根據)로 하여 쓰였다.</li>
+<li>⑤ ⓔ: 청소년의 시각(視角)으로 이 문제를 살펴보자.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>25번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.0% ②3.3% ③86.6% ④2.3% ⑤2.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>롤랑 바르트의 신화론 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='롤랑 바르트의 신화론 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>조세 법률주의와 과세의 두 해석 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr><tr><td>정답</td>
+<td><b>③</b></td>
+<td><b>②</b></td>
+<td><b>①</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>①</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+3문단에서 조세 포괄주의는 "법조문의 문언뿐 아니라 입법 취지와 과세 목적, 거래의 경제적 실질까지 종합적으로 고려"한다고 했어요. 그러니 "문언만으로 판단해야 한다"는 ③은 정반대라서 일치하지 않아 정답입니다. ①은 1문단(세율·기준의 자의적 변경 불가), ②는 2문단(명시되지 않은 거래 과세 불가), ④는 1문단(두 해석으로 구체화), ⑤는 1문단(새 경제 행위 → 범위가 늘 명확하지 않음)에서 그대로 확인돼요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠은 두 해석이 과세 여부를 다르게 판정할 수 있다는 부분이죠. 4문단에서 포괄주의는 유사 거래에 과세할 수 있다고 보는데, 그러면 "법에 없던 부담을 지우게 되어 납세자의 권리가 침해될 우려가 있다"고 했으니 ②가 정답이에요. ① 법에 <em>명시된</em> 거래는 두 해석이 모두 과세로 보아 결론이 <em>같다</em>고 했으니 거꾸로고, ③ 열거주의는 <em>과세 공백</em>이 생기지 그것을 "법에 없던 세금을 매겨" 생긴다고 한 것은 앞뒤가 안 맞아요(과세 공백은 못 매겨서 비는 것). ④ 결론이 갈리는 건 거래가 <em>명시되지 않았기</em> 때문이고, ⑤ 포괄주의는 과세 공백을 줄이는 쪽, 열거주의는 권리 침해를 줄이는 쪽이라 짝이 뒤바뀌었습니다.</p>
+<p><strong>3번 [3점] — 정답 ①</strong>
+(가)는 조문이 규정한 예술품 매매에 해당하는, 곧 <em>법에 명시된</em> 거래예요. 4문단에서 명시된 거래는 두 해석이 모두 과세 대상으로 보아 결론이 같다고 했으니, 열거주의든 포괄주의든 과세할 수 있다는 ①이 정답입니다. ② (나)에 <em>열거주의</em>를 따르면 명문 규정이 없어 과세할 수 <em>없다</em>고 보고, ③ (나)에 <em>포괄주의</em>를 따르면 실질이 같으므로 과세할 수 <em>있다</em>고 보아 둘 다 방향이 뒤집혔어요. ④ (다)는 경제적 실질이 예술품 매매와 <em>같다고 보기 어렵다</em>고 했으니, 포괄주의로도 과세 근거(유사성)가 없어 과세할 수 있다고 단정할 수 없습니다. ⑤ (가)는 명시된 거래라 두 해석의 결론이 <em>일치</em>하고, (다)는 유사성이 없어 어느 쪽도 과세하기 어려우니 "엇갈린다"는 것은 맞지 않아요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+ⓓ‘좇아’는 <em>취지를 따라 그대로 살핀다</em>는 뜻이에요. ④의 ‘추수(追隨)하여’는 <em>남의 뒤를 그대로 따른다</em>는 뜻이라 주견 없이 좇는다는 부정적 어감이 강해, 입법 취지를 살펴 따른다는 문맥과는 어긋나므로 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘읽어(독해해)’, ② ‘맞닿아(직결되어)’, ③ ‘가두어(한정하여)’, ⑤ ‘꾀한다(도모한다)’는 각각 문맥의 뜻과 통해 바꿔 쓸 수 있어요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>조세 법률주의</strong>: 세금의 부과·징수는 반드시 법률에 근거해야 한다는 원칙. 법에 없는 세금은 못 걷고, 법이 정한 기준을 마음대로 바꿀 수 없어요.</li>
+<li><strong>조세 열거주의</strong>: 법에 <em>명시된 것만</em> 과세하는 좁은 해석. 납세자 권리 보호·과세권 남용 방지에 강해요.</li>
+<li><strong>조세 포괄주의</strong>: 입법 취지·경제적 실질까지 살펴 <em>유사 거래도</em> 과세하는 넓은 해석. 조세 회피 방지·형평 확보에 강해요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>거래의 종류</th>
+<th>조세 열거주의</th>
+<th>조세 포괄주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법에 명시된 거래</td>
+<td>과세함</td>
+<td>과세함 (결론 같음)</td>
+</tr>
+<tr>
+<td>명시 안 됨 + 실질이 유사한 거래</td>
+<td>과세 못 함 (과세 공백)</td>
+<td>과세함 (회피 방지)</td>
+</tr>
+<tr>
+<td>강점</td>
+<td>납세자 권리 보호</td>
+<td>형평·조세 정의</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>새 거래에 과세 공백</td>
+<td>권리 침해 우려</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 해석은 <em>좁게 vs 넓게</em>로 갈려요. 그래서 실무는 둘을 함께 써서 권리도 지키고 회피도 막으려 합니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>법에 명시된 거래에서 두 해석의 결론은 어떻게 되나요?</div><div class='qa-a'>둘 다 과세 대상으로 보아 결론이 같습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>열거주의를 따를 때 생길 수 있는 문제는?</div><div class='qa-a'>명시되지 않은 새 거래에 과세하지 못하는 과세 공백입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>포괄주의가 막으려는 것과 그 대가는?</div><div class='qa-a'>조세 회피를 막으려 하지만, 법에 없던 부담을 지워 권리를 침해할 우려가 따릅니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2023학년도 수능 [10~13] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+3~4문단에 따르면 법령에서 불확정 개념이 사용되면 그에 근거한 행정 작용은 ‘대개 재량 행위’이다. 따라서 기속 행위인 경우가 많다는 ④는 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,561명 — ①2.6% ②4.6% ③4.2% ④81.5% ⑤6.1%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+4문단에 따르면 재량 준칙대로 적법한 행정 작용이 반복되어 ‘행정 관행’이 생긴 후에야 행정청이 동일한 행정 작용을 해야 한다. 따라서 선례(관행)가 없으면 같은 요건이라도 재량 준칙을 따르지 않을 수 있다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①11.4% ②8.8% ③21.4% ④9.8% ⑤49.1%</p></div>
+<div class='exp'><p><strong>12번 — 정답 ②</strong><br />
+(나)는 위약금의 성격이 증명되지 못했으므로 위약금 100은 ‘손해 배상 예정액’으로 다루어진다. 손해가 80으로 증명되어도 정해진 예정액 100을 지급해야 하며, ‘부당히 과다하면 법원이 감액할 수 있다’는 조문에 따라 법원이 감액할 수 있다. 따라서 ②가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①5.3% ②39.0% ③19.3% ④25.6% ⑤10.5%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+ⓔ‘지키다(평등 원칙을 지켜야)’와 ⑤의 ‘지키다(약속을 지킬)’는 모두 ‘규정·약속·법·예의 따위를 어기지 아니하고 그대로 실행하다’의 뜻으로 쓰였다. 나머지는 본문과 의미가 다르다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①4.3% ②1.2% ③0.8% ④1.3% ⑤93.2%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+4문단에서 ‘유사한 거래’의 경계가 해석에 맡겨질수록 납세자는 자신의 세 부담을 "미리 가늠하기 어려워진다"고 했어요. ⑤는 거꾸로 "예측하기 쉬워진다"고 했으니 적절하지 않아 정답입니다. ①은 1문단(과세 권한을 법으로 제한), ②는 3문단(공백이 줄어듦), ③은 3문단(열거주의 고수 시 부담 회피의 길), ④는 2문단(신중론의 예측 가능성 근거)에 그대로 부합해요.</p></div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+㉣은 열거주의를 고수하는 입장으로, 3문단에서 "명문 규정이 없는 새 거래에는 과세하지 못해, 그 거래를 통해 부담을 피하는 길이 열린다"고 했어요. 곧 ㉣의 결과는 형평을 깨뜨리는 쪽이지 "형평 확보에 기여"하는 게 아니므로 ④가 적절하지 않아 정답입니다. ①은 2문단(전자의 형평 논거), ②는 2문단(후자의 권리 침해 경계), ③은 3문단(취지에 비춘 검토), ⑤는 2·3문단(㉠과 ㉢ 모두 회피 감소를 지지)에 부합해요.</p>
+<p><strong>7번 [3점] — 정답 ⑤</strong>
+열거주의는 명시되지 않은 거래에 과세하지 못하므로, 이 거래에 과세하지 않으면 <em>과세 공백이 그대로 남거나 커지지</em> 메워지지 않아요(3문단). 그래서 "과세하지 않으면 공백이 메워진다"는 ⑤는 적절하지 않아 정답입니다. ①·②는 포괄주의 확대론의 형평·실질 논리(2·3문단), ③은 신중론의 예측 가능성 침해(2·4문단), ④는 열거주의가 명시되지 않은 거래에 과세하지 않는다는 점(2·3문단)에 각각 부합하는 적절한 반응이에요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+ⓐ‘늘어난다’는 <em>양이 많아진다</em>는 뜻이라 ‘증대(增大)된다’로 바꿀 수 있고, ⓑ‘맡겨지면’은 <em>판단의 권한을 넘겨 맡기면</em>이라는 뜻이라 ‘위임(委任)되면’으로 바꿀 수 있어 ①이 정답입니다. ‘격증·점증’은 <em>갑자기/점차 늘어남</em>이라는 추가 의미가 붙어 단순히 ‘늘어남’을 가리키는 문맥과 어긋나고, ‘종속·귀속·위탁’ 가운데 ‘종속되면’(딸려 매이면)·‘귀속되면’(차지가 되면)은 판단을 맡긴다는 뜻과 호응하지 않아요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>과세 공백</strong>: 새로운 거래가 법조문에 없어서 세금을 매기지 못하는 빈틈. 열거주의에서 생기기 쉬워요.</li>
+<li><strong>형평(부담의 형평)</strong>: 경제적 실질이 같은 거래라면 비슷한 세 부담을 져야 한다는 것. 포괄주의가 지키려는 가치예요.</li>
+<li><strong>예측 가능성·법적 안정성</strong>: 납세자가 자신의 세 부담을 미리 가늠할 수 있고, 과세를 둘러싼 다툼이 적어 제도가 안정된 상태.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>포괄주의를 넓히자는 입장(㉠·㉢)</th>
+<th>신중하자는 입장(㉡)·열거주의(㉣)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 가치</td>
+<td>형평·조세 회피 방지</td>
+<td>납세자 권리·예측 가능성</td>
+</tr>
+<tr>
+<td>새 거래를 보는 눈</td>
+<td>실질이 같으면 과세 검토</td>
+<td>명문 규정 없으면 과세 불가</td>
+</tr>
+<tr>
+<td>우려하는 것</td>
+<td>과세 공백·회피</td>
+<td>권리 침해·법적 안정성 흔들림</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 ‘새 거래’를 두고, 한쪽은 <em>빈틈을 메우자</em>고 보고 다른 쪽은 <em>함부로 넓히지 말자</em>고 봐요. 그래서 세목마다 형평과 권리 중 무엇을 앞세우느냐로 무게가 갈립니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>포괄주의적 해석을 넓히면 무엇이 줄어드나요?</div><div class='qa-a'>법에 명시되지 않은 새 거래에 대한 과세의 공백이 줄어듭니다.</div></div>
+<div class='qa-item'><div class='qa-q'>신중론이 권리 침해를 우려하는 까닭은?</div><div class='qa-a'>‘유사한’ 거래의 판단이 과세 관청에 맡겨지면 명문 없는 부담이 부과되어 예측 가능성이 흔들리기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 입장의 무게는 무엇으로 갈리나요?</div><div class='qa-a'>그 세목에서 형평과 납세자 권리 중 무엇을 더 중시하느냐에 따라 갈립니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 9월 [4~7] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>4번 — 정답 ③</strong><br />
+3문단에서 우리나라는 데이터에 대해 ‘소유권이 아닌 이동권’을 법으로 명문화했다고 했으므로, 현행법에 소유권 인정 규정이 있다는 ③은 일치하지 않는다. ①은 1문단(물리적 형체 없음·재사용 수월), ②는 1문단(집적·처리되면 빅 데이터가 되어 경제적 가치), ④는 2문단(정보 주체로 보는 견해), ⑤는 3문단(통제·관리 범위 확대)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①0.7% ②2.6% ③84.7% ④3.5% ⑤7.0%</p></div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong><br />
+3문단에 따르면 데이터 이동권에 따른 전송은 ‘무상으로’ 이루어지므로, ㉯가 ㉮로 데이터를 이동하여 경제적 이득을 취할 수 있다는 ⑤는 적절하지 않다. ①·②는 [A]의 생성 비용(복제·재사용 절감)·거래 비용(분쟁 해결 과정에서 발생) 논리에, ③·④는 [B]의 데이터 집중에 따른 공유·유통 위축과 신규 기업 시장 진입 곤란 논리에 부합한다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①3.1% ②14.9% ③5.8% ④22.0% ⑤53.8%</p></div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+3문단에서 빅 데이터 보유자가 수집하여 분석·가공하는 개발 과정을 거쳐 새로운 가치가 생성된 것은 이동권 행사 대상이 아니라고 했다. ‘연령별 맞춤형 금융 상품 추천 서비스 내역’은 A 은행이 분석·가공해 새로운 가치를 생성한 것이므로 ④가 적절하지 않다. ①의 ‘체크 카드 사용 내역’은 가공되지 않은 데이터라 전송 대상이고, ②는 자기 결정권 강화, ③은 소유권 주체를 정보 주체로 보는 견해의 대가 논리, ⑤는 법제화 이전의 계좌 자동 이체 항목 이동 서비스에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①3.4% ②7.6% ③7.9% ④66.8% ⑤14.2%</p></div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong><br />
+ⓐ(쉬워져)는 ‘어렵지 아니하고 매우 쉽다’는 뜻의 ‘용이(容易)해져’로, ⓑ(따라)는 ‘어떤 현상이나 사실에 바탕을 두다’는 뜻의 ‘근거(根據)하여’로 바꿔 쓸 수 있다. ‘유력하다’(세력·가능성이 있다)는 ⓐ와, ‘의탁하다’(몸이나 마음을 의지하여 맡기다)는 ⓑ와 맞지 않는다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①86.8% ②0.3% ③5.9% ④3.8% ⑤2.5%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>9번 — 정답 ①</strong>
+(가)는 조세 법률주의라는 한 원칙이 열거주의·포괄주의 두 방향으로 해석되는 양상을 서술하고, (나)는 무상 이전이라는 한 실질에 매겨지는 상속세·증여세의 본질적 같음과 부과 방식의 다름을 서술해요. 그래서 ①이 정답입니다. ② (가)는 원칙의 <em>폐기</em>가 아니라 해석을 다루고, (나)는 두 세금의 <em>통합 방안</em>을 제안하지 않아요. ③ 시대순 변천 서술은 두 글 모두에 없고, ④ (나)는 <em>학자 두 사람의 우열</em>을 가리지 않으며, ⑤ 새 제도의 도입 주장도 두 글에 없습니다.</p></div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+㉠은 두 해석의 균형이 필요하다는 부분이죠. 3문단에서 "해석이 지나치게 넓으면 명문 규정 없는 부담이 납세자에게 부과되어 권리가 침해될 우려가 있다"고 했으니 ②가 정답입니다. ① 과세 공백은 문언만 따를 때 생기고 해석을 <em>넓힐수록 줄어드는</em> 것이라 "함께 커진다"는 거꾸로고, ③ 균형은 두 태도를 <em>함께</em> 운용하는 것이지 포괄주의를 버리는 게 아니에요. ④ 어느 태도에 무게를 두느냐에 따라 범위·부담이 <em>달라질 수 있다</em>고 했고, ⑤ 균형은 대원칙을 <em>벗어나기</em> 위해서가 아니라 그 <em>아래에서</em> 권리와 회피 방지를 함께 이루기 위해서입니다.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+조세 포괄주의는 명시되지 않은 유사 거래에도 과세를 <em>넓히는</em> 해석이에요. 그런데 ④는 포괄주의가 사망을 계기로 한 이전에만 매기고 생전의 이전은 <em>제외</em>해야 한다고 했는데, 이는 과세 범위를 좁히는 주장이라 포괄주의의 성격과 어긋나고 (나)의 증여세 설명(생전 무상 이전에 과세)과도 맞지 않아 적절하지 않으므로 정답입니다. ①·②는 (가)의 두 해석을 무상 이전에 적용한 것이고, ③·⑤는 (나)의 함께 운용·형평 논리에 부합하는 반응이에요.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+(나) 2문단에서 상속세는 <em>사망</em>을 계기로, 증여세는 <em>생전의 무상 이전</em>을 계기로 부과된다고 했고, 그 계기의 차이 때문에 과세의 단위와 기준이 달라진다고 했어요. 그러니 ③이 정답입니다. ① 두 세금은 공평성·재분배라는 <em>같은</em> 가치를 지향하므로 "반대"는 틀렸고, ② 두 세금 <em>모두</em> 무상 이전에 부과되며, ④ 증여세는 <em>받는 사람</em>에게 부과된다고 했으니 한 세금이 "주는 사람"에게 부과된다는 전제부터 어긋나고, 두 세금의 차이를 가져오는 까닭은 납세 의무자가 아니라 이전의 <em>계기</em>이므로 맞지 않아요. ⑤ 두 세금은 조세 법률주의 아래에서 부과되므로 "무관하게"는 맞지 않아요.</p>
+<p><strong>13번 [3점] — 정답 ②</strong>
+〈보기〉에서 갑이 <em>생전에 나누어 넘긴</em> 재산은 사망을 계기로 이전된 것이 아니라 생전의 무상 이전이에요. (나)에 따르면 그것은 받은 자녀에게 <em>증여세</em>가 부과되지 상속세가 부과되지 않으므로, "상속세가 부과되겠군"이라는 ②는 적절하지 않아 정답입니다. ①은 생전 무상 이전 → 증여세(2문단), ⑤는 무상 이전의 실질이 같은데 부담이 달라지는 점을 이용(3문단), ③·④는 세법에 명시되지 않은 새 권리에 대한 열거주의·포괄주의의 판단((가) 2문단)에 각각 부합해요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong>
+ⓔ‘쓰인다(공평성·재분배를 실현하는 도구로 쓰인다)’와 ⑤의 ‘쓰인다(틈을 벌리는 데에 쓰인다)’는 모두 <em>어떤 일에 사용된다</em>는 뜻이라 의미가 같아 ⑤가 정답입니다. 나머지는 본문의 ⓐ~ⓓ와 <em>예문 속 단어의 의미가 달라요</em>. ① ⓐ‘막아(자의적 변경을 막아)’는 <em>하지 못하게 한다(금지)</em>는 뜻인데 ①은 <em>흐름을 물리적으로 가로막는다</em>는 뜻이고, ② ⓑ‘묶인다(권한이 법조문 안에 묶인다)’는 <em>제약된다</em>는 뜻인데 ②는 <em>끈으로 동여맨다</em>는 뜻이며, ③ ⓒ‘살펴(실질까지 살펴)’는 <em>자세히 따져 본다</em>는 뜻인데 ③은 <em>돌보아 보살핀다</em>는 뜻이고, ④ ⓓ‘지킨다(형평을 지킨다)’는 <em>유지·보전한다</em>는 뜻인데 ④는 <em>적의 공격을 막아 방어한다</em>는 뜻이라 모두 본문과 의미가 달라요. 그래서 본문과 의미가 일치하는 것은 ⑤뿐입니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>무상 이전</strong>: 대가 없이 재산이 한 사람에게서 다른 사람에게로 옮겨 가는 것. 상속세·증여세가 매겨지는 공통의 실질이에요.</li>
+<li><strong>상속세</strong>: 사람이 <em>사망</em>하여 재산이 상속인에게 넘어갈 때, 사망 시점을 기준으로 남긴 재산에 부과되는 세금.</li>
+<li><strong>증여세</strong>: <em>살아 있는</em> 사람이 재산을 무상으로 넘길 때, 그 <em>받는 사람</em>에게 받은 재산을 단위로 부과되는 세금.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>상속세(㉡)</th>
+<th>증여세(㉢)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이전의 계기</td>
+<td>사망</td>
+<td>생전의 무상 이전</td>
+</tr>
+<tr>
+<td>부과 단위·시점</td>
+<td>사망 시점, 남긴 재산</td>
+<td>무상 이전이 있을 때마다 받은 재산</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>무상 이전에 부과 · 공평성·부의 재분배 실현</td>
+<td>(좌동)</td>
+</tr>
+<tr>
+<td>함께 운용하는 까닭</td>
+<td>한쪽만 매기면 다른 쪽으로 회피 가능 → 빈틈을 서로 메움</td>
+<td>(좌동)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 세금은 <em>사망이냐 생전이냐</em>라는 계기만 다를 뿐 무상 이전이라는 같은 실질을 다뤄요. 그래서 함께 묶어 운용해 회피를 막고, 어디까지를 무상 이전으로 볼지에서 조세 법률주의의 두 해석이 다시 부딪힙니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>상속세와 증여세의 공통된 실질은 무엇인가요?</div><div class='qa-a'>재산이 무상으로(대가 없이) 이전될 때 부과된다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 세금의 부과 계기는 어떻게 다른가요?</div><div class='qa-a'>상속세는 사망을, 증여세는 생전의 무상 이전을 계기로 부과됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 세금을 함께 운용하는 까닭은?</div><div class='qa-a'>한쪽에만 과세하면 다른 쪽으로 부담을 피할 수 있어, 무상 이전의 빈틈을 서로 메우기 위해서입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2026학년도 6월 [4~9] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>4번 — 정답 ②</strong><br />
+(가)는 세 가지 법 모델이 각각 시대의 요구를 반영해 출현해 온 과정을, (나)는 임차인 보호라는 과제 해결을 위해 계약에 우선 적용되는 제도를 서술하므로 ②가 적절하다. ④의 '방안이 과도하게 적용될 경우의 문제점'은 (나)가 아니라 (가)([A] 문단)에 해당한다.</p>
+<p><em>선택률</em> — 응시 98,566명 — ①2.4% ②83.6% ③1.8% ④4.8% ⑤6.7%</p></div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+㉠'이러한 악순환'은 법 규범에 의해 사회의 자율적 조절 기능이 훼손되어 공동체가 갈등 상황에서 점점 더 법적 해결에 의존하게 되는 과정을 가리킨다. 따라서 이전에는 법으로 해결하지 않던 문제까지 법의 해결 과제가 된다는 ③이 적절하다. ①은 자율적 조절 기능이 오히려 망가지는 상황과 어긋나고, ⑤는 법의 간섭 빈도가 늘어난다는 내용과 반대이다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①2.9% ②7.6% ③77.9% ④5.7% ⑤5.4%</p></div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+자유주의적 법 모델은 시민의 자유(계약의 자유)를 최대한 보장하므로, 임차인의 갱신 요구를 임대인이 거절할 수 '있어야' 한다고 볼 것이다. 따라서 ④가 부적절하다. ⑤는 두 모델 모두 당사자 간 조건의 불평등(사회ㆍ경제적 조건 차이, 권력·자본의 부당한 영향력)을 전제하므로 적절하다.</p>
+<p><em>선택률</em> — 응시 98,562명 — ①2.9% ②11.0% ③6.0% ④72.3% ⑤8.2%</p></div>
+<div class='exp'><p><strong>7번 — 정답 ④</strong><br />
+㉮는 임대차가 종료된 후의 상황이므로 임차인이 임차물을 사용할 권리가 소멸했고, 임차물이 더 이상 임차인의 생활·생업의 근거가 아니어서 임차인을 보호할 필요가 없다. 그래서 계약이 법률보다 우선 적용된다(④). ①의 '경제력'은 ㉮와 무관한 별개의 사유이다.</p>
+<p><em>선택률</em> — 응시 98,588명 — ①19.9% ②10.6% ③6.2% ④55.4% ⑤7.9%</p></div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong><br />
+임대차 분쟁 조정 절차는 당사자들이 절차를 따르기로 합의해야 시작되는데, 〈보기〉에서 갑이 거절하여 합의가 이루어지지 않았으므로 재판 절차를 따라야 한다. 재판 절차에서는 당사자들이 각자 자료를 제출해야 하므로 조정위원회가 을을 위해 자료를 수집할 수 없다(⑤ 부적절). ③·④는 B 상가의 보증금이 상한액을 초과해 최단 존속 기간이 적용되지 않고, 존속 기간을 정하지 않아 갱신 요구권도 인정되지 않기 때문에 적절하다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①3.9% ②15.7% ③13.8% ④21.7% ⑤44.0%</p></div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+ⓐ와 ①의 '삼다'는 모두 '무엇을 무엇이 되게 하거나 여기다'의 뜻이다. ②는 '힘 있게 마주 닿다'(본문: 상황에 직면하다), ③은 '이해하기 까다롭다'(본문: 가능성이 거의 없다), ④는 '밑천보다 더 얻다'(본문: 나머지가 있게 되다), ⑤는 '물건을 밖으로 옮기다'(본문: 의견을 제시하다)로 본문과 다르다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①95.8% ②0.3% ③0.6% ④1.5% ⑤1.8%</p></div>
+</div></div>
+</body></html>

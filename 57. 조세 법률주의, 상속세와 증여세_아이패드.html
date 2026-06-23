@@ -1,0 +1,919 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>조세 법률주의와 과세의 두 해석 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>조세 법률주의와 과세의 두 해석 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 나라가 세금을 걷을 때 "이 정도는 내야지" 하고 마음대로 정해도 될까요? 만약 정부가 그날그날 기분에 따라 세금을 매긴다면, 우리는 내일 얼마를 떼일지 몰라 불안할 거예요. 그래서 근대 국가는 아주 단단한 약속 하나를 세워 두었습니다. <strong>세금을 매기고 거두는 일은 반드시 "법률"에 적혀 있는 대로만 한다</strong>는 약속이에요. 이것을 <strong>조세 법률주의</strong>라고 부릅니다. 한마디로 "법에 없는 세금은 못 걷는다, 법에 적힌 한도를 넘겨 마음대로 바꿀 수도 없다"는 원칙이지요. 이 원칙 덕분에 국민의 재산은 함부로 침해당하지 않고, 우리는 "내가 낼 세금이 얼마쯤일지" 미리 가늠할 수 있게 됩니다.</p>
+<p>그런데 여기서 재미있는 문제가 생겨요. "법에 적힌 대로"라는 말을 <strong>얼마나 엄격하게</strong> 읽느냐를 두고 생각이 갈립니다. 한쪽에서는 "법조문에 <strong>딱 적힌 것만</strong> 세금을 매기자, 안 적혀 있으면 새로운 거래라도 못 매긴다"고 봅니다. 이쪽을 <strong>조세 열거주의</strong>라고 해요. 빠짐없이 '열거'된 것만 인정한다는 뜻이지요. 이렇게 하면 국가가 세금을 핑계로 권한을 휘두르는 걸 막아 <strong>납세자의 권리</strong>를 든든히 지킬 수 있어요. 반대쪽에서는 "법조문의 글자만 보지 말고, 그 법을 왜 만들었는지 <strong>취지와 경제적 실질</strong>까지 살펴서, 비슷한 거래라면 안 적혀 있어도 매기자"고 봅니다. 이쪽이 <strong>조세 포괄주의</strong>예요. 디지털 자산처럼 옛날 법이 미처 몰랐던 새 거래에도 세금을 매겨 <strong>조세 회피를 막고 형평을 지키자</strong>는 거지요.</p>
+<p>둘 다 일리가 있어서 현실에서는 <strong>균형</strong>이 필요합니다. 글자만 따지면 새 거래에 세금을 못 매기는 '과세 공백'이 생기고, 너무 넓게 해석하면 납세자의 권리가 침해될 수 있으니까요. 이 단원은 바로 이 줄다리기 — 법에 근거하되 어떻게 해석할 것인가 — 를 다룹니다. 그리고 그 줄다리기가 가장 뚜렷하게 드러나는 무대로, 사람이 죽거나 살아서 재산을 <strong>공짜로 넘겨줄 때</strong> 매기는 두 세금, <strong>상속세와 증여세</strong>도 함께 살펴볼 거예요.</p>
+<blockquote>
+<p>한마디로: <strong>조세 법률주의는 "세금은 법대로"라는 대원칙</strong>이고, 그 법을 <em>좁게</em> 읽는 열거주의와 <em>넓게</em> 읽는 포괄주의가 균형을 이루며 공정한 과세를 만들어 갑니다. 상속세·증여세는 그 원칙과 해석이 실제로 부딪히는 대표적인 영역이고요.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>조세 법률주의</strong>가 있습니다. 세금은 법에 근거해야 한다는 이 원칙이 실무에서 <em>좁게/넓게</em> 두 갈래로 해석되고(열거주의·포괄주의), 그 해석의 줄다리기가 무상으로 재산을 넘기는 <strong>상속세·증여세</strong>에서 어떻게 드러나는지를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>조세 법률주의 (과세·징수는 반드시 법률에 근거)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>조세 법률주의를 좁게/넓게 읽는 두 해석(열거주의·포괄주의)이, 명시된 거래와 새로 생긴 유사 거래라는 <em>서로 다른 상황</em>에 어떻게 갈라져 적용되는지를 사례로 따집니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>포괄주의적 해석을 넓혀 과세 공백을 메우려는 <em>긍정의 입장</em>과, 그러다 납세자의 권리가 침해된다는 <em>우려의 입장</em>을 나란히 놓고 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>조세 법률주의와 두 해석을 다룬 글(가)과, 재산을 무상으로 넘길 때 매기는 상속세·증여세를 다룬 글(나)을 묶어, 두 세금이 <em>왜 비슷하면서도 부과 방식에서 갈리는지</em>를 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 세금이 왜 법에 묶여 있어야 하는지, 그 법을 좁게 읽을 때와 넓게 읽을 때 무엇을 얻고 무엇을 잃는지, 그리고 그 원칙이 상속·증여라는 구체적 장면에서 어떻게 작동하는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>조세 법률주의는 세금의 부과와 징수가 반드시 법률에 근거해 이루어져야 한다는 원칙이다. 이 원칙에 따르면 법에 명시되지 않은 세금을 거두거나, 법이 정한 세율과 과세 기준을 넘어 이를 자의적으로 바꾸는 것은 허용되지 않는다. 이는 과세 권한을 법으로 묶어 국민의 재정적 권리를 보호하고, 누구나 자신이 질 세 부담을 미리 가늠할 수 있게 하려는 것이다. 그런데 법조문에 ‘무엇에 대해 얼마를 매긴다’라고 적혀 있더라도, 그 문언이 가리키는 거래의 범위가 언제나 명확한 것은 아니다. 과세의 대상이 되는 경제 행위는 끊임없이 새 형태로 생겨나는 반면, 법조문은 그 모든 변화를 앞질러 담아 두지 못하기 때문이다. 그래서 조세 법률주의는 실무에서 법조문을 ⓐ<u>읽어</u> 내는 두 가지 해석 방식, 곧 조세 열거주의와 조세 포괄주의로 구체화된다.</p>
+<p>조세 열거주의는 법률에 명시된 사항만을 엄격히 적용해 과세하는 방식이다. 이에 따르면 구체적 법조문에 규정되지 않은 새로운 거래나 재산 이전이 발생하더라도 그에 과세할 수 없다. 조세는 국민의 재산권과 ⓑ<u>맞닿아</u> 있어, 명확한 법적 근거 없이 이루어지는 과세는 곧 재산의 침해가 될 수 있기 때문이다. 가령 어떤 법조문이 ‘갑이라는 유형의 소득에 세금을 매긴다’라고만 규정하고 있다면, 갑과 경제적으로 비슷하나 법에 적히지 않은 을이라는 소득에는 과세할 수 없다. 만약 과세 관청이 ‘을도 갑과 비슷하니 매기겠다’라고 한다면, 그것은 법조문이 정하지 않은 부담을 새로 지우는 셈이어서 열거주의가 막고자 하는 바로 그 위험에 해당한다. 이처럼 열거주의는 국가가 과세할 수 있는 범위와 그 한계를 법조문 안으로 엄격히 ⓒ<u>가두어</u>, 정부의 과세 권한을 법으로 통제하고 납세자의 권리를 최대한 보장하는 데 초점을 둔다. 다만 이 방식은 법이 미처 규정하지 못한 새 거래를 과세 밖에 그대로 두므로, 그 거래를 통해 부담을 피하는 길이 열린다는 약점을 안는다.</p>
+<p>조세 포괄주의는 법조문의 문언뿐 아니라 입법 취지와 과세 목적, 거래의 경제적 실질까지 종합적으로 고려하는 방식이다. 이에 따르면 법에 명시되지 않았더라도 명시된 거래와 유사한 성격을 지닌 행위에는 과세할 수 있다. 과세 대상이 되는 경제 활동은 계속 다양해지고 복잡해지므로, 법이 미처 규정하지 못한 영역이 늘 남기 마련이다. 앞의 예에서 을이라는 소득이 갑과 경제적 실질에서 다르지 않다면, 포괄주의는 갑에 관한 규정의 취지를 ⓓ<u>좇아</u> 을에도 과세할 수 있다고 본다. 만약 을을 과세하지 않는다면, 사람들은 같은 이익을 얻으면서도 형식만 갑이 아닌 을로 ‘바꾸어’ 세금을 피하려 할 것이고, 그 결과 실질이 같은 거래 사이에 부담의 형평이 깨진다. 포괄주의는 이러한 회피를 막기 위해 명시되지 않은 유사 거래까지 과세 범위로 끌어들여, 경제적 실질이 같은 행위들 사이의 조세 부담 형평성을 ⓔ<u>꾀한다.</u> 그러나 ‘어디까지가 유사한 거래인가’의 판단이 넓어질수록, 법조문에 적히지 않은 부담이 해석을 통해 부과될 위험도 함께 커진다.</p>
+<p>㉠두 해석은 같은 거래를 두고 과세 여부를 다르게 판정할 수 있다. 법에 명시된 거래라면 열거주의와 포괄주의가 모두 과세 대상으로 보아 결론이 같다. 그러나 법에 명시되지 않았으나 명시된 거래와 유사한 새로운 거래에서는 결론이 갈린다. 열거주의는 명문 규정이 없으므로 과세할 수 없다고 보지만, 포괄주의는 실질이 유사하므로 과세할 수 있다고 본다. 이때 열거주의를 따르면 새 거래에 세금을 매기지 못하는 과세 공백이 생기고, 포괄주의를 따르면 법에 없던 부담을 지우게 되어 납세자의 권리가 침해될 우려가 있다. 곧 한 해석의 강점이 다른 해석이 막으려는 약점과 맞물려 있어, 어느 한쪽만으로는 권리 보호와 회피 방지를 동시에 이룰 수 없다. 그래서 현대의 조세 실무는 법률에 근거한다는 대원칙 아래, 열거주의로 납세자의 권리를 지키는 한편 포괄주의로 조세 회피를 막는 두 태도를 함께 운용한다. 어느 태도에 무게를 두는가에 따라 같은 거래라도 과세의 범위와 방식, 그리고 납세자의 실제 부담과 법적 안정성이 달라지므로, 둘 사이의 균형점을 찾는 것이 과세 정의를 실현하는 관건이 된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 조세 법률주의에 따르면 법이 정한 과세 기준을 자의적으로 변경하는 것은 허용되지 않는다.</li>
+<li>② 조세 열거주의는 법조문에 규정되지 않은 새로운 거래에는 과세할 수 없다고 본다.</li>
+<li>③ 조세 포괄주의는 법조문의 문언만으로 과세 여부를 판단해야 한다고 본다.</li>
+<li>④ 조세 열거주의와 조세 포괄주의는 모두 조세 법률주의가 실무에서 구체화된 해석 방식이다.</li>
+<li>⑤ 새로운 형태의 경제 행위가 계속 생겨나는 것은 법조문의 문언이 가리키는 범위가 늘 명확하지는 않은 까닭이 된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+3문단에서 조세 포괄주의는 "법조문의 문언뿐 아니라 입법 취지와 과세 목적, 거래의 경제적 실질까지 종합적으로 고려"한다고 했어요. 그러니 "문언만으로 판단해야 한다"는 ③은 정반대라서 일치하지 않아 정답입니다. ①은 1문단(세율·기준의 자의적 변경 불가), ②는 2문단(명시되지 않은 거래 과세 불가), ④는 1문단(두 해석으로 구체화), ⑤는 1문단(새 경제 행위 → 범위가 늘 명확하지 않음)에서 그대로 확인돼요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 법에 명시된 거래에 대해서는 열거주의와 포괄주의 가운데 어느 쪽을 따르는가에 따라 과세 여부의 결론이 달라진다.</li>
+<li>② 법에 명시되지 않은 유사 거래에 포괄주의를 적용하면, 명문 규정이 없는 부담을 지우게 되어 권리 침해의 우려가 생긴다.</li>
+<li>③ 법에 명시되지 않은 유사 거래에 열거주의를 적용하면, 법에 없던 세금을 매기게 되어 과세 공백이 발생한다.</li>
+<li>④ 두 해석이 같은 거래에 대해 결론을 달리하는 것은 그 거래가 법에 명시되어 있기 때문이다.</li>
+<li>⑤ 포괄주의는 과세 공백을, 열거주의는 권리 침해를 각각 줄이는 데 초점을 둔 해석이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠은 두 해석이 과세 여부를 다르게 판정할 수 있다는 부분이죠. 4문단에서 포괄주의는 유사 거래에 과세할 수 있다고 보는데, 그러면 "법에 없던 부담을 지우게 되어 납세자의 권리가 침해될 우려가 있다"고 했으니 ②가 정답이에요. ① 법에 <em>명시된</em> 거래는 두 해석이 모두 과세로 보아 결론이 <em>같다</em>고 했으니 거꾸로고, ③ 열거주의는 <em>과세 공백</em>이 생기지 그것을 "법에 없던 세금을 매겨" 생긴다고 한 것은 앞뒤가 안 맞아요(과세 공백은 못 매겨서 비는 것). ④ 결론이 갈리는 건 거래가 <em>명시되지 않았기</em> 때문이고, ⑤ 포괄주의는 과세 공백을 줄이는 쪽, 열거주의는 권리 침해를 줄이는 쪽이라 짝이 뒤바뀌었습니다.</p>
+<p><strong>3번 [3점] — 정답 ①</strong>
+(가)는 조문이 규정한 예술품 매매에 해당하는, 곧 <em>법에 명시된</em> 거래예요. 4문단에서 명시된 거래는 두 해석이 모두 과세 대상으로 보아 결론이 같다고 했으니, 열거주의든 포괄주의든 과세할 수 있다는 ①이 정답입니다. ② (나)에 <em>열거주의</em>를 따르면 명문 규정이 없어 과세할 수 <em>없다</em>고 보고, ③ (나)에 <em>포괄주의</em>를 따르면 실질이 같으므로 과세할 수 <em>있다</em>고 보아 둘 다 방향이 뒤집혔어요. ④ (다)는 경제적 실질이 예술품 매매와 <em>같다고 보기 어렵다</em>고 했으니, 포괄주의로도 과세 근거(유사성)가 없어 과세할 수 있다고 단정할 수 없습니다. ⑤ (가)는 명시된 거래라 두 해석의 결론이 <em>일치</em>하고, (다)는 유사성이 없어 어느 쪽도 과세하기 어려우니 "엇갈린다"는 것은 맞지 않아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 나라의 세법은 ‘예술품을 사고팔아 얻은 차익에 세금을 매긴다.’라고만 규정하고 있다. 이와 관련해 세 가지 거래가 있다고 하자.
+(가) 화가가 자신의 그림을 팔아 차익을 얻었는데, 이 거래는 위 조문이 규정한 예술품 매매에 해당한다.
+(나) 어떤 이가 그림을 디지털 파일로 만든 새로운 형태의 자산을 팔아 차익을 얻었는데, 이 거래는 위 조문에 명시되어 있지 않으나 그 경제적 실질이 예술품 매매와 다르지 않다.
+(다) 어떤 이가 골동품을 사고팔아 차익을 얻었는데, 이 거래는 위 조문에 명시되어 있지 않고 그 경제적 실질도 예술품 매매와 같다고 보기 어렵다.</p>
+</blockquote>
+<ul>
+<li>① (가)에 대해서는 열거주의를 따르든 포괄주의를 따르든 모두 과세할 수 있다고 보겠군.</li>
+<li>② (나)에 대해 열거주의를 따르면, 경제적 실질이 같으므로 과세할 수 있다고 보겠군.</li>
+<li>③ (나)에 대해 포괄주의를 따르면, 명문 규정이 없으므로 과세할 수 없다고 보겠군.</li>
+<li>④ (다)에 대해 포괄주의를 따르면, 명시되지 않았더라도 과세할 수 있다고 보겠군.</li>
+<li>⑤ (가)와 (다)에 대해서는 두 해석의 과세 여부 결론이 서로 엇갈리겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 독해(讀解)해</li>
+<li>② ⓑ: 직결(直結)되어</li>
+<li>③ ⓒ: 한정(限定)하여</li>
+<li>④ ⓓ: 추수(追隨)하여</li>
+<li>⑤ ⓔ: 도모(圖謀)한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+ⓓ‘좇아’는 <em>취지를 따라 그대로 살핀다</em>는 뜻이에요. ④의 ‘추수(追隨)하여’는 <em>남의 뒤를 그대로 따른다</em>는 뜻이라 주견 없이 좇는다는 부정적 어감이 강해, 입법 취지를 살펴 따른다는 문맥과는 어긋나므로 바꿔 쓰기에 적절하지 않아 정답입니다. ① ‘읽어(독해해)’, ② ‘맞닿아(직결되어)’, ③ ‘가두어(한정하여)’, ⑤ ‘꾀한다(도모한다)’는 각각 문맥의 뜻과 통해 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>조세 법률주의</strong>: 세금의 부과·징수는 반드시 법률에 근거해야 한다는 원칙. 법에 없는 세금은 못 걷고, 법이 정한 기준을 마음대로 바꿀 수 없어요.</li>
+<li><strong>조세 열거주의</strong>: 법에 <em>명시된 것만</em> 과세하는 좁은 해석. 납세자 권리 보호·과세권 남용 방지에 강해요.</li>
+<li><strong>조세 포괄주의</strong>: 입법 취지·경제적 실질까지 살펴 <em>유사 거래도</em> 과세하는 넓은 해석. 조세 회피 방지·형평 확보에 강해요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>거래의 종류</th>
+<th>조세 열거주의</th>
+<th>조세 포괄주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>법에 명시된 거래</td>
+<td>과세함</td>
+<td>과세함 (결론 같음)</td>
+</tr>
+<tr>
+<td>명시 안 됨 + 실질이 유사한 거래</td>
+<td>과세 못 함 (과세 공백)</td>
+<td>과세함 (회피 방지)</td>
+</tr>
+<tr>
+<td>강점</td>
+<td>납세자 권리 보호</td>
+<td>형평·조세 정의</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>새 거래에 과세 공백</td>
+<td>권리 침해 우려</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 해석은 <em>좁게 vs 넓게</em>로 갈려요. 그래서 실무는 둘을 함께 써서 권리도 지키고 회피도 막으려 합니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>법에 명시된 거래에서 두 해석의 결론은 어떻게 되나요?</div><div class='qa-a'>둘 다 과세 대상으로 보아 결론이 같습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>열거주의를 따를 때 생길 수 있는 문제는?</div><div class='qa-a'>명시되지 않은 새 거래에 과세하지 못하는 과세 공백입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>포괄주의가 막으려는 것과 그 대가는?</div><div class='qa-a'>조세 회피를 막으려 하지만, 법에 없던 부담을 지워 권리를 침해할 우려가 따릅니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2023학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과 효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가 항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야 그 상황에 ⓐ맞는 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한 경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ들 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해 배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.</p>
+<p>채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이 발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ받을 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를 증명하면 손해 배상금도 받을 수 있다.</p>
+<p>불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이 구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는 특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ고를 수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.</p>
+<p>행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠재량 준칙이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ지켜야 하기 때문이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.</li>
+<li>② 법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.</li>
+<li>③ 불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.</li>
+<li>④ 불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.</li>
+<li>⑤ 불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+3~4문단에 따르면 법령에서 불확정 개념이 사용되면 그에 근거한 행정 작용은 ‘대개 재량 행위’이다. 따라서 기속 행위인 경우가 많다는 ④는 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,561명 — ①2.6% ②4.6% ③4.2% ④81.5% ⑤6.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.</li>
+<li>② 재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.</li>
+<li>③ 재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.</li>
+<li>④ 재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.</li>
+<li>⑤ 재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+4문단에 따르면 재량 준칙대로 적법한 행정 작용이 반복되어 ‘행정 관행’이 생긴 후에야 행정청이 동일한 행정 작용을 해야 한다. 따라서 선례(관행)가 없으면 같은 요건이라도 재량 준칙을 따르지 않을 수 있다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①11.4% ②8.8% ③21.4% ④9.8% ⑤49.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑과 을 사이에 위약금 약정이 없었다.
+(나) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.
+(다) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.
+(단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① (가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>② (나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>③ (나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>④ (다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>⑤ (다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>12번 — 정답 ②</strong><br />
+(나)는 위약금의 성격이 증명되지 못했으므로 위약금 100은 ‘손해 배상 예정액’으로 다루어진다. 손해가 80으로 증명되어도 정해진 예정액 100을 지급해야 하며, ‘부당히 과다하면 법원이 감액할 수 있다’는 조문에 따라 법원이 감액할 수 있다. 따라서 ②가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①5.3% ②39.0% ③19.3% ④25.6% ⑤10.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이것이 네가 찾는 자료가 맞는지 확인해 보아라.</li>
+<li>② ⓑ: 그 부부는 노후 대책으로 적금을 들고 안심했다.</li>
+<li>③ ⓒ: 그의 파격적인 주장은 학계의 큰 주목을 받았다.</li>
+<li>④ ⓓ: 형은 땀 흘려 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+<li>⑤ ⓔ: 그분은 우리에게 한 약속을 반드시 지킬 것이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+ⓔ‘지키다(평등 원칙을 지켜야)’와 ⑤의 ‘지키다(약속을 지킬)’는 모두 ‘규정·약속·법·예의 따위를 어기지 아니하고 그대로 실행하다’의 뜻으로 쓰였다. 나머지는 본문과 의미가 다르다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①4.3% ②1.2% ③0.8% ④1.3% ⑤93.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>조세 법률주의는 세금의 부과와 징수를 법률에 근거하게 함으로써 국가의 과세 권한을 법으로 제한한다. 법에 적히지 않은 세금은 거둘 수 없고, 법이 정한 기준을 넘어 세 부담을 자의적으로 늘릴 수도 없다. 그런데 과세 대상이 되는 경제 활동이 빠르게 다양해지면서, 법조문에 명시되지 않은 새로운 거래가 끊임없이 나타난다. 법조문은 이미 알려진 거래를 기준으로 만들어지므로, 그 뒤에 등장한 거래는 문언만으로는 과세 대상인지 아닌지가 분명하지 않다. 이런 거래를 그대로 두면 과세의 빈틈이 생기고, 그렇다고 해석으로 끌어들이면 법에 없던 부담을 지우는 셈이 된다. 그래서 법조문을 어떻게 해석해 과세 범위를 정할 것인가가 조세 실무의 핵심 문제가 된다. 이 문제를 두고 법에 명시된 것만 과세하자는 열거주의와, 명시되지 않았더라도 경제적 실질이 유사하면 과세하자는 포괄주의가 맞선다.</p>
+<p>포괄주의적 해석을 넓혀야 한다고 보는 견해와 이를 경계하는 견해가 있다. ㉠전자는 법이 미처 규정하지 못한 유사 거래에까지 과세 범위를 넓혀야 한다고 주장한다. 법조문에 명시된 거래와 경제적 실질이 같은데도 명문 규정이 없다는 이유로 과세하지 못하면, 같은 실질의 거래 사이에 부담의 형평이 깨지고 과세를 피하려는 행위가 ⓐ<u>늘어난다</u>고 보기 때문이다. 명시된 거래만 과세된다면, 사람들은 같은 이익을 얻으면서도 형식만 바꾸어 명시되지 않은 거래로 옮겨 갈 유인을 갖게 되고, 그럴수록 세 부담은 거래의 실질이 아니라 형식에 따라 갈리게 된다. ㉡후자는 과세 범위를 해석으로 넓히는 데 신중해야 한다고 본다. 무엇이 ‘유사한’ 거래인지에 대한 판단이 과세 관청에 ⓑ<u>맡겨지면</u>, 법에 명확히 적히지 않은 부담이 납세자에게 부과되어 예측 가능성과 권리가 침해될 수 있다고 보기 때문이다. 같은 거래라도 관청의 해석에 따라 과세 여부가 달라진다면, 납세자는 무엇이 과세되는지 미리 알기 어려워진다.</p>
+<p>㉢포괄주의적 해석을 넓히면 과세의 공백이 줄어든다. 새로운 형태의 금융 상품이나 디지털 자산 거래처럼 전통적 세법에 명시되지 않은 행위라도, 기존 규정의 취지와 구조에 비추어 과세 가능성을 검토할 수 있기 때문이다. 이때의 검토는 그 거래가 기존에 과세되던 거래와 경제적으로 같은 결과를 낳는지, 그리고 그 법조문이 본래 어떤 이익을 과세하려 했는지를 따지는 방식으로 이루어진다. 이렇게 하면 법이 변화를 따라가지 못해 생기는 빈틈이 메워지고, 경제적 실질이 같은 거래들이 비슷한 부담을 지게 되어 형평이 확보된다. 나아가 회피의 통로가 줄어들면, 명시된 거래를 정직하게 신고한 납세자가 상대적으로 더 무거운 부담을 지는 불공평도 완화된다. 반면 ㉣열거주의를 고수하면 명문 규정이 없는 새 거래에는 과세하지 못해, 그 거래를 통해 부담을 피하는 길이 그대로 남는다. 새로운 거래가 등장할 때마다 법을 일일이 고쳐 그 거래를 조문에 새로 적어 넣기 전까지는, 그 거래는 과세 밖에 머무르게 된다. 그러나 법 개정은 시간이 걸리고, 그사이 같은 실질의 거래가 형식만 달리하여 계속 생겨날 수 있다.</p>
+<p>한편 포괄주의적 해석을 지나치게 넓히면 납세자의 권리가 위협받을 수 있다는 우려가 있다. 어디까지가 ‘유사한 거래’인지의 경계가 해석에 좌우될수록, 납세자는 자신이 어떤 세금을 얼마나 지게 될지 미리 가늠하기 어려워진다. 더구나 그 경계를 정하는 권한이 과세 관청에 쏠리면, 법이 통제하려던 과세 권한이 도리어 해석을 통해 넓어지는 결과가 빚어질 수 있다. 또 명문 규정 없이 부과된 세금을 둘러싸고 다툼이 잦아지면, 같은 거래에 대한 과세가 사안마다 엇갈려 법적 안정성이 흔들린다. 결국 과세 공백을 줄이려는 포괄주의와 납세자의 권리를 지키려는 열거주의 가운데 어느 쪽에 무게를 둘지는, 그 세목에서 형평과 권리 중 무엇을 더 중시하느냐에 따라 달라진다. 회피가 쉽게 일어나는 세목에서는 형평을 위해 해석을 넓히는 쪽에, 부담의 변동이 납세자에게 큰 세목에서는 권리를 위해 명문 규정을 엄격히 따르는 쪽에 무게가 실리는 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 조세 법률주의는 국가의 과세 권한을 법률로 제한한다.</li>
+<li>② 포괄주의적 해석을 넓히면 법에 명시되지 않은 새 거래에 대한 과세의 공백이 줄어든다.</li>
+<li>③ 열거주의를 고수하면 명문 규정이 없는 거래를 통해 부담을 피하는 길이 열릴 수 있다.</li>
+<li>④ 포괄주의적 해석을 넓히는 데 신중하자는 견해는 납세자의 예측 가능성을 근거로 든다.</li>
+<li>⑤ 무엇이 유사한 거래인지의 경계가 해석에 맡겨질수록 납세자가 세 부담을 예측하기 쉬워진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+4문단에서 ‘유사한 거래’의 경계가 해석에 맡겨질수록 납세자는 자신의 세 부담을 "미리 가늠하기 어려워진다"고 했어요. ⑤는 거꾸로 "예측하기 쉬워진다"고 했으니 적절하지 않아 정답입니다. ①은 1문단(과세 권한을 법으로 제한), ②는 3문단(공백이 줄어듦), ③은 3문단(열거주의 고수 시 부담 회피의 길), ④는 2문단(신중론의 예측 가능성 근거)에 그대로 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>㉠~㉣에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 같은 경제적 실질의 거래 사이에서 부담의 형평이 깨지는 것을 문제로 본다.</li>
+<li>② ㉡은 ‘유사한’ 거래의 판단이 과세 관청에 맡겨질 때 생길 수 있는 권리 침해를 경계한다.</li>
+<li>③ ㉢은 기존 규정의 취지에 비추어 새 거래에 대한 과세 가능성을 검토할 수 있다고 본다.</li>
+<li>④ ㉣은 명문 규정이 없는 거래에 과세하지 못하는 결과가 형평 확보에 기여한다고 본다.</li>
+<li>⑤ ㉠과 ㉢은 모두 포괄주의적 해석을 넓히는 것이 과세 회피를 줄이는 데 효과가 있다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+㉣은 열거주의를 고수하는 입장으로, 3문단에서 "명문 규정이 없는 새 거래에는 과세하지 못해, 그 거래를 통해 부담을 피하는 길이 열린다"고 했어요. 곧 ㉣의 결과는 형평을 깨뜨리는 쪽이지 "형평 확보에 기여"하는 게 아니므로 ④가 적절하지 않아 정답입니다. ①은 2문단(전자의 형평 논거), ②는 2문단(후자의 권리 침해 경계), ③은 3문단(취지에 비춘 검토), ⑤는 2·3문단(㉠과 ㉢ 모두 회피 감소를 지지)에 부합해요.</p>
+<p><strong>7번 [3점] — 정답 ⑤</strong>
+열거주의는 명시되지 않은 거래에 과세하지 못하므로, 이 거래에 과세하지 않으면 <em>과세 공백이 그대로 남거나 커지지</em> 메워지지 않아요(3문단). 그래서 "과세하지 않으면 공백이 메워진다"는 ⑤는 적절하지 않아 정답입니다. ①·②는 포괄주의 확대론의 형평·실질 논리(2·3문단), ③은 신중론의 예측 가능성 침해(2·4문단), ④는 열거주의가 명시되지 않은 거래에 과세하지 않는다는 점(2·3문단)에 각각 부합하는 적절한 반응이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 나라의 세법은 ‘부동산을 팔아 얻은 차익에 세금을 매긴다.’라고 규정하고 있다. 최근 이 나라에서는 부동산을 직접 사고파는 대신, 그 부동산만을 소유한 회사의 주식을 통째로 사고팔아 사실상 부동산을 거래하는 방식이 늘었다. 이 거래는 세법에 명시되어 있지 않으나, 경제적 실질은 부동산 매매와 다르지 않다. 과세 관청이 이 거래에 세금을 매기려 하자, 한 납세자는 ‘법에 적히지 않은 거래에 세금을 매기는 것은 부당하다.’라며 다투었다.</p>
+</blockquote>
+<ul>
+<li>① 포괄주의적 해석을 넓혀야 한다는 견해라면, 이 거래에 과세하지 않으면 부동산 매매와의 형평이 깨진다고 보겠군.</li>
+<li>② 포괄주의적 해석을 넓혀야 한다는 견해라면, 이 거래는 경제적 실질이 부동산 매매와 같으므로 과세 대상으로 검토할 수 있다고 보겠군.</li>
+<li>③ 포괄주의적 해석에 신중해야 한다는 견해라면, 이 거래에 과세하는 것이 납세자의 예측 가능성을 해칠 수 있다고 보겠군.</li>
+<li>④ 열거주의를 따르는 견해라면, 이 거래는 법에 명시되어 있지 않으므로 과세할 수 없다고 보겠군.</li>
+<li>⑤ 열거주의를 따르는 견해라면, 이 거래에 과세하지 않으면 과세의 공백이 메워진다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ, ⓑ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ⓐ</th>
+<th>ⓑ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>증대(增大)된다</td>
+<td>위임(委任)되면</td>
+</tr>
+<tr>
+<td>②</td>
+<td>격증(激增)된다</td>
+<td>위임(委任)되면</td>
+</tr>
+<tr>
+<td>③</td>
+<td>증대(增大)된다</td>
+<td>종속(從屬)되면</td>
+</tr>
+<tr>
+<td>④</td>
+<td>점증(漸增)된다</td>
+<td>귀속(歸屬)되면</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>격증(激增)된다</td>
+<td>귀속(歸屬)되면</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+ⓐ‘늘어난다’는 <em>양이 많아진다</em>는 뜻이라 ‘증대(增大)된다’로 바꿀 수 있고, ⓑ‘맡겨지면’은 <em>판단의 권한을 넘겨 맡기면</em>이라는 뜻이라 ‘위임(委任)되면’으로 바꿀 수 있어 ①이 정답입니다. ‘격증·점증’은 <em>갑자기/점차 늘어남</em>이라는 추가 의미가 붙어 단순히 ‘늘어남’을 가리키는 문맥과 어긋나고, ‘종속·귀속·위탁’ 가운데 ‘종속되면’(딸려 매이면)·‘귀속되면’(차지가 되면)은 판단을 맡긴다는 뜻과 호응하지 않아요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>과세 공백</strong>: 새로운 거래가 법조문에 없어서 세금을 매기지 못하는 빈틈. 열거주의에서 생기기 쉬워요.</li>
+<li><strong>형평(부담의 형평)</strong>: 경제적 실질이 같은 거래라면 비슷한 세 부담을 져야 한다는 것. 포괄주의가 지키려는 가치예요.</li>
+<li><strong>예측 가능성·법적 안정성</strong>: 납세자가 자신의 세 부담을 미리 가늠할 수 있고, 과세를 둘러싼 다툼이 적어 제도가 안정된 상태.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>포괄주의를 넓히자는 입장(㉠·㉢)</th>
+<th>신중하자는 입장(㉡)·열거주의(㉣)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 가치</td>
+<td>형평·조세 회피 방지</td>
+<td>납세자 권리·예측 가능성</td>
+</tr>
+<tr>
+<td>새 거래를 보는 눈</td>
+<td>실질이 같으면 과세 검토</td>
+<td>명문 규정 없으면 과세 불가</td>
+</tr>
+<tr>
+<td>우려하는 것</td>
+<td>과세 공백·회피</td>
+<td>권리 침해·법적 안정성 흔들림</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 ‘새 거래’를 두고, 한쪽은 <em>빈틈을 메우자</em>고 보고 다른 쪽은 <em>함부로 넓히지 말자</em>고 봐요. 그래서 세목마다 형평과 권리 중 무엇을 앞세우느냐로 무게가 갈립니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>포괄주의적 해석을 넓히면 무엇이 줄어드나요?</div><div class='qa-a'>법에 명시되지 않은 새 거래에 대한 과세의 공백이 줄어듭니다.</div></div>
+<div class='qa-item'><div class='qa-q'>신중론이 권리 침해를 우려하는 까닭은?</div><div class='qa-a'>‘유사한’ 거래의 판단이 과세 관청에 맡겨지면 명문 없는 부담이 부과되어 예측 가능성이 흔들리기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 입장의 무게는 무엇으로 갈리나요?</div><div class='qa-a'>그 세목에서 형평과 납세자 권리 중 무엇을 더 중시하느냐에 따라 갈립니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 9월 [4~7]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>교통 이용 내역과 같은 기록은 개인의 데이터이며, 그 개인이 ‘정보 주체’이다. 데이터는 물리적 형체가 없고, 복제와 재사용이 수월하다. 이 데이터가 대량으로 집적·처리되면 빅 데이터가 되고, 이것의 정보 처리자인 기업 등이 ‘빅 데이터 보유자’이다. 산업 분야의 빅 데이터는 특정한 목적으로 활용될 수 있다는 점에서 경제적 가치를 지닌다.</p>
+<p>데이터를 재화로 보아 소유권이 누구에게 귀속되어야 하는지에 대한 논의가 있다. 소유권의 주체를 빅 데이터 보유자로 보는 견해와 정보 주체로 보는 견해가 있다. 전자는 빅 데이터 보유자에게 소유권을 부여하면 빅 데이터의 생성 및 유통이 ⓐ쉬워져 데이터 관련 산업이 활성화된다고 주장한다. 후자는 정보 생산 주체는 개인인데, 빅 데이터 보유자에게 부가 집중되는 것은 부당하므로, 정보 주체에게도 대가가 주어져야 한다고 본다.</p>
+<p>최근에는 논의의 중심이 데이터의 소유권 주체에서 데이터에 접근하기 위한 방안으로서의 데이터 이동권으로 바뀌고 있다. 우리나라는 데이터에 대해 소유권이 아닌 이동권을 법으로 명문화하여 정보 주체의 개인 정보 자기 결정권을 강화하였다. 데이터 이동권이란 정보 주체가 본인의 데이터를 보유한 자에게 데이터 이동을 요청하면, 그 데이터를 본인 혹은 지정한 제3자에게 무상으로 전송하게 하는 권리이다. 다만, 본인의 데이터라도 빅 데이터 보유자가 수집하여, 분석·가공하는 개발 과정을 거쳐 새로운 가치가 생성된 것은 이에 해당되지 않는다. 법제화 이전에도 은행 간에 계좌 자동 이체 항목을 이동할 수 있는 서비스는 있었다. 이는 은행 간 약정에 ⓑ따라 부분적으로 시행한 조치였다. 데이터 이동권의 도입으로 쇼핑몰 상품 소비 이력 등 정보 주체의 행동 양상과 관련된 부분까지 정보 주체가 자율적으로 통제·관리할 수 있는 범위가 확대되었다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>데이터 이동권의 법제화로 기업은 데이터의 생성 비용과 거래 비용을 줄일 수 있다. 생성 비용은 기업 내에서 데이터를 개발할 때 발생하는 비용으로, 기업이 스스로 데이터를 수집할 때보다 전송받은 데이터를 복제 및 재사용하게 되면 절감할 수 있다. 거래 비용은 경제 주체 간 거래 시 발생하는 비용으로, 계약 체결이나 분쟁 해결 등의 과정에서 생긴다. 그런데 데이터 이동권의 법제화로, ㉮정보 주체가 지정하여 데이터를 전송받게 된 기업은 ㉯정보 주체의 데이터를 보유했던 기업으로부터 데이터를 받으면 비용을 절감할 수 있다. 이에 따라 기업 간 공유나 유통이 촉진되고, 관련 산업이 활성화된다.</p></div>
+
+<div class="ablock"><span class="atag">[B]</span><p>한편, 정보 주체가 보안의 신뢰성이 높고 데이터 제공에 따른 혜택이 많은 기업으로 데이터를 이동하면, 데이터가 집중되어 데이터의 공유나 유통이 위축될 수 있다는 우려도 있다. ㉰데이터 보유량이 적은 신규 기업은 기존 기업과 거래를 통해 데이터를 수집하는 것이 데이터 생성 비용 절감에도 효율적이다. 그런데 ㉱데이터가 집중된 기존 기업이 집적·처리된 데이터를 공유하려 하지 않으면, 신규 기업의 시장 진입이 어려워져 독점화가 강화될 수 있다.</p></div></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 데이터는 재사용할 수 있으며 물리적 형체가 없다.</li>
+<li>② 교통 이용 내역이 집적·처리되면 경제적 가치를 지닌 데이터가 될 수 있다.</li>
+<li>③ 우리나라 현행법에는 정보 주체에게 데이터의 소유권을 인정하는 규정이 있다.</li>
+<li>④ 정보 주체의 데이터로 발생한 이득이 빅 데이터 보유자에게 집중되는 것은 부당하다는 견해가 있다.</li>
+<li>⑤ 데이터 이동권의 도입으로 정보 주체의 데이터 통제 범위가 본인의 행동 양상과 관련된 부분으로 확대되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong><br />
+3문단에서 우리나라는 데이터에 대해 ‘소유권이 아닌 이동권’을 법으로 명문화했다고 했으므로, 현행법에 소유권 인정 규정이 있다는 ③은 일치하지 않는다. ①은 1문단(물리적 형체 없음·재사용 수월), ②는 1문단(집적·처리되면 빅 데이터가 되어 경제적 가치), ④는 2문단(정보 주체로 보는 견해), ⑤는 3문단(통제·관리 범위 확대)에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,568명 — ①0.7% ②2.6% ③84.7% ④3.5% ⑤7.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>[A], [B]의 입장에서 ㉮~㉱에 대해 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① [A]의 입장에서, ㉮는 데이터 이동권 도입을 통해 ㉯의 데이터를 재사용할 수 있게 되었으므로 데이터 생성 비용을 줄일 수 있다고 보겠군.</li>
+<li>② [A]의 입장에서, 정보 주체가 데이터 이동을 요청하여 데이터를 전송받는 제3자가 ㉰라면, ㉰는 분쟁 없이 정보 주체의 데이터를 받게 되어 거래 비용을 줄일 수 있다고 보겠군.</li>
+<li>③ [B]의 입장에서, ㉰가 ㉱와의 거래에 실패해 데이터를 수집하지 못하여 ㉰에 데이터 생성 비용이 발생하면, 데이터 관련 산업의 시장에 진입하기 어려워질 수 있다고 보겠군.</li>
+<li>④ [A]와 달리 [B]의 입장에서, 정보 주체의 데이터가 ㉯에서 ㉱로 이동하여 집적·처리될수록 기업 간 공유나 유통이 위축될 수 있다고 보겠군.</li>
+<li>⑤ [B]와 달리 [A]의 입장에서, ㉯는 ㉮로 데이터를 이동하여 경제적 이득을 취할 수 있으므로 데이터의 공유나 유통의 활성화에 기여할 수 있다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong><br />
+3문단에 따르면 데이터 이동권에 따른 전송은 ‘무상으로’ 이루어지므로, ㉯가 ㉮로 데이터를 이동하여 경제적 이득을 취할 수 있다는 ⑤는 적절하지 않다. ①·②는 [A]의 생성 비용(복제·재사용 절감)·거래 비용(분쟁 해결 과정에서 발생) 논리에, ③·④는 [B]의 데이터 집중에 따른 공유·유통 위축과 신규 기업 시장 진입 곤란 논리에 부합한다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①3.1% ②14.9% ③5.8% ④22.0% ⑤53.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+A 은행은 고객들의 데이터를 수집하고 이를 분석·가공하여 자산 관리 데이터 서비스인 연령별·직업군별 등 고객 맞춤형 금융 상품 추천 서비스를 제공했다. 갑은 본인의 데이터 제공에 동의하여 A 은행으로부터 소정의 포인트를 받았다. 데이터 이동권이 법제화된 이후 갑은 B 은행 체크 카드를 발급받은 뒤, A 은행에 ‘계좌 자동 이체 항목’, ‘체크 카드 사용 내역’, ‘연령별 맞춤형 금융 상품 추천 서비스 내역’을 B 은행으로 이동할 것을 요청했다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 본인의 데이터를 이동 요청하면 A 은행은 갑의 ‘체크 카드 사용 내역’을 B 은행으로 전송해야 한다.</li>
+<li>② A 은행에 대한 갑의 데이터 이동 요청은 정보 주체의 자율적 관리이므로 강화된 개인 정보 자기 결정권의 행사이다.</li>
+<li>③ 데이터의 소유권 주체가 정보 주체라고 본다면, 갑이 A 은행으로부터 받은 포인트는 본인의 데이터 제공에 대한 대가이다.</li>
+<li>④ 갑이 본인의 데이터를 보유한 A 은행을 상대로 요청한 ‘연령별 맞춤형 금융 상품 추천 서비스 내역’은 데이터 이동권 행사의 대상이다.</li>
+<li>⑤ 데이터 이동권의 법제화 이전에도 갑이 A 은행에서 B 은행으로 이동을 요청한 정보 중에서 ‘계좌 자동 이체 항목’은 이동이 가능했다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+3문단에서 빅 데이터 보유자가 수집하여 분석·가공하는 개발 과정을 거쳐 새로운 가치가 생성된 것은 이동권 행사 대상이 아니라고 했다. ‘연령별 맞춤형 금융 상품 추천 서비스 내역’은 A 은행이 분석·가공해 새로운 가치를 생성한 것이므로 ④가 적절하지 않다. ①의 ‘체크 카드 사용 내역’은 가공되지 않은 데이터라 전송 대상이고, ②는 자기 결정권 강화, ③은 소유권 주체를 정보 주체로 보는 견해의 대가 논리, ⑤는 법제화 이전의 계좌 자동 이체 항목 이동 서비스에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①3.4% ②7.6% ③7.9% ④66.8% ⑤14.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ, ⓑ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ⓐ</th>
+<th>ⓑ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>용이(容易)해져</td>
+<td>근거(根據)하여</td>
+</tr>
+<tr>
+<td>②</td>
+<td>유력(有力)해져</td>
+<td>근거(根據)하여</td>
+</tr>
+<tr>
+<td>③</td>
+<td>용이(容易)해져</td>
+<td>의탁(依託)하여</td>
+</tr>
+<tr>
+<td>④</td>
+<td>원활(圓滑)해져</td>
+<td>의탁(依託)하여</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>유력(有力)해져</td>
+<td>기초(基礎)하여</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong><br />
+ⓐ(쉬워져)는 ‘어렵지 아니하고 매우 쉽다’는 뜻의 ‘용이(容易)해져’로, ⓑ(따라)는 ‘어떤 현상이나 사실에 바탕을 두다’는 뜻의 ‘근거(根據)하여’로 바꿔 쓸 수 있다. ‘유력하다’(세력·가능성이 있다)는 ⓐ와, ‘의탁하다’(몸이나 마음을 의지하여 맡기다)는 ⓑ와 맞지 않는다.</p>
+<p><em>선택률</em> — 응시 98,569명 — ①86.8% ②0.3% ③5.9% ④3.8% ⑤2.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>조세 법률주의는 세금의 부과와 징수가 반드시 법률에 근거해야 한다는 원칙이다. 이 원칙은 법에 명시되지 않은 세금을 거두거나 법이 정한 기준을 자의적으로 바꾸는 것을 ⓐ<u>막아</u>, 국민의 재정적 권리를 보호하고 과세의 예측 가능성을 높인다. 그런데 법조문은 이미 알려진 거래를 기준으로 만들어지므로, 그 뒤에 생겨난 새로운 거래가 그 문언에 들어가는지는 분명하지 않을 때가 많다. 그래서 이 원칙은 법조문을 어떻게 해석하느냐에 따라 두 방향으로 구체화된다.</p>
+<p>조세 열거주의는 법률에 명시된 사항만을 엄격히 적용해 과세하는 방식이다. 법조문에 규정되지 않은 새로운 거래에는 과세할 수 없다고 보므로, 국가의 과세 권한이 법조문 안에 ⓑ<u>묶인다.</u> 이는 명확한 법적 근거 없는 과세가 재산권을 침해할 수 있다는 점을 중시한 해석으로, 납세자의 권리 보호와 과세권 남용 방지에 강하다. 다만 법이 변화를 앞질러 담지 못하는 만큼, 명시되지 않은 새 거래를 통해 부담을 피하는 길이 남는다는 약점이 따른다. 반면 조세 포괄주의는 법조문의 문언뿐 아니라 입법 취지와 경제적 실질까지 ⓒ<u>살펴</u>, 명시되지 않았더라도 유사한 거래에는 과세하는 방식이다. 디지털 자산 거래처럼 전통적 세법에 없던 행위에도 기존 규정의 취지에 비추어 과세할 수 있다고 보아, 조세 회피를 줄이고 경제적 실질이 같은 거래 사이의 형평을 ⓓ<u>지킨다.</u> 그러나 ‘유사한 거래’의 경계를 넓게 잡을수록, 법조문에 적히지 않은 부담이 해석을 통해 부과될 위험도 커진다.</p>
+<p>㉠두 해석은 균형을 이루어야 한다. 법조문의 문언만 따르면 새로운 거래에 과세하지 못하는 공백이 생기고, 해석이 지나치게 넓으면 명문 규정 없는 부담이 납세자에게 부과되어 권리가 침해될 우려가 있기 때문이다. 곧 한 해석의 강점은 다른 해석이 막으려는 약점과 맞물려 있어, 어느 한쪽만으로는 권리 보호와 회피 방지를 함께 이룰 수 없다. 그래서 조세 실무는 법률에 근거한다는 대원칙 아래, 열거주의로 권리를 지키고 포괄주의로 회피를 막는 두 태도를 함께 운용한다. 어느 태도에 무게를 두는가에 따라 같은 세목이라도 과세의 범위와 방식, 그리고 납세자의 실제 부담이 달라질 수 있다. 특히 재산의 무상 이전에 매기는 세금처럼 회피의 유인이 큰 영역에서는, 두 해석을 어떻게 조합하느냐가 과세의 공정성을 크게 좌우한다.</p>
+<p><strong>(나)</strong></p>
+<p>재산이 한 사람에게서 다른 사람에게로 옮겨 가는 일은 개인의 경제적 지위를 바꾸는 중요한 사건이며, 조세 제도가 다루는 핵심 영역의 하나이다. 특히 ㉡상속세와 ㉢증여세는 재산이 무상으로, 곧 대가 없이 옮겨질 때 부과되는 세금으로, 조세의 공평성과 부의 재분배를 실현하는 도구로 ⓔ<u>쓰인다.</u> 사람들은 노력의 대가로 소득을 얻기도 하지만, 아무런 대가 없이 남의 재산을 넘겨받아 경제적 지위가 높아지기도 한다. 이렇게 무상으로 얻은 부에 세금을 매겨, 한 사람에게 부가 지나치게 쌓이고 대를 이어 그대로 넘어가는 것을 조정함으로써 사회 전체의 형평을 도모하려는 것이 두 세금의 취지이다. 두 세금은 무상 이전에 매긴다는 점에서 본질이 같으나, 재산이 옮겨지는 계기가 달라 부과 방식과 적용 기준에서 차이를 보인다.</p>
+<p>상속세는 사람이 사망하여 그 재산이 상속인에게 넘어갈 때 부과된다. 재산의 이전이 사망이라는 하나의 사건을 계기로 일어나므로, 과세는 사망 시점을 기준으로 그 사람이 남긴 재산을 단위로 이루어진다. 사망이라는 계기는 한 번뿐이고 그 시점도 미리 정할 수 없으므로, 상속세는 그 한 시점에 남은 재산 전체를 한꺼번에 과세 대상으로 삼는다. 살아 있는 동안 어떤 거래로 재산을 모았는지와 무관하게, 마지막으로 남긴 재산이 누구에게 얼마나 넘어가는지가 과세의 기준이 되는 것이다. 이에 비해 증여세는 살아 있는 사람이 자신의 재산을 다른 사람에게 무상으로 넘겨줄 때, 그 받는 사람에게 부과된다. 재산의 이전이 사망이라는 단일한 계기에 묶이지 않고 생전에 여러 차례 나뉘어 일어날 수 있으므로, 과세는 무상으로 넘겨받는 행위가 있을 때마다 그 받은 재산을 단위로 이루어진다. 곧 같은 무상 이전이라도, 그것이 사망을 계기로 한 번에 일어나는지 생전에 나뉘어 일어나는지에 따라 과세의 단위와 시점이 달라지는 것이다.</p>
+<p>이처럼 두 세금이 무상으로 얻은 부에 부과되는 것은 부의 재분배라는 목적과 맞닿아 있다. 노력의 대가가 아니라 무상으로 넘겨받은 재산에 세금을 매겨 거두어들인 재원은, 사회적으로 다시 분배되어 부가 한쪽으로 쏠리는 것을 완화한다. 이때 넘겨받은 재산이 클수록 더 무거운 부담을 지우면, 같은 무상 이전이라도 큰 부의 이전일수록 재분배 효과가 커진다.</p>
+<p>두 세금은 무상 이전이라는 같은 실질을 다루므로, 한쪽에만 세금을 매기고 다른 쪽을 비워 두면 과세를 피하는 길이 열린다. 가령 사망 시 한꺼번에 물려주면 무겁게 과세되는 재산을, 생전에 미리 나누어 넘겨 부담을 줄이려는 시도가 있을 수 있다. 무상 이전이라는 실질은 같은데 부과 방식이 다르다는 점을 이용하는 것이다. 만약 생전의 무상 이전에 세금을 매기지 않는다면, 사람들은 사망 전에 재산을 모두 넘겨 상속세를 피하려 할 것이고, 그러면 무상으로 큰 부를 넘겨받고도 세 부담을 지지 않는 경우가 생겨 형평이 무너진다. 그래서 두 세금은 서로의 빈틈을 메우도록 함께 운용되며, 무상 이전이라는 경제적 실질을 같은 기준으로 다루어야 공평한 과세가 이루어진다. 나아가 어디까지를 무상 이전으로 보아 과세할 것인가는, 법조문에 적힌 형태만 과세할지 실질이 같은 새로운 이전 형태까지 과세할지를 두고 조세 법률주의의 두 해석이 부딪치는 지점이기도 하다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 한 원칙이 두 방향으로 해석되는 양상을, (나)는 한 실질에 매겨지는 두 세금의 같고 다른 점을 서술하고 있다.</li>
+<li>② (가)는 특정 원칙이 폐기되어 온 과정을, (나)는 두 세금의 통합 방안을 제안하고 있다.</li>
+<li>③ (가)는 (나)와 달리, 구체적 사례를 들어 제도의 변천을 시대순으로 밝히고 있다.</li>
+<li>④ (나)는 (가)와 달리, 서로 대립하는 두 학자의 견해를 비교해 그 우열을 가리고 있다.</li>
+<li>⑤ (가)와 (나)는 모두 기존 제도의 한계를 비판한 뒤 새로운 제도의 도입을 주장하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong>
+(가)는 조세 법률주의라는 한 원칙이 열거주의·포괄주의 두 방향으로 해석되는 양상을 서술하고, (나)는 무상 이전이라는 한 실질에 매겨지는 상속세·증여세의 본질적 같음과 부과 방식의 다름을 서술해요. 그래서 ①이 정답입니다. ② (가)는 원칙의 <em>폐기</em>가 아니라 해석을 다루고, (나)는 두 세금의 <em>통합 방안</em>을 제안하지 않아요. ③ 시대순 변천 서술은 두 글 모두에 없고, ④ (나)는 <em>학자 두 사람의 우열</em>을 가리지 않으며, ⑤ 새 제도의 도입 주장도 두 글에 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 법조문의 문언만을 따를 때 생기는 과세 공백은, 해석을 넓힐수록 함께 커진다.</li>
+<li>② 해석을 지나치게 넓히면 명문 규정 없는 부담이 부과되어 납세자의 권리가 침해될 수 있다.</li>
+<li>③ 두 해석의 균형은 포괄주의를 버리고 열거주의만을 따를 때 이루어진다.</li>
+<li>④ 어느 태도에 무게를 두든 같은 세목의 과세 범위와 납세자의 부담은 동일하게 유지된다.</li>
+<li>⑤ 두 해석이 균형을 이루어야 하는 까닭은 법률에 근거한다는 대원칙을 벗어나기 위해서이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+㉠은 두 해석의 균형이 필요하다는 부분이죠. 3문단에서 "해석이 지나치게 넓으면 명문 규정 없는 부담이 납세자에게 부과되어 권리가 침해될 우려가 있다"고 했으니 ②가 정답입니다. ① 과세 공백은 문언만 따를 때 생기고 해석을 <em>넓힐수록 줄어드는</em> 것이라 "함께 커진다"는 거꾸로고, ③ 균형은 두 태도를 <em>함께</em> 운용하는 것이지 포괄주의를 버리는 게 아니에요. ④ 어느 태도에 무게를 두느냐에 따라 범위·부담이 <em>달라질 수 있다</em>고 했고, ⑤ 균형은 대원칙을 <em>벗어나기</em> 위해서가 아니라 그 <em>아래에서</em> 권리와 회피 방지를 함께 이루기 위해서입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>(가)와 (나)를 이해한 학생의 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 조세 열거주의는 어떤 무상 이전이 법에 명시되어 있지 않다면 그에 과세하기 어렵다고 보겠군.</li>
+<li>② 조세 포괄주의는 법에 명시되지 않은 형태의 무상 이전이라도 그 경제적 실질이 유사하면 과세를 검토할 수 있다고 보겠군.</li>
+<li>③ 상속세와 증여세를 함께 운용하는 것은 무상 이전이라는 같은 실질의 빈틈을 메우려는 것이라고 볼 수 있겠군.</li>
+<li>④ 조세 포괄주의는 사망을 계기로 한 이전에만 세금을 매기고 생전의 이전은 과세 범위에서 제외해야 한다고 보겠군.</li>
+<li>⑤ 생전에 재산을 나누어 넘겨 부담을 줄이려는 시도는, 무상 이전의 실질이 같은 거래 사이의 형평과 관련된 문제라고 볼 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+조세 포괄주의는 명시되지 않은 유사 거래에도 과세를 <em>넓히는</em> 해석이에요. 그런데 ④는 포괄주의가 사망을 계기로 한 이전에만 매기고 생전의 이전은 <em>제외</em>해야 한다고 했는데, 이는 과세 범위를 좁히는 주장이라 포괄주의의 성격과 어긋나고 (나)의 증여세 설명(생전 무상 이전에 과세)과도 맞지 않아 적절하지 않으므로 정답입니다. ①·②는 (가)의 두 해석을 무상 이전에 적용한 것이고, ③·⑤는 (나)의 함께 운용·형평 논리에 부합하는 반응이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(나)를 바탕으로 할 때, ㉡과 ㉢의 차이를 가져오는 까닭으로 가장 적절한 것은?</p>
+<ul>
+<li>① 두 세금이 실현하려는 가치가 서로 반대되기 때문이다.</li>
+<li>② 두 세금 가운데 하나만이 무상 이전에 부과되기 때문이다.</li>
+<li>③ 재산이 옮겨지는 계기가 사망인지 생전의 무상 이전인지에 따라 다르기 때문이다.</li>
+<li>④ 한 세금은 재산을 주는 사람에게, 다른 세금은 그 재산을 받는 사람에게 부과되기 때문이다.</li>
+<li>⑤ 두 세금이 조세 법률주의와 무관하게 부과되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+(나) 2문단에서 상속세는 <em>사망</em>을 계기로, 증여세는 <em>생전의 무상 이전</em>을 계기로 부과된다고 했고, 그 계기의 차이 때문에 과세의 단위와 기준이 달라진다고 했어요. 그러니 ③이 정답입니다. ① 두 세금은 공평성·재분배라는 <em>같은</em> 가치를 지향하므로 "반대"는 틀렸고, ② 두 세금 <em>모두</em> 무상 이전에 부과되며, ④ 증여세는 <em>받는 사람</em>에게 부과된다고 했으니 한 세금이 "주는 사람"에게 부과된다는 전제부터 어긋나고, 두 세금의 차이를 가져오는 까닭은 납세 의무자가 아니라 이전의 <em>계기</em>이므로 맞지 않아요. ⑤ 두 세금은 조세 법률주의 아래에서 부과되므로 "무관하게"는 맞지 않아요.</p>
+<p><strong>13번 [3점] — 정답 ②</strong>
+〈보기〉에서 갑이 <em>생전에 나누어 넘긴</em> 재산은 사망을 계기로 이전된 것이 아니라 생전의 무상 이전이에요. (나)에 따르면 그것은 받은 자녀에게 <em>증여세</em>가 부과되지 상속세가 부과되지 않으므로, "상속세가 부과되겠군"이라는 ②는 적절하지 않아 정답입니다. ①은 생전 무상 이전 → 증여세(2문단), ⑤는 무상 이전의 실질이 같은데 부담이 달라지는 점을 이용(3문단), ③·④는 세법에 명시되지 않은 새 권리에 대한 열거주의·포괄주의의 판단((가) 2문단)에 각각 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가)와 (나)를 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 나라의 세법은 ‘사망으로 재산이 상속인에게 넘어가면 상속세를, 살아 있는 사람이 재산을 무상으로 넘기면 그 받은 사람에게 증여세를 매긴다.’라고 규정하고 있다. 부유한 갑은 사망 시 자신의 재산을 자녀에게 한꺼번에 물려주면 상속세가 무겁게 매겨질 것을 염려하여, 생전에 여러 해에 걸쳐 재산을 조금씩 자녀에게 무상으로 넘겼다. 한편 갑은 자신이 보유한 권리 가운데 세법에 그 이름이 명시되어 있지 않은 새로운 형태의 재산적 권리도 자녀에게 무상으로 넘겼는데, 그 권리를 넘기는 것은 경제적 실질에서 일반적인 재산의 무상 이전과 다르지 않다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 생전에 자녀에게 재산을 무상으로 넘긴 것에 대해서는, 그것을 받은 자녀에게 증여세가 부과되겠군.</li>
+<li>② 갑이 생전에 나누어 넘긴 재산은 사망을 계기로 이전된 것이 아니므로, 그에 대해서는 상속세가 부과되겠군.</li>
+<li>③ 세법에 이름이 명시되지 않은 새로운 재산적 권리의 무상 이전에 대해, 조세 열거주의는 과세하기 어렵다고 보겠군.</li>
+<li>④ 세법에 이름이 명시되지 않은 새로운 재산적 권리의 무상 이전에 대해, 조세 포괄주의는 경제적 실질이 유사하므로 과세를 검토할 수 있다고 보겠군.</li>
+<li>⑤ 갑이 재산을 한꺼번에 물려주지 않고 생전에 나누어 넘긴 것은, 무상 이전의 실질이 같은데도 부담이 달라지는 점을 이용한 것이라고 볼 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그는 두 손으로 쏟아지는 물을 막아 보려 했다.</li>
+<li>② ⓑ: 그는 운동화 끈을 단단히 묶고 길을 나섰다.</li>
+<li>③ ⓒ: 그는 형편이 어려운 이웃을 두루 살펴 보살폈다.</li>
+<li>④ ⓓ: 병사들은 적의 공격으로부터 성을 끝까지 지켜 냈다.</li>
+<li>⑤ ⓔ: 이 도구는 좁은 틈을 벌리는 데에 쓰인다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong>
+ⓔ‘쓰인다(공평성·재분배를 실현하는 도구로 쓰인다)’와 ⑤의 ‘쓰인다(틈을 벌리는 데에 쓰인다)’는 모두 <em>어떤 일에 사용된다</em>는 뜻이라 의미가 같아 ⑤가 정답입니다. 나머지는 본문의 ⓐ~ⓓ와 <em>예문 속 단어의 의미가 달라요</em>. ① ⓐ‘막아(자의적 변경을 막아)’는 <em>하지 못하게 한다(금지)</em>는 뜻인데 ①은 <em>흐름을 물리적으로 가로막는다</em>는 뜻이고, ② ⓑ‘묶인다(권한이 법조문 안에 묶인다)’는 <em>제약된다</em>는 뜻인데 ②는 <em>끈으로 동여맨다</em>는 뜻이며, ③ ⓒ‘살펴(실질까지 살펴)’는 <em>자세히 따져 본다</em>는 뜻인데 ③은 <em>돌보아 보살핀다</em>는 뜻이고, ④ ⓓ‘지킨다(형평을 지킨다)’는 <em>유지·보전한다</em>는 뜻인데 ④는 <em>적의 공격을 막아 방어한다</em>는 뜻이라 모두 본문과 의미가 달라요. 그래서 본문과 의미가 일치하는 것은 ⑤뿐입니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>무상 이전</strong>: 대가 없이 재산이 한 사람에게서 다른 사람에게로 옮겨 가는 것. 상속세·증여세가 매겨지는 공통의 실질이에요.</li>
+<li><strong>상속세</strong>: 사람이 <em>사망</em>하여 재산이 상속인에게 넘어갈 때, 사망 시점을 기준으로 남긴 재산에 부과되는 세금.</li>
+<li><strong>증여세</strong>: <em>살아 있는</em> 사람이 재산을 무상으로 넘길 때, 그 <em>받는 사람</em>에게 받은 재산을 단위로 부과되는 세금.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>상속세(㉡)</th>
+<th>증여세(㉢)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이전의 계기</td>
+<td>사망</td>
+<td>생전의 무상 이전</td>
+</tr>
+<tr>
+<td>부과 단위·시점</td>
+<td>사망 시점, 남긴 재산</td>
+<td>무상 이전이 있을 때마다 받은 재산</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>무상 이전에 부과 · 공평성·부의 재분배 실현</td>
+<td>(좌동)</td>
+</tr>
+<tr>
+<td>함께 운용하는 까닭</td>
+<td>한쪽만 매기면 다른 쪽으로 회피 가능 → 빈틈을 서로 메움</td>
+<td>(좌동)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 세금은 <em>사망이냐 생전이냐</em>라는 계기만 다를 뿐 무상 이전이라는 같은 실질을 다뤄요. 그래서 함께 묶어 운용해 회피를 막고, 어디까지를 무상 이전으로 볼지에서 조세 법률주의의 두 해석이 다시 부딪힙니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>상속세와 증여세의 공통된 실질은 무엇인가요?</div><div class='qa-a'>재산이 무상으로(대가 없이) 이전될 때 부과된다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 세금의 부과 계기는 어떻게 다른가요?</div><div class='qa-a'>상속세는 사망을, 증여세는 생전의 무상 이전을 계기로 부과됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 세금을 함께 운용하는 까닭은?</div><div class='qa-a'>한쪽에만 과세하면 다른 쪽으로 부담을 피할 수 있어, 무상 이전의 빈틈을 서로 메우기 위해서입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2026학년도 6월 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>근대 국가는 시민의 생명과 재산을 보호하는 것을 일차적인 존립 이유로 ⓐ삼았다. 최소한의 금지 행위만을 법으로 정하고 이를 위반하는 경우에만 개입함으로써 시민의 자유를 최대한 보장하고자 했다. 이러한 목적이 반영된 자유주의적 법 모델은 근대법의 근간을 이루었다. 그러나 이 모델은 자유를 실질적으로 누릴 사회ㆍ경제적 조건이 모두에게 동등하게 주어지지 않은 상황에서 갈등이나 분쟁에 대처하는 데 한계가 있었다. 이를 보완할 목적으로 등장한 것이 사회복지국가적 법 모델이다. 이 모델에서는 법이 삶의 세계에 더 깊숙이 개입한다. 개인의 권리 보장뿐 아니라 주거, 노동, 환경 등의 영역에서 평등과 연대의 가치를 구현하기 위한 제도의 구축 및 관리도 법의 역할이 되어, 그 역할 수행에 필요한 의무 규정들이 늘어난다. 가령 ｢대기환경보전법｣은 오염 물질의 배출을 규제하는 대기 환경 관리 체계의 기능을 강화함으로써, 깨끗한 환경에서 살 시민의 권리를 실현하기 위한 공적 토대를 만들고자 한다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>그런데 법적 규제가 과도할 경우 삶의 세계를 구성해 온 고유한 직업 윤리 등 문화적ㆍ도덕적 규범이 강행적 성격을 띤 법 규범에 의해 침범당하는 경우가 생긴다. 이로써 사회 각 영역의 자율적 조절 기능이 훼손되고 사회의 통합이 법에 의해 와해된다. 그럴수록 공동체는 갈등 상황에서 법적 해결에 의존하게 된다. 규제에 대한 요구량이 증가하면 법의 수행 능력은 한계에 ⓑ부딪힌다. '문제가 발생할 때 법은 마지막 수단이어야 한다.' 등 근대법의 기본 원리가 유지되기도 ⓒ어렵다. 결국 법의 규범 구조가 균열된 상태에서, 법으로 문제를 해결해야 한다는 당위만 ⓓ남는다. 그로 인해 법 규범이 삶의 세계에 점점 더 깊숙이 개입하게 되어 사회의 자율적 조절 기능은 더욱 망가지는 과정이 반복된다. ㉠이러한 악순환을 방지하면서 사회복지 체계를 보완하고자 등장한 것이 절차주의적 법 모델이다.</p></div>
+
+<p>절차주의적 법 모델에 따르면, 법은 분쟁에 직접 개입해 해결책을 ⓔ내놓는 대신 분쟁 당사자들의 논의와 협상을 위한 절차나 권한 분배 등 분쟁 해결 방식에만 관여한다. 이로써 사회의 자율적 조절 기능을 보존하고 확대하고자 한다. 또한 권력과 자본이 논의의 장에 개입해 일부가 발언권을 독점하거나 부당한 영향력을 행사할 수 있으므로 이에 대한 점검 과정을 절차 안에 두도록 의무화한다. 당사자 간의 자유롭고 균등한 의견 개진 가능성을 최대한 보장하는 것이 절차주의적 법 모델의 목적이다.</p>
+<p>위의 세 가지 법 모델은 시대의 요구에 따라 등장했으나 앞선 모델을 다음 모델이 대체하며 법체계를 지배해 온 것은 아니다. 각각의 법 모델이 고유한 타당성과 필요성을 가진 채 현재의 법체계 안에 공존하고 있다.</p>
+<p><strong>(나)</strong></p>
+<p>재산 관계에서는 개인의 자유가 최대한 보장되어야 하므로 계약으로 권리와 의무가 인정되는 것이 원칙이다. 그러나 사회ㆍ경제적 조건을 달리하는 당사자들 간에서는, 약자 보호를 위해 법률로 그 내용이 정해지는 경우가 있고 이때는 이를 계약으로 변경할 수 없다.</p>
+<p>임대차의 경우 그 내용은 계약으로 정해지는 것이 원칙이지만, 임대차의 목적물인 임차물이 생활의 근거인 주택이나 생업의 근거인 상가이면 임차인 보호라는 과제는 계약만으로는 실현되기 어렵다. 그래서 ｢주택임대차보호법｣, ｢상가건물 임대차보호법｣에는 계약보다 우선 적용되는 제도가 마련되어 있다. 예컨대 계약으로 임대차 기간을 이 법들에 규정된 최단 존속 기간보다 짧게 정했더라도 임차인에게는 최단 존속 기간이 보장된다. 한편 임대차 계약이 종료되기 전의 일정 기간 내에 임대인이나 임차인이 계약 갱신 여부에 대한 의사를 표시할 수 있다. 이 기간 내에 임대인이 임대차 종료를 요구한 경우, 임차인이 갱신 요구권을 행사하면 임대차 종료 예정일부터 최단 존속 기간만큼 임대차가 연장된다. 이러한 갱신 요구권은 임대차 기간이 정해져 있어야 인정된다. 단, 임대인은 이 법들에 규정된 갱신 거절 사유를 증명해 갱신을 거절함으로써 임대차를 종료시킬 수 있다. 갱신 거절 사유의 예로 임대인이 임차물인 주택에 실거주하려는 경우를 들 수 있다.</p>
+<p>주택이나 상가 임대차에서도 법이 아니라 계약으로 재산 관계가 정해지는 경우가 있다. 임차인이 임차물을 사용할 권리가 소멸했거나 임차인의 경제력이 충분하면 임차인을 보호할 필요가 없기 때문이다. 예컨대 ㉮임대차 종료 후 임차물을 반환할 때 임차인이 이를 원상회복할 의무를 지는지를 결정할 때는 계약이 법률보다 우선 적용된다. 또한 보증금이 ｢상가건물 임대차보호법｣에 정해진 상한액을 초과하면 최단 존속 기간이 적용되지 않으므로, 이때 존속 기간을 정하지 않기로 계약했다면 당사자들은 자유롭게 임대차를 종료시킬 수 있다.</p>
+<p>임대차 분쟁이 발생한 경우 이를 해결하기 위한 원칙적 절차는 법관이 주도하는 재판 절차인데, 여기서 당사자들은 각자 자신의 주장을 뒷받침할 자료를 제출해야 한다. 한편 분쟁 해결 절차에서 당사자들의 자유로운 의견 개진을 보장하기 위해 ｢주택임대차보호법｣과 ｢상가건물 임대차보호법｣에는 임대차 분쟁 조정 절차도 마련되어 있다. 이때 조정 절차를 주관하는 조정위원회가 당사자를 위해 자료를 수집해 줄 수 있다. 그러나 임대차 분쟁 조정 절차는 당사자들이 분쟁 해결을 위해 이 절차를 따르기로 합의해야 시작되며, 이러한 합의가 이루어지지 않으면 재판 절차를 따라야 한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 특정 개념이 지니는 의의와 가치를, (나)는 특정 개념의 변화에 대한 전망을 제시하고 있다.</li>
+<li>② (가)는 시대의 요구가 반영된 방안들이 출현해 온 과정에 대해, (나)는 특정 과제의 해결을 위한 제도에 대해 서술하고 있다.</li>
+<li>③ (가)는 (나)와 달리, 사회 현상을 분석한 여러 학자의 이론을 다양한 사례를 들어 설명하고 있다.</li>
+<li>④ (나)는 (가)와 달리, 문제 해결을 위해 등장한 방안이 과도하게 적용될 경우 발생할 수 있는 문제점을 밝히고 있다.</li>
+<li>⑤ (가)와 (나)는 모두 문제를 해결하려는 기존의 방안들이 지닌 한계점을 비판한 후, 새로운 방안을 제안하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>4번 — 정답 ②</strong><br />
+(가)는 세 가지 법 모델이 각각 시대의 요구를 반영해 출현해 온 과정을, (나)는 임차인 보호라는 과제 해결을 위해 계약에 우선 적용되는 제도를 서술하므로 ②가 적절하다. ④의 '방안이 과도하게 적용될 경우의 문제점'은 (나)가 아니라 (가)([A] 문단)에 해당한다.</p>
+<p><em>선택률</em> — 응시 98,566명 — ①2.4% ②83.6% ③1.8% ④4.8% ⑤6.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>[A]를 바탕으로 ㉠을 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 법이 사회 각 영역의 자율적 조절 기능에 점점 더 의존한다.</li>
+<li>② 근대법의 기본 원리를 철저히 고수하는 법 정책으로 인해 문제 해결이 지체된다.</li>
+<li>③ 이전에는 법적 규제를 통해 해결하지 않던 문제들까지도 법의 해결 과제가 된다.</li>
+<li>④ 갈등 상황에서는 문화적으로 전승되어 온 규범이 법 규범보다 우선적으로 투입된다.</li>
+<li>⑤ 삶의 세계에 대한 법의 간섭 빈도가 점점 더 줄어들어 법의 기본 원리에 대한 사회적 신뢰가 깨진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+㉠'이러한 악순환'은 법 규범에 의해 사회의 자율적 조절 기능이 훼손되어 공동체가 갈등 상황에서 점점 더 법적 해결에 의존하게 되는 과정을 가리킨다. 따라서 이전에는 법으로 해결하지 않던 문제까지 법의 해결 과제가 된다는 ③이 적절하다. ①은 자율적 조절 기능이 오히려 망가지는 상황과 어긋나고, ⑤는 법의 간섭 빈도가 늘어난다는 내용과 반대이다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①2.9% ②7.6% ③77.9% ④5.7% ⑤5.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)와 (나)를 이해한 학생이 보인 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 자유주의적 법 모델은 임대인과 임차인이 합의한 계약을 법이 존중하여 그 내용에 원칙적으로 개입하지 말아야 한다고 판단하겠군.</li>
+<li>② 사회복지국가적 법 모델은 임차인의 생업을 보호할 필요가 인정될 때는 임대인의 재산권에 대한 제한이 불가능하지 않다고 여기겠군.</li>
+<li>③ 절차주의적 법 모델은 임대차 분쟁 조정에서 당사자들의 자유로운 의견 개진의 기회를 법으로 보장해야 한다고 보겠군.</li>
+<li>④ 자유주의적 법 모델은 사회복지국가적 법 모델과 달리, 임차인의 갱신 요구를 임대인이 거절할 수 없어야 한다고 보겠군.</li>
+<li>⑤ 사회복지국가적 법 모델과 절차주의적 법 모델은 모두, 임대차 갈등을 다룰 때 임대인과 임차인이 대등한 관계가 아닐 수 있음을 고려하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+자유주의적 법 모델은 시민의 자유(계약의 자유)를 최대한 보장하므로, 임차인의 갱신 요구를 임대인이 거절할 수 '있어야' 한다고 볼 것이다. 따라서 ④가 부적절하다. ⑤는 두 모델 모두 당사자 간 조건의 불평등(사회ㆍ경제적 조건 차이, 권력·자본의 부당한 영향력)을 전제하므로 적절하다.</p>
+<p><em>선택률</em> — 응시 98,562명 — ①2.9% ②11.0% ③6.0% ④72.3% ⑤8.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(나)를 바탕으로 할 때, ㉮의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 임차인의 경제력이 충분하면 임대차 기간이 보장될 필요가 없기 때문이다.</li>
+<li>② 임차인과 임대인이 법률에 규정된 내용을 계약으로써 변경할 수 없기 때문이다.</li>
+<li>③ 임차인의 권리가 법률로 정해져야 개인의 자유가 최대한 보장되기 때문이다.</li>
+<li>④ 임대차 목적물인 주택이나 상가가 더 이상 임차인의 생활이나 생업의 근거가 아니기 때문이다.</li>
+<li>⑤ 임차물이 상가인 경우 임대차의 내용 결정은 임차인의 사회ㆍ경제적 조건과 무관하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>7번 — 정답 ④</strong><br />
+㉮는 임대차가 종료된 후의 상황이므로 임차인이 임차물을 사용할 권리가 소멸했고, 임차물이 더 이상 임차인의 생활·생업의 근거가 아니어서 임차인을 보호할 필요가 없다. 그래서 계약이 법률보다 우선 적용된다(④). ①의 '경제력'은 ㉮와 무관한 별개의 사유이다.</p>
+<p><em>선택률</em> — 응시 98,588명 — ①19.9% ②10.6% ③6.2% ④55.4% ⑤7.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> (가), (나)를 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 자신이 소유한 A 주택과 B 상가를 을에게 임대하기로 계약하면서, A 주택의 임대차 기간은 ｢주택임대차보호법｣에 규정된 최단 존속 기간으로 정했으나 B 상가의 임대차 기간은 정하지 않기로 했다. B 상가의 보증금은 ｢상가건물 임대차보호법｣에 규정된 상한액을 초과한다.
+갑이 위의 두 법에 규정된, 갱신 여부에 대한 의사를 표시할 수 있는 기간 중에 을에게 A 주택과 B 상가에 대한 임대차 종료를 주장했으나 을은 갱신을 요구했다. 하지만 갑은 위 기간 내에 갱신을 거절하고 을에게 A 주택과 B 상가를 반환하라고 함으로써 분쟁이 생겼다. 을은 임대차 분쟁 조정 절차로 분쟁을 해결하자고 제안했으나 갑이 이를 거절하여 결국 합의가 이루어지지 않았다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 A 주택에 실거주할 계획이 있음을 증명한 경우, 갑과 을 간의 A 주택 임대차는 갱신되지 않겠군.</li>
+<li>② 을이 갱신 요구권을 행사하여 임대차 기간을 연장할 수 있다면, 이것은 평등과 연대의 가치 실현을 위해 마련된 의무 규정이 적용된 것이겠군.</li>
+<li>③ 을은 갑에게 ｢상가건물 임대차보호법｣에 규정된 최단 존속 기간을 주장할 수 없겠군.</li>
+<li>④ 을의 의사와 무관하게 갑이 B 상가 임대차를 종료시킬 수 있는 것은, 시민 개개인의 자유가 갑에게 보장된 것이겠군.</li>
+<li>⑤ 갑과 을 간의 A 주택 임대차에 관한 분쟁 해결 절차에서는 조정위원회가 을을 위해 자료를 수집할 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong><br />
+임대차 분쟁 조정 절차는 당사자들이 절차를 따르기로 합의해야 시작되는데, 〈보기〉에서 갑이 거절하여 합의가 이루어지지 않았으므로 재판 절차를 따라야 한다. 재판 절차에서는 당사자들이 각자 자료를 제출해야 하므로 조정위원회가 을을 위해 자료를 수집할 수 없다(⑤ 부적절). ③·④는 B 상가의 보증금이 상한액을 초과해 최단 존속 기간이 적용되지 않고, 존속 기간을 정하지 않아 갱신 요구권도 인정되지 않기 때문에 적절하다.</p>
+<p><em>선택률</em> — 응시 98,581명 — ①3.9% ②15.7% ③13.8% ④21.7% ⑤44.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그는 신문 기사를 주장의 근거로 삼았다.</li>
+<li>② ⓑ: 아이가 한눈을 팔다가 친구와 부딪혔다.</li>
+<li>③ ⓒ: 그가 사용한 전문 용어들은 너무 어렵다.</li>
+<li>④ ⓓ: 열심히 장사했더니 이익이 많이 남았다.</li>
+<li>⑤ ⓔ: 언니가 화분들을 모두 베란다에 내놓았다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+ⓐ와 ①의 '삼다'는 모두 '무엇을 무엇이 되게 하거나 여기다'의 뜻이다. ②는 '힘 있게 마주 닿다'(본문: 상황에 직면하다), ③은 '이해하기 까다롭다'(본문: 가능성이 거의 없다), ④는 '밑천보다 더 얻다'(본문: 나머지가 있게 되다), ⑤는 '물건을 밖으로 옮기다'(본문: 의견을 제시하다)로 본문과 다르다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①95.8% ②0.3% ③0.6% ④1.5% ⑤1.8%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>조세 법률주의와 과세의 두 해석 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='조세 법률주의와 과세의 두 해석 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

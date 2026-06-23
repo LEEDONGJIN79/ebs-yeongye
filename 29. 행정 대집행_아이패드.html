@@ -1,0 +1,825 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>행정 대집행 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>행정 대집행 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 옆집이 허가 없이 담장 밖으로 불법 건축물을 쭉 늘려 지었다고 해 봐요. 동네 사람들이 항의해도 집주인이 "내 건물 내가 알아서 한다"며 버티면 어떻게 될까요? 시청이 직접 포클레인을 불러 그 불법 건축물을 헐어 버리고, 헌 비용은 나중에 그 집주인에게 청구합니다. 바로 이런 일을 법에서는 <strong>행정 대집행</strong>이라고 불러요.</p>
+<p><strong>행정 대집행이란, 국민이 '법으로 마땅히 해야 할 어떤 일'을 하지 않고 버틸 때, 행정청(시청·구청 같은 행정 기관)이 그 사람을 대신해 직접 그 일을 하거나 다른 사람을 시켜 하게 하고, 든 비용을 그 사람에게서 거두어들이는 제도</strong>예요. 여기서 핵심은 "대신해 줄 수 있는 일"이라는 점이에요. 건물을 허무는 일은 본인이 아니라 누가 해도 결과가 같죠? 이렇게 <strong>남이 대신할 수 있는, 무언가를 적극적으로 해야 하는 의무</strong>를 <em>대체적 작위 의무</em>라고 부릅니다. 반대로 '밤에 시끄럽게 하지 마라'처럼 <em>하지 말아야 할 의무</em>(부작위 의무)나, '본인이 직접 증언하라'처럼 <em>오직 그 사람만 할 수 있는 일</em>(비대체적 작위 의무)은 대신해 줄 수가 없으니 대집행의 대상이 못 됩니다.</p>
+<p>그런데 행정청이 남의 재산을 헐어 버리는 건 굉장히 무서운 힘이죠. 그래서 함부로 쓰면 안 되고 <strong>반드시 법에 근거가 있어야</strong> 합니다. 이것을 <em>법치 행정의 원리</em>라고 해요. 게다가 곧바로 포클레인을 부르는 게 아니라 "○월 ○일까지 안 헐면 우리가 헌다"고 미리 알려 주는 절차(<em>계고</em>)부터 차근차근 밟아야 하고, 정말 그렇게까지 해야 할 만큼 공익에 해가 되는 경우여야만 쓸 수 있습니다.</p>
+<blockquote>
+<p>한마디로: <strong>행정 대집행은 "버티는 사람을 대신해 행정청이 직접 일을 처리하고 그 값을 받아 내는" 강제 수단</strong>이에요. 다만 <em>어떤 의무에 쓸 수 있는지</em>(요건)와 <em>어떤 순서로 해야 하는지</em>(절차)가 법으로 빈틈없이 정해져 있다는 점이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>행정 대집행이라는 제도가 "언제·무엇에·어떤 순서로" 작동하는가</strong>가 있습니다. 같은 '의무 불이행'이라도 그것이 대신해 줄 수 있는 일인지, 공법상 의무인지에 따라 대집행을 쓸 수 있는지가 갈리거든요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>행정 대집행<small>"대체적 작위 의무 불이행을 행정청이 대신 처리"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>대집행을 <em>언제</em> 쓸 수 있는지(실체적 요건)와, 절차를 거쳐 든 비용을 <em>누구에게</em> 받아 내는지를 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>같은 의무라도 <em>무엇에</em> 대집행을 쓸 수 있는지를, 대체적 작위 의무·비대체적 작위 의무·부작위 의무를 견주며 따집니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>대집행과 <em>닮았지만 다른</em> 강제 수단(이행강제금·직접강제)이 어떻게 구별되는지, 그 경계를 잡습니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 행정 대집행이 어떤 의무에 대해 어떤 절차로 작동하고, 비슷한 다른 제도들과 어디서 갈라지는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>국가나 지방 자치 단체와 같은 행정 주체가 부과한 공법상 의무를 의무자가 이행하지 않을 때, 행정청이 의무자를 대신하여 직접 그 의무의 내용을 실현하거나 제삼자에게 이를 하게 하고 그 비용을 의무자로부터 거두어들이는 제도를 행정 대집행이라 한다. 행정 대집행은 의무자의 신체나 재산에 실력을 가하지 않고 의무의 내용만을 대신 실현한다는 점에서, 의무자의 신체·재산에 직접 힘을 ⓐ<u>가하여</u> 의무 이행 상태를 만드는 다른 강제 수단과 구별된다. 행정 대집행은 국민의 재산권 등 기본권을 제한하는 결과를 ⓑ<u>수반하므로</u>, 헌법상 법치 행정의 원리에 따라 반드시 법률의 근거가 있어야 한다. 따라서 의무를 명할 수 있는 명령권의 근거가 되는 법률이 곧바로 그 의무를 강제 집행할 근거가 되지는 않으며, 대집행을 위해서는 별도의 법적 근거가 요구된다.</p>
+<p>행정 대집행법은 대집행이 적법하게 이루어지기 위한 실체적 요건을 정하고 있다. 첫째, 공법상 의무의 불이행이 있어야 한다. 가령 건축법을 ⓒ<u>위반하여</u> 건축물을 지은 사람은 공법인 건축법에 따라 철거 의무를 지므로 그 불이행은 대집행의 대상이 된다. 반면 토지를 매도하면서 매도인이 건물을 헐어 주기로 약정한 경우, 그 철거 의무는 공법상 의무가 아니라 사법상의 약정에 따른 의무이므로 대집행의 대상이 되지 않는다. 둘째, 그 의무가 타인이 대신 이행할 수 있는 대체적 작위 의무여야 한다. 셋째, 다른 수단으로는 의무 이행을 확보하기 어려워야 한다. 이는 의무자에게 가장 적은 침해를 주는 방법을 먼저 ⓓ<u>고려하라는</u> 요청으로, 대집행이 최후의 수단임을 뜻한다. 넷째, 의무 불이행을 그대로 두는 것이 심히 공익을 해친다고 인정되어야 한다.</p>
+<p>이러한 요건이 갖추어졌더라도 행정청은 곧바로 대집행을 실행할 수 없으며, 법이 정한 절차를 차례로 거쳐야 한다. 먼저 ㉠<u>상당한 이행 기한</u>을 정하여 그때까지 의무가 이행되지 않으면 대집행을 한다는 뜻을 문서로 알리는 계고를 한다. 계고에도 의무가 이행되지 않으면, 행정청은 대집행의 시기와 책임자, 비용의 개산액 등을 적은 대집행 영장을 의무자에게 통지한다. 통지된 시기에 이르러 행정청은 스스로 또는 제삼자를 통해 의무의 내용을 실현하는 실행에 들어간다. 다만 비상시이거나 위험이 절박하여 계고와 통지를 거칠 여유가 없을 때에는 이 두 절차를 생략할 수 있다.</p>
+<p>대집행에 든 비용은 그 의무를 이행하지 않은 의무자가 부담한다. 행정청은 실제로 든 비용의 액수와 납부 기일을 정하여 의무자에게 납부를 명하고, 의무자가 이를 내지 않으면 국세 체납 처분의 예에 따라 강제로 징수할 수 있다. 이때 비용 납부 의무는 대집행을 실행한 행정 주체에 대하여 지는 것이므로, 행정청이 제삼자를 시켜 대집행을 실행하였더라도 그 제삼자가 의무자에게 직접 비용을 청구할 수는 없다. 한편 대집행의 각 단계에서 이루어지는 계고, 영장 통지, 비용 납부 명령은 각각 의무자의 권리·의무에 영향을 미치는 별개의 처분으로 다루어져, 의무자는 그 단계마다 그 위법을 다투어 행정 소송을 ⓔ<u>제기할</u> 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 행정청이 의무를 명할 근거가 되는 법률은 그 의무를 강제 집행할 근거도 당연히 된다.</li>
+<li>② 토지 매도인이 약정으로 부담한 건물 철거 의무의 불이행은 행정 대집행의 대상이 된다.</li>
+<li>③ 대집행을 실행할 때 행정청은 어떠한 경우에도 계고와 영장 통지 절차를 생략할 수 없다.</li>
+<li>④ 대집행에 든 비용은 그 의무를 이행하지 않은 의무자가 부담한다.</li>
+<li>⑤ 행정 대집행은 의무자의 신체나 재산에 직접 실력을 가하여 의무 이행 상태를 만든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 (정답 ④)</strong> — 4문단에 "대집행에 든 비용은 그 의무를 이행하지 않은 의무자가 부담한다"라고 그대로 나와 있어요. 그래서 ④가 일치합니다. ① 1문단에서 "의무를 명할 명령권의 근거 법률이 곧바로 강제 집행의 근거가 되지는 않으며, 별도의 법적 근거가 요구된다"고 했으니 정반대예요. ② 약정에 따른 철거 의무는 사법상 의무라 대집행 대상이 <em>아니라고</em> 2문단에 못 박았죠. ③ 3문단 끝에 "비상시이거나 위험이 절박하면 계고·통지를 생략할 수 있다"고 했으니 "어떠한 경우에도 생략 못 한다"는 틀렸어요. ⑤ 1문단에서 대집행은 신체·재산에 직접 힘을 가하는 수단과 <em>구별된다</em>고 했습니다.</p>
+<p><strong>2번 (정답 ②)</strong> — ㉠은 "상당한 이행 기한을 정해 계고한다"는 부분이죠. 왜 굳이 기한을 줄까요? 2문단 셋째 요건에 "의무자에게 가장 적은 침해를 주는 방법을 먼저 고려하라"는 정신이 깔려 있고, 계고는 그 연장선에서 <em>의무자가 스스로 이행할 마지막 기회</em>를 주는 절차예요. 그래서 ②가 정답입니다. ①·⑤는 영장 통지나 실행 단계의 이야기지 '기한을 주는' 이유가 아니고, ③은 둘째 요건(대체성)을 확인하는 일과 섞은 함정, ④는 넷째 요건(공익 침해 판단)과 섞은 함정이에요. 계고의 핵심은 '판단할 시간 벌기'가 아니라 '의무자에게 기회 주기'랍니다.</p>
+<p><strong>3번 (정답 ②)</strong> — 4문단에 "제삼자가 의무자에게 <em>직접</em> 비용을 청구할 수는 없다"고 분명히 나와요. 비용은 어디까지나 행정 주체가 의무자에게 받는 거죠. 그래서 ②가 글과 어긋나 정답(적절하지 않은 것)입니다. ①·③·④·⑤는 모두 4문단 문장을 그대로 옮긴 것이라 적절해요. 특히 ⑤의 '별개의 처분'은 마지막 문장에서, ④의 '국세 체납 처분의 예에 따라 강제 징수'는 4문단 둘째 문장에서 확인할 수 있죠.</p>
+<p><strong>4번 (정답 ④)</strong> — 〈보기〉의 ㉮는 계고, ㉯는 영장 통지, ㉰는 실행, ㉱는 비용 납부 명령이에요. ㉱의 비용은 "대집행을 실행한 행정 주체에 대하여" 지는 것이고 철거 업체(제삼자)에 대한 게 아니므로 ④가 맞습니다. ① ㉮(계고)는 '실력 행사'가 아니라 기회를 주는 통지예요. ② 4문단 마지막에서 각 단계가 <em>별개의 처분</em>이라 단계마다 다툴 수 있다고 했으니 "다툴 수 없다"는 틀렸죠. ③ 철거 업체가 갑에게 철거 의무를 지는 게 아니라, 행정청이 업체를 <em>시켜서</em> 한 것뿐이에요. ⑤ 단계들이 하나의 처분이 아니라 각각 별개의 처분이므로 ㉱까지 기다릴 필요 없이 각 단계에서 다툴 수 있습니다.</p>
+<p><strong>5번 (정답 ①)</strong> — ⓐ'가하여'는 '힘·작용 따위를 더하거나 미치게 하다'의 뜻인데, '끼쳐'는 주로 '영향·해·은혜를 미치다'라는 뜻이라 '힘을 가하다'의 자리에 넣으면 어색해요. 그래서 ①이 바꿔 쓰기에 적절하지 않습니다. ② 수반하다→동반하다, ③ 위반하다→어기다, ④ 고려하다→헤아리다, ⑤ 제기하다→내다('소송을 내다')는 모두 문맥에서 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 대집행의 비용을 부담할 의무자를 미리 확정해 두어야 하기 때문이다.</li>
+<li>② 의무자에게 스스로 의무를 이행할 기회를 주어 침해를 줄이려는 것이기 때문이다.</li>
+<li>③ 그 의무가 타인이 대신 이행할 수 없는 성질의 것임을 확인해야 하기 때문이다.</li>
+<li>④ 의무 불이행이 공익을 해치는지 여부를 행정청이 판단할 시간이 필요하기 때문이다.</li>
+<li>⑤ 대집행을 실행할 제삼자를 선정하는 데 상당한 기간이 소요되기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>비용 징수에 관한 윗글의 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 행정청은 대집행에 실제로 든 비용의 액수를 정하여 의무자에게 납부를 명한다.</li>
+<li>② 행정청이 제삼자를 시켜 대집행을 한 경우 그 제삼자가 의무자에게 직접 비용을 청구한다.</li>
+<li>③ 비용 납부 의무는 대집행을 실행한 행정 주체에 대하여 지는 것이다.</li>
+<li>④ 의무자가 납부 명령에 따르지 않으면 국세 체납 처분의 예에 따라 강제 징수할 수 있다.</li>
+<li>⑤ 비용 납부를 명하는 행위는 의무자가 그 위법을 다툴 수 있는 별개의 처분으로 다루어진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 ㉮~㉱에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+무허가 건축물의 소유자 갑이 행정청의 시정 명령에 따르지 않자, 행정청은 다음과 같은 절차를 진행하였다. 먼저 ㉮「○월 ○일까지 건축물을 철거하지 않으면 대집행을 실행한다」는 내용의 문서를 갑에게 보냈다. 그 기한이 지나도 갑이 철거하지 않자, 행정청은 ㉯대집행의 실행 시기와 책임자, 비용의 개산액을 적은 문서를 갑에게 보냈다. 이후 행정청은 ㉰철거 업체에 의뢰하여 건축물을 헐었고, 마지막으로 ㉱철거에 실제로 든 비용 500만 원을 갑에게 납부하도록 명하였다.</p>
+</blockquote>
+<ul>
+<li>① ㉮는 갑이 스스로 의무를 이행할 기회 없이 곧바로 이루어진 실력 행사이겠군.</li>
+<li>② ㉯는 갑의 권리·의무에 아무런 영향을 주지 않으므로 갑이 그 위법을 다툴 수 없겠군.</li>
+<li>③ ㉰는 철거 업체가 갑에 대하여 직접 철거 의무를 부담하게 되었기 때문에 이루어졌겠군.</li>
+<li>④ ㉱의 비용은 대집행을 실행한 철거 업체가 아니라 행정 주체에 대하여 갑이 부담하는 것이겠군.</li>
+<li>⑤ ㉮부터 ㉱까지는 하나의 처분이므로 갑은 ㉱ 단계에 이르러서야 비로소 위법을 다툴 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 끼쳐</li>
+<li>② ⓑ: 동반하므로</li>
+<li>③ ⓒ: 어겨</li>
+<li>④ ⓓ: 헤아리라는</li>
+<li>⑤ ⓔ: 낼</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>행정 대집행</strong>: 공법상 대체적 작위 의무를 안 지킬 때, 행정청이 대신 실현하고 비용을 받아 내는 제도.</li>
+<li><strong>공법상 의무 / 사법상 의무</strong>: 공법(건축법 등)에서 생긴 의무는 대집행 대상, 개인 간 약정에서 생긴 의무는 대상이 아님.</li>
+<li><strong>계고 → 영장 통지 → 실행 → 비용 징수</strong>: 대집행이 거쳐야 하는 네 절차.</li>
+<li><strong>처분</strong>: 국민의 권리·의무에 영향을 주는 행정청의 행위. 각 단계가 별개의 처분이라 단계마다 소송으로 다툴 수 있음.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 대집행의 흐름</div>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>무엇을 하나</th>
+<th>핵심 포인트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>요건 확인</td>
+<td>공법상·대체적·보충성·공익 침해</td>
+<td>넷을 모두 갖춰야 함</td>
+</tr>
+<tr>
+<td>계고</td>
+<td>기한 정해 "안 하면 대집행" 문서 통지</td>
+<td>스스로 이행할 마지막 기회</td>
+</tr>
+<tr>
+<td>영장 통지</td>
+<td>시기·책임자·비용 개산액 통지</td>
+<td>(비상·절박 시 계고와 함께 생략 가능)</td>
+</tr>
+<tr>
+<td>실행</td>
+<td>행정청·제삼자가 의무 내용 실현</td>
+<td>신체·재산 직접 강제 아님</td>
+</tr>
+<tr>
+<td>비용 징수</td>
+<td>의무자에게 납부 명령, 불응 시 강제 징수</td>
+<td>행정 주체에 대한 의무(제삼자에게 X)</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>이웃과 사적으로 "내가 헐어 주겠다"고 약속한 철거 의무를 안 지키면 대집행을 할 수 있을까요?</div><div class='qa-a'>없습니다.* 그것은 약정에 따른 사법상 의무라서 공법상 의무 불이행이라는 첫째 요건을 못 갖춰요.</div></div>
+<div class='qa-item'><div class='qa-q'>위험이 절박해 시간이 없을 때 행정청이 생략할 수 있는 절차는 무엇인가요?</div><div class='qa-a'>계고와 영장 통지*입니다. 두 절차를 거칠 여유가 없을 때 생략할 수 있어요.</div></div>
+<div class='qa-item'><div class='qa-q'>행정청이 철거 업체를 시켜 건물을 헐었다면, 그 비용은 누가 누구에게 받나요?</div><div class='qa-a'>행정 주체가 의무자에게* 받습니다. 철거 업체가 의무자에게 직접 청구할 수는 없어요.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 9월 [26~30]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>국가, 지방 자치 단체와 같은 행정 주체가 행정 목적을 ⓐ실현하기 위해 국민의 권리를 제한하거나 국민에게 의무를 부과하는 ‘행정 규제’는 국회가 제정한 법률에 근거해야 한다. 그러나 국회가 아니라, 대통령을 수반으로 하는 행정부나 지방 자치 단체와 같은 행정 기관이 제정한 법령인 행정입법에 의한 행정 규제의 비중이 커지고 있다. 드론과 관련된 행정 규제 사항들처럼, 첨단 기술과 관련되거나, 상황 변화에 즉각 대처해야 하거나, 개별적 상황을 ⓑ반영하여 규제를 달리해야 하는 행정 규제 사항들이 늘어나고 있기 때문이다. 행정 기관은 국회에 비해 이러한 사항들을 다루기에 적합하다.</p>
+<p>행정입법의 유형에는 위임명령, 행정규칙, 조례 등이 있다. 헌법에 따르면, 국회는 행정 규제 사항에 관한 법률을 제정할 때 특정한 내용에 관한 입법을 행정부에 위임할 수 있다. 이에 따라 제정된 행정입법을 위임명령이라고 한다. 위임명령은 제정 주체에 따라 대통령령, 총리령, 부령으로 나누어진다. 이들은 모두 국민에게 적용되기 때문에 입법예고, 공포 등의 절차를 거쳐야 한다. 위임명령은 입법부인 국회가 자신의 권한의 일부를 행정부에 맡겼기 때문에 정당화될 수 있다. 그래서 특정한 행정 규제의 근거 법률이 위임명령으로 제정할 사항의 범위를 정하지 않은 채 위임하는 포괄적 위임은 헌법상 삼권 분립 원칙에 저촉된다. 위임된 행정 규제 사항의 대강을 위임 근거 법률의 내용으로부터 ⓒ예측할 수 있어야 한다는 것이다. 다만 행정 규제 사항의 첨단 기술 관련성이 클수록 위임 근거 법률이 위임할 수 있는 사항의 범위가 넓어진다. 한편, 위임명령이 법률로부터 위임받은 범위를 벗어나서 제정되거나, 위임 근거 법률이 사용한 어구의 의미를 확대하거나 축소하여 제정되어서는 안 된다. ㉠위임명령이 이러한 제한을 위반하여 제정되면 효력이 없다.</p>
+<p>행정규칙은 원래 행정부의 직제나 사무 처리 절차에 관한 행정입법으로서 고시(告示), 예규 등이 여기에 속한다. 일반 국민에게는 직접 적용되지 않기 때문에, 법률로부터 위임받지 않아도 유효하게 제정될 수 있고 위임명령 제정 시와 동일한 절차를 거칠 필요가 없다. 그러나 행정 규제 사항에 관하여 행정규칙이 제정되는 예외적인 경우도 있다. 위임된 사항이 첨단 기술과의 관련성이 매우 커서 위임명령으로는 ⓓ대응하기 어려워 불가피한 경우, 위임 근거 법률이 행정입법의 제정 주체만 지정하고 행정입법의 유형을 지정하지 않았다면 위임된 사항이 고시나 예규로 제정될 수 있다. 이런 경우의 행정규칙은 위임명령과 달리, 입법예고, 공포 등을 거치지 않고 제정된다.</p>
+<p>조례는 지방 의회가 제정하는 행정입법으로 지역의 특수성을 반영하여 제정되고 지역에서 발생하는 사안에 대해 적용된다. 제정 주체가 지방 자치 단체의 기관인 지방 의회라는 점에서 행정부에서 제정하는 위임명령, 행정규칙과 ⓔ구별된다. 조례도 행정 규제 사항을 규정하려면 법률의 위임에 근거해야 한다. 또한 법률로부터 포괄적 위임을 받을 수 있지만 위임 근거 법률이 사용한 어구의 의미를 다르게 사용할 수 없다. 조례는 입법예고, 공포 등의 절차를 거쳐 제정된다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>26</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 행정입법에 속하는 법령들은 제정 주체가 동일하다.</li>
+<li>② 행정입법에 속하는 법령들은 모두 개별적 상황과 지역의 특수성을 반영한다.</li>
+<li>③ 행정입법에 속하는 법령들은 모두 정당성을 확보하기 위하여 국회의 위임에 근거한다.</li>
+<li>④ 행정 규제 사항에 적용되는 행정입법은 모두 포괄적 위임이 금지되어 있다.</li>
+<li>⑤ 행정부가 국회보다 신속히 대응할 수 있는 행정 규제 사항은 행정입법의 대상으로 적합하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>26번 — 정답 ⑤</strong><br />
+1문단에 따르면 상황 변화에 즉각 대처해야 하는 행정 규제 사항이 늘어나는데, 국회보다 행정 기관이 이러한 사항을 다루기에 적합해 행정입법의 비중이 커지고 있다. 따라서 행정부가 국회보다 신속히 대응할 수 있는 사항이 행정입법 대상으로 적합하다는 ⑤가 일치한다. ① 위임명령·행정규칙은 행정부, 조례는 지방 의회가 제정하므로 제정 주체가 동일하지 않다. ② 지역의 특수성 반영은 조례에만 해당한다. ③ 행정규칙(고시·예규)은 위임받지 않아도 제정될 수 있다. ④ 조례는 포괄적 위임을 받을 수 있다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①1.6% ②4.8% ③8.7% ④8.8% ⑤72.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 그 위임명령이 법률의 근거 없이 행정 규제 사항을 규정했기 때문이다.</li>
+<li>② 그 위임명령이 포괄적 위임을 받아 제정된 경우에 해당하기 때문이다.</li>
+<li>③ 그 위임명령이 첨단 기술에 대한 내용을 정확히 반영하지 않았기 때문이다.</li>
+<li>④ 그 위임명령이 국민의 권리를 제한하는 권한을 행정 기관에 맡겼기 때문이다.</li>
+<li>⑤ 그 위임명령이 구체적 상황의 특성을 반영한 융통성 있는 대응을 하지 못했기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>27번 — 정답 ①</strong><br />
+위임명령으로 제정할 사항의 범위는 근거 법률에 의해 정해진다. 위임명령이 위임받은 범위를 벗어나거나 어구의 의미를 확대·축소해 제정되면 효력이 없는 것은, 그 부분이 법률의 근거 없이 행정 규제 사항을 규정한 셈이기 때문이다(①). ② 범위를 벗어났다는 것은 ‘위임받은 범위’가 있다는 뜻이므로 포괄적 위임이 아니다.</p>
+<p><em>선택률</em> — 응시 98,575명 — ①46.9% ②33.9% ③5.4% ④7.0% ⑤4.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>행정규칙에 관한 설명 중 적절하지 않은 것은?</p>
+<ul>
+<li>① 행정부의 직제나 사무 처리 절차를 규정하는 경우, 법률의 위임이 요구되지 않는다.</li>
+<li>② 행정부의 직제나 사무 처리 절차를 규정하는 경우, 일반 국민에게 직접 적용되지 않는다.</li>
+<li>③ 행정 규제 사항을 규정하는 경우, 위임명령의 제정 절차를 따르지 않는다.</li>
+<li>④ 행정 규제 사항을 규정하는 경우, 위임 근거 법률의 위임을 받은 제정 주체에 의해 제정된다.</li>
+<li>⑤ 행정 규제 사항을 규정하는 경우, 위임 근거 법률로부터 위임받을 수 있는 사항의 범위가 위임명령과 같다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+행정 규제 사항에 관한 행정규칙은 위임명령으로는 대응하기 어려운 예외적 경우에 제정되므로, 위임받을 수 있는 사항의 범위가 위임명령과 같지 않다. 따라서 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①2.5% ②1.9% ③10.9% ④14.8% ⑤67.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 ㉮～㉰에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 새로 개업한 자신의 가게 홍보를 위해 인근 자연 공원에 현수막을 설치하려고 한다. 현수막 설치에 관한 행정 규제의 내용을 확인하기 위해 ○○시청에 문의하고 아래와 같은 회신을 받았다.</p>
+<p>문의하신 내용에 대해 다음과 같이 알려 드립니다.
+㉮「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률」 제3조(광고물 등의 허가 또는 신고)에 따른 허가 또는 신고 대상 광고물에 관한 사항은 대통령령인 ㉯「옥외광고물 등의 관리와 옥외광고산업 진흥에 관한 법률 시행령」 제5조에 규정되어 있습니다. 이에 따르면 문의하신 규격의 현수막을 설치하시려면 설치 전에 신고하셔야 합니다.
+또한 위 법률 제16조(광고물 실명제)에 의하면, 신고 번호, 표시 기간, 제작자명 등을 표시하도록 규정하고 있습니다. 표시하는 방법에 대해서는 ㉰○○시 지방 의회에서 제정한 법령에 따르셔야 합니다.</p>
+</blockquote>
+<ul>
+<li>① ㉮의 제3조의 내용에서 ㉯의 제5조의 신고 대상 광고물에 관한 사항의 구체적 내용을 확인할 수 있겠군.</li>
+<li>② ㉯의 제5조는 ㉮의 제16조로부터 제정할 사항의 범위가 정해져 위임을 받았겠군.</li>
+<li>③ ㉯는 ㉰와 달리 입법예고와 공포 절차를 거쳤겠군.</li>
+<li>④ ㉯에 나오는 ‘광고물’의 의미와 ㉰에 나오는 ‘광고물’의 의미는 일치하겠군.</li>
+<li>⑤ ㉰를 준수해야 하는 국민 중에는 ㉯를 준수하지 않아도 되는 국민이 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>29번 — 정답 ④</strong><br />
+위임명령(㉯)과 조례(㉰)는 모두 위임 근거 법률(㉮)의 어구 의미를 다르게 사용할 수 없으므로, ㉯와 ㉰의 ‘광고물’ 의미는 일치해야 한다(④). ② ㉯는 ㉮의 제16조가 아니라 제3조로부터 위임받는다. ③ ㉯(위임명령)도 ㉰(조례)도 모두 입법예고·공포 절차를 거친다. ⑤ 대통령령 ㉯는 지역과 무관하게 국민이 준수해야 하고, 조례 ㉰는 해당 지역 사안에만 적용되므로, ‘㉯를 준수하지 않아도 되는 국민’이 아니라 ‘㉰를 준수하지 않아도 되는 국민’이 있다고 해야 옳다.</p>
+<p><em>선택률</em> — 응시 98,573명 — ①8.1% ②23.7% ③11.7% ④46.4% ⑤7.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 나타내기</li>
+<li>② ⓑ: 드러내어</li>
+<li>③ ⓒ: 헤아릴</li>
+<li>④ ⓓ: 마주하기</li>
+<li>⑤ ⓔ: 달라진다</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+‘예측하다’는 ‘미리 헤아려 짐작하다’의 의미이므로 ‘헤아리다’로 바꿔 쓸 수 있다(③). ① 실현하다≠나타나다, ② 반영하다≠드러내다, ④ 대응하다≠마주하다, ⑤ 구별되다≠달라지다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①9.9% ②4.4% ③59.1% ④9.2% ⑤15.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>행정상 의무를 의무자가 이행하지 않을 때 행정청이 이를 강제로 실현하는 수단 가운데 하나가 대집행이다. 대집행은 의무자가 이행해야 할 의무의 내용을 행정청이 대신 실현하는 방식이므로, 모든 의무가 대집행의 대상이 되는 것은 아니다. 대집행이 가능한지는 그 의무가 어떤 성질의 것인지에 따라 갈린다. 행정상 의무는 크게 작위 의무와 부작위 의무로 나뉘고, 작위 의무는 다시 대체적 작위 의무와 비대체적 작위 의무로 나뉜다. 이 가운데 대집행의 대상이 되는 것은 대체적 작위 의무에 한한다.</p>
+<p>작위 의무는 무엇인가를 적극적으로 하여야 할 의무이다. 그 가운데 타인이 대신하여 이행하더라도 의무의 목적을 이룰 수 있는 의무가 대체적 작위 의무이다. 불법 건축물을 철거할 의무나 도로에 쌓인 장애물을 제거할 의무가 그 예로, 누가 철거하든 결과가 같으므로 행정청이 대신 실현할 수 있다. 반면 의무자 본인이 직접 이행해야만 의무의 목적을 이룰 수 있어 타인이 대신할 수 없는 의무를 비대체적 작위 의무라 한다. 의사가 직접 진료를 할 의무, 증인이 법정에 ⓐ<u>출석하여</u> 증언할 의무가 이에 해당한다. 이러한 의무는 그 사람의 행위 자체에 의미가 있으므로, 행정청이 대신하더라도 의무가 이행된 것으로 볼 수 없어 대집행의 대상이 되지 않는다.</p>
+<p>부작위 의무는 어떤 행위를 하지 아니할 의무이다. 허가 없이 영업을 하지 말아야 할 의무, 정해진 곳 외에 광고물을 ⓑ<u>부착하지</u> 말아야 할 의무가 그 예이다. 부작위 의무는 그 자체로는 대집행의 대상이 되지 않는다. 대집행은 의무자가 <em>하여야 할</em> 일을 대신 <em>하는</em> 것인데, 부작위 의무는 무언가를 하지 않을 것을 내용으로 하므로 행정청이 대신 실현할 만한 작위의 내용이 없기 때문이다. 다만 부작위 의무를 위반하여 만들어진 결과를 제거할 의무, 곧 위반 결과의 시정을 명하는 법적 근거가 따로 있는 경우에는 사정이 달라진다. 가령 광고물을 게시하지 말아야 할 의무를 어겨 광고물이 내걸렸을 때, 그 광고물을 떼어 낼 것을 명할 근거가 있으면 그 시정 의무는 대체적 작위 의무가 되어 대집행의 대상이 될 수 있다. 부작위 의무 그 자체가 아니라, 그것을 작위 의무로 ㉠<u>전환</u>하는 별도의 근거가 있어야 대집행이 가능해지는 것이다.</p>
+<p>이처럼 대집행은 의무의 성질에 따라 달리 적용된다. 그 까닭은 대집행이 의무자를 대신하여 의무의 내용을 그대로 실현하는 제도라는 데 있다. 의무의 목적이 의무자 본인의 행위에 달려 있거나, 애초에 대신 실현할 작위의 내용이 없는 경우에는 대집행으로 그 목적을 이룰 수 없다. 따라서 행정청은 의무의 종류를 ⓒ<u>판단하여</u> 대집행이 가능한 의무인지를 먼저 확인하여야 하며, 대집행이 불가능한 의무에 대해서는 이행강제금의 ⓓ<u>부과</u>와 같은 다른 수단을 통하여 의무 이행을 ⓔ<u>확보하게</u> 된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 행정상 의무는 작위 의무와 부작위 의무로 나눌 수 있다.</li>
+<li>② 대체적 작위 의무는 타인이 대신 이행하여도 의무의 목적을 이룰 수 있는 의무이다.</li>
+<li>③ 비대체적 작위 의무는 의무자 본인이 직접 이행해야 의무의 목적을 이룰 수 있다.</li>
+<li>④ 부작위 의무는 그 자체로 대집행의 대상이 된다.</li>
+<li>⑤ 대집행의 대상이 되는 것은 작위 의무 가운데 대체적 작위 의무이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 (정답 ④)</strong> — 3문단에 "부작위 의무는 그 자체로는 대집행의 대상이 되지 않는다"고 분명히 나와요. 그래서 "그 자체로 대상이 된다"는 ④가 글과 어긋나 정답(적절하지 않은 것)입니다. ①은 1문단, ②·③은 2문단, ⑤는 1문단 마지막 문장에서 각각 확인돼요. 부작위 의무는 '위반 결과를 제거할 작위 의무로 바뀌었을 때만' 대상이 된다는 점, 꼭 기억해 두세요.</p>
+<p><strong>7번 (정답 ②)</strong> — ㉠'전환'은 <em>부작위 의무를 작위 의무로 바꾸는</em> 일이죠. 3문단에서 "위반 결과의 시정을 명할 근거가 있으면 그 시정 의무가 대체적 작위 의무가 되어 대집행 대상이 될 수 있다"고 했으니 ②가 맞습니다. ① 전환은 '제재'가 아니에요. ③ 비대체적 작위 의무를 바꾸는 게 아니라 <em>부작위</em> 의무를 바꾸는 일이고, ④ 위반한 결과가 있는 경우의 이야기이지 위반하지 않은 사람에게 부과하는 게 아니며, ⑤ 글은 "별도의 근거가 있어야" 전환된다고 했으니 "근거 없이도"는 정반대예요.</p>
+<p><strong>8번 (정답 ②)</strong> — ㄱ(폐기물 치우기)은 누가 치워도 결과가 같은 대체적 작위 의무, ㄴ(영업 금지)은 부작위 의무, ㄷ(자격 검사관의 직접 점검)은 본인만 할 수 있는 비대체적 작위 의무예요. ㄴ은 부작위 의무라 작위의 내용이 없어 그 자체로는 대집행으로 실현할 수 없으니 ②가 정답입니다. ① ㄱ은 대체적 작위 의무라 대상이 <em>되므로</em> 틀렸고, ③ 〈보기〉 단서에 "ㄴ에는 시정을 명할 근거가 없다"고 못 박았으니 틀렸으며, ④ ㄷ은 본인만 가능한 비대체적 의무라 대상이 아니고, ⑤ ㄷ은 대체적 작위 의무가 아니라서 틀렸어요.</p>
+<p><strong>9번 (정답 ⑤)</strong> — ⓔ'확보하다'는 '확실히 갖추어 가지다'의 뜻이라 '다지다(기초를 굳히다)'와는 호응이 어긋나요. 그래서 ⑤가 바꿔 쓰기에 적절하지 않아 정답입니다. ① 출석하다→나아가다(어떤 자리에 나아가다), ② 부착하다→붙이다, ③ 판단하다→가리다, ④ 부과하다→매기다는 모두 문맥에서 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 부작위 의무를 위반한 사람에게 그 위반에 대한 제재를 가하는 일이다.</li>
+<li>② 하지 말아야 할 의무를 어겨 생긴 결과를 제거하도록 명할 근거가 있어야 이루어진다.</li>
+<li>③ 비대체적 작위 의무를 대체적 작위 의무로 바꾸어 본인의 이행을 면제하는 일이다.</li>
+<li>④ 부작위 의무를 위반하지 않은 사람에게도 작위의 내용을 새로 부과하는 일이다.</li>
+<li>⑤ 행정청이 별도의 근거 없이도 부작위 의무를 작위 의무처럼 다룰 수 있게 하는 일이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉의 ㄱ~ㄷ에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 행정청이 처리해야 할 세 가지 사례가 있다. ㄱ은 하천 부지에 허가 없이 쌓아 둔 건축 폐기물을 치우지 않는 사업자에게 그 폐기물을 치울 것을 명한 경우이다. ㄴ은 식당 운영자가 영업 정지 처분을 받았는데도 영업을 계속하여, 영업을 하지 말 것을 명한 경우이다. ㄷ은 국가가 지정한 전문 자격을 가진 검사관이 직접 시설을 점검할 의무를 이행하지 않은 경우이다. (단, ㄴ에는 위반 결과의 시정을 명할 별도의 근거 법령이 없다.)</p>
+</blockquote>
+<ul>
+<li>① ㄱ의 폐기물을 치울 의무는 본인만 이행할 수 있어 대집행의 대상이 되지 않겠군.</li>
+<li>② ㄴ의 영업을 하지 말 의무는 작위의 내용이 없는 부작위 의무여서 그 자체로는 대집행으로 실현할 수 없겠군.</li>
+<li>③ ㄴ은 위반 결과의 시정을 명할 근거가 있으므로 그 시정 의무가 대집행의 대상이 되겠군.</li>
+<li>④ ㄷ의 점검 의무는 타인이 대신 점검하여도 의무의 목적을 이룰 수 있어 대집행의 대상이 되겠군.</li>
+<li>⑤ ㄱ과 ㄷ의 의무는 모두 대체적 작위 의무이므로 행정청이 대신 실현할 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 나아가</li>
+<li>② ⓑ: 붙이지</li>
+<li>③ ⓒ: 가려</li>
+<li>④ ⓓ: 매김과</li>
+<li>⑤ ⓔ: 다지게</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>작위 의무 / 부작위 의무</strong>: '무언가를 하라'는 의무 / '무언가를 하지 마라'는 의무.</li>
+<li><strong>대체적 작위 의무</strong>: 남이 대신해도 목적을 이루는 작위 의무 → 대집행 대상.</li>
+<li><strong>비대체적 작위 의무</strong>: 본인만 할 수 있는 작위 의무(직접 증언·진료 등) → 대집행 불가.</li>
+<li><strong>작위 의무로의 전환</strong>: 부작위 의무를 어겨 생긴 결과를 <em>치우라</em>고 명할 근거가 있으면, 그 시정 의무가 대체적 작위 의무가 되어 대집행이 가능해짐.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 어떤 의무에 대집행이 될까?</div>
+<table>
+<thead>
+<tr>
+<th>의무의 종류</th>
+<th>예</th>
+<th>대집행 가능?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대체적 작위 의무</td>
+<td>불법 건축물 철거, 폐기물 제거</td>
+<td>○</td>
+</tr>
+<tr>
+<td>비대체적 작위 의무</td>
+<td>증인의 증언, 의사의 직접 진료</td>
+<td>✕ (본인만 가능)</td>
+</tr>
+<tr>
+<td>부작위 의무</td>
+<td>무허가 영업 금지, 광고물 부착 금지</td>
+<td>✕ (그 자체로는)</td>
+</tr>
+<tr>
+<td>└ 위반 결과 시정 의무(근거 있을 때)</td>
+<td>붙인 광고물 떼어 내기</td>
+<td>○ (작위 의무로 전환)</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>증인이 법정에서 증언할 의무를 안 지키면 행정청이 대신 증언해 줄 수 있을까요?</div><div class='qa-a'>없습니다.* 본인만 이행할 수 있는 비대체적 작위 의무라 대집행 대상이 아니에요.</div></div>
+<div class='qa-item'><div class='qa-q'>'광고물을 붙이지 마라'는 의무는 왜 그 자체로는 대집행을 못 하나요?</div><div class='qa-a'>부작위 의무라서 행정청이 <em>대신 실현할 작위의 내용이 없기</em> 때문이에요.</div></div>
+<div class='qa-item'><div class='qa-q'>그렇다면 이미 붙인 광고물은 어떻게 떼어 낼 수 있을까요?</div><div class='qa-a'>'떼어 내라'고 명할 근거가 있으면 그 시정 의무가 <em>대체적 작위 의무로 전환</em>되어 대집행할 수 있어요.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2023학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>법령의 조문은 대개 ‘A에 해당하면 B를 해야 한다.’처럼 요건과 효과로 구성된 조건문으로 규정된다. 하지만 그 요건이나 효과가 항상 일의적인 것은 아니다. 법조문에는 구체적 상황을 고려해야 그 상황에 ⓐ맞는 진정한 의미가 파악되는 불확정 개념이 사용될 수 있기 때문이다. 개인 간 법률관계를 규율하는 민법에서 불확정 개념이 사용된 예로 ‘손해 배상 예정액이 부당히 과다한 경우에는 법원은 적당히 감액할 수 있다.’라는 조문을 ⓑ들 수 있다. 이때 법원은 요건과 효과를 재량으로 판단할 수 있다. 손해 배상 예정액은 위약금의 일종이며, 계약 위반에 대한 제재인 위약벌도 위약금에 속한다. 위약금의 성격이 둘 중 무엇인지 증명되지 못하면 손해 배상 예정액으로 다루어진다.</p>
+<p>채무자의 잘못으로 계약 내용이 실현되지 못하여 계약 위반이 발생하면, 이로 인해 손해를 입은 채권자가 손해 액수를 증명해야 그 액수만큼 손해 배상금을 받을 수 있다. 그러나 손해 배상 예정액이 정해져 있었다면 채권자는 손해 액수를 증명하지 않아도 손해 배상 예정액만큼 손해 배상금을 받을 수 있다. 이때 손해 액수가 얼마로 증명되든 손해 배상 예정액보다 더 받을 수는 없다. 한편 위약금이 위약벌임이 증명되면 채권자는 위약벌에 해당하는 위약금을 ⓒ받을 수 있고, 손해 배상 예정액과는 달리 법원이 감액할 수 없다. 이때 채권자가 손해 액수를 증명하면 손해 배상금도 받을 수 있다.</p>
+<p>불확정 개념은 행정 법령에도 사용된다. 행정 법령은 행정청이 구체적 사실에 대해 행하는 법 집행인 행정 작용을 규율한다. 법령상 요건이 충족되면 그 효과로서 행정청이 반드시 해야 하는 특정 내용의 행정 작용은 기속 행위이다. 반면 법령상 요건이 충족되더라도 그 효과인 행정 작용의 구체적 내용을 ⓓ고를 수 있는 재량이 행정청에 주어져 있을 때, 이러한 재량을 행사하는 행정 작용은 재량 행위이다. 법령에서 불확정 개념이 사용되면 이에 근거한 행정 작용은 대개 재량 행위이다.</p>
+<p>행정청은 재량으로 재량 행사의 기준을 명확히 정할 수 있는데 이 기준을 ㉠재량 준칙이라 한다. 재량 준칙은 법령이 아니므로 재량 준칙대로 재량을 행사하지 않아도 근거 법령 위반은 아니다. 다만 특정 요건하에 재량 준칙대로 특정한 내용의 적법한 행정 작용이 반복되어 행정 관행이 생긴 후에는, 같은 요건이 충족되면 행정청은 동일한 내용의 행정 작용을 해야 한다. 행정청은 평등 원칙을 ⓔ지켜야 하기 때문이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 법령의 요건과 효과에는 모두 불확정 개념이 사용될 수 있다.</li>
+<li>② 법원은 불확정 개념이 사용된 법령을 적용할 때 재량을 행사할 수 있다.</li>
+<li>③ 불확정 개념이 사용된 법령의 진정한 의미를 이해하려면 구체적 상황을 고려해야 한다.</li>
+<li>④ 불확정 개념이 사용된 행정 법령에 근거한 행정 작용은 재량 행위인 경우보다 기속 행위인 경우가 많다.</li>
+<li>⑤ 불확정 개념은 행정청이 행하는 법 집행 작용을 규율하는 법령과 개인 간의 계약 관계를 규율하는 법률에 모두 사용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+3~4문단에 따르면 법령에서 불확정 개념이 사용되면 그에 근거한 행정 작용은 ‘대개 재량 행위’이다. 따라서 기속 행위인 경우가 많다는 ④는 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,561명 — ①2.6% ②4.6% ③4.2% ④81.5% ⑤6.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉠에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 재량 준칙은 법령이 아니기 때문에 일의적이지 않은 개념으로 규정된다.</li>
+<li>② 재량 준칙으로 정해진 내용대로 재량을 행사하는 행정 작용은 기속 행위이다.</li>
+<li>③ 재량 준칙으로 규정된 재량 행사 기준은 반복되어 온 적법한 행정 작용의 내용대로 정해져야 한다.</li>
+<li>④ 재량 준칙이 정해져야 행정청은 특정 요건하에 행정 작용의 구체적 내용을 선택할 수 있는 재량을 행사할 수 있다.</li>
+<li>⑤ 재량 준칙이 특정 요건에서 적용된 선례가 없으면 행정청은 동일한 요건이 충족되어도 행정 작용을 할 때 재량 준칙을 따르지 않을 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+4문단에 따르면 재량 준칙대로 적법한 행정 작용이 반복되어 ‘행정 관행’이 생긴 후에야 행정청이 동일한 행정 작용을 해야 한다. 따라서 선례(관행)가 없으면 같은 요건이라도 재량 준칙을 따르지 않을 수 있다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①11.4% ②8.8% ③21.4% ④9.8% ⑤49.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑은 을에게 물건을 팔고 그 대가로 100을 받기로 하는 매매 계약을 했다. 그 후 갑이 계약을 위반하여 을은 80의 손해를 입었다. 이와 관련하여 세 가지 상황이 있다고 하자.
+(가) 갑과 을 사이에 위약금 약정이 없었다.
+(나) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 무엇인지 증명되지 못했다.
+(다) 갑이 을에게 위약금 100을 약정했고, 위약금의 성격이 위약벌임이 증명되었다.
+(단, 위의 모든 상황에서 세금, 이자 및 기타 비용은 고려하지 않음.)</p>
+</blockquote>
+<ul>
+<li>① (가)에서 을의 손해가 얼마인지 증명되지 못한 경우에도, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>② (나)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>③ (나)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 100을 지급해야 하고 법원이 감액할 수 없다.</li>
+<li>④ (다)에서 을의 손해가 80임이 증명된 경우, 갑이 을에게 180을 지급해야 하고 법원이 감액할 수 있다.</li>
+<li>⑤ (다)에서 을의 손해가 얼마인지 증명되지 못한 경우, 갑이 을에게 80을 지급해야 하고 법원이 감액할 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>12번 — 정답 ②</strong><br />
+(나)는 위약금의 성격이 증명되지 못했으므로 위약금 100은 ‘손해 배상 예정액’으로 다루어진다. 손해가 80으로 증명되어도 정해진 예정액 100을 지급해야 하며, ‘부당히 과다하면 법원이 감액할 수 있다’는 조문에 따라 법원이 감액할 수 있다. 따라서 ②가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①5.3% ②39.0% ③19.3% ④25.6% ⑤10.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ의 의미와 가장 가까운 것은?</p>
+<ul>
+<li>① ⓐ: 이것이 네가 찾는 자료가 맞는지 확인해 보아라.</li>
+<li>② ⓑ: 그 부부는 노후 대책으로 적금을 들고 안심했다.</li>
+<li>③ ⓒ: 그의 파격적인 주장은 학계의 큰 주목을 받았다.</li>
+<li>④ ⓓ: 형은 땀 흘려 울퉁불퉁한 땅을 평평하게 골랐다.</li>
+<li>⑤ ⓔ: 그분은 우리에게 한 약속을 반드시 지킬 것이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+ⓔ‘지키다(평등 원칙을 지켜야)’와 ⑤의 ‘지키다(약속을 지킬)’는 모두 ‘규정·약속·법·예의 따위를 어기지 아니하고 그대로 실행하다’의 뜻으로 쓰였다. 나머지는 본문과 의미가 다르다. 따라서 ⑤가 적절하다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①4.3% ②1.2% ③0.8% ④1.3% ⑤93.2%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>행정청이 행정상 의무의 이행을 강제하는 수단에는 여러 가지가 있다. 그중 의무자를 대신하여 의무의 내용을 실현하는 대집행과, 의무자에게 금전적 부담을 주어 스스로 의무를 이행하도록 압박하는 이행강제금, 그리고 의무자의 신체나 재산에 직접 실력을 가하는 직접강제는 서로 구별된다. 이들은 모두 의무 불이행을 전제로 하지만, 강제가 작동하는 방식과 적용되는 의무의 성질이 다르다.</p>
+<div class="ablock"><span class="atag">[A]</span>대집행은 의무자가 이행하지 않은 대체적 작위 의무의 내용을, 행정청이 직접 또는 제삼자를 통하여 그대로 실현하고 그 비용을 의무자에게서 거두어들이는 수단이다. 대집행에서 강제의 대상이 되는 것은 의무자의 신체나 재산이 아니라 의무의 내용 그 자체이다. 따라서 대집행은 타인이 대신 실현할 수 있는 의무에 한하여 쓰일 수 있고, 본인만 이행할 수 있는 의무에는 쓰일 수 없다. 이에 비해 이행강제금은 의무를 이행하지 않은 의무자에게 일정한 금전을 부과할 것을 예고하고, 정해진 기한까지도 이행하지 않으면 실제로 금전을 물리는 수단이다. 이행강제금은 의무의 내용을 행정청이 대신 실현하는 것이 아니라, 금전적 부담의 압박으로 의무자 *스스로* 이행하게 하는 데 목적이 있다. 그러므로 이행강제금은 본인만 이행할 수 있는 비대체적 작위 의무나 하지 말아야 할 부작위 의무에 대해서도 쓰일 수 있다.</div>
+
+<p>㉠<u>대집행</u>과 ㉡<u>이행강제금</u>은 의무 이행을 확보한다는 목적은 같으나 작동 방식이 다르므로, 하나의 의무 불이행에 대하여 그 성질에 맞는 수단이 선택된다. 가령 불법 건축물의 철거처럼 타인이 대신 실현할 수 있는 의무에는 대집행이 적합하고, 영업을 하지 말아야 할 의무처럼 대신 실현할 작위의 내용이 없는 경우에는 이행강제금이 활용된다. 한편 ㉢<u>직접강제</u>는 의무자의 신체나 재산에 직접 실력을 가하여 의무가 이행된 것과 같은 상태를 만드는 수단이다. 직접강제는 의무자에게 미치는 침해가 가장 크므로, 다른 수단으로는 의무 이행을 확보할 수 없는 경우에 한하여 보충적으로만 허용된다.</p>
+<p>이처럼 강제 수단들은 그 침해의 정도와 적용 범위가 다르다. 대집행은 의무의 내용을 대신 실현하므로 그 의무가 대체적인 경우에만 쓰이고, 이행강제금은 의무자의 자발적 이행을 압박하므로 대체성과 무관하게 적용될 수 있다. 직접강제는 가장 강한 수단이어서 마지막에 고려된다. 행정청은 의무의 성질과 침해의 정도를 함께 따져, 의무 이행이라는 목적을 이루면서도 의무자의 권익을 침해하는 정도가 가장 작은 수단을 선택하여야 한다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 대집행, 이행강제금, 직접강제는 모두 의무 불이행을 전제로 하는 강제 수단이다.</li>
+<li>② 이행강제금은 의무자에게 금전적 부담을 주어 스스로 이행하도록 압박하는 수단이다.</li>
+<li>③ 직접강제는 의무자에게 미치는 침해가 작아 다른 수단보다 우선하여 쓰인다.</li>
+<li>④ 대집행에서 강제의 대상이 되는 것은 의무자의 신체나 재산이 아니라 의무의 내용이다.</li>
+<li>⑤ 행정청은 의무 이행을 확보하면서도 의무자의 권익을 가장 적게 침해하는 수단을 선택해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 (정답 ③)</strong> — 3문단에 직접강제는 "침해가 가장 크므로, 다른 수단으로 확보할 수 없는 경우에 한하여 보충적으로만 허용된다"고 했어요. 그러니 "침해가 작아 우선하여 쓰인다"는 ③은 정반대라 정답(적절하지 않은 것)입니다. ①은 1문단, ②는 1문단, ④는 [A], ⑤는 3문단 마지막 문장에서 확인돼요.</p>
+<p><strong>11번 (정답 ⑤)</strong> — [A]에서 이행강제금은 "금전적 부담의 압박으로 의무자 스스로 이행하게 하는 데 목적이 있다"고 했으니 ⑤가 맞습니다. ① 대집행은 본인만 가능한 의무에는 <em>쓸 수 없고</em>, ② 신체에 직접 실력을 가하는 건 대집행이 아니라 직접강제이며, ③ 이행강제금은 <em>대신 실현하지 않고</em>, ④ [A] 마지막 문장에 "부작위 의무에 대해서도 쓰일 수 있다"고 했으니 "부과될 수 없다"는 틀렸어요.</p>
+<p><strong>12번 (정답 ②)</strong> — ㉠은 대집행, ㉡은 이행강제금, ㉢은 직접강제예요. 이행강제금(㉡)은 대집행(㉠)과 달리 의무 내용을 대신 실현하지 않고 금전 압박으로 본인이 이행하게 하므로 ②가 맞습니다. ① 신체·재산에 직접 실력을 가하는 건 ㉠이 아니라 ㉢이고, ③ 자발적 이행을 압박하는 건 ㉢이 아니라 ㉡이며, ④ ㉡(이행강제금)은 대체성과 무관하게 쓸 수 있으니 "대체적 작위 의무에만"은 틀렸고, ⑤ 보충적으로만 허용되는 건 ㉡이 아니라 ㉢이에요.</p>
+<p><strong>13번 (정답 ⑤)</strong> — 갑의 노점 철거는 대체적 작위 의무(누가 철거해도 결과 같음)라 대집행 대상이고(①·②), 을의 사용 중지는 부작위 의무라 그 자체로는 대집행이 어려우며(③), 금전 압박은 이행강제금(④)이라 모두 적절해요. 하지만 ⑤는 글과 어긋납니다. 3문단에서 직접강제는 "다른 수단으로 확보할 수 없는 경우에 <em>한하여 보충적으로 허용된다</em>"고 했으니, 그런 경우라면 허용될 수 있지 "어떠한 경우에도 허용되지 않는다"고 할 수 없어요. 그래서 ⑤가 정답(적절하지 않은 것)입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 대집행은 본인만 이행할 수 있는 의무에 대해서도 쓰일 수 있다.</li>
+<li>② 대집행은 의무자의 신체에 직접 실력을 가하여 의무를 실현한다.</li>
+<li>③ 이행강제금은 의무의 내용을 행정청이 대신 실현하는 수단이다.</li>
+<li>④ 이행강제금은 부작위 의무에 대해서는 부과될 수 없다.</li>
+<li>⑤ 이행강제금은 의무자가 스스로 의무를 이행하도록 압박하는 데 목적이 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉠~㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 의무자의 신체나 재산에 직접 실력을 가하여 의무를 이행시킨다.</li>
+<li>② ㉡은 ㉠과 달리, 의무의 내용을 행정청이 대신 실현하지 않는다.</li>
+<li>③ ㉢은 ㉡과 달리, 의무자의 자발적 이행을 압박하는 데 목적이 있다.</li>
+<li>④ ㉠과 ㉡은 모두 대체적 작위 의무에 대해서만 쓰일 수 있다.</li>
+<li>⑤ ㉡과 ㉢은 모두 다른 수단으로 이행을 확보할 수 없을 때에만 보충적으로 허용된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+행정청은 다음 두 사례를 처리하려 한다. 첫째 사례에서 갑은 도로를 무단으로 점거한 노점 시설을 철거하라는 명령을 받고도 이를 치우지 않고 있다. 이 시설은 누가 철거하든 결과가 같다. 둘째 사례에서 을은 건축법을 위반하여 위험하게 증축한 건축물에 대해 사용을 중지하라는 명령을 받았으나, 계속 그 건축물을 사용하고 있다. 사용을 중지하지 않는 한 인명 피해의 우려가 매우 크지만, 을은 어떠한 명령에도 따르지 않는다.</p>
+</blockquote>
+<ul>
+<li>① 갑의 노점 시설을 철거할 의무는 타인이 대신 실현할 수 있으므로 대집행의 대상이 될 수 있겠군.</li>
+<li>② 행정청이 갑의 노점 시설을 직접 철거하고 그 비용을 갑에게서 거두어들이면 대집행에 해당하겠군.</li>
+<li>③ 을이 건축물의 사용을 중지할 의무는 하지 말아야 할 의무이므로 그 자체로는 대집행으로 실현하기 어렵겠군.</li>
+<li>④ 을에게 금전을 부과할 것을 예고하여 스스로 사용을 중지하도록 압박한다면 이는 이행강제금에 해당하겠군.</li>
+<li>⑤ 을에 대해 다른 수단으로 이행을 확보할 수 없더라도, 침해가 가장 큰 직접강제는 어떠한 경우에도 허용되지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>대집행</strong>: 대체적 작위 의무의 내용을 행정청이 대신 실현하고 비용을 받는 수단.</li>
+<li><strong>이행강제금</strong>: 금전을 물릴 것을 예고·부과해 의무자가 <em>스스로</em> 이행하도록 압박하는 수단. 대체성과 무관(부작위·비대체적 의무에도 가능).</li>
+<li><strong>직접강제</strong>: 신체·재산에 직접 실력을 가해 이행된 상태를 만드는 수단. 침해가 가장 커서 <em>최후의 보충 수단</em>.</li>
+<li><strong>보충성</strong>: 침해가 작은 수단을 먼저, 큰 수단은 다른 방법이 없을 때만 쓰는 원칙.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 세 강제 수단 비교</div>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>강제 방식</th>
+<th>적용 의무</th>
+<th>침해 정도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대집행</td>
+<td>의무 내용을 대신 실현</td>
+<td>대체적 작위 의무</td>
+<td>중간</td>
+</tr>
+<tr>
+<td>이행강제금</td>
+<td>금전 압박으로 자발 이행 유도</td>
+<td>대체성과 무관(부작위·비대체 포함)</td>
+<td>작음</td>
+</tr>
+<tr>
+<td>직접강제</td>
+<td>신체·재산에 직접 실력</td>
+<td>폭넓음(보충적)</td>
+<td>가장 큼</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>본인만 할 수 있는 의무(비대체적 작위 의무)를 안 지키면 대집행과 이행강제금 중 무엇을 쓸 수 있나요?</div><div class='qa-a'>이행강제금*입니다. 이행강제금은 대체성과 무관하게 쓸 수 있어요.</div></div>
+<div class='qa-item'><div class='qa-q'>직접강제는 왜 마지막에야 고려되나요?</div><div class='qa-a'>의무자에게 미치는 <em>침해가 가장 크기</em> 때문에, 다른 수단으로 안 될 때만 보충적으로 허용돼요.</div></div>
+<div class='qa-item'><div class='qa-q'>대집행에서 강제의 '대상'은 의무자의 신체일까요, 의무의 내용일까요?</div><div class='qa-a'>의무의 내용*입니다. 신체·재산에 직접 힘을 가하는 건 직접강제예요.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [27~31]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>물건을 사용하고 있는 사람이 그 물건의 주인일까? 점유란 물건에 대한 사실상의 지배 상태를 뜻한다. 이에 비해 소유란 어떤 물건을 사용ㆍ수익ㆍ처분할 수 있는 권리를 가진 상태라고 정의된다. 따라서 점유자와 소유자가 항상 일치하지는 않는다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>물건을 빌려 쓰거나 보관하고 있는 것을 포함하여 물건을 물리적으로 지배하는 상태를 직접점유라고 한다. 이에 비해 어떤 물건을 빌려 쓰거나 보관하는 사람에게 그 물건의 반환을 청구할 수 있는 권리를 가진 사람도 사실상의 지배를 한다고 볼 수 있다. 이와 같이 반환청구권을 가진 상태를 간접점유라고 한다. 직접점유와 간접점유는 모두 점유에 해당한다. 점유는 소유자를 공시하는 기능도 수행한다. 공시란 물건에 대해 누가 어떤 권리를 가지고 있는지를 알려 주는 것이다. 물건 중에서 피아노, 금반지, 가방 등과 같은 대부분의 동산은 점유에 의해 소유권이 공시된다.</p></div>
+
+<p>물건의 소유권이 양도되려면, 소유자가 양도인이 되어 양수인과 유효한 양도 계약을 하고 이에 더하여 소유권 양도를 공시해야 한다. ㉠점유로 소유권이 공시되는 동산의 소유권 양도는 점유를 넘겨주는 점유 인도로 공시된다. 양수인이 간접점유를 하여 소유권 이전이 공시되는 경우로서 ‘점유개정’과 ‘반환청구권 양도’가 있다. 예를 들어 A가 B에게 피아노의 소유권을 양도하기로 계약하되 사흘간 빌려 쓰는 것으로 합의한 경우, B는 A에게 피아노를 사흘 후 돌려 달라고 요구할 수 있는 반환청구권을 가지게 된다. 이처럼 양도인이 직접점유를 유지하지만, 양수인에게 점유 인도가 이루어진 것으로 간주되는 경우를 점유개정이라고 한다. 한편 C가 자신이 소유한 가방을 D에게 맡겨 두어 이에 대한 반환청구권을 가지게 되었는데, 이 가방의 소유권을 E에게 양도하는 계약을 체결하였다고 하자. 이때 C가 D에게 통지하여 가방 주인이 바뀌었으니 가방을 E에게 반환하라고 알려 주면 D가 보관 중인 가방에 대한 반환청구권은 C로부터 E에게로 넘어간다. 이 경우를 반환청구권 양도라고 한다.</p>
+<p>양도인이 소유자가 아니더라도 양수인이 점유 인도를 받으면 소유권을 취득할 수 있을까? 점유로 공시되는 동산의 경우 양수인이 충분히 주의를 했는데도 양도인이 소유자가 아님을 알지 못한 채 양도인과 유효한 계약을 하고, 점유 인도로 공시를 했다면 양수인은 소유권을 취득한다. 이것을 ‘선의취득’이라 한다. 다만 간접점유에 의한 인도 방법 중 점유개정으로는 선의취득을 하지 못한다. 선의취득으로 양수인이 소유권을 취득하면 원래 소유자는 원하지 않아도 소유권을 상실하게 된다.</p>
+<p>반면에 국가가 관리하는 공적 기록인 등기ㆍ등록으로 공시되어야 하는 물건은 아예 선의취득 대상이 아니다. ㉡법률이 등록 대상으로 규정한 자동차, 항공기 등의 동산은 등록으로 공시되는 물건이고, ㉢토지ㆍ건물과 같은 부동산은 등기로 공시되는 물건이다. 이러한 고가의 재산에 대해 선의취득을 허용하게 되면 원래 소유자의 의사에 반하는 소유권 박탈이 ⓐ일어나게 된다. 이것은 거래 안전에만 치중하고 원래 소유자의 권리 보호를 경시한 것이 되어 바람직하지 않다고 볼 수 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 가방을 사용하고 있는 사람은 그 가방의 점유자이다.</li>
+<li>② 가방을 점유하고 있더라도 그 가방의 소유자가 아닐 수 있다.</li>
+<li>③ 가방의 소유권이 유효한 계약으로 이전되려면 점유 인도가 있어야 한다.</li>
+<li>④ 가방에 대해 누가 소유권을 가지고 있는지를 알게 해 주는 방법은 점유이다.</li>
+<li>⑤ 가방의 소유권을 양도하는 유효한 계약을 체결하면 공시 방법이 갖춰지지 않아도 소유권은 이전된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>27번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 물리적 지배를 해야 동산의 간접점유자가 될 수 있다.</li>
+<li>② 간접점유는 피아노 소유권에 대한 공시 방법이 아니다.</li>
+<li>③ 하나의 동산에 직접점유자가 있으려면 간접점유자도 있어야 한다.</li>
+<li>④ 피아노의 직접점유자가 있으면 그 피아노의 간접점유자는 소유자가 아니다.</li>
+<li>⑤ 유효한 양도 계약으로 피아노의 소유자가 되려면 피아노에 대해 직접점유나 간접점유 중 하나를 갖춰야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p>㉠～㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 국가가 관리하는 공적 기록에 의해 소유권 양도가 공시될 수 있다.</li>
+<li>② ㉡은 ㉠과 달리, 원래 소유자의 권리 보호가 거래 안전보다 중시되는 대상이다.</li>
+<li>③ ㉢은 ㉠과 달리, 물리적 지배의 대상이 아니므로 점유로 공시될 수 없다.</li>
+<li>④ ㉠과 ㉡은 모두 양도인이 소유자가 아니더라도 소유권 이전이 가능하다.</li>
+<li>⑤ ㉠과 ㉢은 모두 점유개정으로 소유권 양도가 공시될 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑과 을은, 갑이 끼고 있었던 금반지의 소유권을 을에게 양도하기로 하는 유효한 계약을 했다. 갑과 을은, 갑이 이 금반지를 보관하다가 을이 요구할 때 넘겨주기로 합의했다. 을은 소유권 양도 계약을 할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다. 을은 일주일 후 병과 유효한 소유권 양도 계약을 했고, 갑에게 통지하여 사흘 후 병에게 금반지를 넘겨주라고 알려 주었다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 금반지 소유자였다면, 병이 금반지의 물리적 지배를 넘겨받지 않았으나 병은 소유권을 취득한다.</li>
+<li>② 갑이 금반지 소유자였다면, 을은 갑으로부터 물리적 지배를 넘겨받지 않았으나 점유 인도를 받은 것으로 간주된다.</li>
+<li>③ 갑이 금반지 소유자가 아니었더라도, 병은 을로부터 을이 가진 소유권을 양도받아 취득한다.</li>
+<li>④ 갑이 금반지 소유자가 아니었더라도, 을은 반환청구권 양도로 병에게 점유 인도를 한 것으로 간주된다.</li>
+<li>⑤ 갑이 금반지 소유자가 아니었더라도, 병이 계약할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다면, 병은 소유권을 취득한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>31</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 작년은 우리나라에서 수많은 사건이 일어난 해였다.</li>
+<li>② 청중 사이에서는 기쁨으로 인해 환호성이 일어났다.</li>
+<li>③ 형님의 강한 의지력으로 집안이 다시 일어나게 되었다.</li>
+<li>④ 나는 그 사람에 대해 경계심이 일어나지 않을 수 없었다.</li>
+<li>⑤ 사회는 구성원들이 부조리에 맞서 일어남으로써 발전한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>행정 대집행 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='행정 대집행 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>수생 동물의 호흡 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>수생 동물의 호흡 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 물속에서 사는 물고기는 우리처럼 코로 공기를 들이쉴 수 없는데도 어떻게 숨을 쉴까요? 비밀은 바로 머리 양옆에 달린 <strong>아가미</strong>에 있어요. 우리가 폐로 공기 중의 산소를 받아들이듯, 물고기는 아가미로 물에 녹아 있는 산소를 빨아들이고 이산화 탄소를 내보냅니다. 그런데 물속에는 공기보다 산소가 훨씬 적게 녹아 있어요. 그래서 수생 동물은 이 적은 산소를 한 방울도 놓치지 않으려고 아주 정교한 장치를 갖추게 되었습니다.</p>
+<p>아가미는 크게 두 종류로 나뉘어요. <strong>몸 밖으로 삐져나온 외아가미</strong>는 표면이 넓어 좋지만, 물에 닿으려고 계속 흔들어야 해서 힘이 들고 다치기도 쉽습니다. 반대로 <strong>몸 안쪽에 숨어 있는 내아가미</strong>는 단단한 덮개로 보호받으면서도 효율이 높아, 대부분의 물고기가 이 방식을 씁니다. 내아가미 안에는 <em>필라멘트</em>라는 가는 실 같은 구조가 있고, 거기에 <em>라멜라</em>라는 납작한 판들이 빗살처럼 늘어서 있어요. 이 라멜라 속 가느다란 혈관에서 산소를 받아들입니다.</p>
+<p>여기서 가장 똑똑한 장치가 하나 있어요. 바로 <strong>물의 흐름과 피의 흐름이 서로 반대 방향으로 흐른다</strong>는 점이에요. 마치 강물을 거슬러 노를 젓는 배처럼, 물과 피가 엇갈려 흐르면 산소를 끝까지 최대한 뽑아낼 수 있습니다. 이것을 <em>역류</em>라고 불러요. 또 물고기는 입과 아가미 덮개를 펌프처럼 움직여 물을 한 방향으로만 흘려보내는데, 이 방법에도 두 가지가 있답니다.</p>
+<blockquote>
+<p>한마디로: <strong>수생 동물의 호흡은 "적은 산소를 알뜰하게 끌어모으는 기술"</strong>이에요. 아가미가 어떤 부품으로 이루어졌는지, 물과 피가 왜 반대로 흐르는지, 물을 어떻게 밀어 보내는지를 따라가다 보면 그 알뜰함의 비밀이 보입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>수생 동물이 물속에서 산소를 얻는 방법</strong>이 있습니다. 같은 호흡이라도 무엇을 들여다보느냐에 따라 보이는 풍경이 다른데, 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>수생 동물의 호흡 (아가미를 통한 기체 교환)<small>"구조 · 역류식 산소 확산 · 한 방향 환수"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>내아가미가 어떤 부품(필라멘트·라멜라·혈관)으로 이루어졌고, 각 부품이 무슨 일을 하는지 그 <em>짜임새</em>를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>물과 피가 <em>왜 반대 방향으로 흐르는지</em>, 그 역류 관계가 산소 확산을 어떻게 최대로 끌어올리는지 그 <em>원리</em>를 따져 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>아가미를 <em>어떻게 나누고</em>, 물을 <em>어떻게 밀어 보내는지</em>, 곧 외/내아가미의 분류와 입 펌프·강제 환수 두 방식의 차이를 견주어 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 수생 동물이 부족한 산소를 어떤 구조로, 어떤 원리로, 어떤 방식으로 알뜰하게 끌어모으는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>수생 동물은 물속에 녹아 있는 산소를 흡수하고 체내의 이산화 탄소를 배출하기 위해 아가미라는 기관을 사용한다. 물속에는 공기 중에 비해 산소가 매우 적게 녹아 있고, 그 양마저 수온 차에 따라 달라지므로, 수생 동물은 적은 산소를 알뜰하게 끌어모을 수 있어야 한다. 가용 산소가 적은 수중 환경에서 효과적으로 호흡하려면 물과 접촉하는 면적을 넓히고 기체 교환을 효율적으로 수행하는 정교한 구조가 필요하다. 대부분의 어류, 갑각류, 연체동물에서 나타나는 내아가미는 체내에 위치하여 보호를 받으며 일정한 형태를 유지한다. 내아가미는 덮개라 불리는 딱딱한 껍데기로 덮여 있어 외부의 손상으로부터 안전하고, 물의 흐름을 한 방향으로 조절하기에도 유리하다.</p>
+<p>내아가미는 필라멘트라는 가는 실 모양의 구조를 기본 단위로 한다. 필라멘트는 아가미를 지탱하는 아가미궁에 부착되어 일정한 간격으로 배열되며, 각 필라멘트에는 라멜라라 불리는 납작한 판이 나란히 늘어서 있다. 라멜라는 필라멘트의 표면적을 크게 넓혀, 물과 접촉하는 면이 넓어지도록 한다. 표면적이 넓을수록 같은 시간에 더 많은 물이 라멜라에 닿을 수 있어, 물과 혈액 사이에서 기체가 오가는 양이 늘어난다. 각 라멜라의 내부에는 수많은 모세 혈관이 분포해 있어, 라멜라를 흐르는 물과 모세 혈관 속 혈액 사이에서 산소와 이산화 탄소의 교환이 효율적으로 이루어진다. 모세 혈관의 벽은 매우 얇아서, 물에 녹아 있던 산소가 이 벽을 쉽게 가로질러 혈액으로 넘어올 수 있다. 이처럼 아가미궁에 부착된 필라멘트, 필라멘트에 배열된 라멜라, 라멜라 내부의 모세 혈관이 차례로 이어지는 구조는, 작은 공간 안에 기체 교환에 필요한 표면적을 최대로 접어 넣는 방식으로 짜여 있다. 표면적이 넓고 막이 얇다는 두 조건이 함께 갖추어질 때, 적은 산소가 녹은 물에서도 산소를 효율적으로 거둘 수 있다.</p>
+<p>필라멘트의 양측에는 각각 구심성 혈관과 원심성 혈관이 존재한다. 산소 농도가 낮은 혈액은 필라멘트의 한쪽 측면을 따라 구심성 혈관 속을 흐르고, 라멜라의 모세 혈관을 지나며 산소를 받아들인 혈액은 원심성 혈관을 따라 필라멘트의 다른 측면으로 빠져나간다. ㉠<u>라멜라 안에 있는 모세 혈관 내부에서는 항상 구심성 혈관에서 원심성 혈관으로 혈액이 흐르며, 이와 함께 기체 교환이 일어난다.</u> 즉 산소를 얻기 전의 혈액은 구심성 혈관 쪽에서 라멜라로 들어오고, 산소를 얻은 혈액은 원심성 혈관 쪽으로 나가는 것이다. 라멜라 내부에서 혈액이 흐르는 방향이 일정하게 유지되기 때문에, 산소를 막 받아들이기 시작한 혈액과 충분히 받아들인 혈액이 라멜라 안의 서로 다른 위치에 놓이게 된다. 이렇게 위치에 따라 혈액의 산소 농도가 달라지는 짜임은, 물에서 혈액으로 산소가 끊임없이 넘어오게 하는 바탕이 된다.</p>
+<p>이러한 구조 덕분에 내아가미는 외아가미가 지닌 약점을 보완한다. 외아가미는 몸 밖으로 돌출된 형태여서 표면적이 넓고 형태가 다양하지만, 주변 물과의 접촉을 늘리기 위해 끊임없이 흔들려야 한다. 이 때문에 외아가미는 외부의 손상에 노출되기 쉽고, 아가미를 흔드는 데 많은 에너지가 들며, 적에게 공격당할 위험도 크다. 반면 내아가미는 덮개 안에서 일정한 형태를 유지한 채 물을 한 방향으로 통과시키므로, 아가미를 흔드는 데 따로 에너지를 쓰지 않고도 넓은 표면적과 효율적인 기체 교환을 동시에 확보한다. 또한 일정한 형태를 유지한다는 것은 필라멘트와 라멜라의 간격이 흐트러지지 않는다는 뜻이어서, 물이 라멜라 사이를 고르게 지나며 모든 라멜라에서 기체 교환이 일어날 수 있게 한다. 곧 외아가미가 표면적을 얻는 대가로 에너지와 안전을 치르는 것과 달리, 내아가미는 구조를 정교하게 다듬어 그 대가를 줄인 셈이다. 결국 내아가미의 정교한 구조는 적은 산소를 알뜰하게 흡수해야 하는 수중 환경에 대한 적응의 결과라 할 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 내아가미는 덮개라 불리는 껍데기로 덮여 외부의 손상으로부터 보호를 받는다.</li>
+<li>② 외아가미는 일정한 형태를 유지한 채 에너지를 쓰지 않고 표면적을 넓힌다.</li>
+<li>③ 각 라멜라의 내부에는 수많은 모세 혈관이 분포해 기체 교환이 이루어진다.</li>
+<li>④ 필라멘트는 아가미를 지탱하는 아가미궁에 부착되어 일정한 간격으로 배열된다.</li>
+<li>⑤ 라멜라는 필라멘트의 표면적을 넓혀 물과 접촉하는 면이 커지도록 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+4문단에서 일정한 형태를 유지한 채 에너지를 쓰지 않고 표면적을 확보하는 것은 <em>내아가미</em>예요. 외아가미는 표면적을 넓히려고 "끊임없이 흔들려야" 하고 그 때문에 "많은 에너지가 들"죠. ②는 외아가미와 내아가미의 특징을 맞바꿔 놓았으니 일치하지 않아 정답입니다. ①은 1문단(덮개의 보호), ⑤·③은 2문단(라멜라의 표면적 확대·모세 혈관의 기체 교환), ④는 2문단(필라멘트가 아가미궁에 배열)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>내아가미의 구조에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 산소 농도가 낮은 혈액은 원심성 혈관을 따라 라멜라로 들어온다.</li>
+<li>② 라멜라는 필라멘트의 한 측면에만 모세 혈관을 두어 기체를 교환한다.</li>
+<li>③ 필라멘트는 라멜라를 기본 단위로 하여 아가미궁의 표면에 직접 배열된다.</li>
+<li>④ 라멜라 내부에서 혈액은 구심성 혈관에서 원심성 혈관으로 흐르며 산소를 받아들인다.</li>
+<li>⑤ 구심성 혈관과 원심성 혈관은 필라멘트의 같은 측면에 나란히 놓여 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+3문단의 ㉠에서 "라멜라 안에 있는 모세 혈관 내부에서는 항상 구심성 혈관에서 원심성 혈관으로 혈액이 흐르며, 이와 함께 기체 교환이 일어난다"라고 했으므로 ④가 적절해 정답입니다. ① 산소 농도가 낮은 혈액은 <em>구심성</em> 혈관으로 들어오고, ⑤ 구심성·원심성 혈관은 필라멘트의 <em>양측</em>(서로 다른 측면)에 있으므로 두 선지는 방향·위치를 뒤집었어요. ② 라멜라는 필라멘트에 <em>나란히 배열</em>되며 그 내부에 모세 혈관이 있는 것이지 한 측면에만 두는 것이 아니고, ③ 필라멘트의 기본 단위라는 진술도 라멜라와 필라멘트의 관계를 거꾸로 말한 것입니다.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+필라멘트 표면에 늘어선 얇은 판(㉮)은 라멜라, 그 안의 그물 같은 혈관은 모세 혈관, 어두운 혈액(㉯)은 산소를 덜 받은 구심성 혈관의 혈액, 선명한 혈액(㉰)은 산소를 받은 원심성 혈관의 혈액에 각각 대응해요(①~④ 적절). 그런데 〈보기〉의 어류는 아가미가 돌출되어 있지 않고 덮개로 덮여 있으므로 <em>내아가미</em>의 특징을 보입니다. ⑤는 이를 "끊임없이 흔들려야 하는 외아가미의 특징"이라고 정반대로 연결했으니 적절하지 않아 정답입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 어류의 내아가미를 관찰하였다. 아가미궁에는 여러 개의 필라멘트가 빗살처럼 붙어 있었고, 하나의 필라멘트를 확대하니 그 표면을 따라 ㉮얇은 판들이 촘촘히 늘어서 있었다. 이 판 하나의 내부에는 가느다란 혈관들이 그물처럼 퍼져 있었으며, 필라멘트의 한쪽에서는 ㉯붉고 어두운 빛을 띤 혈액이, 반대쪽에서는 ㉰선명하게 붉은 혈액이 흐르고 있었다. 같은 어류의 머리뼈 바깥쪽에는 아가미가 돌출되어 있지 않았고, 대신 단단한 덮개가 아가미를 덮고 있었다.</p>
+</blockquote>
+<ul>
+<li>① ㉮는 필라멘트의 표면적을 넓혀 물과 접촉하는 면을 키우는 라멜라에 해당하겠군.</li>
+<li>② ㉮ 하나의 내부에 퍼진 가느다란 혈관들에서 물과 혈액 사이의 기체 교환이 일어나겠군.</li>
+<li>③ ㉯는 아직 산소를 충분히 받아들이지 못해 구심성 혈관을 흐르는 혈액에 해당하겠군.</li>
+<li>④ ㉰는 라멜라를 지나며 산소를 받아들여 원심성 혈관으로 빠져나가는 혈액에 해당하겠군.</li>
+<li>⑤ 아가미가 돌출되어 있지 않고 덮개로 덮여 있는 것은, 끊임없이 흔들려야 하는 외아가미의 특징에 해당하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생이 보인 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 외아가미는 표면적이 넓으므로 내아가미보다 적에게 공격당할 위험이 작겠군.</li>
+<li>② 내아가미가 물을 한 방향으로 통과시키는 것은 넓은 표면적을 확보하는 데 방해가 되겠군.</li>
+<li>③ 내아가미의 정교한 구조는 적은 산소를 효율적으로 흡수하려는 적응의 결과로 볼 수 있겠군.</li>
+<li>④ 라멜라가 많을수록 물과 접촉하는 면이 좁아져 기체 교환의 효율이 떨어지겠군.</li>
+<li>⑤ 외아가미는 체내에 위치하여 보호를 받으므로 흔드는 데 에너지를 쓰지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+4문단은 내아가미의 정교한 구조를 "적은 산소를 알뜰하게 흡수해야 하는 수중 환경에 대한 적응의 결과"라고 했으므로 ③이 적절해 정답입니다. ① 공격 위험이 큰 것은 외아가미이고, ② 물을 한 방향으로 통과시키는 것은 표면적 확보를 방해하기는커녕 효율을 <em>높이며</em>, ④ 라멜라가 많을수록 표면적은 <em>넓어지고</em>, ⑤ 체내에 위치해 보호받는 것은 외아가미가 아니라 <em>내아가미</em>이므로 모두 지문과 어긋납니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>필라멘트</strong>: 내아가미의 기본 단위가 되는 가는 실 모양의 구조. 아가미궁에 빗살처럼 배열돼요.</li>
+<li><strong>라멜라</strong>: 필라멘트 표면에 나란히 늘어선 납작한 판. 표면적을 넓히고, 내부의 모세 혈관에서 기체를 교환합니다.</li>
+<li><strong>구심성/원심성 혈관</strong>: 산소를 덜 받은 혈액이 들어오는 통로가 구심성 혈관, 산소를 받은 혈액이 빠져나가는 통로가 원심성 혈관이에요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>구조</th>
+<th>위치</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아가미궁</td>
+<td>아가미를 지탱하는 뼈대</td>
+<td>필라멘트를 붙들어 줌</td>
+</tr>
+<tr>
+<td>필라멘트</td>
+<td>아가미궁에 배열된 실 모양 단위</td>
+<td>라멜라를 떠받침</td>
+</tr>
+<tr>
+<td>라멜라</td>
+<td>필라멘트에 나란히 늘어선 판</td>
+<td>표면적 확대 + 기체 교환</td>
+</tr>
+<tr>
+<td>모세 혈관</td>
+<td>라멜라 내부</td>
+<td>구심성→원심성 방향으로 혈액이 흐르며 산소 흡수</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>내아가미의 기본 단위는 무엇이고, 그 위에는 무엇이 늘어서 있나요?</div><div class='qa-a'>기본 단위는 필라멘트이고, 그 표면에 납작한 판인 라멜라가 나란히 늘어서 있습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>라멜라 내부의 모세 혈관에서 혈액은 어느 방향으로 흐르나요?</div><div class='qa-a'>항상 구심성 혈관에서 원심성 혈관 쪽으로 흐르며, 그 과정에서 산소를 받아들입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>내아가미가 외아가미보다 에너지 면에서 유리한 까닭은?</div><div class='qa-a'>일정한 형태를 유지한 채 물을 한 방향으로 통과시켜, 아가미를 흔드는 데 따로 에너지를 쓰지 않기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 6월 [8~11]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>분자들이 만나 화학 반응을 진행하는 데 필요한 최소한의 운동 에너지를 활성화 에너지라 한다. 활성화 에너지가 작은 반응은, 반응의 활성화 에너지보다 큰 운동 에너지를 가진 분자들이 많아 반응이 빠르게 진행된다. 활성화 에너지를 조절하여 반응 속도에 변화를 주는 물질을 촉매라고 하며, 반응 속도를 빠르게 하는 능력을 촉매 활성이라 한다. 촉매는 촉매가 없을 때와는 활성화 에너지가 다른, 새로운 반응 경로를 제공한다. 화학 산업에서는 주로 고체 촉매가 이용되는데, 액체나 기체인 생성물을 촉매로부터 분리하는 별도의 공정이 필요 없기 때문이다. 고체 촉매는 대부분 활성 성분, 지지체, 증진제로 구성된다.</p>
+<p>활성 성분은 그 표면에 반응물을 흡착시켜 촉매 활성을 제공하는 물질이다. 고체 촉매의 촉매 작용에서는 반응물이 먼저 활성 성분의 표면에 화학 흡착되고, 흡착된 반응물이 표면에서 반응하여 생성물로 변환된 후, 생성물이 표면에서 탈착되는 과정을 거쳐 반응이 완결된다. 금속은 다양한 물질들이 표면에 흡착될 수 있어 여러 반응에서 활성 성분으로 사용된다. 예를 들면, 암모니아를 합성할 때 철을 활성 성분으로 사용하는데, 이때 반응물인 수소와 질소가 철의 표면에 흡착되어 각각 원자 상태로 분리된다. 흡착된 반응물은 전자를 금속 표면의 원자와 공유하여 안정화된다. 반응물의 흡착 세기는 금속의 종류에 따라 달라진다. 이때 흡착 세기가 적절해야 한다. 흡착이 약하면 흡착량이 적어 촉매 활성이 낮으며, 흡착이 너무 강하면 흡착된 반응물이 지나치게 안정화되어 표면에서의 반응이 느려지므로 촉매 활성이 낮다. 일반적으로 고체 촉매에서는 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다.</p>
+<p>금속은 열적 안정성이 낮아, 화학 반응이 일어나는 고온에서 금속 원자들로 이루어진 작은 입자들이 서로 달라붙어 큰 입자를 이루게 되는데 이를 소결이라 한다. 입자가 소결되면 금속 활성 성분의 전체 표면적은 줄어든다. 이러한 문제를 해결하는 것이 지지체이다. 작은 금속 입자들을 표면적이 넓고 열적 안정성이 높은 지지체의 표면에 분산하면 소결로 인한 촉매 활성 저하가 억제된다. 따라서 소량의 금속으로도 ㉠금속을 활성 성분으로 사용하는 고체 촉매의 활성을 높일 수 있다.</p>
+<p>증진제는 촉매에 소량 포함되어 활성을 조절한다. 활성 성분의 표면 구조를 변화시켜 소결을 억제하기도 하고, 활성 성분의 전자 밀도를 변화시켜 흡착 세기를 조절하기도 한다. 고체 촉매는 활성 성분이 반드시 있어야 하지만 경우에 따라 증진제나 지지체를 포함하지 않기도 한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 촉매를 이용하면 화학 반응이 새로운 경로로 진행된다.</li>
+<li>② 고체 촉매는 기체 생성물과 촉매의 분리 공정이 필요하다.</li>
+<li>③ 고체 촉매에 의한 반응은 생성물의 탈착을 거쳐 완결된다.</li>
+<li>④ 암모니아 합성에서 철 표면에 흡착된 수소는 전자를 철 원자와 공유한다.</li>
+<li>⑤ 증진제나 지지체 없이 촉매 활성을 갖는 고체 촉매가 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+1문단에서 화학 산업에서 고체 촉매가 주로 이용되는 이유는 액체나 기체인 생성물을 촉매로부터 분리하는 <strong>별도의 공정이 필요 없기</strong> 때문이라고 했으므로 ②는 일치하지 않는다. ①은 새로운 반응 경로 제공(1문단), ③은 탈착으로 반응 완결(2문단), ④는 흡착된 반응물이 전자를 금속 표면 원자와 공유(2문단), ⑤는 증진제·지지체를 포함하지 않기도 함(4문단)과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,571명 — ①2.5% ②83.9% ③7.1% ④3.5% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠의 촉매 활성을 높이는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 반응물을 흡착하는 금속 원자의 개수를 늘린다.</li>
+<li>② 활성 성분의 소결을 촉진하는 증진제를 첨가한다.</li>
+<li>③ 반응물의 반응 속도를 늦추는 지지체를 사용한다.</li>
+<li>④ 반응에 대한 활성화 에너지를 크게 하는 금속을 사용한다.</li>
+<li>⑤ 활성 성분의 금속 입자들을 뭉치게 하여 큰 입자로 만든다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong><br />
+2문단에서 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다고 했으므로 ①이 적절하다. 소결 촉진(②)과 입자 뭉침(⑤)은 표면적을 줄여 활성을 낮추고, 반응 속도를 늦추는 것(③)은 촉매 활성(반응 속도를 빠르게 하는 능력)과 반대이며, 활성화 에너지를 크게 하면(④) 반응이 느려진다.</p>
+<p><em>선택률</em> — 응시 98,584명 — ①54.3% ②5.8% ③20.5% ④11.2% ⑤7.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아세틸렌은 보통 선택적 수소화 공정을 통하여 에틸렌으로 변환된다. 이 공정에서 사용되는 고체 촉매는 팔라듐 금속 입자를 실리카 표면에 분산하여 만들며, 아세틸렌과 수소는 팔라듐 표면에 흡착되어 반응한다. 여기서 실리카는 표면적이 넓고 열적 안정성이 높다. 이때, 촉매에 규소를 소량 포함시키면 활성 성분의 표면 구조가 변화되어 고온에서 팔라듐의 소결이 억제된다. 또한 은을 소량 포함시키면 팔라듐의 전자 밀도가 높아지고 팔라듐 표면에 반응물이 흡착되는 세기가 조절되어 원하는 반응을 얻을 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 아세틸렌은 반응물에 해당한다.</li>
+<li>② 팔라듐은 활성 성분에 해당한다.</li>
+<li>③ 규소와 은은 모두 증진제에 해당한다.</li>
+<li>④ 실리카는 낮은 온도에서 활성 성분을 소결한다.</li>
+<li>⑤ 실리카는 촉매 활성 저하를 억제하는 기능을 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>10번 — 정답 ④</strong><br />
+실리카는 표면적이 넓고 열적 안정성이 높은 지지체로, 금속 입자를 분산해 소결로 인한 촉매 활성 저하를 억제하는 역할을 한다. 활성 성분을 소결하는 것이 아니므로 ④가 적절하지 않다. 에틸렌으로 변환되는 아세틸렌은 반응물(①), 반응물을 흡착시키는 팔라듐은 활성 성분(②), 표면 구조를 변화시켜 소결을 억제하는 규소와 전자 밀도를 변화시켜 흡착 세기를 조절하는 은은 증진제(③), 실리카는 지지체로서 활성 저하 억제(⑤).</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.8% ②5.4% ③17.2% ④64.9% ⑤10.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, 〈보기〉의 금속 ⓐ～ⓓ에 대한 설명으로 가장 적절한 것은? </p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 여러 가지 금속에 물질 <span class="boxmark">[가]</span>가 흡착될 때의 흡착 세기와 <span class="boxmark">[가]</span>의 화학 반응에서 각 금속의 촉매 활성을 나타낸다. (단, 흡착에 영향을 주는 다른 요소는 고려하지 않음.)
+<strong><span class="boxmark">[그림: 산 모양 산점도]</span></strong> 세로축은 ‘촉매 활성’(아래 ‘낮음’에서 위 ‘높음’ 방향 화살표), 가로축은 ‘흡착 세기’(왼쪽 ‘약함’, 오른쪽 ‘강함’ 방향 화살표). 점들이 왼쪽 아래에서 가운데 위로 올라갔다가 오른쪽 아래로 내려가는 산(山) 모양 추세를 이룬다. ⓐ는 가장 왼쪽(흡착 세기 약함·촉매 활성 낮음), ⓑ는 ⓐ보다 오른쪽 위(흡착 세기와 활성이 ⓐ보다 큼), ⓒ는 추세의 정점 부근(중간 흡착 세기·촉매 활성 최고), ⓓ는 가장 오른쪽(흡착 세기 강함·촉매 활성 낮음)에 위치한다. 이 밖에 기호가 붙지 않은 점들도 같은 산 모양 추세를 이룬다(별도의 추세선은 그려져 있지 않다).</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[가]</span>의 화학 반응은 ⓐ보다 ⓑ를 활성 성분으로 사용할 때 더 느리게 일어난다.</li>
+<li>② <span class="boxmark">[가]</span>는 ⓐ보다 ⓒ에 흡착될 때 흡착량이 더 적다.</li>
+<li>③ <span class="boxmark">[가]</span>는 ⓐ보다 ⓓ에 흡착될 때 안정화되는 정도가 더 크다.</li>
+<li>④ <span class="boxmark">[가]</span>는 ⓑ보다 ⓒ에 더 약하게 흡착된다.</li>
+<li>⑤ <span class="boxmark">[가]</span>의 화학 반응에서 촉매 활성만을 고려하면 가장 적합한 활성 성분은 ⓓ이다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+2문단에 따르면 흡착이 너무 강하면 반응물이 지나치게 안정화되어 촉매 활성이 낮아진다. ⓓ는 ⓐ보다 흡착 세기가 훨씬 강하므로 <span class="boxmark">[가]</span>가 안정화되는 정도가 더 크다(③). ⓑ는 ⓐ보다 촉매 활성이 높으므로 반응이 더 빠르고(①), ⓒ는 ⓐ보다 흡착이 강해 흡착량이 더 많으며(②), ⓒ는 ⓑ보다 흡착이 더 강하고(④), 촉매 활성이 가장 높은 금속은 ⓓ가 아니라 ⓒ이다(⑤).</p>
+<p><em>선택률</em> — 응시 98,576명 — ①6.3% ②5.5% ③73.0% ④9.4% ⑤7.0%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>내아가미를 가진 어류가 물에서 산소를 얻는 과정은 물의 흐름과 혈액의 흐름이 맺는 관계로 설명된다. 어류의 입으로 들어온 물은 아가미를 향해 흐르다가, 필라멘트에 늘어선 라멜라 사이를 지나간다. 라멜라는 얇은 판이 촘촘히 늘어선 형태여서, 그 사이로 흐르는 물은 라멜라 표면과 넓게 맞닿으며 천천히 지나간다. 물이 라멜라에 오래 닿을수록 산소가 혈액으로 넘어갈 시간이 길어진다. 이때 물이 라멜라 사이를 흐르는 방향은 라멜라 내부의 모세 혈관을 흐르는 혈액의 방향과 정반대이다. 곧 라멜라를 가로지르는 물의 흐름과 모세 혈관의 혈류가 서로 마주 보며 엇갈려 흐르는 것이다. 산소는 산소 압력이 높은 곳에서 낮은 곳으로 압력 기울기에 따라 확산되는데, 산소 농도가 높을수록 산소 압력도 높다. 확산은 압력 차가 있을 때에만 일어나고, 압력이 같아지면 멈추므로, 물과 혈액 사이에 산소 압력 차를 끊임없이 만들어 두는 것이 산소를 많이 얻는 관건이 된다. 따라서 산소를 적게 머금은 혈액과 산소를 많이 머금은 물이 만나면, 산소는 물에서 혈액으로 확산되어 들어간다.</p>
+<div class="ablock"><span class="atag">[A]</span>물의 흐름과 혈류가 서로 반대 방향으로 흐르는 ㉠<u>역류 관계</u>는 물과 혈액 사이의 기체 교환을 최대화한다. 물이 라멜라에 막 들어서는 지점에서는 이미 산소를 많이 머금은 혈액과 만나지만, 이 지점의 물은 산소를 가장 충분히 지니고 있어 그 혈액보다도 산소 압력이 높으므로, 산소가 물에서 모세 혈관으로 계속 확산된다. 물은 라멜라 표면을 계속 흐르면서 산소를 점차 잃어 가지만, 흐름이 진행될수록 아직 산소를 거의 얻지 못한 모세 혈관, 곧 그 위치의 혈액과 차례로 만나게 된다. 혈액 또한 원심성 혈관 쪽으로 갈수록 산소를 많이 머금지만, 그 혈액이 만나는 물은 그보다 더 많은 산소를 지닌 물이다. 그리하여 물이 산소를 잃어 가는 어느 지점에서도, 그 물이 만나는 혈액은 언제나 그 물보다 산소를 적게 머금고 있어 압력 기울기가 유지된다. 만약 물과 혈류가 같은 방향으로 흐른다면, 물과 혈액의 산소 농도는 도중에 같아져 더는 산소가 확산되지 못한다. 그러나 역류 관계에서는 물이 덮개를 빠져나가기 직전까지도 압력 기울기가 남아 있어, 가능한 한 많은 산소가 물에서 혈액으로 넘어간다. </div>
+
+<p>이러한 역류식 기체 교환은 가용 산소가 적은 수중 환경에서 특히 큰 이점을 지닌다. 물속에 녹아 있는 산소의 양은 공기 중의 산소량에 비해 매우 적으므로, 한 번 지나가는 물에서 산소를 최대한 뽑아내는 것이 수생 동물의 생존에 중요하다. 물과 혈류가 같은 방향으로 흐르는 경우에는, 두 흐름의 산소 농도가 중간에서 같아지는 지점이 생기고 그 뒤로는 산소가 더 넘어오지 못하므로, 물이 지닌 산소를 절반 남짓밖에 거두지 못한다. 그러나 역류 관계는 물이 라멜라를 다 지날 때까지 산소를 계속 넘겨받게 하므로, 같은 양의 물에서도 더 많은 산소를 얻을 수 있게 한다. 이는 산소가 부족한 물에서 호흡하는 어류일수록 더욱 절실한 이점이다. 들이쉴 수 있는 물의 산소가 애초에 적을 때, 그 적은 산소마저 절반만 거둔다면 호흡으로 얻는 산소가 크게 모자라기 때문이다. 또한 이 과정은 물이 한 방향으로만 흐르도록 하는 체계 위에서 이루어진다. 신선하고 산소가 많은 물이 아가미와 끊임없이 접촉하도록 물을 한쪽 방향으로만 흘려보내는 이러한 체계를 관류 체계라 한다. 관류 체계에서는 산소를 잃은 물이 빠져나간 자리를 산소가 풍부한 새 물이 곧바로 채우므로, 라멜라에 닿는 물의 산소 농도가 높게 유지되어 압력 기울기를 떠받친다. 만약 산소를 잃은 물이 그 자리에 머물러 새 물로 바뀌지 않는다면, 라멜라에 닿는 물의 산소 농도가 점점 낮아져 역류 관계가 만들어 둔 압력 차도 사라지고 만다. 결국 역류 관계와 관류 체계가 맞물려, 수생 동물은 적은 산소만 녹아 있는 물에서도 한 번 지나가는 물에서 산소를 최대한 거두며 효율적으로 호흡할 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 라멜라 사이를 흐르는 물은 모세 혈관의 혈류와 같은 방향으로 흐른다.</li>
+<li>② 산소는 산소 압력이 낮은 곳에서 높은 곳으로 압력 기울기에 따라 확산된다.</li>
+<li>③ 관류 체계는 산소를 잃은 물이 머무르게 하여 아가미와 오래 접촉하게 한다.</li>
+<li>④ 물속에 녹아 있는 산소량은 공기 중의 산소량에 비해 매우 적다.</li>
+<li>⑤ 물과 혈류가 같은 방향으로 흐를 때 물이 덮개를 빠져나가기 직전까지 압력 기울기가 유지된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>5번 — 정답 ④</strong>
+3문단에서 "물속에 녹아 있는 산소의 양은 공기 중의 산소량에 비해 매우 적"다고 했으므로 ④가 적절해 정답입니다. ① 물은 혈류와 <em>반대</em> 방향(역류)으로 흐르고, ② 산소는 압력이 <em>높은 곳에서 낮은 곳으로</em> 확산되며, ③ 관류 체계는 물을 <em>머무르게</em> 하는 것이 아니라 산소를 잃은 물을 새 물로 <em>바꿔</em> 주는 체계이고, ⑤ 압력 기울기가 끝까지 유지되는 것은 <em>역류</em>일 때이지 같은 방향일 때가 아니므로 모두 어긋납니다.</p>
+<p><strong>6번 [3점] — 정답 ⑤</strong>
+[A]에 따르면 혈액은 구심성 혈관(ⓡ) 쪽에서 라멜라로 들어올 때 산소가 가장 적고, 라멜라를 지나며 산소를 <em>받아들여</em> 원심성 혈관(ⓢ) 쪽으로 갈수록 산소를 <em>많이</em> 머금어요. 그런데 ⑤는 ⓢ 쪽 혈액이 ⓡ 쪽보다 산소를 "적게" 머금는다고 거꾸로 말했으니 적절하지 않아 정답입니다. ①은 들어오는 물(ⓟ)이 들어오는 혈액(ⓡ)보다 산소가 많음, ②는 ⓡ가 산소 농도가 가장 낮은 구심성 혈액, ③은 물이 빠져나가는 ⓠ 지점에서도 압력 기울기가 남음, ④는 같은 방향일 때 농도가 같아져 확산이 멈춤이라는 [A]의 진술에 각각 들어맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> [A]를 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아래는 하나의 라멜라에서 물과 혈액이 흐르는 모습을 단순화한 그림이다.</p>
+</blockquote>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈라멜라 역류 도식〉 — 가로로 긴 라멜라를 사이에 두고 위쪽에는 물이 왼쪽(ⓟ)에서 오른쪽(ⓠ)으로 흐르는 화살표, 아래쪽 모세 혈관에는 혈액이 오른쪽(ⓡ, 구심성 혈관 쪽)에서 왼쪽(ⓢ, 원심성 혈관 쪽)으로 흐르는 화살표가 그려져 물과 혈류가 서로 반대 방향(역류)임을 보임. 물은 들어올 때(ⓟ) 산소가 많고 나갈 때(ⓠ) 산소가 적으며, 혈액은 들어올 때(ⓡ) 산소가 적고 나갈 때(ⓢ) 산소가 많음을 농도 표시로 나타냄.</figure>
+
+<ul>
+<li>① ⓟ 지점의 물은 ⓡ 지점의 혈액보다 산소를 더 많이 머금고 있겠군.</li>
+<li>② ⓡ 쪽에서 라멜라로 들어오는 혈액은 산소 농도가 가장 낮은 구심성 혈관의 혈액이겠군.</li>
+<li>③ ⓠ 지점에서 물이 산소를 거의 다 잃었어도, 그 자리의 혈액보다는 산소를 더 많이 지녀 압력 기울기가 남아 있겠군.</li>
+<li>④ 물과 혈류가 ⓟ→ⓠ로 같은 방향이 되도록 그림을 바꾸면, 두 흐름의 산소 농도가 도중에 같아져 산소 확산이 멈추는 지점이 생기겠군.</li>
+<li>⑤ ⓢ 쪽으로 빠져나가는 혈액은 라멜라를 지나며 산소를 받아들여, ⓡ 쪽의 혈액보다 산소를 적게 머금고 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 물과 혈액이 같은 방향으로 흐르게 하여 두 흐름의 산소 농도를 빠르게 같게 만든다.</li>
+<li>② 물이 라멜라를 지나는 내내 물의 산소 압력이 혈액의 산소 압력보다 낮게 유지되도록 한다.</li>
+<li>③ 물이 라멜라를 빠져나가기 직전까지 압력 기울기가 남아 있게 하여 산소 확산을 최대화한다.</li>
+<li>④ 산소를 많이 머금은 혈액이 산소를 적게 머금은 물과 먼저 만나도록 흐름의 순서를 정한다.</li>
+<li>⑤ 라멜라를 지나는 물의 속도를 늦추어 물이 아가미에 오래 머무르도록 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong>
+㉠(역류 관계)은 물과 혈류가 반대로 흐르게 해 "물이 덮개를 빠져나가기 직전까지도 압력 기울기가 남아 있"게 하고, 그 결과 "가능한 한 많은 산소가 물에서 혈액으로 넘어"가게 합니다. 이를 그대로 짚은 ③이 적절해 정답입니다. ①·④는 같은 방향 흐름이나 흐름 순서를 잘못 말했고, ② 물이 라멜라를 지나는 내내 물의 산소 압력이 혈액보다 <em>높게</em> 유지되어야 산소가 물에서 혈액으로 가므로 방향이 반대이며, ⑤ 물의 속도 조절은 [A]에서 언급하지 않은 내용입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 추론한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 산소를 잃은 물이 빠져나간 자리를 산소가 풍부한 새 물이 채울수록 압력 기울기가 잘 유지된다.</li>
+<li>② 역류 관계는 산소가 풍부한 공기 중에서 호흡하는 육상 동물에게 더 큰 이점을 준다.</li>
+<li>③ 같은 양의 물이라도 역류식 기체 교환을 거치면 더 적은 산소만 얻을 수 있다.</li>
+<li>④ 관류 체계에서 물이 양방향으로 오가면 라멜라에 닿는 물의 산소 농도가 더 높게 유지된다.</li>
+<li>⑤ 물과 혈류의 산소 압력 차가 클수록 산소는 혈액에서 물로 빠져나간다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+3문단에서 관류 체계는 "산소를 잃은 물이 빠져나간 자리를 산소가 풍부한 새 물이 곧바로 채우므로, 라멜라에 닿는 물의 산소 농도가 높게 유지되어 압력 기울기를 떠받친다"라고 했으므로 ①이 적절해 정답입니다. ④ 관류 체계는 물이 <em>한 방향</em>으로만 흐르게 하고, ② 역류식 교환의 이점은 <em>적은 산소가 녹은 물</em>에서 호흡하는 수생 동물에게 크며, ③ 역류식 교환은 <em>더 많은</em> 산소를 얻게 하고, ⑤ 산소는 산소 압력이 높은 <em>물에서 혈액으로</em> 빠져나가므로 모두 지문과 어긋납니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>역류 관계</strong>: 라멜라를 흐르는 물과 모세 혈관의 혈액이 서로 반대 방향으로 흐르는 것. 압력 기울기를 끝까지 유지해 기체 교환을 최대로 만들어요.</li>
+<li><strong>압력 기울기</strong>: 산소 압력이 높은 곳과 낮은 곳의 차이. 산소는 이 기울기를 따라 높은 쪽에서 낮은 쪽으로 확산됩니다.</li>
+<li><strong>관류 체계</strong>: 신선하고 산소가 많은 물이 아가미와 끊임없이 닿도록 물을 한 방향으로만 흘려보내는 체계.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>물의 흐름</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>산소 많음 ───────────────▶ 산소 적음</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>역류 관계란 무엇을 말하나요?</div><div class='qa-a'>라멜라를 흐르는 물과 모세 혈관의 혈액이 서로 반대 방향으로 흐르는 것을 말합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>역류일 때 물이 빠져나가기 직전까지 산소가 계속 확산되는 까닭은?</div><div class='qa-a'>어느 지점에서도 물이 혈액보다 산소를 더 많이 지녀 압력 기울기가 유지되기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>관류 체계는 압력 기울기 유지에 어떻게 도움을 주나요?</div><div class='qa-a'>산소를 잃은 물을 산소가 풍부한 새 물로 끊임없이 바꿔 주어, 라멜라에 닿는 물의 산소 농도를 높게 유지하기 때문입니다.</div></div>
+</div></div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>수생 동물은 물속에 녹아 있는 산소를 흡수하기 위해 아가미를 사용하며, 아가미는 그 위치에 따라 외아가미와 내아가미로 나뉜다. 외아가미는 몸 밖으로 돌출된 형태로 표면적이 넓고 형태가 다양하며, 유생기의 도롱뇽이나 일부 무척추 동물에서 나타난다. 외아가미는 주변 물과의 접촉을 극대화하기 위해 많이 흔들려야 하는데, 이는 외부의 손상에 노출되기 쉽고 아가미를 흔드는 데 많은 에너지가 소모되며 적에게 공격당할 위험이 크다는 문제를 낳는다. 반면 대부분의 어류, 갑각류, 연체동물에 나타나는 내아가미는 체내에 위치하여 보호를 받고 일정한 형태를 유지하며, 덮개라 불리는 딱딱한 껍데기로 덮여 있다. 두 종류의 아가미는 모두 물에서 산소를 얻는다는 점에서는 같지만, 아가미를 물에 닿게 하는 방식에서 갈린다. 외아가미가 아가미 자체를 움직여 물과 접촉하는 데 비해, 내아가미는 아가미는 가만히 둔 채 물을 끌어들여 아가미에 흘려보낸다. 이렇게 물을 끌어들여 다시 내보내는 과정이 내아가미를 가진 어류의 호흡에서 핵심이 된다.</p>
+<p>어류가 물을 흡입하여 아가미에서 산소를 흡수한 후 다시 내보내는 것을 환수라 한다. 어류가 사용하는 아가미 환수 방법에는 크게 두 가지가 있다. ㉠<u>첫 번째 방법인 입 펌프 방식</u>은 입과 덮개에 있는 근육을 써서 수압을 만들어 물을 한 방향으로 보내는 것이다. 먼저 턱을 내려 입 공간을 크게 만들고 입속의 압력을 낮추면, 마치 물을 빨아들이는 펌프처럼 작동하여 입속으로 물이 들어온다. 거의 동시에 덮개가 밖으로 펼쳐져 덮개 공간을 확장하면서 그 속의 수압을 낮추는데, 덮개 공간을 확장하는 것은 입 공간을 크게 만드는 것보다 수압을 더 많이 낮춘다. 따라서 입으로 들어온 물은 압력 차에 따라 덮개 공간으로 이동한다. 이후 입을 닫고 입 공간을 수축시키면 물은 열린 덮개를 지나 밖으로 나간다. 이때 입 뒤의 가로막 조직은 물이 식도로 잘못 가는 것을 막아, 물이 아가미를 통해 한 방향으로만 빠져나가게 한다. 입 펌프 방식은 고요한 물속에 가만히 있으면서 물을 입으로 빨아들여 내보내는 방식이다.</p>
+<p>㉡<u>두 번째 방법인 강제 환수 방식</u>은 흐르는 물속에서 입을 벌린 채 제자리에 있거나 유영하면서, 물을 입으로 받아들여 아가미를 통해 빼내는 것이다. 이 방식은 입 펌프 방식에 비해 에너지 면에서 효율적이다. 강제 환수 방식도 에너지를 소모하기는 하지만, 흐르는 물을 맞으며 제자리에 머무르거나 유영하기 위한 근육 활동만 필요하므로, 호흡에 따로 드는 에너지가 입 펌프 방식보다 적다. 많은 어류는 두 방식을 모두 이용하여, 정체된 물속에서는 입 펌프 방식을 취하다가 빠르게 유영하거나 물 흐름에 맞설 때는 강제 환수 방식으로 바꾼다. 다만 참치와 같은 일부 어류는 강제 환수만을 하므로 쉼 없이 유영해야 한다.</p>
+<p>입 펌프 방식과 강제 환수 방식은 모두 관류 체계에 속한다. 관류 체계는 신선하고 산소가 많은 물이 아가미와 접촉할 수 있도록 물이 한쪽 방향으로만 흐르게 하는 체계로, 두 환수 방식은 물을 밀어 보내는 힘을 만드는 방법에서만 차이가 있을 뿐 물을 한 방향으로 흘려보낸다는 점에서는 같다. 이와 달리 숨을 쉬는 많은 육상 동물은 허파에서 기체를 교환하기 위해 간만 환기라는 방법을 쓴다. 간만 환기는 신선한 공기를 들이쉬었다가 탁해진 공기를 같은 통로로 다시 내쉬는 방식이어서, 들숨과 날숨이 같은 길을 오간다. 이 방식에서는 들이쉰 공기와 내쉰 공기가 통로에서 섞이므로, 허파에 닿는 공기의 산소 농도가 새 공기보다 다소 낮아질 수 있다. 그러나 공기 중에는 산소가 풍부하므로 육상 동물은 이러한 손실을 큰 문제 없이 감당한다. 반면 산소가 적은 물에서 호흡하는 수생 동물은 같은 손실을 감당하기 어려워, 산소를 잃은 물이 새 물과 섞이지 않도록 물을 한 방향으로만 흘려보내는 관류 체계를 택한 것이다. 이처럼 물을 한 방향으로만 흘려보내는 관류 체계와, 공기가 같은 통로를 양방향으로 오가는 간만 환기는 기체가 드나드는 경로에서 뚜렷이 구별된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 외아가미는 어떤 생물에서 나타나며 어떤 문제를 지니는가?</li>
+<li>② 입 펌프 방식에서 입으로 들어온 물은 어떤 힘에 의해 덮개 공간으로 이동하는가?</li>
+<li>③ 강제 환수 방식이 입 펌프 방식보다 에너지 면에서 효율적인 까닭은 무엇인가?</li>
+<li>④ 참치가 강제 환수만으로 호흡할 때 한 번에 흡수하는 산소의 양은 얼마인가?</li>
+<li>⑤ 관류 체계와 간만 환기는 기체가 드나드는 경로에서 어떻게 구별되는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong>
+①은 1문단(외아가미가 나타나는 생물과 그 문제), ②는 2문단(압력 차에 따른 물의 이동), ③은 3문단(근육 활동만 필요해 에너지가 적게 듦), ⑤는 4문단(관류 체계와 간만 환기의 경로 차이)에서 답을 찾을 수 있어요. 그러나 참치가 한 번에 흡수하는 <em>산소의 양</em>이 얼마인지는 지문 어디에도 수치로 제시되지 않았으므로, ④가 답을 찾을 수 없는 질문이라 정답입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉡과 달리 물을 한 방향으로 흘려보내지 않는다.</li>
+<li>② ㉡은 ㉠과 달리 호흡에 따로 드는 에너지가 더 많이 소모된다.</li>
+<li>③ ㉠은 고요한 물속에서, ㉡은 흐르는 물속에서 주로 사용된다.</li>
+<li>④ ㉠과 ㉡은 모두 들숨과 날숨이 같은 통로를 오가는 방식이다.</li>
+<li>⑤ ㉡은 ㉠과 달리 입과 덮개의 근육으로 수압을 만들어 물을 보낸다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+2문단은 입 펌프 방식(㉠)을 "고요한 물속에 가만히 있으면서" 쓰는 방식, 3문단은 강제 환수 방식(㉡)을 "흐르는 물속에서" 쓰는 방식이라 했으므로 ③이 적절해 정답입니다. ① 두 방식은 <em>모두</em> 물을 한 방향으로 흘려보내고(관류 체계), ② 호흡에 따로 드는 에너지가 더 많은 것은 ㉡이 아니라 <em>㉠</em>이며, ④ 들숨·날숨이 같은 통로를 오가는 것은 두 환수 방식이 아니라 <em>육상 동물의 간만 환기</em>이고, ⑤ 입과 덮개의 근육으로 수압을 만드는 것은 ㉡이 아니라 <em>㉠</em>이므로 모두 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생이 보인 반응으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 입 펌프 방식에서 덮개 공간을 확장하는 것이 입 공간을 크게 만드는 것보다 수압을 더 많이 낮추는군.</li>
+<li>② 강제 환수 방식은 입과 덮개의 근육으로 수압을 만들지 않으므로 물을 한 방향으로 흘려보내지 못하겠군.</li>
+<li>③ 많은 어류가 두 환수 방식을 모두 쓴다는 것은 상황에 따라 호흡 방식을 바꿀 수 있다는 뜻이겠군.</li>
+<li>④ 참치가 쉼 없이 유영해야 하는 것은 강제 환수만으로 물을 받아들이기 때문이겠군.</li>
+<li>⑤ 가로막 조직이 없다면 입으로 들어온 물의 일부가 식도로 잘못 흘러갈 수 있겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+4문단에서 입 펌프 방식과 강제 환수 방식은 "물을 밀어 보내는 힘을 만드는 방법에서만 차이가 있을 뿐 물을 한 방향으로 흘려보낸다는 점에서는 같다"라고 했어요. 강제 환수 방식이 입·덮개 근육으로 수압을 만들지 않는 것은 맞지만, 그렇다고 물을 한 방향으로 흘려보내지 <em>못하는</em> 것은 아니므로 ②는 적절하지 않아 정답입니다. ①은 2문단(덮개 공간이 수압을 더 많이 낮춤), ⑤는 2문단(가로막 조직이 식도로 가는 것을 막음), ③은 3문단(상황에 따라 방식 전환), ④는 3문단(참치는 강제 환수만 해 쉼 없이 유영)에 각각 들어맞는 적절한 반응입니다.</p>
+<p><strong>12번 [3점] — 정답 ⑤</strong>
+<span class="boxmark">[관찰1]</span>은 고요한 물에서 입·덮개를 여닫는 입 펌프 방식(①), <span class="boxmark">[관찰2]</span>는 흐름에 맞서는 강제 환수 방식(②), 두 개체 모두 물을 한 방향으로 흘려보내는 관류 체계(③), <span class="boxmark">[관찰3]</span>은 입·덮개를 여닫지 않고 끊임없이 헤엄치므로 강제 환수만 하는 어류(④)로 모두 적절히 추론돼요. 그런데 <span class="boxmark">[관찰3]</span>의 개체는 입·덮개를 <em>여닫지 않으므로</em> 입 펌프 방식처럼 근육으로 수압을 만든다고 볼 수 없습니다. 수압을 만드는 정도가 "더 컸"다는 ⑤는 관찰 결과와 어긋나므로 적절하지 않아 정답입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 '가상의 관찰 결과'를 보고 추론한 내용이다. <span class="boxmark">[가]</span>에 들어갈 말로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦가상의 관찰 결과
+한 어종을 서로 다른 물 환경에 두고 호흡을 관찰하였다.
+<span class="boxmark">[관찰1]</span> 물이 흐르지 않는 수조에 두자 입과 덮개를 규칙적으로 여닫으며 제자리에 머물렀다.
+<span class="boxmark">[관찰2]</span> 물이 일정하게 흐르는 수조에 두자 입을 벌린 채 흐름에 맞서 제자리에 머물렀다.
+<span class="boxmark">[관찰3]</span> 같은 어종 가운데 한 개체는 어느 수조에서도 입과 덮개를 여닫지 않고 끊임없이 헤엄쳤다.
+◦학생의 추론: 관찰 결과로 미루어 보면, <span class="boxmark">[가]</span> 고 추론할 수 있어.
+(단, 관찰한 개체들의 환수 능력 외의 조건은 모두 같다고 가정함.)</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[관찰1]</span>의 개체는 고요한 물에서 입 펌프 방식으로 물을 빨아들여 내보냈겠다</li>
+<li>② <span class="boxmark">[관찰2]</span>의 개체는 흐르는 물을 이용하는 강제 환수 방식으로 호흡했겠다</li>
+<li>③ <span class="boxmark">[관찰1]</span>과 <span class="boxmark">[관찰2]</span>의 개체는 모두 물을 한 방향으로 흘려보내는 관류 체계로 호흡했겠다</li>
+<li>④ <span class="boxmark">[관찰3]</span>의 개체는 강제 환수만으로 호흡하여 쉼 없이 유영해야 하는 어류이겠다</li>
+<li>⑤ <span class="boxmark">[관찰3]</span>의 개체는 입과 덮개의 근육으로 수압을 만드는 정도가 다른 개체보다 더 컸겠다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>환수</strong>: 어류가 물을 흡입해 아가미에서 산소를 얻은 뒤 다시 내보내는 일.</li>
+<li><strong>입 펌프 방식</strong>: 입과 덮개의 근육으로 수압을 만들어, 고요한 물속에서 물을 빨아들여 내보내는 환수 방식.</li>
+<li><strong>강제 환수 방식</strong>: 흐르는 물속에서 입을 벌린 채 머물거나 유영하며 물을 받아들이는 환수 방식. 에너지 면에서 더 효율적이에요.</li>
+<li><strong>관류 체계 / 간만 환기</strong>: 물을 한 방향으로만 흘려보내는 것이 관류 체계(수생 동물), 같은 통로로 공기를 들이쉬고 내쉬는 것이 간만 환기(육상 동물).</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>입 펌프 방식(㉠)</th>
+<th>강제 환수 방식(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사용 환경</td>
+<td>고요한 물속, 제자리</td>
+<td>흐르는 물속, 유영·맞섬</td>
+</tr>
+<tr>
+<td>물 보내는 힘</td>
+<td>입·덮개 근육의 수압</td>
+<td>흐르는 물·유영</td>
+</tr>
+<tr>
+<td>호흡에 드는 에너지</td>
+<td>상대적으로 많음</td>
+<td>상대적으로 적음</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>물을 한 방향으로 흘려보내는 관류 체계</td>
+<td>(좌동)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 방식은 <em>물을 미는 힘</em>을 만드는 방법이 다를 뿐, 둘 다 물을 한 방향으로 흘려보내요(관류 체계). 반대로 육상 동물의 허파는 같은 통로로 공기를 들이쉬고 내쉬죠(간만 환기). 경로가 '한 방향'이냐 '양방향'이냐가 둘을 가릅니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>입 펌프 방식과 강제 환수 방식의 공통점은 무엇인가요?</div><div class='qa-a'>둘 다 물을 한 방향으로만 흘려보내는 관류 체계에 속한다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>강제 환수 방식이 에너지 면에서 더 효율적인 까닭은?</div><div class='qa-a'>흐르는 물을 맞으며 머무르거나 유영하기 위한 근육 활동만 필요해, 호흡에 따로 드는 에너지가 적기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>관류 체계와 간만 환기는 무엇이 다른가요?</div><div class='qa-a'>관류 체계는 물이 한 방향으로만 흐르고, 간만 환기는 공기가 같은 통로를 양방향으로 오갑니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2021학년도 9월 [34~37]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>질병을 유발하는 병원체에는 세균, 진균, 바이러스 등이 있다. 생명체의 기본 구조에 속하는 세포막은 지질을 주성분으로 하는 이중층이다. 세균과 진균은 일반적으로 세포막 바깥 부분에 세포벽이 있고, 바이러스의 표면은 세포막 대신 캡시드라고 부르는 단백질로 이루어져 있다. 바이러스의 종류에 따라 캡시드 외부가 지질을 주성분으로 하는 피막으로 덮인 경우도 있다. 한편 진균과 일부 세균은 다른 병원체에 비해 건조, 열, 화학 물질에 저항성이 강한 포자를 만든다.</p>
+<p>생활 환경에서 병원체의 수를 억제하고 전염병을 예방하기 위한 목적으로 사용하는 방역용 화학 물질을 ‘항(抗)미생물 화학제’라 한다. 항미생물 화학제는 다양한 병원체가 공통으로 갖는 구조를 구성하는 성분들에 화학 작용을 일으키므로 광범위한 살균 효과가 있다. 그러나 병원체의 구조와 성분은 병원체의 종류에 따라 완전히 같지는 않으므로, 동일한 항미생물 화학제라도 그 살균 효과는 다를 수 있다.</p>
+<p>항미생물 화학제 중 ㉠멸균제는 포자를 포함한 모든 병원체를 파괴한다. ㉡감염방지제는 포자를 제외한 병원체를 사멸시키는 화합물로 병원, 공공시설, 가정의 방역에 사용된다. 감염방지제 중 독성이 약해 사람의 피부나 상처 소독에도 사용이 가능한 항미생물 화학제를 ㉢소독제라 한다. 사람의 세포막도 지질 성분으로 이루어져 있어 소독제라 하더라도 사람의 세포를 죽일 수 있으므로, 눈이나 호흡기 등의 점막에 접촉하지 않도록 주의해야 한다. 따라서 항미생물 화학제는 병원체에 대한 최대의 방역 효과와 인체 및 환경에 대한 최고의 안전성을 확보할 수 있도록 종류별 사용법을 지켜야 한다.</p>
+<p>항미생물 화학제의 작용기제는 크게 병원체의 표면을 손상시키는 방식과 병원체 내부에서 대사 기능을 저해하는 방식으로 나눌 수 있지만, 많은 경우 두 기제가 함께 작용한다. 고농도 에탄올 등의 알코올 화합물은 세포막의 기본 성분인 지질을 용해시키고 단백질을 변성시키며, 병원성 세균에서는 세포벽을 약화시킨다. 또한 알코올 화합물은 지질 피막이 없는 바이러스보다 지질 피막이 있는 병원성 바이러스에서 방역 효과가 크다. 지질 피막은 병원성 바이러스가 사람을 감염시키는 과정에서 중요한 역할을 하기 때문에, 지질을 손상시키는 기능을 가진 항미생물 화학제만으로도 병원성 바이러스에 대한 방역 효과가 있다. 지질 피막의 유무와 관계없이 다양한 바이러스의 감염 예방을 위해서는 하이포염소산 소듐 등의 산화제가 널리 사용된다. 병원성 바이러스의 방역에 사용되는 산화제는 바이러스의 공통적인 표면 구조를 이루는 캡시드를 손상시키는 기능이 있어 바이러스를 파괴하거나 바이러스의 감염력을 잃게 한다.</p>
+<p>병원체의 표면에 생긴 약간의 손상이 병원체를 사멸시키는 데 충분하지 않더라도, 항미생물 화학제가 내부로 침투하면 살균 효과가 증가한다. 알킬화제와 산화제는 병원체의 내부로 침투하면 필수적인 물질 대사를 정지시킨다. 글루타르 알데하이드와 같은 알킬화제가 알킬 작용기를 단백질에 결합시키면 단백질을 변성시켜 기능을 상실하게 하고, 핵산의 염기에 결합시키면 핵산을 비정상 구조로 변화시켜 유전자 복제와 발현을 교란한다. 산화제인 하이포염소산 소듐은 병원체 내에서 불특정한 단백질들을 산화시켜 단백질로 이루어진 효소들의 기능을 비활성화하고 병원체를 사멸에 이르게 한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>34</div><div class='q-stem'></div></div>
+<p>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 병원성 세균은 어떤 작용기제로 사람을 감염시킬까?</li>
+<li>② 알코올 화합물은 병원성 세균의 살균에 효과가 있을까?</li>
+<li>③ 바이러스와 세균의 표면 구조는 어떤 차이가 있을까?</li>
+<li>④ 병원성 바이러스 감염 예방을 위한 방역에 사용되는 물질에는 무엇이 있을까?</li>
+<li>⑤ 항미생물 화학제가 병원체에 대해 광범위한 살균 효과를 나타내는 이유는 무엇일까?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>34번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,576명 — ①75.8% ②3.5% ③4.6% ④7.3% ⑤5.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>35</div><div class='q-stem'></div></div>
+<p>윗글을 읽고 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고농도 에탄올은 지질 피막이 있는 바이러스에 방역 효과가 있다.</li>
+<li>② 하이포염소산 소듐은 병원체의 내부가 아니라 표면의 단백질을 손상시킨다.</li>
+<li>③ 진균의 포자는 바이러스에 비해서 화학 물질에 대한 저항성이 더 강하다.</li>
+<li>④ 알킬화제는 병원체 내 핵산의 염기에 알킬 작용기를 결합시켜 유전자의 발현을 방해한다.</li>
+<li>⑤ 산화제가 다양한 바이러스를 사멸시키는 것은 그 산화제가 바이러스의 공통적인 구조를 구성하는 성분들에 작용하기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>35번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,578명 — ①5.4% ②57.2% ③12.2% ④12.5% ⑤13.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>36</div><div class='q-stem'></div></div>
+<p>㉠～㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠과 ㉡은 모두, 질병의 원인이 되는 진균의 포자와 바이러스를 사멸시킬 수 있다.</li>
+<li>② ㉠과 ㉢은 모두, 생활 환경의 방역뿐 아니라 사람의 상처 소독에 적용 가능하다.</li>
+<li>③ ㉡과 ㉢은 모두, 바이러스의 종류에 따라 살균 효과가 달라질 수 있다.</li>
+<li>④ ㉠은 ㉡과 달리, 세포막이 있는 병원성 세균은 사멸시킬 수 있으나 피막이 있는 병원성 바이러스는 사멸시킬 수 없다.</li>
+<li>⑤ ㉡은 ㉢과 달리, 인체에 해로우므로 사람의 점막에 직접 닿아서는 안 된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>36번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,576명 — ①4.3% ②5.0% ③73.5% ④9.4% ⑤6.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>37</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 윗글을 읽은 학생이 ‘가상의 실험 결과’를 보고 추론한 내용이다. <span class="boxmark">[가]</span>에 들어갈 말로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+◦가상의 실험 결과
+항미생물 화학제로 사용되는 알코올 화합물 A를 변환시켜 다음과 같은 결과를 얻었다.
+<span class="boxmark">[결과1]</span> A에서 지질을 손상시키는 기능만을 약화시켜 B를 얻었다.
+<span class="boxmark">[결과2]</span> A에서 캡시드를 손상시키는 기능만을 강화시켜 C를 얻었다.
+<span class="boxmark">[결과3]</span> B에서 캡시드를 손상시키는 기능만을 강화시켜 D를 얻었다.
+◦학생의 추론: 화합물들의 방역 효과와 안전성을 비교해 보면, <span class="boxmark">[가]</span> 고 추론할 수 있어.
+(단, 지질 손상 기능과 캡시드 손상 기능은 서로 독립적이며, 화합물 A, B, C, D의 비교 조건은 모두 동일하다고 가정함.)</p>
+</blockquote>
+<ul>
+<li>① B는 A에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 작고, 인체에 대한 안전성은 높다</li>
+<li>② C는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>③ C는 B에 비해 지질 피막이 있는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+<li>④ D는 A에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 높다</li>
+<li>⑤ D는 B에 비해 지질 피막이 없는 바이러스에 대한 방역 효과는 크고, 인체에 대한 안전성은 같다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>37번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,576명 — ①6.0% ②10.8% ③47.6% ④22.8% ⑤9.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>수생 동물의 호흡 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='수생 동물의 호흡 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

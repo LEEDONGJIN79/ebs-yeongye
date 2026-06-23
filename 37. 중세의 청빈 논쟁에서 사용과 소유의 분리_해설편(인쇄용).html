@@ -1,0 +1,384 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>중세의 청빈 논쟁에서 사용과 소유의 분리 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+<th>16</th>
+<th>17</th>
+</tr><tr><td>정답</td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>①</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+[A]에서 "음식이나 옷처럼 쓰는 순간 사라지는 물건은 사용권과 처분권을 떼어 놓기 어렵"다고 했고, 사용권과 처분권을 서로 다른 주체에게 나누어 둘 수 있는 것은 "건물이나 토지처럼 오래 남는 물건"이라고 했어요. ③은 이 둘을 뒤바꿔, 쓰는 순간 사라지는 물건도 나누어 둘 수 있다고 했으니 일치하지 않아 정답입니다. ①은 1문단(사용=사실상 상태, 소유=법적 상태), ②는 1문단(사용자와 소유자가 늘 같지는 않음), ④는 4문단(처분권 귀속=책임 소재 결정), ⑤는 3문단(교황→단체로 이동)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ①</strong>
+[A]는 소유의 권리를 단순 사용권과 처분권으로 나누어 설명한 부분이에요. "단순 사용권을 가진 자는 물건을 쓸 수 있을 뿐, 그 물건의 존폐를 정할 수는 없다"라고 했으므로 ①이 적절해 정답입니다. ② "처분권을 가진 자라야 그 물건의 주인으로 인정된다"라고 했으니 처분권 없이 주인이 될 수는 없고, ③ 귀속은 "책임이 최종적으로 누구에게 있는지를 함께 밝히는 기능"을 하므로 책임과 무관하지 않으며, ④ 오래 남는 물건은 두 권리를 "서로 다른 주체에게 나누어 둘 수 있다"고 했고, ⑤ 쓰는 순간 사라지는 물건은 "떼어 놓기 어렵"다고 했으므로 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ②</strong>
+㉠은 교황, ㉡은 수도회라는 단체, ㉢은 토지·건물이에요. ㉡(단체)은 "살아 있는 어느 개인이 아니라 구성원이 바뀌어도 존속하는 공동의 주체"로서 주인이 되므로, ㉠(개인인 교황)과 달리 공동의 주체로 주인이 된다는 ②가 적절해 정답입니다. ① 구성원이 바뀌어도 존속하는 것은 ㉠이 아니라 ㉡의 특징이고, ③ 쓰는 순간 사라지는 대상은 ㉢(토지·건물, 오래 남는 물건)과 정반대이며, ④ ㉠·㉡은 처분권을 <em>맡아</em> 수도자의 가난을 지켜 주는 주체이지 수도자에게 처분권을 <em>넘기는</em> 주체가 아니고, ⑤ 단순 사용권만 누리는 것은 ㉡·㉢이 아니라 수도자이므로 모두 어긋납니다.</p>
+<p><strong>4번 [3점] — 정답 ⑤</strong>
+지문은 "처분권을 가진 자라야 그 물건의 주인으로 인정된다"라고 했고, 〈보기〉에서 갑은 "그 땅을 팔거나 다른 이에게 넘길 수는 없었"으므로 처분권이 없는 단순 사용자예요. 그런데 ⑤는 농사를 지었다는 이유로 갑을 "처분권을 가진 주인"으로 보았으니, 사용과 소유(처분권)를 분리한 지문의 핵심과 어긋나 정답입니다. ①은 단순 사용권의 행사(1·[A]), ②는 처분권 부재로 운명을 결정 못 함(3문단), ③은 처분권의 단체 귀속(3문단), ④는 귀속이 책임 소재까지 밝힘([A]·4문단)에 정확히 대응하는 적절한 이해입니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+ⓑ '나누어'는 사용권과 처분권을 서로 다른 주체에게 <em>갈라 두는</em> 맥락이에요. '분배(分配)'는 몫을 <em>고르게 나눠 주는</em> 것이어서 권리를 주체별로 갈라 두는 이 맥락과는 호응이 어긋나므로 ②가 적절하지 않아 정답입니다(이 자리에는 '배분하여' 정도가 어울려요). ① '취하다'→'채택하다'(입장을 정해 받아들임), ③ '사다'→'자초하다'(비판을 스스로 불러옴), ④ '옮겨지다'→'이전되다'(자리가 넘어감), ⑤ '온전한'→'완비된'(빠짐없이 갖춘)은 각각 문맥에 들어맞습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>사용과 소유의 분리</strong>: 물건을 쓸 권리(사용)와 그것을 자기 것으로 가질 권리(소유)를 갈라놓는 발상.</li>
+<li><strong>처분권</strong>: 물건을 팔거나 없애거나 넘기는 등 그 운명을 최종적으로 결정하는 권리. 이 권리를 가진 자가 주인으로 인정돼요.</li>
+<li><strong>귀속</strong>: 어떤 권리(와 책임)가 누구에게 있는지를 정해 드러내는 일.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>단순 사용권만 가진 자</th>
+<th>처분권을 가진 자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>할 수 있는 일</td>
+<td>물건을 쓰고 효용을 누림</td>
+<td>물건을 팔거나 없애거나 넘김</td>
+</tr>
+<tr>
+<td>주인 인정 여부</td>
+<td>주인이 아님</td>
+<td>주인으로 인정됨</td>
+</tr>
+<tr>
+<td>중세의 예</td>
+<td>수도자(쓰기만 함)</td>
+<td>교황 → 수도회(단체)</td>
+</tr>
+<tr>
+<td>함께 따르는 것</td>
+<td>(쓸 권리만)</td>
+<td>재산에 대한 책임</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>'사용과 소유의 분리'는 무엇을 갈라놓는 발상인가요?</div><div class='qa-a'>물건을 쓸 권리(사용)와 그것을 자기 것으로 가질 권리(소유, 특히 처분권)를 갈라놓는 발상입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>처분권이 '단체'에 귀속되면 무엇이 좋아지나요?</div><div class='qa-a'>주인이 살아 있는 개인이 아니라 구성원이 바뀌어도 존속하는 공동 주체가 되어, 개별 수도자는 가난의 표지를 지키면서도 재산은 관리될 수 있습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>귀속은 권리만 정하나요?</div><div class='qa-a'>아니요. 그 재산에 대한 책임이 최종적으로 누구에게 있는지까지 함께 밝힙니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 9월 [27~31] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>27번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+(나)는 그레고리우스 9세(교황) → 인노켄티우스 4세(단체)로 '사용과 소유의 분리'를 떠받친 주체가 옮겨 가는 과정을 시간 순으로 제시해요. 그러므로 ④가 적절해 정답입니다. ① (가)는 다른 종교와의 파급력 비교가 없고, ② (가)는 원리가 "제도로 다듬어지지 않은 채 남은 까닭"을 따로 밝히지는 않으며(원리를 남겼고 다듬는 일은 뒷사람 몫이라고만 함), ③ (나)는 시간의 흐름에 따라 제시하므로 "무관하게 나열"이 아니고, ⑤ 통계 자료는 두 글 어디에도 없습니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong>
+2문단에서 프란체스코의 청빈은 "소유의 권리 자체를 내려놓으라는 요구"이며, 3문단에서 그는 원리를 남겼을 뿐 "그 분리를 누가 어떻게 떠받칠 것인지까지 제도로 다듬지는 않았다"라고 했어요. 그러므로 제도로 다듬는 일까지 청빈의 요구에 포함된다고 한 ⑤가 적절하지 않아 정답입니다. ①은 2문단(권고가 아니라 요구), ②는 2문단(소유 권리 불주장의 태도), ③은 2문단(움켜쥐려는 마음=다툼·타락의 뿌리), ④는 3문단(쓰는 일·가지는 일의 분리로 이상과 현실을 함께 끌어안음)에서 확인됩니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+㉠은 "자기 것으로 움켜쥐려는 마음"으로, (가)에서 다툼과 타락의 뿌리로 지목된 마음이에요. ㉡은 소유의 권리를 "편의상 교황에게 둘 수 있게" 한 것으로, 그 마음이 일으키는 소유의 짐을 제도적으로 우회하려는 장치죠. 따라서 ②가 적절해 정답입니다. ① ㉠은 외부 권위에 맡기는 태도가 아니라 움켜쥐려는 마음이고(외부 권위에 맡기는 것은 ㉡에 가까움), ③ ㉠은 한 개인의 결단이 아니며, ④ ㉠은 쓸 권리를 누리는 상태가 아니라 소유욕이고, ⑤ ㉠은 청빈을 강화하는 방안이 아니라 청빈이 경계한 마음이므로 모두 어긋납니다.</p></div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong>
+ㄱ(청빈=소유 권리 불주장)은 프란체스코의 핵심 주장이므로 그는 동의해요. 반면 ㄴ(소유 권리를 외부 권위가 떠맡음)은 그레고리우스 9세의 방식이지, 소유의 권리 <em>자체</em>를 내려놓으라던 프란체스코의 본뜻과는 결을 달리하므로 그는 동의하지 않겠죠(적어도 (가)의 프란체스코 입장만으로는 외부 권위 귀속에 동의한다고 볼 근거가 없습니다). 따라서 ①이 적절해 정답입니다. ② 프란체스코는 분리를 제도로 다듬는 일(ㄷ)을 뒷사람 몫으로 남겼으므로 ㄷ에 적극 동의한다고 보기 어렵고, ③ 그레고리우스 9세도 청빈의 원리(ㄱ) 자체는 인정했으며, ④ 그는 ㄴ(외부 권위가 떠맡음)을 실제로 행한 인물이므로 ㄴ에 동의하고 ㄹ(분리로 양립)에도 동의하며, ⑤ 두 사람 모두 ㄹ(쓰는 일·가지는 일의 분리로 양립)에는 동의하므로 어긋납니다.</p>
+<p><strong>10번 [3점] — 정답 ⑤</strong>
+〈보기〉의 비판자는 "재산을 누리고 있다면 그것은 사실상 소유"라고 보아, 누림의 실질이 남는 한 어떤 장치도 눈가림이라고 비판해요. 그런데 ⑤는 프란체스코가 "재산을 쓰지 않고 탁발로만 살아가려 한" 본래 요구까지 빈말이라 본다고 했는데, 누림의 실질을 문제 삼는 비판자라면 <em>누리지 않으려는</em> 그 본래 요구는 오히려 비판의 표적이 아니므로 적절하지 않아 정답입니다. ①은 누림=사실상 소유로 본 빈말 비판, ②는 말로만 가른다는 비판이 원리에 미침, ③은 교황 귀속을 눈가림으로 봄, ④는 단체 귀속도 실질을 못 없앰으로 보는 평가로, 모두 비판자의 논리에 들어맞습니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+ⓑ '남았다'는 분리를 제도로 옮기는 일이 <em>뒷사람들의 몫으로 넘어가 남아 있었다</em>는 맥락이에요. '잔존(殘存)'은 사라지고 <em>남은 찌꺼기·일부가 남아 있음</em>을 뜻해 부정적·잔여의 어감이 강하므로, 과제가 뒷사람에게 넘겨졌다는 이 맥락과는 호응이 어긋나 ②가 적절하지 않아 정답입니다('과제로 남았다'에는 '남겨졌다' 정도가 어울려요). ① '고수하다'→'견지하다'(굳게 지킴), ③ '세우다'→'정립하다'(제도를 세워 굳힘), ④ '바뀌다'→'전환되다'(방향이 바뀜), ⑤ '변모하다'→'변천하다'(시간에 따라 모습이 바뀜)는 각각 문맥에 들어맞습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>청빈의 이상</strong>: 재산을 갖지 않는 가난을 거룩함의 표지로 삼는 삶의 태도. 프란체스코에게는 '소유의 권리 자체를 내려놓는 것'이었어요.</li>
+<li><strong>원리와 제도</strong>: 프란체스코는 '쓰되 갖지 않는다'는 <em>원리</em>를 남겼고, 그 원리를 현실에서 떠받칠 <em>제도</em>(누가 소유권을 맡을지)는 뒷사람들이 다듬었습니다.</li>
+<li><strong>주체의 이동</strong>: 소유의 권리를 떠맡는 자리가 교황 → 단체로 옮겨 간 변화.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>프란체스코 (가)</th>
+<th>그레고리우스 9세 (나)</th>
+<th>인노켄티우스 4세 (나)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다룬 것</td>
+<td>원리(쓰되 갖지 않음)</td>
+<td>소유권을 교황에게</td>
+<td>소유권을 단체에</td>
+</tr>
+<tr>
+<td>강조점</td>
+<td>개인의 무소유</td>
+<td>외부 권위가 짐을 떠맡음</td>
+<td>공동 주체가 주인이 됨</td>
+</tr>
+<tr>
+<td>남은 과제</td>
+<td>분리를 떠받칠 주체</td>
+<td>한 사람에 몰린다는 비판</td>
+<td>(제도의 정교화)</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>프란체스코의 청빈은 '재산을 적게 갖는 것'인가요?</div><div class='qa-a'>아니요. 소유의 권리 자체를 내려놓는, 곧 '쓰되 갖지 않는' 태도입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 '분리'인데 교황 귀속과 단체 귀속은 무엇이 다른가요?</div><div class='qa-a'>소유권을 떠맡는 주체가 살아 있는 한 개인(교황)이냐, 구성원이 바뀌어도 존속하는 공동 주체(단체)냐가 다릅니다.</div></div>
+<div class='qa-item'><div class='qa-q'>(가)와 (나)는 어떤 관계인가요?</div><div class='qa-a'>(가)가 프란체스코의 원리를 세우고, (나)가 그 원리를 떠받칠 주체가 시대에 따라 옮겨 가며 제도로 다듬어진 과정을 보여 줍니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 수능 [12~17] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>12번 — 정답 ③</strong><br />
+(나)는 ‘도’라는 특정 개념을 중심으로 송나라 왕안석 → 원나라 오징 → 명나라 설혜의 『노자』 해석을 시간의 흐름에 따라 제시한다. ①은 사회적 파급력 비교가 없고, ④는 학자 간 이견을 절충하지 않으며, ⑤는 (가)가 한비자의 견해만 제시하므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,626명 — ①3.3% ②4.8% ③77.8% ④6.6% ⑤7.4%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+4문단에서 한비자는 항상 존재하는 도가 개별 법칙을 포괄하기에 다양한 개별 사건의 시비를 판단하는 ‘기준’이 된다고 보았다. 도가 사건의 시비에 따라 달라지는 것이 아니므로 ①이 부적절하다. ②는 욕망의 필연성(4문단), ③은 도의 가변성과 항상성(3문단), ④는 성패가 도에 따라 행했는가에 좌우됨(2문단), ⑤는 2·4문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,624명 — ①51.6% ②6.6% ③7.2% ④18.4% ⑤16.5%</p></div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+㉠(오징)은 노자의 가르침이 공자의 학문과 다르지 않음을 밝히고 인의예지·사회 규범을 도의 현실화로 해석했으므로, 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인한 것이다. ㉡(설혜)은 이단으로 치부된 노자 사상의 진정한 의미를 밝혀 오해를 불식하고자 했다. ②는 주술성이 유학에 유입된 것이 아니고, ⑤는 설혜가 유학의 사상적 우위를 입증하려 한 것이 아니어서 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,620명 — ①5.3% ②26.1% ③10.0% ④47.9% ⑤11.4%</p></div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong><br />
+오징은 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 보므로 ㄱ(도가 만물에 앞서 존재하지 않음)에 동의하지 않고, 도를 근원적인 불변하는 도로 보므로 ㄹ(도의 변화)에도 동의하지 않는다. 왕안석은 기(도)가 현상 세계에 앞서 존재한다고 보아 ㄱ에 동의하지 않고, 규범은 인간의 적극적 개입으로 제정된다고 보아 ㄴ에 동의하지 않으며, ㄹ에는 동의한다.</p>
+<p><em>선택률</em> — 응시 98,649명 — ①11.1% ②22.0% ③10.5% ④34.8% ⑤21.2%</p></div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+설혜의 학문적 입장은 노자 사상과 유학이 다르지 않음을 밝혀 노자 사상에 대한 오해를 불식하려는 것으로, 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하려 한 왕부지의 시각과 대비된다. 따라서 ⑤가 부적절하다. ①~④는 각각 욕망 제어를 위한 법의 필요(한비자), 유학 이념의 실질적 수단화(왕안석), 원문 수정(오징), 유학 기준의 해석(오징)에 대한 왕부지의 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,629명 — ①6.5% ②9.0% ③19.6% ④21.2% ⑤43.4%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓐ ‘담긴’은 ‘어떤 내용이나 사상이 그림, 글, 말 따위 속에 포함되거나 반영되다’의 의미로, ④의 ‘화폭에 봄 경치가 담겨 있다’와 같다. ①·②는 그릇 따위에 넣어지다, ③은 액체 속에 넣어지다, ⑤는 익거나 삭도록 보관되다의 의미이다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.4% ②0.6% ③1.0% ④95.0% ⑤2.5%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>12번 — 정답 ②</strong>
+이 글은 청빈이라는 이상이 수용된 뒤, 그것을 떠받치는 제도가 그레고리우스 9세(교황 귀속) → 인노켄티우스 4세(단체 귀속)로 시대별 주체의 입장을 따라 변화하는 과정을 보여 줘요. 그러므로 ②가 적절해 정답입니다. ① 다른 종교와의 대조가 없고, ③ 윤리적 비판이 글의 목적이 아니며, ④ 충돌하는 이상들을 절충해 새 결론을 내지 않고, ⑤ 동양과 서양의 상호 영향은 다루지 않습니다.</p></div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong>
+1문단은 청빈의 이상이 등장한 "처음 한동안 ~ 영향력은 두드러지지 않았다"라고 했고, 3문단도 "곧바로 제도로 정착한 것은 아니었다"라고 했어요. 그러므로 등장하자 곧바로 교회 전체에서 제도로 정착되었다는 ④가 일치하지 않아 정답입니다. ①은 2문단(권고가 아니라 소유권 불주장), ②는 3문단(권리·책임의 짜임에 주목), ③은 4문단(외부 권위가 떠맡음), ⑤는 5문단(단체 귀속에도 개별 수도자는 쓰기만 함)에서 확인됩니다.</p></div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong>
+㉠은 청빈의 이상이 처음 한동안 교회 전체에 끼친 영향력이 두드러지지 않은 일이에요. 그 이유로는 시대 분위기(①), 한때의 열정으로 여김(②), 제도 차원의 논평자가 적음(③), 본래 낯선 방식임(④)이 1문단에 제시돼 있죠. 그러나 ⑤(단체 귀속이 곧바로 자리 잡음)는 5문단에서 한참 뒤에 일어난 일일 뿐 <em>영향력이 미미했던</em> 까닭이 될 수 없으므로 적절하지 않아 정답입니다.</p></div>
+<div class='exp'><p><strong>15번 — 정답 ③</strong>
+인노켄티우스 4세는 소유의 권리를 "구성원이 바뀌어도 존속하는 공동의 주체"인 단체에 귀속시켰고(ㄴ), 그 책임이 "어느 한 사람의 생몰에 좌우되지 않고" 단체에 안정적으로 귀착되게 했어요(ㄷ). 따라서 ㄴ·ㄷ을 고른 ③이 정답입니다. ㄱ(소유권을 날마다 쓰는 사람에게)은 사용과 소유를 분리한 그의 입장과 정반대이고, ㄹ(단체에는 귀속될 수 없음)은 단체 귀속을 실제로 행한 그의 입장과 어긋나므로 부합하지 않습니다.</p>
+<p><strong>16번 [3점] — 정답 ②</strong>
+〈보기〉의 로크는 소유권이 "개인의 노동에서 비롯한다"고 보았지만, 인노켄티우스 4세는 소유의 권리를 노동의 결과가 아니라 <em>단체라는 공동 주체에 귀속</em>시키는 문제를 다루었어요. 따라서 둘 다 소유권이 개인의 노동에서 비롯한다고 보았다는 ②는 적절하지 않아 정답입니다. ① 로크는 개인 귀속, 인노켄티우스 4세는 단체까지 귀속(개인에 한정되지 않음)이고, ③ 두 견해 모두 '권리가 귀속될 주체'를 정하는 문제를 다루며, ④ 인노켄티우스 4세는 공동 주체 귀속을 실제로 설명했으므로 그 점에서 로크가 받은 비판을 받지 않고, ⑤ 로크는 소유권을 개인의 노동에서 비롯하는 것으로 보는 데 비해 인노켄티우스 4세의 방식에서는 소유의 권리가 노동이 아니라 존속하는 공동 주체에 귀속되므로 적절합니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>17번 — 정답 ⑤</strong>
+ⓔ '가다듬어'는 '사용과 소유의 분리'를 권리·책임의 틀로 <em>거듭 손질하여 더 낫게 만든다</em>는 맥락이에요. '정련(精鍊)'은 광석·쇠붙이 따위의 <em>불순물을 제거해 순도를 높이는</em> 일이라 제도를 다듬는 이 맥락과는 호응이 어긋나므로 ⑤가 적절하지 않아 정답입니다(이 자리에는 '정교화하여' 정도가 어울려요). ① '낯선'→'생소한'(익숙하지 않은), ② '논평한'→'평론한'(평가해 논함), ③ '귀착되었다'→'귀속되었다'(최종적으로 어디에 속함), ④ '세워'→'수립하여'(제도를 세움)는 각각 문맥에 들어맞습니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>수용과 변용</strong>: 낯선 이상(청빈)을 그냥 받아들이거나 내치지 않고, 자기 현실에 맞게 다듬어 제도로 세우는 과정.</li>
+<li><strong>개인 귀속 ↔ 단체 귀속</strong>: 소유의 권리를 떠맡는 주체가 살아 있는 한 개인(교황)이냐, 존속하는 공동 주체(단체)냐의 차이.</li>
+<li><strong>권리·책임의 안정성</strong>: 단체 귀속의 장점. 주체가 한 사람의 생몰에 좌우되지 않아 책임이 흔들리지 않아요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>주체</th>
+<th>분리를 떠받치는 방식</th>
+<th>남은 약점·보완</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>등장기</td>
+<td>청빈 이상</td>
+<td>(제도 이전, 원리만)</td>
+<td>영향력 미미</td>
+</tr>
+<tr>
+<td>1차</td>
+<td>교황(개인)</td>
+<td>외부 권위가 소유의 짐을 떠맡음</td>
+<td>한 사람에 몰림·생몰에 흔들림</td>
+</tr>
+<tr>
+<td>2차</td>
+<td>단체(공동 주체)</td>
+<td>존속하는 주체에 귀속</td>
+<td>개인 귀속의 약점을 보완</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>청빈의 이상은 등장하자마자 교회에 큰 영향을 주었나요?</div><div class='qa-a'>아니요. 처음 한동안은 영향력이 두드러지지 않았고, 제도로 정착하기까지 시간이 걸렸습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>소유권을 개인(교황)에 둘 때의 약점은 무엇인가요?</div><div class='qa-a'>한 사람에게 부담이 몰리고, 그 개인이 바뀌거나 사라지면 권리와 책임이 함께 흔들립니다.</div></div>
+<div class='qa-item'><div class='qa-q'>단체 귀속은 그 약점을 어떻게 보완하나요?</div><div class='qa-a'>구성원이 바뀌어도 존속하는 공동 주체에 권리를 둠으로써, 책임이 한 사람의 생몰에 좌우되지 않게 합니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 6월 [16~21] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>18번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>19번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>21번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+</body></html>

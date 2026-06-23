@@ -1,0 +1,808 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>차별을 극복하기 위한 형평 운동 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>차별을 극복하기 위한 형평 운동 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, "법으로 금지하면 차별은 사라질까요?" 한번 생각해 봅시다. 학교에서 "친구를 따돌리지 말자"라는 규칙을 붙여 놓는다고 해서, 다음 날부터 따돌림이 뚝 끊길까요? 아쉽게도 그렇지 않죠. 규칙은 종이 위에서 먼저 바뀌지만, 사람들의 마음과 습관은 훨씬 천천히 바뀌니까요. 바로 이 <strong>"법은 바뀌었는데 차별은 남아 있는"</strong> 어긋남이, 오늘 우리가 살펴볼 이야기의 출발점입니다.</p>
+<p>조선 시대에는 사람을 태어날 때부터 등급으로 나누는 <strong>신분제</strong>가 있었어요. 백성을 양민과 천민으로 가르고, 천민 가운데서도 가축을 잡는 일을 하던 <strong>백정</strong>을 가장 낮은 자리에 두었습니다. 백정은 좋은 옷도 못 입고, 기와집도 못 짓고, 학교도 못 다녔어요. 그런데 1894년 <strong>갑오개혁</strong>으로 신분제가 법적으로 사라졌습니다. 자, 그럼 백정에 대한 차별도 사라졌을까요? 아니었어요. 법은 분류를 지웠지만, 사람들의 머릿속에 박힌 편견은 그대로 남았거든요.</p>
+<p>그래서 백정들은 스스로 들고일어났습니다. 1923년 <strong>형평사(衡平社)</strong>라는 단체를 만들어, "우리도 똑같은 사람으로 대해 달라"고 외쳤지요. 이것이 <strong>형평 운동</strong>입니다. '형평'이란 <strong>저울처럼 한쪽으로 기울지 않고 평등하다</strong>는 뜻이에요. 이 운동은 소작 농민, 여성 등 다른 약자들의 운동과 손을 잡으며 전국으로 번졌습니다.</p>
+<p>그런데 여기서 가슴 아픈 일이 벌어져요. 형편이 어려웠던 양민들은 장터에서 일거리를 두고 백정 출신들과 <strong>경쟁</strong>해야 했습니다. "쟤들이 올라오면 내 밥그릇이 위험해" — 이런 두려움이 형평 운동에 <strong>반대</strong>하는 움직임으로 나타난 거예요. <strong>약자의 분노가 또 다른 약자를 향한</strong> 셈이죠. 그래서 이 역사는 우리에게 묻습니다. 차별을 정말로 넘어서려면, 단지 법만 바꾸는 것으로 충분할까요? 아니면 약자들을 모두 끌어안는 <strong>새로운 정치</strong>까지 필요한 걸까요?</p>
+<blockquote>
+<p>한마디로: <strong>차별은 제도(법) → 의식(인습) → 정치(약자 간 갈등의 조정)라는 여러 겹으로 되어 있어서, 법 하나 바꾼다고 단번에 사라지지 않습니다.</strong> 형평 운동은 그 여러 겹을 한꺼번에 보여 주는 사건이에요.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것 (개념 지도)</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>"차별은 어떻게 생기고, 어떻게 극복되는가"</strong>라는 하나의 큰 물음이 있습니다. 형평 운동이라는 같은 사건을 세 가지 다른 각도에서 들여다볼 거예요.</p></div>
+<div class='umap'>
+<div class='umap-center'>차별을 극복하기 위한 형평 운동<small>"신분제 → 차별의 잔존 → 운동 → 약자 간 갈등 → 새 정치"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>조선의 신분 <strong>분류 체계</strong>를 들여다봅니다. 양민과 천민이 어떻게 나뉘고, 천민 안에서도 칠반공천·팔반사천·백정이 어떻게 다른 대우를 받았는지, 그 경계가 차별의 깊이를 어떻게 갈랐는지 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>형평 운동이 <strong>퍼져 나간 과정</strong>을 따라갑니다. 당사자인 백정이 스스로 조직을 만들고, 다른 대중 운동과 연대하고, 지식인의 지지를 얻고, 끝내 또 다른 약자의 반발과 부딪치는 흐름을 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>신분제를 <strong>시간 순서</strong>로 추적합니다. 차별을 떠받치던 제도가 흔들리고 무너진 뒤에도 차별이 살아남는 모습, 그리고 그것을 넘어설 새로운 정치가 요구되는 과정을 봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, "차별을 극복한다는 것"이 왜 법 하나로 끝나지 않는 복합적인 과제인지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>조선 시대의 생활 체계는 신분 질서에 의해 철저하게 규정되었다. 신분은 한 개인이 어떤 일에 종사하고 누구와 교류하며 어디에 거주할 수 있는지까지 결정하는 사회적 분류의 기준이었다. 같은 백성이라도 어느 신분에 속하느냐에 따라 누릴 수 있는 권리와 감당해야 하는 의무가 달랐다.</p>
+<div class="ablock"><span class="atag">[A]</span>백성을 크게 양민과 천민으로 나누는 양천제는 양민을 다시 양반, 중인, 상민으로 구분하였다. 양민은 국가에 조세와 군역의 의무를 지는 대신 관직에 나아갈 자격을 일정하게 인정받았다. 반면 천민은 그러한 자격에서 배제된 채 노동력의 제공만을 요구받는 신분이었다. 천민은 다시 칠반공천과 팔반사천으로 나뉘었다. 칠반공천은 관청에 소속되어 부역을 담당하는 천민이고, 팔반사천은 개인에게 예속되어 사적인 노동에 동원되는 천민이다. 두 부류를 가르는 기준은 예속의 대상이 국가인가 개인인가에 있었으며, 이 기준이 곧 천민 내부의 처지를 다시 나누었다. 같은 천민으로 묶이더라도 누구에게 예속되어 있는가에 따라 사회적 위세나 대우가 동일하지 않았던 것이다.</div>
+
+<p>㉠<u>칠반공천</u>은 신분상으로는 천하다고 분류되었으나 국가의 공식적인 관리 대상에 포함되어 비교적 나은 대우를 받으며 일정한 자유를 누렸다. 이에 비해 ㉡<u>팔반사천</u>은 사회적으로 멸시를 받았으며 국가의 공식적인 관리 대상에도 들지 못하였다. 국가가 직접 파악하는 부류는 그 처지가 문서로 확인되었기에 함부로 다루기 어려웠던 반면, 그렇지 못한 부류는 사적인 예속 관계 속에서 더 가혹한 대우에 노출되었다. 곧 천민이라는 하나의 범주 안에도 국가가 직접 파악하는 부류와 그렇지 않은 부류가 나뉘어 있었고, 이 경계가 차별의 깊이를 갈랐다.</p>
+<p>천민 가운데서도 ㉢<u>백정</u>은 가장 천대받는 계층이었다. 백정은 소나 돼지와 같은 가축을 도살하여 고기를 파는 일에 세습적으로 종사하였다. 이들은 일반인과 격리된 채 일정한 지역에서만 거주해야 했고 사회적으로나 문화적으로 소외된 삶을 강요받았다. 나이나 상황과 무관하게 누구나 백정에게는 반말을 썼으며, 백정은 가옥에 기와를 얹거나 의복에 명주를 쓰지 못하였고 교육의 기회마저 허락받지 못하였다. 백정에 대한 차별은 법으로 정해진 의무를 넘어, 거주·언어·의복·교육 등 생활의 모든 국면에서 일상적으로 관철되었다. 이는 백정이 단지 천한 신분으로 분류되었기 때문만이 아니라, 그 분류가 일상의 관행으로 거듭 확인되며 더욱 단단해졌기 때문이었다.</p>
+<p>1894년의 갑오개혁으로 모든 신분제는 명목상 폐지되었다. 법적으로는 양민과 천민을 가르던 분류 자체가 사라진 것이다. 그러나 사회적 인습이 하루아침에 사라질 수는 없었으며, 백정에 대한 인식이나 차별은 좀처럼 개선되지 않았다. 제도상의 신분이 없어졌다고 하여 사람들의 의식 속에 자리 잡은 차별의 기준까지 곧바로 없어지는 것은 아니었다. 법적 분류와 사회적 인습은 별개의 차원에서 작동하였으므로, 전자가 폐지된 뒤에도 후자는 관성적으로 지속될 수 있었다.</p>
+<p>오히려 일제는 소가죽을 안정적으로 확보하기 위해 백정의 사회적 처지가 그대로 유지되기를 바랐다. 일제는 백정 출신들을 가축의 도살을 담당하는 도수장에 종사하도록 강요하고 이들을 더욱 엄격하게 관리하였다. 이는 법적 분류가 사라진 뒤에도 백정이라는 표지를 행정적으로 다시 ⓐ<u>붙들어</u> 두는 조치였다. 신분제의 폐지가 차별의 종식을 보장하지 못한 데에는 이처럼 차별을 다시 고착시키려는 외부의 의도까지 더해져 있었다. 이러한 상황에서 백정은 1923년 형평사를 조직하여 신분 해방을 위한 형평 운동에 나섰다. 이들은 법적 분류가 사라졌음에도 일상에서 지속되는 차별을 문제 삼으며, 관공서나 학교에서의 차별 대우와 일반인이 출입하는 장소에서의 출입 금지를 시정할 것을 요구하였다. 형평 운동은 분류의 흔적을 실제로 지우기 위한 당사자들의 조직적 대응이었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 같은 백성이라도 어느 신분에 속하는지에 따라 권리와 의무가 달랐다.</li>
+<li>② 천민은 관직에 나아갈 자격을 인정받지 못하고 노동력의 제공을 요구받았다.</li>
+<li>③ 백정은 거주하는 지역과 입는 옷에 이르기까지 생활 전반에서 제약을 받았다.</li>
+<li>④ 갑오개혁으로 신분제가 폐지되면서 백정에 대한 차별도 빠르게 사라졌다.</li>
+<li>⑤ 일제는 소가죽을 안정적으로 확보하려는 목적에서 백정의 처지를 유지하고자 하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+4문단에 "백정에 대한 인식이나 차별은 좀처럼 개선되지 않았다"라고 분명히 나와 있어요. 갑오개혁으로 차별이 "빠르게 사라졌다"는 ④는 지문과 정반대라서 적절하지 않아 정답입니다. ①은 1문단, ②는 <a href="" title="관직에 나아갈 자격에서 배제된 채 노동력의 제공만을 요구">A</a>, ③은 4문단(거주·의복 제약), ⑤는 마지막 문단(소가죽 확보 목적)과 그대로 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 양민과 천민을 가르는 기준은 관직에 나아간 경력이 있는지 여부이다.</li>
+<li>② 천민은 국가에 조세와 군역의 의무를 지는 대가로 노동력을 제공하였다.</li>
+<li>③ 칠반공천과 팔반사천은 예속의 대상이 국가인지 개인인지에 따라 갈린다.</li>
+<li>④ 양천제에서 양반과 중인은 천민으로, 상민은 양민으로 분류되었다.</li>
+<li>⑤ 같은 천민이라면 누구에게 예속되어 있든 사회적 대우가 동일하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+[A]는 칠반공천과 팔반사천을 "예속의 대상이 국가인가 개인인가"로 가른다고 했죠. 이를 옮긴 ③이 정답입니다. ① 양민·천민을 가르는 기준은 관직 경력이 아니라 그 자격의 인정 여부예요. ② 조세·군역의 의무는 천민이 아니라 양민의 것입니다(주체가 뒤바뀜). ④ 양반·중인·상민은 모두 양민의 하위 구분이라 양반·중인을 천민이라 한 것은 틀렸어요. ⑤ "누구에게 예속되어 있는가에 따라 대우가 동일하지 않았다"라고 했으므로 정반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉠~㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 국가의 공식적인 관리 대상에 포함되어 일정한 자유를 누렸다.</li>
+<li>② ㉡은 ㉠과 달리, 신분상 천하다는 분류에서 벗어나 있었다.</li>
+<li>③ ㉢은 ㉡과 달리, 개인에게 예속되지 않고 관청에 소속되어 부역을 담당하였다.</li>
+<li>④ ㉠과 ㉡은 모두 천민의 범주에서 제외되어 양민으로 대우받았다.</li>
+<li>⑤ ㉡과 ㉢은 모두 세습적으로 가축의 도살에 종사하는 계층이었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>3번 — 정답 ①</strong>
+㉠칠반공천은 국가의 공식적 관리 대상에 들어 일정한 자유를 누렸지만, ㉢백정은 가장 천대받는 계층이었으니 둘은 이 점에서 다릅니다. 이를 정확히 짚은 ①이 정답이에요. ② 팔반사천도 "신분상 천하다"는 분류 안에 있으므로 거기서 벗어났다는 것은 틀렸고, ③ 관청 소속·부역은 칠반공천(㉠)의 특징이지 백정(㉢)의 것이 아닙니다. ④ ㉠㉡은 모두 천민이라 양민 대우를 받았다는 것은 틀렸고, ⑤ 가축 도살에 세습적으로 종사한 것은 백정(㉢)뿐이라 ㉡까지 묶은 것은 틀렸습니다.</p>
+<p><strong>4번 [3점] — 정답 ⑤</strong>
+〈보기〉의 갑 무리는 관청 명부에 올라 국가가 직접 파악하는 부류(㉠칠반공천), 을 무리는 명부에 오르지 못한 사적 예속 부류(㉡팔반사천)에 대응합니다. 그런데 더 오래 따돌림을 받은 쪽은 을 무리, 곧 '명부에 오르지 못한 부류'인데도, ⑤는 그 까닭을 "관청의 명부에 오른 부류일수록 천한 표지가 더디게 흐려졌다"라며 정반대 쪽에 갖다 붙였어요. 지문은 국가가 직접 파악하지 못한 부류가 "더 가혹한 대우에 노출"되었고 "이 경계가 차별의 깊이를 갈랐다"라고 했으니, 더 오래 남은 따돌림은 명부에 오른 부류가 아니라 오르지 못한 부류와 통합니다. 방향을 거꾸로 뒤집은 ⑤가 적절하지 않아 정답입니다. ①~④는 각각 '국가 파악 부류의 보호'(①), '사적 예속의 무방비'(②), '경계가 가른 차별의 깊이'(③), '법과 인습의 분리'(④)라는 지문 내용을 〈보기〉에 알맞게 적용한 적절한 반응입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 항구 도시에서는 오래전부터 바닷일에 종사하는 사람들을 출신에 따라 두 무리로 나누어 대해 왔다. 갑 무리는 항구를 관리하는 관청에 이름이 올라 부두의 일을 맡았고, 비록 천하게 여겨졌으나 관청의 보호를 받아 임금을 떼이는 일이 드물었다. 을 무리는 어느 선주의 배에 매여 허드렛일을 하였는데, 관청의 명부에 오르지 못해 부당한 대우를 받아도 하소연할 곳이 없었다. 뒷날 신분에 따른 구분을 금지하는 법령이 내려졌지만, 사람들은 여전히 두 무리를 멀리하였고 을 무리에 대한 따돌림은 더 오래 이어졌다.</p>
+</blockquote>
+<ul>
+<li>① 갑 무리가 관청의 보호를 받은 것은, 국가가 직접 파악하는 부류가 함부로 다루어지기 어려웠던 사정과 통하겠군.</li>
+<li>② 을 무리가 하소연할 곳이 없었던 것은, 공식적인 관리 대상에서 벗어나 사적인 예속 관계에 놓였던 사정과 통하겠군.</li>
+<li>③ 두 무리를 나눈 기준이 예속의 대상이었다는 점은, 천민 내부를 가른 경계가 차별의 깊이를 갈랐던 것과 통하겠군.</li>
+<li>④ 법령이 내려진 뒤에도 따돌림이 이어진 것은, 법적 분류와 사회적 인습이 별개로 작동한 것과 통하겠군.</li>
+<li>⑤ 을 무리에 대한 따돌림이 더 오래 이어진 것은, 관청의 명부에 오른 부류일수록 천한 표지가 더디게 흐려진 것과 통하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 그는 떠나려는 친구의 소매를 붙들어 한사코 가지 못하게 만류하였다.</li>
+<li>② 회사는 이탈하려는 고객을 붙들어 두기 위해 요금을 인하하기로 하였다.</li>
+<li>③ 형사는 달아나던 도둑을 골목 끝에서 붙들어 곧장 경찰서로 데려갔다.</li>
+<li>④ 그녀는 흔들리는 마음을 가까스로 붙들고 다시 책상 앞에 앉았다.</li>
+<li>⑤ 물에 빠진 그는 떠내려가는 나뭇가지라도 붙들려고 손을 뻗었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+ⓐ '붙들어 두다'는 사라지려는 것을 '잡아 두어 유지하다'라는 뜻이에요. 이탈하려는 고객을 잡아 두려 한다는 ②가 의미가 가장 가깝습니다. ①은 가지 못하게 말린다(만류), ③은 도망자를 붙잡는다(체포), ④는 마음을 다잡는다, ⑤는 물건을 붙잡으려 한다는 뜻이라 문맥이 달라요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>양천제</strong>: 백성을 양민과 천민으로 가르던 조선의 신분 분류 제도. 양민은 다시 양반·중인·상민으로 나뉘었어요.</li>
+<li><strong>칠반공천 / 팔반사천</strong>: 천민의 두 갈래. 칠반공천은 관청(국가)에, 팔반사천은 개인에게 예속되었고, 이 차이가 대우의 차이로 이어졌습니다.</li>
+<li><strong>백정</strong>: 가축 도살에 세습적으로 종사한, 천민 중에서도 가장 천대받던 계층.</li>
+<li><strong>갑오개혁(1894)</strong>: 신분제를 명목상 폐지한 개혁. 다만 법이 분류를 지웠을 뿐, 인습으로서의 차별까지 없애지는 못했어요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>갈래</th>
+<th>예속 대상</th>
+<th>국가의 공식 관리</th>
+<th>대우</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>칠반공천(㉠)</td>
+<td>국가(관청)</td>
+<td>대상에 포함</td>
+<td>비교적 나음, 일정한 자유</td>
+</tr>
+<tr>
+<td>팔반사천(㉡)</td>
+<td>개인</td>
+<td>대상에서 제외</td>
+<td>멸시받음</td>
+</tr>
+<tr>
+<td>백정(㉢)</td>
+<td>(천민 중 최하)</td>
+<td>—</td>
+<td>가장 심한 차별</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>핵심 한 줄: <strong>같은 '천민'이라도 국가가 직접 파악하느냐 아니냐가 차별의 깊이를 갈랐고, 그 차별은 신분제가 법적으로 폐지된 뒤에도 인습으로 오래 남았습니다.</strong></p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>칠반공천과 팔반사천을 가르는 결정적 기준은 무엇인가요?</div><div class='qa-a'>예속의 대상이 국가(관청)인가 개인인가입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>갑오개혁으로 신분제가 폐지되었는데 왜 차별은 남았나요?</div><div class='qa-a'>법적 분류와 사회적 인습은 별개의 차원에서 작동해서, 법이 분류를 지워도 인습은 관성적으로 지속되었기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>일제가 백정의 처지를 유지하려 한 까닭은?</div><div class='qa-a'>소가죽을 안정적으로 확보하기 위해 백정을 도수장에 묶어 두려 했기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 9월 [27~31]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>물건을 사용하고 있는 사람이 그 물건의 주인일까? 점유란 물건에 대한 사실상의 지배 상태를 뜻한다. 이에 비해 소유란 어떤 물건을 사용ㆍ수익ㆍ처분할 수 있는 권리를 가진 상태라고 정의된다. 따라서 점유자와 소유자가 항상 일치하지는 않는다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>물건을 빌려 쓰거나 보관하고 있는 것을 포함하여 물건을 물리적으로 지배하는 상태를 직접점유라고 한다. 이에 비해 어떤 물건을 빌려 쓰거나 보관하는 사람에게 그 물건의 반환을 청구할 수 있는 권리를 가진 사람도 사실상의 지배를 한다고 볼 수 있다. 이와 같이 반환청구권을 가진 상태를 간접점유라고 한다. 직접점유와 간접점유는 모두 점유에 해당한다. 점유는 소유자를 공시하는 기능도 수행한다. 공시란 물건에 대해 누가 어떤 권리를 가지고 있는지를 알려 주는 것이다. 물건 중에서 피아노, 금반지, 가방 등과 같은 대부분의 동산은 점유에 의해 소유권이 공시된다.</p></div>
+
+<p>물건의 소유권이 양도되려면, 소유자가 양도인이 되어 양수인과 유효한 양도 계약을 하고 이에 더하여 소유권 양도를 공시해야 한다. ㉠점유로 소유권이 공시되는 동산의 소유권 양도는 점유를 넘겨주는 점유 인도로 공시된다. 양수인이 간접점유를 하여 소유권 이전이 공시되는 경우로서 ‘점유개정’과 ‘반환청구권 양도’가 있다. 예를 들어 A가 B에게 피아노의 소유권을 양도하기로 계약하되 사흘간 빌려 쓰는 것으로 합의한 경우, B는 A에게 피아노를 사흘 후 돌려 달라고 요구할 수 있는 반환청구권을 가지게 된다. 이처럼 양도인이 직접점유를 유지하지만, 양수인에게 점유 인도가 이루어진 것으로 간주되는 경우를 점유개정이라고 한다. 한편 C가 자신이 소유한 가방을 D에게 맡겨 두어 이에 대한 반환청구권을 가지게 되었는데, 이 가방의 소유권을 E에게 양도하는 계약을 체결하였다고 하자. 이때 C가 D에게 통지하여 가방 주인이 바뀌었으니 가방을 E에게 반환하라고 알려 주면 D가 보관 중인 가방에 대한 반환청구권은 C로부터 E에게로 넘어간다. 이 경우를 반환청구권 양도라고 한다.</p>
+<p>양도인이 소유자가 아니더라도 양수인이 점유 인도를 받으면 소유권을 취득할 수 있을까? 점유로 공시되는 동산의 경우 양수인이 충분히 주의를 했는데도 양도인이 소유자가 아님을 알지 못한 채 양도인과 유효한 계약을 하고, 점유 인도로 공시를 했다면 양수인은 소유권을 취득한다. 이것을 ‘선의취득’이라 한다. 다만 간접점유에 의한 인도 방법 중 점유개정으로는 선의취득을 하지 못한다. 선의취득으로 양수인이 소유권을 취득하면 원래 소유자는 원하지 않아도 소유권을 상실하게 된다.</p>
+<p>반면에 국가가 관리하는 공적 기록인 등기ㆍ등록으로 공시되어야 하는 물건은 아예 선의취득 대상이 아니다. ㉡법률이 등록 대상으로 규정한 자동차, 항공기 등의 동산은 등록으로 공시되는 물건이고, ㉢토지ㆍ건물과 같은 부동산은 등기로 공시되는 물건이다. 이러한 고가의 재산에 대해 선의취득을 허용하게 되면 원래 소유자의 의사에 반하는 소유권 박탈이 ⓐ일어나게 된다. 이것은 거래 안전에만 치중하고 원래 소유자의 권리 보호를 경시한 것이 되어 바람직하지 않다고 볼 수 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 가방을 사용하고 있는 사람은 그 가방의 점유자이다.</li>
+<li>② 가방을 점유하고 있더라도 그 가방의 소유자가 아닐 수 있다.</li>
+<li>③ 가방의 소유권이 유효한 계약으로 이전되려면 점유 인도가 있어야 한다.</li>
+<li>④ 가방에 대해 누가 소유권을 가지고 있는지를 알게 해 주는 방법은 점유이다.</li>
+<li>⑤ 가방의 소유권을 양도하는 유효한 계약을 체결하면 공시 방법이 갖춰지지 않아도 소유권은 이전된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>27번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>[A]에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 물리적 지배를 해야 동산의 간접점유자가 될 수 있다.</li>
+<li>② 간접점유는 피아노 소유권에 대한 공시 방법이 아니다.</li>
+<li>③ 하나의 동산에 직접점유자가 있으려면 간접점유자도 있어야 한다.</li>
+<li>④ 피아노의 직접점유자가 있으면 그 피아노의 간접점유자는 소유자가 아니다.</li>
+<li>⑤ 유효한 양도 계약으로 피아노의 소유자가 되려면 피아노에 대해 직접점유나 간접점유 중 하나를 갖춰야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p>㉠～㉢을 비교한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ㉢과 달리, 국가가 관리하는 공적 기록에 의해 소유권 양도가 공시될 수 있다.</li>
+<li>② ㉡은 ㉠과 달리, 원래 소유자의 권리 보호가 거래 안전보다 중시되는 대상이다.</li>
+<li>③ ㉢은 ㉠과 달리, 물리적 지배의 대상이 아니므로 점유로 공시될 수 없다.</li>
+<li>④ ㉠과 ㉡은 모두 양도인이 소유자가 아니더라도 소유권 이전이 가능하다.</li>
+<li>⑤ ㉠과 ㉢은 모두 점유개정으로 소유권 양도가 공시될 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>29번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 할 때, 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑과 을은, 갑이 끼고 있었던 금반지의 소유권을 을에게 양도하기로 하는 유효한 계약을 했다. 갑과 을은, 갑이 이 금반지를 보관하다가 을이 요구할 때 넘겨주기로 합의했다. 을은 소유권 양도 계약을 할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다. 을은 일주일 후 병과 유효한 소유권 양도 계약을 했고, 갑에게 통지하여 사흘 후 병에게 금반지를 넘겨주라고 알려 주었다.</p>
+</blockquote>
+<ul>
+<li>① 갑이 금반지 소유자였다면, 병이 금반지의 물리적 지배를 넘겨받지 않았으나 병은 소유권을 취득한다.</li>
+<li>② 갑이 금반지 소유자였다면, 을은 갑으로부터 물리적 지배를 넘겨받지 않았으나 점유 인도를 받은 것으로 간주된다.</li>
+<li>③ 갑이 금반지 소유자가 아니었더라도, 병은 을로부터 을이 가진 소유권을 양도받아 취득한다.</li>
+<li>④ 갑이 금반지 소유자가 아니었더라도, 을은 반환청구권 양도로 병에게 점유 인도를 한 것으로 간주된다.</li>
+<li>⑤ 갑이 금반지 소유자가 아니었더라도, 병이 계약할 때 양도인이 소유자라고 믿었고 양도인이 소유자인지 확인하기 위해 충분히 주의했다면, 병은 소유권을 취득한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>30번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>31</div><div class='q-stem'></div></div>
+<p>문맥상 의미가 ⓐ와 가장 가까운 것은?</p>
+<ul>
+<li>① 작년은 우리나라에서 수많은 사건이 일어난 해였다.</li>
+<li>② 청중 사이에서는 기쁨으로 인해 환호성이 일어났다.</li>
+<li>③ 형님의 강한 의지력으로 집안이 다시 일어나게 되었다.</li>
+<li>④ 나는 그 사람에 대해 경계심이 일어나지 않을 수 없었다.</li>
+<li>⑤ 사회는 구성원들이 부조리에 맞서 일어남으로써 발전한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>31번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>㉠<u>형평사</u>는 백정 스스로가 자신들의 인권을 지키고 신분 해방을 이루기 위해 만든 단체이다. 오랫동안 천대와 멸시를 받아 오던 백정은 1923년 진주에서 회원 80여 명이 발기회를 갖고 형평사를 조직하여 형평 운동을 시작하였다. 이들은 일반인에 의한 차별과 박해, 관공서나 학교에서의 차별 대우, 이발소나 식당처럼 일반인이 출입하는 곳에서 공공연하게 이루어지는 출입 금지를 지적하며 평등하게 대우해 줄 것을 요구하였다. 형평사의 운동은 차별의 직접 당사자인 백정이 스스로 주체가 되어 자신의 권리를 주장하였다는 데 그 출발점이 있었다. 이전까지 백정은 차별을 감내하는 대상이었을 뿐이었으나, 형평사를 통해 비로소 차별을 시정할 것을 요구하는 발화의 주체로 나선 것이다.</p>
+<p>형평 운동은 진주에서 시작된 뒤 전국으로 급격하게 번져 갔다. 백정은 각지에서 형평 청년회를 조직하여 운동의 기반을 넓혔으며, 자녀의 교육을 목적으로 하는 형평 학우회도 결성하였다. 1925년에는 제3회 전국 대회를 열어 운동의 조직적 역량을 과시하였다. 교육의 기회에서 배제되어 온 집단이 스스로 교육 조직을 세웠다는 점은, 형평 운동이 차별의 결과를 시정하는 데서 더 나아가 차별이 재생산되는 통로 자체를 끊으려 했음을 보여 준다. 이처럼 형평 운동은 일회적인 항의에 그치지 않고, 청년 조직과 교육 조직을 갖춘 지속적인 운동으로 확장되어 갔다.</p>
+<p>형평 운동은 이렇게 전국으로 번지는 데 그치지 않고, ㉡<u>비슷한 시기에 일어난 다른 대중 운동과 합세하면서 평등권을 주장하는 운동으로 더욱 발전하였다.</u> 당시 조선 사회에는 지주와 소작인의 불평등한 관계를 타파하려는 움직임이 있었는데, 대부분 소작인으로 전락한 농민들은 지세나 소작 조건에 대해 적극적으로 의사를 표명하며 전국 소작인 대회와 같은 집단행동에 참여하였다. 또한 유교의 관습에 따라 집 밖 활동을 엄격하게 제한받던 여성들도 교육을 통해 종교 기관에서 단체 활동을 벌이는 등 적극적인 사회 운동을 펼쳤다. 형평 운동은 이러한 운동들과 연대하여 차별 철폐라는 자기 집단의 목표를 사회 전반의 평등 요구로 확장하였다. 서로 다른 처지의 약자들이 평등이라는 공통의 가치를 매개로 결속한 것이다.</p>
+<p>㉢<u>지역의 유력자나 지식인들은 이러한 사회적 약자들의 활동을 지지하거나 조직의 확산을 도왔다.</u> 직접적인 차별의 당사자가 아니었던 이들이 운동에 가세함으로써, 형평 운동은 백정 집단 내부의 문제를 넘어 사회의 여러 계층이 함께 호응하는 운동으로 자리 잡았다. 차별의 당사자가 시작한 운동이 당사자 아닌 이들의 지지를 얻어 사회적 의제로 전환된 것이다. 이로써 형평 운동은 3·1 운동 이후 민중의 일상적 이익을 옹호하고 독립을 회복하려 한 여러 대중 운동의 흐름 속에 놓이게 되었으며, 일제 강점기의 대표적인 인권 운동으로 평가받게 되었다.</p>
+<p>그러나 운동이 확산되면서 이에 반대하는 움직임도 나타났다. 당시 대부분의 양민들은 농사만으로는 생계를 유지할 수 없어 장시에서 자신의 노동력을 팔아야 했는데, 이러한 사정은 백정 출신들도 마찬가지였다. 따라서 양민들은 생계를 유지하기 위해 백정 출신들과 경쟁하며 변화된 위치를 체험해야 했다. <span style="border:1px solid #888;padding:0 .3em;">반대 움직임</span>은 자신의 경쟁자로 다가온 백정 출신에 대한 공포와 그로 인한 적의에서 비롯되었다. 차별받던 집단이 평등을 요구하자, 그 평등이 자신의 생계를 위협한다고 느낀 또 다른 약자들이 반발한 것이다. 형평 운동의 확산은 이렇듯 약자들 사이의 연대와 약자들 사이의 반발이라는 상반된 반응을 동시에 불러왔다.</p>
+<p>이러한 반발은 형평 운동이 단순히 한 집단의 차별 철폐로 끝나지 않는 과제임을 드러냈다. 평등의 요구가 또 다른 약자의 생존과 부딪칠 때, 운동은 당사자들의 결속만으로는 넘어서기 어려운 한계에 부딪혔다. 차별의 당사자가 시작하고 여러 계층이 가세하여 사회적 의제로 키워 낸 운동이었지만, 생계를 둘러싼 경쟁의 문제까지 떠안아야 비로소 운동이 내건 평등이 온전해질 수 있었던 것이다. 형평 운동의 전개는 약자의 자기 조직화에서 출발하여 다른 운동과의 연대로 나아가고, 다시 약자들 사이의 갈등이라는 새로운 국면에 이르는 과정을 통해, 차별을 극복하는 일이 어떤 복합적인 조건을 요구하는지를 보여 주었다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글의 내용 전개 방식으로 가장 적절한 것은?</p>
+<ul>
+<li>① 한 사회 운동의 전개 과정을 단계적으로 제시하면서 그 의의와 한계를 함께 드러내고 있다.</li>
+<li>② 한 사회 운동에 대한 상반된 평가를 소개한 후 두 평가를 절충하는 견해를 제시하고 있다.</li>
+<li>③ 여러 사회 운동의 공통점과 차이점을 항목별로 나누어 분석하고 있다.</li>
+<li>④ 한 사회 운동이 일어난 원인을 여러 가설을 통해 비교하며 검토하고 있다.</li>
+<li>⑤ 한 사회 운동의 성공 사례와 실패 사례를 대비하여 그 조건을 규명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>6번 — 정답 ①</strong>
+이 글은 형평 운동을 '당사자의 조직화 → 전국 확산 → 다른 운동과의 연대 → 지식인의 지지 → 약자 간 반발 → 한계의 노출'이라는 단계로 따라가면서, 인권 운동으로서의 의의와 끝내 부딪힌 한계를 함께 짚습니다. 이를 정확히 옮긴 ①이 정답이에요. ② 상반된 평가의 절충, ③ 여러 운동의 항목별 분석, ④ 원인에 대한 여러 가설 비교, ⑤ 성공·실패 사례 대비는 모두 이 글의 방식이 아닙니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 차별의 직접 당사자인 백정이 스스로 주체가 되어 만든 단체이다.</li>
+<li>② 일반인이 출입하는 곳에서의 출입 금지를 시정할 것을 요구하였다.</li>
+<li>③ 자녀의 교육을 위한 형평 학우회를 결성하여 운동의 기반을 넓혔다.</li>
+<li>④ 차별을 감내하던 백정을 차별 시정을 요구하는 주체로 전환시켰다.</li>
+<li>⑤ 지주와 소작인의 불평등한 관계를 타파하기 위해 진주에서 발기되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong>
+지주와 소작인의 불평등을 타파하려 한 것은 형평 운동이 합세한 '소작 운동'이지, ㉠형평사가 발기된 목적이 아니에요. 형평사는 백정의 신분 해방을 위해 진주에서 발기되었으므로, ⑤는 다른 운동의 목적을 형평사에 잘못 가져다 붙인 것이라 적절하지 않아 정답입니다. ①②④는 1문단, ③은 2문단(형평 학우회)과 그대로 맞습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span style="border:1px solid #888;padding:0 .3em;">반대 움직임</span>에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 백정 출신들이 평등 요구를 철회하면서 운동의 동력이 약해졌다.</li>
+<li>② 양민들이 백정 출신을 생계의 경쟁자로 느끼며 공포와 적의를 품었다.</li>
+<li>③ 지역의 유력자들이 운동의 확산을 막기 위해 조직적으로 나섰다.</li>
+<li>④ 일제가 소가죽 확보를 위해 백정의 단체 활동을 직접 탄압하였다.</li>
+<li>⑤ 소작 농민과 여성이 형평 운동과의 연대에서 이탈하기 시작하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+네모 안의 '반대 움직임'은 5문단에 그 원인이 또렷이 나옵니다. 생계를 위해 장시에서 경쟁해야 했던 양민들이 백정 출신을 경쟁자로 느껴 "공포와 그로 인한 적의"를 품은 것이죠. 이를 옮긴 ②가 정답입니다. ① 평등 요구를 철회한 것이 아니고, ③ 유력자는 오히려 운동을 지지했으며, ④ 일제의 탄압은 반대 움직임의 내용이 아니고, ⑤ 소작·여성과의 연대 이탈도 지문에 없는 내용입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글의 ㉡과 ㉢에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉡과 달리 ㉢은 차별의 직접 당사자들이 벌인 활동에 해당한다.</li>
+<li>② ㉢과 달리 ㉡은 서로 다른 처지의 약자들이 공통의 가치로 결속한 경우이다.</li>
+<li>③ ㉡과 ㉢은 모두 형평 운동을 백정 집단 내부의 문제로 한정하는 결과를 낳았다.</li>
+<li>④ ㉡과 ㉢은 모두 운동이 일회적 항의에 그치게 만든 요인으로 작용하였다.</li>
+<li>⑤ ㉢은 ㉡과 달리 운동의 평등 요구를 철회하게 만드는 계기가 되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>9번 — 정답 ②</strong>
+㉡(다른 대중 운동과의 합세)은 소작 농민·여성처럼 서로 다른 처지의 약자들이 평등이라는 공통의 가치로 결속한 경우입니다. 반면 ㉢(유력자·지식인의 지지)은 직접적인 당사자가 아닌 이들의 가세였죠. 이 차이를 바르게 짚은 ②가 정답입니다. ① ㉢이 당사자의 활동이라 한 것은 정반대이고, ③ 두 경우는 모두 운동을 백정 내부 문제 '너머로' 확장했으며, ④ 운동을 일회적 항의에 그치게 한 것이 아니라 지속·확장시켰고, ⑤ 평등 요구를 철회하게 한 것도 아닙니다.</p>
+<p><strong>10번 [3점] — 정답 ③</strong>
+③은 발문이 가리키는 행위('다른 직종의 모임과 손을 잡은 것')와 그 해석('당사자 아닌 이들의 지지')이 어긋납니다. 다른 직종 모임과의 연대는 ㉡(약자들의 연대)에 해당하지, ㉢(당사자 아닌 이들의 지지)에 해당하지 않아요. '당사자 아닌 이들의 지지'에 대응하는 것은 시민 단체의 활동(④)이죠. 그래서 대응을 잘못 짝지은 ③이 적절하지 않아 정답입니다. ①은 당사자의 자기 조직화, ②는 약자 간 연대, ④는 비당사자의 지지, ⑤는 약자 간 반발에 정확히 대응하는 적절한 반응입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 도시에서 배달 노동자들이 부당한 수수료에 맞서 권익을 지키기 위해 스스로 모임을 꾸렸다. 이들은 처음에는 동료끼리 사정을 나누는 데 그쳤으나, 점차 청소 노동자와 같은 다른 직종의 모임과 손을 잡으며 노동 환경 개선이라는 더 넓은 요구로 나아갔다. 한 시민 단체는 이들의 활동을 알리는 일을 도왔다. 그런데 일부 자영업자들은 수수료가 오르면 자신들의 수입이 줄어든다며 배달 노동자들의 요구에 강하게 반발하였다.</p>
+</blockquote>
+<ul>
+<li>① 배달 노동자들이 스스로 모임을 꾸린 것은, 차별의 당사자가 주체가 되어 권리를 주장한 형평사의 출발과 통하겠군.</li>
+<li>② 다른 직종의 모임과 손을 잡은 것은, 형평 운동이 다른 대중 운동과 합세하여 요구를 확장한 것과 통하겠군.</li>
+<li>③ 다른 직종의 모임과 손을 잡은 것은, 당사자가 아닌 이들의 지지가 운동을 사회적 의제로 전환한 것과 통하겠군.</li>
+<li>④ 시민 단체가 활동을 알리는 일을 도운 것은, 당사자가 아닌 이들이 운동의 확산을 도운 것과 통하겠군.</li>
+<li>⑤ 자영업자들이 강하게 반발한 것은, 평등의 요구가 또 다른 약자의 생존과 부딪쳐 반발을 부른 것과 통하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>형평사 / 형평 운동</strong>: 1923년 백정이 스스로 만든 단체와 그 신분 해방 운동. '형평'은 저울처럼 평등하다는 뜻이에요.</li>
+<li><strong>연대</strong>: 서로 다른 처지의 약자들(소작 농민·여성 등)이 평등이라는 공통의 가치로 손을 잡는 일.</li>
+<li><strong>반대 움직임</strong>: 생계 경쟁 때문에 백정 출신을 경쟁자로 느낀 양민들이 보인 반발. '약자의 분노가 또 다른 약자에게로' 향한 모습입니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>[지지]            유력자·지식인의 가세(㉢) — 당사자 아닌 이들</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>사회적 의제로</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>형평 운동의 '출발점'은 무엇이 특별했나요?</div><div class='qa-a'>차별의 직접 당사자인 백정이 스스로 주체가 되어 권리를 주장했다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>형평사가 형평 학우회를 만든 까닭은?</div><div class='qa-a'>교육에서 배제되어 온 집단이 차별이 재생산되는 통로(교육의 차단) 자체를 끊으려 했기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>형평 운동에 대한 반발은 누가, 왜 일으켰나요?</div><div class='qa-a'>장시에서 백정 출신과 생계를 두고 경쟁해야 했던 양민들이, 평등이 자신의 생계를 위협한다고 느껴 일으켰습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2018학년도 9월 [38~42]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>사람들은 함께 모여 ‘집합 의례’를 행한다. ㉠뒤르켐은 오스트레일리아 부족들의 집합 의례를 공동체 결속의 관점에서 탐구한다. 부족 사람들은 문제 상황이 발생할 경우 생계 활동을 멈추고 자신들이 공유하는 성(聖)과 속(俗)의 분류 체계를 활용하여 이 상황이 성스러운 것인지 아니면 속된 것인지를 판별하는 집합 의례를 행한다. 이 과정에서 그들은 자신들이 공유하는 성스러움이 무엇인지 새삼 깨닫고 그것을 중심으로 약해진 기존의 도덕 공동체를 재생한다. 집합 의례가 끝나면 부족 사람들은 가슴속에 성스러움을 품고 일상의 속된 세계로 되돌아간다. 이로써 단순히 먹고사는 문제에 불과했던 생계 활동이 성스러움과 연결된 도덕적 의미를 지니게 된다.</p>
+<p>뒤르켐은 현대 사회의 집합 의례가 기존 도덕 공동체의 재생으로 끝나지 않고 새로운 도덕 공동체를 창출할 것이라고 본다. 예를 들어, 프랑스 혁명은 자유, 평등, 우애와 같은 새로운 성스러움을 창출하고 이를 중심으로 새로운 도덕 공동체를 구성한 집합 의례다. 뒤르켐은 새로 창출된 성스러움이 자기 이해관계를 추구하며 속된 세계에서 살아가는 개인들에게 서로 결속할 수 있는 도덕적 의미를 제공할 것이라 여긴다.</p>
+<p>㉡파슨스와 스멜서는 이러한 이론적 통찰을 기능주의 이론으로 구체화한다. 그들은 성스러움을 가치라는 말로 바꿔 표현한다. 현대 사회에서는 가치가 평상시 사회적 삶 아래에 잠재되어 있다가, 그 도덕적 의미가 뿌리부터 뒤흔들리는 <span class="boxmark">[위기 시기]</span>에 위로 올라와 전국적으로 일반화된다. 속된 일상에서 사람들은 가치를 추구하기보다는 자기 이해관계를 구체화한 목표와 이의 실현을 안내하는 규범에 따라 살아간다. 하지만 위기 시기에는 사람들의 관심이 자신들의 특수한 이해관계에서 보편적인 가치로 상승한다. 사람들은 가치에 기대어 위기가 주는 심리적 긴장과 압박을 해소하는 집합 의례를 행한다. 그 결과 사회의 통합이 회복된다. 파슨스와 스멜서는 이것이 마치 유기체가 환경의 압박으로 인해 흐트러진 항상성의 기능을 생리 작용을 통해 회복하는 과정과 유사하다고 본다.</p>
+<p>㉢알렉산더는 파슨스와 스멜서의 이론을 받아들이면서도 그들이 사용한 생물학적 은유가 복잡한 현대 사회의 집합 의례를 탐구하는 데는 한계가 있다고 보고, 그 대안으로 ‘사회적 공연론’을 제시한다. 그는 가치를 전 사회로 일반화하는 집합 의례가 현대 사회에서는 유기체의 생리 작용처럼 자연적으로 진행되는 것이 아니라, 그 결과가 정해지지 않은 과정이라고 본다. 현대 사회는 사회적 공연의 요소들이 분화되어 있을 뿐만 아니라 각 요소가 자율성을 지니고 있다. 따라서 이 요소들을 융합하는 사회적 공연은 우발성이 극대화된 문화적 실천을 요구한다. 알렉산더가 기능주의 이론과 달리 공연의 요소들이 어떤 조건 아래에서 어떤 과정을 거쳐 융합이 이루어지는지 경험적으로 세밀하게 탐구해야 한다고 강조하는 이유가 여기에 있다.</p>
+<p>현대 사회의 사회적 공연의 요소들로는 성과 속의 분류 체계를 다양하게 구체화한 대본, 다양한 대본을 자신만의 방식으로 실행하는 배우, 계급․출신 지역․나이․성별 등 내부적으로 분화된 관객, 시․공간적으로 다양한 동선을 짜서 공연을 무대 위에 올리는 미장센*, 시․공간의 한계를 넘어 공연을 광범위한 관객에게 전파하는 상징적 생산 수단, 공연을 생산하고 배포하고 해석하는 과정을 총체적으로 통제하지 못할 정도로 고도로 분화된 사회적 권력 등이 있다. 그러나 요소의 분화와 자율성이 없는 전체주의 사회에서는 국가 권력에 의한 대중 동원만 있을 뿐 사회적 공연이 일어나기 어렵다.</p>
+<ul>
+<li>미장센(mise en scéne) : 무대 위에서의 등장인물의 배치나 역할, 무대 장치, 조명 따위에 관한 총체적인 계획과 실행.</li>
+</ul></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>38</div><div class='q-stem'></div></div>
+<p>윗글의 논지 전개 방식에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 중심 화제에 대해 주요 학자들이 합의한 결과를 제시하고 있다.</li>
+<li>② 중심 화제에 대해 상반된 견해를 제시한 후 두 견해를 절충하고 있다.</li>
+<li>③ 중심 화제에 대한 이론이 후속 연구에 의해 보완되는 과정을 고찰하고 있다.</li>
+<li>④ 중심 화제에 대한 다양한 사례들을 제시한 후 이를 유형별로 분류하고 있다.</li>
+<li>⑤ 중심 화제의 역사적 기원에 대한 다양한 가설들의 의의와 한계를 평가하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>38번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p>‘집합 의례’에 대해 ㉠이 할 수 있는 말로 적절하지 않은 것은?</p>
+<ul>
+<li>① 부족 사회는 집합 의례를 행하여 기존의 도덕 공동체를 되살린다.</li>
+<li>② 집합 의례를 통해 사람들은 생계 활동의 성스러운 의미를 얻는다.</li>
+<li>③ 현대 사회에서는 집합 의례를 통해 새로운 도덕 공동체가 형성된다.</li>
+<li>④ 공동체 성원들은 집합 의례를 거쳐 구체적인 이해관계를 중심으로 묶인다.</li>
+<li>⑤ 집합 의례의 과정에서 공동체 성원들은 문제 상황을 성 또는 속의 문제로 규정한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>39번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[위기 시기]</span>에 일어나는 상황을 이해한 것으로 가장 적절한 것은? </p>
+<ul>
+<li>① 사람들이 관심을 속에서 성으로 옮긴다.</li>
+<li>② 사람들이 목표와 규범 차원에서 행동한다.</li>
+<li>③ 사람들이 생계 활동을 위한 최적의 수단을 찾는다.</li>
+<li>④ 사람들이 항상성을 유지하기 위해 위기 상황을 외면한다.</li>
+<li>⑤ 사람들이 평상시 추구하던 삶의 도덕적 의미를 상실한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>40번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p>윗글의 ㉡과 ㉢에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉡과 달리 ㉢은 현대 사회의 집합 의례는 그 결과가 미리 결정되어 있지 않다고 본다.</li>
+<li>② ㉡과 달리 ㉢은 집합 의례가 가치의 일반화를 통해 도덕 공동체를 구성할 것이라 본다.</li>
+<li>③ ㉢과 달리 ㉡은 집합 의례가 발생하는 과정을 경험적으로 탐구할 필요성이 있다고 본다.</li>
+<li>④ ㉡과 ㉢은 모두 문화적 실천으로서의 집합 의례를 유기체의 생리 과정과 유사하다고 본다.</li>
+<li>⑤ ㉡과 ㉢은 모두 현대 사회에서는 성과 속의 분류 체계 없이 집합 의례가 일어난다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>41번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>42</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글에서 설명한 ‘사회적 공연론’으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+수려한 경관으로 유명한 A시에 소각장이 들어설 예정이다. A시의 시장은 정부의 보조금을 활용하여 낙후된 지역 경제를 발전시키기 위해 소각장을 유치하였다고 밝혔다. A시 시민들은 반대파와 찬성파로 갈려 집회를 이어 갔다. 반대파는 지역 경제 발전에는 찬성하지만 소각장이 환경을 오염시킨다며 철회할 것을 요구했고, 찬성파는 반대파가 지역 이기주의에 빠져 있다고 비판했다. 집회에 참여하지 않았던 사람들도 의견이 갈려 토박이와 노인은 반대 운동에, 이주민과 젊은이는 찬성 운동에 적극 참여하였다. 중앙 언론은 이 사건이 지역 내 현상이라며 아예 보도하지 않았다. 반대파는 반대 운동을 전국적으로 알리기 위해 서울에 가서 집회를 하려 했지만 경찰이 허가를 내 주지 않았다.</p>
+</blockquote>
+<ul>
+<li>① 공연의 미장센이 A시에 한정되어 펼쳐지고 있군.</li>
+<li>② 공연의 요소들이 융합되어 가치의 일반화가 일어났군.</li>
+<li>③ 출신 지역과 나이로 분화된 관객이 배우로 직접 나서고 있군.</li>
+<li>④ 상징적 생산 수단과 사회적 권력이 공연의 전국적 전파를 막으려 하는군.</li>
+<li>⑤ 배우들이 지역 경제 발전에는 동의하면서도 서로 다른 대본을 가지고 공연을 수행하는군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>42번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>신분제는 사람을 타고난 지위에 따라 나누고 그 지위에 권리와 의무를 고정하는 제도이다. 조선의 양천제는 백성을 양민과 천민으로 가르고, 천민 가운데 백정을 가장 낮은 자리에 두었다. 백정은 가축의 도살에 세습적으로 종사하며 거주·언어·의복·교육의 모든 면에서 차별을 받았다. 이러한 차별은 개별 관리의 자의가 아니라 신분제라는 제도가 떠받치고 있었기에, 한 사람의 처지는 그가 어느 신분으로 태어났는가에 따라 이미 정해져 있었다. 신분은 개인의 노력으로 바꿀 수 있는 것이 아니라 출생과 함께 주어지는 굴레였던 것이다.</p>
+<p>㉠<u>조선의 신분제 아래에서 차별은 법과 관습이 함께 보증하는 공식적 질서였다.</u> 백정에게 가해지는 천대는 누구나 따라야 하는 규범으로 통용되었으며, 이를 어기는 일은 신분 질서를 흔드는 것으로 여겨졌다. 차별이 제도에 의해 뒷받침되는 한, 그것은 부당한 관행이 아니라 마땅히 지켜야 할 질서로 받아들여졌다. 1894년 갑오개혁은 이 질서에 첫 균열을 냈다. 모든 신분제가 명목상 폐지되어, 양민과 천민을 가르던 법적 분류가 제거된 것이다. 그러나 법이 분류를 거두어들였다고 하여 사람들의 의식에 박힌 차별의 기준까지 사라지는 것은 아니었다. 제도의 폐지는 차별의 법적 근거를 없앴을 뿐, 차별을 지탱하던 사회적 인습까지 단번에 허물지는 못하였다.</p>
+<p>㉡<u>갑오개혁 이후의 시기에 백정에 대한 차별은 제도적 근거를 잃고도 사회적 인습으로 존속하였다.</u> 신분제가 무너진 자리에서 차별은 오히려 사적인 관행의 형태로 끈질기게 이어졌다. 게다가 일제는 소가죽을 안정적으로 확보하기 위해 백정의 처지가 그대로 유지되기를 바라며, 백정 출신들을 도수장에 종사하도록 강요하고 더욱 엄격하게 관리하였다. 제도가 붕괴한 뒤에도 차별이 존속한 데에는 이를 다시 고착시키려는 외부의 의도가 더해져 있었던 것이다. 이에 백정은 1923년 형평사를 조직하여 신분 해방을 위한 형평 운동에 나섰고, 운동은 전국으로 번져 소작 농민이나 여성의 운동과 같은 다른 대중 운동과 연대하였다. 제도가 거두지 못한 차별을 당사자들이 직접 걷어 내려 한 셈이다.</p>
+<p>그러나 형평 운동의 확산은 뜻밖의 갈등을 불러왔다. 생계를 위해 장시에서 노동력을 팔아야 했던 양민들은 같은 처지의 백정 출신들과 경쟁하게 되었고, 경쟁자로 다가온 이들에 대한 공포와 적의가 운동에 대한 반대 움직임으로 나타났다. ㉢<u>이 갈등은 사회적 약자의 분노가 또 다른 사회적 약자를 향한 증오와 멸시로 표출될 수 있음을 보여 주었다.</u> 이는 차별을 떠받치던 제도가 사라진 뒤에도, 생존을 둘러싼 경쟁이 약자들 사이의 새로운 갈등을 낳을 수 있음을 의미한다. 여기서 또 다른 함의를 생각할 수 있다. 곧 백정 출신들까지 포괄하고 사회적 약자의 분노를 풀어낼 수 있는 새로운 방식의 정치가 요구되었다는 사실이다. 신분제의 폐지만으로는 차별과 갈등이 해소되지 않으며, 약자들을 함께 끌어안을 정치가 뒷받침될 때 비로소 평등의 요구가 결실을 맺을 수 있는 것이다.</p>
+<p>이렇게 보면 차별을 극복하는 일은 세 국면을 거친다. 먼저 차별을 떠받치던 제도가 흔들리고 무너진다. 다음으로, 제도가 사라진 자리에서도 인습으로 남은 차별에 맞서 당사자들이 스스로 조직을 꾸려 평등을 요구한다. 끝으로, 그 요구가 또 다른 약자의 생존과 충돌하는 갈등이 드러나면서, 약자들 전체를 포괄하는 새로운 정치의 필요가 제기된다. 신분제가 무너진 뒤에도 차별이 곧바로 사라지지 않았다는 사실은, 제도의 철폐가 차별 극복의 끝이 아니라 그 출발점에 지나지 않았음을 일러 준다. 형평 운동의 역사는 제도의 동요와 붕괴, 당사자의 저항, 그리고 약자들 사이의 갈등이라는 단계를 거치며, 차별의 극복이 제도와 의식과 정치의 차원에서 함께 이루어져야 하는 과제임을 드러낸다. 제도가 무너진 자리를 무엇으로 채우는가에 따라, 차별의 극복은 진전될 수도 있고 또 다른 갈등으로 번질 수도 있었던 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 조선의 양천제에서 백정은 어떤 자리에 놓여 있었는가?</li>
+<li>② 갑오개혁은 조선의 신분 질서에 어떤 변화를 가져왔는가?</li>
+<li>③ 일제가 백정의 처지를 유지하려 한 까닭은 무엇인가?</li>
+<li>④ 형평사가 전국 대회를 처음으로 개최한 시기는 언제인가?</li>
+<li>⑤ 형평 운동의 확산은 어떤 갈등을 불러왔는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+지문에는 형평사가 1923년에 조직되었다는 사실은 나오지만, '전국 대회를 처음으로 개최한 시기'는 제시되어 있지 않아요(세트3 지문에는 제3회 대회 같은 정보가 없습니다). 그래서 답을 찾을 수 없는 ④가 정답입니다. ①은 1문단, ②는 2문단(갑오개혁의 균열), ③은 3문단(소가죽 확보), ⑤는 4문단(약자 간 갈등)에서 각각 답을 찾을 수 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 신분제가 유지되는 동안에는 백정에 대한 차별이 마땅히 지켜야 할 질서로 받아들여졌다.</li>
+<li>② 갑오개혁은 차별의 법적 근거를 없앴으나 차별을 지탱하던 인습까지 허물지는 못하였다.</li>
+<li>③ 일제의 관리가 없었더라도 갑오개혁 직후 백정에 대한 차별은 즉시 소멸하였을 것이다.</li>
+<li>④ 형평 운동은 제도가 거두지 못한 차별을 당사자들이 직접 걷어 내려 한 시도였다.</li>
+<li>⑤ 신분제의 폐지만으로는 약자들 사이에 생긴 갈등까지 해소되지는 않았다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+2문단은 차별이 인습으로 "관성적으로" 이어졌다고 했고, 3문단은 일제의 관리가 차별 존속에 "더해진" 요인이라고 했죠. 따라서 일제의 관리가 없었더라도 차별이 "즉시 소멸"했으리라는 ③은 지문과 어긋나는 추론이라 정답입니다(인습만으로도 차별은 지속되었을 것이므로). ①②④⑤는 각각 2·2·3·4문단의 내용에 근거한 타당한 추론입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>㉠~㉢에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 차별이 법과 관습의 뒷받침을 함께 받던 국면을 가리킨다.</li>
+<li>② ㉡은 차별의 제도적 근거가 강화되어 차별이 심화된 국면을 가리킨다.</li>
+<li>③ ㉢은 신분제가 차별을 공식적 질서로 보증하던 국면을 가리킨다.</li>
+<li>④ ㉠에서 ㉡으로 가면서 차별을 떠받치던 사회적 인습이 먼저 사라졌다.</li>
+<li>⑤ ㉡에서 ㉢으로 가면서 차별의 법적 근거가 다시 마련되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong>
+㉠은 "차별이 법과 관습이 함께 보증하는 공식적 질서"였던 국면, 곧 신분제가 유지되던 시기를 가리킵니다. 이를 옳게 설명한 ①이 정답이에요. ② ㉡은 제도적 근거를 '잃고도' 인습으로 차별이 존속한 국면이라 '근거 강화'는 정반대이고, ③ '공식적 질서로 보증'한 것은 ㉢이 아니라 ㉠입니다. ④ ㉠→㉡에서 먼저 사라진 것은 인습이 아니라 법적 근거이고(인습은 남았죠), ⑤ ㉡→㉢에서 차별의 법적 근거가 다시 마련되지는 않았습니다.</p>
+<p><strong>14번 [3점] — 정답 ⑤</strong>
+〈보기〉의 학자는 "법을 고치는 것만으로는 충분하지 않으며, 갈등하는 집단들을 함께 끌어안는 길을 찾아야 한다"라고 했죠. 이는 약자들을 포괄하는 '새로운 정치'를 요구한 것이지, 차별이 공식적 질서였던 옛 국면(㉠)으로 되돌아가자는 것이 결코 아닙니다. 그래서 정반대로 해석한 ⑤가 적절하지 않아 정답이에요. ①은 ㉡(인습으로의 존속), ②는 당사자의 조직화, ③은 약자 간 연대, ④는 ㉢(약자 간 갈등)에 정확히 대응하는 적절한 탐구입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 나라에서는 오랫동안 특정 부족 출신의 입학과 취업을 법으로 제한해 왔다. 이후 그 차별 법령이 폐지되었으나, 사람들은 여전히 이 부족 출신과 이웃하기를 꺼렸다. 그러자 이 부족 출신들은 단체를 만들어 차별을 없애 줄 것을 요구하였고, 다른 소수 집단의 단체와도 힘을 합쳤다. 그런데 일자리가 부족한 지역의 주민들은 이 부족 출신들이 일자리를 나누어 갖는 것에 거세게 반대하였다. 한 학자는 이 사례를 두고 "법을 고치는 것만으로는 충분하지 않으며, 갈등하는 집단들을 함께 끌어안는 길을 찾아야 한다"라고 말하였다.</p>
+</blockquote>
+<ul>
+<li>① 차별 법령이 폐지된 뒤에도 이웃하기를 꺼린 것은, 제도가 사라진 뒤에도 차별이 인습으로 존속한 국면(㉡)과 통하겠군.</li>
+<li>② 부족 출신들이 단체를 만들어 차별 철폐를 요구한 것은, 당사자들이 스스로 조직을 꾸려 평등을 요구한 모습과 통하겠군.</li>
+<li>③ 다른 소수 집단의 단체와 힘을 합친 것은, 형평 운동이 다른 대중 운동과 연대한 것과 통하겠군.</li>
+<li>④ 일자리를 두고 반대한 것은, 생존을 둘러싼 경쟁이 약자들 사이의 갈등을 낳은 국면(㉢)과 통하겠군.</li>
+<li>⑤ 학자의 말은, 차별이 법과 관습의 뒷받침을 함께 받던 국면(㉠)으로 되돌아가야 한다는 주장과 통하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>신분제</strong>: 사람을 타고난 지위로 나누고 권리·의무를 고정하는 제도. 차별을 떠받치는 '제도적 근거'였어요.</li>
+<li><strong>인습</strong>: 제도가 사라진 뒤에도 사람들의 의식·관행 속에 남아 차별을 지속시키는 힘.</li>
+<li><strong>새로운 정치</strong>: 백정 출신을 포함한 약자들 전체를 끌어안고 그들 사이의 갈등을 풀어낼 수 있는 정치. 차별 극복의 마지막 조건으로 제시됩니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>국면</th>
+<th>차별의 상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>㉠ 신분제 유지기</td>
+<td>법과 관습이 함께 차별을 공식적 질서로 보증</td>
+</tr>
+<tr>
+<td>㉡ 갑오개혁 이후</td>
+<td>법적 근거는 사라졌으나 인습으로 차별이 존속(+일제의 재고착)</td>
+</tr>
+<tr>
+<td>㉢ 운동 확산기</td>
+<td>생계 경쟁으로 약자 간 갈등 발생 → 새로운 정치의 필요 제기</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>통시적 핵심: <strong>제도의 성립 → 동요(갑오개혁) → 붕괴 후 잔존 → 약자 간 갈등.</strong> 제도를 없앤 것은 끝이 아니라 '출발점'이었다는 것이 이 글의 결론이에요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>신분제가 유지되던 시기에 차별은 어떻게 받아들여졌나요?</div><div class='qa-a'>부당한 관행이 아니라 마땅히 지켜야 할 공식적 질서로 받아들여졌습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>갑오개혁 뒤에도 차별이 남은 두 가지 까닭은?</div><div class='qa-a'>사람들의 의식에 박힌 인습이 관성적으로 지속되었고, 여기에 일제가 차별을 다시 고착시키려는 의도가 더해졌기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>이 글이 말하는 차별 극복의 마지막 조건은?</div><div class='qa-a'>약자들 전체를 포괄하고 그들의 분노를 풀어낼 수 있는 '새로운 정치'입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>기축 통화는 국제 거래에 결제 수단으로 통용되고 환율 결정에 기준이 되는 통화이다. 1960년 트리핀 교수는 브레턴우즈 체제에서의 기축 통화인 달러화의 구조적 모순을 지적했다. 한 국가의 재화와 서비스의 수출입 간 차이인 경상 수지는 수입이 수출을 초과하면 적자이고, 수출이 수입을 초과하면 흑자이다. 그는 "미국이 경상 수지 적자를 허용하지 않아 국제 유동성 공급이 중단되면 세계 경제는 크게 위축될 것"이라면서도 "반면 적자 상태가 지속돼 달러화가 과잉 공급되면 준비 자산으로서의 신뢰도가 저하되고 고정 환율 제도도 붕괴될 것"이라고 말했다.</p>
+<p>이러한 트리핀 딜레마는 국제 유동성 확보와 달러화의 신뢰도 간의 문제이다. 국제 유동성이란 국제적으로 보편적인 통용력을 갖는 지불 수단을 말하는데, ㉠금 본위 체제에서는 금이 국제 유동성의 역할을 했으며, 각 국가의 통화 가치는 정해진 양의 금의 가치에 고정되었다. 이에 따라 국가 간 통화의 교환 비율인 환율은 자동적으로 결정되었다. 이후 ㉡브레턴우즈 체제에서는 국제 유동성으로 달러화가 추가되어 '금 환 본위제'가 되었다. 1944년에 성립된 이 체제는 미국의 중앙은행에 '금 태환 조항'에 따라 금 1온스와 35달러를 언제나 맞교환해 주어야 한다는 의무를 지게 했다. 다른 국가들은 달러화에 대한 자국 통화의 가치를 고정했고, 달러화로만 금을 매입할 수 있었다. 환율은 경상 수지의 구조적 불균형이 있는 예외적인 경우를 제외하면 ±1% 내에서의 변동만을 허용했다. 이에 따라 기축 통화인 달러화를 제외한 다른 통화들 간 환율인 교차 환율은 자동적으로 결정되었다.</p>
+<p>1970년대 초에 미국은 경상 수지 적자가 누적되기 시작하고 달러화가 과잉 공급되어 미국의 금 준비량이 급감했다. 이에 따라 미국은 달러화의 금 태환 의무를 더 이상 감당할 수 없는 상황에 도달했다. 이를 해결할 수 있는 방법은 달러화의 가치를 내리는 평가 절하, 또는 달러화에 대한 여타국 통화의 환율을 하락시켜 그 가치를 올리는 평가 절상이었다. 하지만 브레턴우즈 체제하에서 달러화의 평가 절하는 규정상 불가능했고, 당시 대규모 대미 무역 흑자 상태였던 독일, 일본 등 주요국들은 평가 절상에 나서려고 하지 않았다. 이 상황이 유지되기 어려울 것이라는 전망으로 독일의 마르크화와 일본의 엔화에 대한 투기적 수요가 증가했고, 결국 환율의 변동 압력은 더욱 커질 수밖에 없었다. 이러한 상황에서 각국은 보유한 달러화를 대규모로 금으로 바꾸기를 원했다. 미국은 결국 1971년 달러화의 금 태환 정지를 선언한 닉슨 쇼크를 단행했고, 브레턴우즈 체제는 붕괴되었다.</p>
+<p>그러나 붕괴 이후에도 달러화의 기축 통화 역할은 계속되었다. 그 이유로 규모의 경제를 생각할 수 있다. 세계의 모든 국가에서 ㉢어떠한 기축 통화도 없이 각각 다른 통화가 사용되는 경우 두 국가를 짝짓는 경우의 수만큼 환율의 가짓수가 생긴다. 그러나 하나의 기축 통화를 중심으로 외환 거래를 하면 비용을 절감하고 규모의 경제를 달성할 수 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 브레턴우즈 체제 붕괴 이후에도 달러화가 기축 통화로서 역할을 할 수 있었던 이유는 무엇인가?</li>
+<li>② 브레턴우즈 체제 붕괴 이후의 세계 경제 위축에 대해 트리핀은 어떤 전망을 했는가?</li>
+<li>③ 브레턴우즈 체제에서 미국 중앙은행은 어떤 의무를 수행해야 했는가?</li>
+<li>④ 브레턴우즈 체제에서 국제 유동성의 역할을 한 것은 무엇인가?</li>
+<li>⑤ 브레턴우즈 체제에서 달러화 신뢰도 하락의 원인은 무엇인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong><br />
+트리핀은 브레턴우즈 체제에서의 달러화의 구조적 모순(국제 유동성 확보와 달러화 신뢰도 간의 문제)을 지적했을 뿐, 체제 '붕괴 이후'의 세계 경제 위축에 대한 전망은 글에 나오지 않는다. 따라서 ②는 답을 찾을 수 없는 질문이다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①4.5% ②59.8% ③9.7% ④7.7% ⑤17.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 닉슨 쇼크가 단행된 이후 달러화의 고평가 문제를 해결할 수 있는 달러화의 평가 절하가 가능해졌다.</li>
+<li>② 브레턴우즈 체제에서 마르크화와 엔화의 투기적 수요가 증가한 것은 이들 통화의 평가 절상을 예상했기 때문이다.</li>
+<li>③ 금의 생산량 증가를 통한 국제 유동성 공급량의 증가는 트리핀 딜레마 상황을 완화하는 한 가지 방법이 될 수 있다.</li>
+<li>④ 트리핀 딜레마는 달러화를 통한 국제 유동성 공급을 중단할 수도 없고 공급량을 무한정 늘릴 수도 없는 상황을 말한다.</li>
+<li>⑤ 브레턴우즈 체제에서 마르크화가 달러화에 대해 평가 절상되면, 같은 금액의 마르크화로 구입 가능한 금의 양은 감소한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+평가 절상은 자국 통화의 대외 가치를 높이는 것이고, 브레턴우즈 체제에서 금 1온스와 35달러의 비율은 고정되어 있었다. 마르크화가 달러화에 대해 평가 절상되면 같은 금액의 마르크화에 대응하는 달러화 금액이 커지므로 구입 가능한 금의 양은 오히려 '많아'진다. 따라서 감소한다고 한 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①14.1% ②23.8% ③15.9% ④10.0% ⑤35.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>미국을 포함한 세 국가가 존재하고 각각 다른 통화를 사용할 때, ㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서 자동적으로 결정되는 환율의 가짓수는 금에 자국 통화의 가치를 고정한 국가 수보다 하나 적다.</li>
+<li>② ㉡이 붕괴된 이후에도 여전히 달러화가 기축 통화라면 ㉡에 비해 교차 환율의 가짓수는 적어진다.</li>
+<li>③ ㉢에서 국가 수가 하나씩 증가할 때마다 환율의 전체 가짓수도 하나씩 증가한다.</li>
+<li>④ ㉠에서 ㉡으로 바뀌면 자동적으로 결정되는 환율의 가짓수가 많아진다.</li>
+<li>⑤ ㉡에서 교차 환율의 가짓수는 ㉢에서 생기는 환율의 가짓수보다 적다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+교차 환율은 기축 통화(달러화)를 제외한 통화들 간 환율이므로, 세 국가 조건에서 ㉡의 교차 환율 가짓수는 1이다. ㉢에서는 두 국가를 짝짓는 경우의 수만큼 환율이 생기므로 가짓수는 3이다. 따라서 ㉡의 교차 환율 가짓수(1)는 ㉢의 환율 가짓수(3)보다 적다(⑤).</p>
+<p><em>선택률</em> — 응시 98,566명 — ①5.1% ②13.9% ③13.2% ④18.4% ⑤49.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+브레턴우즈 체제가 붕괴된 이후 두 차례의 석유 가격 급등을 겪으면서 기축 통화국인 A국의 금리는 인상되었고 통화 공급은 감소했다. 여기에 A국 정부의 소득세 감면과 군비 증대는 A국의 금리를 인상시켰으며, 높은 금리로 인해 대량으로 외국 자본이 유입되었다. A국은 이로 인한 상황을 해소하기 위한 국제적 합의를 주도하여, 서로 교역을 하며 각각 다른 통화를 사용하는 세 국가 A, B, C는 외환 시장에 대한 개입을 합의했다. 이로 인해 A국 통화에 대한 B국 통화와 C국 통화의 환율은 각각 50%, 30% 하락했다.</p>
+</blockquote>
+<ul>
+<li>① A국의 금리 인상과 통화 공급 감소로 인해 A국 통화의 신뢰도가 낮아진 것은 외국 자본이 대량으로 유입되었기 때문이겠군.</li>
+<li>② 국제적 합의로 인한 A국 통화에 대한 B국 통화의 환율 하락으로 국제 유동성 공급량이 증가하여 A국 통화의 가치가 상승했겠군.</li>
+<li>③ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국 통화의 환율과 B국 통화에 대한 C국 통화의 환율은 모두 하락했겠군.</li>
+<li>④ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국과 C국 통화의 환율이 하락하여, B국에 대한 C국의 경상 수지는 개선되었겠군.</li>
+<li>⑤ 다른 모든 조건이 변하지 않았다면, A국의 소득세 감면과 군비 증대로 A국의 경상 수지가 악화되며, 그 완화 방안 중 하나는 A국 통화에 대한 B국 통화의 환율을 상승시키는 것이겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+A국 통화에 대한 환율 하락 폭이 B국 통화(50%)가 C국 통화(30%)보다 크므로, 합의 이후 B국 통화의 가치는 C국 통화에 비해 상대적으로 더 높게 평가된다. 그 결과 B국 통화에 대한 C국 통화의 환율은 상승하고, 이에 따라 B국에 대한 C국의 수출은 늘고 수입은 줄어 C국의 경상 수지는 개선된다(④).</p>
+<p><em>선택률</em> — 응시 98,574명 — ①10.0% ②24.5% ③18.3% ④32.2% ⑤16.0%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>차별을 극복하기 위한 형평 운동 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='차별을 극복하기 위한 형평 운동 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

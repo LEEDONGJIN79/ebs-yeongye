@@ -1,0 +1,337 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>연산 환경 변화와 GPU — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr><tr><td>정답</td>
+<td><b>①</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ①</strong>
+3문단에서 "연산량이 균등하게 분배되지 않으면 일부 연산 유닛은 다른 유닛의 연산이 끝날 때까지 대기 상태에 놓이게" 된다고 했어요. 즉 대기가 길어지는 것은 분배가 <em>고르지 못할 때</em>입니다. 그런데 ①은 "균등하게 분배될수록" 대기가 길어진다고 정반대로 말했으니 일치하지 않아 정답이에요. ②는 1문단(제어 기능 최소화·동일 연산 빠르게), ③은 2문단(스레드=명령어 실행 최소 단위), ④는 2문단(블록 내 스레드 동일 명령어), ⑤는 3문단(스케줄러가 디코딩된 명령에 따라 블록 분배)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+[A]에서 "공유 메모리는 전역 메모리보다 빠르면서도 여러 스레드 간의 정보 공유가 가능하다"라고 했으므로 ③이 적절해 정답입니다. ① 전역 메모리는 "접근 속도가 느려 연산 중에 사용하기에는 적합하지 않다"라고 했으니 정반대예요. ② 레지스터는 <em>개별 스레드만 사용할 수 있는 저장소</em>이고, 여러 스레드가 공동으로 쓰는 것은 <em>공유 메모리</em>인데, ②는 레지스터에 공유 메모리의 설명을 갖다 붙여 주체를 맞바꿨습니다. ④ 충돌은 "서로 다른" 공간이 아니라 "같은 메모리 공간에" 동시에 접근할 때 일어나므로 조건이 어긋났습니다. ⑤ 결과를 외부와 공유하려면 <em>전역 메모리</em>에 저장한다고 했지 레지스터가 아니에요.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+[A]에서 전역 메모리는 "접근 속도가 느려 연산 중에 사용하기에는 적합하지 않다"라고 했어요. 〈보기〉에서 전역 메모리에 담은 것은 연산 <em>중</em>의 데이터가 아니라 <em>최종 결과</em>죠. 그런데 ⑤는 전역 메모리를 "접근 속도가 빨라 연산 중에 사용하기에 적합한 메모리"라고 설명했으니, 전역 메모리의 성질을 정반대로 적용해 적절하지 않으므로 정답입니다. ①은 1문단(동일 명령어를 다수 데이터에 반복), ②는 2문단(블록 단위 관리), ③은 3문단(균등하지 않은 분배), ④는 3문단(대기→자원 비효율)에 각각 정확히 대응하는 적절한 탐구예요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>연산 유닛</strong>: 여러 스레드를 병렬로 실행하는 독립적인 실행 공간. 공장 안의 '작업반'에 해당해요.</li>
+<li><strong>스레드 / 스레드 블록</strong>: 스레드는 명령어 하나를 실행하는 연산의 최소 단위, 스레드 블록은 같은 명령어를 실행할 스레드들을 묶은 단위.</li>
+<li><strong>스케줄러</strong>: 디코딩된 명령에 따라 스레드 블록을 연산 유닛에 나누어 보내고 병렬 처리를 제어하는 부분.</li>
+<li><strong>메모리 계층(전역·공유·레지스터)</strong>: 접근 속도·용량·사용 범위가 다른 세 저장소. 빠른 곳일수록 작고 좁게 쓰여요.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>명령어</span><span class='fs-sub'>고르게 나눠야 대기 없이 빠름</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>디코딩</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>스케줄러가 스레드 블록을 분배</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>스레드를 '스레드 블록'으로 묶는 까닭은 무엇인가요?</div><div class='qa-a'>같은 명령어를 실행할 연산들을 한데 모아 한꺼번에 병렬로 처리하기 위해서입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>연산 <em>중</em>에는 왜 전역 메모리를 잘 쓰지 않나요?</div><div class='qa-a'>전역 메모리는 대용량이지만 접근 속도가 느려서, 연산 중에는 더 빠른 레지스터나 공유 메모리를 씁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>스케줄러가 일을 고르게 나누는 일이 왜 중요한가요?</div><div class='qa-a'>한쪽에 일이 몰리면 다른 연산 유닛이 그 연산이 끝날 때까지 대기해 GPU 자원이 비효율적으로 쓰이기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 9월 [14~17] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong><br />
+2문단에 따르면 가상 현실 장갑은 아바타가 만지는 가상 물체의 감각을 사용자에게 전달하고, 사용자의 손가락·팔 움직임에 따라 아바타를 움직이게 할 수 있을 뿐, 사용자의 감각 반응을 아바타에게 전달하는 것은 아니다. 상호 간에 감각 반응을 주고받는다고 한 ⑤가 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.5% ②8.9% ③7.4% ④7.2% ⑤74.9%</p></div>
+<div class='exp'><p><strong>15번 — 정답 ③</strong><br />
+[A]에 따르면 아바타가 존재하는 가상 공간의 환경 변화에 따라 트레드밀 바닥의 진행 속도 및 방향, 기울기 등이 변경되기도 한다. 따라서 아바타가 경사로를 만나면 트레드밀 바닥의 기울기가 변경될 수 있다(③).</p>
+<p><em>선택률</em> — 응시 98,558명 — ①2.5% ②4.1% ③82.0% ④4.1% ⑤6.7%</p></div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+4문단에서 동작 추적 센서는 사용자의 동작을 파악하는 센서라고 했고, 〈보기〉에서 키넥트 센서는 동작 추적 센서의 하나라고 했다. 따라서 키넥트 센서가 가상 공간에 있는 물체들 간의 거리를 측정하여 입체감을 구현한다는 ①은 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,562명 — ①58.7% ②5.1% ③8.5% ④17.2% ⑤10.1%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ①</strong><br />
+ⓐ‘맞추다’는 ‘어떤 기준이나 정도에 어긋나지 아니하게 하다’의 뜻으로, ①의 ‘노래에 정확히 맞추어’와 같은 의미로 쓰였다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①78.4% ②3.8% ③12.5% ④2.5% ⑤3.3%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+3문단에서 "분기문은 이러한 조건 판단에 따라 실행 경로를 분리하거나 연결하는 명령 구조"라고 했어요. 즉 분기문은 조건 판단의 <em>결과에 따라 경로를 나누는 구조</em>이지, 조건 판단의 한 종류로 그 안에 포함되는 것이 아닙니다. 둘의 관계를 뒤집어 ○ 표시한 ④가 적절하지 않아 정답이에요. ①은 1문단(㉠·㉡ 대비와 각자 잘 다루는 작업), ②는 2문단(성능을 좌우하는 요소), ③은 3문단(분기문 사례로 효율 저하 설명), ⑤는 4문단(세 요소의 상충)에 비추어 모두 ○이 맞습니다.</p></div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+㉢은 "스레드 블록 내 모든 스레드가 동일한 명령어를 동시에 수행하도록 설계"되어 분기문에서 효율이 낮아진다는 부분이에요. 그 이유는 3문단에 있죠. 분기문이 끼어들면 스레드마다 할 일이 달라지는데, 같은 블록은 같은 명령을 함께 수행해야 하므로 "일부 스레드는 다른 스레드의 작업이 끝날 때까지 대기"하게 됩니다. 이를 정확히 짚은 ②가 정답이에요. ① 한 블록의 스레드는 "동일한 명령어"를 수행하므로 "서로 다른 명령어"는 사실과 어긋나고, ③ 충돌은 같은 메모리 접근 시의 일이며 "단순 반복 연산에서도 반드시" 일어난다고 하지 않았어요. ④ 연산량이 "항상 균등하게" 나뉜다는 것은 지문과 어긋나며(균등하지 않으면 대기 발생), ⑤ 복잡한 제어를 정밀하게 조율하는 것은 ㉡이 아니라 ㉠의 특성입니다.</p>
+<p><strong>6번 [3점] — 정답 ⑤</strong>
+4문단에서 처리 속도와 제어 유연성은 <em>함께 높이기 어려운</em>, 서로 맞물려 상충하는 요소예요. 제어 유연성을 높인다고 처리 속도가 따라 높아지는 관계가 아니죠. 그런데 ⑤는 "제어 유연성을 높이면 처리 속도가 함께 높아져 분기문 처리가 빨라진다"라고 두 요소가 같이 오르는 것처럼 잘못 연결했으니 적절하지 않아 정답입니다. ①은 2문단(단순 반복에 유리), ②는 3문단(조건 판단·분기문), ③은 3문단(같은 명령 수행 설계에서 병렬성 손실), ④는 4문단(속도↑ 시 메모리 충돌↑로 메모리 효율과 상충)에 각각 들어맞는 적절한 반응이에요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>㉠(중앙 처리 장치)</strong>: 고성능 코어 몇 개로 복잡한 제어 흐름을 정밀하게 조율하는 장치. 종류가 다양하고 순서가 바뀌는 범용 작업에 강해요.</li>
+<li><strong>㉡(그래픽 처리 장치)</strong>: 단순 코어 수천 개로 같은 명령을 떼로 반복하는 장치. 동일 연산의 대량 반복에 강해요.</li>
+<li><strong>분기문 / 조건 판단</strong>: 어떤 값에 따라 실행 경로가 갈라지는 명령 구조와 그 갈림을 정하는 과정. GPU가 약한 지점이에요.</li>
+<li><strong>상충하는 세 요소</strong>: 처리 속도·제어 유연성·메모리 효율. 한꺼번에 최대로 끌어올리기 어렵습니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>㉠ 중앙 처리 장치</th>
+<th>㉡ 그래픽 처리 장치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>코어</td>
+<td>고성능 코어 소수</td>
+<td>단순 코어 수백~수천</td>
+</tr>
+<tr>
+<td>잘하는 일</td>
+<td>복잡·가변·종속적인 범용 작업</td>
+<td>동일 연산의 대량 반복</td>
+</tr>
+<tr>
+<td>제어 흐름</td>
+<td>복잡한 제어를 정밀 조율</td>
+<td>같은 명령을 동시에 떼로 수행</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>병렬 반복에 비효율</td>
+<td>분기문·조건 판단에 효율 저하</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>㉡은 <strong>처리 속도 · 제어 유연성 · 메모리 효율</strong>이 서로 맞물려, 셋을 한꺼번에 다 높이기는 어려워요. 그래서 <em>어떤 작업이냐에 따라 무엇을 우선할지</em>를 조정하게 됩니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>㉠과 ㉡은 각각 어떤 작업에 강한가요?</div><div class='qa-a'>㉠은 종류가 많고 순서가 바뀌는 복잡한 범용 작업에, ㉡은 같은 연산을 대규모로 반복하는 작업에 강합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡이 분기문에서 효율을 잃는 까닭은?</div><div class='qa-a'>한 블록의 스레드가 같은 명령을 함께 수행해야 하는데, 분기문이 끼면 할 일이 갈라져 일부 스레드가 대기하게 되기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡의 처리 속도를 무작정 높이기 어려운 까닭은?</div><div class='qa-a'>스레드를 더 많이 동시에 돌리면 같은 메모리에 접근하려는 충돌이 잦아져 메모리 효율이 떨어지는 등, 세 요소가 서로 상충하기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2025학년도 9월 [8~11] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>8번 — 정답 ④</strong><br />
+1문단에서 승인 과정에는 합의 알고리즘이 사용되고 작업증명은 합의 알고리즘의 한 예라고 했다. 합의 알고리즘이 작업증명보다 큰 범주이므로 ‘합의 알고리즘은 작업증명의 한 예이다’에 ○ 표시한 ④가 적절하지 않다. ①은 글 전체가 특성(2~4문단)과 한계(4문단 끝)를 다루므로 ○이 맞고, ②는 응용 분야 소개가 없으며 ③은 다른 기술과의 경쟁 양상 설명이 없으므로 × 가 맞다. ⑤는 1문단의 정의 그대로이므로 ○이 맞다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①3.4% ②8.8% ③6.3% ④75.6% ⑤6.4%</p></div>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong><br />
+블록체인에 연결되려면 검증을 거쳐야 하는데, 검증은 블록의 내용이 다른 블록의 내용과 상충되거나 이중으로 포함되지 않는지 확인하는 것, 즉 다른 데이터와의 비교이다(⑤). ①승인 과정 자체에 합의 알고리즘이 쓰이는 것이지 참여 노드 결정용이 아니고, ②승인을 다시 거쳐야 하는 것은 변경된 블록과 그 이후의 블록들이며, ③연결을 유지한 채 삭제할 수 있다는 것은 무단 변경이 쉽다는 것이므로 보안성이 높은 게 아니고, ④저장 시간이 짧을수록 성능은 높아진다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①5.6% ②15.6% ③5.2% ④5.2% ⑤68.0%</p></div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong><br />
+블록체인은 여러 대의 컴퓨터(노드)에 중복 저장되므로, 일부 데이터가 지워져도 다른 노드들에 있는 승인된 원래 데이터를 별도의 승인 과정 없이 가져와 복원할 수 있다(②). ④는 무단 변경으로 끊어진 연결의 복구가 어려운 이유에 해당할 뿐, 복원이 용이한 이유가 아니다(복원에는 승인 과정이 필요 없음). ⑤동일 데이터의 이중 포함은 검증에서 걸러지는 대상이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.1% ②55.8% ③7.1% ④25.8% ⑤8.1%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong><br />
+승인 과정에는 모든 노드가 참여하므로 노드 수가 감소하면 승인 시간이 짧아져 성능(데이터 저장 속도)은 높아지고, 4문단에 따라 탈중앙성은 낮아진다(③). ①합의 알고리즘 속도가 빨라져 승인 시간이 줄면 보안성은 낮아지므로 둘 다 높아진 게 아니고, ②노드 수 증가 시 보안성은 높아지지만 성능 저하로 확장성은 낮아질 수 있으며, ④노드 수를 제한(고정)한 A 업체는 비공개형이고, ⑤B 업체가 위조 불가능성(무결성)을 향상시켰으므로 A 업체의 무결성이 더 높은 것이 아니다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.9% ②13.2% ③67.8% ④6.6% ⑤9.4%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+5문단에서 전역 메모리는 "모든 스레드가 접근할 수 있는 대용량 저장 공간"이고 "접근 속도가 느려" 연산 중에 쓰기 어렵다고 했으므로 ②가 일치해 정답이에요. ① GPU는 "본래 그래픽 연산을 위한 것"이었다고 했으니 순서가 뒤바뀌었고, ③ "개별 스레드만 사용"하는 것은 레지스터이며 "공동으로 사용"하는 것은 공유 메모리라 둘을 맞바꿨습니다. ④ 세 갈래의 공통점은 "<em>같은</em> 연산의 대규모 반복"이라고 했으니 "서로 다른 종류의 연산"은 정반대고, ⑤ 충돌은 "서로 다른" 공간이 아니라 "같은 메모리 공간에" 동시에 접근할 때 일어납니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+5문단에서 전역 메모리는 "접근 속도가 느려 연산 중에 쓰기에는 적합하지 않다"라고 했어요. 그런데 ⑤는 전역 메모리를 "접근 속도가 빨라 연산 중에 데이터를 처리하기에 적합"하다고 정반대로 설명했으니 적절하지 않아 정답입니다. ①은 전역 메모리의 외부 공유용 저장, ②는 공유 메모리가 전역보다 빠름, ③은 레지스터의 작은 용량·빠른 속도, ④는 공유 메모리의 블록 내 공동 사용으로 모두 5문단에 부합해요.</p></div>
+<div class='exp'><p><strong>9번 — 정답 ④</strong>
+㉠은 과학 기술 분야의 대규모 수치 연산을 다룬 부분이에요. 4문단은 이 분야의 계산도 "같은 연산이 수많은 데이터에 반복 적용되는 형태"라서 GPU가 효과적이라고 했죠. 그런데 ④는 "데이터마다 적용되는 연산의 형태가 서로 달라 병렬 처리에 적합하지 않다"라고 정반대로 말했으니 적절하지 않아 정답입니다. ①·②·③은 4문단(수치 계산의 양·반복 형태·GPU 활용), ⑤는 4문단 끝('같은 연산의 대규모 반복'이라는 공통점)에서 그대로 확인됩니다.</p>
+<p><strong>10번 [3점] — 정답 ③</strong>
+5문단에서 빠른 것은 <em>레지스터와 공유 메모리</em>이고, 전역 메모리는 <em>느린</em> 대용량 저장소예요. 〈보기〉에서 ⓐ는 공유 메모리, ⓑ는 레지스터, ⓒ는 전역 메모리에 해당하죠. 그런데 ③은 ⓒ(전역 메모리)를 "빠른" 저장소라 하고 ⓐ·ⓑ를 "느린" 것처럼 말해 속도 관계를 거꾸로 뒤집었으니 적절하지 않아 정답입니다. ①은 ⓐ=공유 메모리(블록 내 공동 사용), ②는 ⓑ=레지스터(개별 스레드 전용), ④는 ⓒ=전역 메모리(결과 저장·공유), ⑤는 같은 공간 동시 접근에 따른 충돌·병렬성 저하에 각각 정확히 대응하는 적절한 이해예요.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>GPU 활용의 세 갈래</strong>: 그래픽 처리(픽셀 연산), 인공 지능 학습(행렬 곱셈·역전파), 과학 기술 수치 연산(기상·유전자·유체 역학). 모두 '같은 연산의 대규모 반복'이라는 공통점이 있어요.</li>
+<li><strong>전역 메모리</strong>: 모든 스레드가 접근하는 대용량 저장소. 느리지만 결과 저장·공유에 쓰여요.</li>
+<li><strong>공유 메모리 / 레지스터</strong>: 공유 메모리는 같은 블록 스레드들이 함께, 레지스터는 개별 스레드만 쓰는 빠른 저장소.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<pre><code>[GPU 활용의 세 갈래 — 한 뿌리에서 갈라짐]
+                 같은 연산의 대규모 반복
+                          │
+        ┌─────────────────┼─────────────────┐
+   그래픽 처리        인공 지능 학습        과학 기술 수치 연산
+   (픽셀 연산)        (행렬 곱셈·역전파)     (기상·유전자·유체 역학)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>메모리</th>
+<th>접근 범위</th>
+<th>속도</th>
+<th>쓰임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전역 메모리</td>
+<td>모든 스레드</td>
+<td>느림</td>
+<td>결과 저장·외부 공유</td>
+</tr>
+<tr>
+<td>공유 메모리</td>
+<td>같은 블록 내 스레드</td>
+<td>중간</td>
+<td>연산 중 정보 공유</td>
+</tr>
+<tr>
+<td>레지스터</td>
+<td>개별 스레드</td>
+<td>매우 빠름</td>
+<td>연산 중 임시값</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>GPU 활용의 세 갈래를 묶어 주는 공통점은 무엇인가요?</div><div class='qa-a'>분야는 달라도 '같은 연산을 대규모로 반복'한다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>연산 <em>중</em>에 주로 쓰는 메모리는 무엇인가요?</div><div class='qa-a'>접근이 빠른 레지스터와 공유 메모리를 주로 씁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 메모리 공간에 여러 스레드가 한꺼번에 접근하면 어떤 일이 생기나요?</div><div class='qa-a'>충돌이 발생해 병렬성이 저하되어 연산이 지연될 수 있습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 9월 [38~41] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>38번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>39번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>40번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+</body></html>

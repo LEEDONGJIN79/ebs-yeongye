@@ -1,0 +1,930 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>사변적 실재론 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>사변적 실재론 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 눈을 감으면 방 안의 책상은 사라질까요? 당연히 그대로 있다고 답하실 거예요. 그런데 철학에서는 이게 그렇게 간단한 물음이 아니랍니다. "우리가 알 수 있는 세계"와 "우리와 상관없이 그냥 있는 세계"가 같은 것이냐를 두고 오래 다퉈 왔거든요.</p>
+<p>20세기 후반에는 <strong>상관주의</strong>라는 생각이 힘을 얻었어요. 어려운 말 같지만 뜻은 단순해요. "실재(實在), 곧 진짜로 있는 것은 늘 <em>인식하는 사람과의 관계 속에서만</em> 이야기할 수 있다"는 입장이에요. 쉽게 비유하면, 세상을 <em>색안경을 낀 눈</em>으로만 볼 수 있다는 거죠. 안경을 벗은 '날것의 세계' 자체는 입에 올릴 수 없고, 우리가 말하는 세계란 결국 언어와 문화라는 안경을 거친 세계라는 거예요.</p>
+<p>그런데 어떤 철학자들은 여기에 답답함을 느꼈어요. "그러면 인간이 등장하기 전, 또는 인간이 모두 사라진 뒤의 우주는 어떻게 이야기하지?" 하고 말이죠. 그래서 등장한 흐름이 <strong>사변적 실재론</strong>입니다. 이들은 "인식하는 주체와 <em>상관없이</em> 존재하는 실재가 분명히 있고, 철학은 실험이나 관찰이 아니라 <em>순수한 이성적 사유(사변)</em>만으로 그것에 다가갈 수 있어야 한다"고 주장해요. 대표적인 두 사람을 미리 만나 볼까요? <strong>브라시에</strong>는 실재를 '소멸'이라는 열쇳말로 봅니다. 우주의 소멸이나 생명체의 멸종처럼, <em>인간이 의미를 붙이든 말든 일어나는 사건</em>이야말로 실재의 모습이라는 거예요. <strong>메이야수</strong>는 '사실론성의 원리'를 내세웁니다. "어떤 것도 꼭 그래야만 할 이유는 없다, 모든 것은 그저 우연히 그렇게 있을 뿐"이라는 생각이죠. 세계가 <em>근본적으로 우연</em>이라는 이 발상이 그의 핵심이에요.</p>
+<p>하지만 모든 이야기에는 반론이 따르죠. <strong>가브리엘</strong>은 사변적 실재론이 너무 독단적이라고 봅니다. "실재가 단 하나의 외톨이 실체로 저기 떡 하니 있다"고 하기보다, 실재는 늘 <em>여러 가지 '의미의 장(場)'</em> 속에서만 드러난다고 보는 거예요. 같은 '물'도 화학 실험실에서의 의미, 시(詩) 속에서의 의미, 종교 의례에서의 의미가 다르듯, 무언가가 <em>어떤 의미의 맥락에 놓이느냐</em>에 따라 그 실재성이 파악된다는 거죠.</p>
+<blockquote>
+<p>한마디로: 이 단원은 <strong>"우리와 상관없는 세계를 사유할 수 있는가"</strong>라는 한 물음을 둘러싼 세 갈래 — 상관주의의 신중함, 사변적 실재론의 대담함(브라시에·메이야수), 그리고 가브리엘의 되물음 — 을 따라가며, 입장과 입장이 어떻게 맞부딪치는지를 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것 (개념 지도)</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>"인식 주체와 무관한 실재를 사유할 수 있는가"</strong>라는 물음이 있습니다. 같은 물음을 세 세트가 각각 다른 각도에서 다룹니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>인식 주체와 무관한 실재를 사유할 수 있는가</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>상관주의에 맞선 사변적 실재론의 전체 그림(브라시에의 소멸, 메이야수의 우연성)을 (가)에서 소개하고, (나)에서 가브리엘이 '의미의 장' 개념으로 이를 되받는 모습을 봅니다. 한 입장을 <em>세우고</em> 다른 입장이 <em>허무는</em> 짜임을 익혀요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>메이야수의 '사실론성의 원리' 하나를 깊이 파고듭니다. 상관주의의 문제의식에서 출발해 "모든 것은 우연이다"라는 결론에 어떻게 이르는지, 그리고 그 결론에 어떤 빈틈이 남는지를 한 편의 흐름으로 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>브라시에가 말하는 '소멸로서의 실재'를 (가)에서 만나고, (나)에서 그 실재 개념을 향한 비판들을 견줍니다. <em>인간의 의미 부여와 무관한 실재</em>라는 발상의 힘과 약점을 동시에 저울질해요.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 모두 풀고 나면, 같은 철학적 물음이 <em>소개-비판 구조</em>, <em>단일 논증의 추적</em>, <em>여러 입장의 대조</em>라는 서로 다른 짜임으로 어떻게 출제되는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>20세기 후반의 철학은 실재를 인식 주체와의 관계 속에서만 파악하려는 경향을 강하게 띠었다. 상관주의로 불리는 이 입장은 주체와 대상의 분리 불가능한 관계를 강조하며, 인식 주체의 관점을 벗어난 실재 자체에 대한 논의를 거부한다. 상관주의에서 실재는 언어적·사회적 구성물로 ⓐ<u>간주되며</u>, 철학의 과제는 실재 자체가 아니라 그것이 구성되는 조건을 분석하는 일로 옮겨 간다.</p>
+<p>사변적 실재론은 이러한 상관주의가 철학을 인간 중심의 편견에 가둔다고 본다. 이 입장은 인식 주체와 무관하게 존재하는 실재가 있으며, 철학은 그것을 사변적으로 사유할 수 있어야 한다고 주장한다. 여기서 ㉠<u>사변적 사유</u>란 실험이나 관찰 같은 과학적 방법이 아니라 순수한 이성적 사유를 통해 존재의 본질에 접근하는 것을 ⓑ<u>가리킨다</u>. 곧 사변적 실재론은 인간의 경험에 기반한 인식 너머의 실재를 이성의 논리만으로 탐구하려는 시도이며, 실재에 대한 철학의 권한을 회복하려는 기획이다.</p>
+<p>이러한 기획은 두 갈래로 펼쳐진다. 브라시에는 실재를 소멸이라는 개념으로 사유한다. 그는 우주의 소멸이나 생명체의 멸종처럼 인간의 의미 구성 능력을 넘어서는 사건이 실재의 한 사례라고 본다. 이러한 사건은 인간이 부여하는 의미나 목적과 무관하게 일어나므로, 실재는 인간 중심의 가치 체계나 인식 구조를 초월해 존재한다. 한편 메이야수는 실재의 본성을 필연성과 우연성의 관점에서 해석하면서, ㉡<u>사실론성의 원리</u>를 바탕으로 실재를 사유해야 한다고 주장한다. 그에 따르면 어떤 존재도 필연적으로 존재하지 않으며, 모든 것은 아무런 이유 없이 단지 우연적으로 그렇게 사실로서 존재할 뿐이다. 이러한 근본적 우연성은 실재를 특정한 법칙이나 원리로부터 자유롭게 하여, 사변적 실재론이 기존의 형이상학적 필연성을 벗어나 실재의 가능성을 열어 둔 철학임을 보여 준다.</p>
+<p>이처럼 사변적 실재론은 실재를 단일한 법칙이나 의미로 환원하지 않으며, 철학이 인간 주체를 초월하는 방식으로 세계를 사유해야 한다고 역설한다. 인식의 한계에 갇혀 있는 한 실재의 본질적 구조와 그 변화의 원리는 파악될 수 없으므로, 사변적 실재론은 단순한 이론적 대안이 아니라 철학의 이론적 기반을 복원하려는 형이상학적 기획이라 할 수 있다.</p>
+<p><strong>(나)</strong></p>
+<p>사변적 실재론은 철학이 상관주의의 전통에서 벗어나 실재 자체를 사유할 가능성을 제시했다는 평가를 받는다. 그러나 실재가 주체의 인식과 전면적으로 분리되어 독립적으로 존재한다고 보는 입장이 과연 정당한지에 대해서는 비판이 ⓒ<u>적지</u> 않다. 이 비판은 실재의 존재 가능성을 부정하는 것이 아니라, 실재를 사유하는 철학적 태도의 한계를 ⓓ<u>겨냥한다</u>.</p>
+<p>가브리엘은 사변적 실재론이 전제하는 실재 개념이 지나치게 독단적이라고 본다. 그는 실재가 단일하고 외재적인 실체로 존재한다기보다 다양한 ㉢<u>의미의 장</u> 속에 드러나는 방식으로만 파악될 수 있다고 주장한다. 우리가 실재를 이해하고 사유하는 방식은 늘 특정한 의미 맥락에 의해 조건 지어지며, 이러한 의미의 장은 주체의 인식 및 문화적 배경과 긴밀히 연관된다. 따라서 가브리엘이 보기에 실재가 독립적으로 존재할 수 있다 하더라도, 그것이 철학적 탐구의 대상이 되는 순간 이미 어떤 의미의 장 안에 놓이게 된다.</p>
+<p>이러한 관점에서 보면 사변적 실재론의 주장에는 긴장이 ⓔ<u>드러난다</u>. 인식 주체와 무관한 실재를 사유한다고 하면서도, 그 사유는 결국 사변이라는 인간의 이성적 활동을 통해 이루어지기 때문이다. 가브리엘은 사변적 실재론이 인간의 인식을 넘어선 실재를 말하려 하지만, 그 말함 자체가 의미의 장 안에서 이루어진다는 점을 간과한다고 지적한다. 곧 실재를 사유 불가능한 바깥에 두려는 시도조차 하나의 의미의 장을 전제할 수밖에 없다는 것이다. 가브리엘의 비판은 사변적 실재론을 폐기하자는 것이 아니라, 실재를 사유하는 일이 의미의 장과 맺는 관계를 함께 물어야 한다는 요청으로 읽을 수 있다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 한 입장이 등장한 배경과 그 내부의 갈래를 제시하고, (나)는 그 입장에 대한 비판적 관점을 제시하고 있다.</li>
+<li>② (가)는 대립하는 두 입장을 절충하는 제3의 견해를 소개하고, (나)는 그 절충안의 적용 사례를 분석하고 있다.</li>
+<li>③ (가)는 한 개념의 역사적 변천을 시대순으로 정리하고, (나)는 그 개념의 현대적 의의를 평가하고 있다.</li>
+<li>④ (가)와 (나)는 모두 동일한 철학적 입장을 옹호하며 그 입장의 사회적 영향을 분석하고 있다.</li>
+<li>⑤ (가)는 특정 입장의 한계를 지적하고, (나)는 그 한계를 보완하는 새로운 이론을 정립하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>1번 — 정답 ①</strong>
+(가)는 상관주의라는 배경 위에서 사변적 실재론이 등장한 사정을 밝히고, 그 안의 두 갈래(브라시에·메이야수)를 나눠 소개해요. (나)는 그 사변적 실재론을 향한 가브리엘의 비판을 펼치죠. 그러니 "한 입장의 등장 배경과 내부 갈래(가) + 그에 대한 비판(나)"이라고 짚은 ①이 정답입니다. ② 절충하는 제3의 견해를 소개한 적이 없고, ③ 시대순 변천을 정리하지 않으며, ④ (나)는 옹호가 아니라 비판이고, ⑤ (가)가 한계를 지적하는 글이 아니므로 모두 어긋나요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 상관주의는 인식 주체의 관점을 벗어난 실재 자체에 대한 논의를 거부한다.</li>
+<li>② 사변적 실재론은 과학적 관찰이 아니라 순수한 이성적 사유로 실재에 접근하려 한다.</li>
+<li>③ 브라시에는 인간의 의미 부여와 무관하게 일어나는 사건을 실재의 사례로 본다.</li>
+<li>④ 메이야수는 모든 존재가 필연적인 이유에 따라 사실로서 존재한다고 본다.</li>
+<li>⑤ 사변적 실재론은 실재를 단일한 법칙이나 의미로 환원하는 데 반대한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+메이야수는 3문단에서 "어떤 존재도 <em>필연적으로</em> 존재하지 않으며, 모든 것은 <em>아무런 이유 없이</em> 우연적으로 존재할 뿐"이라고 했어요. 그런데 ④는 "필연적인 <em>이유에 따라</em> 사실로서 존재한다"라고 정반대로 말했으니 적절하지 않아 정답입니다. ①은 1문단(상관주의의 거부), ②는 2문단(이성적 사유), ③은 3문단(브라시에의 소멸), ⑤는 4문단(단일 환원 반대)에 그대로 부합하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>㉠~㉢에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 인간의 경험에 기반한 인식 너머의 실재에 접근하려는 방법이다.</li>
+<li>② ㉡은 실재가 어떤 이유도 없이 우연적으로 존재한다는 점을 강조한다.</li>
+<li>③ ㉡은 실재를 특정한 법칙으로부터 자유로운 것으로 본다는 점에서 ㉠의 기획과 상통한다.</li>
+<li>④ ㉢은 실재가 파악되는 방식이 의미 맥락에 의해 조건 지어진다고 본다.</li>
+<li>⑤ ㉢은 ㉠과 달리 인식 주체와 무관한 실재의 독립적 존재 자체를 부정한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>3번 — 정답 ⑤</strong>
+㉢ '의미의 장'은 실재가 <em>드러나는 방식</em>에 관한 개념이지, 실재의 독립적 존재 자체를 부정하는 개념이 아니에요. (나) 1문단은 가브리엘의 비판이 "실재의 존재 가능성을 부정하는 것이 아니"라고 분명히 못 박았죠. 그러니 "㉢이 실재의 독립적 존재 자체를 부정한다"고 한 ⑤가 적절하지 않아 정답입니다. ①②④는 각 개념의 정의에 충실하고, ③은 메이야수의 우연성(㉡)이 "법칙으로부터 자유롭게 한다"는 점에서 사변적 사유(㉠)의 기획과 통한다는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>(나)의 글쓴이의 관점에서 (가)의 사변적 실재론을 평가한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 인식 주체와 무관한 실재를 사유한다고 하면서도 그 사유가 인간의 이성적 활동에 의존한다는 점을 충분히 고려하지 않았다.</li>
+<li>② 실재를 단일하고 외재적인 실체로 전제함으로써 실재가 드러나는 의미 맥락의 다양성을 간과하였다.</li>
+<li>③ 실재를 사유 불가능한 바깥에 두려는 시도조차 하나의 의미의 장을 전제한다는 점을 놓치고 있다.</li>
+<li>④ 실재의 존재 가능성 자체를 부정함으로써 철학이 실재를 탐구할 권한을 스스로 포기하였다.</li>
+<li>⑤ 실재를 말하는 행위가 특정한 의미의 장 안에서 이루어진다는 사실을 반영하지 못하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>4번 — 정답 ④</strong>
+(나)의 가브리엘은 사변적 실재론이 <em>실재의 존재를 부정하지 않는다</em>고 보았어요. 오히려 그는 "실재가 독립적으로 존재할 수 있다 하더라도"라고 인정하면서, 다만 그것을 <em>사유하는 방식</em>의 한계를 비판했죠. 그런데 ④는 사변적 실재론이 "실재의 존재 가능성 자체를 부정"했다고 하니, 가브리엘의 평가로도 사변적 실재론의 실제 주장으로도 맞지 않아 적절하지 않은 정답입니다. ①②③⑤는 모두 (나) 2·3문단의 비판 논점(사유의 인간 의존성, 단일 실체 전제, 의미의 장 전제, 말함의 맥락 의존성)에 부합해요.</p>
+<p><strong>5번 [3점] — 정답 ②</strong>
+(나)의 글쓴이(가브리엘)의 핵심은 "실재를 <em>말하는 행위</em> 자체가 이미 의미의 장 안에서 이루어진다"는 거예요. 사변적 실재론자가 운석 충돌을 '증거로 끌어들이는' 그 논의 역시 하나의 의미의 장 안에서 행해지는 일이므로, ㉮에는 ②가 들어가야 합니다. ① 의미의 장과 무관하게 실재한다는 것은 사변적 실재론자의 주장이지 가브리엘의 결론이 아니고, ③ 가브리엘은 사유 불가능을 주장하지 않으며(폐기가 아니라 함께 물음), ④ 사변 대신 과학적 관찰을 내세우는 것은 상관주의·사변적 실재론 어느 쪽과도 다른 엉뚱한 결론이고, ⑤ 우연성(메이야수)은 가브리엘 비판의 초점이 아니에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 사변적 실재론자와 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>사변적 실재론자:</strong> 인류가 등장하기 이전에 일어난 운석 충돌을 떠올려 보십시오. 그 사건은 그것을 인식할 어떤 주체도 없이 일어났습니다. 이것이야말로 인간의 의미 부여와 무관하게 실재가 존재함을 보여 주는 증거가 아니겠습니까?
+<strong>(나)의 글쓴이:</strong> 그 사건이 주체 없이 일어났다는 점은 인정합니다. 그러나 선생님께서 방금 그 사건을 '증거'로 끌어들이신 방식을 제 입장과 연결하면, 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 그 운석 충돌은 어떤 의미의 장과도 무관하게 그 자체로 실재한다</li>
+<li>② 주체 이전의 사건을 실재의 증거로 제시하는 그 논의 또한 이미 하나의 의미의 장 안에서 이루어진다</li>
+<li>③ 인식 주체가 없던 사건은 철학이 결코 사유할 수 없으므로 논의의 대상이 될 수 없다</li>
+<li>④ 운석 충돌과 같은 사건은 과학적 관찰로만 검증될 수 있을 뿐 사변의 대상이 아니다</li>
+<li>⑤ 주체 없이 일어난 사건은 필연적으로 일어난 것이므로 우연성의 사례가 될 수 없다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 치부(置簿)되며</li>
+<li>② ⓑ: 지목(指目)한다</li>
+<li>③ ⓒ: 희소(稀少)하지</li>
+<li>④ ⓓ: 표적(標的)으로 삼는다</li>
+<li>⑤ ⓔ: 노정(露呈)된다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+ⓔ '드러난다'는 <em>겉으로 나타난다</em>는 뜻이므로, <em>문제점 따위가 겉으로 나타난다</em>는 '노정(露呈)된다'로 바꿔 쓸 수 있어 ⑤가 적절합니다. ① ⓐ '간주되며'는 <em>그렇다고 여긴다</em>는 뜻이라 <em>장부에 적는다</em>는 '치부(置簿)'와 어울리지 않고, ② ⓑ '가리킨다'는 <em>그것을 뜻한다</em>는 의미라 <em>허물을 들추어 지적한다</em>는 '지목(指目)'과 다르며, ③ ⓒ '적지'는 <em>수가 많지 않다</em>는 뜻이지만 '희소(稀少)'는 <em>드물어 귀하다</em>는 가치 함의가 끼어 문맥에 어긋나고, ④ ⓓ '겨냥한다'는 <em>목표로 삼는다</em>는 뜻이라 '표적으로 삼는다'로 바꿔 써도 자연스러워요. 가장 헷갈리는 것은 ③인데, '적다'와 '희소(稀少)하다'는 뜻이 겹쳐 보이지만 '희소'에는 <em>드물어 귀하다</em>는 가치 평가가 들어가, 비판이 '많지 않다'는 중립적인 수량 진술과는 호응하지 않아요. 그래서 정답은 가장 자연스럽게 바꿔 쓸 수 있는 ⑤입니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상관주의</strong>: 실재를 <em>인식 주체와의 관계 속에서만</em> 이야기할 수 있다고 보는 입장. 안경 벗은 '날것의 세계'는 말할 수 없다고 봐요.</li>
+<li><strong>사변적 사유</strong>: 실험·관찰이 아니라 <em>순수한 이성</em>만으로 존재의 본질에 다가가려는 사유 방식.</li>
+<li><strong>의미의 장(場)</strong>: 실재가 그 안에서 <em>드러나는</em> 다양한 의미 맥락. 같은 것도 어떤 맥락에 놓이느냐에 따라 다르게 파악된다는 가브리엘의 개념.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>실재를 어떻게 보나</th>
+<th>철학의 할 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상관주의</td>
+<td>인식 주체와의 관계 속에서만 파악</td>
+<td>실재가 구성되는 <em>조건</em>을 분석</td>
+</tr>
+<tr>
+<td>사변적 실재론(브라시에)</td>
+<td>인간의 의미와 무관한 '소멸' 사건</td>
+<td>존재와 소멸의 구조를 사변</td>
+</tr>
+<tr>
+<td>사변적 실재론(메이야수)</td>
+<td>근본적으로 <em>우연</em>하게 존재</td>
+<td>필연성을 벗어난 실재의 가능성 사유</td>
+</tr>
+<tr>
+<td>가브리엘</td>
+<td>여러 <em>의미의 장</em> 속에서만 드러남</td>
+<td>실재가 의미의 장과 맺는 관계를 물음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>(가)가 사변적 실재론을 <em>세우면</em>, (나)는 "그 사유조차 인간의 의미의 장 안에서 이루어진다"며 <em>되묻습니다</em>. 세우기와 되묻기의 맞물림을 잡아 두세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>상관주의가 거부하는 것은 무엇인가요?</div><div class='qa-a'>인식 주체의 관점을 벗어난 <em>실재 자체</em>에 대한 논의입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>메이야수의 '사실론성의 원리'를 한 문장으로?</div><div class='qa-a'>어떤 것도 필연적이지 않고 모든 것은 아무 이유 없이 <em>우연히</em> 존재한다는 원리입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>가브리엘의 비판은 사변적 실재론을 폐기하자는 것인가요?</div><div class='qa-a'>아닙니다. 실재를 사유하는 일이 <em>의미의 장과 맺는 관계</em>를 함께 물어야 한다는 요청이에요.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 수능 [4~9]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>㉠정립-반정립-종합. 변증법의 논리적 구조를 일컫는 말이다. 변증법에 따라 철학적 논증을 수행한 인물로는 단연 헤겔이 거명된다. 변증법은 대등한 위상을 지니는 세 범주의 병렬이 아니라, 대립적인 두 범주가 조화로운 통일을 이루어 가는 수렴적 상향성을 구조적 특징으로 한다. 헤겔에게서 변증법은 논증의 방식임을 넘어, 논증 대상 자체의 존재 방식이기도 하다. 즉 세계의 근원적 질서인 '이념'의 내적 구조도, 이념이 시ㆍ공간적 현실로서 드러나는 방식도 변증법적이기에, 이념과 현실은 하나의 체계를 이루며, 이 두 차원의 원리를 밝히는 철학적 논증도 변증법적 체계성을 ⓐ지녀야 한다.</p>
+<p>헤겔은 미학도 철저히 변증법적으로 구성된 체계 안에서 다루고자 한다. 그에게서 미학의 대상인 예술은 종교, 철학과 마찬가지로 '절대정신'의 한 형태이다. 절대정신은 절대적 진리인 '이념'을 인식하는 인간 정신의 영역을 ⓑ가리킨다. 예술ㆍ종교ㆍ철학은 절대적 진리를 동일한 내용으로 하며, 다만 인식 형식의 차이에 따라 구분된다. 절대정신의 세 형태에 각각 대응하는 형식은 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>이다. '직관'은 주어진 물질적 대상을 감각적으로 지각하는 지성이고, '표상'은 물질적 대상의 유무와 무관하게 내면에서 심상을 떠올리는 지성이며, '사유'는 대상을 개념을 통해 파악하는 순수한 논리적 지성이다. 이에 세 형태는 각각 '직관하는 절대정신', '표상하는 절대정신', '사유하는 절대정신'으로 규정된다. 헤겔에 따르면 직관의 외면성과 표상의 내면성은 사유에서 종합되고, 이에 맞춰 예술의 객관성과 종교의 주관성은 철학에서 종합된다.</p>
+<p>형식 간의 차이로 인해 내용의 인식 수준에는 중대한 차이가 발생한다. 헤겔에게서 절대정신의 내용인 절대적 진리는 본질적으로 논리적이고 이성적인 것이다. 이러한 내용을 예술은 직관하고 종교는 표상하며 철학은 사유하기에, 이 세 형태 간에는 단계적 등급이 매겨진다. 즉 예술은 초보 단계의, 종교는 성장 단계의, 철학은 완숙 단계의 절대정신이다. 이에 따라 ㉡예술-종교-철학 순의 진행에서 명실상부한 절대정신은 최고의 지성에 의거하는 것, 즉 철학뿐이며, 예술이 절대정신으로 기능할 수 있는 것은 인류의 보편적 지성이 미발달된 머나먼 과거로 한정된다.</p>
+<p>(나)</p>
+<p>변증법의 매력은 '종합'에 있다. 종합의 범주는 두 대립적 범주 중 하나의 일방적 승리로 ⓒ끝나도 안 되고, 두 범주의 고유한 본질적 규정이 소멸되는 중화 상태로 나타나도 안 된다. 종합은 양자의 본질적 규정이 유기적 조화를 이루어 질적으로 고양된 최상의 범주가 생성됨으로써 성립하는 것이다.</p>
+<p>헤겔이 강조한 변증법의 탁월성도 바로 이것이다. 그러기에 변증법의 원칙에 최적화된 엄밀하고도 정합적인 학문 체계를 조탁하는 것이 바로 그의 철학적 기획이 아니었던가. 그런데 그가 내놓은 성과물들은 과연 그 기획을 어떤 흠결도 없이 완수한 것으로 평가될 수 있을까? 미학에 관한 한 '그렇다'는 답변은 쉽지 않을 것이다. 지성의 형식을 직관-표상-사유 순으로 구성하고 이에 맞춰 절대정신을 예술-종교-철학 순으로 편성한 전략은 외관상으로는 변증법 모델에 따른 전형적 구성으로 보인다. 그러나 실질적 내용을 ⓓ보면 직관으로부터 사유에 이르는 과정에서는 외면성이 점차 지워지고 내면성이 점증적으로 강화ㆍ완성되고 있음이, 예술로부터 철학에 이르는 과정에서는 객관성이 점차 지워지고 주관성이 점증적으로 강화ㆍ완성되고 있음이 확연히 드러날 뿐, 진정한 변증법적 종합은 ⓔ이루어지지 않는다. 직관의 외면성 및 예술의 객관성의 본질은 무엇보다도 감각적 지각성인데, 이러한 핵심 요소가 그가 말하는 종합의 단계에서는 완전히 소거되고 만다.</p>
+<p>변증법에 충실하려면 헤겔은 철학에서 성취된 완전한 주관성이 재객관화되는 단계의 절대정신을 추가했어야 할 것이다. 예술은 '철학 이후'의 자리를 차지할 수 있는 유력한 후보이다. 실제로 많은 예술 작품은 '사유'를 매개로 해서만 설명되지 않는가. 게다가 이는 누구보다도 풍부한 예술적 체험을 한 헤겔 스스로가 잘 알고 있지 않은가. 이 때문에 방법과 철학 체계 간의 이러한 불일치는 더욱 아쉬움을 준다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>(가)와 (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)와 (나)는 모두 특정한 철학적 방법에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하고 있다.</li>
+<li>② (가)와 (나)는 모두 특정한 철학적 방법에 대한 상반된 평가를 바탕으로 더 설득력 있는 미학 이론을 모색하고 있다.</li>
+<li>③ (가)와 달리 (나)는 특정한 철학적 방법의 시대적 한계를 지적하고 이에 맞서는 혁신적 방법을 제안하고 있다.</li>
+<li>④ (가)와 달리 (나)는 특정한 철학적 방법에서 파생된 미학 이론을 바탕으로 예술 장르를 범주적으로 유형화하고 있다.</li>
+<li>⑤ (나)와 달리 (가)는 특정한 철학적 방법의 통시적인 변화 과정을 적용하여 철학사를 단계적으로 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong><br />
+(가)는 변증법에 기반한 헤겔 미학에서 예술이 초보 단계의 절대정신으로 평가됨을 설명하고, (나)는 변증법에 충실하면 예술이 '철학 이후'의 자리를 차지할 수 있다고 본다. 두 글 모두 변증법(특정한 철학적 방법)에 기반한 체계를 바탕으로 예술의 상대적 위상을 제시하므로 ①이 적절하다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①48.1% ②12.0% ③25.8% ④8.6% ⑤5.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>(가)에서 알 수 있는 헤겔의 생각으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 예술ㆍ종교ㆍ철학 간에는 인식 내용의 동일성과 인식 형식의 상이성이 존재한다.</li>
+<li>② 세계의 근원적 질서와 시ㆍ공간적 현실은 하나의 변증법적 체계를 이룬다.</li>
+<li>③ 절대정신의 세 가지 형태는 지성의 세 가지 형식이 인식하는 대상이다.</li>
+<li>④ 변증법은 철학적 논증의 방법이자 논증 대상의 존재 방식이다.</li>
+<li>⑤ 절대정신의 내용은 본질적으로 논리적이고 이성적인 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+예술·종교·철학은 직관·표상·사유라는 인식 형식의 차이에 따라 구분되는 절대정신의 세 형태이지, 지성의 세 형식이 '인식하는 대상'이 아니다. 세 형태가 인식하는 대상(내용)은 절대적 진리인 '이념'이다. 따라서 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,555명 — ①14.7% ②12.1% ③54.8% ④9.3% ⑤9.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>(가)에 따라 <span class="boxmark">[직관ㆍ표상ㆍ사유]</span>의 개념을 적용한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 먼 타향에서 밤하늘의 별들을 바라보는 것은 직관을 통해, 같은 곳에서 고향의 하늘을 상기하는 것은 표상을 통해 이루어지겠군.</li>
+<li>② 타임머신을 타고 미래로 가는 자신의 모습을 상상하는 것과, 그 후 판타지 영화의 장면을 떠올려 보는 것은 모두 표상을 통해 이루어지겠군.</li>
+<li>③ 초현실적 세계가 묘사된 그림을 보는 것은 직관을 통해, 그 작품을 상상력 개념에 의거한 이론에 따라 분석하는 것은 사유를 통해 이루어지겠군.</li>
+<li>④ 예술의 새로운 개념을 설정하는 것은 사유를 통해, 이를 바탕으로 새로운 감각을 일깨우는 작품의 창작을 기획하는 것은 직관을 통해 이루어지겠군.</li>
+<li>⑤ 도덕적 배려의 대상을 생물학적 상이성 개념에 따라 규정하는 것과, 이에 맞서 감수성 소유 여부를 새로운 기준으로 제시하는 것은 모두 사유를 통해 이루어지겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong><br />
+직관은 '주어진 물질적 대상을 감각적으로 지각하는 지성'이다. 새로운 감각을 일깨우는 작품의 창작을 '기획'하는 것은 주어진 물질적 대상을 감각적으로 지각하는 일이 아니므로 직관에 해당하지 않는다. 따라서 ④가 잘못된 적용이다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①4.0% ②6.7% ③9.4% ④69.3% ⑤10.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>(나)의 글쓴이의 관점에서 ㉠과 ㉡에 대한 헤겔의 이론을 분석한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠과 ㉡ 모두에서 첫 번째와 두 번째의 범주는 서로 대립한다.</li>
+<li>② ㉠과 ㉡ 모두에서 두 번째와 세 번째 범주 간에는 수준상의 차이가 존재한다.</li>
+<li>③ ㉠과 달리 ㉡에서는 범주 간 이행에서 첫 번째 범주의 특성이 갈수록 강해진다.</li>
+<li>④ ㉡과 달리 ㉠에서는 세 번째 범주에서 첫 번째와 두 번째 범주의 조화로운 통일이 이루어진다.</li>
+<li>⑤ ㉡과 달리 ㉠에서는 범주 간 이행에서 수렴적 상향성이 드러난다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>7번 — 정답 ③</strong><br />
+(나)의 글쓴이는 예술-종교-철학(㉡)의 이행에서 첫 번째 범주(예술)의 본질인 객관성(감각적 지각성)이 점차 지워진다고 보았다. 즉 ㉡에서 첫 번째 범주의 특성은 갈수록 '약해'지므로, 갈수록 강해진다고 한 ③이 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,560명 — ①9.9% ②12.2% ③52.2% ④14.8% ⑤10.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉는 헤겔과 (나)의 글쓴이가 나누는 가상의 대화의 일부이다. ㉮에 들어갈 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong>헤겔:</strong> 괴테와 실러의 문학 작품을 읽을 때 놓치지 않아야 할 점이 있네. 이 두 천재도 인생의 완숙기에 이르러서야 비로소 최고의 지성적 통찰을 진정한 예술미로 승화시킬 수 있었네. 그에 비해 초기의 작품들은 미적으로 세련되지 못해 결코 수준급이라 할 수 없었는데, 이는 그들이 아직 지적으로 미성숙했기 때문이었네.
+<strong>(나)의 글쓴이:</strong> 방금 그 말씀과 선생님의 기본 논증 방법을 연결하면 〔 ㉮ 〕는 말이 됩니다.</p>
+</blockquote>
+<ul>
+<li>① 이론에서는 대립적 범주들의 종합을 이루어야 하는 세 번째 단계가 현실에서는 그 범주들을 중화한다</li>
+<li>② 이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다</li>
+<li>③ 이론에서는 반정립 단계에 위치하는 예술이 현실에서는 정립 단계에 있는 것으로 나타난다</li>
+<li>④ 이론에서는 객관성을 본질로 하는 예술이 현실에서는 객관성이 사라진 주관성을 지닌다</li>
+<li>⑤ 이론에서는 절대정신으로 규정되는 예술이 현실에서는 진리의 인식을 수행할 수 없다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong><br />
+헤겔의 이론에서 예술은 직관(외면성)에 대응하는 초보 단계의 절대정신이다. 그런데 〈보기〉에서 헤겔은 괴테와 실러가 완숙기의 '최고의 지성적 통찰'을 진정한 예술미로 승화시켰다고 말한다. 이는 사유(내면성)를 바탕으로 한 예술이 현실에 존재함을 인정한 것이므로, 이론과 연결하면 '이론에서는 외면성에 대응하는 예술이 현실에서는 내면성을 바탕으로 하는 절대정신일 수 있다'(②)는 말이 된다.</p>
+<p><em>선택률</em> — 응시 98,567명 — ①10.9% ②33.4% ③12.1% ④30.8% ⑤13.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꾸어 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 소지(所持)하여야</li>
+<li>② ⓑ: 포착(捕捉)한다</li>
+<li>③ ⓒ: 귀결(歸結)되어도</li>
+<li>④ ⓓ: 간주(看做)하면</li>
+<li>⑤ ⓔ: 결성(結成)되지</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong><br />
+'귀결되다'는 '어떤 결말이나 결과에 이르게 되다'라는 뜻으로, ⓒ'끝나도'와 바꾸어 쓰기에 적절하다(③).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.4% ②3.4% ③67.3% ④3.1% ⑤17.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>상관주의자는 실재를 인식 주체와의 관계 속에서만 파악할 수 있다고 본다. 이들에게 실재 자체, 곧 주체의 관점을 벗어난 세계는 사유의 대상이 될 수 없다. 무언가를 사유하려면 그것은 이미 누군가에게 사유된 것이어야 하므로, 사유 바깥의 실재를 말하는 일은 자기모순에 빠진다는 것이다. 사유 바깥을 사유한다는 것은, 사유되지 않은 것을 사유한다고 말하는 셈이어서 진술 자체가 성립하지 않기 때문이다. 이러한 입장에서 철학은 실재가 무엇인가가 아니라 실재가 우리에게 어떻게 구성되는가를 묻는 작업이 된다. 실재는 언어적·사회적 조건 속에서 비로소 우리에게 주어지며, 그 조건을 벗어난 실재 자체에 대한 물음은 답할 수 없는 물음으로 유보된다.</p>
+<p>메이야수는 상관주의가 의도하지 않은 결론을 품고 있다고 지적하며 그 틈을 파고든다. 상관주의는 사유 바깥의 실재를 알 수 없다고 말할 뿐, 그런 실재가 없다고 단언하지는 못한다. 만약 사유 바깥이 없다고 단언한다면 그것은 사유 바깥을 안다는 뜻이 되어, 알 수 없다던 자신의 전제를 스스로 어기게 되기 때문이다. 따라서 상관주의는 사유 너머의 실재가 우리의 사유와 <em>다를 수도 있음</em>을 부정하지 못한 채 열어 둘 수밖에 없다. 사유 너머에 무엇이 있는지 알 수 없다는 바로 그 무지가, 사유 너머가 <em>어떤 식으로든 다를 수 있음</em>을 인정하는 셈이기 때문이다. 메이야수는 이 무지를 약점이 아니라 실마리로 삼아, 사유와 무관한 실재의 한 성질을 이끌어낸다. 그것이 모든 것의 근본적 우연성, 곧 ⓐ<u>어떤 것도 반드시 그래야 할 이유 없이 그저 그렇게 존재한다는 사실</u>이다.</p>
+<p>메이야수는 이 우연성을 사실론성의 원리라 부른다. 그에 따르면 필연적으로 존재하는 것은 아무것도 없으며, 오직 <em>모든 것이 우연하다는 사실</em>만이 필연적이다. 언뜻 이 주장은 스스로를 무너뜨리는 듯 보인다. ⓑ<u>'모든 것이 우연하다'는 명제가 필연적이라면 그 명제 자체는 우연성의 예외가 되어 버린다.</u> 그러나 메이야수는 이 명제가 사물에 관한 주장이 아니라 사물이 존재하는 방식에 관한 주장이라고 답한다. 우연한 것은 개별 사물이고, 필연적인 것은 그 사물들이 우연하다는 형식이므로, 둘은 충돌하지 않는다는 것이다. 이렇게 그는 ⓒ<u>우연성을 끝까지 밀어붙여도 무너지지 않는 하나의 절대적 원리</u>를 확보했다고 본다.</p>
+<p>이 원리는 상관주의의 한계를 넘어서는 통로가 된다. 상관주의가 사유 바깥에 대해 침묵할 수밖에 없었던 자리에서, 메이야수는 사유와 무관한 실재가 <em>철저히 우연하다</em>는 적극적 규정을 내놓는다. 어떤 자연법칙도, 어떤 존재의 질서도 영원히 그래야 할 근거를 갖지 않으며, 모든 것은 다른 식으로 될 수 있다. 이는 자연법칙이 지금까지 한결같이 관찰되어 왔다는 사실이 그 법칙의 필연성을 보장하지 않음을 뜻한다. 법칙이 안정적으로 유지되는 것조차 그래야 할 이유가 있어서가 아니라, 단지 그렇게 우연히 유지되고 있을 뿐이다. 따라서 실재는 어떤 숨은 필연성에 의해 지탱되는 것이 아니라, 근거 없는 우연성 위에 ㉢<u>놓여</u> 있다. 메이야수는 이로써 인식 주체와 무관한 실재를 사변적으로 사유할 길이 열렸다고 주장한다.</p>
+<p>그러나 이 원리에는 되짚어야 할 물음이 남는다. 메이야수는 우연성만은 필연적이라고 했는데, 우연성을 필연적 원리로 격상하는 그 사유 또한 결국 이성의 논리를 따른 것이다. 사유와 무관한 실재를 말하려는 시도가 다시 사유의 논리에 의존하는 셈이어서, 그가 벗어나려 한 상관주의의 자리로 되돌아온 것은 아닌지 물을 수 있다. 또한 모든 것이 우연하다는 규정만으로는 왜 다른 무엇이 아니라 <em>바로 이 세계</em>가 존재하는지를 설명하기 어렵다. 무엇이든 가능하다는 말은 어떤 특정한 것이 왜 현실이 되었는지에 대해서는 침묵하기 때문이다. 우연성의 원리는 사유와 무관한 실재로 향하는 문을 열었으나, 그 문 안에서 실재의 구체적 모습에 대해 무엇을 더 말할 수 있는지는 여전히 과제로 남는다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 상관주의는 사유 바깥의 실재를 어떻게 보는가?</li>
+<li>② 메이야수는 상관주의의 어떤 점을 실마리로 삼는가?</li>
+<li>③ 사실론성의 원리에서 필연적인 것은 무엇인가?</li>
+<li>④ 메이야수는 개별 자연법칙이 언제 바뀌는지를 어떻게 예측하는가?</li>
+<li>⑤ 사실론성의 원리에는 어떤 한계가 남는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>7번 — 정답 ④</strong>
+글에서 답을 찾을 수 있는지를 따지는 문항이에요. ④는 "개별 자연법칙이 <em>언제</em> 바뀌는지를 예측한다"는 내용인데, 글은 모든 것이 <em>다른 식으로 될 수 있다</em>는 가능성만 말할 뿐 <em>언제</em> 바뀌는지는 다루지 않아요. 오히려 마지막 문단은 우연성의 원리만으로는 <em>바로 이 세계</em>가 왜 존재하는지조차 설명하기 어렵다고 했죠. 그러니 답을 찾을 수 없는 ④가 정답입니다. ①(1문단)·②(2문단)·③(3문단)·⑤(마지막 문단)는 모두 글에서 답을 찾을 수 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 메이야수는 사유 너머를 알 수 없다는 무지에서 실재의 한 성질을 이끌어낸다.</li>
+<li>② 상관주의는 사유 바깥의 실재가 존재하지 않는다고 단언한다.</li>
+<li>③ 사실론성의 원리에서는 개별 사물과 그 사물이 우연하다는 형식이 모두 우연하다.</li>
+<li>④ 메이야수는 실재가 숨은 필연성에 의해 지탱된다고 본다.</li>
+<li>⑤ 상관주의는 실재가 우리에게 구성되는 방식보다 실재 자체의 본질을 묻는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+2문단에서 메이야수는 "사유 너머에 무엇이 있는지 <em>알 수 없다는 바로 그 무지</em>"를 실마리 삼아 근본적 우연성을 이끌어낸다고 했어요. 그러니 ①이 적절해 정답입니다. ② 상관주의는 그런 실재가 <em>없다고 단언하지는 못한다</em>고 했으니 어긋나고, ③ 우연한 것은 <em>개별 사물</em>이고 존재 방식(형식)은 필연적이라 했으니 "모두 우연"은 틀렸으며, ④ 실재가 숨은 필연성에 지탱되는 것이 <em>아니라</em>고 했으니 정반대고, ⑤ 상관주의는 실재 자체의 본질이 아니라 <em>구성되는 방식</em>을 묻는다고 했으니 거꾸로예요.</p>
+<p><strong>9번 [3점] — 정답 ⑤</strong>
+메이야수의 입장에서 ⓐ~ⓒ를 평가하는 문항이에요. ⓑ는 "필연적이라면 그 명제가 우연성의 예외가 된다"는 <em>문제 제기</em>인데, 메이야수는 이를 받아들이면서도 <em>개별 사물(우연)과 존재 방식(필연)을 구분</em>해 예외 없이 해소했다고 봤어요. 그런데 ⑤는 ⓒ의 원리가 "우연성의 <em>예외를 허용하는 방식으로만</em> 유지된다"고 했으니, 메이야수가 바로 그 예외를 부정했다는 점에서 그의 입장에 대한 평가로 적절하지 않아 정답입니다. ①②③④는 각각 적극적 규정, 자기모순 해소, 존재 방식의 필연성, 실재의 적극적 규정이라는 글의 논지에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 메이야수의 입장에서 ⓐ~ⓒ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ는 사유와 무관한 실재가 지닌 성질을 규정한 것으로, 상관주의가 침묵하던 자리에 놓인 적극적 주장이다.</li>
+<li>② ⓑ는 사실론성의 원리가 자기모순에 빠지는 것처럼 보이게 하는 지적으로, 개별 사물과 존재 방식을 구분하면 해소된다.</li>
+<li>③ ⓒ는 우연성을 극단까지 밀어붙여도 남는 원리로, 그 필연성은 사물이 아니라 사물의 존재 방식에 관한 것이다.</li>
+<li>④ ⓐ와 ⓒ는 모두 인식 주체와 무관한 실재를 적극적으로 규정하려는 시도에 해당한다.</li>
+<li>⑤ ⓑ의 문제 제기를 받아들이면 ⓒ의 원리는 우연성의 예외를 허용하는 방식으로만 유지될 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 사실론성의 원리에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 사유 바깥의 실재가 존재할 가능성을 인정하지 않아 상관주의보다 좁은 결론에 머물렀다.</li>
+<li>② 우연성을 필연적 원리로 세우는 사유 자체가 이성의 논리에 의존하므로 사유와 무관한 실재에 온전히 이르지 못하였다.</li>
+<li>③ 개별 사물의 우연성과 존재 방식의 필연성을 구분하지 못해 자기모순을 끝내 해소하지 못하였다.</li>
+<li>④ 실재를 언어적·사회적 구성물로 환원함으로써 인간 중심적 편견을 벗어나지 못하였다.</li>
+<li>⑤ 실험과 관찰의 방법을 끌어들임으로써 사변적 사유의 고유한 권한을 스스로 포기하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong>
+마지막 문단의 비판 예고를 정확히 옮긴 선지를 골라야 해요. 글은 "우연성을 필연적 원리로 격상하는 <em>그 사유 또한 이성의 논리를 따른 것</em>"이어서 메이야수가 벗어나려던 상관주의의 자리로 되돌아온 것은 아닌지 물을 수 있다고 했죠. 이를 비판 명제로 옮긴 ②가 정답입니다. ① 사유 바깥 실재의 가능성을 <em>인정한다</em>는 점이 메이야수의 출발점이라 사실과 어긋나고, ③ 자기모순은 <em>해소했다</em>고 본 것이 글의 서술이며, ④ 언어적·사회적 구성물로의 환원은 <em>상관주의</em>의 특징이지 메이야수가 아니고, ⑤ 메이야수는 실험·관찰이 아니라 <em>사변</em>을 택했으니 모두 빗나가요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>문맥상 ㉢과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 기초(基礎)해</li>
+<li>② 정초(定礎)되어</li>
+<li>③ 입각(立脚)해</li>
+<li>④ 의거(依據)하여</li>
+<li>⑤ 결부(結付)되어</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+㉢ '놓여 있다'는 <em>어떤 바탕 위에 자리한다</em>는 뜻이에요. 우연성이라는 바탕 위에 실재가 자리 잡고 있다는 맥락이므로, <em>주춧돌을 놓아 기반이 마련된다</em>는 '정초(定礎)되어'로 바꿔 쓰는 ②가 가장 적절합니다. ① '기초해'와 ③ '입각해', ④ '의거하여'는 모두 <em>근거로 삼아 행동한다</em>는 능동적 의지의 함의가 있어, 근거 <em>없는</em> 우연성 위에 그저 <em>놓여</em> 있다는 수동적 상태와는 잘 호응하지 않아요. ⑤ '결부되어'는 <em>서로 관련지어 묶인다</em>는 뜻이라 바탕에 자리한다는 의미와 다릅니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>사실론성의 원리</strong>: 필연적으로 존재하는 것은 없고 <em>모든 것이 우연하다는 사실</em>만이 필연적이라는 메이야수의 원리.</li>
+<li><strong>근본적 우연성</strong>: 어떤 것도 <em>반드시 그래야 할 이유 없이</em> 그저 그렇게 존재한다는 성질.</li>
+<li><strong>무지의 전환</strong>: 사유 너머를 <em>알 수 없다는 무지</em>를, 사유 너머가 다를 수 있음을 인정하는 <em>실마리</em>로 뒤집어 쓰는 메이야수의 전략.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>상관주의:  사유 바깥의 실재</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>"알 수 없다"(침묵)</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>메이야수는 상관주의의 무엇을 실마리로 삼았나요?</div><div class='qa-a'>사유 너머를 <em>알 수 없다는 무지</em>가, 사유 너머가 다를 수 있음을 인정하는 셈이라는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>'모든 것이 우연하다'는 명제는 왜 자기모순이 아닌가요?</div><div class='qa-a'>우연한 것은 <em>개별 사물</em>이고, 필연적인 것은 사물이 우연하다는 <em>존재 방식(형식)</em>이라 층위가 다르기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>사실론성의 원리에 남는 한계 두 가지는?</div><div class='qa-a'>우연성을 원리로 세운 사유도 <em>이성의 논리에 의존</em>한다는 점, 그리고 왜 <em>바로 이 세계</em>가 존재하는지를 설명하기 어렵다는 점입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2017학년도 수능 [16~20]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠논리실증주의자와 포퍼는 지식을 수학적 지식이나 논리학 지식처럼 경험과 무관한 것과 과학적 지식처럼 경험에 의존하는 것으로 구분한다. 그중 과학적 지식은 과학적 방법에 의해 누적된다고 주장한다. 가설은 과학적 지식의 후보가 되는 것인데, 그들은 가설로부터 논리적으로 도출된 예측을 관찰이나 실험 등의 경험을 통해 맞는지 틀리는지 판단함으로써 그 가설을 시험하는 과학적 방법을 제시한다. 논리실증주의자는 예측이 맞을 경우에, 포퍼는 예측이 틀리지 않는 한, 그 예측을 도출한 가설이 하나씩 새로운 지식으로 추가된다고 주장한다.</p>
+<p>하지만 ㉡콰인은 가설만 가지고서 예측을 논리적으로 도출할 수 없다고 본다. 예를 들어 ⓐ새로 발견된 금속 M은 열을 받으면 팽창한다는 가설만 가지고는 ⓑ열을 받은 M이 팽창할 것이라는 예측을 이끌어낼 수 없다. 먼저 지금까지 관찰한 모든 금속은 열을 받으면 팽창한다는 기존의 지식과 M에 열을 가했다는 조건 등이 필요하다. 이렇게 예측은 가설, 기존의 지식들, 여러 조건 등을 모두 합쳐야만 논리적으로 도출된다는 것이다. 그러므로 예측이 거짓으로 밝혀지면 정확히 무엇 때문에 예측에 실패한 것인지 알 수 없다는 것이다. 이로부터 콰인은 개별적인 가설뿐만 아니라 ⓒ기존의 지식들과 여러 조건 등을 모두 포함하는 전체 지식이 경험을 통한 시험의 대상이 된다는 총체주의를 제안한다.</p>
+<p>논리실증주의자와 포퍼는 수학적 지식이나 논리학 지식처럼 경험과 무관하게 참으로 판별되는 분석 명제와, 과학적 지식처럼 경험을 통해 참으로 판별되는 종합 명제를 서로 다른 종류라고 구분한다. 그러나 콰인은 총체주의를 정당화하기 위해 이 구분을 부정하는 논증을 다음과 같이 제시한다. 논리실증주의자와 포퍼의 구분에 따르면 “총각은 총각이다.”와 같은 동어 반복 명제와, “총각은 미혼의 성인 남성이다.”처럼 동어 반복 명제로 환원할 수 있는 것은 모두 분석 명제이다. 그런데 후자가 분석 명제인 까닭은 전자로 환원할 수 있기 때문이다. 이러한 환원이 가능한 것은 ‘총각’과 ‘미혼의 성인 남성’이 동의적 표현이기 때문인데 그게 왜 동의적 표현인지 물어보면, 이 둘을 서로 대체하더라도 명제의 참 또는 거짓이 바뀌지 않기 때문이라고 할 것이다. 하지만 이것만으로는 두 표현의 의미가 같다는 것을 보장하지 못해서, 동의적 표현은 언제나 반드시 대체 가능해야 한다는 필연성 개념에 다시 의존하게 된다. 이렇게 되면 동의적 표현이 동어 반복 명제로 환원 가능하게 하는 것이 되어, 필연성 개념은 다시 분석 명제 개념에 의존하게 되는 순환론에 빠진다. 따라서 콰인은 종합 명제와 구분되는 분석 명제가 존재한다는 주장은 근거가 없다는 결론에 ㉢도달한다.</p>
+<p>콰인은 분석 명제와 종합 명제로 지식을 엄격히 구분하는 대신, 경험과 직접 충돌하지 않는 중심부 지식과, 경험과 직접 충돌할 수 있는 주변부 지식을 상정한다. 경험과 직접 충돌하여 참과 거짓이 쉽게 바뀌는 주변부 지식과 달리 주변부 지식의 토대가 되는 중심부 지식은 상대적으로 견고하다. 그러나 이 둘의 경계를 명확히 나눌 수 없기 때문에, 콰인은 중심부 지식과 주변부 지식을 다른 종류라고 하지 않는다. 수학적 지식이나 논리학 지식은 중심부 지식의 한가운데에 있어 경험에서 가장 멀리 떨어져 있지만 그렇다고 경험과 무관한 것은 아니라는 것이다. 그런데 주변부 지식이 경험과 충돌하여 거짓으로 밝혀지면 전체 지식의 어느 부분을 수정해야 할지 고민하게 된다. 주변부 지식을 수정하면 전체 지식의 변화가 크지 않지만 중심부 지식을 수정하면 관련된 다른 지식이 많기 때문에 전체 지식도 크게 변화하게 된다. 그래서 대부분의 경우에는 주변부 지식을 수정하는 쪽을 선택하겠지만 실용적 필요 때문에 중심부 지식을 수정하는 경우도 있다. 그리하여 콰인은 중심부 지식과 주변부 지식이 원칙적으로 모두 수정의 대상이 될 수 있고, 지식의 변화도 더 이상 개별적 지식이 단순히 누적되는 과정이 아니라고 주장한다.</p>
+<p>총체주의는 특정 가설에 대해 제기되는 반박이 결정적인 것처럼 보이더라도 그 가설이 실용적으로 필요하다고 인정되면 언제든 그와 같은 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 그러나 총체주의는 “A이면서 동시에 A가 아닐 수는 없다.”와 같은 논리학의 법칙처럼 아무도 의심하지 않는 지식은 분석 명제로 분류해야 하는 것이 아니냐는 비판에 답해야 하는 어려움이 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 ‘아니요’라고 답변할 질문은?</p>
+<ul>
+<li>① 과학적 지식은 개별적으로 누적되는가?</li>
+<li>② 경험을 통하지 않고 가설을 시험할 수 있는가?</li>
+<li>③ 경험과 무관하게 참이 되는 지식이 존재하는가?</li>
+<li>④ 예측은 가설로부터 논리적으로 도출될 수 있는가?</li>
+<li>⑤ 수학적 지식과 과학적 지식은 종류가 다른 것인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+논리실증주의자와 포퍼는 가설로부터 도출된 예측을 경험을 통해 판단함으로써 가설을 시험하므로 ‘경험을 통하지 않고 가설을 시험할 수 있는가?’에 ‘아니요’로 답한다. 콰인도 가설을 포함한 전체 지식이 경험을 통한 시험의 대상이 된다고 보므로 같은 질문에 ‘아니요’로 답한다. 따라서 ㉠·㉡ 모두 ‘아니요’로 답할 질문은 ②. (①③④⑤는 한쪽이라도 ‘예’로 답한다.)</p>
+<p><em>선택률</em> — 응시 98,548명 — ①8.6% ②72.1% ③8.9% ④5.8% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 포퍼가 제시한 과학적 방법에 따르면, 예측이 틀리지 않았을 경우보다는 맞을 경우에 그 예측을 도출한 가설이 지식으로 인정된다.</li>
+<li>② 논리실증주의자에 따르면, “총각은 미혼의 성인 남성이다.”가 분석 명제인 것은 총각을 한 명 한 명 조사해 보니 모두 미혼의 성인 남성으로 밝혀졌기 때문이다.</li>
+<li>③ 콰인은 관찰과 실험에 의존하는 지식이 관찰과 실험에 의존하지 않는 지식과 근본적으로 다르다고 한다.</li>
+<li>④ 콰인은 분석 명제가 무엇인지는 동의적 표현이란 무엇인지에 의존하고, 다시 이는 필연성 개념에, 필연성 개념은 다시 분석 명제 개념에 의존한다고 본다.</li>
+<li>⑤ 콰인은 어떤 명제에, 의미가 다를 뿐만 아니라 서로 대체할 경우 그 명제의 참 또는 거짓이 바뀌는 표현을 사용할 수 있으면, 그 명제는 동어 반복 명제라고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+3문단에서 콰인은 ‘분석 명제 → 동의적 표현 → 필연성 개념 → 분석 명제 개념’으로 의존이 순환됨을 지적하며 분석 명제가 존재한다는 주장의 근거가 없다고 본다. 이 순환 구조를 정확히 진술한 ④가 적절하다. ① 포퍼는 예측이 맞을 경우가 아니라 틀리지 않는 한 가설을 인정한다. ② 분석 명제는 경험과 무관하게 참으로 판별되므로 한 명씩 조사하는 경험적 확인 때문은 아니다. ③·⑤는 콰인의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①16.3% ②4.9% ③7.1% ④68.0% ⑤5.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 총체주의의 입장에서 ⓐ～ⓒ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓑ가 거짓으로 밝혀지더라도 그것이 ⓐ 때문이라고 단정하지 못하겠군.</li>
+<li>② ⓑ가 거짓으로 밝혀지면 ⓒ의 어느 부분을 수정하느냐는 실용적 필요에 따라 달라지겠군.</li>
+<li>③ ⓑ는 ⓐ와 ⓒ로부터 논리적으로 도출된다고 하겠군.</li>
+<li>④ ⓑ가 거짓으로 밝혀지면 ⓑ는 ⓒ의 주변부에서 경험과 직접 충돌한 것이라고 하겠군.</li>
+<li>⑤ ⓑ가 거짓으로 밝혀지면 ⓒ를 수정하는 방법으로는 ⓐ를 받아들일 수 없다고 하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>18번 — 정답 ⑤</strong><br />
+총체주의에서는 가설이 실용적으로 필요하다고 인정되면 제기된 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 따라서 ⓑ가 거짓으로 밝혀져도 실용적 필요에 따라 전체 지식 ⓒ를 수정함으로써 가설 ⓐ를 받아들일 수 있다. ‘ⓒ를 수정해도 ⓐ를 받아들일 수 없다’고 본 ⑤가 총체주의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.6% ②5.9% ③13.9% ④14.2% ⑤62.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>윗글의 총체주의에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 가설로부터 논리적으로 도출된 예측이 경험과 충돌하더라도 그 충돌 때문에 가설이 틀렸다고 할 수 없다.</li>
+<li>② 논리학 지식이나 수학적 지식이 중심부 지식의 한가운데에 위치한다고 해서 경험과 무관한 것은 아니다.</li>
+<li>③ 전체 지식은 어떤 결정적인 반박일지라도 피할 수 있기 때문에 수정 대상을 주변부 지식으로 한정하는 것은 잘못이다.</li>
+<li>④ 중심부 지식을 수정하면 주변부 지식도 수정해야 하겠지만, 주변부 지식을 수정한다고 해서 중심부 지식을 수정해야 하는 것은 아니다.</li>
+<li>⑤ 중심부 지식과 주변부 지식 간의 경계가 불분명하다 해도 중심부 지식 중에는 주변부 지식들과 종류가 다른 지식이 존재한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>19번 — 정답 ⑤</strong><br />
+5문단에서 총체주의는 ‘아무도 의심하지 않는 논리학 법칙 같은 지식은 분석 명제로 분류해야 하지 않느냐’는 비판에 답해야 하는 어려움이 있다고 했다. 곧 중심부 지식 중에는 주변부 지식과 종류가 다른(분석 명제와 같은) 지식이 존재한다는 비판이 가능하다. 이를 진술한 ⑤가 적절한 비판이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①15.8% ②8.9% ③9.4% ④9.0% ⑤58.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>문맥상 ㉢과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 잇따른다</li>
+<li>② 다다른다</li>
+<li>③ 봉착한다</li>
+<li>④ 회귀한다</li>
+<li>⑤ 기인한다</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+㉢‘도달하다’는 ‘목적한 곳이나 수준에 다다르다’의 의미이므로 ‘다다른다’(②)로 바꿔 쓰는 것이 가장 적절하다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.2% ②85.8% ③9.5% ④1.0% ⑤0.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>사변적 실재론은 인식 주체와 무관하게 존재하는 실재가 있으며, 철학이 그것을 순수한 이성적 사유로 다룰 수 있어야 한다고 주장한다. 이 흐름의 한 갈래에서 브라시에는 실재를 소멸이라는 개념을 통해 사유한다. 그가 주목하는 것은 우주의 소멸이나 생명체의 멸종처럼, 인간이 부여하는 의미나 목적과 무관하게 일어나는 사건이다.</p>
+<p>브라시에에게 이러한 사건이 중요한 까닭은, 그것이 인간의 의미 구성 능력으로는 끝내 포섭되지 않기 때문이다. 인간은 무엇이든 의미와 목적의 틀로 해석하려는 경향이 있으나, 모든 생명이 사라진 우주의 소멸은 그 틀이 적용될 어떤 주체도 남기지 않는다. 죽음이 한 개인에게 의미의 끝이라면, 우주의 소멸은 의미를 부여할 존재 자체가 사라지는 사건이라는 점에서 그보다 한층 근본적이다. 의미를 부여받지 못한 채로 일어나는 이 사건은 인간의 해석을 기다리지 않으며, 인간이 사라진 뒤에도 그대로 성립한다. 브라시에는 바로 이 점에서 소멸이 실재의 진면목을 드러낸다고 본다. 실재란 인간 중심의 가치 체계나 인식 구조가 닿지 않는 곳에서, 의미의 외부로서 존재한다는 것이다.</p>
+<p>이로부터 브라시에는 철학의 과제를 다시 규정한다. 철학은 인간의 주관성에 기반한 의미 분석에 머물러서는 안 되며, 존재와 소멸의 구조 자체를 사변적으로 사유해야 한다. 의미를 향한 인간의 충동을 잠시 멈추고, 의미가 소진된 자리에서 실재를 마주하는 일이야말로 사유의 진정한 ⓐ<u>몫</u>이라는 것이다. 그에게 소멸은 두려워 회피할 대상이 아니라, 인간 너머의 실재를 사유하도록 이끄는 ⓑ<u>단서</u>가 된다.</p>
+<p><strong>(나)</strong></p>
+<p>브라시에의 소멸 개념은 인간 중심의 사유를 흔드는 강한 문제 제기로 평가받는다. 그러나 그 개념이 실재를 사유하는 방식으로서 충분한지에 대해서는 ⓒ<u>이견</u>이 있다.</p>
+<p>상관주의의 관점에서 보면, 브라시에가 말하는 소멸조차 결국 그것을 사유하는 누군가에 의해 사유된 소멸이다. ㉠<u>모든 생명이 사라진 우주의 소멸을 떠올리는 그 사유는, 역설적이게도 그것을 떠올리는 주체가 있어야 성립한다.</u> 인간이 부재하는 사건을 사유한다고 할 때조차, 그 사유는 인간의 사유로서 수행되는 것이다. 소멸을 '인간 없는 사건'으로 규정하는 그 규정 역시 인간이 내린 규정이며, 그 사건에 '의미의 외부'라는 자리를 마련해 주는 것도 결국 인간의 사유이다. 따라서 소멸을 '의미의 완전한 외부'로 규정하는 일은, 실은 의미의 내부에서 그 외부를 가리키는 몸짓에 지나지 않는다는 비판이 가능하다. 브라시에가 인간 너머를 가리킬수록, 그 가리킴의 손은 여전히 인간 쪽에 놓여 있는 셈이다.</p>
+<p>가브리엘은 여기서 한 걸음 더 나아가 다른 길을 제시한다.</p>
+<div class="ablock"><span class="atag">[A]</span>가브리엘은 실재를 의미의 외부에 두려는 시도 자체가 불필요한 양자택일이라고 본다. 그에 따르면 실재는 단일하고 외재적인 하나의 실체로 존재하는 것이 아니라, 다양한 의미의 장 속에 드러나는 방식으로만 파악된다. 우주의 소멸이라는 사건도 천문학이라는 의미의 장에서는 별의 일생으로, 종말론이라는 의미의 장에서는 또 다른 의미로 드러난다. 어느 의미의 장에도 속하지 않는 '순수한 소멸 그 자체'는 사유의 대상이 될 수 없으며, 우리가 소멸을 사유하는 순간 그것은 이미 어떤 의미의 장 안에 들어와 있다. 따라서 실재를 의미의 외부에 통째로 두기보다, 실재가 여러 의미의 장과 맺는 관계를 묻는 편이 사유에 더 충실하다는 것이다.</div>
+
+<p>이처럼 브라시에를 향한 비판은 두 방향에서 ⓓ<u>모인다</u>. 하나는 소멸을 사유하는 일조차 주체를 전제한다는 상관주의의 지적이고, 다른 하나는 실재를 의미의 외부로 두기보다 의미의 장과의 관계로 보아야 한다는 가브리엘의 제안이다. 두 비판은 모두 실재의 존재를 부정하지 않는다. 다만 실재를 인간의 사유 바깥에 ⓔ<u>고정하는</u> 방식이 과연 정당한지를 되물을 뿐이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가)에 나타난 브라시에의 입장으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 우주의 소멸은 인간이 부여하는 의미나 목적과 무관하게 일어나는 사건이다.</li>
+<li>② 소멸은 인간의 의미 구성 능력으로 끝내 포섭되지 않는다는 점에서 실재의 진면목을 드러낸다.</li>
+<li>③ 철학은 존재와 소멸의 구조 자체를 사변적으로 사유해야 한다.</li>
+<li>④ 실재는 인간 중심의 가치 체계와 인식 구조 안에서 그 의미가 확정된다.</li>
+<li>⑤ 소멸은 인간 너머의 실재를 사유하도록 이끄는 단서가 된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+브라시에의 핵심은 실재가 <em>인간 중심의 인식 구조가 닿지 않는 곳</em>에 의미의 외부로서 존재한다는 거예요(2문단). 그런데 ④는 실재가 "인간 중심의 가치 체계와 인식 구조 <em>안에서</em> 그 의미가 확정된다"고 했으니 정반대라서 적절하지 않은 정답입니다. ①(1문단)·②(2문단)·③(3문단)·⑤(3문단)는 모두 브라시에의 입장에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>[A]로부터 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 어느 의미의 장에도 속하지 않는 순수한 소멸 그 자체가 사유의 가장 적절한 대상이 된다.</li>
+<li>② 우주의 소멸은 어떤 의미의 장에서 다루어지든 늘 동일한 하나의 의미로 드러난다.</li>
+<li>③ 소멸을 사유하는 순간 그것은 이미 어떤 의미의 장 안에 들어와 있다.</li>
+<li>④ 실재를 의미의 외부에 통째로 두어야 실재가 여러 의미의 장과 맺는 관계가 분명해진다.</li>
+<li>⑤ 실재는 단일하고 외재적인 하나의 실체로 존재할 때에만 사유될 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong>
+[A]에서 가브리엘은 "우리가 소멸을 사유하는 <em>순간</em> 그것은 이미 어떤 의미의 장 <em>안에</em> 들어와 있다"고 했어요. 그러니 ③이 [A]에서 곧장 추론되는 적절한 내용으로 정답입니다. ① 가브리엘은 '순수한 소멸 그 자체'는 <em>사유의 대상이 될 수 없다</em>고 했으니 정반대고, ② 소멸은 의미의 장에 따라 <em>다르게</em> 드러난다고 했으니 "늘 동일한 의미"는 틀렸으며, ④ 가브리엘은 의미의 외부에 두기보다 <em>관계를 묻자</em>고 했으니 어긋나고, ⑤ 단일·외재적 실체로 본 것은 그가 <em>비판한</em> 입장이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 다음 진술에 대해 윗글에 제시된 입장들이 보일 수 있는 견해를 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[진술 1]</span> 인간이 모두 사라진 사건도 사유의 대상이 될 수 있다.</strong>
+∙ 브라시에: 그렇다. 그러한 사건이야말로 의미의 외부로서 실재를 드러내기 때문이다. … ①
+∙ 상관주의: 그렇다. 다만 그 사유는 그것을 떠올리는 주체가 있어야 성립한다. … ②</p>
+<p><strong><span class="boxmark">[진술 2]</span> 실재는 어떤 의미의 장에도 속하지 않는 순수한 외부로 존재한다.</strong>
+∙ 브라시에: 그렇다. 실재는 인간 중심의 인식 구조가 닿지 않는 곳에 있기 때문이다. … ③
+∙ 가브리엘: 그렇다. 우리가 소멸을 사유하는 순간 그것은 의미의 장 밖에 머물기 때문이다. … ④</p>
+<p><strong><span class="boxmark">[진술 3]</span> 브라시에에 대한 비판은 실재의 존재 자체를 부정한다.</strong>
+∙ 상관주의·가브리엘: 그렇지 않다. 두 비판은 실재를 사유 바깥에 고정하는 방식을 되물을 뿐이다. … ⑤</p>
+</blockquote>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong>
+학습 활동지의 견해가 글과 맞는지 점검하는 문항이에요. ④에서 가브리엘은 <span class="boxmark">[진술 2]</span>에 "그렇다"고 답하며 "소멸을 사유하는 순간 그것은 의미의 장 <em>밖에</em> 머문다"고 했는데, 가브리엘의 실제 견해는 소멸이 사유되는 순간 의미의 장 <em>안에</em> 들어온다는 것이므로 답변 방향과 근거가 모두 어긋나요. 그래서 ④가 적절하지 않은 정답입니다. ①②③은 각 입장의 진술에 맞고, ⑤는 두 비판이 실재의 존재를 부정하지 않는다는 마지막 문단에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 ㉠을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 인간이 부재하는 사건을 사유할 때조차 그 사유는 인간의 사유로서 수행됨을 보여 준다.</li>
+<li>② 의미의 외부를 가리키는 일이 역설적으로 의미의 내부에 의존함을 시사한다.</li>
+<li>③ 브라시에가 주목한 소멸이 사유되기 위해서는 그것을 떠올리는 주체가 전제됨을 지적한다.</li>
+<li>④ 소멸을 '의미의 완전한 외부'로 규정하는 일이 의미의 내부에서 이루어짐을 드러낸다.</li>
+<li>⑤ 소멸을 사유하는 주체가 있다는 사실이 소멸이라는 사건의 발생 자체를 불가능하게 함을 함축한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>15번 — 정답 ⑤</strong>
+㉠은 "소멸을 떠올리는 그 사유는 <em>그것을 떠올리는 주체가 있어야</em> 성립한다"는 상관주의의 역설적 지적이에요. 이는 <em>사유의 성립 조건</em>에 관한 말이지, 소멸이라는 <em>사건의 발생</em>에 관한 말이 아니죠. 그런데 ⑤는 "주체가 있다는 사실이 소멸이라는 <em>사건의 발생 자체를 불가능</em>하게 한다"고 했으니, ㉠이 말하지 않은 비약이라 적절하지 않은 정답입니다. ①②③④는 모두 ㉠의 취지(사유의 주체 의존성, 의미 내부에서의 외부 지시)에 부합해요.</p>
+<p><strong>16번 [3점] — 정답 ①</strong>
+〈보기〉의 철학자는 실재가 인간에게 <em>부분적으로만 드러난다</em>는 점을 인정해요. 곧 그에게도 실재는 늘 <em>우리에게 드러나는 면</em>으로 주어지죠. 이는 사유가 주체를 전제한다는 상관주의의 지적과 <em>어긋나는 게 아니라 오히려 맞물려요</em>. 그런데 ①은 이를 두고 상관주의의 지적과 "어긋난다"고 했으니 적절하지 않은 정답입니다. ② 실재의 독립성 인정은 브라시에의 문제의식과 통하고, ③ '드러나지 않는 잉여'로 독립성을 증명하려는 것은 소멸을 의미의 외부로 두려는 브라시에와 닮았고, ④ 전체가 한꺼번에 주어지지 않는다는 점은 '순수한 그 자체'는 사유 대상이 될 수 없다는 가브리엘과 견줄 만하며, ⑤ 부분적 드러남은 가브리엘의 '의미의 장 속 드러남'과 맞닿아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글과 〈보기〉를 비교하여 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 철학자는 실재를 '거대한 사물'에 빗댄다. 우리가 그 사물의 어느 면을 보든 우리에게 드러나는 것은 언제나 그 면일 뿐, 사물 전체는 결코 한꺼번에 주어지지 않는다. 그러나 드러나지 않는 면들이 있다는 사실 자체가 그 사물이 우리의 접근을 넘어 실재함을 보여 준다. 그는 실재가 인간에게 부분적으로만 드러난다는 점을 인정하면서도, 드러나지 않는 잉여야말로 실재의 독립성을 증명한다고 본다.</p>
+</blockquote>
+<ul>
+<li>① 〈보기〉의 철학자가 사물의 한 면이 '우리에게 드러난다'고 말하는 것은, 사유가 늘 주체를 전제한다는 상관주의의 지적과 어긋난다.</li>
+<li>② 〈보기〉의 철학자가 실재의 독립성을 인정한다는 점은, 인간 너머의 실재를 사유하려는 브라시에의 문제의식과 통한다.</li>
+<li>③ 〈보기〉의 철학자가 '드러나지 않는 잉여'로 실재의 독립성을 증명하려는 것은, 소멸을 의미의 외부로 규정하는 브라시에의 시도와 닮았다.</li>
+<li>④ 〈보기〉의 철학자가 사물 전체가 한꺼번에 주어지지 않는다고 보는 것은, 순수한 소멸 그 자체는 사유의 대상이 될 수 없다는 가브리엘의 견해와 비교될 수 있다.</li>
+<li>⑤ 〈보기〉의 철학자가 실재가 인간에게 부분적으로만 드러난다고 본다는 점은, 실재가 의미의 장 속에 드러난다는 가브리엘의 생각과 맞닿는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 소임(所任)</li>
+<li>② ⓑ: 실마리</li>
+<li>③ ⓒ: 의의(意義)</li>
+<li>④ ⓓ: 수렴(收斂)된다</li>
+<li>⑤ ⓔ: 고착(固着)하는</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>17번 — 정답 ③</strong>
+ⓒ '이견(異見)'은 <em>서로 다른 의견</em>, 곧 <em>반대되거나 어긋나는 견해</em>를 뜻해요. 그런데 ③의 '의의(意義)'는 <em>어떤 일이 지니는 중요한 뜻·값어치</em>를 가리키므로, "충분한지에 대해 <em>이견</em>이 있다"는 맥락에 넣으면 뜻이 완전히 달라져 바꿔 쓸 수 없어요. 그래서 적절하지 않은 ③이 정답입니다. ① '몫'→'소임(所任)', ② '단서'→'실마리', ④ '모인다'→'수렴(收斂)된다', ⑤ '고정하는'→'고착(固着)하는'은 모두 문맥에 맞게 바꿔 쓸 수 있어요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>소멸로서의 실재</strong>: 우주의 소멸·생명체의 멸종처럼 <em>인간의 의미 부여와 무관하게</em> 일어나는 사건에서 실재의 진면목을 보는 브라시에의 관점.</li>
+<li><strong>의미의 외부</strong>: 인간 중심의 가치·인식 구조가 닿지 않는 자리. 브라시에는 실재를 이 외부에 둡니다.</li>
+<li><strong>사유의 주체 의존성</strong>: 인간이 부재하는 사건을 사유할 때조차 그 사유는 <em>인간의 사유로서</em> 수행된다는, 상관주의가 짚는 역설.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>입장</th>
+<th>소멸/실재를 어떻게 보나</th>
+<th>브라시에에 대한 태도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>브라시에 (가)</td>
+<td>소멸 = 의미의 <em>외부</em>, 실재의 진면목</td>
+<td>(소개 대상)</td>
+</tr>
+<tr>
+<td>상관주의 (나)</td>
+<td>소멸을 사유함조차 <em>주체를 전제</em></td>
+<td>의미의 외부 규정은 내부의 몸짓</td>
+</tr>
+<tr>
+<td>가브리엘 (나)</td>
+<td>실재는 여러 <em>의미의 장</em> 속에 드러남</td>
+<td>외부에 두기보다 <em>관계</em>를 물어야</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>두 비판 모두 실재의 <em>존재</em>를 부정하지 않아요. 다만 실재를 "사유 바깥에 못 박는" 방식이 정당한지를 되물을 뿐이라는 점, 이게 (나)의 결론입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>브라시에가 소멸에 주목하는 까닭은?</div><div class='qa-a'>소멸은 인간의 의미 구성 능력으로 <em>포섭되지 않아</em> 의미의 외부로서 실재를 드러내기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>상관주의가 브라시에에게 던지는 역설은?</div><div class='qa-a'>인간이 부재하는 소멸을 사유하는 그 사유조차 <em>떠올리는 주체</em>가 있어야 성립한다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>가브리엘이 제안하는 다른 길은?</div><div class='qa-a'>실재를 의미의 외부에 통째로 두기보다, 실재가 여러 <em>의미의 장과 맺는 관계</em>를 묻는 길입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2025학년도 6월 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>(가)</p>
+<p>전통적인 윤리학의 주요 주제는 '선', '올바름'과 같은 도덕 용어에 대한 해명을 바탕으로 무엇이 옳고 그른지를 판정하는 객관적 근거를 ⓐ찾는 것이다. 그러나 윤리학은 오랫동안 그에 대한 만족스러운 답을 ⓑ내놓지 못했다. 이러한 상황에서 <span class="boxmark">[에이어]</span>는 도덕적으로 옳고 그름에 관한 문장인 도덕 문장이 진리 적합성, 즉 참 또는 거짓일 수 있다는 성질을 갖지 않는다는 주장을 ⓒ펼쳤다.</p>
+<p>에이어는 진리 적합성을 갖는 모든 문장은 그 문장에 사용된 단어의 정의를 통해 검증되는 분석적 문장이거나 경험적 관찰에 의해 검증되는 종합적 문장이라는 원리를 바탕으로 도덕 문장은 진리 적합성이 없다고 주장했다. 우선 그는 도덕 문장은 분석적이지 않다는 기존의 논의를 수용했다. '선은 A이다.'라는 도덕 문장이 분석적이려면, 술어인 'A'가 주어인 '선'이라는 개념 속에 내포되어 있어야 한다. 하지만 '선'은 속성이나 내용을 더 이상 분석할 수 없는 단순 개념이므로 해당 문장은 분석적이지 않다. 그렇다고 해서 '선은 A이다.'라는 도덕 문장이 경험적 관찰로 검증될 수 있는 것도 아니다. '선' 그 자체는 우리의 감각으로 검증할 수 없기 때문이다.</p>
+<p>도덕 문장은 다양한 감정이나 태도를 표현하고 타인의 감정을 ⓓ불러일으키는 정서적 의미를 갖는다고 에이어는 주장했다. 그는 많은 사람들이 도덕 문장이 진리 적합성을 갖는다고 오해하는 것은 도덕 용어의 두 가지 용법을 구분하지 못해서라고 주장한다. 그에 따르면 도덕 용어는 감정을 표현하는 표현적 용법으로도, 세계에 관한 어떤 사실을 기술하는 기술적 용법으로도 사용될 수 있다. 만약 '도둑질은 나쁘다.'가 도둑질이 사회적으로 배척된다는 사실을 기술하는 문장이라면, 이 문장은 도덕적으로 옳고 그름에 관한 것이 아니다. 따라서 이 문장은 도덕 문장이 아니고, 경험적으로 검증이 가능하다. 반대로 그 문장이 도둑질에 대한 화자의 감정을 표현한 문장이라면 이는 도덕 문장이며 어떤 사실을 기술한 것이 아니다. 에이어에게는 '도둑질은 나쁘다.'와 같은 도덕 문장을 진술하는 것은 감정을 담은 어조로 '네가 도둑질을 하다니!'라고 말하는 것과 다름없기 때문이다. 그의 주장대로라면 도덕 문장은 감정을 표현하는 도덕 주체로부터 독립적으로 존재하는 무언가를 기술할 수 없다. 이는 전통적인 윤리학자들의 기본 가정을 부정하는 급진적 주장이지만 윤리학에 새로운 사고를 ⓔ열어 준 선구적인 면도 있다.</p>
+<p>(나)</p>
+<p>논리학에서 제기된 의문이 윤리학의 특정 견해에 대한 비판이 되기도 한다. 다음 논의는 이를 보여 준다. 'P이면 Q이다. P이다. 따라서 Q이다.'인 논증을 전건 긍정식이라 한다. 전건 긍정식은 'P이면 Q이다.'와 'P이다.'라는 두 전제가 참이면 결론 'Q이다.'는 반드시 참이라는 뜻에서 타당하다. 그런데 어떤 문장이 단독으로 진술되는 경우에는 감정이나 태도를 표현할 수 있지만 그 문장이 조건문인 'P이면 Q이다.'의 부분으로 포함되는 경우에는 그렇지 않다. '귤은 맛있다.'는 화자의 선호라는 감정을 표현한다. 하지만 그 문장이 '귤은 맛있다면 귤은 비싸다.'처럼 조건문의 일부가 되면 귤에 관한 화자의 선호를 표현하지 않는다. 이에 전건 긍정식의 P가 감정이나 태도를 표현하는 문장일 때 'P이면 Q이다.'의 P와 'P이다.'의 P 사이에 내용의 차이가 생기므로, 전건 긍정식임에도 두 전제의 참이 결론 'Q이다.'의 참을 보장하지 않는다는 것이 ㉠몇몇 논리학자들이 제기한 문제였다. 전건 긍정식인 '표절은 나쁘다면 표절을 돕는 것은 나쁘다. 표절은 나쁘다. 따라서 표절을 돕는 것은 나쁘다.'라는 논증은 직관적으로 타당해 보인다. 하지만 '표절은 나쁘다.'가 감정을 표현했다면, 위 논증은 타당하지 않다고 해야 한다. 그러므로 에이어의 윤리학 견해를 고수하려면, 도덕 문장을 포함하는 전건 긍정식의 타당성을 부정하거나, 전건 긍정식은 도덕 문장을 포함할 수 없다고 해야 한다. 이 쟁점에 대해 행크스는 다음과 같이 논의를 전개하였다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>'표절은 나쁘다.'라는 문장은 표절이라는 대상에 나쁨이라는 속성을 부여하는 내용을 가진다. 그리고 화자의 문장 진술은 그 내용과 완전히 무관할 수는 없기 때문에 그런 문장은 단독으로 진술되든 그렇지 않든 판단적이다. 문장이 판단적이라는 것은, 대상에 속성을 부여하는 내용을 지니는 것이 그 문장의 본질이라는 것을 뜻한다. 도덕 문장을 비롯한 모든 판단적 문장은 참 또는 거짓일 수 있다. 조건문에 포함된 문장도 판단적이라는 점에서 단독으로 진술될 때와 내용의 차이가 없다. 그러므로 도덕 문장을 포함하는 전건 긍정식은 타당해 보일 뿐 아니라 실제로도 타당하다. 그렇다면 'P이면 Q이다.'에 포함된 'P이다.'가 단독으로 진술된 경우와 다른 점은 무엇인가? 가령 '귤은 맛있다.'는, '귤은 맛있다면 귤은 비싸다.'라는 조건문에 포함되는 경우 화자가 대상에 속성을 부여하는 행위를 하는 것은 아니기에 그것의 판단적 본질을 발현하지 못한다. 그러나 이 맥락에서도 조건문에 포함된 '귤은 맛있다.'는 판단적 본질을 여전히 잃지 않는다. 다시 말해, 그 문장 자체는 대상에 속성을 부여하는 내용을 지닌다.</p></div></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가)에 나타난 <span class="boxmark">[에이어]</span>의 입장으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 도덕 용어를 기술적 용법으로 사용한 문장은 검증이 가능하다.</li>
+<li>② 표현적 용법을 활용한 도덕 문장은 자신의 감정을 표현하는 문장과 동일한 의미를 표현한다.</li>
+<li>③ 주어와 술어의 의미 관계를 통해 어떤 문장을 검증할 수 있다면 그 문장은 분석적 문장이다.</li>
+<li>④ 도덕 용어의 용법은 도덕 용어가 기술하는 사실의 종류에 따라 기술적 용법과 표현적 용법으로 구분할 수 있다.</li>
+<li>⑤ 도덕 문장에 진리 적합성이 있다는 오해는 도덕 문장을 세계에 대한 어떠한 사실을 기술한 것으로 해석한 데에 기인한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong><br />
+(가) 3문단에서 에이어는 감정을 표현하느냐 사실을 기술하느냐에 따라 표현적·기술적 용법을 구분했다. '기술하는 사실의 종류'에 따라 구분한 것이 아니므로 ④가 부적절하다. ①은 기술적 용법의 문장이 경험적 검증 가능하다는 서술, ②는 도덕 문장 진술이 '네가 도둑질을 하다니!'와 다름없다는 서술, ③은 2문단의 분석적 문장 정의, ⑤는 두 용법을 구분하지 못한 오해라는 서술에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,563명 — ①8.8% ②5.4% ③12.9% ④50.4% ⑤23.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>[A]로부터 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① '귤은 맛있다면 귤은 비싸다.'에 포함된 '귤은 맛있다.'는 판단적이지 않다.</li>
+<li>② '표절은 나쁘다.'는 단독으로 진술되었을 때에만 참 또는 거짓일 수 있다.</li>
+<li>③ '귤은 맛있다.'는 조건문의 일부로 진술될 때는 대상에 속성을 부여하는 내용을 지니지 않는다.</li>
+<li>④ 화자는 귤이 맛있음의 속성을 가진다는 내용과 완전히 무관한 채로 '귤은 맛있다.'를 진술할 수 있다.</li>
+<li>⑤ '표절은 나쁘다.'는 화자가 표절에 나쁨을 부여하지 않는 맥락에서도 그것의 판단적 본질을 유지할 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong><br />
+[A]에서 판단적 문장은 단독으로 진술되든 그렇지 않든 판단적이며, 화자가 속성을 부여하지 않는 맥락(조건문 포함)에서는 판단적 본질을 발현하지 못해도 잃지는 않는다고 했다. 따라서 ⑤가 적절하다. ①·③은 조건문에 포함되어도 판단적이고 속성 부여 내용을 지닌다는 서술과 어긋나며, ②는 모든 판단적 문장이 참·거짓일 수 있다는 서술과, ④는 화자의 문장 진술이 그 내용과 완전히 무관할 수 없다는 서술과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,562명 — ①9.3% ②9.1% ③20.2% ④18.4% ⑤44.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 다음의 진술에 대해 윗글에 제시된 학자들이 보일 수 있는 견해를 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[진술 1]</span> 객관적으로 존재하는 도덕적 사실이 있다.</strong>
+∙ 전통적인 윤리학자: 옳다. 도덕적 판단의 근거는 도덕 주체로부터 독립적으로 존재하기 때문이다. ·········· ①
+∙ 에이어: 옳지 않다. 도덕 문장은 도덕 주체로부터 독립적일 수 없기 때문이다. ·········· ②</p>
+<p><strong><span class="boxmark">[진술 2]</span> 도덕 문장은 참 또는 거짓이라는 속성을 갖는다.</strong>
+∙ 에이어: 옳지 않다. 도덕 문장은 분석적이지도 종합적이지도 않기 때문이다. ·········· ③
+∙ 행크스: 옳다. 도덕 문장은 도덕 용어가 나타내는 속성에 비추어 참 또는 거짓이 정해지기 때문이다.</p>
+<p><strong><span class="boxmark">[진술 3]</span> 전건 긍정식의 두 전제에 공통으로 포함된 도덕 문장은 내용이 다르다.</strong>
+∙ 에이어: 옳다. 도덕 문장은 전건 긍정식의 전제로 사용되면 진리 적합성을 갖기 때문이다. ·········· ④
+∙ 행크스: 옳지 않다. 단독으로 진술된 문장은 조건문의 일부로 사용된 때와 내용 차이가 없기 때문이다. ·········· ⑤</p>
+</blockquote>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+에이어는 도덕 문장이 감정을 표현하므로 전건 긍정식의 두 전제에 포함된 도덕 문장의 내용이 다르다는 문제 제기에는 동의하겠지만, 감정을 표현한 문장은 진리 적합성을 가질 수 없다고 보므로 '전제로 사용되면 진리 적합성을 갖는다'는 이유 제시는 그의 견해가 아니다 — ④가 부적절하다. ①·②는 (가) 1·3문단(전통 윤리학의 기본 가정과 에이어의 부정), ③은 (가) 2문단, ⑤는 (나)의 행크스(조건문 포함 여부와 무관하게 내용 차이 없음)와 부합한다.</p>
+<p><em>선택률</em> — 응시 98,564명 — ①7.3% ②5.8% ③13.8% ④58.4% ⑤14.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 ㉠을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 에이어의 윤리학 견해가 옳다면 전건 긍정식이 직관적으로 타당해 보이게 된다는 점에서, ㉠은 에이어에 대한 비판이 된다.</li>
+<li>② ㉠에 따르면, 도덕 문장을 포함하는 전건 긍정식이 타당하다면 도덕 문장이 감정을 표현한다는 견해는 수용될 수 없다.</li>
+<li>③ ㉠은 전건 긍정식이 타당하려면 두 전제 모두에 나타난 문장의 내용이 일치해야 함에 기초한다.</li>
+<li>④ ㉠은 도덕 문장뿐 아니라 개인적 선호를 나타내는 문장에 대해서도 제기될 수 있다.</li>
+<li>⑤ 도덕 문장을 판단적이라고 보는 이론에 따르면 ㉠은 애당초 발생하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>15번 — 정답 ①</strong><br />
+㉠은 전건 긍정식의 전제가 감정·태도를 표현하는 문장이면 두 P 사이에 내용 차이가 생겨 두 전제의 참이 결론의 참을 보장하지 않는다는 문제이다. 에이어의 견해가 옳다면 전건 긍정식이 '직관적으로 타당해 보이게' 되는 것이 아니라 그 타당성이 무너지게 되므로 ①이 부적절하다. ②·③은 내용 일치가 타당성의 기초라는 점, ④는 '귤은 맛있다.' 같은 선호 표현 문장에도 같은 문제가 생긴다는 점, ⑤는 행크스처럼 도덕 문장을 판단적으로 보면 두 전제의 내용 차이 자체가 없어 ㉠이 발생하지 않는다는 점에서 적절하다.</p>
+<p><em>선택률</em> — 응시 98,579명 — ①30.2% ②16.4% ③16.9% ④21.8% ⑤14.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글과 〈보기〉를 비교하여 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+'자선은 옳다.'는 자선에 대한 찬성, '폭력은 나쁘다.'는 폭력에 대한 반대라는 태도를 표현한다. 도덕 문장을 포함하는 '자선은 옳다면 봉사는 옳다.'라는 조건문은 '태도에 대한 태도'를 표현한다. 위와 같은 주관적 태도들에는 참, 거짓이 없다. '자선은 옳다면 봉사는 옳다.'와 '자선은 옳다.'가 나타내는 태도를 지니면서, '봉사는 옳다.'에 반대하는 것은 비일관적이다. '자선은 옳다면 봉사는 옳다. 자선은 옳다. 따라서 봉사는 옳다.'가 타당하다는 것은 이런 뜻이다.</p>
+</blockquote>
+<ul>
+<li>① 도덕 문장이 태도나 감정을 표현한다는 주장은, 도덕 문장을 포함하는 조건문이 '태도에 대한 태도'를 표현한다는 〈보기〉의 주장과 상충하는군.</li>
+<li>② 논증의 타당성이 전제와 결론의 참에 의해 규정된다는 주장은, 타당성을 논증에 나타난 태도 사이의 관계에 의해 규정할 수 있다는 〈보기〉의 주장과 상충하는군.</li>
+<li>③ 무엇이 윤리적으로 옳고 그른지에 대한 객관적 기준을 세워야 한다는 주장은, 도덕 문장은 찬성과 반대라는 주관적 태도를 나타낸다는 〈보기〉의 주장과 상충하는군.</li>
+<li>④ '귤은 맛있다.'가 귤에 대한 화자의 선호를 표현한다는 주장은, '자선은 옳다.'가 자선에 대한 화자의 찬성을 표현한다는 〈보기〉의 주장과 상충하지 않는군.</li>
+<li>⑤ '도둑질은 나쁘다.'가 화자의 정서를 표출하므로 진리 적합성이 없다는 주장은, 폭력에 대한 화자의 태도를 표현하는 문장이 참, 거짓일 수 없다는 〈보기〉의 주장과 상충하지 않는군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+도덕 문장이 태도·감정을 표현한다는 주장(에이어)과 조건문이 '태도에 대한 태도'를 표현한다는 〈보기〉의 주장은 모두 주관적 태도에 참·거짓이 없다고 보는 입장이므로 상충하지 않는다 — ①이 부적절하다. ②는 참에 의한 타당성 규정과 태도 관계에 의한 규정이 상충하고, ③은 객관적 기준의 추구와 주관적 태도론이 상충하며, ④·⑤는 모두 해당 문장의 참·거짓을 판단할 수 없다고 보는 점에서 상충하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,578명 — ①24.7% ②10.5% ③18.9% ④25.9% ⑤18.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ⓐ: 수색하는</li>
+<li>② ⓑ: 제시하지</li>
+<li>③ ⓒ: 전파했다</li>
+<li>④ ⓓ: 발산하는</li>
+<li>⑤ ⓔ: 공개하여</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>17번 — 정답 ②</strong><br />
+'제시하다'는 '어떠한 의사를 말이나 글로 나타내어 보이게 하다'의 의미이므로 ⓑ'내놓지'와 바꿔 쓸 수 있다. ①'수색하다'는 '구석구석 뒤지어 찾다', ③'전파하다'는 '전하여 널리 퍼뜨리다', ④'발산하다'는 '감정 따위가 밖으로 드러나 해소되거나 분위기 따위가 한껏 드러나다', ⑤'공개하다'는 '어떤 사실이나 사물, 내용 따위를 여러 사람에게 널리 터놓다'의 의미여서 각각의 문맥에 맞지 않는다.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①1.9% ②88.8% ③2.0% ④2.9% ⑤3.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>사변적 실재론 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='사변적 실재론 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

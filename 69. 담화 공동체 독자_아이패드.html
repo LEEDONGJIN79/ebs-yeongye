@@ -1,0 +1,776 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>담화 공동체 독자 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>담화 공동체 독자 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 글을 쓸 때 머릿속에 "이 글을 누가 읽을까?"를 떠올려 본 적 있죠? 같은 내용이라도 친구에게 보내는 메시지와 선생님께 내는 보고서는 말투도 단어도 달라져요. 글을 쓰는 사람이 누구를 생각하며 쓰느냐에 따라 글이 달라진다는 것, 바로 여기에서 <strong>'독자'란 무엇인가</strong>라는 물음이 시작됩니다.</p>
+<p>먼저 큰 그림부터 볼게요. 우리는 흔히 독자를 "글을 읽는 사람"이라고만 생각하지만, 글쓰기 연구에서는 독자를 훨씬 여러 갈래로 나눠 왔어요. 필자 자신이 자기 글의 첫 번째 독자가 되기도 하고(스스로 읽으며 고치니까요), 멀리 있는 누군가를 떠올리며 쓰기도 하고, 심지어 실제로는 없는 '상상 속 독자'를 만들어 그에게 말 걸듯 쓰기도 합니다. 이렇게 독자는 <strong>하나로 고정된 게 아니라, 글쓰기 상황에 따라 여러 모습으로 나뉘는</strong> 개념이에요.</p>
+<p>그런데 여기에 아주 새로운 생각이 하나 더 등장합니다. 바로 <strong>담화 공동체 독자</strong>예요. 조금 어려운 말 같지만, 비유로 풀어 볼게요. 같은 동아리 친구들끼리는 줄임말 하나만 던져도 척척 통하죠? 그건 그 무리가 <strong>말하는 방식·다루는 화제·즐겨 쓰는 표현을 함께 나누는 집단</strong>이기 때문이에요. 이런 집단을 '담화 공동체'라고 부릅니다. 그리고 이 관점에서는 독자를 그저 글을 '받는 사람'으로만 보지 않아요. 필자와 독자가 <strong>같은 약속과 지식을 나누며 함께 글의 의미를 만들어 가는 동료</strong>라고 보지요. 그래서 독자는 필자와 어깨를 나란히 하는 '공동의 생산자'가 됩니다.</p>
+<p>이 생각은 <strong>상호 텍스트성</strong>이라는 개념과도 이어져요. 세상의 모든 글은 외딴섬이 아니라, 다른 글을 끌어다 쓰고(반복) 또 어떤 배경을 깔아 두며(전제) 서로 얽혀 있다는 거예요. 담화 공동체는 바로 그 얽힌 글들을 함께 주고받는 무리인 셈이죠.</p>
+<blockquote>
+<p>한마디로: <strong>독자는 자아/타자, 실제/허구로 나뉘어 오다가, "필자와 함께 글을 빚는 동료"라는 담화 공동체 독자 개념이 더해지며 그 지도가 새로 그려졌어요.</strong> 다만 이 개념도 모든 독자를 하나로 묶어 버린다거나, 학문 공동체 밖을 설명하기 어렵다는 약점이 있답니다. 이 단원은 그 갈래와 원리, 그리고 한계를 차근차근 익히는 데 목표가 있어요.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>'독자' 개념의 여러 얼굴</strong>이 있습니다. 독자를 어떻게 나눠 왔고(분류), 담화 공동체 독자라는 새 개념이 무엇을 바꾸었으며(전환), 그것이 상호 텍스트성과 어떻게 맞물리는지(연결)를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>'독자'를 어떻게 볼 것인가</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>독자가 자아·타자(수신자·허구적)로 나뉘어 오다가, 필자와 대등한 '공동 담화 생산자'로서의 담화 공동체 독자가 등장해 기존 범주를 흔드는 과정을 잡습니다. 끝에서는 이 관점의 <em>한계</em>까지 따져 봅니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>담화 공동체 독자 개념을 떠받치는 <em>상호 텍스트성</em>을, 포터의 두 갈래인 <em>반복</em>과 <em>전제</em>를 통해 풀고, 그 성질들을 새로운 글의 사례에 적용해 봅니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>독자를 가르는 두 축(자아/타자, 실제/허구)을 <em>대비</em>하고, 그 분류도 위에서 담화 공동체 독자가 어디에 놓이는지를 <em>구체적인 글</em>로 따라갑니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 독자가 왜 하나로 고정될 수 없는지, 담화 공동체 독자가 그 지도를 어떻게 바꾸는지, 그리고 그 생각이 어디까지 설명하고 어디서 막히는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>독자는 사전적으로 글을 읽는 사람으로 정의되지만, 글쓰기 연구에서 독자는 고정되고 독립된 실체가 아니라 필자와의 관계 속에서 규정되는 개념이다. 같은 필자라도 어떤 독자를 향해 쓰느냐에 따라 글의 내용과 표현이 달라지므로, 독자가 누구인가를 묻는 일은 글쓰기 자체를 이해하는 출발점이 된다. 독자는 우선 필자와의 거리에 따라 ㉠<u>자아 독자</u>와 ㉡<u>타자 독자</u>로 나뉜다. 자아 독자는 필자가 자기 글의 독자가 되어 스스로 점검하며 읽는 경우의 독자이고, 타자 독자는 필자 이외의 타인을 가리키는 독자이다. 타자 독자는 다시 글쓰기에 실제로 영향을 미치는 외부의 수신자 독자와, 필자가 자신의 필요에 따라 머릿속에서 상상으로 빚어낸 허구적 독자로 갈린다. 수신자 독자가 글 바깥에 실재하면서 필자에게 제약을 가하는 존재라면, 허구적 독자는 필자가 논의를 효과적으로 펼치기 위해 가정하는 존재이다. 이처럼 전통적인 독자 개념은 자아와 타자, 실제와 허구라는 두 축으로 짜인 분류 체계 안에 놓여 있었다.</p>
+<p>이러한 분류는 의미를 만드는 주체인 필자와 그것을 받아들이는 객체인 독자를 뚜렷이 구별한다는 전제 위에 서 있다. 즉 글의 의미는 필자가 완성하여 독자에게 건네는 것이고, 독자는 그것을 수용하는 자리에 머문다. 자아 독자든 수신자 독자든 허구적 독자든, 이들은 모두 의미를 생산하는 필자의 맞은편에서 그 의미를 받아들이는 쪽에 놓인다는 점에서는 같았다. 그러나 이후에 필자와 더불어 텍스트를 함께 생성하며 의미를 구성하는 ㉢<u>담화 공동체 독자</u> 개념이 제시되면서, 이 구도에 변화가 생겼다. 담화 공동체는 담화의 관습이나 규약을 공유하는 집단으로, 특정한 쓰기 방식과 읽기 방식을 함께 지니는 무리이다. 한 개인은 하나의 담화 공동체에만 속하는 것이 아니라 여러 공동체에 동시에 속할 수도 있으며, 그가 어느 공동체의 구성원으로서 글을 쓰느냐에 따라 동원하는 지식과 표현도 달라진다.</p>
+<p>담화 공동체의 구성원들은 어떤 논의를 펼치거나 주장을 정당화할 때 동일한 특성을 드러낸다. 필자는 그 공동체가 공유하는 지식, 즐겨 다루는 내용, 자주 쓰는 표현 방식이나 어휘, 어조 등을 끌어와 텍스트를 구성하는데, 이는 곧 담화 공동체를, 다시 말해 독자를 고려하는 일이다. 필자가 어떤 용어를 굳이 풀이하지 않고 쓰거나 특정한 논의 방식을 자연스럽게 택하는 것은, 그 공동체의 독자가 이미 그것을 공유하고 있다고 보기 때문이다. 독자를 담화 공동체로 보는 이 관점에 따르면, 의미를 생산하는 주체와 그것을 수용하는 독자를 구별하는 일은 더 이상 중요하지 않게 된다. 필자와 독자는 담화 공동체의 지식과 사고, 표현 방식을 공유하고 발전시키는 공동의 담화 생산자이기 때문이다. 그리하여 담화 공동체 독자는 필자와 마찬가지로 담화 형성에 참여하는 주체로서, 필자와 대등한 위상을 갖는다.</p>
+<p>이로써 담화 공동체 독자의 등장은 자아와 타자, 실제와 허구로 갈리던 독자 개념의 범주 자체를 다시 짜게 만들었다. 기존 분류에서 독자는 필자의 맞은편에 놓인 상대였으나, 새 관점에서 독자는 필자와 같은 자리에서 의미를 빚는 동료가 된다. 수신자 독자나 허구적 독자가 필자의 글쓰기에 영향을 주거나 필자에 의해 구성되는 존재였다면, 담화 공동체 독자는 필자와 함께 담화를 생산하는 존재라는 점에서 위상이 근본적으로 다르다. 앞의 세 독자가 필자와 독자를 가르는 선의 어느 한쪽에 머물렀다면, 담화 공동체 독자는 그 선 자체를 흐리게 만드는 셈이다.</p>
+<p>그러나 독자를 담화 공동체로 보는 관점에는 한계도 지적된다. 첫째, 이 개념은 공동체를 강조한 나머지 독자를 동질적이고 단일한 집단, 또는 그러한 가치·신념·관습의 체계로 단순화한다는 점이다. 한 공동체에 속한 독자라 하더라도 저마다 다른 처지와 관점을 지닐 수 있는데, 이를 하나의 체계로 묶어 버리면 공동체를 이루고 담화에 참여하는 실제 독자들의 다양성을 충분히 설명하지 못한다. 둘째, 이 개념은 학문적 글쓰기나 학문 공동체를 설명하기에는 적합하지만, 텍스트를 생산하고 소비하는 데 뚜렷한 관습이나 규약을 갖추지 못한 공동체를 이해하거나 설명하기에는 적절하지 않은 경우가 많다는 점이다. 공유된 규약이 분명할수록 잘 들어맞는 개념이라는 점이, 거꾸로 그렇지 않은 영역에서는 약점이 되는 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 표제와 부제로 가장 적절한 것은?</p>
+<ul>
+<li>① 독자 개념의 사전적 정의와 그 변화</li>
+<li>읽기 능력의 발달 단계를 중심으로</li>
+<li>② 독자 개념의 분류와 위상의 전환</li>
+<li>담화 공동체 독자의 등장과 그 의의를 중심으로</li>
+<li>③ 담화 공동체의 형성 과정과 해체</li>
+<li>공동체 구성원 간의 갈등을 중심으로</li>
+<li>④ 필자와 독자의 대립과 화해</li>
+<li>글쓰기 교육의 역사적 변천을 중심으로</li>
+<li>⑤ 독자 중심 읽기와 필자 중심 쓰기의 통합</li>
+<li>의미 수용의 효율성을 중심으로</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+글 전체를 보면, 1문단에서 독자를 자아·타자(수신자·허구적)로 <em>분류</em>하고, 2~4문단에서 담화 공동체 독자가 등장해 필자와 대등한 위상으로 <em>전환</em>되는 과정을, 5문단에서 그 한계를 다뤄요. 그러니 "독자 개념의 분류와 위상의 전환"을 표제로, "담화 공동체 독자의 등장과 그 의의"를 부제로 삼은 ②가 가장 적절합니다. ①의 '읽기 능력 발달', ③의 '공동체 해체·갈등', ④의 '교육의 역사적 변천', ⑤의 '수용의 효율성'은 모두 글에 없는 내용이라 표제·부제가 될 수 없어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠～㉢에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 필자와 독자를 구별하지 않는 반면, ㉡과 ㉢은 둘을 뚜렷이 구별한다.</li>
+<li>② ㉡은 필자에 의해 상상으로 구성되는 데 비해, ㉠과 ㉢은 외부에 실재하는 독자만을 가리킨다.</li>
+<li>③ ㉢은 필자와 대등한 담화 생산자인 데 비해, ㉠과 ㉡은 의미를 수용하는 자리에 놓이는 독자이다.</li>
+<li>④ ㉠과 ㉡은 담화 공동체의 규약을 공유하지 않는 반면, ㉢은 그 규약을 새로 만들어 낸다.</li>
+<li>⑤ ㉠과 ㉢은 한 개인이 동시에 여럿일 수 없으나, ㉡은 동시에 여럿일 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>2번 — 정답 ③</strong>
+㉢ 담화 공동체 독자는 "필자와 대등한 위상"의 <em>공동 담화 생산자</em>(3문단)이고, ㉠ 자아 독자·㉡ 타자 독자는 의미를 <em>수용</em>하는 쪽에 놓인 전통적 독자(1·2문단)예요. 그러니 ③이 적절합니다. ① 필자·독자를 구별하지 않는 것은 ㉠이 아니라 ㉢ 관점이고, ② 상상으로 구성되는 것은 타자 독자 중 <em>허구적 독자</em>일 뿐 ㉠·㉢이 아니며, ④ 담화 공동체의 규약은 ㉢이 '새로 만들어 내는' 것이 아니라 공유하는 것이고, ⑤ 한 개인이 동시에 여럿일 수 있는 것은 담화 공동체(㉢ 쪽)에 관한 서술이라 ㉠·㉢을 그렇게 묶을 수 없어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생이 '담화 공동체 독자' 개념에 대해 비판한다고 할 때, 비판 내용으로 적절한 것만을 〈보기〉에서 있는 대로 고른 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+ㄱ. 같은 공동체에 속한 독자라도 가치관이나 처지가 저마다 다를 수 있을 텐데, 독자를 동질적인 집단으로만 묶어 버리면 그 차이를 설명할 수 있는가?
+ㄴ. 필자가 독자와 지식·표현 방식을 공유한다고 했는데, 그렇다면 필자가 독자를 전혀 고려하지 않고 쓴 글은 담화가 아니라는 뜻인가?
+ㄷ. 글을 주고받는 관습이 분명하지 않은 모임에서도 사람들은 글을 쓰고 읽을 텐데, 이런 경우까지 담화 공동체 개념으로 설명할 수 있는가?
+ㄹ. 필자와 독자가 대등한 담화 생산자라면, 한 편의 글에서 누가 필자이고 누가 독자인지 구별하는 일 자체가 불가능해지는 것은 아닌가?</p>
+</blockquote>
+<ul>
+<li>① ㄱ, ㄴ</li>
+<li>② ㄱ, ㄷ</li>
+<li>③ ㄷ, ㄹ</li>
+<li>④ ㄱ, ㄴ, ㄹ</li>
+<li>⑤ ㄴ, ㄷ, ㄹ</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>3번 — 정답 ②</strong>
+5문단의 두 한계가 비판의 근거예요. ㄱ은 독자를 <em>동질적 집단으로 단순화</em>한다는 첫째 한계(다양성 설명 못 함)와 맞고, ㄷ은 <em>관습·규약이 분명하지 않은 공동체</em>를 설명하기 어렵다는 둘째 한계와 맞으니 둘 다 적절한 비판이라 ②가 정답입니다. ㄴ은 "독자를 고려하지 않은 글은 담화가 아니냐"고 묻는데, 글은 그런 주장을 한 적이 없어 허수아비 비판이고, ㄹ은 필자·독자가 대등하다는 서술을 "구별 자체가 불가능"으로 과장한 것이라 적절한 비판으로 보기 어려워요. 곧 ㄱ·ㄷ은 <em>지문 5문단이 스스로 인정한 두 한계</em>를 그대로 겨냥하지만, ㄴ·ㄹ은 지문이 펴지도 않은 주장(독자 미고려=비담화)·하지도 않은 단정(대등=구별 불가)을 전제로 삼아 공격하므로, 지문 근거에 닿지 못하는 빗나간 비판이에요.</p>
+<p><strong>4번 [3점] — 정답 ③</strong>
+〈보기〉의 독자는 <em>필자가 상상으로 빚어낸</em> 존재이고, 의미는 <em>필자가 마련해 전달</em>한다고 보죠. 이는 윗글에서 의미의 생산 주체와 수용 독자를 구별하는 전통적 관점(2문단), 특히 허구적 독자(1문단)에 가까워요. 그런데 ③은 〈보기〉의 독자가 "필자와 함께 의미를 구성"해 담화 공동체 독자와 <em>위상이 같다</em>고 했는데, 〈보기〉는 의미를 필자가 마련해 <em>전달</em>한다고 못 박았으니 정반대예요. 그래서 ③이 적절하지 않아 정답입니다. ①②④⑤는 〈보기〉가 허구적 독자·구별 관점에 서 있고, 담화 공동체 독자와는 위상이 다르다는 점을 바르게 짚었어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉의 견해를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구자는 독자를 다음과 같이 본다. 글을 쓰는 동안 필자의 머릿속에는 자신의 글을 읽어 줄 독자의 상이 떠오르며, 필자는 그 상에 맞추어 내용과 표현을 조절한다. 이때 그 독자는 필자가 자신의 목적을 이루기 위해 상상으로 빚어낸 존재일 뿐, 글이 완성된 뒤 그것을 읽는 실제 사람과 반드시 일치하지는 않는다. 그에 따르면 글의 의미는 어디까지나 필자가 마련하여 독자에게 전달하는 것이다.</p>
+</blockquote>
+<ul>
+<li>① 〈보기〉의 독자는 필자가 자신의 필요에 따라 머릿속에서 구성한다는 점에서, 윗글의 허구적 독자와 통하는 면이 있군.</li>
+<li>② 〈보기〉는 의미를 필자가 마련해 전달하는 것으로 본다는 점에서, 의미의 생산 주체와 수용 독자를 구별하는 관점에 서 있군.</li>
+<li>③ 〈보기〉의 독자는 필자와 함께 의미를 구성하는 자리에 놓인다는 점에서, 윗글의 담화 공동체 독자와 위상이 같군.</li>
+<li>④ 〈보기〉가 독자를 필자에 의해 조절의 대상이 되는 상으로 본다면, 담화 공동체 독자 관점은 독자를 담화 생산에 참여하는 주체로 보겠군.</li>
+<li>⑤ 〈보기〉의 독자가 실제 사람과 일치하지 않을 수 있다는 점은, 외부에 실재하며 글쓰기에 영향을 주는 수신자 독자와 구별되는 특징이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>자아 독자 / 타자 독자</strong>: 필자 자신을 독자로 보는 것이 자아 독자, 필자 이외의 타인을 독자로 보는 것이 타자 독자.</li>
+<li><strong>수신자 독자 / 허구적 독자</strong>: 외부에 실재하며 글쓰기에 영향을 주는 독자가 수신자 독자, 필자가 머릿속에서 상상으로 빚어낸 독자가 허구적 독자.</li>
+<li><strong>담화 공동체 독자</strong>: 필자와 함께 텍스트를 생성하며 의미를 구성하는, 필자와 대등한 위상의 공동 담화 생산자.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>독자 개념</th>
+<th>필자와의 관계</th>
+<th>의미에 대한 자리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자아 독자</td>
+<td>필자 자신</td>
+<td>점검·수용</td>
+</tr>
+<tr>
+<td>수신자 독자</td>
+<td>외부의 실제 타인</td>
+<td>영향은 주되 수용하는 쪽</td>
+</tr>
+<tr>
+<td>허구적 독자</td>
+<td>필자가 상상으로 구성</td>
+<td>필자에 의해 구성됨</td>
+</tr>
+<tr>
+<td>담화 공동체 독자</td>
+<td>필자와 대등</td>
+<td>함께 생산</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>전통적 분류에서 독자는 필자의 <em>맞은편</em>에 있었지만, 담화 공동체 독자는 필자와 <em>같은 자리</em>에서 의미를 빚어요. 그래서 '독자 개념의 지도'가 새로 그려진 거예요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>타자 독자는 어떻게 다시 나뉘나요?</div><div class='qa-a'>외부에 실재하며 글쓰기에 영향을 주는 수신자 독자와, 필자가 상상으로 구성한 허구적 독자로 나뉩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>담화 공동체 독자가 필자와 '대등하다'고 하는 까닭은?</div><div class='qa-a'>의미를 수용만 하는 것이 아니라 담화 형성에 참여하는 공동의 생산자이기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>담화 공동체 독자 개념의 두 한계는?</div><div class='qa-a'>독자를 동질적 집단으로 단순화해 다양성을 설명하지 못하는 점, 그리고 관습·규약이 뚜렷하지 않은 공동체를 설명하기 어려운 점입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2020학년도 6월 [19~22]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>고대 그리스 시대의 사람들은 신에 의해 우주가 운행된다고 믿는 결정론적 세계관 속에서 신에 대한 두려움이나, 신이 야기한다고 생각되는 자연재해나 천체 현상 등에 대한 두려움을 떨치지 못했다. 에피쿠로스는 당대의 사람들이 이러한 잘못된 믿음에서 벗어나도록 하는 것이 중요하다고 보았고, 이를 위해 인간이 행복에 이를 수 있도록 자연학을 바탕으로 자신의 사상을 전개하였다.</p>
+<p>에피쿠로스는 신의 존재는 인정하나 신의 존재 방식이 인간이 생각하는 것과는 다르다고 보고, 신은 우주들 사이의 중간 세계에 살며 인간사에 개입하지 않는다는 ㉠이신론(理神論)적 관점을 주장한다. 그는 불사하는 존재인 신은 최고로 행복한 상태이며, 다른 어떤 것에게도 고통을 주지 않고, 모든 고통은 물론 분노와 호의와 같은 것으로부터 자유롭다고 말한다. 따라서 에피쿠로스는 인간의 세계가 신에 의해 결정되지 않으며, 인간의 행복도 자율적 존재인 인간 자신에 의해 완성된다고 본다.</p>
+<p>한편 에피쿠로스는 인간의 영혼도 육체와 마찬가지로 미세한 입자로 구성된다고 본다. 영혼은 육체와 함께 생겨나고 육체와 상호작용하며 육체가 상처를 입으면 영혼도 고통을 받는다. 더 나아가 육체가 소멸하면 영혼도 함께 소멸하게 되어 인간은 사후(死後)에 신의 심판을 받지 않으므로, 살아 있는 동안 인간은 사후에 심판이 있다고 생각하여 두려워할 필요가 없게 된다. 이러한 생각은 인간으로 하여금 죽음에 대한 모든 두려움에서 벗어나게 하는 근거가 된다.</p>
+<p>이러한 에피쿠로스의 ㉡자연학은 우주와 인간의 세계에 대한 비결정론적인 이해를 가능하게 한다. 이는 원자의 운동에 관한 에피쿠로스의 설명에서도 명확히 드러난다. 그는 원자들이 수직 낙하 운동이라는 법칙에서 벗어나기도 하여 비스듬히 떨어지고 충돌해서 튕겨 나가는 우연적인 운동을 한다고 본다. 그리고 우주는 이러한 원자들에 의해 이루어졌으므로, 우주 역시 우연의 산물이라고 본다. 따라서 우주와 인간의 세계에 신의 관여는 없으며, 인간의 삶에서도 신의 섭리는 찾을 수 없다고 한다. 에피쿠로스는 이러한 생각을 인간이 필연성에 얽매이지 않고 자신의 삶을 주체적으로 살아갈 수 있게 하는 자유 의지의 단초로 삼는다.</p>
+<p>에피쿠로스는 이를 토대로 자유로운 삶의 근본을 규명하고 인생의 궁극적 목표인 행복으로 이끄는 ㉢윤리학을 펼쳐 나간다. 결국 그는 인간이 신의 개입과 우주의 필연성, 사후 세계에 대한 두려움에서 벗어날 수 있도록 함으로써, 자신의 삶을 자율적이고 주체적으로 살 수 있는 길을 열어 주었다. 그리고 쾌락주의적 윤리학을 바탕으로 영혼이 안정된 상태에서 행복 실현을 추구할 수 있는 방안을 제시하였다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>윗글의 표제와 부제로 가장 적절한 것은?</p>
+<ul>
+<li>① 에피쿠로스 사상의 성립 배경</li>
+<li>인간과 자연의 관계를 중심으로</li>
+<li>② 에피쿠로스 사상의 목적과 의의</li>
+<li>신, 인간, 우주에 대한 이해를 중심으로</li>
+<li>③ 에피쿠로스 사상에 대한 비판과 옹호</li>
+<li>사상의 한계와 발전적 계승을 중심으로</li>
+<li>④ 에피쿠로스 사상을 둘러싼 논쟁과 이견</li>
+<li>당대 세계관과의 비교를 중심으로</li>
+<li>⑤ 에피쿠로스 사상의 현대적 수용과 효용성</li>
+<li>행복과 쾌락의 상관성을 중심으로</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>19번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>㉠～㉢에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 인간이 두려움을 갖는 이유를, ㉡과 ㉢은 신에 대한 의존에서 벗어나게 하는 방법을 제시한다.</li>
+<li>② ㉠은 우주가 신에 의해 운행된다고 믿는 근거를, ㉡과 ㉢은 인간의 사후에 대해 탐구하는 방법을 제시한다.</li>
+<li>③ ㉠과 ㉡은 인간이 영혼과 육체의 관계를 탐구하는 이유를, ㉢은 모든 두려움에서 벗어나는 방법을 제시한다.</li>
+<li>④ ㉠과 ㉡은 인간이 잘못된 믿음에서 벗어날 수 있는 근거를, ㉢은 행복에 이르도록 하는 방법을 제시한다.</li>
+<li>⑤ ㉠과 ㉡은 인간의 존재 이유와 존재 위치에 대한 탐색의 결과를, ㉢은 인간이 우주의 근원을 연구하는 방법을 제시한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>20번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>21</div><div class='q-stem'></div></div>
+<p>윗글을 읽은 학생이 '에피쿠로스'에 대해 비판한다고 할 때, 비판 내용으로 적절한 것만을 〈보기〉에서 있는 대로 고른 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+ㄱ. 신이 분노와 호의로부터 자유로운 상태라면 인간의 세계에 개입을 하지 않는다는 뜻일 텐데, 왜 신의 섭리에 따라 인간의 삶을 이해하려고 하는가?
+ㄴ. 원자가 법칙에서 벗어나 우연적인 운동을 한다는 것은 인과 관계 없이 뜻하지 않게 움직인다는 뜻일 텐데, 그것이 자유 의지의 단초가 될 수 있는가?
+ㄷ. 인간이 죽음에 대해 두려움을 느낀다면 죽음에 이르는 고통 때문일 수도 있을 텐데, 사후에 대한 두려움을 떨쳐 버리는 것만으로 그것이 해소될 수 있는가?
+ㄹ. 인간이 자연재해를 무서워한다면 자연재해 그 자체 때문일 수도 있을 텐데, 신이 일으키지 않았다고 해서 자연재해에 대한 두려움에서 벗어날 수 있는가?</p>
+</blockquote>
+<ul>
+<li>① ㄱ, ㄴ</li>
+<li>② ㄱ, ㄹ</li>
+<li>③ ㄷ, ㄹ</li>
+<li>④ ㄱ, ㄴ, ㄷ</li>
+<li>⑤ ㄴ, ㄷ, ㄹ</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>21번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 '에피쿠로스'의 사상과 〈보기〉에 나타난 생각을 비교한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+신은 인간의 세계에 속해 있지는 않으나, 모든 일의 목적인 존재라네. 하늘과 땅 그리고 바다에 있는 모든 것들의 원인이며, 일체의 훌륭함에 있어서도 탁월한 존재이지. 언제나 신은 필연성을 따르는 지성을 조력자로 삼아 성장과 쇠퇴, 분리와 결합에 있어 모든 것들을 바르고 행복한 상태에 이르도록 이끈다네.</p>
+</blockquote>
+<ul>
+<li>① 신을 '모든 것들의 원인'으로 보는 〈보기〉의 생각은, 신이 '인간사에 개입'한다는 것을 부정하는 에피쿠로스의 사상과 차이점이 있군.</li>
+<li>② 신이 '지성'을 조력자로 삼아 모든 것들을 이끈다고 보는 〈보기〉의 생각은, 우주를 '우연의 산물'로 보는 에피쿠로스의 사상과 차이점이 있군.</li>
+<li>③ 신을 '모든 일의 목적인 존재'로 보는 〈보기〉의 생각과 신이 '불사하는 존재'라고 보는 에피쿠로스의 사상은 신의 존재를 인정한다는 공통점이 있군.</li>
+<li>④ 신이 '모든 것들'을 '바르고 행복한 상태'에 도달하게 한다는 〈보기〉의 생각은, 행복이 '인간 자신에 의해 완성'된다고 본 에피쿠로스의 사상과 차이점이 있군.</li>
+<li>⑤ 신이 '인간의 세계'에 속해 있지 않다고 보는 〈보기〉의 생각과 신이 '중간 세계'에 있다고 본 에피쿠로스의 사상은 신의 영향력이 인간 세계의 외부에서 온다고 보는 공통점이 있군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>22번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>독자를 담화 구성의 공동 참여자로 보는 관점은 담화 공동체의 구성원들이 생산하는 다양한 유형의 텍스트들이 서로 연계되어 있다고 본다는 점에서 상호 텍스트성과 밀접한 관계를 맺는다. 상호 텍스트성이란 모든 텍스트가 다른 텍스트와 직접 또는 간접으로 연결되어, 그 의미가 다른 텍스트와의 관련성 속에서 찾아질 수 있다는 것을 말한다. 이 개념에 따르면 상호 텍스트성을 지니지 않은 텍스트란 존재하지 않는다. 어떤 글도 무에서 홀로 솟아난 것이 아니라, 앞선 글들이 이루어 놓은 그물 위에서 쓰이고 읽히기 때문이다. 담화 공동체가 독자를 공동 생산자로 끌어들일 수 있는 것도, 한 구성원이 쓴 글이 같은 공동체의 다른 글들과 얽혀 의미를 주고받는다고 보기 때문이다.</p>
+<p>상호 텍스트성을 정교하게 체계화한 학자로 포터가 거론된다. 그는 상호 텍스트성을 ㉠<u>반복</u>과 ㉡<u>전제</u>라는 두 유형으로 설명한다. ㉠은 한 텍스트가 다른 텍스트의 내용을 되풀이함으로써 그 의미를 다른 텍스트에 기대게 되는 양상을 가리킨다. 어떤 글이 앞선 글의 표현이나 주장을 끌어다 쓰는 순간, 그 글의 의미는 끌어온 텍스트와의 관계 속에서야 온전히 드러난다. 인용이나 요약, 익숙한 표현의 차용이 모두 이러한 반복에 해당한다. ㉡은 텍스트의 이면에 독자나 맥락 등에 관한 여러 정보가 미리 깔려 있는 양상을 가리킨다. 글은 말해지지 않은 배경을 바탕으로 쓰이며, 필자는 독자가 그 배경을 이미 알고 있으리라 여기고 일부를 생략한 채 글을 전개한다. 그 배경이 무엇인지는 다른 텍스트들 및 담화 공동체 구성원이 공유하는 생각·지식·신념의 체계에 따라 달라진다.</p>
+<p>이 지점에서 ⓐ<u>상호 텍스트성을 지니지 않은 텍스트가 존재하지 않는 까닭은 무엇인가</u>라는 물음이 제기된다. 포터의 설명을 따라가면 그 답을 얻을 수 있다. 어떤 글이 앞선 글을 전혀 되풀이하지 않는다고 하더라도, 그 글은 여전히 어떤 독자와 맥락을 전제한 채 쓰인다. 곧 반복이 없는 글은 있을 수 있어도, 전제가 없는 글은 있을 수 없다. 가령 아무런 인용 없이 새로운 주장을 펴는 글이라 하더라도, 그 글은 독자가 어떤 언어와 개념을 알고 있다는 것을 전제하지 않고서는 한 문장도 이루어질 수 없다. 모든 글은 누군가가 어떤 상황에서 읽으리라는 전제 위에서 의미를 빚으며, 그 전제는 공동체가 공유하는 체계에서 길어 올려진다. 따라서 어떤 텍스트든 적어도 전제를 통해 다른 텍스트 및 공동체와 얽히게 되고, 상호 텍스트성에서 벗어난 텍스트란 성립하지 않는다.</p>
+<p>담화 공동체는 바로 이 반복과 전제를 통해 상호 텍스트적으로 연결되는 집단이다. 이 연결은 몇 가지 성질을 지닌다. 첫째는 편재성이다. 상호 텍스트성은 일부 특별한 글에만 있는 것이 아니라 모든 텍스트에 두루 깃들어 있다. 둘째는 의존성이다. 한 텍스트의 의미는 그 자체로 닫혀 있지 않고 다른 텍스트와의 관련 속에서 비로소 정해지며, 같은 문장도 어떤 텍스트 곁에 놓이느냐에 따라 다르게 읽힌다. 셋째는 공유성이다. 전제를 이루는 지식과 신념의 체계는 개인이 사사로이 정하는 것이 아니라 공동체가 함께 나누는 것이어서, 필자와 독자가 같은 공동체에 속할 때 비로소 그 전제가 통한다. 넷째는 가변성이다. 같은 표현이라도 어떤 공동체에 놓이느냐에 따라 전제되는 정보가 달라지므로, 텍스트의 의미는 공동체에 따라 다르게 구성될 수 있다. 한 공동체에서는 자연스러운 줄임말이 다른 공동체에서는 풀이가 필요한 까닭이 여기에 있다.</p>
+<p>이러한 집단 속에서 독자는 단순히 완성된 글을 받아 드는 존재가 아니라, 필자의 담화 생산에 참여하는 존재로서의 위상을 얻는다. 독자가 공동체의 전제를 공유하고 있기에 필자는 모든 것을 일일이 풀어 쓰지 않고도 글을 이룰 수 있으며, 독자는 그 전제를 메우며 의미를 함께 완성한다. 곧 글에 직접 적히지 않은 부분을 독자가 공동체의 체계로 채워 넣을 때, 그 독자는 의미의 수용자에 그치지 않고 생산에 가담하는 셈이다. 상호 텍스트성은 이렇게 독자를 글의 의미 생산 안으로 끌어들이는 통로가 된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 상호 텍스트성은 일부 특별한 텍스트에만 나타나는 성질이다.</li>
+<li>② 한 텍스트의 의미는 다른 텍스트와의 관련 없이 그 자체로 닫혀 정해진다.</li>
+<li>③ 전제를 이루는 지식과 신념의 체계는 담화 공동체가 함께 공유한다.</li>
+<li>④ 반복이 없는 글은 어떤 텍스트와도 얽히지 않으므로 상호 텍스트성을 지니지 않는다.</li>
+<li>⑤ 같은 표현은 어느 공동체에 놓이든 늘 동일한 정보를 전제한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong>
+4문단에서 전제를 이루는 지식·신념의 체계는 "개인이 사사로이 정하는 것이 아니라 공동체가 함께 나눈다"(공유성)라고 했으니 ③이 일치해요. ① 상호 텍스트성은 <em>모든</em> 텍스트에 두루 깃든다(편재성)고 했으니 "일부 특별한 텍스트에만"은 어긋나고, ② 텍스트의 의미는 <em>다른 텍스트와의 관련 속에서</em> 정해진다(의존성)고 했으니 "그 자체로 닫혀"는 반대예요. ④ 반복이 없어도 <em>전제</em>를 통해 얽히므로 상호 텍스트성을 지니며, ⑤ 같은 표현도 공동체에 따라 전제가 <em>달라진다</em>(가변성)고 했으니 "늘 동일한 정보"는 틀려요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠은 한 텍스트가 다른 텍스트의 내용을 되풀이하여 그 의미를 다른 텍스트에 기대게 하는 양상이다.</li>
+<li>② ㉡은 텍스트의 이면에 독자나 맥락에 관한 정보가 미리 깔려 있는 양상이다.</li>
+<li>③ ㉡에서 전제되는 정보는 공동체가 공유하는 생각·지식·신념의 체계에 따라 달라진다.</li>
+<li>④ ㉠이 없는 텍스트는 있을 수 있지만, ㉡이 없는 텍스트는 있을 수 없다.</li>
+<li>⑤ ㉠과 ㉡은 서로 배타적이어서, 한 텍스트에 둘이 함께 나타날 수는 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+㉠ 반복과 ㉡ 전제는 한 텍스트에 함께 깃들 수 있어요. 3문단은 어떤 글이 반복을 하든 안 하든 <em>전제는 늘 있다</em>고 했고, 반복이 일어나는 글에도 전제가 깔리니, 둘은 서로 배타적이지 않아요. 그래서 "둘이 함께 나타날 수 없다"는 ⑤가 적절하지 않아 정답입니다. ①②는 2문단의 반복·전제 정의 그대로이고, ③은 전제의 공동체 의존(2·4문단), ④는 "반복이 없는 글은 있어도 전제가 없는 글은 없다"(3문단)에 부합해요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>윗글을 참고할 때, ⓐ에 대한 답으로 가장 적절한 것은?</p>
+<ul>
+<li>① 모든 글은 앞선 글의 표현을 빠짐없이 되풀이하여 쓰이기 때문이다.</li>
+<li>② 어떤 글도 독자와 맥락을 전제하지 않고는 쓰일 수 없기 때문이다.</li>
+<li>③ 텍스트의 의미는 공동체와 무관하게 그 자체로 확정되기 때문이다.</li>
+<li>④ 반복이 일어나야만 텍스트가 비로소 의미를 가질 수 있기 때문이다.</li>
+<li>⑤ 담화 공동체의 규약이 모든 텍스트의 표현을 동일하게 만들기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong>
+ⓐ의 물음은 "왜 상호 텍스트성 없는 텍스트가 없는가"예요. 3문단은 반복이 없는 글은 있을 수 있어도 <em>전제가 없는 글은 없으며</em>, 모든 글은 어떤 독자와 맥락을 전제한 채 쓰인다고 답하죠. 그러니 ②가 정답입니다. ① 모든 글이 앞선 글을 <em>빠짐없이 되풀이</em>한다는 것은 글에 없는 과장이고(반복은 없을 수도 있음), ③ 의미가 공동체와 <em>무관하게</em> 확정된다는 것은 의존성·공유성에 어긋나며, ④ 반복이 <em>있어야만</em> 의미가 생긴다는 것도 글의 논지와 반대예요. ⑤ 규약이 표현을 <em>동일하게</em> 만든다는 내용은 글에 없습니다.</p>
+<p><strong>8번 [3점] — 정답 ①</strong>
+학술지 논문이 다른 논문의 실험 결과를 끌어와 주장을 뒷받침하는 것은, 한 텍스트가 다른 텍스트의 내용을 되풀이해 의미를 기대는 <em>반복</em>(㉠)의 사례예요. 그래서 ①이 적절합니다. ② 용어를 풀이하지 않는 것은 같은 분야 독자가 뜻을 안다는 <em>전제</em>가 깔린 것이지 "전제 없이 쓰임"이 아니고, ③ 잡지에서 풀어 설명하는 것은 오히려 의미가 <em>공동체에 따라 다르게</em> 구성됨(가변성)을 보여 주니 "공동체와 무관하게 고정"은 반대예요. ④ 연구자들이 용어 뜻을 공유하는 것은 전제가 <em>개인이 아니라 공동체</em>에서 온다는 공유성의 사례이고, ⑤ 같은 용어가 두 매체에서 <em>다르게</em> 풀이된다는 점은 "어느 공동체에 놓이든 같은 정보를 전제"한다는 진술과 정반대입니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 의학 학술지에 실린 논문은 본문 곳곳에서 앞서 발표된 다른 논문들의 실험 결과를 끌어와 자신의 주장을 뒷받침한다. 또한 이 논문은 '면역'이나 '항체'와 같은 용어의 뜻을 따로 풀이하지 않은 채, 같은 분야 연구자라면 누구나 그 뜻을 알고 있으리라 여기고 글을 전개한다. 한편 같은 내용을 일반 독자를 위한 교양 잡지에 옮겨 실을 때에는, 그 용어들의 뜻을 일일이 풀어 설명하고 비유를 곁들인다.</p>
+</blockquote>
+<ul>
+<li>① 학술지 논문이 다른 논문들의 실험 결과를 끌어오는 것은, 텍스트가 반복을 통해 다른 텍스트에 의미를 기대는 모습을 보여 주는군.</li>
+<li>② 학술지 논문이 용어의 뜻을 풀이하지 않는 것은, 텍스트가 어떤 전제도 깔지 않은 채 쓰일 수 있음을 보여 주는군.</li>
+<li>③ 같은 내용을 교양 잡지에서 풀어 설명하는 것은, 텍스트의 의미가 공동체와 무관하게 고정되어 있음을 보여 주는군.</li>
+<li>④ 학술지의 연구자들이 용어의 뜻을 공유하는 것은, 텍스트의 전제가 개인에 의해 사사로이 정해짐을 보여 주는군.</li>
+<li>⑤ 같은 용어가 학술지와 교양 잡지에서 다르게 풀이되는 것은, 텍스트가 어느 공동체에 놓이든 같은 정보를 전제함을 보여 주는군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>상호 텍스트성</strong>: 모든 텍스트가 다른 텍스트와 연결되어, 그 의미가 다른 텍스트와의 관련성 속에서 찾아진다는 성질.</li>
+<li><strong>반복</strong>: 한 텍스트가 다른 텍스트의 내용을 되풀이하여 그 의미를 다른 텍스트에 기대게 되는 양상.</li>
+<li><strong>전제</strong>: 텍스트의 이면에 독자·맥락에 관한 정보가 미리 깔려 있는 양상. 공동체가 공유하는 체계에 따라 달라짐.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>상호 텍스트성의 성질</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>편재성</td>
+<td>모든 텍스트에 두루 깃들어 있음</td>
+</tr>
+<tr>
+<td>의존성</td>
+<td>의미가 다른 텍스트와의 관련 속에서 정해짐</td>
+</tr>
+<tr>
+<td>공유성</td>
+<td>전제의 체계를 공동체가 함께 나눔</td>
+</tr>
+<tr>
+<td>가변성</td>
+<td>공동체에 따라 전제되는 정보가 달라짐</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em>반복</em>은 없을 수도 있지만 <em>전제</em>는 어떤 글에도 깔려 있어요. 그래서 "상호 텍스트성 없는 글은 없다"는 결론이 나옵니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>포터가 나눈 상호 텍스트성의 두 유형은?</div><div class='qa-a'>다른 텍스트의 내용을 되풀이하는 반복과, 독자·맥락 정보를 미리 까는 전제입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>반복이 없는 글도 상호 텍스트성을 지니는 까닭은?</div><div class='qa-a'>반복이 없어도 독자와 맥락을 전제한 채 쓰이며, 그 전제로 다른 텍스트·공동체와 얽히기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 표현의 의미가 공동체에 따라 달라지는 성질을 무엇이라 하나요?</div><div class='qa-a'>가변성입니다. 전제되는 정보가 공동체마다 다르기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2019학년도 수능 [39~42]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>두 명제가 모두 참인 것도 모두 거짓인 것도 가능하지 않은 관계를 모순 관계라고 한다. 예를 들어, 임의의 명제를 P라고 하면 P와 ～P는 모순 관계이다.(기호 ‘～’은 부정을 나타낸다.) P와 ～P가 모두 참인 것은 가능하지 않다는 법칙을 무모순율이라고 한다. 그런데 “㉠다보탑은 경주에 있다.”와 “㉡다보탑은 개성에 있을 수도 있었다.”는 모순 관계가 아니다. 현실과 다르게 다보탑을 경주가 아닌 곳에 세웠다면 다보탑의 소재지는 지금과 달라졌을 것이다. 철학자들은 이를 두고, P와 ～P가 모두 참인 혹은 모두 거짓인 가능세계는 없지만 다보탑이 개성에 있는 가능세계는 있다고 표현한다.</p>
+<p>‘가능세계’의 개념은 일상 언어에서 흔히 쓰이는 필연성과 가능성에 관한 진술을 분석하는 데 중요한 역할을 한다. ‘P는 가능하다’는 P가 적어도 하나의 가능세계에서 성립한다는 뜻이며, ‘P는 필연적이다’는 P가 모든 가능세계에서 성립한다는 뜻이다. “만약 Q이면 Q이다.”를 비롯한 필연적인 명제들은 모든 가능세계에서 성립한다. “다보탑은 경주에 있다.”와 같이 가능하지만 필연적이지는 않은 명제는 우리의 현실세계를 비롯한 어떤 가능세계에서는 성립하고 또 어떤 가능세계에서는 성립하지 않는다.</p>
+<p>가능세계를 통한 담론은 우리의 일상적인 몇몇 표현들을 보다 잘 이해하는 데 도움이 된다. 다음 상황을 생각해 보자. 나는 현실에서 아침 8시에 출발하는 기차를 놓쳤고, 지각을 했으며, 내가 놓친 기차는 제시간에 목적지에 도착했다. 그리고 나는 “만약 내가 8시 기차를 탔다면, 나는 지각을 하지 않았다.”라고 주장한다. 그런데 전통 논리학에서는 “만약 A이면 B이다.”라는 형식의 명제는 A가 거짓인 경우에는 B의 참 거짓에 상관없이 참이라고 규정한다. 그럼에도 ⓐ내가 만약 그 기차를 탔다면 여전히 지각을 했을 것이라고 주장하지는 않는 이유는 무엇일까? 내가 그 기차를 탄 가능세계들을 생각해 보면 그 이유를 알 수 있다. 그 가능세계 중 어떤 세계에서 나는 여전히 지각을 한다. 가령 내가 탄 그 기차가 고장으로 선로에 멈춰 운행이 오랫동안 지연된 세계가 그런 예이다. 하지만 내가 기차를 탄 세계들 중에서, 내가 기차를 타고 별다른 이변 없이 제시간에 도착한 세계가 그렇지 않은 세계보다 우리의 현실세계와의 유사성이 더 높다. 일반적으로, A가 참인 가능세계들 중에 비교할 때, B도 참인 가능세계가 B가 거짓인 가능세계보다 현실세계와 더 유사하다면, 현실세계의 나는 A가 실현되지 않은 경우에, 만약 A라면 ～B가 아닌 B이라고 말할 수 있다.</p>
+<p>가능세계는 다음의 네 가지 성질을 갖는다. 첫째는 가능세계의 일관성이다. 가능세계는 명칭 그대로 가능한 세계이므로 어떤 것이 가능하지 않다면 그것이 성립하는 가능세계는 없다. 둘째는 가능세계의 포괄성이다. 이것은 어떤 것이 가능하다면 그것이 성립하는 가능세계는 존재한다는 것이다. 셋째는 가능세계의 완결성이다. 어느 세계에서든 임의의 명제 P에 대해 “P이거나 ～P이다.”라는 배중률이 성립한다. 즉 P와 ～P 중 하나는 반드시 참이라는 것이다. 넷째는 가능세계의 독립성이다. 한 가능세계는 모든 시간과 공간을 포함해야만 하며, 연속된 시간과 공간에 포함된 존재들은 모두 동일한 하나의 세계에만 속한다. 한 가능세계 W1의 시간과 공간이, 다른 가능세계 W2의 시간과 공간으로 이어질 수는 없다. W1과 W2는 서로 시간과 공간이 전혀 다른 세계이다.</p>
+<p>가능세계의 개념은 철학에서 갖가지 흥미로운 질문과 통찰을 이끌어 내며, 그에 관한 연구 역시 활발히 진행되고 있다. 나아가 가능세계를 활용한 논의는 오늘날 인지 과학, 언어학, 공학 등의 분야로 그 응용의 폭을 넓히고 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>39</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 배중률은 모든 가능세계에서 성립한다.</li>
+<li>② 모든 가능한 명제는 현실세계에서 성립한다.</li>
+<li>③ 필연적인 명제가 성립하지 않는 가능세계가 있다.</li>
+<li>④ 무모순율에 의하면 P와 ～P가 모두 참인 것은 가능하다.</li>
+<li>⑤ 전통 논리학에 따르면 “만약 A이면 B이다.”의 참 거짓은 A의 참 거짓과 상관없이 결정된다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>40</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠이 성립하지 않는 가능세계가 존재한다.</li>
+<li>② “만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”가 성립하는 가능세계 중에는 ㉠이 거짓인 가능세계는 없다.</li>
+<li>③ ㉡과 “다보탑은 개성에 있지 않다.”는 모순 관계가 아니다.</li>
+<li>④ 만약 ㉡이 거짓이라면 어떤 가능세계에서도 다보탑이 개성에 있지 않다.</li>
+<li>⑤ ㉠과 ㉡은 현실세계에서 둘 다 참인 것이 가능하다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>41</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ⓐ에 대한 답으로 가장 적절한 것은?</p>
+<ul>
+<li>① 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 지각을 한 가능세계와 지각을 하지 않은 가능세계가 현실세계와의 유사성의 정도가 다르기 때문이다.</li>
+<li>② 내가 그 기차를 타지 않은 가능세계들끼리 비교할 때 기차 고장이 자주 일어나지 않는 가능세계가 현실세계와의 유사성이 높기 때문이다.</li>
+<li>③ 내가 그 기차를 탄 가능세계들끼리 비교할 때 내가 지각을 한 가능세계가 내가 지각을 하지 않은 가능세계에 비해 현실세계와의 유사성이 더 낮기 때문이다.</li>
+<li>④ 내가 그 기차를 탄 가능세계들끼리 비교할 때 그 가능세계들의 대다수에서 내가 지각을 하지 않았기 때문이다.</li>
+<li>⑤ 내가 그 기차를 탄 것이 현실세계에서 거짓이기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>42</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉를 이해한 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+명제 “모든 학생은 연필을 쓴다.”와 “어떤 학생도 연필을 쓰지 않는다.”는 반대 관계이다. 이 말은, 두 명제 다 참인 것은 가능하지 않지만, 둘 중 하나만 참이거나 둘 다 거짓인 것은 가능하다는 뜻이다.</p>
+</blockquote>
+<ul>
+<li>① 가능세계의 완결성과 독립성에 따르면, 모든 학생이 연필을 쓰는 가능세계가 존재한다는 것과 어떤 학생도 연필을 쓰지 않는 가능세계가 존재한다는 것 중 하나는 반드시 참이고, 그중 한 세계의 시간과 공간이 다른 세계로 이어질 수 없겠군.</li>
+<li>② 가능세계의 포괄성과 독립성에 따르면, “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 그 세계에 속한 한 명의 학생이 연필을 쓰는 가능세계들이 존재하고, 그 세계들의 시간과 공간은 서로 단절되어 있겠군.</li>
+<li>③ 가능세계의 완결성에 따르면, 어느 세계에서든 “어떤 학생은 연필을 쓴다.”와 “어떤 학생은 연필을 쓰지 않는다.” 중 하나는 반드시 참이겠군.</li>
+<li>④ 가능세계의 포괄성에 따르면, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 가능세계들이 있겠군.</li>
+<li>⑤ 가능세계의 일관성에 따르면, 학생들 중 절반은 연필을 쓰고 절반은 연필을 쓰지 않는 가능세계가 존재하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>독자는 글을 읽는 사람이라는 사전적 정의를 넘어, 필자와의 관계에 따라 여러 갈래로 나뉘는 개념으로 ⓐ<u>다루어진다.</u> 독자가 고정되고 독립된 실체가 아니라는 것은, 한 사람의 독자가 글쓰기 상황에 따라 서로 다른 자리에 놓일 수 있음을 뜻한다. 이때 독자를 가르는 데에는 두 개의 축이 ⓑ<u>쓰인다.</u> 하나는 독자가 필자 자신인가 아니면 필자 이외의 타인인가를 묻는 축이고, 다른 하나는 그 타인이 외부에 실제로 존재하는가 아니면 필자의 머릿속에 상상으로 존재하는가를 묻는 축이다. 두 축이 맞물리면서 독자는 몇 갈래의 유형으로 정돈된다.</p>
+<p>첫째 축에 따라 독자는 자아 독자와 타자 독자로 나뉜다. 자아 독자는 필자가 자기 글의 독자가 되어 스스로 읽고 점검하는 경우의 독자이며, 타자 독자는 필자 이외의 타인을 가리키는 독자이다. 둘째 축은 타자 독자에 ⓒ<u>적용된다.</u> 외부에 실제로 존재하면서 필자의 글쓰기에 영향을 미치는 독자를 ㉠<u>수신자 독자</u>라 하고, 필자가 글을 쓸 때 자신의 요구에 따라 머릿속에서 상상으로 구성한 존재를 ㉡<u>허구적 독자</u>라 한다. 수신자 독자가 글 바깥에 실재하는 데 비해 허구적 독자는 필자에 의해 빚어진다는 점에서, 두 독자는 실재성에서 갈린다. 수신자 독자는 필자가 마음대로 바꿀 수 없는 제약으로 작용하지만, 허구적 독자는 필자가 논의의 필요에 따라 세우거나 거두어들일 수 있다. 그러나 둘은 모두 필자가 의미를 마련해 건네는 상대라는 점에서는 같은 자리에 놓인다.</p>
+<p>이 분류 체계에 뒤늦게 더해진 것이 담화 공동체 독자이다. 담화 공동체는 담화의 관습이나 규약을 공유하며 특정한 쓰기·읽기 방식을 지니는 집단이다. 담화 공동체 독자는 필자와 함께 텍스트를 생성하며 의미를 구성하는 독자로서, 앞의 두 독자와 위상이 다르다. 수신자 독자나 허구적 독자가 필자가 건네는 의미를 받는 자리에 머문다면, 담화 공동체 독자는 필자와 대등하게 담화를 생산하는 자리에 선다. 의미를 생산하는 주체와 수용하는 독자를 구별하던 전제가, 이 독자에 이르러 흐려지는 것이다. 그리하여 담화 공동체 독자는 두 축으로 짜인 기존 분류의 어느 칸에도 그대로 들어가지 않고, 분류의 틀 바깥에서 그 틀을 다시 묻는 자리를 차지한다.</p>
+<p>㉢한 편의 칼럼을 예로 들어 이 갈래들을 ⓓ<u>견주어</u> 보자. 필자가 초고를 쓰며 어색한 문장을 스스로 고쳐 읽을 때, 그 자신은 자아 독자이다. 칼럼이 실릴 매체의 정해진 구독자층을 떠올리며 그들의 반응을 가늠해 표현을 다듬을 때, 그 구독자층은 수신자 독자이다. 그 구독자층은 필자가 글을 쓰기 전부터 정해져 있어 필자의 선택을 제약한다. 한편 필자가 "이 글을 처음 접하는 회의적인 사람"을 가정해 그를 설득하듯 논의를 펼친다면, 그 가정된 사람은 허구적 독자이다. 이 독자는 실제로 존재하지 않으며 오직 필자의 글 속에서만 자리를 얻는다. 그런데 그 칼럼이 특정 분야의 관습과 어휘, 논의 방식을 공유하는 전문가들 사이에서 쓰이고 읽히며 함께 논의를 ⓔ<u>발전시킨다면</u>, 그 전문가 집단은 담화 공동체 독자가 된다. 이때 필자는 그 분야에서 통용되는 용어를 굳이 풀이하지 않고, 구성원이라면 누구나 받아들일 만한 논의 방식을 자연스럽게 택한다. 그렇게 쓰인 글을 같은 공동체의 독자가 읽으며 자기 글로 이어 가거나 반박을 보태면, 독자는 그 칼럼의 의미를 함께 빚어 가는 자리에 서게 된다. 같은 글을 두고도 독자는 이렇게 여러 모습으로 나타나며, 그 모습들은 서로 배타적이지 않고 한 편의 글 안에 겹쳐 있을 수 있다.</p>
+<p>이처럼 독자 개념은 두 축에 따른 분류에서 출발하여 담화 공동체 독자의 등장으로 그 지도가 새로 그려졌다. 앞의 세 독자가 필자와 독자를 구별하는 구도 안에 놓였다면, 담화 공동체 독자는 그 구도 자체를 다시 묻게 한다. 독자를 어디에 놓느냐에 따라 같은 글의 의미가 누구의 것인지, 그리고 그 의미가 어떻게 만들어지는지에 대한 답도 달라지는 셈이다.</p>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈독자 개념 분류도〉 — 맨 위 '독자'에서 아래로 가지가 뻗는 나무 모양 도식. '독자'에서 두 갈래로 '자아 독자'와 '타자 독자'가 갈리고, '타자 독자'에서 다시 두 갈래로 '수신자 독자(외부·실재)'와 '허구적 독자(상상·구성)'가 갈린다. 그 오른쪽 옆에 점선 상자로 '담화 공동체 독자(필자와 대등한 공동 생산자)'를 두고, 이 상자에서 분류도 전체를 향해 굵은 화살표를 그려 '기존 범주에 변화를 일으킴'이라는 글귀를 단다.</figure></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 적절한 것은?</p>
+<ul>
+<li>① ㉠은 필자의 머릿속에서 상상으로 구성되고, ㉡은 외부에 실제로 존재한다.</li>
+<li>② ㉠은 필자와 대등하게 담화를 생산하고, ㉡은 의미를 수용하는 자리에 놓인다.</li>
+<li>③ ㉠과 ㉡은 모두 타자 독자에 속하며, 필자가 의미를 마련해 건네는 상대이다.</li>
+<li>④ ㉠과 ㉡은 모두 자아 독자에서 갈라져 나온 개념이다.</li>
+<li>⑤ ㉠은 담화의 관습을 공유하는 집단이고, ㉡은 그 집단에 속하지 않는 개인이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong>
+㉠ 수신자 독자와 ㉡ 허구적 독자는 모두 <em>타자 독자</em>에 속하고(2문단), 둘 다 "필자가 의미를 마련해 건네는 상대"라는 점에서 같은 자리에 놓인다고 했으니 ③이 적절합니다. ① 상상으로 구성되는 것은 ㉡이고 외부에 실재하는 것은 ㉠이라 바뀌었고, ② 필자와 대등하게 담화를 생산하는 것은 <em>담화 공동체 독자</em>이지 ㉠이 아니며, ④ ㉠·㉡은 자아 독자가 아니라 <em>타자 독자</em>에서 갈라져 나왔어요. ⑤ 담화의 관습을 공유하는 집단은 담화 공동체 독자라서 ㉠을 그렇게 볼 수 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉢에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 필자가 초고의 문장을 스스로 고쳐 읽는 장면을 통해 자아 독자를 보여 준다.</li>
+<li>② 매체의 정해진 구독자층을 떠올려 표현을 다듬는 장면을 통해 수신자 독자를 보여 준다.</li>
+<li>③ 가정된 회의적인 사람을 설득하듯 논의를 펼치는 장면을 통해 허구적 독자를 보여 준다.</li>
+<li>④ 전문가 집단과 관습·어휘를 공유하며 논의를 발전시키는 장면을 통해 담화 공동체 독자를 보여 준다.</li>
+<li>⑤ 하나의 글에는 오직 한 종류의 독자만이 관여함을 보여 줌으로써 독자 개념의 단일성을 강조한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+㉢은 한 편의 칼럼을 예로 들어, 같은 글에서 자아·수신자·허구적·담화 공동체 독자가 <em>여럿</em> 나타남을 보여 줘요. 4문단 끝에서 "같은 글을 두고도 독자는 여러 모습으로 나타난다"라고 못 박았죠. 그러니 "오직 한 종류의 독자만 관여"하며 "단일성을 강조"한다는 ⑤는 글의 취지와 정반대라 적절하지 않아 정답입니다. ①~④는 각각 자아·수신자·허구적·담화 공동체 독자를 보여 주는 장면을 바르게 짚었어요.</p>
+<p><strong>11번 [3점] — 정답 ④</strong>
+ⓓ는 오래 활동한 부원들과 줄임말·관행을 공유하며 <em>함께 후기의 의미를 채워</em> 갔으므로, 필자와 대등하게 담화를 생산하는 담화 공동체 독자예요(3문단·그림의 양방향 화살표). 그래서 ④가 정답입니다. ① ⓐ는 <em>필자 자신</em>을 독자로 삼은 자아 독자이지 타자 독자가 아니고, ② ⓑ는 누리집을 <em>실제로 방문하는</em> 사람이라 수신자 독자이지 허구적 독자가 아니며, ③ ⓒ는 <em>가상으로 설정한</em> 사람이라 허구적 독자이지 수신자 독자가 아니에요. ⑤ ⓓ는 의미를 건네받기만 하는 상대가 아니라 <em>함께 생산</em>하는 자리에 서므로, ⓐ~ⓓ의 위상이 모두 같다고 볼 수 없습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글과 〈보기〉를 참고하여, 〈보기〉의 학생이 떠올린 독자를 분석한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 학생이 동아리 활동 후기를 쓰며 다음과 같이 독자를 떠올렸다. 우선 글을 다 쓴 뒤 스스로 소리 내어 읽으며 어색한 곳을 고쳤다. 다음으로 이 후기가 올라갈 동아리 누리집을 실제로 방문하는 신입 부원들을 떠올리며, 그들이 알아듣기 쉽게 표현을 바꾸었다. 또 글 속에서는 "동아리에 관심 없는 친구"를 가상으로 설정해 그를 설득하는 말투를 썼다. 끝으로 이 동아리에서 오래 활동해 온 부원들끼리만 통하는 줄임말과 관행을 자연스럽게 끌어와, 그들과 함께 후기의 의미를 채워 갔다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 2]</span> 〈학생이 떠올린 네 독자 배치〉 — 가운데에 '학생(필자)'을 두고, 네 방향에 ⓐ 스스로 읽으며 고치는 자기 자신, ⓑ 누리집을 방문하는 신입 부원, ⓒ 가상으로 설정한 "관심 없는 친구", ⓓ 줄임말·관행을 공유하는 오랜 부원들을 각각 둔다. ⓐ~ⓓ에서 '학생'을 향하는 화살표를 그리되, ⓓ만은 양방향 화살표로 그려 '함께 의미를 만든다'는 글귀를 단다.</figure></p>
+</blockquote>
+<ul>
+<li>① ⓐ는 필자 이외의 타인을 떠올린 것이므로 타자 독자에 해당하겠군.</li>
+<li>② ⓑ는 필자가 머릿속에서 상상으로 구성한 것이므로 허구적 독자에 해당하겠군.</li>
+<li>③ ⓒ는 누리집을 실제로 방문하는 사람이므로 수신자 독자에 해당하겠군.</li>
+<li>④ ⓓ는 필자와 관습을 공유하며 함께 의미를 채워 가므로 담화 공동체 독자에 해당하겠군.</li>
+<li>⑤ ⓐ~ⓓ는 모두 필자가 의미를 건네기만 하는 상대이므로 위상이 서로 같겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 그는 손님을 정성껏 다루어 단골을 늘렸다.</li>
+<li>② ⓑ: 그 비석에는 오래된 글자가 또렷이 쓰여 있다.</li>
+<li>③ ⓒ: 새로 개발한 약은 두통에 빠르게 적용된다.</li>
+<li>④ ⓓ: 두 제품의 성능을 견주어 하나를 골랐다.</li>
+<li>⑤ ⓔ: 그 마을은 산업화 이후 빠르게 발전하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+ⓓ '견주어'는 <em>둘 이상을 서로 대어 비교한다</em>는 뜻이므로, 두 제품의 성능을 대어 비교한 ④의 '견주어'와 의미가 가장 가까워요. ① ⓐ '다루어진다'는 <em>어떤 대상으로 삼아 논의된다</em>는 뜻인데, ①의 '다루어'는 <em>사람을 대한다</em>는 뜻이라 달라요. ② ⓑ '쓰인다'는 <em>어떤 일에 이용된다</em>는 뜻인데, ②의 '쓰여'는 <em>글자가 적혀 있다</em>는 뜻이라 의미가 전혀 달라요. ③ ⓒ '적용된다'는 <em>둘째 축이 타자 독자라는 범주에 들어맞아 쓰인다</em>는 뜻인데, ③의 '적용된다'는 <em>약효가 몸에 미친다</em>는 뜻이라 결이 달라요. ⑤ ⓔ '발전시킨다면'은 <em>논의를 더 나아가게 한다</em>는 타동사인데, ⑤의 '발전하였다'는 <em>마을이 더 나은 상태로 나아갔다</em>는 자동사라 문장 구조와 의미가 분명히 달라요.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>두 축 분류</strong>: 독자를 '필자 자신인가/타인인가'와 '실재하는가/상상인가'라는 두 기준으로 나누는 방식.</li>
+<li><strong>수신자 독자 / 허구적 독자</strong>: 외부에 실재하며 글쓰기에 영향을 주는 독자가 수신자 독자, 필자가 상상으로 구성한 독자가 허구적 독자. 둘 다 타자 독자.</li>
+<li><strong>담화 공동체 독자</strong>: 관습·어휘·논의 방식을 공유하며 필자와 함께 의미를 채워 가는 독자. 앞의 세 독자와 위상이 다름.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>＋ 담화 공동체 독자</span><span class='fs-sub'>기존 분류의 구도를 다시 물음</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>필자와 대등하게 함께 생산</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>독자를 가르는 두 축은 무엇인가요?</div><div class='qa-a'>필자 자신인가 타인인가를 묻는 축과, 그 타인이 실재하는가 상상인가를 묻는 축입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>수신자 독자와 허구적 독자의 공통점은?</div><div class='qa-a'>둘 다 타자 독자이며, 필자가 의미를 마련해 건네는 상대라는 자리에 놓입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>담화 공동체 독자가 앞의 세 독자와 위상이 다른 까닭은?</div><div class='qa-a'>의미를 받기만 하는 것이 아니라 필자와 대등하게 담화를 함께 생산하기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2018학년도 9월 [16~19]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>미술관에서 오랫동안 움직이지 않고 서 있는 관광객 차림의 부부를 본다면 사람들은 다시 한 번 바라볼 것이다. 그리고 그것이 미술 작품이라는 것을 알면 놀랄 것이다. 이처럼 현실에 존재하는 것을 실재라고 믿을 수 있도록 재현하는 유파를 하이퍼리얼리즘이라고 한다.</p>
+<p>관광객처럼 우리 주변에서 흔히 볼 수 있는 것을 대상으로 고르면 ㉠현실성이 높다고 하고, 그 대상을 시각적 재현에 ⓐ기대어 실재와 똑같이 표현하면 ㉡사실성이 높다고 한다. 대상의 현실성과 표현의 사실성을 모두 추구한 하이퍼리얼리즘은 같은 리얼리즘 경향에 ⓑ드는 팝아트와 비교하면 그 특성이 잘 드러난다. 이들은 1960년대 미국에서 발달하여 현재까지 유행하고 있는 유파로, 당시 자본주의 사회의 일상의 모습을 대상으로 삼은 점에서는 공통적이다. 팝아트는 대상을 함축적으로 변형했지만 하이퍼리얼리즘은 대상을 정확하게 재현하려고 하였다. 그래서 팝아트는 주로 대상의 현실성을 추구하지만, 하이퍼리얼리즘은 대상의 현실성뿐만 아니라 트롱프뢰유*의 흐름을 ⓒ이어 표현의 사실성도 추구한다. 팝아트는 대상의 정확한 재현보다는 대중과 쉽게 소통할 수 있는 인쇄 매체를 주로 활용한 반면에, 하이퍼리얼리즘은 새로운 재료나 기계적인 방식을 적극 사용하여 대상을 정확히 재현하는 방법을 추구하였다.</p>
+<p>자본주의 일상을 사실적으로 표현한 하이퍼리얼리즘의 대표적인 작가에는 핸슨이 있다. 그의 작품 ㉢｢쇼핑 카트를 밀고 가는 여자｣(1969)는 물질적 풍요함 속에 매몰되어 살아가는 당시 현대인을 비판적 시각에서 표현한 작품으로 해석할 수 있다. 이 작품의 대상은 상품이 가득한 쇼핑 카트와 여자이다. 그녀는 욕망의 주체이며 물질에 대한 탐욕을 상징하고 있고, 상품이 가득한 쇼핑 카트는 욕망의 객체이며 물질을 상징하고 있다. 그래서 여자가 상품이 넘칠 듯이 가득한 쇼핑 카트를 밀고 있는 구도는 물질적 풍요 속에서의 과잉 소비 성향을 보여 준다.</p>
+<p>이 작품의 기법을 ⓓ보면, 생활공간에 전시해도 자연스럽도록 작품을 전시 받침대 없이 제작하였다. 사람을 보고 찰흙으로 형태를 만드는 방법 대신 사람에게 직접 석고를 덧발라 형태를 뜨는 실물 주형 기법을 사용하여 사람의 형태와 크기를 똑같이 재현하였다. 또한 기존 입체 작품의 재료인 청동의 금속재 대신에 합성수지, 폴리에스터, 유리 섬유 등을 사용하고 에어브러시로 채색하여 사람 피부의 질감과 색채를 똑같이 재현하였다. 여기에 오브제*인 가발, 목걸이, 의상 등을 덧붙이고 쇼핑 카트, 식료품 등을 그대로 사용하여 사실성을 ⓔ높였다.</p>
+<p>리얼리즘 미술의 가장 큰 목적은 현실을 포착하고 그것을 효과적으로 전달하는 것이다. 작가가 포착한 현실을 전달하는 표현 방법은 다양하다. 하이퍼리얼리즘과 팝아트 등의 리얼리즘 작가들은 대상들을 그대로 재현하거나 함축적으로 변형하는 등 자신만의 방법으로 현실을 전달하여 감상자와 소통하고 있다.</p>
+<ul>
+<li>트롱프뢰유(trompe-l’oeil) : ‘속임수 그림’이란 말로 감상자가 실물처럼 착각할 정도로 정밀하게 재현하는 것.</li>
+<li>오브제(objet) : 일상 용품이나 물건을 본래의 용도로 쓰지 않고 예술 작품에 사용하는 기법 또는 그 물체.</li>
+</ul></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡을 중심으로 윗글을 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 팝아트와 하이퍼리얼리즘은 모두 당시 자본주의의 일상을 대상으로 삼아 ㉠을 높였다.</li>
+<li>② 팝아트는 대상을 함축적으로 변형했다는 점에서 하이퍼리얼리즘과 달리 ㉡이 높다고 할 수 있다.</li>
+<li>③ 하이퍼리얼리즘이 팝아트와 달리 트롱프뢰유의 전통을 이은 것은 ㉠을 추구하기 위해서이다.</li>
+<li>④ 팝아트와 하이퍼리얼리즘이 주로 인쇄 매체를 활용한 것은 ㉡을 추구하기 위한 것이다.</li>
+<li>⑤ 팝아트와 하이퍼리얼리즘은 모두 ㉠과 ㉡을 동시에 추구한다는 점에서 리얼리즘 유파에 해당한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>16번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>㉢에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재현한 인체에 실제 사물인 오브제를 덧붙이고 받침대 없이 전시하여 실재처럼 보이게 하였다.</li>
+<li>② 찰흙으로 원형을 만들지 않고 사람에게 석고를 덧발라 외형을 뜨는 기법을 사용하여 형태를 정확히 재현하였다.</li>
+<li>③ 현실을 효과적으로 전달하기 위해 욕망의 주체는 실물과 똑같은 크기로, 욕망의 객체는 실재 그대로 제시하였다.</li>
+<li>④ 인체의 피부 질감을 재현할 수 있었던 것은 합성수지, 폴리에스터, 유리 섬유 따위의 신재료를 사용했기 때문이다.</li>
+<li>⑤ 당시 자본주의 사회에서의 합리적인 소비 성향을 반영하기 위해 주변에서 흔히 볼 수 있는 소비자와 상품을 제시하였다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>17번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 ‘핸슨’의 작품과 〈보기〉의 작품을 바탕으로 할 때, 작가들이 자신의 입장에서 상대를 비평하는 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong><span class="boxmark">[그림: 사진 2점]</span></strong> 왼쪽 사진(설명: 쿠넬리스, ｢무제｣) — 흰 벽에 타일 바닥인 화랑 내부, 양쪽 벽을 따라 살아 있는 말 여러 마리가 벽에 매인 채 줄지어 서 있는 장면. 오른쪽 사진(설명: 코수스, ｢하나, 그리고 세 개의 의자｣) — 흰 벽 앞 가운데에 실제 나무 의자 1개가 놓여 있고, 그 왼쪽 벽에 같은 의자를 찍은 사진이, 오른쪽 벽에 ‘의자’에 대한 언어적 설명이 인쇄된 텍스트 패널이 걸려 있는 장면.</p>
+<p>쿠넬리스는 주변에서 흔히 볼 수 있는 살아 있는 말 12마리를 화랑 벽에 매어 놓고, 감상자가 화랑이라는 환경 안에 놓인 실제 말들의 존재와 말들의 온기와 냄새, 그리고 소리를 체험해서 다양하게 작품의 의미를 만들도록 하였다.
+코수스는 ‘의자의 사진’, ‘실제 의자’, ‘의자의 언어적인 개념’ 세 가지 모두를 한 공간에 배치하여, 대상을 나타내는 여러 가지 방식이 존재할 수 있음을 보여 주었다.</p>
+</blockquote>
+<ul>
+<li>① 핸슨이 쿠넬리스에게: 미술은 시각적인 체험뿐만 아니라 청각, 후각 등 다양한 체험이 감상의 기준이 되어야 한다.</li>
+<li>② 핸슨이 코수스에게: 미술에서 대상은 일상적이고 평범한 것이 아니라 역사적으로나 정치적으로 가치 있어야 한다.</li>
+<li>③ 쿠넬리스가 핸슨에게: 미술에서 재현의 가장 효과적인 방법은 실물 주형의 기법보다 대상을 그대로 제시하는 것이어야 한다.</li>
+<li>④ 쿠넬리스가 코수스에게: 미술에서 작품의 의미는 감상자가 실제 대상을 대면해서 만들어지는 것이 아니라 작가에 의해서 만들어지는 것이어야 한다.</li>
+<li>⑤ 코수스가 쿠넬리스에게: 미술에서 대상을 재현할 때는 대상의 이미지보다 그 대상 자체만을 제시해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>18번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 가장 가까운 의미로 쓰인 것은?</p>
+<ul>
+<li>① ⓐ: 누나가 그린 그림을 벽면 한쪽에 기대어 놓았다.</li>
+<li>② ⓑ: 그때는 언니도 노래를 잘 부르는 축에 들었다.</li>
+<li>③ ⓒ: 1학년이 출발한 데 이어 2학년도 바로 출발했다.</li>
+<li>④ ⓓ: 사무실에는 회계를 보는 직원만 혼자 들어갔다.</li>
+<li>⑤ ⓔ: 그는 이번 조치에 대해 비판의 목소리를 높였다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>19번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>담화 공동체 독자 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='담화 공동체 독자 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

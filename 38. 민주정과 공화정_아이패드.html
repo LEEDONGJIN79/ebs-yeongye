@@ -1,0 +1,756 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>민주정과 공화정 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>민주정과 공화정 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 학급에서 무언가를 다수결로 정해 본 적 있죠? 다수결은 가장 공평해 보이는 방법이에요. 그런데 만약 반에서 머릿수가 많은 한 무리가 "우리한테만 이득이 되는 쪽"으로 표를 몰아 버린다면 어떨까요? 결과는 다수결로 정해졌지만, 사실은 소수의 친구들이 손해를 보게 되죠. <strong>다수가 정한 것이 늘 모두에게 옳은 것은 아니다</strong> — 바로 이 곤란한 문제를 오래전부터 고민한 사람이 미국 건국에 큰 역할을 한 <strong>제임스 매디슨</strong>입니다.</p>
+<p>매디슨은 사람들이 자기 이익을 따라 뭉쳐 행동하는 무리를 <strong>파벌</strong>이라고 불렀어요. 파벌이란 <em>공동체 전체의 이익과 어긋나는, 일부 사람들만의 이해관계로 뭉친 집단</em>을 말합니다. 파벌이 소수라면 다수의 시민이 선거로 막을 수 있어요. 그런데 <strong>그 파벌이 오히려 다수일 때</strong>가 문제예요. 머릿수로 밀어붙이면 공공의 이익도, 파벌에 끼지 못한 사람들의 권리도 짓밟힐 수 있으니까요. 매디슨은 <em>사회적 다수의 지배</em>를 핵심으로 하는 민주정에 이런 약점이 깊이 박혀 있다고 보았습니다. "누구도 자기 자신이 걸린 재판에서 재판관이 될 수 없다"라는 오래된 격언처럼, 이익이 걸린 다수가 권력을 공정하게 쓰리라 기대하는 건 헛된 꿈이라는 거죠.</p>
+<p>그렇다면 사람들이 뭉치는 <em>자유</em>를 아예 없애면 될까요? 매디슨은 안 된다고 합니다. 결사의 자유를 없애는 것은 <em>병보다 더 해로운 치료약</em>과 같아서, 정치 생활 자체를 망가뜨린다는 거예요. 그래서 그는 모두가 한자리에 모여 직접 다스리는 <strong>순수한 민주정</strong>으로는 이 약점을 고칠 수 없다고 결론 내립니다. 대신 등장하는 것이 대표를 뽑아 다스리는 <strong>공화정</strong>이에요. 선출된 대표가 시민의 뜻을 <em>걸러</em> 주고, 나라의 영역이 넓어질수록 그 안에 다양한 이익이 많아져 <em>하나의 거대한 다수파</em>가 쉽게 만들어지지 못하게 됩니다.</p>
+<blockquote>
+<p>한마디로: <strong>민주정의 약점(다수의 횡포·파벌)을 진단하고, 그것을 견제하는 장치로 공화정을 제시한 것</strong>이 이 단원의 핵심입니다. "다수가 옳다"를 그냥 믿는 대신, 그 약점이 어디서 오고 어떻게 다스릴 수 있는지를 따져 보는 거예요.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>매디슨의 정치철학 — 민주정의 약점과 그 견제</strong>가 있습니다. 같은 주제를 세 세트가 서로 다른 각도에서 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>매디슨의 정치철학<small>"파벌 · 다수의 지배 · 순수한 민주정 · 공화정"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>매디슨 사상의 <em>전체 줄기</em>를 잡습니다. 파벌이 무엇이고, 왜 다수의 지배가 민주정의 치명적 약점인지, 그가 어떤 사람으로 이해되는지를 한 흐름으로 읽습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>파벌을 <em>어떻게 다스리는지</em>를 제도의 차원에서 들여다봅니다. 결사의 자유를 둘러싼 두 가지 길과, 통치 영역의 규모를 둘러싼 서로 다른 의견을 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>"순수한 민주정으로는 약점을 고칠 수 없다"는 <em>논증</em>을 따라가고, 그 논증을 어떻게 비판적으로 검토할 수 있는지를 두 갈래 반론으로 짚습니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 다수의 지배가 왜 위험할 수 있는지, 그리고 그 위험을 다스리려는 매디슨의 구상이 어떤 모양인지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>대중적 정부의 형태를 채택한 국가는 늘 시민 사회의 분열과 파벌의 형성이라는 위험에 노출된다. 여기서 파벌이란 공동체 전체의 이익과 일치하지 않는, 일부 구성원만의 이해관계에 기초하여 결합하고 행동하는 시민 집단을 가리킨다. 파벌이 비교적 소수로 이루어진 경우에는 다수의 시민이 선거를 통해 그 준동을 좌절시킬 수 있다. 그러나 그와 반대의 상황, 곧 파벌이 다수를 이루는 경우에는 그들이 공공선과 파벌에 속하지 않은 시민의 권리를 자신들의 정념과 이익을 위해 ⓐ<u>희생시키는</u> 결과가 초래될 수 있다. 미국 건국에 관여한 제임스 매디슨은 바로 이러한 문제를, 사회적 다수의 지배를 핵심으로 하는 ㉠<u>민주주의에 내재한 치명적인 약점</u>이라고 보았다.</p>
+<p>매디슨이 이 약점을 심각하게 여긴 까닭은 정의의 기본 원칙에서 나온다. 누구도 자기 자신의 송사에서 재판관이 될 수 없다는 것은 정의의 관점에서 지극히 당연하다. 이 원칙을 곱씹어 보면, 자신들의 이익이 걸린 상황에서 사회적 다수가 정치적 권력을 중립적으로 행사하기를 기대하는 것은 사실상 헛된 꿈에 ⓑ<u>불과하다</u>. 다수는 자기 이익이 걸린 사안에서 스스로의 재판관이 되어 버리기 때문이다. 그렇다고 해서 끊임없이 생겨나는 특정한 이해관계를 토대로 사람들이 결합할 수 있는 자유를 없앨 수도 없다. 그러한 자유의 제거는 마치 질병보다 해로운 치료 약과 같아서, 시민의 정치 생활 자체를 더 이상 존립할 수 없게 만들 것이기 때문이다. 파벌의 ⓒ<u>원천</u>은 자유이며, 자유를 없애는 처방은 파벌이라는 질병보다 더 나쁘다.</p>
+<p>매디슨은 이 약점을 치유할 방법이 순수한 민주정에는 존재하지 않는다고 본다. 그가 말하는 순수한 민주정이란, 정부를 직접 구성하고 운영하는 소규모의 시민으로 이루어진 사회이다. 이러한 정부 형태에서는 취약한 당파나 개인을 희생시키려는 유인 앞에서 지배적인 다수를 제어할 수단이 애초에 존재할 수 없다. 정치적 권리의 면에서 평등이 ⓓ<u>보장된다</u> 하더라도, 인간 능력의 다양성과 서로 다른 의견·이해관계로 인해 시민들은 결코 완전히 동등해지거나 동질화될 수 없기 때문이다. 동질화될 수 없는 시민 사이에서는 언제든 다수와 소수가 갈리고, 다수의 정념이 소수를 누르려는 유인이 생겨난다. 역사적으로도 이러한 민주정은 늘 혼란과 분쟁의 참상을 ⓔ<u>겪었으며</u>, 개인의 안전이나 재산권의 보장과 양립하지 못하는 것으로 드러났고, 대체로 오래 지속되지도 못했다고 그는 지적한다.</p>
+<p>매디슨에게 해법은 순수한 민주정과 구별되는 공화정에 있다. 공화정은 시민이 직접 통치하는 대신 시민이 선출한 대표가 통치하는 정부 형태이다. 선출된 대표는 다수의 일시적 정념을 그대로 옮기는 것이 아니라 공동체의 이익에 비추어 걸러 내는 역할을 맡는다. 또한 공화정은 순수한 민주정과 달리 넓은 영역과 많은 인구를 포괄할 수 있다. 영역이 넓어지면 그 안에 더 다양한 이익과 더 많은 파벌이 들어서므로, 하나의 다수파가 단일한 의지로 결집하여 소수를 압도하기가 그만큼 어려워진다. 이처럼 매디슨은 잔혹한 다수의 횡포를 경계하여 소수와 재산권의 옹호자로, 직접 지배가 아닌 대표의 매개를 강조하여 대의제의 설계자로, 그리고 다수의 지배라는 약점을 정면으로 응시하면서도 자유 자체는 보존하려 한 균형의 사상가로 이해된다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글에서 매디슨의 관점으로 보기 어려운 것은?</p>
+<ul>
+<li>① 다수로 이루어진 파벌은 파벌에 속하지 않은 시민의 권리를 침해할 수 있다.</li>
+<li>② 결사의 자유를 없애는 것은 파벌이라는 문제 자체보다 더 해로운 처방이다.</li>
+<li>③ 소규모 시민이 직접 운영하는 정부에서는 지배적 다수를 제어할 수단이 마련되어 있다.</li>
+<li>④ 정치적 평등이 보장되더라도 시민들이 완전히 동질화되는 것은 아니다.</li>
+<li>⑤ 통치 영역이 넓어지면 하나의 다수파가 단일한 의지로 결집하기가 어려워진다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>1번 — 정답 ③</strong>
+3문단에서 매디슨은 순수한 민주정, 곧 "소규모 시민이 직접 구성·운영하는 정부"에서는 "지배적인 다수를 제어할 수단이 애초에 존재할 수 없다"라고 했어요. 그런데 ③은 그런 정부에 제어 수단이 "마련되어 있다"라고 정반대로 말했으니, 매디슨의 관점으로 보기 어려워 정답입니다. ①은 1문단(다수 파벌이 비파벌 시민의 권리를 희생), ②는 2문단(자유 제거는 질병보다 해로운 치료 약), ④는 3문단(평등이 보장돼도 동질화 불가), ⑤는 4문단(영역 확대 시 다수파 결집이 어려워짐)에서 각각 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사회적 다수의 지배를 그 핵심으로 한다.</li>
+<li>② 자기 이익이 걸린 사안에서도 다수가 권력을 중립적으로 행사하리라 기대하기 어렵다는 데서 비롯한다.</li>
+<li>③ 다수가 자기 이익이 걸린 사안에서 스스로의 재판관이 되는 상황과 관련된다.</li>
+<li>④ 역사적으로 개인의 안전이나 재산권의 보장과 양립한 사례로 뒷받침된다.</li>
+<li>⑤ 소규모로 직접 운영되는 정부 형태에서는 치유될 수단이 존재하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>2번 — 정답 ④</strong>
+㉠은 '민주주의에 내재한 치명적 약점'이에요. 3문단에서 매디슨은 이러한 민주정이 역사적으로 "개인의 안전이나 재산권의 보장과 양립하지 못하는 것으로 드러났다"라고 했죠. 그런데 ④는 거꾸로 "양립한 사례로 뒷받침된다"라고 했으니 적절하지 않아 정답입니다. ①은 1문단, ②·③은 2문단(자기 송사의 재판관 비유), ⑤는 3문단(순수 민주정에는 치유 수단 부재)에 부합합니다.</p>
+<p><strong>3번 [3점] — 정답 ③</strong>
+4문단에서 공화정은 "선출된 대표가 다수의 일시적 정념을 공동체의 이익에 비추어 걸러 내는 역할"을 맡고, 이로써 순수한 민주정의 약점을 보완한다고 했으므로 ③이 적절해 정답입니다. ① 매디슨은 자유 제거를 "질병보다 해로운 치료 약"이라며 거부했으니 반대예요. ② 시민은 "결코 완전히 동질화될 수 없다"라고 못 박았으므로 동질화를 전제한 추론은 성립하지 않습니다. ④ 영역이 넓어지면 다수파 결집이 <em>어려워진다</em>고 했으므로 인과가 뒤집혔고, ⑤ 소수 파벌은 선거로 좌절시킬 수 있고 더 위험한 쪽은 <em>다수</em> 파벌이므로 방향이 어긋납니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 매디슨의 입장을 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 파벌의 원천인 자유를 제거하는 것이 다수의 횡포를 막는 가장 확실한 방법이라고 본다.</li>
+<li>② 시민들의 이해관계가 충분히 동질화되기만 하면 순수한 민주정에서도 다수의 횡포가 사라진다고 본다.</li>
+<li>③ 대표가 다수의 정념을 거르는 역할을 맡는다는 점에서, 공화정이 순수한 민주정의 약점을 보완할 수 있다고 본다.</li>
+<li>④ 다양한 이익이 많아질수록 다수파의 결집이 쉬워지므로, 통치 영역은 좁게 유지되어야 한다고 본다.</li>
+<li>⑤ 소수 파벌은 다수 파벌보다 공공선을 위협하는 정도가 크므로, 선거보다 강력한 제어 수단이 필요하다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 도외시(度外視)하는</li>
+<li>② ⓑ: 그칠</li>
+<li>③ ⓒ: 연원(淵源)은</li>
+<li>④ ⓓ: 담보된다</li>
+<li>⑤ ⓔ: 치렀으며</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>4번 — 정답 ①</strong>
+ⓐ '희생시키는'은 공공선과 소수의 권리를 자기 이익을 위해 <em>버린다</em>는 뜻이에요. '도외시하다'는 '상관하지 아니하거나 무시하다'의 뜻이라, 적극적으로 버리고 짓밟는다는 ⓐ의 자리에 넣으면 의미가 약해져 호응이 어긋나므로 적절하지 않아 정답입니다(이 자리에는 '저버리는' 정도가 알맞아요). ② '불과하다→그치다', ③ '원천→연원', ④ '보장된다→담보된다', ⑤ '겪었으며→치렀으며'는 모두 문맥상 자연스럽게 바꿔 쓸 수 있습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>파벌</strong>: 공동체 전체의 이익과 어긋나는, 일부 사람들만의 이해관계로 뭉쳐 행동하는 시민 집단.</li>
+<li><strong>사회적 다수의 지배</strong>: 머릿수가 많은 쪽의 뜻이 정치적 결정을 좌우하는 것. 매디슨은 여기에 약점이 있다고 보았어요.</li>
+<li><strong>순수한 민주정</strong>: 소규모의 시민이 한자리에 모여 정부를 직접 구성·운영하는 정부 형태.</li>
+<li><strong>공화정</strong>: 시민이 선출한 대표가 통치하는 정부 형태. 대표가 다수의 정념을 거르고, 넓은 영역을 포괄해 다수파 결집을 어렵게 합니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>순수한 민주정</th>
+<th>공화정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>통치 방식</td>
+<td>시민이 직접 통치</td>
+<td>선출된 대표가 통치</td>
+</tr>
+<tr>
+<td>규모</td>
+<td>소규모(소수 시민)</td>
+<td>넓은 영역·많은 인구</td>
+</tr>
+<tr>
+<td>다수의 횡포</td>
+<td>제어 수단 없음</td>
+<td>대표의 여과 + 다양한 이익으로 견제</td>
+</tr>
+<tr>
+<td>재산권·안전</td>
+<td>양립 어려움, 단명</td>
+<td>보호에 유리</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>매디슨은 왜 다수의 지배를 위험하게 보았나요?</div><div class='qa-a'>이익이 걸린 다수가 "자기 송사의 재판관"이 되어 권력을 중립적으로 쓰지 못하고, 소수의 권리와 공공선을 희생시킬 수 있기 때문이에요.</div></div>
+<div class='qa-item'><div class='qa-q'>파벌을 없애려고 결사의 자유를 제거하면 어떻게 되나요?</div><div class='qa-a'>자유의 제거는 질병보다 해로운 치료 약과 같아서 정치 생활 자체를 무너뜨립니다. 그래서 매디슨은 이 방법을 거부해요.</div></div>
+<div class='qa-item'><div class='qa-q'>공화정은 어떻게 다수의 횡포를 견제하나요?</div><div class='qa-a'>대표가 다수의 정념을 걸러 주고, 넓은 영역에 다양한 이익이 들어서서 하나의 다수파가 결집하기 어려워지기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 6월 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>1764년에 발간된 체사레 베카리아의 『범죄와 형벌』은 커다란 반향을 일으켰다. 형벌에 관한 논리 정연하고 새로운 주장들에 유럽의 지식 사회가 매료된 것이다. 자유와 행복을 추구하는 이성적인 인간을 상정하는 당시 계몽주의 사조에 베카리아는 충실히 호응하여, 이익을 저울질할 줄 알고 그에 따라 행동하는 존재로서 인간을 전제하였다. 사람은 대가 없이 공익만을 위하여 자유를 내어놓지는 않는다. 끊임없는 전쟁과 같은 상태에서 벗어나기 위하여 자유의 일부를 떼어 주고 나머지 자유의 몫을 평온하게 ⓐ누리기로 합의한 것이다. 저마다 할애한 자유의 총합이 주권을 구성하고, 주권자가 이를 위탁받아 관리한다. 따라서 사회의 형성과 지속을 위한 조건이라 할 법은 저마다의 행복을 증진시킬 때 가장 잘 준수되며, 전체 복리를 위해 법 위반자에게 설정된 것이 형벌이다. 이런 논증으로 베카리아는 형벌권의 행사는 양도의 범위를 벗어날 수 없다는 출발점을 세웠다.</p>
+<p>베카리아가 볼 때, 형벌은 범죄가 일으킨 결과를 되돌려 놓을 수 없다. 또한 인간을 괴롭히는 것 자체가 그 목적인 것도 아니다. 형벌의 목적은 오로지 범죄자가 또다시 피해를 끼치지 못하도록 억제하고, 다른 사람들이 그 같은 행위를 하지 못하도록 예방하는 데 있을 뿐이다. 이는 범죄로 얻을 이득, 곧 공익이 입게 되는 그만큼의 손실보다 형벌이 가하는 손해가 조금이라도 크기만 하면 달성된다. 그리고 이러한 손익 관계를 누구나 알 수 있도록 처벌 체계는 명확히 성문법으로 규정되어야 하고, 그 집행의 확실성도 갖추어져야 한다. 결국 범죄를 ⓑ가로막는 방벽으로 형벌을 바라보는 것이다. 이 ㉠울타리의 높이는 살인인지 절도인지 등에 따라 달리해야 한다. 공익을 훼손한 정도에 비례해야 하는 것이다. 그것을 넘어서는 처벌은 폭압이며 불필요하다. 베카리아는 말한다. 상이한 피해를 일으키는 두 범죄에 동일한 형벌을 적용한다면 더 무거운 죄에 대한 억지력이 상실되지 않겠는가.</p>
+<p>그는 인간이 감각적인 존재라는 사실에 맞추어 제도가 운용될 것을 역설한다. 가장 잔혹한 형벌도 계속 시행되다 보면 사회 일반은 그에 ⓒ무디어져 마침내 그런 것을 봐도 옥살이에 대한 공포 이상을 느끼지 못한다. 인간의 정신에 ⓓ크나큰 효과를 끼치는 것은 형벌의 강도가 아니라 지속이다. 죽는 장면의 목격은 무시무시한 경험이지만 그 기억은 일시적이고, 자유를 박탈당한 인간이 속죄하는 고통의 모습을 오랫동안 대하는 것이 더욱 강력한 억제 효과를 갖는다는 주장이다. 더욱 중요한 것을 지키기 위해 희생한 자유에는 무엇보다도 값진 생명이 포함될 수 없다고도 말한다. 이처럼 베카리아는 잔혹한 형벌을 반대하여 휴머니스트로, 최대 다수의 최대 행복을 말하여 공리주의자로, 자유로운 인간들 사이의 합의를 바탕으로 논의를 전개하여 사회 계약론자로 이해된다. 형법학에서도 형벌로 되갚아 준다는 응보주의를 탈피하여 장래의 범죄 발생을 방지한다는 일반 예방주의로 나아가는 토대를 ⓔ세웠다는 평가를 받는다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글에서 베카리아의 관점으로 보기 어려운 것은?</p>
+<ul>
+<li>① 공동체를 이루는 합의가 유지되는 데는 법이 필요하다.</li>
+<li>② 사람은 이성적이고 타산적인 존재이자 감각적 존재이다.</li>
+<li>③ 개개인의 국민은 주권자로서 형벌을 시행하는 주체이다.</li>
+<li>④ 잔혹함이 주는 공포의 효과는 시간이 흐르면서 감소한다.</li>
+<li>⑤ 형벌권 행사의 범위는 양도된 자유의 총합을 넘을 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong><br />
+개인이 할애한 자유의 총합이 주권을 구성하고 그것을 ‘위탁받은’ 주권자가 법 위반자에게 형벌을 시행한다. 주권자는 개개인의 국민이 아니라 주권을 위탁받은 자이므로, 개개인의 국민이 형벌을 시행하는 주체라는 ③은 베카리아의 관점으로 보기 어렵다. 정답 ③.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①2.7% ②6.5% ③77.6% ④3.5% ⑤7.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재범을 방지하는 역할을 수행한다.</li>
+<li>② 법률로 엮어 뚜렷이 알아볼 수 있도록 해야 한다.</li>
+<li>③ 범죄가 유발하는 손실에 따라 높낮이를 정해야 한다.</li>
+<li>④ 손익을 저울질하는 인간의 이성을 목적 달성에 활용한다.</li>
+<li>⑤ 지키려는 공익보다 높게 설정할수록 방어 효과가 증가한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+형벌의 목적은 공익이 입는 손실보다 형벌이 가하는 손해가 조금이라도 크기만 하면 달성된다. 따라서 공익보다 높게 설정할수록 방어 효과가 증가하는 것은 아니므로 ⑤는 적절하지 않다. 정답 ⑤.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①1.8% ②1.8% ③2.8% ④13.1% ⑤79.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 베카리아의 입장을 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 형벌이 사회적 행복 증진을 저해한다고 보는 공리주의의 입장에서 사형을 반대한다.</li>
+<li>② 사형은 범죄 예방의 효과가 없으므로 일반 예방주의의 입장에서 폐지되어야 한다고 주장한다.</li>
+<li>③ 사형은 사람의 기억에 영구히 각인되는 잔혹한 형벌이어서 휴머니즘의 입장에서 인정하지 못한다.</li>
+<li>④ 가장 큰 가치를 내어주는 합의가 있을 수 없다는 이유로 사회 계약론의 입장에서 사형을 비판한다.</li>
+<li>⑤ 피해 회복의 관점으로 형벌을 바라보는 형법학의 입장에서 사형을 무기 징역으로 대체하는 데 찬성하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong><br />
+베카리아는 형벌권 행사가 양도된 자유의 범위를 넘을 수 없고, 희생한 자유에는 값진 생명이 포함될 수 없다고 보았다. 따라서 사회 계약론의 입장에서 ‘생명을 내어주는 합의’는 있을 수 없다는 이유로 사형을 비판할 것이다. 정답 ④.</p>
+<p><em>선택률</em> — 응시 98,558명 — ①8.0% ②25.3% ③6.8% ④54.1% ⑤5.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 향유(享有)하기로</li>
+<li>② ⓑ: 단절(斷絶)하는</li>
+<li>③ ⓒ: 둔감(鈍感)해져</li>
+<li>④ ⓓ: 지대(至大)한</li>
+<li>⑤ ⓔ: 수립(樹立)하였다는</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>13번 — 정답 ②</strong><br />
+‘단절하다’는 ‘유대나 연관 관계를 끊다’의 뜻이어서, 범죄를 못 하도록 막는다는 의미의 ⓑ‘가로막는’과 바꿔 쓰기에 적절하지 않다(‘저지(沮止)하는’ 정도가 적절). 정답 ②.</p>
+<p><em>선택률</em> — 응시 98,554명 — ①24.5% ②56.6% ③3.0% ④4.4% ⑤12.1%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>대중적 정부에서 거듭 문제가 되는 것은 파벌, 곧 공동체 전체의 이익과 어긋나는 일부 시민의 이해관계로 결합한 집단이다. 파벌의 폐해를 다스리는 방법은 크게 그 원인을 제거하는 길과 그 효과를 통제하는 길로 나뉜다. ㉠<u>원인을 제거하는 방안</u>은 다시 두 갈래로 갈린다. 하나는 파벌이 싹트는 토양인 결사의 자유 자체를 없애는 것이고, 다른 하나는 모든 시민에게 동일한 의견과 동일한 이해관계를 부여하여 파벌이 생길 여지를 없애는 것이다. 그러나 결사의 자유를 없애는 것은 질병보다 해로운 치료 약과 같아 시민의 정치 생활을 존립할 수 없게 만들고, 모든 시민을 동질화하는 것은 인간 능력의 다양성으로 인해 애초에 불가능하다. 결국 원인의 제거가 불가능하므로, 남는 길은 ㉡<u>파벌의 효과를 통제하는 방안</u>이다.</p>
+<p>효과를 통제하는 핵심은 다수파가 단일한 의지로 결집하여 소수와 공공선을 희생시키는 것을 막는 데 있다. 매디슨은 이를 위한 장치로 두 가지를 제시한다. ㉢<u>대표의 매개</u>는 시민이 직접 통치하는 대신 선출된 대표가 통치하게 하여, 다수의 일시적 정념을 공동체의 이익에 비추어 걸러 내게 하는 장치이다. ㉣<u>영역의 확대</u>는 통치의 범위를 넓혀 그 안에 더 다양한 이익과 더 많은 파벌이 들어서게 함으로써, 하나의 다수파가 형성되어 결집하기 어렵게 만드는 장치이다. 영역이 넓을수록 시민들 사이의 거리가 멀고 이해관계가 갈라져, 부당한 목적을 공유하는 다수가 서로를 발견하고 함께 움직이기가 그만큼 어려워진다.</p>
+<p>영역을 넓히는 것이 언제나 이로운가에 대해서는 평가가 갈린다. ㉮영역의 확대를 긍정하는 입장은, 영역이 넓어질수록 그 안에 포괄되는 이익이 다양해져 어느 한 파벌도 전체를 압도하지 못하므로 소수의 권리와 재산권이 더 잘 보호된다고 본다. 또한 후보자의 폭이 넓어져 자질 있는 대표가 선출될 가능성이 높아진다고 본다. 반면 ㉯영역의 확대를 경계하는 입장은, 영역이 지나치게 넓어지면 대표가 다수의 사정에 어두워져 지역의 사안을 제대로 대변하지 못하고, 시민과 대표 사이의 거리가 멀어져 통치에 대한 시민의 통제가 약해진다고 본다. 같은 영역의 확대를 두고도, 다수의 횡포를 막는 견제 장치로 보는가, 아니면 대표성과 통제의 약화를 부르는 위험으로 보는가에 따라 그 평가가 엇갈리는 것이다.</p>
+<p>이처럼 파벌의 효과를 통제하는 설계는 원인을 제거하려는 시도가 모두 불가능하다는 인식 위에 서 있다. 매디슨은 파벌을 없애려 하기보다 그 작동을 다스리려 했고, 다수의 지배라는 약점을 직시하면서도 자유 자체는 보존하는 길을 택하였다. 영역의 확대와 대표의 매개를 둘러싼 평가의 차이는, 같은 장치가 보는 관점에 따라 견제로도 위험으로도 읽힐 수 있음을 보여 준다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>㉠~㉢에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉢은 시민이 직접 통치하는 대신 선출된 대표가 통치하게 하는 것으로, 파벌의 원인을 제거하는 방안에 해당한다.</li>
+<li>② ㉠의 한 갈래인 결사의 자유 제거는 시민의 정치 생활을 존립할 수 없게 만든다는 점에서 거부된다.</li>
+<li>③ ㉠의 한 갈래인 시민의 동질화는 인간 능력의 다양성 덕분에 어렵지 않게 실현될 수 있다.</li>
+<li>④ ㉡은 ㉠이 가능함을 전제로, 그 위에서 다수파의 결집을 촉진하는 것을 목표로 한다.</li>
+<li>⑤ ㉠과 ㉡은 모두 파벌의 원인을 제거함으로써 다수의 횡포를 막으려는 방안이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>5번 — 정답 ②</strong>
+㉠(원인 제거)의 한 갈래인 결사의 자유 제거는 1문단에서 "질병보다 해로운 치료 약과 같아 시민의 정치 생활을 존립할 수 없게 만든다"라고 했으므로 ②가 적절해 정답입니다. ① ㉢(대표의 매개)은 2문단에서 파벌의 <em>효과를 통제하는</em> 장치로 제시되었으므로, 이를 "원인을 제거하는 방안"이라 한 것은 정반대입니다. ③ 동질화는 "인간 능력의 다양성으로 인해 애초에 불가능"하다고 했으므로 "어렵지 않게 실현"은 정반대입니다. ④ ㉡은 ㉠이 <em>불가능</em>하기 때문에 택하는 길이고, 다수파 결집은 <em>촉진</em>이 아니라 <em>억제</em>가 목표예요. ⑤ ㉡은 원인 제거가 아니라 효과 통제이므로 "모두 원인을 제거"는 성립하지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 파벌의 폐해를 다스리는 방법은 그 원인을 제거하는 길과 그 효과를 통제하는 길로 나뉜다.</li>
+<li>② 대표의 매개는 다수의 일시적 정념을 공동체의 이익에 비추어 걸러 내게 하는 장치이다.</li>
+<li>③ 영역이 넓어지면 부당한 목적을 공유하는 다수가 서로를 발견하고 함께 움직이기 어려워진다.</li>
+<li>④ 영역의 확대를 긍정하는 입장과 경계하는 입장은 모두 영역 확대가 대표의 자질을 떨어뜨린다고 본다.</li>
+<li>⑤ 매디슨은 파벌을 없애기보다 그 작동을 다스리는 데 설계의 초점을 두었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+3문단에서 영역 확대의 자질 문제는 입장에 따라 갈려요. ㉮(긍정)는 "후보자의 폭이 넓어져 자질 있는 대표가 선출될 가능성이 높아진다"라고 보고, ㉯(경계)는 대표가 "다수의 사정에 어두워진다"라고 봅니다. 그런데 ④는 두 입장이 <em>모두</em> 자질을 떨어뜨린다고 본다고 했으니, ㉮의 견해와 어긋나 적절하지 않아 정답입니다. ①은 1문단, ②·③은 2문단, ⑤는 4문단에서 그대로 확인됩니다.</p>
+<p><strong>7번 [3점] — 정답 ②</strong>
+㉮(긍정)는 "영역이 넓어질수록 어느 한 파벌도 전체를 압도하지 못해 소수의 권리·재산권이 더 잘 보호된다"라고 봅니다. 그런데 ②의 사례는 영역이 넓어졌는데도 특정 파벌이 전체를 압도해 소수의 재산권이 침해된 경우이므로, ㉮의 핵심 주장을 정면으로 반박해 그 입장을 약화합니다. 따라서 ②가 적절해 정답이에요. ① 대표가 지역 사안을 잘 대변한 사례는 ㉯(경계)를 약화하는 것이지 ㉮를 약화하지 않습니다. ③ 후보자의 폭이 <em>준다</em>는 것은 ㉮의 논거와 충돌하지 ㉯와는 무관해 ㉯를 약화한다고 볼 수 없어요. ④ ㉯는 <em>영역이 넓을 때</em> 거리가 멀어진다고 했는데 사례는 "영역이 좁은데도"이므로 ㉯를 강화하지 못합니다. ⑤ 다양한 이익으로 파벌이 압도하지 못한 사례는 ㉮를 강화하는 것이지 ㉯를 강화하지 않습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉣과 관련하여 ㉮와 ㉯의 입장에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 영역이 넓은데도 대표가 지역의 사안을 충분히 파악하여 대변한 사례가 거듭 확인된다면, ㉮의 입장은 약화되겠군.</li>
+<li>② 영역이 넓어졌는데도 특정 파벌이 전체를 압도하여 소수의 재산권이 빈번히 침해된 사례가 확인된다면, ㉮의 입장은 약화되겠군.</li>
+<li>③ 영역이 넓어질수록 후보자의 폭이 줄어 자질이 낮은 대표만 선출되는 경향이 확인된다면, ㉯의 입장은 약화되겠군.</li>
+<li>④ 영역이 좁은데도 시민과 대표의 거리가 멀어 통치에 대한 통제가 약해진 사례가 확인된다면, ㉯의 입장은 강화되겠군.</li>
+<li>⑤ 영역이 넓어질수록 다양한 이익이 포괄되어 어느 파벌도 전체를 압도하지 못한 사례가 확인된다면, ㉯의 입장은 강화되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>원인 제거 vs 효과 통제</strong>: 파벌을 다스리는 두 길. 발생 토양 자체를 없애는 것(원인 제거)과, 생긴 파벌이 횡포를 부리지 못하게 막는 것(효과 통제).</li>
+<li><strong>대표의 매개</strong>: 시민이 직접 통치하는 대신 선출된 대표가 다수의 정념을 걸러 통치하게 하는 장치.</li>
+<li><strong>영역의 확대</strong>: 통치 범위를 넓혀 다양한 이익을 포괄함으로써 하나의 다수파 결집을 어렵게 만드는 장치.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>├─ 원인 제거</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>① 결사의 자유 제거 (질병보다 해로운 치료 약</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c2'><span class='fs-main'>불가)</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>파벌의 원인을 제거하는 두 방법은 왜 모두 거부되나요?</div><div class='qa-a'>결사의 자유 제거는 정치 생활을 무너뜨리고, 시민의 동질화는 인간의 다양성 때문에 애초에 불가능하기 때문이에요.</div></div>
+<div class='qa-item'><div class='qa-q'>'대표의 매개'는 다수의 횡포를 어떻게 막나요?</div><div class='qa-a'>선출된 대표가 다수의 일시적 정념을 공동체의 이익에 비추어 걸러 주기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>'영역의 확대'를 두고 평가가 갈리는 까닭은?</div><div class='qa-a'>다양한 이익으로 다수파 결집을 막는 견제 장치로 볼 수도, 대표성·통제의 약화를 부르는 위험으로 볼 수도 있기 때문이에요.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [4~7]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠경마식 보도는 경마 중계를 하듯 지지율 변화나 득표율 예측 등을 집중 보도하는 선거 방송의 한 방식이다. 경마식 보도는 선거일이 가까워질수록 증가한다. 새롭고 재미있는 정보를 원하는 시청자들의 요구에 부응하고, 방송사로서도 매일 새로운 뉴스를 제공하는 방편이 될 수 있기 때문이다. 경마식 보도는 선거와 정치에 무관심한 유권자들의 선거 참여, 정치 참여를 독려하는 장점이 있다. 하지만 흥미를 돋우는 데 치중하는 경마식 보도는 선거의 주요 의제를 도외시하고 경쟁 결과에 초점을 맞춰 선거의 공정성을 저해할 수 있다.</p>
+<p>경마식 보도의 문제점을 줄이려는 조치가 있다. ㉮「공직선거법」의 규정에 따르면, 당선인을 예상케 하는 여론조사를 실시하는 것은 언제든지 가능하지만, 그 결과의 보도는 선거일 6일 전부터 투표 마감 시각까지 금지된다. 이러한 규정이 국민의 알 권리와 언론의 자유를 침해하는지에 대해 헌법재판소는 신뢰할 수 있는 여론조사 결과라 하더라도 선거일에 임박해 보도하면 선거에 영향을 끼칠 수 있다며 합헌 결정을 내렸다. 「공직선거법」에 근거를 둔 ㉯「선거방송심의에 관한 특별규정」은 유권자에게 영향을 줄 수 있는 사실의 왜곡 보도를 금지하고, 여론조사 결과가 오차 범위 내에 있을 때에 이를 밝히지 않은 채로 서열이나 우열을 나타내는 보도도 금지하고 있다. 언론 단체의 ㉰「선거여론조사보도준칙」은 표본 오차를 감안하여 여론조사 결과를 정확하게 보도하도록 요구한다. 지지율 차이가 오차 범위 내에 있을 때 “경합”이라는 표현은 무방하지만 서열화하거나 “오차 범위 내에서 앞섰다.”라는 표현처럼 우열을 나타내어 보도할 수 없다는 것이다.</p>
+<p>경마식 보도로부터 드러난 선거 방송의 한계를 보완하는 방책 중 하나로 선거 방송 토론회가 활용될 수 있다. 이 토론회를 통해 후보자 간 정책과 자질 등의 차이가 드러날 수 있는데, 현실적인 이유로 초청 대상자는 한정된다. ㉡「공직선거법」의 선거 방송 토론회 규정은 5인 이상의 국회의원을 가진 정당이나 직전 선거에서 3% 이상 득표한 정당이 추천한 후보자, 또는 언론기관의 여론조사 결과 평균 지지율이 5% 이상인 후보자 등을 초청 기준으로 제시하고 있다. 다만 초청 대상이 아닌 후보자들을 위해 별도의 토론회 개최가 가능하고 시간이나 횟수를 다르게 할 수 있다.</p>
+<p>이러한 규정이 선거 운동의 기회균등 원칙을 침해하는지에 대해 헌법재판소는 위헌이 아니라고 결정했다. ⓐ다수 의견은 방송 토론회의 효율적 운영을 고려할 때 초청 대상 후보자 수가 너무 많으면 제한된 시간 안에 심층적인 토론이 이루어지기 어렵고, 유권자들도 관심이 큰 후보자들의 정책 및 자질을 직접 비교하기 어렵다는 점을 지적하며, 이 규정은 합리적 제한이라고 보았다. 반면 ⓑ소수 의견은 이 규정이 가장 효과적인 선거 운동의 기회를 일부 후보자에게서 박탈하며, 유권자에게도 모든 후보자를 동시에 비교하지 못하게 하고, 초청 대상 후보자 토론회에 참여한 후보자와 그렇지 못한 후보자를 차별적으로 인식하게 만든다고 지적하였다. 이 규정을 소수 정당이나 정치 신인 등에 대한 자의적이고 차별적인 침해라고 본 것이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 기간의 후반기에 비해 전반기에 더 많다.</li>
+<li>② 시청자와 방송사의 상반된 이해관계가 반영된다.</li>
+<li>③ 당선자 예측과 관련된 정보의 전파에 초점을 맞추지 않는다.</li>
+<li>④ 선거의 핵심 의제에 관한 후보자의 입장을 다룬 보도를 중시한다.</li>
+<li>⑤ 정치에 관심이 없던 유권자들이 선거에 관심을 갖도록 북돋운다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>4번 — 정답 ⑤</strong><br />
+1문단에서 경마식 보도는 선거와 정치에 무관심한 유권자들의 선거 참여·정치 참여를 독려하는 장점이 있다고 했다. ①은 선거일이 가까워질수록 증가한다고 했으므로 반대이고, ②는 시청자의 요구에 부응하고 방송사의 방편도 되므로 이해관계가 상반되지 않는다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.8% ②2.5% ③2.2% ④4.3% ⑤90.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에서 알 수 있는 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 신뢰할 수 있는 여론조사의 결과를 보도하더라도 선거의 공정성을 위협할 수 있다.</li>
+<li>② 정당의 추천을 받지 못해도 선거 방송의 초청 대상 후보자 토론회에 참여할 수 있다.</li>
+<li>③ 국민의 알 권리와 언론의 자유가 서로 충돌하는지의 문제를 헌법재판소에서 논의한 적이 있다.</li>
+<li>④ 선거일에 당선인 예측 선거 여론조사를 실시하고 투표 마감 시각 이후에 그 결과를 보도할 수 있다.</li>
+<li>⑤ 「공직선거법」에는 선거 운동의 기회가 모든 후보자에게 균등하게 배분되지 못하도록 할 가능성이 있는 규정이 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong><br />
+2문단에서 헌법재판소가 논의한 것은 여론조사 결과 보도를 일정 기간 금지하는 규정이 국민의 알 권리와 언론의 자유를 침해하는지의 문제이지, 알 권리와 언론의 자유가 서로 충돌하는지의 문제가 아니다. ②는 평균 지지율 5% 이상 기준으로, ④는 여론조사 실시는 언제든 가능하고 보도 금지가 투표 마감 시각까지라는 점에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,625명 — ①4.2% ②14.5% ③46.1% ④16.4% ⑤19.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> ㉡과 관련하여 ⓐ와 ⓑ의 입장에 대한 반응으로 가장 적절한 것은?</p>
+<ul>
+<li>① 선거 방송 초청 대상 후보자 토론회에서 후보자들이 심층적인 토론을 하지 못한 원인이 시간의 제한이나 참여한 후보자의 수와 관계가 없다면 ⓐ의 입장은 강화되겠군.</li>
+<li>② 주요 후보자의 정책이 가진 치명적 허점을 지적하고 좋은 대안을 제시해 유명해진 정치 신인이 선거 방송 초청 대상 후보자 토론회에 초청받지 못한다면 ⓐ의 입장은 약화되겠군.</li>
+<li>③ 선거 방송 초청 대상 후보자 토론회에 참여할 적정 토론자의 수를 제한하는 기준이 국민의 합의에 의해 결정되었기 때문에 자의적인 것이 아니라고 한다면 ⓑ의 입장은 강화되겠군.</li>
+<li>④ 어떤 후보자가 지지율이 낮은 후보자 간의 별도 토론회에서 뛰어난 정치 역량을 보여 주었음에도 그 토론회에 참여했다는 이유만으로 지지율이 떨어진다면 ⓑ의 입장은 약화되겠군.</li>
+<li>⑤ 유권자들이 뛰어난 역량을 가진 소수 정당 후보자를 주요 후보자들과 동시에 비교할 수 있는 가장 효율적인 방법이 선거 방송 초청 대상 후보자 토론회라면 ⓑ의 입장은 약화되겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>6번 — 정답 ②</strong><br />
+역량 있는 정치 신인이 초청받지 못하는 상황은 초청 기준 규정의 차별성을 부각하므로, 이 규정을 합리적 제한이라고 본 ⓐ(다수 의견)의 입장을 약화한다. ①은 ⓐ를 약화하는 사례이고, ③은 ⓑ를 약화, ④·⑤는 ⓑ를 강화하는 사례이므로 판단 방향이 틀렸다.</p>
+<p><em>선택률</em> — 응시 98,618명 — ①5.5% ②60.6% ③5.6% ④14.1% ⑤13.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p>㉮～㉰에 따라 〈보기〉에 대한 언론 보도를 평가한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 ○○방송사의 의뢰로 △△여론조사 기관에서 세 차례 실시한 당선인 예측 여론조사 결과의 일부이다. (세 조사 모두 신뢰 수준 95%, 오차 범위 8.8%P임.)</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>1차 조사</th>
+<th>2차 조사</th>
+<th>3차 조사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>조사일</td>
+<td>선거일 15일 전</td>
+<td>선거일 10일 전</td>
+<td>선거일 5일 전</td>
+</tr>
+<tr>
+<td>조사 결과 — A 후보</td>
+<td>42%</td>
+<td>38%</td>
+<td>39%</td>
+</tr>
+<tr>
+<td>조사 결과 — B 후보</td>
+<td>32%</td>
+<td>37%</td>
+<td>38%</td>
+</tr>
+<tr>
+<td>조사 결과 — C 후보</td>
+<td>18%</td>
+<td>17%</td>
+<td>17%</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>① 1차 조사 결과를 선거일 14일 전에 “A 후보, 10%P 이상의 차이로 B 후보와 C 후보에 우세”라고 보도하는 것은 ㉯와 ㉰ 중 어느 것에도 위배되지 않겠군.</li>
+<li>② 2차 조사 결과를 선거일 9일 전에 “A 후보는 B 후보에 조금 앞서고, C 후보는 3위”라고 보도하는 것은 ㉯에 위배되지만, ㉰에 위배되지 않겠군.</li>
+<li>③ 3차 조사 결과를 선거일 4일 전에 “A 후보는 오차 범위 내에서 1위”라고 보도하는 것은 ㉮와 ㉰에 모두 위배되겠군.</li>
+<li>④ 1차 조사 결과를 선거일 14일 전에 “A 후보 1위, B 후보 2위, C 후보 3위”라고 보도하는 것은 ㉯에 위배되지 않고, 2차 조사 결과를 선거일 9일 전에 같은 표현으로 보도하는 것은 ㉰에 위배되겠군.</li>
+<li>⑤ 2차 조사 결과를 선거일 9일 전에 “B 후보, A 후보와 오차 범위 내 경합”이라고 보도하는 것은 ㉰에 위배되지 않고, 3차 조사 결과를 선거일 4일 전에 같은 표현으로 보도하는 것은 ㉮에 위배되겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>7번 — 정답 ②</strong><br />
+2차 조사에서 A·B 후보의 지지율 차이(1%P)는 오차 범위(8.8%P) 내에 있으므로, 이를 밝히지 않고 우열을 나타내는 보도는 ㉯와 ㉰에 모두 위배된다. ‘선거일 9일 전’이라는 시기는 ㉯·㉰의 위배 여부 판단과 무관하다. 따라서 ㉰에 위배되지 않는다고 한 ②가 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,632명 — ①10.8% ②47.0% ③7.1% ④24.8% ⑤9.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>대중적 정부의 운명을 가르는 물음이 있다. 사회적 다수의 지배를 핵심으로 하는 순수한 민주정으로 파벌의 폐해를 다스릴 수 있는가 하는 것이다. 여기서 파벌이란 공동체 전체의 이익과 어긋나는 일부 시민의 이해관계로 결합한 집단을 말하고, 순수한 민주정이란 소규모의 시민이 모여 정부를 직접 구성·운영하는 사회를 말한다. 가령 한 마을의 시민들이 한자리에 모여 다수결로 모든 것을 정한다고 해 보자. 이 마을에서 다수가 소수의 재산을 자기들에게 유리하게 처분하기로 결정한다면, 소수는 이를 막을 수 있을까?</p>
+<p>이러한 물음과 관련하여 ㉠<u>순수한 민주정으로는 파벌의 폐해를 치유할 수 없다는 논증</u>은 두 갈래의 가정을 모두 짚는다. 우선 다수와 소수가 갈리는 상황에서, 다수가 자기 이익을 추구하거나 그렇지 않거나 둘 중 하나이다. 첫 번째로 다수가 자기 이익을 추구한다고 가정해 보자. 이 경우 다수는 자신이 걸린 사안에서 스스로의 재판관이 되어 소수와 공공선을 희생시키므로, 순수한 민주정에는 이를 제어할 수단이 없다는 결론에 이른다. 두 번째로 다수가 자기 이익을 추구하지 않는다고 가정해 보자. 그러나 인간 능력의 다양성과 서로 다른 의견·이해관계로 인해 시민들은 완전히 동질화될 수 없으므로, 언제든 다수와 소수가 다시 갈리고 다수가 자기 이익을 추구할 유인이 되살아난다. 그리하여 이 경우에도 폐해를 막을 수단이 없다는 결론에 이른다. 두 가정 어느 쪽을 따르든 순수한 민주정으로는 치유가 불가능하다는 것이다.</p>
+<p>그러나 이 논증을 검토하는 한 입장이 있다. ㉡<u>이 입장</u>에 따르면, 첫 번째 가정을 고려할 때의 결론은 받아들여야 하지만, 두 번째 가정을 고려할 때의 결론까지 받아들일 필요는 없다. 따라서 순수한 민주정으로는 결코 치유가 불가능하다는 강한 결론은 받아들일 필요가 없다고 본다. 그 이유는 다음과 같다.</p>
+<p>먼저 파벌의 폐해가 발생하기 위해서는 두 가지 조건이 모두 충족되어야 한다. 첫째, 다수와 소수를 가르는 분열이 존재해야 한다. 둘째, 다수가 자기 이익을 위해 소수를 희생시키려는 유인이 작동해야 한다. 그런데 다수가 자기 이익을 추구한다고 가정하면, 둘째 조건이 그 가정 안에 이미 들어 있으므로 폐해를 막을 길이 없다. 따라서 첫 번째 가정을 고려할 때의 결론, 곧 제어 수단이 없다는 점은 받아들여야 한다.</p>
+<p>다음으로, 다수가 자기 이익을 추구하지 않는 경우를 보자. 시민이 완전히 동질화될 수 없다는 것은 분열의 <em>가능성</em>이 늘 남아 있다는 뜻일 뿐, 다수가 실제로 자기 이익을 위해 소수를 희생시키는 유인이 매번 작동한다는 뜻은 아니다. 다수가 공동체의 이익을 우선하도록 이끄는 제도적 매개, 이를테면 대표의 여과나 영역의 확대가 갖추어진다면, 분열의 가능성이 남아 있더라도 둘째 조건은 작동하지 않을 수 있다. 결국 ㉢<u>두 번째 가정을 고려할 때의 결론은 받아들일 필요가 없다.</u></p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 파벌은 공동체 전체의 이익과 어긋나는 일부 시민의 이해관계로 결합한 집단이다.</li>
+<li>② 순수한 민주정은 소규모의 시민이 정부를 직접 구성·운영하는 사회이다.</li>
+<li>③ ㉠은 다수가 자기 이익을 추구하는 경우와 그렇지 않은 경우를 모두 고려한다.</li>
+<li>④ ㉡은 ㉠의 두 결론을 모두 그대로 받아들여야 한다고 본다.</li>
+<li>⑤ 시민이 완전히 동질화될 수 없다는 것은 다수와 소수의 분열 가능성이 남아 있음을 뜻한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>8번 — 정답 ④</strong>
+3문단에서 ㉡은 "첫 번째 가정을 고려할 때의 결론은 받아들여야 하지만, 두 번째 가정을 고려할 때의 결론까지 받아들일 필요는 없다"라고 했어요. 그런데 ④는 ㉡이 "두 결론을 모두 그대로 받아들여야 한다"라고 했으니 정반대라서 적절하지 않아 정답입니다. ①·②는 1문단, ③은 2문단(두 가정 모두 고려), ⑤는 5문단(동질화 불가=분열 가능성)에서 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>윗글의 두 조건을 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 다수와 소수의 분열이 존재하면 그것만으로 파벌의 폐해가 반드시 발생한다.</li>
+<li>② 다수가 자기 이익을 위해 소수를 희생시키려는 유인이 작동하지 않으면 두 조건은 모두 충족된다.</li>
+<li>③ 다수가 자기 이익을 추구한다고 가정하면 둘째 조건은 그 가정 안에 이미 포함된다.</li>
+<li>④ 대표의 여과나 영역의 확대가 갖추어지면 첫째 조건 자체가 사라진다.</li>
+<li>⑤ 두 조건 중 어느 하나만 충족되어도 파벌의 폐해가 발생한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>9번 — 정답 ③</strong>
+4문단에서 "다수가 자기 이익을 추구한다고 가정하면, 둘째 조건이 그 가정 안에 이미 들어 있다"라고 했으므로 ③이 적절해 정답입니다. ① 폐해는 "두 가지 조건이 <em>모두</em> 충족"되어야 발생하므로 분열만으로는 부족해요. ② 둘째 조건이 작동하지 않으면 두 조건이 모두 충족되는 것이 아니라 <em>충족되지 못합니다</em>. ④ 제도적 매개는 둘째 조건의 작동을 막는 것이지 <em>첫째 조건(분열)을 없애는</em> 것이 아니에요(5문단). ⑤ 두 조건이 <em>모두</em> 충족되어야 하므로 "어느 하나만"은 틀립니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>㉢의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 시민이 완전히 동질화되면 다수와 소수의 분열 자체가 사라지기 때문이다.</li>
+<li>② 다수가 자기 이익을 추구하는 경우에도 제어 수단이 마련될 수 있기 때문이다.</li>
+<li>③ 순수한 민주정에서도 다수가 늘 공동체의 이익을 우선하기 때문이다.</li>
+<li>④ 첫 번째 가정을 고려할 때의 결론을 받아들일 필요가 없기 때문이다.</li>
+<li>⑤ 분열의 가능성이 남아 있더라도 제도적 매개로 둘째 조건이 작동하지 않을 수 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+5문단에 따르면, 다수가 자기 이익을 추구하지 않는 경우 분열의 가능성이 남아 있더라도 "대표의 여과나 영역의 확대 같은 제도적 매개가 갖추어지면 둘째 조건은 작동하지 않을 수 있다"라고 했어요. 그래서 두 번째 가정의 결론(치유 불가)을 받아들일 필요가 없는 것이므로 ⑤가 정답입니다. ① 동질화는 애초에 불가능하다고 보았고, ② ㉢은 다수가 자기 이익을 <em>추구하지 않는</em> 경우에 관한 것이며, ③ 다수가 <em>늘</em> 공동체 이익을 우선한다고는 하지 않았고, ④ ㉡은 <em>첫 번째</em> 가정의 결론은 받아들여야 한다고 했으므로 틀렸습니다.</p>
+<p><strong>11번 [3점] — 정답 ②</strong>
+〈보기〉의 P는 대표 선출과 영역 확대라는 제도적 매개를 갖춘 공동체예요. ㉡의 입장은 분열의 가능성이 남아 있어도 제도적 매개로 둘째 조건(다수의 희생 유인)이 작동하지 않을 수 있다고 봅니다. 따라서 P에서 다수의 시도가 제어된다면, 이는 바로 그 점을 보여 주는 것이므로 ②가 적절해 정답입니다. ① ㉡은 첫 번째 가정의 결론을 이미 받아들이므로 K의 결과를 근거로 삼을 필요가 없고, ③ P의 제어 성공은 두 번째 가정의 결론을 <em>받아들일 필요가 없게</em> 하므로 "여전히 받아들여야 한다"는 ㉡과 어긋나며, ④ 첫 번째 가정의 결론은 ㉡도 받아들여야 한다고 보았고, ⑤ ㉡은 강한 결론(치유 불가)을 받아들일 필요가 없다고 보았으므로 모두 부적절합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 ㉡에 입각하여 학생이 〈보기〉와 같은 탐구 활동을 한다고 할 때, [A]에 들어갈 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 정치 공동체에서 다음과 같은 가상의 실험을 구상해 보고, 순수한 민주정에 관한 논증을 검토해 보자.
+같은 인구로 이루어진 두 공동체 K와 P를 둔다. K는 시민이 한자리에 모여 모든 사안을 다수결로 직접 결정하고, 별도의 매개 장치를 두지 않는다. P는 시민이 대표를 선출하여 통치하게 하고, 통치 영역을 넓혀 다양한 이익이 포괄되도록 설계한다. 두 공동체에서 다수와 소수의 분열이 생긴 뒤, 다수가 소수의 재산을 자신들에게 유리하게 처분하려는 시도가 얼마나 제어되는지를 관찰한다. 그 결과를 바탕으로 학생은 [A]라고 논의하였다.</p>
+</blockquote>
+<ul>
+<li>① K에서 다수의 시도가 제어된다면, 첫 번째 가정을 고려할 때의 결론을 받아들여야 한다</li>
+<li>② P에서 다수의 시도가 제어된다면, 분열의 가능성이 남아 있어도 둘째 조건이 작동하지 않을 수 있음을 보여 준다</li>
+<li>③ P에서 다수의 시도가 제어되더라도, 두 번째 가정을 고려할 때의 결론은 여전히 받아들여야 한다</li>
+<li>④ K와 P에서 결과가 같다면, 첫 번째 가정을 고려할 때의 결론을 받아들일 필요가 없다</li>
+<li>⑤ K와 P의 결과와 무관하게, 순수한 민주정으로는 치유가 불가능하다는 결론을 받아들여야 한다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>두 갈래 가정</strong>: 다수가 자기 이익을 추구하는 경우와 그렇지 않은 경우. 논증은 두 경우를 모두 짚어 순수한 민주정으로는 치유가 불가능하다고 결론 내려요.</li>
+<li><strong>두 가지 조건</strong>: 파벌의 폐해가 생기려면 ① 다수·소수의 분열과 ② 다수의 희생 유인이 <em>모두</em> 작동해야 합니다.</li>
+<li><strong>제도적 매개</strong>: 대표의 여과·영역의 확대처럼, 분열이 있어도 다수의 희생 유인이 작동하지 않게 하는 장치.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>가정</th>
+<th>논증의 결론</th>
+<th>㉡의 검토</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다수가 자기 이익을 추구함</td>
+<td>제어 수단 없음 (치유 불가)</td>
+<td>받아들임 (둘째 조건이 가정에 포함)</td>
+</tr>
+<tr>
+<td>다수가 자기 이익을 추구하지 않음</td>
+<td>동질화 불가 → 결국 치유 불가</td>
+<td>받아들일 필요 없음 (제도적 매개로 둘째 조건 차단 가능)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>같은 논증이라도 "두 가정 중 어느 쪽 결론을 받아들이느냐"를 따져 보면, 강한 결론(순수한 민주정으로는 절대 안 된다)을 곧바로 받아들일 필요는 없다는 비판이 가능해요. 이것이 ㉡의 핵심 전략입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>파벌의 폐해가 생기는 두 조건은 무엇인가요?</div><div class='qa-a'>① 다수와 소수의 분열, ② 다수가 자기 이익을 위해 소수를 희생시키려는 유인. 둘이 모두 작동해야 폐해가 생깁니다.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡은 왜 두 번째 가정의 결론을 받아들이지 않나요?</div><div class='qa-a'>분열의 가능성이 남아 있어도, 제도적 매개가 갖추어지면 둘째 조건이 작동하지 않을 수 있기 때문이에요.</div></div>
+<div class='qa-item'><div class='qa-q'>㉡이 첫 번째 가정의 결론은 받아들이는 까닭은?</div><div class='qa-a'>다수가 자기 이익을 추구한다고 가정하면 둘째 조건이 이미 그 안에 들어 있어, 폐해를 막을 길이 없기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 9월 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>인간의 본성에 관한 서로 다른 두 관점이 있다. 종교적 인간관에 따르면, 인간에게는 물리적 실체인 몸 이외에 비물리적 실체인 영혼이 있다. 영혼은 물리적 몸과 완전히 구별되며 인간의 결정의 원천이다. 반면 유물론적 인간관에 따르면, 인간은 물리적 몸에 지나지 않는다. 물리적 몸 이외에 영혼은 존재하지 않는다. 따라서 인간의 결정은 단지 뇌에서 일어나는 신경 사건이다. 이러한 두 관점 중 유물론적 인간관을 가정할 때, 인간은 자유롭게 선택할 수 있을까? 즉 인간에게 자유의지가 있을까? 가령 갑이 냉장고 문을 여니 딸기 우유와 초코 우유만 있다고 해 보자. 갑은 이것들 중 하나를 자유의지로 선택할 수 있을까?</p>
+<p>이러한 질문과 관련하여 반자유의지 논증은 갑에게 자유의지가 없다고 결론 내린다. 우선 임의의 선택은 이전 사건들에 의해 선결정되거나 무작위로 일어난다. 여기서 무작위로 일어난다는 것은 선결정되지 않는다는 것을 의미한다. 이러한 전제하에 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려한다. 첫 번째로 임의의 선택이 그 이전 사건들에 의해 선결정된다고 가정해 보자. 반자유의지 논증에서는 이 경우 우리에게 자유의지가 없다고 결론 내린다. 가령 갑의 딸기 우유 선택이 심지어 갑이 태어나기도 전에 선결정된 것이라면 갑이 자유의지로 그것을 선택한 것이라고 보기 어려울 것이다. 두 번째로 임의의 선택이 무작위로 일어난 것이라 가정해 보자. 반자유의지 논증에서는 이 경우에도 우리에게 자유의지가 없다고 결론 내린다. 가령 갑의 딸기 우유 선택이 단지 갑의 뇌에서 무작위로 일어난 신경 사건이라고 한다면, 그것은 자유의지의 산물이라고 보기 어려울 것이다.</p>
+<p>그러나 이 논증에 관한 다양한 비판이 가능하다. ㉠반자유의지 논증을 비판하는 한 입장에 따르면 반자유의지 논증의 선결정 가정을 고려할 때의 결론은 받아들여야 하지만, 무작위 가정을 고려할 때의 결론은 받아들일 필요가 없다. 따라서 반자유의지 논증의 결론도 받아들일 필요가 없다고 주장한다. 그 이유는 아래와 같다.</p>
+<p>임의의 선택이 나의 자유의지의 산물이 되기 위해서는 다음 두 가지 조건을 모두 충족해야 한다. 첫째, 내가 그 선택의 주체여야 한다. 둘째, 나의 선택은 그 이전 사건들에 의해 선결정되지 않아야 한다. 그런데 어떤 선택이 그 이전 사건들에 의해 선결정되어 있다면, 이것은 자유의지를 위한 둘째 조건과 충돌한다. 따라서 반자유의지 논증의 선결정 가정을 고려할 때의 결론인 우리에게 자유의지가 없다는 점을 받아들여야 한다. 물론 이러한 자유의지와 다른 의미를 지닌 자유의지가 있을 수 있다. 만약 ‘내가 자유롭게 선택했다’는 말이 단지 ‘내가 하고자 원했던 것을 했다’는 ⓐ욕구 충족적 자유의지를 의미한다면, 나의 선택이 그 이전 사건들에 의해 선결정되어 있든 그렇지 않든 그것은 내 자유의지의 산물일 수 있다. 그러나 이러한 자유의지는 ⓑ여기서 염두에 두는 두 가지 조건을 모두 충족하는 자유의지와 다르다.</p>
+<p>다음으로, 어떤 선택이 무작위로 일어난 것이라고 하더라도 그 선택의 주체는 나일 수 있다. 유물론적 인간관에 따르면 ‘갑이 딸기 우유를 선택했다’는 것은 ‘선택 시점에 갑의 뇌에서 신경 사건이 발생했다’는 것을 의미한다. 갑의 이러한 신경 사건이 이전 사건들에 의해 선결정되지 않은 것으로 가정해 보자. 이러한 가정 아래에서도 갑은 그 선택의 주체일 수 있다. 왜냐하면 이 가정은 선택 시점에 발생한 뇌의 신경 사건으로서 ‘갑이 딸기 우유를 선택했다’는 사실을 바꾸지 않기 때문이다. 결국 ㉡반자유의지 논증의 무작위 가정을 고려할 때의 결론은 받아들일 필요가 없다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 유물론적 인간관은 영혼의 존재를 인정하지 않는다.</li>
+<li>② 유물론적 인간관은 인간의 선택을 물리적 사건으로 본다.</li>
+<li>③ 종교적 인간관은 인간이 물리적 실체로만 구성된다고 보지 않는다.</li>
+<li>④ 종교적 인간관은 인간의 선택에서 비물리적 실체가 하는 역할을 인정한다.</li>
+<li>⑤ 반자유의지 논증은 임의의 선택이 선결정되지 않을 가능성을 고려하지 않는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+2문단에 따르면 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려하며, 무작위로 일어난다는 것은 곧 선결정되지 않는다는 의미다. 즉 선결정되지 않을 가능성도 고려하므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①0.6% ②5.3% ③1.8% ④3.4% ⑤89.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>ⓐ, ⓑ를 이해한 내용으로 적절한 것은?</p>
+<ul>
+<li>① 어떤 선택을 원해서 한다면 그 선택을 한 사람에게 ⓐ가 있을 수 없다.</li>
+<li>② 어떤 선택을 원해서 한다면 그 선택을 한 사람에게 ⓑ가 있을 수 없다.</li>
+<li>③ 어떤 선택이 선결정되어 있다면 그 선택을 한 사람에게 ⓐ가 있을 수 없다.</li>
+<li>④ 어떤 선택이 선결정되어 있다면 그 선택을 한 사람에게 ⓑ가 있을 수 없다.</li>
+<li>⑤ 어떤 선택을 원해서 하고 그 선택이 선결정되어 있지 않다면 그 선택을 한 사람에게 ⓐ와 ⓑ 중 어느 것도 있을 수 없다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong><br />
+ⓑ(두 조건을 모두 충족하는 자유의지)는 내가 선택의 주체이고 그 선택이 선결정되지 않아야 성립한다. 어떤 선택이 선결정되어 있다면 둘째 조건을 충족하지 못하므로 ⓑ가 있을 수 없다(④). 반면 ⓐ(욕구 충족적 자유의지)는 선결정 여부와 무관하게 성립할 수 있다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.9% ②8.2% ③9.3% ④77.1% ⑤4.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>㉡의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 비물리적 실체인 영혼은 존재하지 않기 때문이다.</li>
+<li>② 어떤 선택은 무작위로 일어난 것이 아니기 때문이다.</li>
+<li>③ 어떤 선택은 선결정되어 있지만 욕구 충족적 자유의지의 산물이기 때문이다.</li>
+<li>④ 반자유의지 논증의 선결정 가정을 고려할 때의 결론이 받아들여져야 하기 때문이다.</li>
+<li>⑤ 어떤 선택은 자유의지의 산물이 되기 위한 두 가지 조건을 모두 충족할 수 있기 때문이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+5문단에 따르면 어떤 선택이 무작위로(=선결정되지 않게) 일어났더라도 그 선택의 주체는 나일 수 있다. 즉 무작위로 일어난 선택은 ‘주체가 나일 것’과 ‘선결정되지 않을 것’이라는 자유의지의 두 조건을 모두 충족할 수 있으므로, 무작위 가정을 고려할 때의 결론(자유의지 없음)은 받아들일 필요가 없다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①3.1% ②9.0% ③12.2% ④11.6% ⑤64.3%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글의 ㉠에 입각하여 학생이 〈보기〉와 같은 탐구 활동을 한다고 할 때, [A]에 들어갈 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+자유의지와 관련된 H의 가설과 실험을 보고, 반자유의지 논증에 대해 논의해 보자.</p>
+<p><strong>∙ H의 가설</strong>
+　인간이 결정을 내릴 때 발생하는 신경 사건이 있기 전에 그가 어떤 선택을 할지 알게 해 주는 다른 신경 사건이 그의 뇌에서 매번 발생한다.</p>
+<p><strong>∙ H의 실험</strong>
+　피실험자의 왼손과 오른손에 각각 버튼 하나가 주어진다. 피실험자는 두 버튼 중 어떤 버튼을 누를지 특정 시점에 결정한다. 그 결정의 시점과 그 이전에 발생하는 뇌의 신경 사건을 동일한 피실험자에게서 100차례 관측한다.</p>
+<p><strong>◦ 논의:</strong> ［A］ (원문: 빈 상자)</p>
+</blockquote>
+<ul>
+<li>① H의 가설이 실험 결과에 의해 입증된다면, 선결정 가정을 고려할 때의 결론을 거부해야 한다.</li>
+<li>② H의 가설이 실험 결과에 의해 입증된다면, 무작위 가정은 참일 수밖에 없다.</li>
+<li>③ H의 가설이 실험 결과에 의해 입증되지 않는다면, 선결정 가정은 참일 수밖에 없다.</li>
+<li>④ H의 가설이 실험 결과에 의해 입증되지 않는다면, 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니다.</li>
+<li>⑤ H의 가설의 실험 결과에 의한 입증 여부와 상관없이, 반자유의지 논증의 결론을 받아들여야 한다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+H의 실험은 인간의 선택(신경 사건)이 그 이전의 다른 신경 사건과 관련되는지, 즉 선결정되어 있는지를 알아보는 것이다. ㉠의 입장은 선결정 가정의 결론은 받아들이되 무작위 가정의 결론은 받아들일 필요가 없다고 본다. 따라서 H의 가설이 입증되지 않더라도(선택이 무작위라 하더라도) 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니라고 논의할 수 있다(④).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.3% ②10.1% ③12.2% ④61.9% ⑤7.1%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>민주정과 공화정 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='민주정과 공화정 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

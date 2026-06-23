@@ -1,0 +1,577 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>샤딩 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 인기 게임의 서버가 사람이 너무 몰려서 "서버 점검 중"이라는 안내가 뜨거나, 큰 행사 예매 사이트가 한꺼번에 접속이 몰려 먹통이 되는 일을 본 적 있죠? 컴퓨터 한 대가 처리할 수 있는 일에는 한계가 있어서, 데이터가 많아지고 요청이 몰리면 그 한 대가 버거워하는 거예요. 이럴 때 쓰는 똑똑한 방법이 바로 <strong>샤딩(sharding)</strong>입니다.</p>
+<p>먼저 큰 그림부터 볼게요. 우리가 어떤 사이트에 접속해 정보를 받아 오면, 그 일을 처리해 주는 컴퓨터를 <strong>서버</strong>라고 하고, 정보를 요청하는 내 컴퓨터·휴대폰을 <strong>클라이언트</strong>라고 불러요. 그런데 데이터를 비싼 컴퓨터 한 대에 몽땅 넣어 두면, 그 한 대가 고장 나거나 해킹당하면 모든 게 한꺼번에 위험해지고, 일도 느려집니다. 그래서 데이터를 <strong>여러 대의 값싼 컴퓨터에 나눠 두는</strong> 전략이 등장했는데, 이것을 <strong>분산 파일 관리 체계</strong>라고 합니다.</p>
+<p>샤딩은 그중 한 방법이에요. 두꺼운 백과사전을 한 권으로 들고 다니는 대신 ㄱ권·ㄴ권·ㄷ권으로 나눠 책꽂이 여러 칸에 꽂아 두는 모습을 떠올려 보세요. 이렇게 <strong>데이터를 작은 덩어리로 쪼갠 것</strong>을 <em>샤드(shard)</em>라고 하고, 각 샤드를 서로 다른 기계에 나눠 저장하는 게 샤딩이에요. 누가 "ㄴ권에 있는 내용"을 찾으면, 그게 어느 칸(어느 기계)에 있는지 알려 주는 안내원이 필요한데, 그 역할을 하는 것이 <strong>라우터</strong>이고, 무엇이 어디 있는지 적어 둔 장부가 <strong>설정 서버</strong>입니다.</p>
+<p>이렇게 나눠 두면 <strong>싼 기계 여러 대로 비용을 아끼고(저장소 분산)</strong>, <strong>여러 기계가 일을 나눠 해서 빨라지는(부하 분산)</strong> 좋은 점이 있어요. 하지만 좋은 점만 있는 건 아닙니다. 찾으려는 데이터가 여기저기 흩어져 있으면 끌어모으느라 오히려 느려지는 <strong>성능 병목</strong>이 생기고, 한 기계가 망가지면 그 안의 데이터를 되살리기 어려운 <strong>낮은 장애 허용성</strong>이 문제예요. 그래서 같은 데이터를 다른 기계에도 한 벌 더 베껴 두는 <strong>복제</strong>를 함께 써서 약점을 메웁니다.</p>
+<blockquote>
+<p>한마디로: <strong>샤딩은 "데이터를 쪼개 나눠 담아 싸고 빠르게" 만드는 방법</strong>이고, 그 대신 "흩어져서 느려지거나 잃기 쉬운" 약점은 복제로 보완해요. 이 단원은 그 원리와 장단점, 그리고 보완책을 차근차근 익히는 데 목표가 있습니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>샤딩</strong>이 있습니다. 데이터를 어떻게 나눠 담고(구조), 그래서 무엇이 좋아지고 무엇이 위험해지는지(장단점), 약점을 어떻게 메우는지(보완)를 세 세트로 나눠 살펴봅니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>샤딩 (데이터를 샤드로 분할해 여러 기계에 저장)</div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>샤딩이 무엇으로 이루어지는지(샤드·라우터·설정 서버)와, 비용 절감성·처리 신속성·장애 허용성이라는 세 가지 특성이 서로 어떻게 맞물려 <em>한꺼번에 다 높이기 어려운지</em>를 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>데이터를 <em>나눠</em> 담는 샤딩과 <em>베껴</em> 담는 복제를 나란히 놓고, 두 방식의 원리와 장단점이 어떻게 갈리는지를 견줍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>클라이언트의 요청이 라우터를 거쳐 알맞은 샤드에 닿기까지의 <em>실제 동작 과정</em>을 따라가며, 샤딩에 복제를 결합해 운용하는 모습을 살핍니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 샤딩이 왜 데이터를 쪼개는지, 그 대가로 무엇을 얻고 무엇을 잃는지, 그리고 그 약점을 어떻게 메우는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>서버는 클라이언트의 요청에 따라 데이터를 검색하거나 연산을 수행해 그 결과를 돌려주는 컴퓨터 시스템이다. 데이터가 많아지고 요청이 몰릴수록 단일 기계의 성능과 저장 용량만으로는 이를 감당하기 어렵다. 이런 한계를 넘어서기 위해 개발된 것이 데이터를 여러 기계에 나누어 관리하는 분산 파일 관리 체계이며, 샤딩은 그 한 방법이다. 샤딩은 데이터를 샤드 단위로 분할하여 서로 연결된 여러 기계에 나누어 저장하는 방법이고, 샤드란 관리하기 쉽도록 분할하여 각 기계에 저장한 데이터 세트를 가리킨다. 클라이언트의 요청이 들어오면 어떤 샤드에 해당 데이터가 있는지를 판별하고 그 샤드에서 데이터를 조회해 전달하는 라우터가 동작하며, 라우터가 이 역할을 하도록 전체 샤드의 분할 정보와 위치 정보를 저장·관리하는 설정 서버가 따로 마련된다. 설정 서버에는 각 샤드가 어떻게 이용되었는지를 보여 주는 로그 정보가 함께 저장되기도 한다.</p>
+<p>샤딩의 성능은 클라이언트의 요청이 처리되는 속도로 정의되며, 단위 시간당 처리되는 요청의 양으로 가늠된다. 샤딩에서는 데이터의 쓰기·읽기와 연산을 각 샤드를 맡은 서로 다른 기계가 나누어 처리하므로, 요청이 여러 기계에 분산되어 작업이 신속해진다. 또한 저장 용량이 큰 고가의 기계 한 대 대신 저장 용량이 작은 저가의 기계 여러 대를 합쳐 동일한 저장 용량을 확보하므로 비용이 절감된다. 다만 하나의 요청에 필요한 데이터가 여러 샤드에 흩어져 있으면, 그것을 끌어모아 처리하는 과정에서 저성능 기계 간 통신에 따른 지연이 생겨 성능이 떨어진다. 그래서 하나의 요청으로 함께 접근되는 데이터는 가능하면 같은 샤드에 모이도록 설계하여 데이터의 지역성을 확보하는 것이 성능을 높이는 핵심이 된다.</p>
+<p>데이터가 무단으로 변조되거나 기계적 결함으로 손상되었을 때 정상 상태로 되돌릴 수 있는 성질을 장애 허용성이라 한다. 샤드마다 서로 다른 데이터가 들어 있는 순수한 샤딩에서는, 한 기계의 데이터가 손상되면 그 샤드의 데이터를 되살릴 길이 마땅치 않아 장애 허용성이 낮다. 이를 보완하는 방법이 샤딩에 복제를 결합하는 것이다. 복제는 서로 다른 기계에 같은 내용의 데이터를 두는 분산 방법으로, 한 기계의 데이터가 손상되어도 다른 기계가 복제본으로 정상 데이터를 가지고 있어 에러를 복구할 수 있게 한다. 따라서 ㉠<u>샤딩에 복제를 결합하면 손상된 데이터가 있더라도 복구가 용이하다.</u></p>
+<p>샤딩을 설계할 때 함께 고려해야 할 세 가지 특성이 있다. 비용 절감성은 저가의 저성능 기계 여러 대로 동일한 저장 용량과 처리 능력을 확보해 비용을 줄일 수 있다는 성질이다. 처리 신속성은 요청을 여러 샤드에 분산해 단위 시간당 더 많은 요청을 신속히 처리할 수 있다는 성질로, 데이터의 지역성이 확보될수록 높아진다. 장애 허용성은 데이터가 손상되어도 정상 상태로 복구할 수 있다는 성질이다. 그런데 장애 허용성을 높이려고 복제를 결합하면, 데이터를 추가·수정·삭제하는 쓰기 작업은 원본과 모든 복제본에 일관되게 적용되어야 하므로 쓰기 처리가 느려져 처리 신속성이 낮아진다. 또 복제본을 두는 만큼 더 많은 기계가 필요해 비용 절감성도 낮아진다. 이처럼 세 특성은 서로 맞물려 있어, 한 특성을 높이면 다른 특성이 낮아지기 쉽다. 아직까지 샤딩은 비용 절감성·처리 신속성·장애 허용성을 함께 높일 수 있는 방법이 없어, 운용 목적에 따라 어느 특성을 우선할지를 선택해 설계한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>다음은 윗글을 읽은 학생에게 제공된 학습지의 일부이다. 학생의 ‘판단 결과’로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학습지]</span></strong> ※ 아래를 읽고 맞으면 ○, 틀리면 × 표시를 하시오.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>판단할 내용</th>
+<th style="text-align: center;">판단 결과</th>
+<th style="text-align: center;">선지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>샤딩의 구성과 장단점을 함께 살펴보고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">①</td>
+</tr>
+<tr>
+<td>샤딩의 구조를 분석하고, 샤딩 기술의 응용 분야를 소개하고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">②</td>
+</tr>
+<tr>
+<td>샤딩의 장점을 열거하고, 다른 분산 방법과의 우열을 가리고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">③</td>
+</tr>
+<tr>
+<td>설정 서버는 라우터가 보내는 질의 패킷을 검증하는 장치이다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">④</td>
+</tr>
+<tr>
+<td>관리하기 쉽도록 분할하여 각 기계에 저장한 데이터 세트를 샤드라고 한다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">⑤</td>
+</tr>
+</tbody>
+</table>
+<p>(선지 ①~⑤는 학습지 표의 각 행에 표시된 ‘판단 결과’이다.)</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 순수한 샤딩에서는 한 기계의 데이터가 손상되어도 그 데이터를 쉽게 되살릴 수 있다.</li>
+<li>② 하나의 요청에 필요한 데이터가 여러 샤드에 흩어질수록 처리 속도가 빨라진다.</li>
+<li>③ 라우터가 동작하기 위해 전체 샤드의 분할 정보와 위치 정보가 사용된다.</li>
+<li>④ 저장 용량이 큰 고가의 기계 한 대를 두는 것이 저가의 기계 여러 대를 합치는 것보다 비용이 적게 든다.</li>
+<li>⑤ 데이터의 지역성이 확보될수록 같은 양의 요청을 처리하는 데 걸리는 시간이 길어진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 같은 내용의 데이터가 서로 다른 기계에 복제본으로 저장되기 때문이다.</li>
+<li>② 쓰기 작업이 원본과 모든 복제본에 일관되게 적용되기 때문이다.</li>
+<li>③ 하나의 요청에 필요한 데이터가 같은 샤드에 모여 있기 때문이다.</li>
+<li>④ 저가의 저성능 기계 여러 대를 합쳐 저장 용량을 확보하기 때문이다.</li>
+<li>⑤ 설정 서버에 각 샤드의 이용 내역을 보여 주는 로그 정보가 저장되기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+쇼핑몰을 운영하는 갑 회사는 고가의 기계 한 대로 데이터를 관리하다가, 같은 성능을 더 싸게 확보하려고 저가의 기계 여러 대에 데이터를 샤드로 나누어 저장하는 방식으로 바꾸었다. 한편 을 회사는 주문 기록이 손상되는 사고를 막는 것을 가장 중요하게 여겨, 샤딩을 쓰되 모든 샤드의 복제본을 다른 기계에 함께 두는 방식으로 운영한다. 다만 을 회사는 주문이 추가·수정될 때마다 쓰기 처리가 눈에 띄게 느려지는 점을 감수하고 있다.</p>
+</blockquote>
+<ul>
+<li>① 을 회사가 복제본을 함께 두는 것은 처리 신속성을 높이려는 선택이겠군.</li>
+<li>② 갑 회사가 방식을 바꾼 것은 비용 절감성을 높이려 한 것이겠군.</li>
+<li>③ 을 회사에서 쓰기 처리가 느려지는 것은 장애 허용성이 낮아졌기 때문이겠군.</li>
+<li>④ 갑 회사의 방식은 을 회사의 방식보다 더 많은 기계를 필요로 하겠군.</li>
+<li>⑤ 을 회사는 갑 회사와 달리 세 특성을 모두 함께 높이는 데 성공하였겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2025학년도 9월 [8~11]</div>
+<div class='passage exam-ps'><p>블록체인 기술은 데이터를 블록이라는 단위로 묶어 체인 형태로 연결한 것을 여러 대의 컴퓨터에 중복 저장하는 기술이다. 체인 형태로 연결된 블록의 집합을 블록체인이라 하고, 블록체인을 저장하는 컴퓨터를 노드라고 한다. 새로 생성된 블록은 노드들에 전파된다. 노드들은 블록에 포함된 내용이 블록체인의 다른 블록에 있는 내용과 상충되지 않는지, 동일한 내용이 블록체인의 다른 블록에 이중으로 포함되어 있지 않은지 검증한다. 검증이 끝난 블록을 블록체인에 연결할지 여부는 모든 노드들이 참여하는 승인 과정을 통해 정해진다. 승인이 완료된 블록은 블록체인에 연결되고, 이 블록체인은 노드들에 저장된다. 승인 과정에는 합의 알고리즘이 사용되고, 합의 알고리즘의 예로 ‘작업증명’이 있다.</p>
+<p>블록체인 기술의 성능은 블록체인에 데이터가 저장되는 속도로 정의되며, 단위 시간당 블록체인에 저장되는 데이터의 양으로 계산될 수 있다. 블록체인 기술은 공개형과 비공개형으로 구분된다. 비공개형은 공개형과 달리 노드 수에 제한을 두고, 일반적으로 공개형에 비해 합의 알고리즘의 속도가 빠르다. 따라서 비공개형은 승인 과정에 걸리는 시간이 짧기 때문에 성능이 높다.</p>
+<p>데이터가 무단으로 변경되기 어렵다는 성질을 무결성이라 하는데 무결성은 블록체인 기술의 대표적인 장점이다. 특정 노드에 저장되어 있는 일부 데이터가 변경되면 변경된 블록과 그 이후의 블록들은 블록체인과의 연결이 끊어진다. 끊어진 모든 블록을 다시 연결하는 것은 승인 과정을 필요로 하기 때문에 연결을 복구하는 것은 어렵다. 즉 블록과 블록체인의 연결을 유지하면서 블록체인에 포함된 데이터를 변경하는 것이 어려우므로 블록체인 데이터는 무결성이 높다. 무단 변경과 달리, 일부 데이터가 지워져도 승인된 원래의 데이터로 복원할 때는 승인 과정이 필요하지 않다. 따라서 ㉠블록체인에 포함된 데이터는 일부가 지워지더라도 복원이 용이하다.</p>
+<p>블록체인 기술에서 고려해야 할 세 가지 특성이 있다. 보안성은 데이터의 무단 변경이 어려울 뿐 아니라 동일한 내용의 데이터가 블록체인의 서로 다른 블록에 또는 단일 블록에 이중으로 포함되는 것이 어렵다는 성질이다. 승인 과정에 걸리는 시간이 줄거나 노드 수가 감소하면 보안성은 낮아진다. 탈중앙성은 승인 과정에 다수의 노드들이 참여하고, 특정 노드가 승인 과정을 주도하지 않는다는 성질이다. 노드 수가 감소하면 탈중앙성은 낮아진다. 확장성은 블록체인 기술이 목표로 하는 응용 분야에 적용 가능할 만큼 성능이 높고, 노드 수가 증가해도 서비스 유지가 가능하다는 성질이다. 노드 수가 증가하면 성능이 저하되므로, 확장성이 높다는 것은 노드 수가 증가하더라도 성능 저하가 크지 않다는 것을 의미한다. 그래서 기술 변화 없이 확장성을 높이고자 할 때 노드 수를 제한하는 방법이 사용되기도 한다. 노드 수를 제한하면 성능 저하를 막을 수 있기 때문이다. 아직까지 블록체인 기술은 보안성, 탈중앙성, 확장성을 함께 높일 수 있는 방법이 없어 대규모로 채택되지 못하고 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>다음은 윗글을 읽은 학생에게 제공된 학습지의 일부이다. 학생의 ‘판단 결과’로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong><span class="boxmark">[학습지]</span></strong> ※ 아래를 읽고 맞으면 ○, 틀리면 × 표시를 하시오.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>판단할 내용</th>
+<th style="text-align: center;">판단 결과</th>
+<th style="text-align: center;">선지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>블록체인 기술의 특성과 한계를 살펴보고 있다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">①</td>
+</tr>
+<tr>
+<td>블록체인의 구조를 분석하고, 블록체인 기술의 응용 분야를 소개하고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">②</td>
+</tr>
+<tr>
+<td>블록체인 기술의 장점을 열거하고, 다른 기술과의 경쟁 양상을 설명하고 있다.</td>
+<td style="text-align: center;">×</td>
+<td style="text-align: center;">③</td>
+</tr>
+<tr>
+<td>⋮</td>
+<td style="text-align: center;">⋮</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>합의 알고리즘은 작업증명의 한 예이다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">④</td>
+</tr>
+<tr>
+<td>체인 형태로 연결된 블록의 집합을 저장하는 컴퓨터를 노드라고 한다.</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">⑤</td>
+</tr>
+</tbody>
+</table>
+<p>(선지 ①~⑤는 학습지 표의 각 행에 표시된 ‘판단 결과’이다.)</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① 승인 과정에 참여할 노드를 결정하기 위해 합의 알고리즘이 사용된다.</li>
+<li>② 일부 블록체인 데이터가 변경되면 전체 노드의 모든 블록은 승인 과정을 다시 거쳐야 한다.</li>
+<li>③ 블록과 블록체인의 연결을 유지하면서 블록체인 데이터를 삭제할 수 있으면 보안성이 높다.</li>
+<li>④ 공개형 블록체인 기술은 같은 양의 데이터가 저장되는 데 걸리는 시간이 짧을수록 성능이 낮아진다.</li>
+<li>⑤ 블록이 블록체인에 연결되기 위해서는 블록의 데이터가 블록체인의 다른 데이터와 비교되어야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠의 이유로 가장 적절한 것은?</p>
+<ul>
+<li>① 블록체인에 포함된 데이터는 변경이 쉽기 때문이다.</li>
+<li>② 블록체인이 여러 노드들에 중복 저장되기 때문이다.</li>
+<li>③ 승인 과정에 참여하는 노드 수에 제한이 있기 때문이다.</li>
+<li>④ 데이터가 블록체인에 포함되기 위해서는 승인 과정을 필요로 하기 때문이다.</li>
+<li>⑤ 동일한 데이터가 블록체인에 연결된 서로 다른 블록에 이중으로 포함되어 있기 때문이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+노드 수가 10개로 고정된 블록체인 기술을 사용하고 있는 A 업체는 이전에 사용하던 작업증명 대신 속도가 더 빠른 합의 알고리즘을 개발해, 유통 분야에서 요구되는 성능을 초과 달성했다. 한편 B 업체는 최근 A 업체보다 데이터의 위조 불가능성을 향상시킨 블록체인 기술을 개발했다. 이 기술은 노드 수에 제한이 없지만 현재는 200개의 노드가 참여하고 있다. 승인 과정에는 작업증명을 사용한다.</p>
+</blockquote>
+<ul>
+<li>① A 업체의 블록체인 기술은 이전보다 확장성과 보안성이 모두 높아졌겠군.</li>
+<li>② B 업체의 블록체인 기술은 노드 수가 증가할수록 보안성과 확장성이 모두 높아지겠군.</li>
+<li>③ B 업체의 블록체인 기술은 노드 수가 감소하면 성능은 높아지고 탈중앙성이 낮아지겠군.</li>
+<li>④ A 업체의 블록체인 기술은 B 업체와 달리 공개형이고, B 업체보다 탈중앙성이 낮겠군.</li>
+<li>⑤ A 업체의 블록체인 기술은 B 업체와 승인 과정이 다르고, B 업체보다 무결성이 높겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>서버에 저장된 데이터가 많아지고 클라이언트의 요청이 몰리면, 단일 기계로는 안전하고 신속한 처리가 어려워진다. 이런 부담을 줄이기 위해 데이터를 여러 기계에 나누어 관리하는 분산 방법이 쓰이는데, 대표적인 두 방법이 샤딩과 복제이다. 두 방법은 데이터를 여러 기계에 둔다는 점은 같지만, 무엇을 어떻게 두는지에서 갈린다.</p>
+<p>샤딩은 데이터를 샤드 단위로 분할하여 서로 다른 기계에 나누어 저장하는 방법이다. 각 기계에는 서로 다른 내용의 샤드가 하나씩 놓이므로, 같은 데이터가 두 기계에 겹쳐 있지 않다. 클라이언트의 요청이 들어오면 라우터가 어떤 샤드에 해당 데이터가 있는지를 판별하여 그 샤드에서 데이터를 조회해 전달하며, 라우터가 이렇게 동작하도록 전체 샤드의 분할 정보와 위치 정보를 저장한 설정 서버가 함께 운영된다. 샤딩에서는 데이터의 쓰기·읽기와 연산을 각 샤드를 맡은 기계가 나누어 처리하므로 요청이 여러 기계에 분산되어 작업이 신속해지고, 저가의 기계 여러 대로 동일한 저장 용량을 확보하므로 비용이 절감된다. 다만 하나의 요청에 필요한 데이터가 여러 샤드에 흩어져 있으면 그것을 끌어모으는 데에 시간 지연이 생기는 성능 병목이 나타날 수 있다. 저성능 기계 간 통신에서 생기는 지연이 한 기계에서 통합 연산을 수행할 때의 지연보다 클 수 있기 때문이다. 그래서 한 요청으로 함께 접근되는 데이터는 가능하면 같은 샤드에 모이도록 설계하여 데이터의 지역성을 확보하는 것이 성능을 높이는 핵심이 된다.</p>
+<p>복제는 샤딩과 달리 서로 다른 기계에 같은 내용의 데이터를 저장하는 방법이다. 데이터의 불법 변조나 결함이 발생했을 때, 정상 데이터를 다른 기계가 복제본으로 가지고 있어 에러를 복구할 수 있게 함으로써 장애 허용성을 확보한다. 또한 클라이언트의 읽기 요청은 원본과 여러 복제본에 나누어 처리할 수 있어, 읽기가 많은 상황에서 부하가 분산되는 이점이 있다. 그러나 데이터를 추가·수정·삭제하는 쓰기 작업은 원본이나 복제본 가운데 어느 하나에서만 단독으로 이루어져서는 안 되고 원본과 모든 복제본에 일관되게 적용되어야 한다. 그래서 복제본이 많아질수록 쓰기 작업의 연산 속도가 느려지는 문제가 생긴다.</p>
+<p>샤딩과 복제는 약점이 서로 다르기 때문에, 둘을 결합하여 약점을 보완하기도 한다. 순수한 샤딩은 샤드마다 다른 데이터가 들어 있어 한 기계의 데이터가 손상되면 복구가 어려워 장애 허용성이 낮은데, 여기에 복제를 결합하면 손상된 샤드를 다른 기계의 복제본으로 되살릴 수 있다. 가령 기계 A, B, C, D에 서로 다른 샤드 s1, s2, s3, s4를 각각 저장한 뒤, s1의 복제본을 B에도 두어 B가 원본 s2와 복제본을 함께 갖게 하고, 같은 방식으로 각 샤드의 복제본을 이웃한 기계에 분산해 둔다. 이렇게 하면 어느 한 기계가 손상되어도 그 기계가 맡았던 샤드를 다른 기계의 복제본에서 되살릴 수 있다. 다만 이 결합은 복제본을 둘 기계가 더 필요해 비용이 늘고, 쓰기 작업을 원본과 복제본에 일관되게 적용해야 해 쓰기 처리가 느려진다. 결국 샤딩과 복제 중 무엇을, 어떻게 결합할지는 비용·속도·안전 가운데 무엇을 더 중시하느냐에 따라 결정된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 복제는 서로 다른 기계에 같은 내용의 데이터를 저장하는 방법이다.</li>
+<li>② 샤딩에서는 각 기계에 서로 다른 내용의 샤드가 놓여 같은 데이터가 두 기계에 겹쳐 있지 않다.</li>
+<li>③ 복제에서 클라이언트의 읽기 요청은 원본과 여러 복제본에 나누어 처리할 수 있다.</li>
+<li>④ 샤딩에 복제를 결합하면 한 기계가 손상되어도 그 샤드를 다른 기계의 복제본으로 되살릴 수 있다.</li>
+<li>⑤ 하나의 요청에 필요한 데이터가 같은 샤드에 모일수록 데이터를 끌어모으는 지연이 커진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>윗글의 ‘복제’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 데이터에 결함이 생겨도 다른 기계의 복제본으로 에러를 복구할 수 있게 한다.</li>
+<li>② 읽기 요청을 원본과 복제본에 나누어 처리하여 부하를 분산할 수 있다.</li>
+<li>③ 쓰기 작업은 원본과 모든 복제본에 일관되게 적용되어야 한다.</li>
+<li>④ 복제본의 수가 늘어날수록 쓰기 작업의 연산 속도가 빨라진다.</li>
+<li>⑤ 정상 데이터를 다른 기계가 가지고 있게 하여 장애 허용성을 확보한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>윗글을 참고할 때, 〈보기〉의 A~C에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+하나의 요청으로 함께 접근되는 데이터가 같은 샤드에 모여 있을수록 끌어모으는 지연이 ( A ), 같은 데이터를 복제본으로 가진 기계가 많을수록 쓰기 작업을 일관되게 적용해야 할 대상이 ( B ) 처리에 부담이 된다. 그리고 복제본을 둘수록 장애가 생겼을 때 데이터를 되살릴 ( C )이/가 늘어난다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>작아져</td>
+<td>많아져</td>
+<td>통로</td>
+</tr>
+<tr>
+<td>②</td>
+<td>작아져</td>
+<td>적어져</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>③</td>
+<td>작아져</td>
+<td>많아져</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>④</td>
+<td>커져</td>
+<td>많아져</td>
+<td>통로</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>커져</td>
+<td>적어져</td>
+<td>통로</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span><span class="pts">[3점]</span> 윗글을 읽고 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 서버가 기계 A, B, C, D에 샤딩과 복제를 결합하여 데이터를 저장한 모습을 나타낸 것이다. 각 기계에는 원본 샤드 한 개와 다른 샤드의 복제본 한 개가 함께 들어 있다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 1]</span> 〈샤딩+복제 배치도〉 — 네 개의 상자(A·B·C·D)를 가로로 늘어놓고, 각 상자 안에 원본 샤드와 복제본 샤드를 위아래로 표시한다. A: 원본 s1 / 복제본 s4′, B: 원본 s2 / 복제본 s1′, C: 원본 s3 / 복제본 s2′, D: 원본 s4 / 복제본 s3′. 각 복제본에서 같은 번호의 원본으로 향하는 점선 화살표(s1′→s1 등)를 함께 그려, 복제본이 어느 원본을 베낀 것인지 보이게 한다.</figure></p>
+</blockquote>
+<ul>
+<li>① 기계 B가 손상되면, 기계 A의 복제본 s4′을 이용해 B의 원본 s2를 되살릴 수 있겠군.</li>
+<li>② 기계 A와 기계 B에는 내용이 같은 원본 샤드가 저장되어 있겠군.</li>
+<li>③ 기계 C가 손상되어도, C의 원본 s3은 기계 D의 복제본 s3′으로 되살릴 수 있겠군.</li>
+<li>④ 복제본을 두지 않고 원본 샤드만 저장했다면, 같은 데이터를 관리하는 데 더 많은 기계가 필요했겠군.</li>
+<li>⑤ 원본 s1에 데이터를 추가하면, 기계 A에서만 쓰기 작업을 처리하면 되겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2021학년도 6월 [25~28]</div>
+<div class='passage exam-ps'><p>일반 사용자가 디지털 카메라를 들고 촬영하면 손의 미세한 떨림으로 인해 영상이 번져 흐려지고, 걷거나 뛰면서 촬영하면 식별하기 힘들 정도로 영상이 흔들리게 된다. 흔들림에 의한 영향을 최소화하는 기술이 영상 안정화 기술이다.</p>
+<p>영상 안정화 기술에는 빛을 이용하는 광학적 기술과 소프트웨어를 이용하는 디지털 기술 등이 있다. 광학 영상 안정화(OIS) 기술을 사용하는 카메라 모듈은 렌즈 모듈, 이미지 센서, 자이로 센서, 제어 장치, 렌즈를 움직이는 장치로 구성되어 있다. 렌즈 모듈은 보정용 렌즈들을 포함한 여러 개의 렌즈들로 구성된다. 일반적으로 카메라는 렌즈를 통해 들어온 빛이 이미지 센서에 닿아 피사체의 상이 맺히고, 피사체의 한 점에 해당하는 위치인 화소마다 빛의 세기에 비례하여 발생한 전기 신호가 저장 매체에 영상으로 저장된다. 그런데 카메라가 흔들리면 이미지 센서 각각의 화소에 닿는 빛의 세기가 변한다. 이때 OIS 기술이 작동되면 자이로 센서가 카메라의 움직임을 감지하여 방향과 속도를 제어 장치에 전달한다. 제어 장치가 렌즈를 이동시키면 피사체의 상이 유지되면서 영상이 안정된다.</p>
+<p>렌즈를 움직이는 방법 중에는 보이스코일 모터를 이용하는 방법이 많이 쓰인다. 보이스코일 모터를 포함한 카메라 모듈은 중앙에 위치한 렌즈 주위에 코일과 자석이 배치되어 있다. 카메라가 흔들리면 제어 장치에 의해 코일에 전류가 흘러서 자기장과 전류의 직각 방향으로 전류의 크기에 비례하는 힘이 발생한다. 이 힘이 렌즈를 이동시켜 흔들림에 의한 영향이 상쇄되고 피사체의 상이 유지된다. 이외에도 카메라가 흔들릴 때 이미지 센서를 움직여 흔들림을 감쇄하는 방식도 이용된다.</p>
+<p>OIS 기술이 손 떨림을 훌륭하게 보정해 줄 수는 있지만 렌즈의 이동 범위에 한계가 있어 보정할 수 있는 움직임의 폭이 좁다. 디지털 영상 안정화(DIS) 기술은 촬영 후에 소프트웨어를 사용해 흔들림을 보정하는 기술로 역동적인 상황에서 촬영한 동영상에 적용할 때 좋은 결과를 얻을 수 있다. 이 기술은 촬영된 동영상을 프레임 단위로 나눈 후 연속된 프레임 간 피사체의 움직임을 추정한다. 움직임을 추정하는 한 방법은 특징점을 이용하는 것이다. 특징점으로는 피사체의 모서리처럼 주위와 밝기가 뚜렷이 구별되며 영상이 이동하거나 회전해도 그 밝기 차이가 유지되는 부분이 선택된다.</p>
+<p>먼저 k 번째 프레임에서 특징점들을 찾고, 다음 k+1 번째 프레임에서 같은 특징점들을 찾는다. 이 두 프레임 사이에서 같은 특징점이 얼마나 이동하였는지 계산하여 영상의 움직임을 추정한다. 그리고 흔들림이 발생한 곳으로 추정되는 프레임에서 위치 차이만큼 보정하여 흔들림의 영향을 줄이면 보정된 동영상은 움직임이 부드러워진다. 그러나 특징점의 수가 늘어날수록 연산이 더 오래 걸린다. 한편 영상을 보정하는 과정에서 영상을 회전하면 프레임에서 비어 있는 공간이 나타난다. 비어 있는 부분이 없도록 잘라 내면 프레임들의 크기가 작아지는데, 원래의 프레임 크기를 유지하려면 화질은 떨어진다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>25</span>윗글을 이해한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 디지털 영상 안정화 기술은 소프트웨어를 이용하여 이미지 센서를 이동시킨다.</li>
+<li>② 광학 영상 안정화 기술을 사용하지 않는 디지털 카메라에도 이미지 센서는 필요하다.</li>
+<li>③ 연속된 프레임에서 동일한 피사체의 위치 차이가 작을수록 동영상의 움직임이 부드러워진다.</li>
+<li>④ 디지털 카메라의 저장 매체에는 이미지 센서 각각의 화소에서 발생하는 전기 신호가 영상으로 저장된다.</li>
+<li>⑤ 보정 기능이 없다면 손 떨림이 있을 때 이미지 센서 각각의 화소에 닿는 빛의 세기가 변하여 영상이 흐려진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>26</span>윗글의 'OIS 기술'에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 보이스코일 모터는 카메라 모듈에 포함되는 장치이다.</li>
+<li>② 자이로 센서는 이미지 센서에 맺히는 영상을 제어 장치로 전달한다.</li>
+<li>③ 보이스코일 모터에 흐르는 전류에 의해 발생한 힘으로 렌즈의 위치를 조정한다.</li>
+<li>④ 자이로 센서가 카메라 움직임을 정확히 알려도 렌즈 이동의 범위에는 한계가 있다.</li>
+<li>⑤ 흔들림에 의해 피사체의 상이 이동하면 원래의 위치로 돌아오도록 렌즈나 이미지 센서를 이동시킨다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>27</span>윗글을 참고할 때, 〈보기〉의 A~C에 들어갈 말을 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+특징점으로 선택되는 점들과 주위 점들의 밝기 차이가 ( A ), 영상이 흔들리기 전의 밝기 차이와 후의 밝기 차이 변화가 ( B ) 특징점의 위치 추정이 유리하다. 그리고 특징점들이 많을수록 보정에 필요한 ( C )이/가 늘어난다.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>클수록</td>
+<td>클수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>②</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>③</td>
+<td>클수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+<tr>
+<td>④</td>
+<td>작을수록</td>
+<td>클수록</td>
+<td>시간</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>작을수록</td>
+<td>작을수록</td>
+<td>프레임의 수</td>
+</tr>
+</tbody>
+</table></div>
+<div class='q'><p class='q-stem'><span class='q-num'>28</span><span class="pts">[3점]</span> 윗글을 읽고 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+새로 산 카메라의 성능을 시험해 보고 싶어서 OIS 기능을 켜고 동영상을 촬영했다. 빌딩을 찍는 순간, 바람에 휘청하여 들고 있던 카메라가 기울어졌다. 집에 돌아와 촬영된 영상을 확인하고 소프트웨어로 보정하려 한다.</p>
+<p><strong><span class="boxmark">[그림: 촬영한 동영상 중 연속된 프레임]</span></strong> 나란히 놓인 두 장의 프레임 그림. <strong>㉠ k 번째 프레임</strong> — 수평한 지면 위에 고층 빌딩 두 채(왼쪽이 낮고 오른쪽이 높음)가 수직으로 똑바로 서 있는 장면. <strong>㉡ k+1 번째 프레임</strong> — 같은 두 빌딩 장면이지만 화면 전체가 기울어져 있음: 지면선이 오른쪽으로 갈수록 높아지게 비스듬하고, 빌딩들도 같은 각도로 왼쪽으로 기울어 화면이 시계 반대 방향으로 회전한 모습.</p>
+</blockquote>
+<ul>
+<li>① ㉠에서 프레임의 모서리 부분으로 특징점을 선택하는 것이 움직임을 추정하는 데 유리하겠군.</li>
+<li>② ㉡을 DIS 기능으로 보정하고 나서 프레임 크기가 변했다면 흔들림은 보정되었으나 원래의 영상 일부가 손실되었겠군.</li>
+<li>③ ㉠에서 빌딩 모서리들 간의 차이를 특징점으로 선택하고 그 차이를 계산하여 ㉡을 보정하겠군.</li>
+<li>④ ㉠은 OIS 기능으로 손 떨림을 보정한 프레임이지만, ㉡은 OIS 기능으로 보정해야 할 프레임이겠군.</li>
+<li>⑤ ㉡을 보면 ㉠이 촬영된 직후 카메라가 크게 움직여 DIS 기능으로는 완전히 보정되지 않았다는 것을 알 수 있겠군.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>샤딩은 데이터를 샤드 단위로 분할하여 서로 연결된 여러 기계에 나누어 저장하고 활용하는 방법이다. 클라이언트가 어떤 데이터를 요청하면, 그 데이터가 어느 샤드에 있는지를 ㉠<u>판별하여</u> 해당 샤드에서 데이터를 조회해 클라이언트에 전달하는 장치가 필요한데, 이 장치를 라우터라 한다.</p>
+<p>라우터가 이러한 역할을 ㉡<u>수행하도록</u> 전체 샤드의 분할 정보와 위치 정보를 저장하고 관리하는 설정 서버가 별도로 마련된다. 설정 서버에는 어떤 데이터가 어느 샤드에 들어 있는지를 적어 둔 위치 정보가 ㉢<u>담기며</u>, 각 샤드가 어떻게 이용되었는지를 보여 주는 로그 정보가 함께 저장되기도 한다. 라우터는 클라이언트의 요청을 받을 때마다 설정 서버의 위치 정보를 참고하여, 요청된 데이터가 들어 있는 샤드를 ㉣<u>찾아낸다.</u> 한편 데이터의 손상에 대비하기 위해 샤딩에 복제를 결합하기도 한다. 복제는 서로 다른 기계에 같은 내용의 데이터를 두는 방법으로, 원본 샤드의 복제본을 다른 기계에 함께 저장해 둔다. 데이터가 손상되면 복제본을 이용해 정상 데이터로 되살릴 수 있다.</p>
+<p>샤딩에서 데이터는 읽기 요청의 처리와 쓰기 요청의 처리가 서로 다른 방식으로 이루어진다. 읽기 요청은 데이터를 바꾸지 않으므로, 라우터는 요청된 데이터가 있는 샤드만 찾아 그 데이터를 조회해 돌려주면 된다. 데이터가 한 샤드에 모여 있으면 한 기계만 조회하면 되어 신속하지만, 여러 샤드에 흩어져 있으면 여러 기계에서 조회한 결과를 끌어모아야 해 지연이 생긴다. 그래서 한 요청으로 함께 읽히는 데이터를 같은 샤드에 모으는 데이터의 지역성이 성능을 높이는 핵심이 된다. 반면 쓰기 요청은 데이터를 바꾸므로, 복제를 결합한 경우 원본 샤드뿐 아니라 그 복제본에도 같은 변경을 일관되게 ㉤<u>적용해야</u> 한다. 그래서 복제본이 많을수록 쓰기 처리가 느려진다.</p>
+<p>㉮클라이언트가 데이터를 정상적으로 읽어 오는 과정을 살펴보자. 클라이언트는 먼저 라우터에 원하는 데이터를 요청하는 질의 패킷을 보낸다. 라우터는 설정 서버의 위치 정보를 참고하여 그 데이터가 어느 샤드에 있는지를 판별한 뒤, 해당 샤드를 맡은 기계에 데이터를 조회하는 질의 패킷을 보낸다. 그 기계는 요청된 데이터를 찾아 응답 패킷으로 라우터에 돌려주고, 라우터는 이를 클라이언트에 전달한다. 만일 라우터가 위치 정보에서 해당 데이터를 찾지 못하면, 라우터는 클라이언트에 데이터를 찾을 수 없다는 응답 패킷을 보낸다.</p>
+<p>㉯샤딩에 복제를 결합한 서버에서 쓰기 요청이 처리되는 과정은 이와 다르다. 클라이언트가 데이터를 추가·수정하는 쓰기 요청을 보내면, 라우터는 그 데이터가 저장될 원본 샤드를 판별한다. 그런 다음 라우터는 원본 샤드를 맡은 기계뿐 아니라 그 샤드의 복제본을 가진 기계에도 같은 변경을 적용하라는 패킷을 보낸다. 원본과 모든 복제본에 변경이 일관되게 적용되어야 데이터가 어긋나지 않으므로, 한 곳이라도 변경이 빠지면 안 된다. 모든 적용이 끝나야 비로소 쓰기 요청이 완료된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글을 바탕으로 알 수 있는 것은?</p>
+<ul>
+<li>① 설정 서버에는 각 샤드의 위치 정보만 저장될 뿐 로그 정보는 저장되지 않는다.</li>
+<li>② 데이터가 여러 샤드에 흩어져 있을수록 읽기 요청을 더 신속하게 처리할 수 있다.</li>
+<li>③ 읽기 요청을 처리할 때에는 원본과 모든 복제본에 같은 변경을 일관되게 적용해야 한다.</li>
+<li>④ 라우터는 설정 서버의 위치 정보를 참고하여 요청된 데이터가 있는 샤드를 판별한다.</li>
+<li>⑤ 복제를 결합하면 복제본이 많아질수록 쓰기 요청의 처리가 빨라진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span><span class="pts">[3점]</span> 〈보기〉는 ㉮ 또는 ㉯에서 이루어지는 라우터의 동작을 나타낸 것이다. 이에 대한 이해로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong></p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림 2]</span> 〈라우터 동작 순서도〉 — 위에서 아래로 화살표를 따라 진행하는 순서도. ① 맨 위 직사각형 “클라이언트가 보낸 요청 패킷을 받는다.” → 아래로. ② 판단 마름모 “Ⓐ: 데이터를 바꾸는 쓰기 요청인가?” — ‘아니요’이면 왼쪽으로 분기해 직사각형 “Ⓑ: 데이터가 있는 샤드를 조회해 결과를 클라이언트에 전달한다.”로 가고(끝), ‘예’이면 아래로. ③ 직사각형 “Ⓒ: 설정 서버의 위치 정보로 원본 샤드를 판별한다.” → 아래로. ④ 직사각형 “Ⓓ: 원본 샤드와 그 복제본을 가진 기계에 변경을 적용하라는 패킷을 보낸다.” → 아래로. ⑤ 직사각형 “Ⓔ: 모든 적용이 끝나면 쓰기 요청을 완료한다.” (끝)</figure></p>
+</blockquote>
+<ul>
+<li>① ㉮: Ⓑ에서 조회하는 샤드가 여러 개일수록 결과를 끌어모으는 지연이 줄어든다.</li>
+<li>② ㉮: Ⓐ에서 ‘아니요’로 분기하는 것은 데이터를 바꾸지 않는 읽기 요청이기 때문이다.</li>
+<li>③ ㉯: Ⓒ는 변경할 데이터가 어느 복제본에 있는지를 클라이언트가 직접 판별하는 절차이다.</li>
+<li>④ ㉯: Ⓓ에서 원본 샤드에만 변경을 적용하면 쓰기 요청이 완료된다.</li>
+<li>⑤ ㉯: Ⓔ는 읽기 요청과 쓰기 요청 모두에서 거치는 단계이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 같은 데이터를 함께 읽는 요청이 잦다면, 그 데이터를 같은 샤드에 모아 두는 것이 읽기 성능에 유리하다.</li>
+<li>② 데이터의 손상이 자주 우려되는 서버라면, 샤딩에 복제를 결합해 두는 것이 복구에 유리하다.</li>
+<li>③ 쓰기 요청보다 읽기 요청이 훨씬 많은 서버라면, 복제본을 늘려도 쓰기 부담은 거의 늘지 않는다.</li>
+<li>④ 복제본을 가진 기계가 늘어날수록, 하나의 쓰기 요청에서 변경을 적용해야 할 대상이 많아진다.</li>
+<li>⑤ 라우터가 위치 정보에서 데이터를 찾지 못하면, 해당 데이터는 클라이언트에 전달되지 않는다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>윗글과 〈보기〉를 참고할 때, 데이터 손상에 대비하기 위한 방법으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 서버가 기계 A, B, C에 서로 다른 원본 샤드 s1, s2, s3를 나누어 저장하고 있다. 이 서버는 복제를 결합하지 않아, 한 기계가 손상되면 그 기계가 맡은 샤드의 데이터를 되살릴 수 없는 상태이다. 운영자는 추가 기계를 들이지 않고, 지금 있는 세 기계만으로 손상에 대비하려고 한다.</p>
+</blockquote>
+<ul>
+<li>① 기계 A의 원본 s1을 삭제하고 라우터가 그 샤드를 건너뛰게 하면 되겠군.</li>
+<li>② 설정 서버에 로그 정보를 더 자주 저장하도록 설정하면 되겠군.</li>
+<li>③ 각 기계의 원본 샤드를 모두 한 기계에 모아 두면 되겠군.</li>
+<li>④ 각 기계에 다른 기계가 맡은 샤드의 복제본을 함께 저장해 두면 되겠군.</li>
+<li>⑤ 라우터가 읽기 요청만 처리하고 쓰기 요청은 받지 않게 하면 되겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span>문맥상 ㉠~㉤과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠: 변별(辨別)하여</li>
+<li>② ㉡: 수렴(收斂)하도록</li>
+<li>③ ㉢: 발현(發現)되며</li>
+<li>④ ㉣: 발탁(拔擢)한다</li>
+<li>⑤ ㉤: 부과(賦課)해야</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 6월 [30~34]</div>
+<div class='passage exam-ps'><p>DNS(도메인 네임 시스템) 스푸핑은 인터넷 사용자가 어떤 사이트에 접속하려 할 때 사용자를 위조 사이트로 접속시키는 행위를 말한다. 이는 도메인 네임을 IP 주소로 변환해 주는 과정에서 이루어진다.</p>
+<p>인터넷에 연결된 컴퓨터들이 서로를 식별하고 통신하기 위해서 각 컴퓨터들은 IP(인터넷 프로토콜)에 따라 ㉠만들어지는 고유 IP 주소를 가져야 한다. 프로토콜은 컴퓨터들이 연결되어 서로 데이터를 주고받기 위해 사용하는 통신 규약으로 소프트웨어나 하드웨어로 구현된다. 현재 주로 사용하는 IP 주소는 ‘***.126.63.1’처럼 점으로 구분된 4개의 필드에 숫자를 사용하여 ㉡나타낸다. 이 주소를 중복 지정하거나 임의로 지정해서는 안 되고 공인 IP 주소를 부여받아야 한다.</p>
+<p>공인 IP 주소에는 동일한 번호를 지속적으로 사용하는 고정 IP 주소와 번호가 변경되기도 하는 유동 IP 주소가 있다. 유동 IP 주소는 DHCP라는 프로토콜에 의해 부여된다. DHCP는 IP 주소가 필요한 컴퓨터의 요청을 받아 주소를 할당해 주고, 컴퓨터가 IP 주소를 사용하지 않으면 주소를 반환받아 다른 컴퓨터가 그 주소를 사용할 수 있도록 해 준다. 한편, 인터넷에 직접 접속은 안 되고 내부 네트워크에서만 서로를 식별할 수 있는 사설 IP 주소도 있다.</p>
+<p>인터넷은 공인 IP 주소를 기반으로 동작하지만 우리가 인터넷을 사용할 때는 IP 주소 대신 사용하기 쉽게 ‘www.<strong><em>.</em></strong>’ 등과 같이 문자로 ㉢이루어진 도메인 네임을 이용한다. 따라서 도메인 네임을 IP 주소로 변환해 주는 DNS가 필요하며 DNS를 운영하는 장치를 네임서버라고 한다. 컴퓨터에는 네임서버의 IP 주소가 기록되어 있어야 하는데, 유동 IP 주소를 할당받는 컴퓨터에는 IP 주소를 받을 때 네임서버의 IP 주소가 자동으로 기록되지만, 고정 IP 주소를 사용하는 컴퓨터에는 사용자가 네임서버의 IP 주소를 직접 기록해 놓아야 한다. 인터넷 통신사는 가입자들이 공동으로 사용할 수 있는 네임서버를 운영하고 있다.</p>
+<p>㉮사용자가 어떤 사이트에 정상적으로 접속하는 과정을 살펴보자. 웹 사이트에 접속하려고 하는 컴퓨터를 클라이언트라 한다. 사용자가 방문하고자 하는 사이트의 도메인 네임을 주소창에 직접 입력하거나 포털 사이트에서 그 사이트를 검색해 클릭하면 클라이언트는 기록되어 있는 네임서버에 도메인 네임에 해당하는 IP 주소를 물어보는 질의 패킷을 보낸다. 네임서버는 해당 IP 주소가 자신의 목록에 있으면 클라이언트에 이 IP 주소를 알려 주는 응답 패킷을 보낸다. 응답 패킷에는 어느 질의 패킷에 대한 응답인지가 적혀 있다. 만일 해당 IP 주소가 목록에 없으면 네임서버는 다른 네임서버의 IP 주소를 알려 주는 응답 패킷을 보내고, 클라이언트는 다시 그 네임서버에 질의 패킷을 보내는 단계로 돌아가 같은 과정을 반복한다. 클라이언트는 이렇게 ㉣알아낸 IP 주소로 사이트를 찾아간다. 네임서버와 클라이언트는 UDP라는 프로토콜에 ㉤맞추어 패킷을 주고받는다. UDP는 패킷의 빠른 전송 속도를 확보하기 위해 상대에게 패킷을 보내기만 할 뿐 도착 여부는 확인하지 않으며, 특정 질의 패킷에 대해 처음 도착한 응답 패킷을 신뢰하고 다음에 도착한 패킷은 확인하지 않고 버린다. DNS 스푸핑은 UDP의 이런 허점들을 이용한다.</p>
+<p>㉯DNS 스푸핑이 이루어지는 과정을 알아보자. 악성 코드에 감염되어 DNS 스푸핑을 행하는 컴퓨터를 공격자라 한다. 클라이언트가 네임서버에 특정 IP 주소를 묻는 질의 패킷을 보낼 때, 공격자에도 패킷이 전달되고 공격자는 위조 사이트의 IP 주소가 적힌 응답 패킷을 클라이언트에 보낸다. 공격자가 보낸 응답 패킷이 네임서버가 보낸 응답 패킷보다 클라이언트에 먼저 도착하고 클라이언트는 공격자가 보낸 응답 패킷을 옳은 패킷으로 인식하여 위조 사이트로 연결된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>30</span>윗글의 ‘프로토콜’에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 컴퓨터 사이의 통신을 위한 규약으로서 저마다 정해진 기능이 있다.</li>
+<li>② IP에 따르면 현재 주로 사용하는 IP 주소는 4개의 필드에 적힌 숫자로 구성된다.</li>
+<li>③ DHCP를 이용하는 컴퓨터는 IP 주소를 요청해야 IP 주소를 부여받을 수 있다.</li>
+<li>④ DHCP를 이용하는 컴퓨터에는 네임서버의 IP 주소를 사용자가 기록해야 한다.</li>
+<li>⑤ UDP는 패킷 전송 속도를 높이기 위해 패킷이 목적지에 제대로 도착했는지 확인하지 않는다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>31</span><span class="pts">[3점]</span> 〈보기〉는 ㉮ 또는 ㉯에서 이루어지는 클라이언트의 동작을 나타낸 것이다. 이에 대한 이해로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<strong><span class="boxmark">[그림: 클라이언트 동작 순서도]</span></strong> 위에서 아래로 화살표를 따라 진행하는 순서도이다.
+1. 맨 위 직사각형: “주소창에서 사용자가 입력한 도메인 네임을 읽는다.” → 아래로 진행.
+2. 직사각형 “ⓐ: 질의 패킷을 보낸다.” → 아래로 진행.
+3. 직사각형 “ⓑ: 응답 패킷을 받는다.” → 아래로 진행.
+4. 판단 마름모: “특정 질의 패킷에 대해 처음 받은 응답 패킷인가?” — ‘아니요’이면 왼쪽으로 분기하여 직사각형 “ⓓ: 응답 패킷을 버린다.”로 가고(이후 진행 화살표 없음), ‘예’이면 아래로 진행.
+5. 판단 마름모 “ⓒ: 다른 네임서버의 IP 주소를 알려 주는 패킷인가?” — ‘예’이면 오른쪽 바깥 선을 따라 위로 올라가 ⓐ(질의 패킷을 보낸다) 앞으로 되돌아가고, ‘아니요’이면 아래로 진행.
+6. 직사각형 “ⓔ: 응답 패킷에 적힌 IP 주소로 접속한다.” (끝)</p>
+</blockquote>
+<ul>
+<li>① ㉮: ⓐ가 두 번 동작했다면, 두 질의 내용이 동일하고 패킷을 받는 수신 측도 동일하다.</li>
+<li>② ㉮: ⓑ가 두 번 동작했다면, 두 응답 내용이 서로 다르고 패킷을 보낸 송신 측은 동일하다.</li>
+<li>③ ㉮: ⓒ는 ⓐ에서 질의한 도메인 네임에 해당하는 IP 주소를 네임서버가 찾았는지 여부를 확인하는 절차이다.</li>
+<li>④ ㉯: ⓓ의 응답 패킷에는 공격자가 보내 온 IP 주소가 포함되어 있다.</li>
+<li>⑤ ㉯: ⓔ의 IP 주소는 ⓐ에서 질의한 도메인 네임에 해당하는 IP 주소이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>32</span>윗글을 바탕으로 알 수 있는 것은?</p>
+<ul>
+<li>① DNS는 도메인 네임을 사설 IP 주소로 변환한다.</li>
+<li>② 동일한 내부 네트워크에 연결된 컴퓨터들의 사설 IP 주소는 서로 달라야 한다.</li>
+<li>③ 유동 IP 주소 방식의 컴퓨터들에는 동시에 동일한 공인 IP 주소를 할당할 수 있다.</li>
+<li>④ 고정 IP 주소 방식의 컴퓨터들에는 동시에 동일한 공인 IP 주소를 부여할 수 있다.</li>
+<li>⑤ IP 주소가 서로 다른 컴퓨터들은 각각에 기록되어 있는 네임서버의 IP 주소도 서로 달라야 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>33</span>윗글과 〈보기〉를 참고할 때, DNS 스푸핑을 피하기 위한 방법으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+DNS가 고안되기 전에는 특정 컴퓨터의 사용자가 ‘hosts’라는 파일에 모든 도메인 네임과 그에 해당하는 IP 주소를 적어 놓았고, 클라이언트들은 이 파일을 복사하여 사용하였다. 네임서버를 사용하는 현재에도 여전히 클라이언트는 질의 패킷을 보내기 전에 hosts 파일의 내용을 확인한다. 클라이언트가 이 파일에서 원하는 도메인 네임의 IP 주소를 찾으면 그 주소로 바로 접속하고, IP 주소를 찾지 못했을 때 클라이언트는 네임서버에 질의 패킷을 보낸다.</p>
+</blockquote>
+<ul>
+<li>① 클라이언트에서 사용자가 hosts 파일을 찾아 삭제하면 되겠군.</li>
+<li>② 클라이언트의 IP 주소를 사용자가 클라이언트의 hosts 파일에 적어 놓으면 되겠군.</li>
+<li>③ 클라이언트에 hosts 파일이 없더라도 사용자가 주소창에 도메인 네임만 입력하면 되겠군.</li>
+<li>④ 네임서버의 도메인 네임과 IP 주소를 사용자가 클라이언트의 hosts 파일에 적어 놓으면 되겠군.</li>
+<li>⑤ 접속하려는 사이트의 도메인 네임과 IP 주소를 사용자가 클라이언트의 hosts 파일에 적어 놓으면 되겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>문맥상 ㉠~㉤과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠: 제조(製造)되는</li>
+<li>② ㉡: 표시(標示)한다</li>
+<li>③ ㉢: 발생(發生)된</li>
+<li>④ ㉣: 인정(認定)한</li>
+<li>⑤ ㉤: 비교(比較)해</li>
+</ul></div>
+</div>
+</body></html>

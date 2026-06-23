@@ -1,0 +1,391 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>하디-바인베르크 평형 법칙 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.07pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 한 학교에 다니는 학생들의 혈액형 비율을 떠올려 볼까요? 올해 A형이 몇 퍼센트, O형이 몇 퍼센트였다고 합시다. 그런데 신기하게도, 특별한 일이 없으면 <strong>내년에도, 그다음 세대에도 그 비율이 거의 그대로 유지</strong>되는 경우가 많아요. 사람들이 서로 짝을 맺어 아이를 낳으면 비율이 마구 뒤섞일 것 같은데, 왜 그대로일까요? 바로 이 "왜 그대로일까?"에 수학으로 답한 것이 <strong>하디-바인베르크 평형 법칙</strong>입니다.</p>
+<p>먼저 말 하나만 짚고 갈게요. 우리 몸의 형질(예컨대 어떤 특징)은 부모에게서 받은 <strong>유전자</strong>가 정합니다. 같은 자리에 들어갈 수 있는 서로 다른 형태의 유전자를 <em>대립 유전자</em>라고 해요. 가위바위보의 '가위'와 '바위'처럼, 같은 칸에 들어갈 후보가 둘 있다고 생각하면 됩니다. 이 두 후보를 A와 a라고 부르고, 집단 전체에서 A가 차지하는 비율을 <strong>p</strong>, a가 차지하는 비율을 <strong>q</strong>라고 적어요. 둘을 합치면 전부이니 <em>p + q = 1</em>입니다.</p>
+<p>이제 핵심이에요. 사람들이 <strong>아무 조건 없이 무작위로 짝을 맺어</strong> 자식을 낳는다고 해 봅시다. 그러면 다음 세대에서 AA를 가진 사람의 비율은 <em>p × p = p²</em>, aa는 <em>q × q = q²</em>, A와 a를 하나씩 가진 Aa는 <em>2 × p × q = 2pq</em>가 됩니다. 세 비율을 더하면 정확히 <em>p² + 2pq + q² = 1</em>, 곧 빈틈없이 1이 되죠. 그리고 놀랍게도, 이렇게 한 세대가 지나도 <strong>A와 a의 비율 p와 q는 처음 그대로</strong> 남습니다. 이렇게 <strong>세대를 거쳐도 유전자의 비율이 변하지 않고 멈춰 있는 상태</strong>를 '평형'이라고 불러요. 마치 잔잔한 호수의 수면처럼요.</p>
+<p>그런데 이 평형은 거저 유지되는 게 아닙니다. <strong>다섯 가지 조건이 모두 지켜질 때만</strong> 멈춰 있어요. 집단이 충분히 크고, 짝짓기가 무작위이며, 새 돌연변이가 없고, 들고 남(이주)이 없고, 자연 선택이 작용하지 않아야 합니다. 이 중 <strong>하나라도 깨지면</strong> 호수에 돌을 던진 것처럼 비율이 출렁이며 변하기 시작하죠. 그래서 과학자들은 이 법칙을 거꾸로 써먹습니다. "비율이 변했다면, 다섯 조건 중 무언가가 깨진 것"이라고요. 이렇게 평형 법칙은 <strong>진화가 일어나고 있는지, 어떤 힘이 작용했는지</strong>를 가려내는 잣대가 됩니다.</p>
+<blockquote>
+<p>한마디로: <strong>하디-바인베르크 평형은 "아무 힘도 끼어들지 않으면 유전자 비율은 그대로다"라는 기준선</strong>이에요. 이 기준선과 실제를 견주어, 어떤 힘이 작용했는지를 읽어 내는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>하디-바인베르크 평형 법칙</strong>이 있습니다. 같은 법칙이라도 "비율을 수로 어떻게 다루는가", "여러 조건이 어떻게 맞물리는가", "조건이 깨지면 무슨 연쇄가 일어나는가"라는 서로 다른 얼굴이 있어요. 세 세트는 이 얼굴들을 차례로 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>하디-바인베르크 평형 법칙<small>"p·q로 다음 세대 비율을 정하고, 조건이 맞으면 그 비율이 멈춘다"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>평형 법칙을 <em>수</em>로 다룹니다. 대립 유전자 빈도 p·q에서 유전자형 빈도 p²·2pq·q²를 끌어내고, 이를 새 사례에 적용해 비율을 추론합니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>평형이 유지되려면 <em>여러 조건이 어떻게 맞물려야</em> 하는지를 봅니다. 다섯 조건 각각의 역할과, 조건이 '모두' 충족돼야 한다는 점을 따집니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>조건이 <em>깨지면</em> 무슨 일이 벌어지는지, 작은 집단에서 빈도가 출렁이는 <em>연쇄 과정</em>과 그 결과를 따라갑니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세트를 차례로 풀고 나면, 같은 법칙이 어떻게 '계산의 도구'이자 '평형의 조건표'이자 '변화를 읽는 잣대'가 되는지가 또렷해질 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>생물 집단에서 어떤 형질을 결정하는 유전자에는 같은 자리에 들어갈 수 있는 서로 다른 형태의 대립 유전자가 존재한다. 대립 유전자가 A와 a 두 가지일 때, 집단 내 모든 개체가 가진 해당 유전자 전체에서 A가 차지하는 비율을 p, a가 차지하는 비율을 q라 하면, 두 비율의 합은 항상 1이므로 p＋q＝1이 성립한다. 이처럼 집단 전체에서 각 대립 유전자가 차지하는 비율을 대립 유전자 빈도라 한다. 개체는 같은 자리의 대립 유전자를 둘씩 가지므로, 집단 전체의 대립 유전자 수는 개체 수의 두 배가 되며, 그 가운데 A의 수를 전체로 나눈 값이 곧 p이다. 한편 개체가 두 대립 유전자를 어떤 조합으로 갖는지를 유전자형이라 하며, 집단에서 각 유전자형이 차지하는 비율을 유전자형 빈도라 한다. 대립 유전자가 A와 a일 때 유전자형은 두 대립 유전자가 같은 동형 접합인 AA와 aa, 서로 다른 이형 접합인 Aa의 세 가지로 나타난다. 같은 형질이라도 어떤 유전자형을 갖느냐에 따라 형질이 겉으로 드러나는 양상이 달라지므로, 대립 유전자 빈도와 유전자형 빈도는 집단의 유전적 구성을 파악하는 두 축이 된다.</p>
+<p>교배가 무작위로 이루어진다고 가정하면, 다음 세대의 유전자형 빈도는 대립 유전자 빈도로부터 정해진다. 자손은 양친에게서 대립 유전자를 하나씩 물려받는데, 무작위 교배에서는 어떤 대립 유전자를 물려받을 확률이 그 대립 유전자 빈도와 같다. ㉠AA가 될 빈도는 A를 두 번 물려받을 경우이므로 p×p, 즉 p²이고, aa가 될 빈도는 q×q, 즉 q²이다. ㉡Aa가 될 빈도는 A를 먼저 받고 a를 받는 경우와 a를 먼저 받고 A를 받는 두 경우를 합한 2pq이다. 세 유전자형 빈도를 모두 더하면 p²＋2pq＋q²이 되는데, 이는 (p＋q)²과 같고 p＋q＝1이므로 그 값은 1이 된다. 이렇게 산출된 다음 세대에서 대립 유전자 A의 빈도를 다시 구하면, AA가 가진 A와 Aa가 가진 A의 절반을 합한 p²＋pq가 되고, 이를 정리하면 p(p＋q), 즉 p가 된다. 곧 한 세대가 지나도 대립 유전자 빈도는 변하지 않는다.</p>
+<p>이처럼 무작위 교배가 거듭되어도 세대를 거쳐 대립 유전자 빈도와 유전자형 빈도가 일정하게 유지되는 상태를 하디-바인베르크 평형이라 한다. 평형 상태의 집단에서는 어느 한 세대의 대립 유전자 빈도만 알면 그 이후 모든 세대의 유전자형 빈도를 같은 값으로 예측할 수 있다. 이 관계는 실제 집단의 자료를 분석하는 데 응용된다. 가령 어떤 유전 질환이 두 개의 a를 가진 aa에서만 나타난다고 하자. 집단에서 이 질환을 가진 개체의 비율을 조사하면 그 값이 곧 aa의 빈도 q²이므로, 이로부터 a의 빈도 q를 구할 수 있고, p＝1－q로 A의 빈도까지 얻을 수 있다. 나아가 겉으로는 질환이 없지만 a를 하나 지닌 보인자, 곧 Aa의 빈도 2pq도 산출할 수 있다. 예를 들어 어떤 집단에서 이 질환을 가진 개체의 비율이 0.01로 조사되었다면, 이는 q²＝0.01이라는 뜻이므로 q는 그 제곱근인 0.1이 되고, p는 1－0.1＝0.9가 된다. 그러면 질환은 없으나 a를 하나 지닌 보인자의 비율은 2pq＝2×0.9×0.1＝0.18로 산출되어, 질환자보다 훨씬 많은 개체가 보인자임을 알 수 있다. 이처럼 겉으로 드러난 질환자의 비율 하나만으로도 집단 속에 숨어 있는 보인자의 비율까지 가늠할 수 있다. 이렇게 평형 법칙은 겉으로 드러난 일부 정보만으로 집단 전체의 유전적 구성을 추정하는 도구가 된다.</p>
+<p>다만 이러한 추정은 집단이 평형 상태에 있다는 가정 위에서만 성립한다. 만약 조사한 유전자형 빈도가 p²·2pq·q²의 관계에서 벗어난다면, 그 집단은 평형 상태가 아니며 대립 유전자 빈도를 변화시키는 어떤 요인이 작용하고 있다고 판단할 수 있다. 이처럼 평형 법칙은 단순히 비율을 계산하는 데 그치지 않고, 실제 자료가 평형에서 얼마나 벗어났는지를 견주어 집단의 상태를 진단하는 기준선의 구실도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 대립 유전자 빈도 p와 q를 더한 값은 항상 1이다.</li>
+<li>② 유전자형 빈도는 집단에서 각 유전자형이 차지하는 비율이다.</li>
+<li>③ 무작위 교배에서 특정 대립 유전자를 물려받을 확률은 그 대립 유전자 빈도와 같다.</li>
+<li>④ 평형 상태에서는 세대가 거듭될수록 대립 유전자 빈도가 점차 커진다.</li>
+<li>⑤ aa에서만 나타나는 질환의 비율을 조사하면 그 값은 aa의 빈도와 같다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 평형 상태의 집단이라면 한 세대의 대립 유전자 빈도만으로 다음 세대의 유전자형 빈도를 예측할 수 있겠군.</li>
+<li>② 어떤 집단에서 aa의 빈도가 q²로 주어지면, 그로부터 보인자인 Aa의 빈도도 산출할 수 있겠군.</li>
+<li>③ 조사한 유전자형 빈도가 p²·2pq·q²의 관계를 벗어난 집단은 평형 상태에 있다고 보기 어렵겠군.</li>
+<li>④ 평형 상태에서 p가 클수록 AA의 빈도 p²은 Aa의 빈도 2pq보다 항상 작겠군.</li>
+<li>⑤ 질환을 가진 개체의 비율이 같더라도, 평형 상태가 아니라면 그 값을 q²으로 보아 q를 구하는 추정은 어긋날 수 있겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>㉠, ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 한 개체가 서로 다른 두 대립 유전자를 하나씩 가질 빈도를 나타낸다.</li>
+<li>② ㉡은 같은 대립 유전자를 두 번 물려받는 한 가지 경우만으로 산출된다.</li>
+<li>③ ㉠은 A를 두 번 물려받는 경우의 빈도이므로 p와 q의 곱인 pq로 나타낸다.</li>
+<li>④ ㉡은 대립 유전자를 받는 순서가 다른 두 경우를 합한 것이므로 ㉠보다 작을 수 없다.</li>
+<li>⑤ ㉠과 ㉡은 모두 무작위 교배를 전제할 때 대립 유전자 빈도로부터 정해진다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 동물 집단에서 귀의 형태는 대립 유전자 B와 b에 의해 결정되며, 두 개의 b를 가진 bb에서만 '처진 귀'가 나타난다. 이 집단은 하디-바인베르크 평형 상태에 있다고 가정한다. 연구자는 ⓐ집단에서 처진 귀를 가진 개체의 비율을 조사하여 b의 빈도를 추정한 뒤, 이를 이용해 ⓑ겉으로는 처진 귀가 아니지만 b를 하나 지닌 개체의 비율을 산출하려 한다.</p>
+<p><strong><span class="boxmark">[그림: 유전자형 비율 막대]</span></strong> 〈보기〉 오른쪽에, 집단 전체를 1로 두고 BB·Bb·bb 세 구간으로 나눈 가로 막대그래프가 있다. 가장 왼쪽 넓은 구간이 BB(빈도 p²), 가운데 구간이 Bb(빈도 2pq), 가장 오른쪽 좁은 구간이 bb(빈도 q²)로 표시되어 있고, 세 구간의 길이를 합하면 막대 전체(1)가 된다.</p>
+</blockquote>
+<ul>
+<li>① ⓐ를 조사한 값은 bb의 빈도 q²에 해당하므로, 그 제곱근을 구하면 b의 빈도 q를 얻을 수 있겠군.</li>
+<li>② ⓐ를 조사한 값이 그대로 b의 빈도가 되므로, 따로 제곱근을 구할 필요는 없겠군.</li>
+<li>③ ⓑ는 BB의 빈도에 해당하므로 p²으로 산출되겠군.</li>
+<li>④ ⓑ의 비율은 b의 빈도가 클수록 항상 함께 커지기만 하겠군.</li>
+<li>⑤ 이 집단이 평형 상태가 아니더라도 ⓐ로부터 q를 구하는 추정은 그대로 성립하겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2023학년도 수능 [14~17]</div>
+<div class='passage exam-ps'><p>하루에 필요한 에너지의 양은 하루 동안의 총 열량 소모량인 대사량으로 구한다. 그중 기초 대사량은 생존에 필수적인 에너지로, 쾌적한 온도에서 편히 쉬는 동물이 공복 상태에서 생성하는 열량으로 정의된다. 이때 체내에서 생성한 열량은 일정한 체온에서 체외로 발산되는 열량과 같다. 기초 대사량은 개체에 따라 대사량의 60～75%를 차지하고, 근육량이 많을수록 증가한다.</p>
+<p>기초 대사량은 직접법 또는 간접법으로 구한다. ㉠직접법은 온도가 일정하게 유지되고 공기의 출입량을 알고 있는 호흡실에서 동물이 발산하는 열량을 열량계를 이용해 측정하는 방법이다. ㉡간접법은 호흡 측정 장치를 이용해 동물의 산소 소비량과 이산화 탄소 배출량을 측정하고, 이를 기준으로 체내에서 생성된 열량을 추정하는 방법이다.</p>
+<p>19세기의 초기 연구는 체외로 발산되는 열량이 체표 면적에 비례한다고 보았다. 즉 그 둘이 항상 일정한 비(比)를 갖는다는 것이다. 체표 면적은 (체중)^0.67에 비례하므로, 기초 대사량은 체중이 아닌 (체중)^0.67에 비례한다고 하였다. 어떤 변수의 증가율은 증가 후 값을 증가 전 값으로 나눈 값이므로, 체중이 W에서 2W로 커지면 체중의 증가율은 (2W)/(W)＝2이다. 이 경우에 기초 대사량의 증가율은 (2W)^0.67/(W)^0.67＝2^0.67, 즉 약 1.6이 된다.</p>
+<p>1930년대에 클라이버는 생쥐부터 코끼리까지 다양한 크기의 동물의 기초 대사량 측정 결과를 분석했다. 그래프의 가로축 변수로 동물의 체중을, 세로축 변수로 기초 대사량을 두고, 각 동물별 체중과 기초 대사량의 순서쌍을 점으로 나타냈다.</p>
+<p>가로축과 세로축 두 변수의 증가율이 서로 다를 경우, 그 둘의 증가율이 같을 때와 달리, ‘일반적인 그래프’에서 이 점들은 직선이 아닌 어떤 곡선의 주변에 분포한다. 그런데 순서쌍의 값에 상용로그를 취해 새로운 순서쌍을 만들어서 이를 〈그림〉과 같이 그래프에 표시하면, 어떤 직선의 주변에 점들이 분포하는 것으로 나타난다. 그러면 그 직선의 기울기를 이용해 두 변수의 증가율을 비교할 수 있다. 〈그림〉에서 X와 Y는 각각 체중과 기초 대사량에 상용로그를 취한 값이다. 이런 방식으로 표현한 그래프를 ‘L-그래프’라 하자.</p>
+<blockquote>
+<p><strong>〈그림〉 (L-그래프)</strong> 가로축은 X(체중에 상용로그를 취한 값), 세로축은 Y(기초 대사량에 상용로그를 취한 값). 가로축 X에는 1, 2, 3의 눈금이, 세로축 Y에는 1, 2, 3, 4의 눈금이 표시되어 있다. 산점도의 점들이 왼쪽 아래에서 오른쪽 위로 상승하는 하나의 직선 주변에 흩어져 분포한다. 직선 왼쪽 아래에는 직선의 기울기를 나타내는 점선 직각삼각형(계단 모양)이 그려져 ‘기울기’라고 표시되어 있다. 또 직선 위쪽의 한 점을 점선 원으로 묶어 오른쪽 아래의 확대된 원으로 끌어왔고, 그 확대된 원 안에서 점과 직선 사이를 세로 방향으로 이은 선분(양방향 화살표)에 ‘편차’라고 표시되어 있다.</p>
+</blockquote>
+<p>체중의 증가율에 비해, 기초 대사량의 증가율이 작다면 L-그래프에서 직선의 기울기는 1보다 작으며 기초 대사량의 증가율이 작을수록 기울기도 작아진다. 만약 체중의 증가율과 기초 대사량의 증가율이 같다면 L-그래프에서 직선의 기울기는 1이 된다.</p>
+<p>이렇듯 L-그래프와 같은 방식으로 표현할 때, 생물의 어떤 형질이 체중 또는 몸 크기와 직선의 관계를 보이며 함께 증가하는 경우 그 형질은 ‘상대 성장’을 한다고 한다. 동일 종에서의 심장, 두뇌와 같은 신체 기관의 크기도 상대 성장을 따른다.</p>
+<p>한편, 그래프에서 가로축과 세로축 두 변수의 관계를 대변하는 최적의 직선의 기울기와 절편은 최소 제곱법으로 구할 수 있다. 우선, 그래프에 두 변수의 순서쌍을 나타낸 점들 사이를 지나는 임의의 직선을 그린다. 각 점에서 가로축에 수직 방향으로 직선까지의 거리인 편차의 절댓값을 구하고 이들을 각각 제곱하여 모두 합한 것이 ‘편차 제곱 합’이며, 편차 제곱 합이 가장 작은 직선을 구하는 것이 최소 제곱법이다.</p>
+<p>클라이버는 이런 방법에 근거하여 L-그래프에 나타난 최적의 직선의 기울기로 0.75를 얻었고, 이에 따라 동물의 (체중)^0.75에 기초 대사량이 비례한다고 결론지었다. 이것을 ‘클라이버의 법칙’이라 하며, (체중)^0.75을 대사 체중이라 부른다. 대사 체중은 치료제 허용량의 결정에도 이용되는데, 이때 그 양은 대사 체중에 비례하여 정한다. 이는 치료제 허용량이 체내 대사와 밀접한 관련이 있기 때문이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>14</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 클라이버의 법칙은 동물의 기초 대사량이 대사 체중에 비례한다고 본다.</li>
+<li>② 어떤 개체가 체중이 늘 때 다른 변화 없이 근육량이 늘면 기초 대사량이 증가한다.</li>
+<li>③ ‘L-그래프’에서 직선의 기울기는 가로축과 세로축 두 변수의 증가율의 차이와 동일하다.</li>
+<li>④ 최소 제곱법은 두 변수 간의 관계를 나타내는 최적의 직선의 기울기와 절편을 알게 해 준다.</li>
+<li>⑤ 동물의 신체 기관인 심장과 두뇌의 크기는 몸무게나 몸의 크기에 상대 성장을 하며 발달한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>15</span>윗글을 읽고 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 일반적인 경우 기초 대사량은 하루에 소모되는 총 열량 중에 가장 큰 비중을 차지하겠군.</li>
+<li>② 클라이버의 결론에 따르면, 기초 대사량이 동물의 체표 면적에 비례한다고 볼 수 없겠군.</li>
+<li>③ 19세기의 초기 연구자들은 체중의 증가율보다 기초 대사량의 증가율이 작다고 생각했겠군.</li>
+<li>④ 코끼리에게 적용하는 치료제 허용량을 기준으로, 체중에 비례하여 생쥐에게 적용할 허용량을 정한 후 먹이면 과다 복용이 될 수 있겠군.</li>
+<li>⑤ 클라이버의 법칙에 따르면, 동물의 체중이 증가함에 따라 함께 늘어나는 에너지의 필요량이 이전 초기 연구에서 생각했던 양보다 많겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span>㉠, ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 체온을 환경 온도에 따라 조정하는 변온 동물이 체외로 발산하는 열량을 측정할 수 없다.</li>
+<li>② ㉡은 동물이 호흡에 이용한 산소의 양을 알 필요가 없다.</li>
+<li>③ ㉠은 ㉡과 달리 격한 움직임이 제한된 편하게 쉬는 상태에서 기초 대사량을 구한다.</li>
+<li>④ ㉠과 ㉡은 모두 일정한 체온에서 동물이 체외로 발산하는 열량을 구할 수 있다.</li>
+<li>⑤ ㉠과 ㉡은 모두 생존에 필수적인 최소한의 에너지를 공급하면서 기초 대사량을 구한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+농게의 수컷은 집게발 하나가 매우 큰데, 큰 집게발의 길이는 게딱지의 폭에 ‘상대 성장’을 한다. 농게의 ⓐ게딱지 폭을 이용해 ⓑ큰 집게발의 길이를 추정하기 위해, 다양한 크기의 농게의 게딱지 폭과 큰 집게발의 길이를 측정하여 다수의 순서쌍을 확보했다. 그리고 ‘L-그래프’와 같은 방식으로, 그래프의 가로축과 세로축에 각각 게딱지 폭과 큰 집게발의 길이에 해당하는 값을 놓고 분석을 실시했다.</p>
+<p><strong><span class="boxmark">[그림: 농게 도해]</span></strong> 〈보기〉 오른쪽에 작은 농게에서 큰 농게로 화살표를 따라 점점 커지는 세 마리 농게 그림이 있고, 가장 큰 농게에 ‘큰 집게발’과 ‘게딱지’가 표시되어 있다.</p>
+</blockquote>
+<ul>
+<li>① 최적의 직선을 구한다고 할 때, 최적의 직선의 기울기가 1보다 작다면 ⓐ에 ⓑ가 비례한다고 할 수 없겠군.</li>
+<li>② 최적의 직선을 구하여 ⓐ와 ⓑ의 증가율을 비교하려고 할 때, 점들이 최적의 직선으로부터 가로축에 수직 방향으로 멀리 떨어질수록 편차 제곱 합은 더 작겠군.</li>
+<li>③ ⓐ의 증가율보다 ⓑ의 증가율이 크다면, 점들의 분포가 직선이 아닌 어떤 곡선의 주변에 분포하겠군.</li>
+<li>④ ⓐ의 증가율보다 ⓑ의 증가율이 작다면, 점들 사이를 지나는 최적의 직선의 기울기는 1보다 크겠군.</li>
+<li>⑤ ⓐ의 증가율과 ⓑ의 증가율이 같고 ‘일반적인 그래프’에서 순서쌍을 점으로 표시한다면, 점들은 직선이 아닌 어떤 곡선의 주변에 분포하겠군.</li>
+</ul></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>하디-바인베르크 평형은 어떤 한 가지 조건만으로 유지되는 것이 아니라, 여러 조건이 함께 충족될 때 비로소 성립한다. 집단의 대립 유전자 빈도를 일정하게 유지하려면 그 빈도를 흔들 수 있는 요인들이 모두 작용하지 않아야 하기 때문이다. 평형을 유지하는 조건은 대체로 집단의 크기, 교배 방식, 돌연변이, 이주, 자연 선택의 다섯 가지로 정리되며, 이들은 각각 다른 방식으로 빈도에 관여한다. 따라서 어느 한 조건이라도 충족되지 않으면 다른 조건이 모두 갖추어져 있더라도 평형은 깨질 수 있다.</p>
+<p>첫째, ㉠집단의 크기가 충분히 커야 한다. 집단이 작으면 어떤 개체가 우연히 자손을 적게 남기거나 일찍 죽는 것과 같은 작은 우연이 전체 빈도에 큰 영향을 미친다. 동전을 몇 번만 던지면 앞면의 비율이 한쪽으로 크게 치우칠 수 있지만 수없이 던지면 절반에 가까워지는 것처럼, 집단이 클수록 이러한 우연한 변동이 상쇄되어 빈도가 안정적으로 유지된다. 따라서 이 조건은 빈도를 흔드는 우연의 작용을 충분한 개체 수로 눌러 두기 위한 것이다. 둘째, ㉡교배가 무작위로 이루어져야 한다. 무작위 교배에서는 어떤 유전자형끼리 짝을 맺을 확률이 그 유전자형의 빈도에 의해서만 정해지므로 다음 세대의 유전자형 빈도가 p²·2pq·q²로 산출된다. 그러나 특정 유전자형끼리 서로를 선호하여 짝을 맺으면 동형 접합이 늘고 이형 접합이 줄어드는 식으로 그 관계가 깨져, 다음 세대의 유전자형 빈도가 평형 상태와 달라진다. 셋째, ㉢새로운 돌연변이가 일어나지 않아야 한다. 돌연변이로 기존에 없던 대립 유전자가 생기거나 한 대립 유전자가 다른 것으로 바뀌면, 집단을 이루던 대립 유전자의 구성 자체가 달라져 빈도가 변한다. 돌연변이가 일어나는 빈도는 대체로 낮지만, 세대가 거듭되며 한 방향으로 쌓이면 빈도에 영향을 줄 수 있다.</p>
+<p>넷째, ㉣개체의 이입이나 이출과 같은 이주가 없어야 한다. 외부 집단의 개체가 들어오는 이입은 본래 집단에 없던 비율의 대립 유전자를 보태고, 집단 내부의 개체가 빠져나가는 이출은 그 개체가 지닌 대립 유전자를 덜어 낸다. 두 경우 모두 집단의 대립 유전자 빈도를 본래의 값에서 벗어나게 한다. 특히 본래 집단과 빈도가 크게 다른 외부 집단에서 개체가 들어올수록 빈도의 변화는 더 커진다. 마지막으로, ㉤자연 선택이 작용하지 않아야 한다. 특정 유전자형이 생존이나 번식에서 더 유리하면 그 유전자형에 든 대립 유전자가 다음 세대에 더 많이 전달되어 빈도가 점차 한쪽으로 치우친다. 반대로 불리한 유전자형의 대립 유전자는 전달될 기회가 줄어 빈도가 낮아진다. 이렇게 다섯 조건은 저마다 다른 길로 빈도를 흔들 수 있으므로, 평형은 이들이 <em>모두</em> 갖추어졌을 때에 한해 성립한다.</p>
+<p>이러한 다섯 조건은 현실의 집단에서 완벽하게 충족되기 어렵다. 실제 집단은 크기가 유한하고, 짝짓기에 일정한 선호가 있으며, 드물게나마 돌연변이와 이주가 일어나고, 환경에 따라 선택이 작용하기 때문이다. 그럼에도 평형 법칙이 의미를 갖는 것은, 이 조건들이 <em>어떤 힘도 작용하지 않는</em> 이상적인 기준 상태를 정의해 주기 때문이다. 연구자는 이 기준선과 실제 집단을 견주어, 평형에서 벗어난 정도와 방향으로부터 어떤 조건이 깨졌는지, 곧 어떤 힘이 집단에 작용하고 있는지를 거꾸로 읽어 낸다. 예컨대 어떤 유전자형의 빈도가 평형에서 예측한 값보다 세대를 거듭하며 점점 커진다면, 그 유전자형이 생존이나 번식에 유리해 자연 선택이 작용하고 있다고 짐작할 수 있다. 또 한쪽 대립 유전자의 빈도가 일정한 방향 없이 세대마다 들쭉날쭉 변한다면, 집단의 크기가 작아 우연의 작용이 두드러진 것으로 볼 수 있다. 이처럼 벗어난 양상의 차이가 어떤 조건이 깨졌는지를 가리키는 단서가 된다. 평형 조건은 그 자체로 자연에서 흔히 충족되는 상태라기보다, 변화를 가늠하는 잣대로서 더 큰 쓸모를 지니는 셈이다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 하디-바인베르크 평형은 다섯 조건이 함께 충족될 때 성립한다.</li>
+<li>② 다섯 조건 중 하나라도 충족되지 않으면 평형이 깨질 수 있다.</li>
+<li>③ 집단이 클수록 우연한 요인에 의한 빈도 변동이 상쇄되는 경향이 있다.</li>
+<li>④ 특정 유전자형끼리 선호하여 짝을 맺으면 유전자형 빈도가 평형 상태와 달라진다.</li>
+<li>⑤ 평형 조건은 현실의 집단에서 대체로 완벽하게 충족되는 상태이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span>㉠～㉤에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 집단이 작을수록 우연한 변동이 상쇄되어 빈도가 안정된다는 조건이다.</li>
+<li>② ㉡이 충족되지 않으면 대립 유전자의 구성 자체가 새로 생겨난다.</li>
+<li>③ ㉢은 기존 대립 유전자의 구성을 바꾸어 빈도를 변화시킬 수 있는 요인을 차단하는 조건이다.</li>
+<li>④ ㉣에서 이입은 빈도를 변화시키지만 이출은 빈도에 영향을 주지 않는다.</li>
+<li>⑤ ㉤은 특정 유전자형이 불리할 때에만 빈도가 한쪽으로 치우치게 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 연구진이 같은 종의 두 집단 갑과 을을 비교하였다. 갑은 개체 수가 매우 많고 짝짓기에 특별한 선호가 없으며 외부와 개체의 드나듦이 없는 집단으로, 여러 세대에 걸쳐 대립 유전자 D와 d의 빈도가 거의 일정하게 유지되었다. 을은 갑과 본래 같은 빈도에서 출발했으나 개체 수가 매우 적은 집단으로, 외부 유입이나 선택의 작용은 관찰되지 않았는데도 세대가 지나면서 D와 d의 빈도가 눈에 띄게 출렁이며 달라졌다.</p>
+</blockquote>
+<ul>
+<li>① 갑에서 빈도가 일정하게 유지된 것은 평형을 유지하는 조건들이 함께 충족된 상태와 관련되겠군.</li>
+<li>② 갑에서 외부와 개체의 드나듦이 없었던 것은 이주가 빈도를 변화시킬 가능성이 차단된 것이겠군.</li>
+<li>③ 을에서 외부 유입이나 선택이 없었는데도 빈도가 달라진 것은 집단의 크기가 작아 우연한 변동이 상쇄되지 못한 것과 관련되겠군.</li>
+<li>④ 을에서 빈도가 출렁인 것은 집단의 크기 조건이 충족되지 않아 평형이 깨진 사례로 볼 수 있겠군.</li>
+<li>⑤ 을에서 선택이 관찰되지 않았으므로, 다른 조건이 모두 깨졌더라도 평형은 그대로 유지되었겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 6월 [8~11]</div>
+<div class='passage exam-ps'><p>분자들이 만나 화학 반응을 진행하는 데 필요한 최소한의 운동 에너지를 활성화 에너지라 한다. 활성화 에너지가 작은 반응은, 반응의 활성화 에너지보다 큰 운동 에너지를 가진 분자들이 많아 반응이 빠르게 진행된다. 활성화 에너지를 조절하여 반응 속도에 변화를 주는 물질을 촉매라고 하며, 반응 속도를 빠르게 하는 능력을 촉매 활성이라 한다. 촉매는 촉매가 없을 때와는 활성화 에너지가 다른, 새로운 반응 경로를 제공한다. 화학 산업에서는 주로 고체 촉매가 이용되는데, 액체나 기체인 생성물을 촉매로부터 분리하는 별도의 공정이 필요 없기 때문이다. 고체 촉매는 대부분 활성 성분, 지지체, 증진제로 구성된다.</p>
+<p>활성 성분은 그 표면에 반응물을 흡착시켜 촉매 활성을 제공하는 물질이다. 고체 촉매의 촉매 작용에서는 반응물이 먼저 활성 성분의 표면에 화학 흡착되고, 흡착된 반응물이 표면에서 반응하여 생성물로 변환된 후, 생성물이 표면에서 탈착되는 과정을 거쳐 반응이 완결된다. 금속은 다양한 물질들이 표면에 흡착될 수 있어 여러 반응에서 활성 성분으로 사용된다. 예를 들면, 암모니아를 합성할 때 철을 활성 성분으로 사용하는데, 이때 반응물인 수소와 질소가 철의 표면에 흡착되어 각각 원자 상태로 분리된다. 흡착된 반응물은 전자를 금속 표면의 원자와 공유하여 안정화된다. 반응물의 흡착 세기는 금속의 종류에 따라 달라진다. 이때 흡착 세기가 적절해야 한다. 흡착이 약하면 흡착량이 적어 촉매 활성이 낮으며, 흡착이 너무 강하면 흡착된 반응물이 지나치게 안정화되어 표면에서의 반응이 느려지므로 촉매 활성이 낮다. 일반적으로 고체 촉매에서는 반응에 관여하는 표면의 활성 성분 원자가 많을수록 반응물의 흡착이 많아 촉매 활성이 높아진다.</p>
+<p>금속은 열적 안정성이 낮아, 화학 반응이 일어나는 고온에서 금속 원자들로 이루어진 작은 입자들이 서로 달라붙어 큰 입자를 이루게 되는데 이를 소결이라 한다. 입자가 소결되면 금속 활성 성분의 전체 표면적은 줄어든다. 이러한 문제를 해결하는 것이 지지체이다. 작은 금속 입자들을 표면적이 넓고 열적 안정성이 높은 지지체의 표면에 분산하면 소결로 인한 촉매 활성 저하가 억제된다. 따라서 소량의 금속으로도 ㉠금속을 활성 성분으로 사용하는 고체 촉매의 활성을 높일 수 있다.</p>
+<p>증진제는 촉매에 소량 포함되어 활성을 조절한다. 활성 성분의 표면 구조를 변화시켜 소결을 억제하기도 하고, 활성 성분의 전자 밀도를 변화시켜 흡착 세기를 조절하기도 한다. 고체 촉매는 활성 성분이 반드시 있어야 하지만 경우에 따라 증진제나 지지체를 포함하지 않기도 한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 촉매를 이용하면 화학 반응이 새로운 경로로 진행된다.</li>
+<li>② 고체 촉매는 기체 생성물과 촉매의 분리 공정이 필요하다.</li>
+<li>③ 고체 촉매에 의한 반응은 생성물의 탈착을 거쳐 완결된다.</li>
+<li>④ 암모니아 합성에서 철 표면에 흡착된 수소는 전자를 철 원자와 공유한다.</li>
+<li>⑤ 증진제나 지지체 없이 촉매 활성을 갖는 고체 촉매가 있다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>㉠의 촉매 활성을 높이는 방법으로 가장 적절한 것은?</p>
+<ul>
+<li>① 반응물을 흡착하는 금속 원자의 개수를 늘린다.</li>
+<li>② 활성 성분의 소결을 촉진하는 증진제를 첨가한다.</li>
+<li>③ 반응물의 반응 속도를 늦추는 지지체를 사용한다.</li>
+<li>④ 반응에 대한 활성화 에너지를 크게 하는 금속을 사용한다.</li>
+<li>⑤ 활성 성분의 금속 입자들을 뭉치게 하여 큰 입자로 만든다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+아세틸렌은 보통 선택적 수소화 공정을 통하여 에틸렌으로 변환된다. 이 공정에서 사용되는 고체 촉매는 팔라듐 금속 입자를 실리카 표면에 분산하여 만들며, 아세틸렌과 수소는 팔라듐 표면에 흡착되어 반응한다. 여기서 실리카는 표면적이 넓고 열적 안정성이 높다. 이때, 촉매에 규소를 소량 포함시키면 활성 성분의 표면 구조가 변화되어 고온에서 팔라듐의 소결이 억제된다. 또한 은을 소량 포함시키면 팔라듐의 전자 밀도가 높아지고 팔라듐 표면에 반응물이 흡착되는 세기가 조절되어 원하는 반응을 얻을 수 있다.</p>
+</blockquote>
+<ul>
+<li>① 아세틸렌은 반응물에 해당한다.</li>
+<li>② 팔라듐은 활성 성분에 해당한다.</li>
+<li>③ 규소와 은은 모두 증진제에 해당한다.</li>
+<li>④ 실리카는 낮은 온도에서 활성 성분을 소결한다.</li>
+<li>⑤ 실리카는 촉매 활성 저하를 억제하는 기능을 한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 할 때, 〈보기〉의 금속 ⓐ～ⓓ에 대한 설명으로 가장 적절한 것은? </p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음은 여러 가지 금속에 물질 <span class="boxmark">[가]</span>가 흡착될 때의 흡착 세기와 <span class="boxmark">[가]</span>의 화학 반응에서 각 금속의 촉매 활성을 나타낸다. (단, 흡착에 영향을 주는 다른 요소는 고려하지 않음.)
+<strong><span class="boxmark">[그림: 산 모양 산점도]</span></strong> 세로축은 ‘촉매 활성’(아래 ‘낮음’에서 위 ‘높음’ 방향 화살표), 가로축은 ‘흡착 세기’(왼쪽 ‘약함’, 오른쪽 ‘강함’ 방향 화살표). 점들이 왼쪽 아래에서 가운데 위로 올라갔다가 오른쪽 아래로 내려가는 산(山) 모양 추세를 이룬다. ⓐ는 가장 왼쪽(흡착 세기 약함·촉매 활성 낮음), ⓑ는 ⓐ보다 오른쪽 위(흡착 세기와 활성이 ⓐ보다 큼), ⓒ는 추세의 정점 부근(중간 흡착 세기·촉매 활성 최고), ⓓ는 가장 오른쪽(흡착 세기 강함·촉매 활성 낮음)에 위치한다. 이 밖에 기호가 붙지 않은 점들도 같은 산 모양 추세를 이룬다(별도의 추세선은 그려져 있지 않다).</p>
+</blockquote>
+<ul>
+<li>① <span class="boxmark">[가]</span>의 화학 반응은 ⓐ보다 ⓑ를 활성 성분으로 사용할 때 더 느리게 일어난다.</li>
+<li>② <span class="boxmark">[가]</span>는 ⓐ보다 ⓒ에 흡착될 때 흡착량이 더 적다.</li>
+<li>③ <span class="boxmark">[가]</span>는 ⓐ보다 ⓓ에 흡착될 때 안정화되는 정도가 더 크다.</li>
+<li>④ <span class="boxmark">[가]</span>는 ⓑ보다 ⓒ에 더 약하게 흡착된다.</li>
+<li>⑤ <span class="boxmark">[가]</span>의 화학 반응에서 촉매 활성만을 고려하면 가장 적합한 활성 성분은 ⓓ이다.</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>집단의 대립 유전자 빈도가 일정하게 유지되려면 집단의 크기가 충분히 커야 한다. 그런데 집단의 크기가 작으면, 자연 선택이나 이주와 같은 뚜렷한 힘이 작용하지 않더라도 대립 유전자 빈도가 세대를 거치며 우연에 의해 변동할 수 있다. 이처럼 작은 집단에서 우연한 표본 추출의 효과로 대립 유전자 빈도가 세대마다 무작위로 변하는 현상을 유전적 부동이라 한다. 자손은 양친 세대의 대립 유전자 가운데 일부만을 물려받는데, 물려받는 대립 유전자의 구성은 본래 빈도와 정확히 일치하지 않고 표본을 뽑을 때처럼 어느 정도 어긋나기 마련이다. 집단이 크면 이러한 어긋남이 서로 상쇄되어 빈도가 거의 그대로 유지되지만, 집단이 작으면 어긋남이 상쇄되지 못하고 누적되어 빈도가 한 방향으로 쏠리기 쉽다. 같은 우연이라도 표본의 크기가 작을수록 본래 비율에서 벗어나는 폭이 커지기 때문이다.</p>
+<p>유전적 부동이 거듭되면 빈도의 변동은 점점 더 큰 폭으로 나타난다. 어느 세대에 우연히 한 대립 유전자의 빈도가 높아지면, 다음 세대는 그 높아진 빈도를 바탕으로 다시 표본이 뽑히므로 빈도가 더욱 치우칠 가능성이 커진다. 빈도가 높아진 대립 유전자는 자손에게 전달될 기회가 그만큼 많아지고, 빈도가 낮아진 대립 유전자는 전달될 기회가 줄어들기 때문이다. 이러한 과정이 누적되면 작은 집단에서는 빈도의 변동이 한 세대의 우연에 그치지 않고 세대를 거듭하며 증폭된다. 그 결과 어떤 대립 유전자의 빈도는 점차 0에 가까워지고, 다른 대립 유전자의 빈도는 1에 가까워지는 쪽으로 치우쳐 간다. 빈도가 1이 되어 집단의 모든 개체가 같은 대립 유전자만 갖게 되면 그 대립 유전자는 고정되었다고 하고, 빈도가 0이 되어 집단에서 사라진 대립 유전자는 소실되었다고 한다.</p>
+<p>대립 유전자가 한번 소실되면, 그 집단에서는 돌연변이나 외부로부터의 이입이 없는 한 그 대립 유전자가 다시 나타나지 않는다. 어느 한 대립 유전자가 고정되면 그 자리에는 더 이상 다른 형태가 남아 있지 않아, 그 형질에 관한 한 모든 개체가 같은 유전자형을 갖게 되기 때문이다. 따라서 유전적 부동이 진행될수록 집단이 지닌 대립 유전자의 종류는 줄어들고, 집단의 유전적 다양성도 함께 낮아진다. 특히 어떤 까닭으로 집단의 크기가 급격히 줄어들었다가 다시 늘어나는 경우, 크기가 줄어든 동안 우연히 살아남은 소수의 개체가 지닌 대립 유전자만이 이후 집단에 전해진다. 그리하여 살아남은 개체에 우연히 많았던 대립 유전자는 빈도가 크게 높아지고, 적었던 대립 유전자는 소실되기 쉽다. 이 경우 회복된 집단의 대립 유전자 빈도는 본래 집단과 크게 달라지며, 줄어든 유전적 다양성은 집단이 다시 커진 뒤에도 쉽게 회복되지 않는다.</p>
+<p>다만 유전적 부동이 집단에 늘 해로운 변화만을 낳는 것은 아니다. 유전적 부동은 자연 선택과 무관하게 빈도를 바꾸므로, 생존이나 번식에 유리하지도 불리하지도 않은 중립적인 대립 유전자의 빈도 변화를 설명하는 데 유용하다. 자연 선택만으로는 유리하지도 불리하지도 않은 대립 유전자의 빈도가 왜 달라지는지를 설명하기 어렵지만, 유전적 부동은 우연의 작용만으로 그러한 변화가 일어날 수 있음을 보여 준다. 또한 작은 집단에서 빠르게 빈도가 치우치는 성질은, 짧은 시간에 집단 사이의 유전적 차이를 키워 새로운 집단이 갈라져 나오는 과정과도 관련된다. 본래 한 집단이었더라도 일부가 떨어져 나와 작은 집단을 이루면, 떨어져 나온 집단에서는 부동이 강하게 작용해 본래 집단과 빈도가 빠르게 달라지기 때문이다. 이처럼 유전적 부동은 평형을 깨뜨려 빈도를 변화시키는 요인이면서, 동시에 집단의 분화와 진화를 이해하는 데 빼놓을 수 없는 개념으로 다루어진다. 결국 작은 집단에서의 빈도 변동을 이해하는 일은, 평형에서 벗어난 변화를 단순히 예외로 치부하기 위해서가 아니라 그 변화가 집단에 남기는 결과를 읽어 내기 위한 토대가 된다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 작은 집단에서는 뚜렷한 힘이 작용하지 않아도 대립 유전자 빈도가 우연히 변동할 수 있다.</li>
+<li>② 자손은 양친 세대의 대립 유전자 가운데 일부만을 물려받는다.</li>
+<li>③ 빈도가 1이 되어 집단의 모든 개체가 같은 대립 유전자만 갖게 되면 그 대립 유전자는 고정되었다고 한다.</li>
+<li>④ 소실된 대립 유전자는 돌연변이나 이입이 없어도 세대가 지나면 다시 나타난다.</li>
+<li>⑤ 유전적 부동은 중립적인 대립 유전자의 빈도 변화를 설명하는 데 유용하다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>유전적 부동을 중심으로 한 위와 같은 설명에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 작은 집단에서 빈도가 변동하는 현상을 다루면서 그 원인을 제시하지 않았다.</li>
+<li>② 유전적 부동이 빈도를 변화시키는 과정만 다루고 그 결과는 전혀 언급하지 않았다.</li>
+<li>③ 유전적 부동을 자연 선택과 구별하면서도 두 요인이 한 집단에서 함께 작용할 때 빈도가 어떻게 변하는지는 밝히지 않았다.</li>
+<li>④ 집단의 크기가 줄어드는 경우만 다루고 크기가 커지는 경우는 전혀 다루지 않았다.</li>
+<li>⑤ 유전적 부동이 집단에 미치는 영향을 다루면서 유전적 다양성이 낮아지는 과정은 설명하지 않았다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+같은 종에서 갈라져 나온 두 섬 집단 갑과 을을 조사하였다. 갑은 줄곧 개체 수가 많은 큰 집단으로 유지되어, 여러 세대에 걸쳐 대립 유전자 E와 e의 빈도가 거의 변하지 않았고 두 대립 유전자가 모두 남아 있었다. 을은 한때 폭풍으로 개체 수가 급격히 줄었다가 다시 늘어난 집단으로, 개체 수가 줄어든 동안 우연히 살아남은 소수의 개체에는 E가 많고 e가 매우 적었다. 이후 을에서는 e가 사라지고 E만 남았으며, 집단이 다시 커진 뒤에도 이 상태가 이어졌다. 두 집단 모두에서 짝짓기의 선호나 외부 개체의 유입은 관찰되지 않았다.</p>
+</blockquote>
+<ul>
+<li>① 갑에서 두 대립 유전자의 빈도가 거의 변하지 않은 것은, 집단이 커서 우연한 어긋남이 상쇄된 것과 관련되겠군.</li>
+<li>② 갑에서 두 대립 유전자가 모두 남아 있는 것은, 큰 집단일수록 자연 선택이 강하게 작용해 다양성이 유지되었기 때문이겠군.</li>
+<li>③ 을에서 개체 수가 줄어든 동안 살아남은 소수가 지닌 대립 유전자만 이후 집단에 전해진 것은, 그 소수의 구성이 집단의 빈도를 좌우한 경우이겠군.</li>
+<li>④ 을에서 e가 사라진 것은 한 대립 유전자가 소실된 경우에 해당하겠군.</li>
+<li>⑤ 을에서 집단이 다시 커진 뒤에도 E만 남은 것은, 소실된 대립 유전자가 돌연변이나 이입 없이는 다시 나타나지 않는 것과 관련되겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 수능 [33~36]</div>
+<div class='passage exam-ps'><p>탄수화물은 사람을 비롯한 동물이 생존하는 데 필수적인 에너지원이다. 탄수화물은 섬유소와 비섬유소로 구분된다. 사람은 체내에서 합성한 효소를 이용하여 곡류의 녹말과 같은 비섬유소를 포도당으로 분해하고 이를 소장에서 흡수하여 에너지원으로 이용한다. 반면, 사람은 풀이나 채소의 주성분인 셀룰로스와 같은 섬유소를 포도당으로 분해하는 효소를 합성하지 못하므로, 섬유소를 소장에서 이용하지 못한다. ㉠소, 양, 사슴과 같은 반추 동물도 섬유소를 분해하는 효소를 합성하지 못하는 것은 마찬가지이지만, 비섬유소와 섬유소를 모두 에너지원으로 이용하며 살아간다.</p>
+<p>위(胃)가 넷으로 나누어진 반추 동물의 첫째 위인 반추위에는 여러 종류의 미생물이 서식하고 있다. 반추 동물의 반추위에는 산소가 없는데, 이 환경에서 왕성하게 생장하는 반추위 미생물들은 다양한 생리적 특성을 가지고 있다. 그중 ⓐ피브로박터 숙시노젠(F)은 섬유소를 분해하는 대표적인 미생물이다. 식물체에서 셀룰로스는 그것을 둘러싼 다른 물질과 복잡하게 얽혀 있는데, F가 가진 효소 복합체는 이 구조를 끊어 셀룰로스를 노출시킨 후 이를 포도당으로 분해한다. F는 이 포도당을 자신의 세포 내에서 대사 과정을 거쳐 에너지원으로 이용하여 생존을 유지하고 개체 수를 늘림으로써 생장한다. 이런 대사 과정에서 아세트산, 숙신산 등이 대사산물로 발생하고 이를 자신의 세포 외부로 배출한다. 반추위에서 미생물들이 생성한 아세트산은 반추 동물의 세포로 직접 흡수되어 생존에 필요한 에너지를 생성하는 데 주로 이용되고 체지방을 합성하는 데에도 쓰인다. 한편 반추위에서 숙신산은 프로피온산을 대사산물로 생성하는 다른 미생물의 에너지원으로 빠르게 소진된다. 이 과정에서 생성된 프로피온산은 반추 동물이 간(肝)에서 포도당을 합성하는 대사 과정에서 주요 재료로 이용된다.</p>
+<p>반추위에는 비섬유소인 녹말을 분해하는 ⓑ스트렙토코쿠스 보비스(S)도 서식한다. 이 미생물은 반추 동물이 섭취한 녹말을 포도당으로 분해하고, 이 포도당을 자신의 세포 내에서 대사 과정을 통해 자신에게 필요한 에너지원으로 이용한다. 이때 S는 자신의 세포 내의 산성도에 따라 세포 외부로 배출하는 대사산물이 달라진다. 산성도를 알려 주는 수소 이온 농도 지수(pH)가 7.0 정도로 중성이고 생장 속도가 느린 경우에는 아세트산, 에탄올 등이 대사산물로 배출된다. 반면 산성도가 높아져 pH가 6.0 이하로 떨어지거나 녹말의 양이 충분하여 생장 속도가 빠를 때는 젖산이 대사산물로 배출된다. 반추위에서 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물에게 필요한 에너지를 생성하는 데 이용되거나 아세트산 또는 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용된다.</p>
+<p>그런데 S의 과도한 생장이 반추 동물에게 악영향을 끼치는 경우가 있다. 반추 동물이 짧은 시간에 과도한 양의 비섬유소를 섭취하면 S의 개체 수가 급격히 늘고 과도한 양의 젖산이 배출되어 반추위의 산성도가 높아진다. 이에 따라 산성의 환경에서 왕성히 생장하며 항상 젖산을 대사산물로 배출하는 ⓒ락토바실러스 루미니스(L)와 같은 젖산 생성 미생물들의 생장이 증가하며 다량의 젖산을 배출하기 시작한다. F를 비롯한 섬유소 분해 미생물들은 자신의 세포 내부의 pH를 중성으로 일정하게 유지하려는 특성이 있는데, 젖산 농도의 증가로 자신의 세포 외부의 pH가 낮아지면 자신의 세포 내의 항상성을 유지하기 위해 에너지를 사용하므로 생장이 감소한다. 만일 자신의 세포 외부의 pH가 5.8 이하로 떨어지면 에너지가 소진되어 생장을 멈추고 사멸하는 단계로 접어든다. 이와 달리 S와 L은 상대적으로 산성에 견디는 정도가 강해 자신의 세포 외부의 pH가 5.5 정도까지 떨어지더라도 이에 맞춰 자신의 세포 내부의 pH를 낮출 수 있어 자신의 에너지를 세포 내부의 pH를 유지하는 데 거의 사용하지 않고 생장을 지속하는 데 사용한다. 그러나 S도 자신의 세포 외부의 pH가 그 이하로 더 떨어지면 생장을 멈추고 사멸하는 단계로 접어들고, 산성에 더 강한 L을 비롯한 젖산 생성 미생물들이 반추위 미생물의 많은 부분을 차지하게 된다. 그렇게 되면 반추위의 pH가 5.0 이하가 되는 급성 반추위 산성증이 발병한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>33</span>윗글을 읽고 알 수 있는 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 섬유소는 사람의 소장에서 포도당의 공급원으로 사용된다.</li>
+<li>② 반추 동물의 세포에서 합성한 효소는 셀룰로스를 분해한다.</li>
+<li>③ 반추위 미생물은 산소가 없는 환경에서 생장을 멈추고 사멸한다.</li>
+<li>④ 반추 동물의 과도한 섬유소 섭취는 급성 반추위 산성증을 유발한다.</li>
+<li>⑤ 피브로박터 숙시노젠(F)은 자신의 세포 내에서 포도당을 에너지원으로 이용하여 생장한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>34</span>윗글로 볼 때, ⓐ～ⓒ에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ와 ⓑ는 모두 급성 반추위 산성증에 걸린 반추 동물의 반추위에서는 생장하지 못하겠군.</li>
+<li>② ⓐ와 ⓑ는 모두 반추위에서 반추 동물의 체지방을 합성하는 물질을 생성할 수 있겠군.</li>
+<li>③ 반추위의 pH가 6.0일 때, ⓐ는 ⓒ보다 자신의 세포 내의 산성도를 유지하는 데 더 많은 에너지를 쓰겠군.</li>
+<li>④ ⓑ와 ⓒ는 모두 반추위의 산성도에 따라 다양한 종류의 대사산물을 배출하겠군.</li>
+<li>⑤ 반추위에서 녹말의 양과 ⓑ의 생장이 증가할수록, ⓐ의 생장은 감소하고 ⓒ의 생장은 증가하겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>35</span><span class="pts">[3점]</span> 윗글을 바탕으로 ㉠이 가능한 이유를 진술한다고 할 때, 〈보기〉의 ㉮, ㉯에 들어갈 말로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+반추 동물이 섭취한 섬유소와 비섬유소는 반추위에서 ( ㉮ ), 이를 이용하여 생장하는 ( ㉯ )은 반추 동물의 에너지원으로 이용되기 때문이다.</p>
+</blockquote>
+<ul>
+<li>① ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>② ㉮: 반추위 미생물의 에너지원이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+<li>③ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추 동물이 대사 과정을 통해 생성한 포도당</li>
+<li>④ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 대사산물</li>
+<li>⑤ ㉮: 반추위 미생물에 의해 합성된 포도당이 되고 / ㉯: 반추위 미생물이 대사 과정을 통해 생성한 포도당</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>36</span>윗글로 볼 때, 반추위 미생물에서 배출되는 숙신산과 젖산에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 숙신산이 많이 배출될수록 반추 동물의 간에서 합성되는 포도당의 양도 늘어난다.</li>
+<li>② 젖산은 반추 동물의 세포로 직접 흡수되어 반추 동물의 에너지원으로 이용될 수 있다.</li>
+<li>③ 숙신산과 젖산은 반추위가 산성일 때보다 중성일 때 더 많이 배출된다.</li>
+<li>④ 숙신산과 젖산은 반추위 미생물의 세포 내에서 대사 과정을 거쳐 생성된다.</li>
+<li>⑤ 숙신산과 젖산은 프로피온산을 대사산물로 배출하는 다른 미생물의 에너지원으로 이용되기도 한다.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

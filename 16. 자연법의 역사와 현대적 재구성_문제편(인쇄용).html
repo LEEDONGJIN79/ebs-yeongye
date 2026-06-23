@@ -1,0 +1,396 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>자연법의 역사와 현대적 재구성 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 문제편 (A4)</div>
+<div class='introzone' style='font-size:10.60pt'><h2 class='sec'>이 개념, 쉽게 알아보기</h2><div class='intro-box'><p>여러분, 학교에 ‘교칙’이 있죠. 그런데 어떤 교칙을 보고 "이건 좀 부당한데?"라고 느껴 본 적 없나요? 분명히 학교가 정해서 적어 둔 규칙인데도, 우리는 그 규칙이 옳은지 그른지를 또 따져 보곤 합니다. 이때 우리가 마음속에서 기준으로 삼는 그 ‘더 근본적인 옳고 그름’이 바로 이 단원의 주인공, <strong>자연법</strong>과 닮아 있어요.</p>
+<p>세상의 법은 크게 둘로 나눠 생각할 수 있습니다. 하나는 <strong>실정법</strong> — 국가가 실제로 만들어 종이에 적어 두고, 어기면 벌을 주는 법이에요. 우리가 흔히 ‘법’이라고 부르는 게 이것입니다. 그런데 실정법만으로는 풀리지 않는 물음이 있어요. "그 법 자체는 과연 정당한가?" 나쁜 법, 부당한 법도 일단 적혀 있으면 다 옳은 걸까요? 여기서 등장하는 것이 다른 하나, <strong>자연법</strong>입니다. 자연법은 <strong>사람이라면 누구나 타고난 본성과 이성으로 알아챌 수 있는, 시대가 바뀌어도 변하지 않는 옳고 그름의 기준</strong>이에요. 자연법론자들은 실정법이 이 자연법에 들어맞을 때 비로소 정당해진다고 봅니다. 말하자면 자연법은 <strong>법을 재는 자(尺)</strong>인 셈이죠.</p>
+<p>이 ‘법을 재는 자’라는 생각은 아주 오래됐어요. 고대 그리스의 스토아학파가 "사람은 자연의 이성적 질서에 맞추어 살아야 한다"라고 다듬었고, 중세에 와서 <strong>토마스 아퀴나스</strong>가 이를 신이 세운 우주의 질서(영원법)와 연결 지어 큰 체계로 키웠습니다. 그리고 현대에 들어와 두 철학자가 이 오래된 개념을 새 옷으로 갈아입혔어요. <strong>마리탱</strong>은 자연법을 ‘바깥에서 강요하는 규칙’이 아니라 ‘사람 안에 이미 들어 있어 스스로 따르게 되는 삶의 원리’로 다시 읽었고, <strong>메스너</strong>는 자연법을 ‘사람이 사람답게 살기 위해 실제로 필요로 하는 것들’에서 끌어냈다고 보는 흐름을 대표합니다.</p>
+<blockquote>
+<p>한마디로: <strong>자연법은 "법보다 먼저 있는, 사람 안의 옳음의 잣대"예요.</strong> 이 잣대가 어떻게 생겨났고(역사), 현대 학자들이 그것을 어떻게 다시 그렸는지(재구성)를 따라가는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<h2 class='sec'>이 단원에서 배울 것</h2><div><p>이 단원의 중심에는 <strong>자연법</strong>이 있습니다. 인간의 본성과 이성에 뿌리를 둔, 실정법의 정당성을 재는 보편적 도덕 규범이죠. 세 세트는 이 큰 개념의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>자 연 법<small>"법보다 앞서는, 인간 본성에 근거한 옳음의 기준"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>전통적 자연법을 현대에 다시 그린 두 갈래, 곧 <strong>마리탱</strong>과 <strong>메스너</strong>의 재구성을 나란히 놓고 견줍니다. 같은 자연법을 두 사람이 어떻게 다르게 읽었는지를 가려내는 연습이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>그중 <strong>마리탱</strong>의 자연법론 하나에 깊이 들어갑니다. 자연법이 인간 본성 안에 깃든 ‘내면적 질서’라는 생각, ‘존재하는 자연법과 인식된 자연법의 구별’, 그리고 인권의 철학적 토대가 되는 과정을 살핍니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>자연법이라는 개념이 <strong>고대 스토아학파 → 중세 아퀴나스 → 근대의 전환 → 현대의 재구성</strong>으로 이어지며 어떻게 바뀌어 왔는지, 그 역사적 흐름을 시대별로 따라갑니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, ‘자연법이란 무엇이며 왜 시대마다 다시 그려졌는가’라는 물음에 스스로 답할 수 있게 될 거예요.</p></div></div>
+<div class='set s1 set-break'>
+<div class='set-banner'>세트 1</div>
+<div class='passage'><p>자연법은 인간의 본성과 이성에 근거한 보편적 도덕 규범으로, 국가가 제정한 실정법의 정당성을 판단하는 궁극적 기준으로 여겨진다. 고대 스토아학파에서 체계화되고 중세에 토마스 아퀴나스에 의해 신학과 결합한 자연법 사상은, 현대에 들어 그 근거를 다시 묻는 작업을 통해 재구성된다. 이 재구성은 자연법을 인간 바깥의 초월적 질서에서 끌어내기보다 인간 존재 자체에서 길어 올리려 한다는 점에서 전통적 논의와 구별된다. 현대의 대표적 재구성으로는 자크 마리탱의 논의와 요하네스 메스너의 논의가 흔히 거론되는데, 두 입장은 자연법을 인간에게 내재한 것으로 본다는 점에서는 같으나 그 내재의 방식과 인식의 경로를 서로 다르게 설명한다.</p>
+<p>마리탱은 자연법을 인간 존재의 본질 속에 깃든 내면적 질서로 이해한다. 그에 따르면 인간은 누구나 선을 추구하고 공동체적 삶을 영위하려는 성향을 지니며, 이성적 추론에 앞서 이 성향을 통해 자연법을 직관적으로 인식한다. 자연법이 외부에서 주어진 규약이 아니라 본성에 깃든 성향에서 비롯하므로, 그것을 따르는 일은 곧 인간이 자기 본성에 충실해지는 일이 된다. 따라서 자연법은 바깥에서 강제로 부과되는 규칙이 아니라, 인간이 인간답게 살아가기 위해 스스로 따르는 삶의 원리이다. 다만 마리탱은 이 직관이 본능처럼 저절로 완성되는 것은 아니라고 본다. 자연법의 보편적 원리는 누구에게나 주어져 있지만, 그것이 각 사회의 문화적 여건 속에서 구체적으로 인식되고 실현되는 방식은 달라질 수 있으며, 그러기 위해서는 인간의 교육과 도덕적 성숙이 필요하다는 것이다. 즉 원리 자체가 변하는 것이 아니라 그것을 깨닫고 제도로 펼쳐 내는 정도가 달라질 뿐이다. 그는 이를 존재하는 자연법과 인식된 자연법의 구별로 설명한다.</p>
+<div class="ablock"><span class="atag">[A]</span>메스너의 재구성은 자연법의 근거를 인간의 ‘실존적 목적’에서 찾는 흐름을 대표한다. 이 흐름에 따르면 인간은 생명의 유지, 앎의 추구, 공동체의 형성과 같은 본질적 목적을 지닌 존재이며, 이러한 목적을 이루기 위해 반드시 충족되어야 하는 조건들이 있다. 자연법은 바로 이 조건들로부터, 곧 인간이 사람답게 살기 위해 실제로 필요로 하는 것들로부터 도출된다. 그러므로 자연법은 인간 본성에 미리 새겨진 고정된 목록이 아니라, 인간의 실존적 필요에 응답하는 가운데 그 구체적 내용이 드러나는 규범이다. 이때 인간은 홀로 존재하지 않고 언제나 타인과 더불어 살아가므로, 실존적 목적의 상당 부분은 공동체 안에서만 충족될 수 있다. 따라서 이 흐름에서 자연법은 개인의 내면에 머무르지 않고 사회적 관계와 제도의 정당한 질서를 가늠하는 기준으로까지 확장된다. 이처럼 자연법을 인간의 사회적 실존과 결부해 파악한다는 점에서, 이 논의는 자연법을 ‘사회적 자연법’으로 부르기도 한다. </div>
+
+<p>두 재구성은 자연법을 인간에게 내재한 보편적 규범으로 본다는 출발점을 공유한다. 그러나 마리탱이 자연법을 인간 본질에 깃든 성향과 그에 대한 직관적 인식에서 출발해 설명한다면, 메스너의 논의는 인간이 실존적 목적을 이루기 위해 필요로 하는 조건에서 자연법을 끌어낸다. 또한 마리탱이 자연법의 실현에서 교육과 도덕적 성숙이라는 인식의 성장에 무게를 둔다면, 메스너의 논의는 그 필요가 충족되는 사회적 관계와 제도의 질서에 무게를 둔다. 그럼에도 두 입장은 자연법이 특정 종교나 문화에 갇히지 않는 보편적 규범이며, 그렇기에 근대 이후 인권 개념의 철학적 토대가 될 수 있다고 본 점에서 다시 만난다. 자연법을 인간 바깥의 권위가 아니라 인간 존재 자체에서 길어 올리려 한 이 시도들은, 자연법 사상이 변화하는 시대 속에서도 여전히 법과 도덕의 정당성을 묻는 물음에 답할 수 있음을 보여 준다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>1</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 자연법은 실정법의 정당성을 판단하는 궁극적 기준으로 여겨진다.</li>
+<li>② 자연법 사상은 고대 스토아학파에서 체계화되어 중세에 신학과 결합하였다.</li>
+<li>③ 마리탱은 인간이 이성적 추론에 앞서 직관을 통해 자연법을 인식한다고 본다.</li>
+<li>④ 마리탱과 메스너의 재구성은 자연법을 인간 바깥의 초월적 질서에서 끌어낸다.</li>
+<li>⑤ 마리탱과 메스너의 논의는 모두 자연법을 인권 개념의 철학적 토대로 본다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>2</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 마리탱은 자연법의 인식에서 무엇이 필요하다고 보았는가?</li>
+<li>② 메스너의 논의에서 자연법은 무엇으로부터 도출되는가?</li>
+<li>③ 마리탱과 메스너의 재구성은 어떤 출발점을 공유하는가?</li>
+<li>④ 자연법 사상을 신학과 결합하여 체계화한 중세 철학자는 누구인가?</li>
+<li>⑤ 메스너의 논의가 인권 사상에 끼친 영향을 비판한 학자는 누구인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>3</span>다음은 윗글을 읽은 학생이 작성한 학습 활동지의 일부이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈학습 활동지〉</strong>
+❑ 윗글에 제시된 두 재구성이 <span class="boxmark">[핵심 개념]</span>에 대해 보일 수 있는 입장을 정리해 봅시다.
+<span class="boxmark">[핵심 개념 1]</span> 자연법의 인식 경로
+∙ 마리탱: 인간 본질에 깃든 성향을 통해 자연법을 직관적으로 인식한다고 본다. ······ ①
+∙ 메스너의 논의: 인간이 실존적 목적을 이루기 위해 필요로 하는 조건에서 자연법을 끌어낸다고 본다. ······ ②
+<span class="boxmark">[핵심 개념 2]</span> 자연법의 실현에서 강조하는 것
+∙ 마리탱: 자연법이 구체적으로 실현되려면 교육과 도덕적 성숙이 필요하다고 본다. ······ ③
+∙ 메스너의 논의: 자연법의 실현은 개인의 내면에서 완결되며 사회적 관계와 무관하다고 본다. ······ ④
+<span class="boxmark">[핵심 개념 3]</span> 자연법과 인권
+∙ 마리탱, 메스너의 논의: 자연법이 보편적 규범이므로 인권 개념의 토대가 될 수 있다고 본다. ······ ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2026학년도 수능 [14~17]</div>
+<div class='passage exam-ps'><p>철학에서 특정한 개인으로서의 인간을 ‘인격’, 그중 ‘나’를 ‘자아’라고 한다. 인격의 동일성은 모든 생각의 기반이다. 우리는 과거의 내가 현재의 나와 동일한 인격이기에 과거에 내가 한 약속을 현재의 내가 지켜야 한다고 판단한다. 칸트 이전까지 인격의 동일성을 설명하는 유력한 견해는, ‘생각하는 나’인 영혼이 단일한 주관으로서 시간의 흐름 속에 지속한다는 것이었다. ‘주관’은 인식의 주체를 가리키며, ‘인식’은 ‘앎’을 말한다.</p>
+<p>그러나 칸트는 ‘나는 생각한다.’, 즉 ‘자기의식’은 인식이 이루어지는 것을 가능하게 하는 조건 중 하나에 불과하다고 본다. 그러한 조건 자체는 무언가가 실재함을 보장하지 않는다. 그렇기에 자기의식은 ‘생각하는 나’가 단일한 주관으로서 실제로 존재한다는 것, 즉 ‘영혼의 실재함’을 보장하지 않고, ‘영혼이 실재할 가능성’을 열어둘 뿐이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>이를 바탕으로 칸트는 영혼이 인격이라는 견해를 반박한다. 칸트는 ‘시간의 흐름 속에서 스스로의 동일성을 의식하는 것은 인격이다.’와 ‘영혼이 자기의식을 한다.’라는 두 전제 모두 납득할 수 있다고 보지만, 그 전제들로부터 ‘영혼이 인격이다.’라는 결론은 도출되지 않는다고 지적한다. 첫 번째 전제에 등장하는 ‘의식’은 실제로 존재하는 무언가에 대해 의식한다는 뜻이지만, ‘생각하는 나는 생각한다.’와 다름없는 두 번째 전제에 등장하는 ‘의식’은 무언가가 꼭 실재함을 뜻하지는 않기 때문이다.</p></div>
+
+<p>칸트는 통시적으로 동일한 인격의 존재를 직접 증명하는 대신 ‘시간의 흐름 속에서 마주치는 복수의 주관이 동일한 인격으로 인식된다.’라는 가정이 반드시 선행되어야 한다고 제안한다. 그래야 경험적 판단, 윤리적 판단 등의 생각이 가능하기 때문이다. 생각의 구성은 시간의 흐름을 따르는데, 이러한 구성은 통시적으로 동일한 인격을 반드시 필요로 한다는 것이다.</p>
+<p>스트로슨은 자아를 인식하는 방식이 경험적 인식의 방식과 구별된다는 칸트의 견해에 동의하지만, 복수의 주관이 동일한 인격으로 인식된다고 가정하는 것은 철학적 상상에 불과하다고 칸트를 비판한다. 인격의 문제에서 신체를 간과한 칸트와 달리, 스트로슨은 인격을 의식과 신체의 복합체로 본다. 스트로슨에 따르면, 시공간적 세계 안에서 우리의 신체를 매개로 대상이 경험된다는 것은 과학적 사실이며 자아에 대한 인식은 경험적 인식들로부터 추상화되는 것이다. 그러므로 시공간적 세계에서의 경험이 인격의 통시적 동일성을 뒷받침한다고 그는 주장한다. 자기의식도 마찬가지로 경험에 의존하기에, 자기의식이 인식을 가능하게 하는 조건이라는 칸트의 견해는 잘못이라는 것이다.</p>
+<p>롱게네스는 통시적으로 동일한 자아가 없이는 경험적 인식이 성립할 수조차 없으므로, 자아에 대한 인식은 경험으로부터 추상화된 것이 아니라고 본다. 하지만 그는 자아와 인격이 시공간적 세계를 경험하는 인간에만 적용되는 개념이라고 주장한다. 롱게네스는 인간은 도덕적 존재이며 도덕적 존재로서의 인간은 자율성을 지닌 존재라는 칸트의 견해를 인정한다. 그러나 자율성을 지닌다는 것은 시공간적 세계를 살아가는 동안 경험하는 것들 사이에서 스스로 선택한다는 것을 뜻한다. 그러려면 신체가 있고 살아 있어야 하므로, 인격의 동일성의 기준은 각자가 자신의 것이라고 통시적으로 인식하는 신체라고 롱게네스는 주장한다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>14</span>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 칸트에 따르면 자기의식은 영혼의 실재를 보장한다.</li>
+<li>② 칸트에 따르면 생각의 구성은 시간의 흐름과 독립적이다.</li>
+<li>③ 스트로슨에 따르면 자기의식은 인식을 가능하게 하는 조건이다.</li>
+<li>④ 스트로슨에 따르면 의식을 매개로 대상이 경험된다는 것은 과학적 사실이다.</li>
+<li>⑤ 롱게네스에 따르면 살아 있다는 것은 시공간적 세계 안에서의 선택에 필수적이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>15</span>[A]에서 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① ‘두 전제’를 연결하는 개념의 함의는 실재성과 관련하여 어떤 점에서 서로 다를까?</li>
+<li>② ‘복수의 주관이 동일한 인격으로 인식된다.’라는 가정은 어떤 점에서 반박되고 있을까?</li>
+<li>③ ‘영혼이 실재할 가능성’이 열려 있다는 것이 납득할 수 없는 견해인 근거는 무엇일까?</li>
+<li>④ 인격의 통시적 동일성이 ‘직접 증명’될 수 있다는 견해를 받아들여야 하는 근거는 무엇일까?</li>
+<li>⑤ ‘영혼이 자기의식을 한다.’라는 전제가 ‘생각하는 나는 생각한다.’라는 전제와 다름없는 근거는 무엇일까?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>16</span>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 아래의 핵심 개념에 대해 윗글에 제시된 학자들이 보일 수 있는 입장을 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[핵심 개념 1]</span> 자아에 대한 인식과 경험적 인식</strong>
+∙ 칸트: 자아를 인식하는 방식과 시공간적 세계의 대상들을 경험적으로 인식하는 방식은 다르다고 본다. ·········· ①
+∙ 스트로슨: 시공간적 세계에서 이루어지는 경험적 인식은 자아에 대한 인식에 의존한다고 본다. ·········· ②</p>
+<p><strong><span class="boxmark">[핵심 개념 2]</span> 추상화 과정</strong>
+∙ 스트로슨: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의하지 않는다.
+∙ 롱게네스: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의한다. ·········· ③</p>
+<p><strong><span class="boxmark">[핵심 개념 3]</span> 통시적 인격과 도덕적 존재</strong>
+∙ 칸트, 롱게네스: 도덕적 존재로서의 인간이 자율성을 지닌다는 것을 수용한다. ·········· ④
+∙ 칸트, 스트로슨, 롱게네스: ‘시간의 흐름 속 동일한 인격으로서의 나’라는 개념을 수용한다. ·········· ⑤</p>
+</blockquote></div>
+<div class='q'><p class='q-stem'><span class='q-num'>17</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑: 두뇌에서 일어나는 의식을 스캔하여 프로그램으로 재현한다고 상상해 보자. 그런 경우, 본래의 자신과 재현된 의식은 동일한 인격이 아니야. 두뇌에서 일어나는 의식은 신체 전체의 기여로 일어난 것이기 때문이지. 즉, 프로그램으로 재현된 의식은 인격일 수 없어. ‘생각하는 나’의 지속만으로는 인격의 동일성이 보장될 수 없고, 살아 있는 신체도 인격의 구성 요소에 포함되어야 하거든.
+을: 그렇지 않아. 프로그램으로 재현된 의식은 본래의 자신과 동일한 인격이야. 비록 프로그램은 신체가 없지만 우리 두뇌와 프로그램이 수행하는 사고 기능에는 근본적인 차이가 없거든. 인격의 동일성은 어떤 가정도 두지 않고 이러한 사고 기능의 동일성만을 기준으로 판단해야 해.</p>
+</blockquote>
+<ul>
+<li>① 롱게네스의 견해에 의하면, 프로그램으로 재현된 의식만으로 인격이 될 수 있다는 갑의 입장은 옳겠군.</li>
+<li>② 스트로슨의 견해에 의하면, 신체를 지니지 않은 존재에게 인격이 귀속될 수 없다는 을의 입장은 옳지 않겠군.</li>
+<li>③ 칸트 이전까지 유력했던 견해에 의하면, ‘생각하는 나’의 지속만으로는 인격의 동일성을 보장하지 않는다는 갑의 입장은 옳지 않겠군.</li>
+<li>④ 칸트의 견해에 의하면, 인격의 통시적 동일성은 그것에 대한 가정이 선행될 필요 없이 사고 기능의 동일성을 통해 판단된다는 을의 입장은 옳겠군.</li>
+<li>⑤ 롱게네스의 견해에 의하면, 인간과 상이한 존재에 의해서도 동일하게 수행될 수 있는 사고 기능이 인격의 동일성을 판단하는 기준이라는 을의 입장은 옳겠군.</li>
+</ul></div>
+</div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2</div>
+<div class='passage'><p>현대의 철학자 자크 마리탱은 자연법을 인간 존재의 본질 속에 ⓐ<u>내재한</u> 내면적 질서로 재해석한다. 전통적 논의가 자연법을 인간 바깥의 초월적 질서에서 끌어내려 했다면, 마리탱은 그 근거를 인간 존재 자체로 옮겨 온다. 그는 인간이라면 누구나 선을 추구하고 공동체적 삶을 영위하려는 성향을 지니고 있으며, 이성적 추론에 앞서 이 성향을 통해 자연법을 직관적으로 인식한다고 본다. 여기서 직관이란 개념을 따져 추론한 끝에 얻는 결론이 아니라, 인간 본성에 깃든 선을 향한 경향이 곧바로 옳고 그름의 방향을 가리키는 작용이다. 자연법이 이렇게 인간 본질에 뿌리를 두고 있으므로, 그것은 바깥에서 강제로 부과되는 규칙이 아니라 인간이 인간답게 살아가기 위해 스스로 따르는 삶의 원리가 된다. 외부의 권위가 명령하기 때문에 따르는 것이 아니라, 자기 본성이 향하는 바를 따른다는 점에서 자연법은 강제가 아니라 자율의 성격을 띤다. 마리탱에게 자연법은 인간이 마땅히 ㉠<u>지향해야 할 선의 방향</u>을 알려 주는 내적 나침반과 같은 것이다.</p>
+<p>마리탱은 자연법이 본능처럼 저절로 작동하는 것은 아님을 강조한다. 인간이 자연법을 올바로 이해하려면 지적 성찰과 교육이 필요하며, 문화적·사회적 조건 또한 중요한 역할을 ⓑ<u>담당한다</u>. 본성 속에 선을 향한 성향이 있다고 해서 그것이 곧바로 분명한 규범으로 펼쳐지는 것은 아니며, 그 성향이 무엇을 옳다고 가리키는지를 또렷이 알아차리는 데에는 인식의 노력이 따라야 한다는 것이다. 다만 이는 자연법 자체가 시대나 사회에 따라 변한다는 뜻이 아니다. 자연법이 지닌 보편적 원리는 변하지 않되, 그 원리가 각 사회의 문화적 여건 속에서 구체적으로 인식되고 실현되는 방식이 달라질 수 있다는 것이다. 그는 이를 ‘존재하는 자연법과 인식된 자연법의 구별’로 설명한다. 자연법은 누구에게나 이미 주어져 있지만(존재하는 자연법), 그것이 사람들에게 실제로 깨달아지고 현실 속에서 구현되는 일(인식된 자연법)에는 인간의 교육과 도덕적 성숙이 ⓒ<u>요구된다</u>. 예컨대 인간 존엄이나 자유, 정의와 같은 원리는 누구에게나 내재하지만, 구체적인 제도와 법으로 드러나려면 사회 구성원들의 합의와 도덕적 성찰이 뒤따라야 한다. 같은 원리라도 그것을 깨달은 사회와 아직 깨닫지 못한 사회가 그 원리를 제도로 실현하는 폭이 서로 다른 까닭이 여기에 있다.</p>
+<p>이러한 구별은 역사 속에서 같은 원리가 서로 다른 폭으로 실현되어 온 사정을 설명해 준다. 자연법의 원리 자체는 변하지 않으므로, 어느 시대에 어떤 권리가 제도로 인정되지 않았다고 해서 그 원리가 그때는 없었다고 보아서는 안 된다. 그 원리는 ⓓ<u>내재해</u> 있었으나 아직 충분히 인식되지 못했을 뿐이며, 인식의 성장과 더불어 비로소 제도로 구현된 것이다. 마리탱은 이 점에서 자연법의 인식이 인류의 도덕적 경험이 쌓이는 가운데 점진적으로 깊어진다고 본다. 따라서 자연법은 고정된 조문의 목록이 아니라, 변하지 않는 원리가 인간의 성숙을 통해 점차 또렷이 ⓔ<u>밝혀지는</u> 살아 있는 기준이다.</p>
+<p>마리탱에게 자연법은 특정 종교나 문화에 국한되지 않는 보편적 규범이다. 인간이라면 누구나 그 성향과 직관을 지니므로, 자연법은 신앙을 공유하지 않는 사람들 사이에서도 공통의 도덕적 토대가 될 수 있다. 마리탱은 바로 이 보편성 때문에 자연법이 근대 이후 인권 개념의 철학적 기초가 되었다고 본다. 그는 인권을 인간이 인간이라는 사실만으로 마땅히 누려야 할 권리로 이해하며, 그 근거를 모든 인간에게 내재한 자연법에서 찾는다. 서로 다른 문화와 신념을 지닌 사람들이 인권이라는 공통의 언어로 합의할 수 있는 까닭도, 그 밑바탕에 누구에게나 주어진 자연법이 있기 때문이라는 것이다. 이렇게 마리탱은 오래된 자연법 사상을 인간 존엄과 인권을 떠받치는 현대적 토대로 되살려 낸다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>4</span>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 마리탱은 자연법을 인간 본질에 내재한 내면적 질서로 본다.</li>
+<li>② 마리탱은 인간이 이성적 추론에 앞서 직관을 통해 자연법을 인식한다고 본다.</li>
+<li>③ 마리탱은 자연법의 보편적 원리가 시대와 사회에 따라 변한다고 본다.</li>
+<li>④ 마리탱은 자연법의 실현에 인간의 교육과 도덕적 성숙이 필요하다고 본다.</li>
+<li>⑤ 마리탱은 자연법의 보편성을 근거로 인권 개념의 철학적 기초를 설명한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>5</span>㉠에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① 인간이 교육을 받기 전에는 결코 가질 수 없는, 후천적으로 형성되는 목표이다.</li>
+<li>② 인간 본질에 깃든 성향에서 비롯하여, 추론에 앞선 직관으로 인식되는 것이다.</li>
+<li>③ 특정 종교를 믿는 사람에게만 주어지는, 문화에 따라 달라지는 규칙이다.</li>
+<li>④ 사회의 합의를 통해 비로소 인간에게 부과되는, 외부에서 온 강제이다.</li>
+<li>⑤ 시대에 따라 그 내용 자체가 바뀌므로 보편적 기준이 될 수 없는 방향이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>6</span><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 사회에서 오랫동안 신분에 따라 사람을 차별하는 법이 시행되었다. 그러나 시간이 흐르면서 그 사회의 구성원들은 모든 사람이 존엄하다는 생각에 점차 눈뜨게 되었고, 마침내 신분 차별을 금지하고 모든 사람의 평등한 권리를 보장하는 새로운 법을 제정하였다. 한 학자는 이를 두고 "없던 원리가 새로 생긴 것이 아니라, 늘 있던 원리가 비로소 제 모습을 드러낸 것"이라고 평하였다.</p>
+</blockquote>
+<ul>
+<li>① 신분 차별을 금지하는 법이 제정된 것은, 인간 존엄의 원리가 제도로 구현되려면 구성원들의 합의가 뒤따라야 함을 보여 주는 사례이겠군.</li>
+<li>② 구성원들이 모든 사람의 존엄에 점차 눈뜨게 된 것은, 자연법의 인식이 도덕적 성숙과 더불어 깊어진다는 마리탱의 견해로 설명할 수 있겠군.</li>
+<li>③ "늘 있던 원리가 비로소 제 모습을 드러낸 것"이라는 평은, 존재하는 자연법과 인식된 자연법을 구별하는 관점과 통하겠군.</li>
+<li>④ 과거에 신분 차별의 법이 시행되었다는 사실은, 그 시대에는 인간 존엄의 원리 자체가 아직 존재하지 않았음을 뜻하겠군.</li>
+<li>⑤ 새로운 법이 평등한 권리를 보장하게 된 것은, 변하지 않는 원리가 인식의 성장을 통해 또렷이 밝혀진 결과로 볼 수 있겠군.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>7</span>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 깃든</li>
+<li>② ⓑ: 맡는다</li>
+<li>③ ⓒ: 뒤따른다</li>
+<li>④ ⓓ: 잠재해</li>
+<li>⑤ ⓔ: 드러나는</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 6월 [10~13]</div>
+<div class='passage exam-ps'><p>1764년에 발간된 체사레 베카리아의 『범죄와 형벌』은 커다란 반향을 일으켰다. 형벌에 관한 논리 정연하고 새로운 주장들에 유럽의 지식 사회가 매료된 것이다. 자유와 행복을 추구하는 이성적인 인간을 상정하는 당시 계몽주의 사조에 베카리아는 충실히 호응하여, 이익을 저울질할 줄 알고 그에 따라 행동하는 존재로서 인간을 전제하였다. 사람은 대가 없이 공익만을 위하여 자유를 내어놓지는 않는다. 끊임없는 전쟁과 같은 상태에서 벗어나기 위하여 자유의 일부를 떼어 주고 나머지 자유의 몫을 평온하게 ⓐ누리기로 합의한 것이다. 저마다 할애한 자유의 총합이 주권을 구성하고, 주권자가 이를 위탁받아 관리한다. 따라서 사회의 형성과 지속을 위한 조건이라 할 법은 저마다의 행복을 증진시킬 때 가장 잘 준수되며, 전체 복리를 위해 법 위반자에게 설정된 것이 형벌이다. 이런 논증으로 베카리아는 형벌권의 행사는 양도의 범위를 벗어날 수 없다는 출발점을 세웠다.</p>
+<p>베카리아가 볼 때, 형벌은 범죄가 일으킨 결과를 되돌려 놓을 수 없다. 또한 인간을 괴롭히는 것 자체가 그 목적인 것도 아니다. 형벌의 목적은 오로지 범죄자가 또다시 피해를 끼치지 못하도록 억제하고, 다른 사람들이 그 같은 행위를 하지 못하도록 예방하는 데 있을 뿐이다. 이는 범죄로 얻을 이득, 곧 공익이 입게 되는 그만큼의 손실보다 형벌이 가하는 손해가 조금이라도 크기만 하면 달성된다. 그리고 이러한 손익 관계를 누구나 알 수 있도록 처벌 체계는 명확히 성문법으로 규정되어야 하고, 그 집행의 확실성도 갖추어져야 한다. 결국 범죄를 ⓑ가로막는 방벽으로 형벌을 바라보는 것이다. 이 ㉠울타리의 높이는 살인인지 절도인지 등에 따라 달리해야 한다. 공익을 훼손한 정도에 비례해야 하는 것이다. 그것을 넘어서는 처벌은 폭압이며 불필요하다. 베카리아는 말한다. 상이한 피해를 일으키는 두 범죄에 동일한 형벌을 적용한다면 더 무거운 죄에 대한 억지력이 상실되지 않겠는가.</p>
+<p>그는 인간이 감각적인 존재라는 사실에 맞추어 제도가 운용될 것을 역설한다. 가장 잔혹한 형벌도 계속 시행되다 보면 사회 일반은 그에 ⓒ무디어져 마침내 그런 것을 봐도 옥살이에 대한 공포 이상을 느끼지 못한다. 인간의 정신에 ⓓ크나큰 효과를 끼치는 것은 형벌의 강도가 아니라 지속이다. 죽는 장면의 목격은 무시무시한 경험이지만 그 기억은 일시적이고, 자유를 박탈당한 인간이 속죄하는 고통의 모습을 오랫동안 대하는 것이 더욱 강력한 억제 효과를 갖는다는 주장이다. 더욱 중요한 것을 지키기 위해 희생한 자유에는 무엇보다도 값진 생명이 포함될 수 없다고도 말한다. 이처럼 베카리아는 잔혹한 형벌을 반대하여 휴머니스트로, 최대 다수의 최대 행복을 말하여 공리주의자로, 자유로운 인간들 사이의 합의를 바탕으로 논의를 전개하여 사회 계약론자로 이해된다. 형법학에서도 형벌로 되갚아 준다는 응보주의를 탈피하여 장래의 범죄 발생을 방지한다는 일반 예방주의로 나아가는 토대를 ⓔ세웠다는 평가를 받는다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글에서 베카리아의 관점으로 보기 어려운 것은?</p>
+<ul>
+<li>① 공동체를 이루는 합의가 유지되는 데는 법이 필요하다.</li>
+<li>② 사람은 이성적이고 타산적인 존재이자 감각적 존재이다.</li>
+<li>③ 개개인의 국민은 주권자로서 형벌을 시행하는 주체이다.</li>
+<li>④ 잔혹함이 주는 공포의 효과는 시간이 흐르면서 감소한다.</li>
+<li>⑤ 형벌권 행사의 범위는 양도된 자유의 총합을 넘을 수 없다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>㉠에 대한 설명으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 재범을 방지하는 역할을 수행한다.</li>
+<li>② 법률로 엮어 뚜렷이 알아볼 수 있도록 해야 한다.</li>
+<li>③ 범죄가 유발하는 손실에 따라 높낮이를 정해야 한다.</li>
+<li>④ 손익을 저울질하는 인간의 이성을 목적 달성에 활용한다.</li>
+<li>⑤ 지키려는 공익보다 높게 설정할수록 방어 효과가 증가한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span><span class="pts">[3점]</span> 윗글을 바탕으로 베카리아의 입장을 추론한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 형벌이 사회적 행복 증진을 저해한다고 보는 공리주의의 입장에서 사형을 반대한다.</li>
+<li>② 사형은 범죄 예방의 효과가 없으므로 일반 예방주의의 입장에서 폐지되어야 한다고 주장한다.</li>
+<li>③ 사형은 사람의 기억에 영구히 각인되는 잔혹한 형벌이어서 휴머니즘의 입장에서 인정하지 못한다.</li>
+<li>④ 가장 큰 가치를 내어주는 합의가 있을 수 없다는 이유로 사회 계약론의 입장에서 사형을 비판한다.</li>
+<li>⑤ 피해 회복의 관점으로 형벌을 바라보는 형법학의 입장에서 사형을 무기 징역으로 대체하는 데 찬성하지 않는다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 향유(享有)하기로</li>
+<li>② ⓑ: 단절(斷絶)하는</li>
+<li>③ ⓒ: 둔감(鈍感)해져</li>
+<li>④ ⓓ: 지대(至大)한</li>
+<li>⑤ ⓔ: 수립(樹立)하였다는</li>
+</ul>
+<hr /></div>
+</div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3</div>
+<div class='passage'><p>자연법은 인간의 본성과 이성에 근거한 보편적 도덕 규범으로, 시대나 사회에 따라 변하지 않는 옳고 그름의 기준으로 여겨진다. 그러나 자연법을 무엇에 근거 지어 설명할 것인가 하는 물음에 대한 답은 시대마다 달라져 왔다. 자연법이라는 개념은 고정된 채로 전승된 것이 아니라, 각 시대의 사유 방식 속에서 그 근거와 의미가 거듭 다시 그려지며 이어져 왔다.</p>
+<p>자연법의 철학적 기초는 고대 그리스 스토아학파에 의해 체계화되었다. 스토아학파는 인간이 자연의 이성적 질서에 순응하며 살아야 하고 그 속에서 선과 정의를 실현해야 한다고 보았다. 이때 인간의 이성은 단순한 사고의 도구가 아니라 자연 전체와 조화를 이루며 보편적 도덕 질서를 인식할 수 있는 능력으로 이해되었다. 인간이 자연의 일부인 한, 자연을 꿰뚫는 이성적 질서를 인간 역시 자신의 이성으로 알아챌 수 있다는 것이다. 이러한 사상은 로마법의 발전에 영향을 주어 자연법이 법적 정당성의 기준으로 자리 잡게 하였다. 중세에 이르러 자연법은 기독교 신학과 결합한다. 토마스 아퀴나스는 자연법을 ㉠<u>영원법의 일부</u>로 보았는데, 영원법이란 신이 우주와 인간을 포함한 모든 존재에 부여한 보편적 질서이자 규범이다. 그에 따르면 만물이 신의 의도에 따라 마땅히 그러해야 할 바가 영원법이며, 그 가운데 이성적 존재인 인간이 자기 본성을 통해 헤아릴 수 있는 부분이 곧 자연법이다. 그는 인간이 이성적 존재이기에 선을 추구하고 악을 피하려는 본성 속에서 자연법을 인식할 수 있다고 설명하였다. 이로써 자연법은 신이 세운 존재 질서에 뿌리를 둔 도덕적 규범이 되었고, 실정법은 이러한 자연법에 부합할 때 비로소 정당성을 가진다고 보았다.</p>
+<p>근대에 들어 세계를 신학적 질서가 아니라 인간의 이성과 자연의 법칙으로 설명하려는 흐름이 강해지면서, 자연법의 근거를 신의 의도가 아닌 인간 자신에게서 찾으려는 시도가 나타났다. 자연법이 정당한 까닭을 신의 권위에서 구하지 않고 인간의 이성 그 자체에서 구하려 한 것이다. 이 전환 속에서 자연법은 신학과의 결합에서 점차 벗어나, 인간의 이성과 본성에 근거한 보편적 규범으로 재정립되어 갔다. 다만 이 시기의 재정립은 자연법의 근거를 인간 쪽으로 옮겨 오기는 했으나, 자연법이 인간에게 ㉡<u>내재한 것</u>이라는 생각, 곧 자연법이 인간 존재의 본질 안에 어떻게 자리하며 어떻게 인식되는가를 충분히 펼쳐 보이지는 못하였고, 그 과제는 현대의 논의로 이어졌다. 그리하여 자연법은 ‘신이 세운 질서’에서 ‘인간의 이성과 본성에 근거한 질서’로 그 무게 중심을 옮겨 가게 되었다.</p>
+<p>현대의 재구성은 자연법을 인간 존재 자체에서 길어 올리려 한다는 점에서 이러한 흐름을 잇는다. 어떤 논의는 자연법을 인간 본질에 깃든 성향과 그에 대한 직관에서 찾고, 다른 논의는 인간이 사람답게 살기 위해 필요로 하는 실존적 목적의 조건에서 찾는다. 전자가 인간 안에 이미 자리한 도덕적 방향을 강조한다면, 후자는 인간이 살아가며 충족해야 할 필요로부터 규범의 내용이 드러난다고 본다는 점에서 결을 달리한다. 강조점은 서로 다르지만, 두 흐름 모두 자연법을 인간 바깥의 초월적 권위가 아니라 인간 존재에 내재한 보편적 규범으로 이해한다는 점에서 만난다. 그리고 바로 이 보편성 때문에 자연법은 특정 종교나 문화에 갇히지 않고, 신앙이나 전통을 공유하지 않는 사람들 사이에서도 공통의 도덕적 토대가 되어, 근대 이후 인권 개념의 철학적 토대로 기능하게 되었다. 이처럼 자연법은 스토아학파의 자연적 이성에서 출발하여 중세의 신학적 질서를 거쳐 인간 존재에 근거한 현대적 규범으로 재구성되는 동안, 그 근거는 거듭 다시 그려졌으나 법과 도덕의 정당성을 묻는 기준이라는 역할만은 일관되게 지켜 왔다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>8</span>윗글에서 답을 찾을 수 있는 질문에 해당하지 않는 것은?</p>
+<ul>
+<li>① 스토아학파는 인간의 이성을 어떤 능력으로 이해하였는가?</li>
+<li>② 토마스 아퀴나스는 자연법을 무엇의 일부로 보았는가?</li>
+<li>③ 근대에 자연법의 근거를 어디에서 찾으려는 시도가 나타났는가?</li>
+<li>④ 현대의 재구성에서 자연법은 무엇에 내재한 규범으로 이해되는가?</li>
+<li>⑤ 자연법이 동아시아의 법 전통에 수용된 과정은 어떠하였는가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>9</span>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① 근대에는 자연법을 신학과 결합하여 설명하려는 흐름이 강해졌다.</li>
+<li>② 스토아학파의 자연법 사상은 로마법의 발전에 영향을 주었다.</li>
+<li>③ 아퀴나스는 인간이 본성 속에서 자연법을 인식할 수 있다고 보았다.</li>
+<li>④ 현대의 재구성은 자연법을 인간 존재 자체에서 길어 올리려 한다.</li>
+<li>⑤ 자연법은 법과 도덕의 정당성을 묻는 기준이라는 역할을 일관되게 지켜 왔다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>㉠, ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 인간이 만든 실정법의 한 갈래로서, 신의 질서와는 무관한 규범이다.</li>
+<li>② ㉠은 신이 모든 존재에 부여한 보편적 질서에 자연법을 결부하여 이해한 것이다.</li>
+<li>③ ㉡은 자연법을 인간 바깥의 초월적 권위에 두려는 생각을 가리킨다.</li>
+<li>④ ㉡은 근대에 이르러 비로소 그 내용이 충분히 펼쳐져 완성된 생각이다.</li>
+<li>⑤ ㉠과 ㉡은 모두 자연법의 근거를 인간의 이성과 본성에서 찾는 관점이다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 국가가 시민을 부당하게 탄압하는 법을 제정하여 시행하였다. 이에 대해 갑은 "그 법은 명확한 절차를 거쳐 입법 기관이 만들었으므로 법으로서 효력을 지니며, 시민은 이를 따라야 한다"라고 보았다. 반면 을은 "그 법은 인간이라면 누구나 알 수 있는 옳음의 기준에 어긋나므로, 형식을 갖추었더라도 정당한 법이라 할 수 없다"라고 보았다. 두 사람은 같은 법을 두고 그 정당성에 대해 다른 판단을 내렸다.</p>
+</blockquote>
+<ul>
+<li>① 갑은 실정법이 자연법에 부합할 때에만 정당성을 가진다고 보는 입장에 서 있겠군.</li>
+<li>② 을은 인간이라면 누구나 인식할 수 있는 보편적 기준에 비추어 그 법의 정당성을 판단하고 있겠군.</li>
+<li>③ 갑은 자연법을 실정법의 정당성을 재는 궁극적 기준으로 삼고 있겠군.</li>
+<li>④ 을은 입법 기관이 절차를 갖추기만 하면 그 법이 곧 정당해진다고 보고 있겠군.</li>
+<li>⑤ 갑과 을은 모두 법의 정당성을 인간 본성에 근거한 옳음의 기준에서 찾고 있겠군.</li>
+</ul></div>
+</div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 수능 [10~13]</div>
+<div class='passage exam-ps'><p>기축 통화는 국제 거래에 결제 수단으로 통용되고 환율 결정에 기준이 되는 통화이다. 1960년 트리핀 교수는 브레턴우즈 체제에서의 기축 통화인 달러화의 구조적 모순을 지적했다. 한 국가의 재화와 서비스의 수출입 간 차이인 경상 수지는 수입이 수출을 초과하면 적자이고, 수출이 수입을 초과하면 흑자이다. 그는 "미국이 경상 수지 적자를 허용하지 않아 국제 유동성 공급이 중단되면 세계 경제는 크게 위축될 것"이라면서도 "반면 적자 상태가 지속돼 달러화가 과잉 공급되면 준비 자산으로서의 신뢰도가 저하되고 고정 환율 제도도 붕괴될 것"이라고 말했다.</p>
+<p>이러한 트리핀 딜레마는 국제 유동성 확보와 달러화의 신뢰도 간의 문제이다. 국제 유동성이란 국제적으로 보편적인 통용력을 갖는 지불 수단을 말하는데, ㉠금 본위 체제에서는 금이 국제 유동성의 역할을 했으며, 각 국가의 통화 가치는 정해진 양의 금의 가치에 고정되었다. 이에 따라 국가 간 통화의 교환 비율인 환율은 자동적으로 결정되었다. 이후 ㉡브레턴우즈 체제에서는 국제 유동성으로 달러화가 추가되어 '금 환 본위제'가 되었다. 1944년에 성립된 이 체제는 미국의 중앙은행에 '금 태환 조항'에 따라 금 1온스와 35달러를 언제나 맞교환해 주어야 한다는 의무를 지게 했다. 다른 국가들은 달러화에 대한 자국 통화의 가치를 고정했고, 달러화로만 금을 매입할 수 있었다. 환율은 경상 수지의 구조적 불균형이 있는 예외적인 경우를 제외하면 ±1% 내에서의 변동만을 허용했다. 이에 따라 기축 통화인 달러화를 제외한 다른 통화들 간 환율인 교차 환율은 자동적으로 결정되었다.</p>
+<p>1970년대 초에 미국은 경상 수지 적자가 누적되기 시작하고 달러화가 과잉 공급되어 미국의 금 준비량이 급감했다. 이에 따라 미국은 달러화의 금 태환 의무를 더 이상 감당할 수 없는 상황에 도달했다. 이를 해결할 수 있는 방법은 달러화의 가치를 내리는 평가 절하, 또는 달러화에 대한 여타국 통화의 환율을 하락시켜 그 가치를 올리는 평가 절상이었다. 하지만 브레턴우즈 체제하에서 달러화의 평가 절하는 규정상 불가능했고, 당시 대규모 대미 무역 흑자 상태였던 독일, 일본 등 주요국들은 평가 절상에 나서려고 하지 않았다. 이 상황이 유지되기 어려울 것이라는 전망으로 독일의 마르크화와 일본의 엔화에 대한 투기적 수요가 증가했고, 결국 환율의 변동 압력은 더욱 커질 수밖에 없었다. 이러한 상황에서 각국은 보유한 달러화를 대규모로 금으로 바꾸기를 원했다. 미국은 결국 1971년 달러화의 금 태환 정지를 선언한 닉슨 쇼크를 단행했고, 브레턴우즈 체제는 붕괴되었다.</p>
+<p>그러나 붕괴 이후에도 달러화의 기축 통화 역할은 계속되었다. 그 이유로 규모의 경제를 생각할 수 있다. 세계의 모든 국가에서 ㉢어떠한 기축 통화도 없이 각각 다른 통화가 사용되는 경우 두 국가를 짝짓는 경우의 수만큼 환율의 가짓수가 생긴다. 그러나 하나의 기축 통화를 중심으로 외환 거래를 하면 비용을 절감하고 규모의 경제를 달성할 수 있다.</p></div>
+<div class='q'><p class='q-stem'><span class='q-num'>10</span>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 브레턴우즈 체제 붕괴 이후에도 달러화가 기축 통화로서 역할을 할 수 있었던 이유는 무엇인가?</li>
+<li>② 브레턴우즈 체제 붕괴 이후의 세계 경제 위축에 대해 트리핀은 어떤 전망을 했는가?</li>
+<li>③ 브레턴우즈 체제에서 미국 중앙은행은 어떤 의무를 수행해야 했는가?</li>
+<li>④ 브레턴우즈 체제에서 국제 유동성의 역할을 한 것은 무엇인가?</li>
+<li>⑤ 브레턴우즈 체제에서 달러화 신뢰도 하락의 원인은 무엇인가?</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>11</span>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 닉슨 쇼크가 단행된 이후 달러화의 고평가 문제를 해결할 수 있는 달러화의 평가 절하가 가능해졌다.</li>
+<li>② 브레턴우즈 체제에서 마르크화와 엔화의 투기적 수요가 증가한 것은 이들 통화의 평가 절상을 예상했기 때문이다.</li>
+<li>③ 금의 생산량 증가를 통한 국제 유동성 공급량의 증가는 트리핀 딜레마 상황을 완화하는 한 가지 방법이 될 수 있다.</li>
+<li>④ 트리핀 딜레마는 달러화를 통한 국제 유동성 공급을 중단할 수도 없고 공급량을 무한정 늘릴 수도 없는 상황을 말한다.</li>
+<li>⑤ 브레턴우즈 체제에서 마르크화가 달러화에 대해 평가 절상되면, 같은 금액의 마르크화로 구입 가능한 금의 양은 감소한다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>12</span>미국을 포함한 세 국가가 존재하고 각각 다른 통화를 사용할 때, ㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서 자동적으로 결정되는 환율의 가짓수는 금에 자국 통화의 가치를 고정한 국가 수보다 하나 적다.</li>
+<li>② ㉡이 붕괴된 이후에도 여전히 달러화가 기축 통화라면 ㉡에 비해 교차 환율의 가짓수는 적어진다.</li>
+<li>③ ㉢에서 국가 수가 하나씩 증가할 때마다 환율의 전체 가짓수도 하나씩 증가한다.</li>
+<li>④ ㉠에서 ㉡으로 바뀌면 자동적으로 결정되는 환율의 가짓수가 많아진다.</li>
+<li>⑤ ㉡에서 교차 환율의 가짓수는 ㉢에서 생기는 환율의 가짓수보다 적다.</li>
+</ul></div>
+<div class='q'><p class='q-stem'><span class='q-num'>13</span><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+브레턴우즈 체제가 붕괴된 이후 두 차례의 석유 가격 급등을 겪으면서 기축 통화국인 A국의 금리는 인상되었고 통화 공급은 감소했다. 여기에 A국 정부의 소득세 감면과 군비 증대는 A국의 금리를 인상시켰으며, 높은 금리로 인해 대량으로 외국 자본이 유입되었다. A국은 이로 인한 상황을 해소하기 위한 국제적 합의를 주도하여, 서로 교역을 하며 각각 다른 통화를 사용하는 세 국가 A, B, C는 외환 시장에 대한 개입을 합의했다. 이로 인해 A국 통화에 대한 B국 통화와 C국 통화의 환율은 각각 50%, 30% 하락했다.</p>
+</blockquote>
+<ul>
+<li>① A국의 금리 인상과 통화 공급 감소로 인해 A국 통화의 신뢰도가 낮아진 것은 외국 자본이 대량으로 유입되었기 때문이겠군.</li>
+<li>② 국제적 합의로 인한 A국 통화에 대한 B국 통화의 환율 하락으로 국제 유동성 공급량이 증가하여 A국 통화의 가치가 상승했겠군.</li>
+<li>③ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국 통화의 환율과 B국 통화에 대한 C국 통화의 환율은 모두 하락했겠군.</li>
+<li>④ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국과 C국 통화의 환율이 하락하여, B국에 대한 C국의 경상 수지는 개선되었겠군.</li>
+<li>⑤ 다른 모든 조건이 변하지 않았다면, A국의 소득세 감면과 군비 증대로 A국의 경상 수지가 악화되며, 그 완화 방안 중 하나는 A국 통화에 대한 B국 통화의 환율을 상승시키는 것이겠군.</li>
+</ul>
+<hr /></div>
+</div>
+</body></html>

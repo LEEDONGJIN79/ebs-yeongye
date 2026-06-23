@@ -1,0 +1,350 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>형식 논리학과 현상학 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+</tr><tr><td>정답</td>
+<td><b>②</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+㉠ 형식 논리학은 "전제의 내용이 실제로 참인지 거짓인지는 판정에 관여하지 않는다"라고 했으니, 타당성이 전제 내용의 참·거짓으로 결정되느냐는 물음에 '아니요'라고 답합니다. ㉡ 후설 역시 타당성을 의식의 활동에서 찾을 뿐, 전제 내용의 실제 참·거짓으로 결정된다고 보지 않으므로 '아니요'라고 답하죠. 그래서 둘 다 '아니요'인 ②가 정답입니다. ①은 둘 다 '예'(모순의 유무는 둘 다 따집니다), ③은 후설이 '예', ④는 형식 논리학이 '예', ⑤도 둘 다 '예'라서 모두 '아니요' 짝이 아니에요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+"‘A이다.’와 ‘A가 아니다.’가 한 체계 안에서 동시에 성립하지 않는 한, 그 체계가 무모순성을 지닌다"라는 1문단 문장을 바르게 풀어 쓴 ②가 정답입니다. ① 형식 논리학은 전제가 거짓이어도 짜임새가 맞으면 타당하다고 봅니다(방향이 뒤집힘). ③ 후설은 "경험에서 귀납적으로 얻어진 것이 아니라"고 분명히 반대로 말합니다. ④ 직관은 "언어나 기호의 매개 없이" 본질을 파악하는 행위입니다(정반대). ⑤ 후설은 "폐기하려는 것이 아니라" 토대를 해명하려 했습니다.</p>
+<p><strong>3번 [3점] — 정답 ⑤</strong>
+후설(㉡)의 입장은 '논리의 자명함은 의식의 직관적 활동으로 구성된다'는 것이지, '경험적 관찰로 사후에 확증된다'는 것이 아닙니다. ⑤는 후설이 명백히 거부하는 귀납·경험주의로 그를 설명했으니 평가로 적절하지 않아 정답입니다. ①~④는 모두 '규칙을 쓰는 데 머무는 형식 논리학의 한계'와 '직관적·선험적 구성'이라는 후설의 틀에 들어맞습니다. 특히 ②는 무모순성을 인정하는 일조차 그 규칙이 왜 자명한지가 의식의 직관적 활동을 통해 해명되어야 한다고 본 후설의 관점을 정확히 적용한 매력적인 선지예요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+비판하기 문항입니다. 지문 끝에 "직관의 보편성을 어떻게 보장할 수 있느냐는 물음에 답해야 하는 과제를 안는다"라는 비판 예고문이 깔려 있죠. 이를 정면으로 찌른 ③이 정답입니다. ① 후설은 '쓰는 일'과 '근거를 묻는 일'을 양립시키려 했으니 사실과 어긋난 비판입니다. ②⑤는 지문 내용 자체를 부정하는 잘못된 전제이고, ④는 후설이 "경험에서 비롯된다"고 본 적이 없으므로 그의 주장을 잘못 옮긴 것입니다.</p></div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+ⓔ '주어지다'는 '저절로 갖추어져 있다'는 뜻인데, '베풀어지다'는 누군가가 은혜·도움을 내려 준다는 뜻이라 맥락이 어긋납니다. 그래서 바꿔 쓰기에 적절하지 않은 ⑤가 정답이에요. ① 간주된다→여겨진다, ② 지닌다→갖춘다, ③ 제시하지→내놓지, ④ 규정한다→명시한다는 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>무모순성</strong>: 한 체계 안에서 'A이다'와 'A가 아니다'가 동시에 성립하지 않는 상태. 형식 논리학이 타당성을 판정할 때 작용하는 중요한 조건이에요.</li>
+<li><strong>타당성</strong>: 전제가 참이라고 가정했을 때 결론이 거짓일 수 없는 형식적 관계. '내용이 참이다'와는 다릅니다.</li>
+<li><strong>직관(후설)</strong>: 언어나 기호 없이 의식이 대상의 본질을 곧장 파악하는 활동.</li>
+<li><strong>선험적 구조</strong>: 경험 이전에 우리가 의미를 구성하고 판단할 수 있게 하는 의식의 형식.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>따지는 것</th>
+<th>형식 논리학(㉠)</th>
+<th>후설의 선험적 논리학(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>묻는 질문</td>
+<td>규칙을 지켰는가</td>
+<td>그 규칙은 왜 옳은가</td>
+</tr>
+<tr>
+<td>타당성의 잣대</td>
+<td>전제→결론의 형식적 관계(무모순성이 조건)</td>
+<td>의식의 직관적 구성</td>
+</tr>
+<tr>
+<td>규칙의 출처</td>
+<td>따지지 않음(출발점으로 전제)</td>
+<td>의식의 선험적 구조</td>
+</tr>
+<tr>
+<td>약점</td>
+<td>규칙의 근거를 못 댐</td>
+<td>직관의 보편성 보장이 과제</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>형식 논리학에서 전제가 거짓인 추론이 타당할 수 있나요?</div><div class='qa-a'>네. 짜임새가 모순 없이 이어지면 내용의 참·거짓과 무관하게 타당합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설은 형식 논리학을 버리려 했나요?</div><div class='qa-a'>아니요. 형식 논리학이 이미 전제하고 있는 토대(자명함의 근거)를 해명하려 했습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설이 말한 직관은 감각적 인상과 같은가요?</div><div class='qa-a'>아니요. 직관은 기호의 매개 없이 본질을 직접 파악하는 의식의 활동으로, 단순한 감각과 구별됩니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2017학년도 수능 [16~20] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+논리실증주의자와 포퍼는 가설로부터 도출된 예측을 경험을 통해 판단함으로써 가설을 시험하므로 ‘경험을 통하지 않고 가설을 시험할 수 있는가?’에 ‘아니요’로 답한다. 콰인도 가설을 포함한 전체 지식이 경험을 통한 시험의 대상이 된다고 보므로 같은 질문에 ‘아니요’로 답한다. 따라서 ㉠·㉡ 모두 ‘아니요’로 답할 질문은 ②. (①③④⑤는 한쪽이라도 ‘예’로 답한다.)</p>
+<p><em>선택률</em> — 응시 98,548명 — ①8.6% ②72.1% ③8.9% ④5.8% ⑤2.9%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+3문단에서 콰인은 ‘분석 명제 → 동의적 표현 → 필연성 개념 → 분석 명제 개념’으로 의존이 순환됨을 지적하며 분석 명제가 존재한다는 주장의 근거가 없다고 본다. 이 순환 구조를 정확히 진술한 ④가 적절하다. ① 포퍼는 예측이 맞을 경우가 아니라 틀리지 않는 한 가설을 인정한다. ② 분석 명제는 경험과 무관하게 참으로 판별되므로 한 명씩 조사하는 경험적 확인 때문은 아니다. ③·⑤는 콰인의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①16.3% ②4.9% ③7.1% ④68.0% ⑤5.1%</p></div>
+<div class='exp'><p><strong>18번 — 정답 ⑤</strong><br />
+총체주의에서는 가설이 실용적으로 필요하다고 인정되면 제기된 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 따라서 ⓑ가 거짓으로 밝혀져도 실용적 필요에 따라 전체 지식 ⓒ를 수정함으로써 가설 ⓐ를 받아들일 수 있다. ‘ⓒ를 수정해도 ⓐ를 받아들일 수 없다’고 본 ⑤가 총체주의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.6% ②5.9% ③13.9% ④14.2% ⑤62.2%</p></div>
+<div class='exp'><p><strong>19번 — 정답 ⑤</strong><br />
+5문단에서 총체주의는 ‘아무도 의심하지 않는 논리학 법칙 같은 지식은 분석 명제로 분류해야 하지 않느냐’는 비판에 답해야 하는 어려움이 있다고 했다. 곧 중심부 지식 중에는 주변부 지식과 종류가 다른(분석 명제와 같은) 지식이 존재한다는 비판이 가능하다. 이를 진술한 ⑤가 적절한 비판이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①15.8% ②8.9% ③9.4% ④9.0% ⑤58.5%</p></div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+㉢‘도달하다’는 ‘목적한 곳이나 수준에 다다르다’의 의미이므로 ‘다다른다’(②)로 바꿔 쓰는 것이 가장 적절하다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.2% ②85.8% ③9.5% ④1.0% ⑤0.6%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>6번 — 정답 ④</strong>
+무모순성은 상반된 명제가 "동시에 성립하지 않는 상태"인데, ④는 "번갈아 가며 성립하는 상태"라고 비틀었으니 적절하지 않아 정답입니다. ①②③은 1문단, ⑤는 2문단의 건전성 설명과 그대로 맞습니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong>
+복합 명제를 논리 연결어로 만드는 것은 명제 논리(㉠)의 일이지, 술어 논리(㉡)에 대해 지문이 "논리 연결어를 쓰지 않는다"라고 진술한 적은 없습니다. ㉡이 ㉠과 '달리' 그렇다고 단정한 ⑤는 지문에 근거가 없으므로 적절하지 않아 정답입니다. ①②는 명제 논리, ③은 술어 논리 설명과 일치하고, ④는 명제 논리가 두 문장의 공통 특징을 못 잡는다는 1문단 예시와 맞습니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ②</strong>
+이유를 묻는 문항입니다. 지문은 "전제가 참이라고 가정했을 때 결론이 모순 없이 따라 나오는지만을 따지기 때문"에 타당하다고 못 박았죠. 이를 옮긴 ②가 정답입니다. ①④는 사실·분야의 문제로 잘못 짚었고, ③은 "바로잡힌다"는 지문에 없는 내용, ⑤는 건전성에 관한 진술이라 '타당' 판정의 이유가 아닙니다.</p>
+<p><strong>9번 [3점] — 정답 ⑤</strong>
+⑤는 추론의 타당성을 전제의 사실 여부로 가른다는 점에서 형식 논리학의 핵심을 정면으로 어깁니다. (가)는 전제가 거짓이어도 형식이 같으므로 타당하고, (다)는 전제가 모두 참이면서 같은 형식이므로 타당하니, '사실과 어긋나서 타당하지 않다 / 일치해서 타당하다'는 진술은 모두 틀렸습니다. 그래서 적절하지 않은 ⑤가 정답이에요. ①은 거짓 전제+동일 형식→타당, ②는 부분에서 전체로 비약한 부당한 형식, ③은 참인 전제+타당=건전, ④는 형식이 같으면 판정이 같다는 4문단 원리를 정확히 적용한 적절한 반응들입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>명제 논리</strong>: 참·거짓을 판별할 수 있는 문장을 한 단위로 보고, 논리 연결어로 묶어 복합 명제를 만드는 체계.</li>
+<li><strong>술어 논리</strong>: 문장을 주어와 서술어로 쪼개어 더 세밀하게 분석하는 체계. 문장들의 공통 특징을 포착할 수 있어요.</li>
+<li><strong>타당성</strong>: 전제가 참이라고 가정했을 때 결론이 거짓일 수 없도록 짜인 형식적 관계. 형식의 문제예요.</li>
+<li><strong>건전성</strong>: 타당하면서 전제가 모두 실제로 참인 성질. 타당성보다 한 조건이 더 붙습니다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>명제 논리</th>
+<th>술어 논리</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 단위</td>
+<td>참·거짓 판별 가능한 문장</td>
+<td>주어 + 서술어</td>
+</tr>
+<tr>
+<td>분석의 결</td>
+<td>문장 단위 결합</td>
+<td>문장 내부까지 분해</td>
+</tr>
+<tr>
+<td>할 수 있는 일</td>
+<td>복합 명제의 참·거짓 계산</td>
+<td>문장들의 공통 특징 포착</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>타당성과 건전성: <strong>타당 = 형식이 맞다, 건전 = 형식도 맞고 전제도 실제로 참이다.</strong> 건전하면 반드시 타당하지만, 타당하다고 건전한 것은 아니에요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>'모든 새는 물고기다. 모든 물고기는 날개가 있다. 따라서 모든 새는 날개가 있다'는 타당한가요?</div><div class='qa-a'>네, 형식이 옳으므로 타당합니다. 다만 전제가 거짓이라 건전하지는 않아요.</div></div>
+<div class='qa-item'><div class='qa-q'>건전한 추론은 늘 타당한가요?</div><div class='qa-a'>네. 건전성은 타당성에 '전제가 모두 참'이라는 조건이 더해진 것이라서요.</div></div>
+<div class='qa-item'><div class='qa-q'>술어 논리가 명제 논리보다 나은 점은?</div><div class='qa-a'>문장을 주어·서술어로 쪼개어 명제 논리가 못 잡는 문장들 사이의 공통 특징을 포착할 수 있습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2019학년도 수능 [39~42] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>39번 — 정답 ①</strong><br />
+4문단의 완결성에 대한 설명에 따르면 어느 세계에서든 배중률이 성립하므로 ①이 일치한다. ② 가능한 명제 중 “다보탑은 개성에 있다.”처럼 현실세계에서 성립하지 않는 것이 있다. ③ 필연적인 명제는 모든 가능세계에서 성립한다. ④ 무모순율은 P와 ～P가 모두 참인 것이 가능하지 않다는 법칙이다. ⑤ 전통 논리학에서 A가 거짓이면 명제가 참이 되므로, A의 참 거짓과 상관없이 결정된다고 볼 수 없다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①60.4% ②10.5% ③14.5% ④7.8% ⑤5.9%</p></div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+“만약 다보탑이 개성에 있다면, 다보탑은 개성에 있다.”는 “만약 Q이면 Q이다.” 형식의 필연적 명제이므로 모든 가능세계에서 성립한다. 그런데 ㉠은 필연적이지 않은 명제여서 어떤 가능세계에서는 거짓이므로, ‘㉠이 거짓인 가능세계는 없다’고 한 ②가 적절하지 않다. ① ㉠은 필연적이지 않으므로 성립하지 않는 가능세계가 있다. ③ ㉠이 참인 현실세계에서 “다보탑은 개성에 있지 않다.”와 ㉡이 둘 다 참일 수 있으므로 모순 관계가 아니다. ④ ㉡이 거짓이면 다보탑이 개성에 있는 가능세계가 존재하지 않는다는 뜻이다. ⑤ ㉠과 ㉡은 모순 관계가 아니며 현실세계에서 둘 다 참이다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①8.3% ②48.7% ③10.7% ④19.6% ⑤11.7%</p></div>
+<div class='exp'><p><strong>41번 — 정답 ③</strong><br />
+3문단에 따르면 기차를 탄 가능세계들 중 제시간에 도착해 지각하지 않은 세계가 지각한 세계보다 현실세계와의 유사성이 더 높다. 즉 지각을 한 가능세계는 유사성이 더 낮으므로 ③이 ⓐ에 대한 답이다. ①② 비교 대상은 기차를 타지 않은 세계가 아니라 기차를 탄 가능세계들이다. ④ 가능세계의 개수(대다수)는 유사성의 정도와 무관하다. ⑤ 기차를 탄 것이 현실에서 거짓이라는 것은 질문이 제기되는 배경일 뿐 답이 아니다.</p>
+<p><em>선택률</em> — 응시 98,553명 — ①7.8% ②15.8% ③54.8% ④17.4% ⑤4.1%</p></div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+두 명제는 반대 관계여서 둘 중 하나만 참인 것이 가능하므로, ‘“모든 학생은 연필을 쓴다.”가 참이거나 “어떤 학생도 연필을 쓰지 않는다.”가 참’인 것은 가능하다. 포괄성에 따라 가능한 것이 성립하는 가능세계는 존재하므로 ④가 적절하다. ① 두 명제는 모순 관계가 아니라 반대 관계이므로 배중률(완결성)을 적용할 수 없다. ② “어떤 학생도 연필을 쓰지 않는다.”가 성립하면서 한 학생이 연필을 쓰는 것은 가능하지 않으므로 그런 가능세계는 존재하지 않는다. ③ 두 명제는 둘 다 참일 수 있어 P와 ～P의 관계가 아니므로 완결성을 논할 수 없다. ⑤ 그런 가능세계의 존재는 일관성이 아니라 포괄성에서 나온다.</p>
+<p><em>선택률</em> — 응시 98,552명 — ①14.5% ②11.7% ③28.9% ④36.1% ⑤6.7%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ④</strong>
+지문 2문단은 직관이 "단순한 감각적 인상이나 본능적 통찰이 아니"라고 분명히 선을 긋습니다. 그런데 ④는 직관을 본능적 통찰·감각적 인상과 같다고 했으니 정반대로, 적절하지 않아 정답입니다. ①②③⑤는 각각 1·2문단 내용과 그대로 맞습니다.</p></div>
+<div class='exp'><p><strong>11번 — 정답 ③</strong>
+ⓑ(직관적 인식)는 빈자리를 본질로 직접 채우는 인식이므로, 판단이 기호의 결합에만 머물면 ⓑ가 빠져 있는 셈입니다. 이를 옳게 진술한 ③이 정답입니다. ①은 ⓐ가 작동하는 경우인데 ⓑ라고 뒤바꿨고, ②도 ⓑ를 ⓐ로 뒤집었습니다. ④는 직관적 파악이므로 ⓑ가 작동하는데 'ⓐ만'이라 했고, ⑤는 후설이 'ⓐ가 ⓑ로 충족될 때 정당화된다'고 본 것이지 '배제'가 아니므로 틀렸어요.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ④</strong>
+이유를 묻는 문항입니다. ㉠의 근거는 4문단에 "규칙을 자명하게 받아들이는 까닭은 그 규칙의 의미가 의식의 직관을 통해 충족되기 때문"이라고 제시돼 있죠. 이를 옮긴 ④가 정답입니다. ①은 후설이 거부하는 경험주의, ②는 "의식 바깥에서 주어진 것이 아니라"는 지문과 정반대, ③은 기호적 인식만으로는 충족되지 않는다는 지문과 어긋나며, ⑤는 형식 논리학에 관한 진술이라 ㉠의 이유가 아닙니다.</p>
+<p><strong>13번 [3점] — 정답 ⑤</strong>
+㉰는 '둥근 사각형'처럼 문법에 맞게 읽히기는 해도 본질을 의식 속에 결코 그릴 수 없는 경우, 곧 직관적 충족이 끝내 일어나지 못한 사례입니다. 그런데 ⑤는 ㉰를 '직관으로 충족되어 참된 인식으로 정당화된 사례'라고 정반대로 해석했으니 적절하지 않아 정답입니다. ①은 ㉮=기호적 인식, ②는 ㉯=직관적 인식, ③은 충족이 더해져야 정당화된다는 후설의 틀, ④는 ㉰의 미충족을 정확히 짚은 적절한 탐구들입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기호적 인식</strong>: 대상을 직접 마주하지 않고 언어·기호를 결합해 의미를 '빈자리'로만 가리키는 인식.</li>
+<li><strong>직관적 인식</strong>: 그 빈자리를 의식이 대상의 본질로 직접 채워 충족하는 인식.</li>
+<li><strong>충족</strong>: 기호적 인식의 빈 의미가 직관적 인식으로 채워지는 일. 이때 비로소 참된 인식으로 정당화돼요.</li>
+<li><strong>선험적 활동</strong>: 의식이 스스로 의미를 구성하고 정당화하는, 경험 이전의 작용.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<pre><code>[기호적 인식]  '삼각형은 세 변을 가진 도형'을
+                기호의 결합으로만 받아들임 — 의미가 '빈자리'
+        │
+        │  ── 충족(직관이 빈자리를 본질로 채움) ──▶
+        ▼
+[직관적 인식]  세 변이 맞물린 도형의 의미가 본질로 채워져
+                '삼각형'의 성립을 직접 파악 — 참된 인식으로 정당화
+</code></pre>
+<blockquote>
+<p>후설의 결론: 우리가 모순을 배제하는 규칙을 '당연하다'고 느끼는 까닭은, 그 규칙의 의미가 의식의 직관을 통해 채워지기 때문입니다. 논리의 타당함은 의식 바깥이 아니라, 의식의 선험적 활동 안에서 정당화돼요. 이때 '직관'은 머릿속에 그림을 그리는 단순한 심상이 아니라, 의미가 대상의 본질로 충족되는 의식의 활동이라는 점에 유의하세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>'둥근 사각형'을 문법에 맞게 읽을 수 있는데도 참된 인식이 아닌 까닭은?</div><div class='qa-a'>기호는 결합되지만 그에 대응하는 본질을 의식 속에 직관으로 채울 수 없어 충족이 일어나지 않기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>기호적 인식만으로 판단이 정당화될 수 있나요?</div><div class='qa-a'>아니요. 직관적 인식으로 충족될 때 비로소 참된 인식으로 정당화됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후설이 직관을 '본능적 통찰'과 구별한 이유는?</div><div class='qa-a'>직관은 기호의 매개 없이 대상의 본질을 직접 파악하는 의식의 활동으로, 단순한 감각이나 본능과는 격이 다르기 때문입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 9월 [10~13] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong><br />
+2문단에 따르면 반자유의지 논증은 선결정 가정과 무작위 가정을 모두 고려하며, 무작위로 일어난다는 것은 곧 선결정되지 않는다는 의미다. 즉 선결정되지 않을 가능성도 고려하므로 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①0.6% ②5.3% ③1.8% ④3.4% ⑤89.1%</p></div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong><br />
+ⓑ(두 조건을 모두 충족하는 자유의지)는 내가 선택의 주체이고 그 선택이 선결정되지 않아야 성립한다. 어떤 선택이 선결정되어 있다면 둘째 조건을 충족하지 못하므로 ⓑ가 있을 수 없다(④). 반면 ⓐ(욕구 충족적 자유의지)는 선결정 여부와 무관하게 성립할 수 있다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①1.9% ②8.2% ③9.3% ④77.1% ⑤4.2%</p></div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+5문단에 따르면 어떤 선택이 무작위로(=선결정되지 않게) 일어났더라도 그 선택의 주체는 나일 수 있다. 즉 무작위로 일어난 선택은 ‘주체가 나일 것’과 ‘선결정되지 않을 것’이라는 자유의지의 두 조건을 모두 충족할 수 있으므로, 무작위 가정을 고려할 때의 결론(자유의지 없음)은 받아들일 필요가 없다.</p>
+<p><em>선택률</em> — 응시 98,557명 — ①3.1% ②9.0% ③12.2% ④11.6% ⑤64.3%</p></div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+H의 실험은 인간의 선택(신경 사건)이 그 이전의 다른 신경 사건과 관련되는지, 즉 선결정되어 있는지를 알아보는 것이다. ㉠의 입장은 선결정 가정의 결론은 받아들이되 무작위 가정의 결론은 받아들일 필요가 없다고 본다. 따라서 H의 가설이 입증되지 않더라도(선택이 무작위라 하더라도) 무작위 가정을 고려할 때의 결론을 받아들여야 하는 것은 아니라고 논의할 수 있다(④).</p>
+<p><em>선택률</em> — 응시 98,557명 — ①9.3% ②10.1% ③12.2% ④61.9% ⑤7.1%</p></div>
+</div></div>
+</body></html>

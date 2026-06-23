@@ -1,0 +1,841 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>거시 경제 이론의 변천 및 IS–LM과 IS–MP 모형 비교·분석 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>거시 경제 이론의 변천 및 IS–LM과 IS–MP 모형 비교·분석 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 뉴스에서 "한국은행이 기준 금리를 올렸다", "정부가 재정을 풀어 경기를 살린다"는 말을 자주 듣죠? 그런데 금리를 올리거나 정부가 돈을 더 쓰면 <em>왜</em> 경기가 식거나 살아나는 걸까요? 나라 전체의 살림살이(생산·소득·물가·일자리)가 어떻게 맞물려 돌아가는지를 한눈에 보려고 경제학자들이 만든 <strong>설명 도구(모형)</strong>가 있습니다. 그중에서도 이 단원의 주인공은 <strong>IS–LM 모형</strong>과 그 후속작인 <strong>IS–MP 모형</strong>이에요.</p>
+<p>조금 어렵게 들리지만, 핵심만 잡으면 됩니다. 경제에는 두 개의 큰 시장이 있어요. 물건과 서비스를 사고파는 <strong>상품 시장</strong>, 그리고 돈을 빌리고 빌려주는 <strong>화폐 시장</strong>이죠. 이 두 시장이 <em>동시에</em> 균형을 이루는 한 점에서 그 나라의 단기 국민 소득(한 해 동안 벌어들이는 소득의 총량)이 정해진다고 보는 것이 IS–LM 모형입니다.</p>
+<ul>
+<li><strong>IS 곡선</strong>은 상품 시장 쪽 이야기예요. <em>이자율이 낮아지면</em> 기업이 돈을 싸게 빌려 투자를 늘리고, 그러면 소득과 소비도 늘어나죠. 그래서 "이자율↓ → 소득↑"의 관계를 그리면 <strong>오른쪽 아래로 내려가는(우하향) 곡선</strong>이 됩니다.</li>
+<li><strong>LM 곡선</strong>은 화폐 시장 쪽 이야기예요. <em>소득이 늘면</em> 사람들이 거래에 쓸 돈이 더 필요해져 돈을 가지려는 수요가 커지는데, 중앙은행이 푼 돈의 양(통화량)이 정해져 있으면 그 부족을 메우려고 이자율이 올라갑니다. 그래서 "소득↑ → 이자율↑"의 관계를 그리면 <strong>오른쪽 위로 올라가는(우상향) 곡선</strong>이 됩니다.</li>
+</ul>
+<p>이 두 곡선이 <strong>만나는 점</strong>이 바로 경제가 단기적으로 균형을 이루는 자리예요. 비유하자면, 가로로 당기는 줄(상품 시장)과 세로로 당기는 줄(화폐 시장)이 팽팽하게 맞서는 한 점에서 매듭이 멈추는 것과 같죠. 정부가 재정을 늘리면 IS 곡선이 통째로 <em>오른쪽으로</em> 밀려나 매듭(균형점)이 새 자리로 옮겨 가고, 그만큼 국민 소득이 올라갑니다.</p>
+<blockquote>
+<p>한마디로: <strong>IS–LM 모형은 "상품 시장과 화폐 시장이 만나는 한 점에서 나라의 소득이 정해진다"고 보는 지도</strong>예요. 그런데 이 지도는 1970년대에 한계를 드러냈고, 통화 정책을 더 현실적으로 그리려는 <strong>IS–MP 모형</strong>으로 이어집니다. 그 변천의 흐름을 이해하는 것이 이 단원의 목표입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>거시 경제를 설명해 온 모형들의 변천</strong>이 있습니다. 고전학파에서 케인스로, 다시 IS–LM 모형에서 IS–MP 모형으로 — 경제를 보는 틀이 시대의 문제에 부딪히며 어떻게 바뀌어 왔는지가 큰 줄기예요. 세 세트는 이 큰 그림의 서로 다른 면을 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>거시 경제 모형  (시대의 한계에 부딪혀)▶  더 현실적인 모형으로<small>"상품 시장 · 화폐 시장 · 곡선의 균형"          "이론의 변천과 보완"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>IS·LM·MP 곡선이 <em>어떻게 그려지고 어떻게 움직이는지</em>, 그리고 곡선이 이동할 때 균형점과 국민 소득이 어떻게 달라지는지를 곡선 그래프로 잡습니다.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>거시 경제 모형이 <em>어떻게 변천해 왔는지</em>를 통시적으로 살핍니다. 고전학파에서 IS–MP에 이르는 흐름과, 각 단계가 앞 모형의 한계를 어떻게 보완했는지를 따라갑니다.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>중앙은행이 <em>통화 정책을 어떻게 운용해야 하는지</em>를 둘러싼 두 입장(준칙주의·재량주의)의 대립을 들여다봅니다.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, 거시 경제 모형이 왜·어떻게 바뀌어 왔는지, 그리고 곡선 한 줄의 이동이 나라 살림에 무엇을 뜻하는지가 또렷해질 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>후대의 케인스주의자들은 케인스가 강조한 총수요 관리의 논리를 체계적으로 설명하기 위해 IS–LM 모형을 고안하였다. 이 모형은 상품 시장과 화폐 시장이 동시에 균형을 이루는 지점에서 단기 국민 소득이 결정되는 과정을 보여 준다. 상품 시장의 균형은 이자율과 국민 소득의 관계로 나타나는데, 이자율이 낮아지면 기업의 투자가 늘고 이에 따라 국민 소득이 증가하며 소비도 확대된다. 반대로 이자율이 높아지면 투자가 줄어 국민 소득과 소비가 감소한다. 이처럼 이자율이 변할 때마다 새롭게 형성되는 국민 소득 수준을 연결한 것이 IS 곡선이며, 이자율과 국민 소득이 반대 방향으로 움직이므로 IS 곡선은 우하향하는 형태로 나타난다.</p>
+<p>화폐 시장에서는 사람들이 거래와 자산 보유를 위해 화폐를 보유하려 한다. 국민 소득이 증가하면 거래가 활발해져 화폐 수요가 늘어난다. 그런데 중앙은행이 공급하는 통화량을 외생적으로 일정하게 고정해 두었다면, 늘어난 화폐 수요를 충족할 만큼 통화량이 따라 늘지 못해 화폐 수요 초과 상태가 발생한다. 이때 화폐 시장이 균형을 회복하려면 이자율이 상승해야 하는데, 이자율이 오르면 이자를 주는 자산으로 갈아타려는 유인이 커져 현금 보유 욕구가 줄기 때문이다. 이처럼 국민 소득이 증가할수록 이자율도 함께 올라가는 관계를 연결한 것이 LM 곡선이며, LM 곡선은 우상향하는 형태로 나타난다. <u>IS 곡선과 LM 곡선이 교차하는 지점이 경제가 단기적으로 균형을 이루는 지점</u>이다.</p>
+<p>정부의 재정 지출 확대나 세금 인하와 같은 정책은 ㉠<u>IS 곡선</u>을 오른쪽으로 이동시킨다. IS 곡선이 오른쪽으로 이동하면, LM 곡선이 그대로일 때 교차점이 오른쪽 위로 옮겨 가 균형 국민 소득과 균형 이자율이 모두 상승한다. 다만 이 과정에서 이자율 상승이 기업의 투자를 일부 억제하므로, 국민 소득의 증가 폭은 재정 확대가 처음 일으킨 효과보다 다소 작아진다. 반대로 긴축 정책은 IS 곡선을 왼쪽으로 이동시켜 균형 국민 소득을 줄인다. 한편 중앙은행이 통화량을 늘리면 ㉡<u>LM 곡선</u>이 오른쪽으로 이동하여, IS 곡선이 그대로일 때 교차점이 오른쪽 아래로 옮겨 가 균형 국민 소득은 늘고 균형 이자율은 낮아진다.</p>
+<p>그러나 통화량을 외생적으로 고정된 값으로 간주하는 IS–LM 모형의 가정은, 중앙은행이 실제로는 통화량이 아니라 이자율 자체를 정책 목표로 삼아 조절한다는 현실과 어긋난다는 비판을 받았다. 이에 신케인스학파는 LM 곡선을 MP 곡선으로 대체한 IS–MP 모형을 제시하였다. MP 곡선은 중앙은행이 물가 상승률에 ㉢<u>대응</u>하여 이자율을 결정하는 정책 방식을 나타낸 것으로, 국민 소득이 늘어 경기가 과열되고 물가 상승 압력이 커지면 중앙은행이 이자율을 끌어올린다는 점에서 우상향하는 형태로 나타난다. IS–MP 모형에서는 LM 곡선처럼 통화량을 고정해 두지 않고, 중앙은행이 경기 상황에 맞추어 이자율을 능동적으로 조정하는 모습을 곡선의 이동으로 표현한다. 가령 중앙은행이 같은 소득 수준에서 더 낮은 이자율을 유지하기로 하면 MP 곡선이 아래로 이동하여, IS 곡선이 그대로일 때 교차점이 오른쪽 아래로 옮겨 가 균형 국민 소득이 늘어난다.</p>
+<figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림]</span> 가로축은 국민 소득(Y), 세로축은 이자율(r)인 평면에 우하향하는 IS 곡선과 우상향하는 LM 곡선이 한 점에서 교차하는 좌표 그래프. 점선으로 이동 후의 곡선과 새 교차점도 함께 표시.</figure></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① IS–LM 모형은 상품 시장과 화폐 시장이 동시에 균형을 이루는 지점에서 단기 국민 소득이 결정된다고 본다.</li>
+<li>② IS 곡선은 이자율이 낮아질수록 국민 소득이 증가하는 관계를 나타내므로 우하향한다.</li>
+<li>③ 통화량이 외생적으로 고정된 상태에서 국민 소득이 증가하면 화폐 수요 초과가 발생한다.</li>
+<li>④ IS–MP 모형은 중앙은행이 통화량을 고정해 두고 그에 맞추어 이자율을 결정하는 과정을 나타낸다.</li>
+<li>⑤ MP 곡선은 경기가 과열되어 물가 상승 압력이 커질 때 중앙은행이 이자율을 올린다는 점에서 우상향한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+IS–MP 모형은 통화량을 고정해 두는 IS–LM 모형의 가정을 버린 모형이에요. 4문단에서 "LM 곡선처럼 통화량을 고정해 두지 않고, 중앙은행이 경기 상황에 맞추어 이자율을 능동적으로 조정하는 모습을" 나타낸다고 했죠. 그런데 ④는 IS–MP 모형이 "통화량을 고정해 두고 그에 맞추어 이자율을 결정"한다고 거꾸로 말했으니 적절하지 않아 정답입니다. ①은 1문단(동시 균형에서 단기 소득 결정), ②는 1문단(이자율↓→소득↑이라 우하향), ③은 2문단(통화량 고정+소득 증가→화폐 수요 초과), ⑤는 4문단(과열·물가 압력→이자율 인상이라 우상향)에서 그대로 확인됩니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠~㉢에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠이 오른쪽으로 이동하면 균형 이자율이 낮아지므로 기업의 투자가 일관되게 늘어난다.</li>
+<li>② ㉡이 오른쪽으로 이동하면 균형 국민 소득은 늘고 균형 이자율은 낮아진다.</li>
+<li>③ ㉠과 ㉡은 모두 통화량 변화에 의해서만 좌우로 이동한다.</li>
+<li>④ ㉢은 통화량을 일정하게 고정한다는 점에서 ㉡과 동일한 가정에 의존한다.</li>
+<li>⑤ ㉢은 국민 소득이 늘수록 이자율이 낮아지는 관계를 나타내므로 우하향한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉡은 LM 곡선이에요. 3문단 끝에서 "중앙은행이 통화량을 늘리면 LM 곡선이 오른쪽으로 이동하여 ... 균형 국민 소득은 늘고 균형 이자율은 낮아진다"라고 했으므로 ②가 적절합니다. ① ㉠(IS 곡선)이 오른쪽으로 이동하면 균형 이자율은 오히려 <em>상승</em>하고, 그 이자율 상승이 투자를 일부 억제한다고 했으니 "투자가 일관되게 늘어난다"는 틀렸어요. ③ IS 곡선은 재정 정책으로, LM 곡선은 통화량으로 이동하므로 "통화량 변화에 의해서만"은 틀립니다. ④ ㉢(MP 곡선)은 통화량을 고정하지 <em>않는다</em>는 점에서 LM 곡선과 가정이 다르므로 "동일한 가정"은 틀려요. ⑤ ㉢은 소득↑→이자율↑ 관계라 우상향하므로 "우하향"은 틀립니다.</p>
+<p><strong>3번 [3점] — 정답 ④</strong>
+㉰는 두 곡선이 모두 그대로이고 균형점도 변하지 않은 그래프예요. 〈보기〉가 다루는 두 경우(재정 확대, 더 낮은 이자율 유지)는 모두 균형점이 <em>옮겨 가는</em> 경우이므로, ㉰는 둘 중 어느 쪽에도 해당하지 않습니다. 그런데 ④는 ㉰를 "재정 지출을 늘렸으나 IS 곡선이 왼쪽으로 이동"한 경우라고 했는데, 재정 지출을 늘리면 IS 곡선은 <em>오른쪽</em>으로 이동하고 균형점도 변해야 하므로 ㉰와 맞지 않아 적절하지 않아 정답입니다. ①은 ㉮(MP 곡선 하향 이동→균형점 오른쪽 아래), ②는 ㉯(IS 곡선 오른쪽 이동→균형점 오른쪽 위), ③은 3문단의 이자율 상승에 따른 투자 억제, ⑤는 ㉮·㉯에서 이자율 변화 방향이 반대로 나타남에 각각 정확히 대응하는 적절한 탐구예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉의 그래프 ㉮~㉰는 IS–MP 모형에서 어떤 정책이 시행되었을 때 예상되는 변화를 순서 없이 나타낸 것이다. 윗글을 바탕으로 〈보기〉를 탐구한 내용으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음 그래프들은 IS–MP 모형에서 <em>정부가 재정 지출을 늘린 경우</em>와 <em>중앙은행이 같은 소득 수준에서 더 낮은 이자율을 유지하기로 한 경우</em> 각각에 대해 균형점이 어떻게 옮겨 가는지를 순서 없이 나타낸 것이다. 모든 그래프에서 가로축은 국민 소득, 세로축은 이자율이며, 처음 균형점과 이동 후 균형점이 함께 표시되어 있다.</p>
+<p><figure style="border:1px dashed #999;padding:.6em;margin:.6em 0;text-align:center;color:#555;"><span class="boxmark">[그림]</span> 세 개의 좌표 그래프 ㉮·㉯·㉰. ㉮: IS 곡선은 그대로이고 MP 곡선이 아래로 평행 이동하여 균형점이 오른쪽 아래로 옮겨 간다. ㉯: MP 곡선은 그대로이고 IS 곡선이 오른쪽으로 평행 이동하여 균형점이 오른쪽 위로 옮겨 간다. ㉰: 두 곡선이 모두 그대로이고 균형점도 처음 위치에서 변하지 않는다.</figure></p>
+</blockquote>
+<ul>
+<li>① ㉮는 중앙은행이 더 낮은 이자율을 유지하기로 한 경우로, 균형 국민 소득이 늘고 균형 이자율은 낮아진 것이겠군.</li>
+<li>② ㉯는 정부가 재정 지출을 늘린 경우로, IS 곡선이 오른쪽으로 이동하여 균형 국민 소득과 균형 이자율이 모두 상승한 것이겠군.</li>
+<li>③ ㉯에서 균형 이자율이 오른 결과 기업의 투자가 일부 억제되므로, 국민 소득의 증가 폭은 재정 확대가 처음 일으킨 효과보다 작겠군.</li>
+<li>④ ㉰는 정부가 재정 지출을 늘렸으나 IS 곡선이 왼쪽으로 이동하여 균형 국민 소득이 줄어든 경우이겠군.</li>
+<li>⑤ ㉮와 ㉯는 출발한 균형점이 같더라도 곡선 중 어느 것이 이동했는지에 따라 균형 이자율의 변화 방향이 서로 다르겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>IS 곡선</strong>: 상품 시장이 균형을 이루는 이자율과 국민 소득의 짝을 이은 곡선. 이자율↓→소득↑이라 우하향.</li>
+<li><strong>LM 곡선</strong>: 통화량이 고정된 화폐 시장이 균형을 이루는 이자율과 국민 소득의 짝을 이은 곡선. 소득↑→이자율↑이라 우상향.</li>
+<li><strong>MP 곡선</strong>: 중앙은행이 물가 상승률에 대응해 이자율을 정하는 방식을 나타낸 곡선. 통화량을 고정하지 않고 이자율을 능동적으로 조정.</li>
+<li><strong>균형점</strong>: IS 곡선과 LM(또는 MP) 곡선이 교차하여 두 시장이 동시에 균형을 이루는 한 점.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IS 곡선</th>
+<th>LM 곡선</th>
+<th>MP 곡선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>어느 시장</td>
+<td>상품 시장</td>
+<td>화폐 시장</td>
+<td>통화 정책</td>
+</tr>
+<tr>
+<td>기울기</td>
+<td>우하향</td>
+<td>우상향</td>
+<td>우상향</td>
+</tr>
+<tr>
+<td>무엇이 이동시키나</td>
+<td>재정 정책(지출·세금)</td>
+<td>통화량 변화</td>
+<td>중앙은행의 이자율 대응 방식</td>
+</tr>
+<tr>
+<td>통화량 가정</td>
+<td>—</td>
+<td>외생적으로 고정</td>
+<td>고정하지 않음</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>IS 곡선이 우하향하는 까닭은 무엇인가요?</div><div class='qa-a'>이자율이 낮아지면 투자가 늘어 국민 소득이 증가하므로, 이자율과 소득이 반대 방향으로 움직이기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>정부가 재정 지출을 늘리면 균형점은 어디로 옮겨 가나요?</div><div class='qa-a'>IS 곡선이 오른쪽으로 이동해 균형점이 오른쪽 위로 옮겨 가고, 균형 국민 소득과 균형 이자율이 모두 오릅니다.</div></div>
+<div class='qa-item'><div class='qa-q'>IS–MP 모형이 LM 곡선을 MP 곡선으로 바꾼 까닭은?</div><div class='qa-a'>중앙은행이 실제로는 통화량이 아니라 이자율을 정책 목표로 삼아 조절한다는 현실을 더 잘 담기 위해서입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2018학년도 수능 [27~32]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>정부는 국민 생활에 영향을 미치는 활동의 총체인 정책의 목표를 효과적으로 달성하기 위해 정책 수단의 특성을 고려하여 정책을 수행한다. 정책 수단은 강제성, 직접성, 자동성, 가시성의 ㉮네 가지 측면에서 다양한 특성을 갖는다. 강제성은 정부가 개인이나 집단의 행위를 제한하는 정도로서, 유해 식품 판매 규제는 강제성이 높다. 직접성은 정부가 공공 활동의 수행과 재원 조달에 직접 관여하는 정도를 의미한다. 정부가 정책을 직접 수행하지 않고 민간에 위탁하여 수행하게 하는 것은 직접성이 낮다. 자동성은 정책을 수행하기 위해 별도의 행정 기구를 설립하지 않고 기존의 조직을 활용하는 정도를 말한다. 전기 자동차 보조금 제도를 기존의 시청 환경과에서 시행하는 것은 자동성이 높다. 가시성은 예산 수립 과정에서 정책을 수행하기 위한 재원이 명시적으로 드러나는 정도이다. 일반적으로 사회 규제의 정도를 조절하는 것은 예산 지출을 수반하지 않으므로 가시성이 낮다.</p>
+<p>정책 수단 선택의 사례로 환율과 관련된 경제 현상을 살펴보자. 외국 통화에 대한 자국 통화의 교환 비율을 의미하는 환율은 장기적으로 한 국가의 생산성과 물가 등 기초 경제 여건을 반영하는 수준으로 수렴된다. 그러나 단기적으로 환율은 이와 ⓐ괴리되어 움직이는 경우가 있다. 만약 환율이 예상과는 다른 방향으로 움직이거나 또는 비록 예상과 같은 방향으로 움직이더라도 변동 폭이 예상보다 크게 나타날 경우 경제 주체들은 과도한 위험에 ⓑ노출될 수 있다. 환율이나 주가 등 경제 변수가 단기에 지나치게 상승 또는 하락하는 현상을 오버슈팅(overshooting)이라고 한다. 이러한 오버슈팅은 물가 경직성 또는 금융 시장 변동에 따른 불안 심리 등에 의해 촉발되는 것으로 알려져 있다. 여기서 물가 경직성은 시장에서 가격이 조정되기 어려운 정도를 의미한다.</p>
+<p>물가 경직성에 따른 환율의 오버슈팅을 이해하기 위해 통화를 금융 자산의 일종으로 보고 경제 충격에 대해 장기와 단기에 환율이 어떻게 조정되는지 알아보자. 경제에 충격이 발생할 때 물가나 환율은 충격을 흡수하는 조정 과정을 거치게 된다. 물가는 단기에는 장기 계약 및 공공요금 규제 등으로 인해 경직적이지만 장기에는 신축적으로 조정된다. 반면 환율은 단기에서도 신축적인 조정이 가능하다. 이러한 물가와 환율의 조정 속도 차이가 오버슈팅을 초래한다. 물가와 환율이 모두 신축적으로 조정되는 장기에서의 환율은 구매력 평가설에 의해 설명되는데, 이에 의하면 장기의 환율은 자국 물가 수준을 외국 물가 수준으로 나눈 비율로 나타나며, 이를 균형 환율로 본다. 가령 국내 통화량이 증가하여 유지될 경우 장기에서는 자국 물가도 높아져 장기의 환율은 상승한다. 이때 통화량을 물가로 나눈 실질 통화량은 변하지 않는다.</p>
+<div class="ablock"><span class="atag"><span class="boxmark">[가]</span></span><p>그런데 단기에는 물가의 경직성으로 인해 구매력 평가설에 기초한 환율과는 다른 움직임이 나타나면서 오버슈팅이 발생할 수 있다. 가령 국내 통화량이 증가하여 유지될 경우, 물가가 경직적이어서 ㉠실질 통화량은 증가하고 이에 따라 시장 금리는 하락한다. 국가 간 자본 이동이 자유로운 상황에서, ㉡시장 금리 하락은 투자의 기대 수익률 하락으로 이어져, 단기성 외국인 투자 자금이 해외로 빠져나가거나 신규 해외 투자 자금 유입을 위축시키는 결과를 ⓒ초래한다. 이 과정에서 자국 통화의 가치는 하락하고 ㉢환율은 상승한다. 통화량의 증가로 인한 효과는 물가가 신축적인 경우에 예상되는 환율 상승에, 금리 하락에 따른 자금의 해외 유출이 유발하는 추가적인 환율 상승이 더해진 것으로 나타난다. 이러한 추가적인 상승 현상이 환율의 오버슈팅인데, 오버슈팅의 정도 및 지속성은 물가 경직성이 클수록 더 크게 나타난다. 시간이 경과함에 따라 물가가 상승하여 실질 통화량이 원래 수준으로 돌아오고 해외로 유출되었던 자금이 시장 금리의 반등으로 국내로 ⓓ복귀하면서, 단기에 과도하게 상승했던 환율은 장기에는 구매력 평가설에 기초한 환율로 수렴된다.</p></div>
+
+<p>단기의 환율이 기초 경제 여건과 괴리되어 과도하게 급등락하거나 균형 환율 수준으로부터 장기간 이탈하는 등의 문제가 심화되는 경우를 예방하고 이에 대처하기 위해 정부는 다양한 정책 수단을 동원한다. 오버슈팅의 원인인 물가 경직성을 완화하기 위한 정책 수단 중 강제성이 낮은 사례로는 외환의 수급 불균형 해소를 위해 관련 정보를 신속하고 정확하게 공개하거나, 불필요한 가격 규제를 축소하는 것을 들 수 있다. 한편 오버슈팅에 따른 부정적 파급 효과를 완화하기 위해 정부는 환율 변동으로 가격이 급등한 수입 필수 품목에 대한 세금을 조절함으로써 내수가 급격히 위축되는 것을 방지하려고 하기도 한다. 또한 환율 급등락으로 인한 피해에 대비하여 수출입 기업에 환율 변동 보험을 제공하거나, 외화 차입 시 지급 보증을 제공하기도 한다. 이러한 정책 수단은 직접성이 높은 특성을 가진다. 이와 같이 정부는 기초 경제 여건을 반영한 환율의 추세는 용인하되, 사전적 또는 사후적인 <span class="boxmark">[미세 조정 정책 수단]</span>을 활용하여 환율의 단기 급등락에 따른 위험으로부터 실물 경제와 금융 시장의 안정을 ⓔ도모하는 정책을 수행한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>27</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 국내 통화량이 증가하여 유지될 경우 장기에는 실질 통화량이 변하지 않으므로 장기의 환율도 변함이 없을 것이다.</li>
+<li>② 물가가 신축적인 경우가 경직적인 경우에 비해 국내 통화량 증가에 따른 국내 시장 금리 하락 폭이 작을 것이다.</li>
+<li>③ 물가 경직성에 따른 환율의 오버슈팅은 물가의 조정 속도보다 환율의 조정 속도가 빠르기 때문에 발생하는 것이다.</li>
+<li>④ 환율의 오버슈팅이 발생한 상황에서 외국인 투자 자금이 국내 시장 금리에 민감하게 반응할수록 오버슈팅 정도는 커질 것이다.</li>
+<li>⑤ 환율의 오버슈팅이 발생한 상황에서 물가 경직성이 클수록 구매력 평가설에 기초한 환율로 수렴되는 데 걸리는 기간이 길어질 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>27번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p>
+<p><em>선택률</em> — 응시 98,547명 — ①67.5% ②7.9% ③7.8% ④8.2% ⑤8.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>28</div><div class='q-stem'></div></div>
+<p>㉮를 바탕으로 정책 수단의 특성을 이해한 것으로 가장 적절한 것은?</p>
+<ul>
+<li>① 다자녀 가정에 출산 장려금을 지급하는 것은, 불법 주차 차량에 과태료를 부과하는 것보다 강제성이 높다.</li>
+<li>② 전기 제품 안전 규제를 강화하는 것은, 학교 급식을 제공하기 위한 재원을 정부 예산에 편성하는 것보다 가시성이 높다.</li>
+<li>③ 문화재를 발견하여 신고할 경우 포상금을 주는 것은, 자연 보존 지역에서 개발 행위를 금지하는 것보다 강제성이 높다.</li>
+<li>④ 쓰레기 처리를 민간 업체에 맡겨서 수행하게 하는 것은, 정부 기관에서 주민등록 관련 행정 업무를 수행하는 것보다 직접성이 높다.</li>
+<li>⑤ 담당 부서에서 문화 소외 계층에 제공하던 복지 카드의 혜택을 늘리는 것은, 전담 부처를 신설하여 상수원 보호 구역을 감독하는 것보다 자동성이 높다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>28번 — 정답 ⑤</strong><br />
+자동성은 별도의 행정 기구를 설립하지 않고 기존 조직을 활용하는 정도이다. 기존 담당 부서에서 복지 카드 혜택을 늘리는 것은 자동성이 높고, 전담 부처를 신설하는 것은 자동성이 낮으므로 ⑤가 적절하다. ① 과태료 부과가 행위 제한이므로 강제성이 높고, 장려금 지급은 그렇지 않다. ② 규제 강화는 예산 지출을 수반하지 않아 가시성이 낮고, 급식 재원의 예산 편성은 가시성이 높다. ③ 개발 행위 금지가 강제성이 높고, 포상금 지급은 그렇지 않다. ④ 민간 위탁은 직접성이 낮고, 정부 기관의 직접 수행은 직접성이 높다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①7.3% ②3.2% ③4.6% ④5.1% ⑤79.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>29</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, 〈보기〉의 'A국' 경제 상황에 대한 '경제학자 갑'의 견해를 추론한 것으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+A국 경제학자 갑은 자국의 최근 경제 상황을 다음과 같이 진단했다.</p>
+<p>금융 시장 불안의 여파로 A국의 주식, 채권 등 금융 자산의 가격 하락에 대한 우려가 확산되면서 안전 자산으로 인식되는 B국의 채권에 대한 수요가 증가하고 있다. 이로 인해 외환 시장에서는 A국에 투자되고 있던 단기성 외국인 자금이 B국으로 유출되면서 A국의 환율이 급등하고 있다.</p>
+<p>B국에서는 해외 자금 유입에 따른 통화량 증가로 B국의 시장 금리가 변동할 것으로 예상된다. 이에 따라 A국의 환율 급등은 향후 다소 진정될 것이다. 또한 양국 간 교역 및 금융 의존도가 높은 현실을 감안할 때, A국의 환율 상승은 수입품의 가격 상승 등에 따른 부작용을 초래할 것으로 예상되지만 한편으로는 수출이 증대되는 효과도 있다. 그러므로 정부는 시장 개입을 가능한 한 자제하고 환율이 시장 원리에 따라 자율적으로 균형 환율 수준으로 수렴되도록 두어야 한다.</p>
+</blockquote>
+<ul>
+<li>① A국에 환율의 오버슈팅이 발생한 상황에서 B국의 시장 금리가 하락한다면 오버슈팅의 정도는 커질 것이다.</li>
+<li>② A국에 환율의 오버슈팅이 발생하였다면 이는 금융 시장 변동에 따른 불안 심리에 의해 촉발된 것으로 볼 수 있다.</li>
+<li>③ A국에 환율의 오버슈팅이 발생할지라도 시장의 조정을 통해 환율이 장기에는 균형 환율 수준에 도달할 수 있을 것이다.</li>
+<li>④ A국의 환율 상승이 수출을 증대시키는 긍정적인 효과도 동반하므로 A국의 정책 당국은 외환 시장 개입에 신중해야 한다.</li>
+<li>⑤ A국의 환율 상승은 B국으로부터 수입하는 상품의 가격을 인상시킴으로써 A국의 내수를 위축시키는 결과를 초래할 수 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>29번 — 정답 ①</strong><br />
+B국에 해외 자금 유입이 증가하면 통화량 증가로 B국의 시장 금리가 내려가고, 그러면 B국으로 유입되는 투자 자금이 줄고 A국에 대한 투자 수요가 높아져 A국의 환율 급등은 진정된다. 따라서 오버슈팅의 정도가 커진다는 ①은 적절하지 않다. ② 금융 자산 가격 하락 우려 확산이 원인이므로 불안 심리에 의해 촉발된 것이다. ③④ 환율 상승은 수출 증대·수입 감소를 거쳐 시장의 조정으로 균형 환율 수준을 회복하게 하므로, 갑은 정부의 시장 개입 자제를 주장한다. ⑤ 환율 상승은 수입품 가격 인상으로 내수를 위축시킬 수 있다.</p>
+<p><em>선택률</em> — 응시 98,551명 — ①39.5% ②5.2% ③15.9% ④16.2% ⑤21.6%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>30</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉에 제시된 그래프의 세로축 a, b, c는 <span class="boxmark">[가]</span>의 ㉠～㉢과 하나씩 대응된다. 이를 바르게 짝지은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+다음 그래프들은 <span class="boxmark">[가]</span>에서 국내 통화량이 t 시점에서 증가하여 유지된 경우 예상되는 ㉠～㉢의 시간에 따른 변화를 순서 없이 나열한 것이다.</p>
+<p><strong><span class="boxmark">[그림: 그래프 3개(a·b·c)]</span></strong> 세 그래프 모두 가로축은 '시간'(t 시점에 점선 수직선 표시), 세로축은 이름 없는 변수 축(원점 0 부근에 축 절단 표시). t 이전에는 모두 일정한 수준의 수평선이다.
+- <strong>a</strong>: t 시점에서 점선으로 수직 <strong>하락</strong>한 뒤, 완만한 곡선으로 상승하여 <strong>원래 수준으로 회복</strong>된다.
+- <strong>b</strong>: t 시점에서 점선으로 수직 <strong>급등</strong>하여 최고점을 찍은 뒤, 완만하게 하락하지만 <strong>원래 수준보다 높은 수준</strong>으로 수렴한다(원래 수준이 가는 점선 수평선으로 표시되어 있고, 수렴 수준은 그보다 위).
+- <strong>c</strong>: t 시점에서 수직 <strong>급등</strong>한 뒤, 완만하게 하락하여 <strong>원래 수준으로 회복</strong>된다.</p>
+<p>(단, t 시점 근처에서 그래프의 형태는 개략적으로 표현하였으며, t 시점 이전에는 모든 경제 변수들의 값이 일정한 수준에서 유지되어 왔다고 가정한다. 장기 균형으로 수렴되는 기간은 변수마다 상이하다.)</p>
+</blockquote>
+<p>원본 선지는 ㉠·㉡·㉢ 열로 구성된 표이다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>㉠</th>
+<th>㉡</th>
+<th>㉢</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td>a</td>
+<td>c</td>
+<td>b</td>
+</tr>
+<tr>
+<td>②</td>
+<td>b</td>
+<td>a</td>
+<td>c</td>
+</tr>
+<tr>
+<td>③</td>
+<td>b</td>
+<td>c</td>
+<td>a</td>
+</tr>
+<tr>
+<td>④</td>
+<td>c</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr>
+<td>⑤</td>
+<td>c</td>
+<td>b</td>
+<td>a</td>
+</tr>
+</tbody>
+</table>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>30번 — 정답 ④</strong><br />
+국내 통화량이 증가하여 유지되면 단기에는 물가 경직성으로 실질 통화량(㉠)이 증가했다가 장기에 물가 상승으로 원래 수준으로 돌아온다 → 급등 후 원래 수준으로 회복하는 c. 시장 금리(㉡)는 실질 통화량 증가로 하락했다가 실질 통화량 회복과 함께 반등한다 → 하락 후 원래 수준으로 회복하는 a. 환율(㉢)은 오버슈팅으로 크게 상승했다가 구매력 평가설에 기초한 균형 환율로 수렴하는데, 자국 물가 수준이 높아졌으므로 통화량 증가 이전보다 높은 수준이다 → 급등 후 원래보다 높은 수준으로 수렴하는 b. 따라서 ④.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①5.9% ②15.6% ③10.5% ④58.7% ⑤6.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>31</div><div class='q-stem'></div></div>
+<p><span class="boxmark">[미세 조정 정책 수단]</span>의 사례로 적절하지 않은 것은?</p>
+<ul>
+<li>① 예기치 못한 외환 손실에 대비한 환율 변동 보험을 수출 주력 중소기업에 제공한다.</li>
+<li>② 원유와 같이 수입 의존도가 높은 상품의 경우 해당 상품에 적용하는 세율을 환율 변동에 따라 조정한다.</li>
+<li>③ 환율의 급등락으로 금융 시장이 불안정할 경우 해외 자금 유출과 유입을 통제하여 환율의 추세를 바꾼다.</li>
+<li>④ 환율 급등으로 수입 물가가 가파르게 상승했을 때, 수입 대금 지급을 위해 외화를 빌리는 수입 업체에 지급 보증을 제공한다.</li>
+<li>⑤ 수출입 기업을 대상으로 국내외 금리 변동, 해외 투자 자금 동향 등 환율 변동에 영향을 주는 요인들에 대한 정보를 제공한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>31번 — 정답 ③</strong><br />
+마지막 문단에서 미세 조정 정책 수단으로 정보 공개, 가격 규제 축소, 세금 조절, 환율 변동 보험 제공, 지급 보증 제공이 제시되었다. 또한 정부는 기초 경제 여건을 반영한 환율의 추세는 용인한다고 했으므로, 해외 자금 유출입을 통제하여 환율의 추세를 바꾸는 강제성 높은 개입인 ③은 미세 조정 정책 수단의 사례가 아니다. ①④는 환율 변동 보험·지급 보증, ②는 세금 조절, ⑤는 정보 제공에 해당한다.</p>
+<p><em>선택률</em> — 응시 98,547명 — ①6.1% ②5.2% ③69.9% ④10.6% ⑤8.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>32</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ～ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 동떨어져</li>
+<li>② ⓑ: 드러낼</li>
+<li>③ ⓒ: 불러온다</li>
+<li>④ ⓓ: 되돌아오면서</li>
+<li>⑤ ⓔ: 꾀하는</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>32번 — 정답 ②</strong><br />
+'노출되다'는 '겉으로 드러나다'의 의미로 사동의 의미가 없는데, '드러낼'은 사동사 '드러내다'의 활용형이므로 '노출될'과 바꿔 쓰기에 적절하지 않다. ① 괴리되다: 서로 어그러져 동떨어지다. ③ 초래하다: 어떤 결과를 가져오게 하다. ④ 복귀하다: 본디의 자리나 상태로 되돌아가다. ⑤ 도모하다: 어떤 일을 이루기 위하여 대책과 방법을 세우다.</p>
+<p><em>선택률</em> — 응시 98,549명 — ①3.7% ②90.3% ③1.0% ④0.7% ⑤4.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>거시 경제학은 국민 소득·물가·고용 등 경제 전체의 움직임을 설명하기 위해 시대마다 새로운 모형을 마련해 왔다. 1970년 무렵까지 거시 경제 정책의 기본 분석 틀이었던 IS–LM 모형은, 그 이전 시기 고전학파와 케인스의 대립을 배경으로 등장하였다. 고전학파는 가격과 임금이 신축적으로 조정되므로 시장이 스스로 완전 고용을 달성한다고 보았다. 그러나 대공황은 시장의 자율 조정에 한계가 있음을 드러냈고, 케인스는 낮은 총수요가 소득 감소와 실업을 부른다고 보아 정부의 총수요 관리를 주장하였다.</p>
+<p>후대의 케인스주의자들은 케인스의 총수요 이론을 ㉠IS–LM 모형으로 체계화하였다. 이 모형에서 상품 시장의 균형을 나타내는 IS 곡선은 이자율이 낮아질수록 투자와 국민 소득이 늘어나는 관계를 보여 주고, 화폐 시장의 균형을 나타내는 LM 곡선은 국민 소득이 늘수록 이자율이 오르는 관계를 보여 준다. 이때 LM 곡선은 중앙은행이 공급하는 통화량을 외생적으로 고정된 값으로 전제한다. 두 곡선이 교차하는 지점에서 단기 국민 소득이 결정되며, 정부의 재정 확대는 IS 곡선을 오른쪽으로 이동시켜 국민 소득을 늘린다. 이 모형은 재정 정책의 효과를 명료하게 보여 준다는 점에서 1950~60년대 거시 경제 정책의 기본 틀로 널리 활용되었다.</p>
+<p>그러나 1970년대 두 차례의 오일 쇼크는 IS–LM 모형이 설명하기 어려운 현상을 불러왔다. 물가가 오르는 동시에 경기가 침체되는 스태그플레이션이 나타난 것이다. 또한 통화량을 외생적으로 고정된 값으로 본 가정은, 중앙은행이 실제로는 통화량이 아니라 이자율을 정책 목표로 삼아 물가 상황에 따라 조절한다는 현실과 어긋났다. 통화 정책이 경제에 미치는 영향을 더 현실적으로 그려야 한다는 요구가 커지면서, 모형을 보완하려는 흐름이 생겨났다.</p>
+<p>이러한 배경에서 신케인스학파는 ㉡IS–MP 모형을 제시하였다. 이 모형은 IS 곡선은 그대로 유지하되 LM 곡선을 MP 곡선으로 대체한다. MP 곡선은 중앙은행이 통화량을 고정해 두는 것이 아니라 물가 상승률에 대응하여 이자율을 결정하는 방식을 나타내며, 경기가 과열되어 물가 압력이 커지면 이자율을 올린다는 점에서 우상향한다. IS–MP 모형은 중앙은행이 경기 상황에 맞추어 이자율을 능동적으로 조정하는 모습을 곡선의 이동으로 담아내어, 통화 정책의 작동을 IS–LM 모형보다 현실에 가깝게 설명한다는 평가를 받는다. 이처럼 거시 경제 모형은 앞 시대 모형이 설명하지 못한 현상에 부딪힐 때마다 그 한계를 보완하며 변천해 왔다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 케인스가 정부의 총수요 관리를 주장한 까닭은 무엇인가?</li>
+<li>② IS–LM 모형에서 단기 국민 소득은 어떻게 결정되는가?</li>
+<li>③ IS–MP 모형이 스태그플레이션을 완전히 해소한 정책 수단은 무엇인가?</li>
+<li>④ IS–LM 모형의 통화량 가정은 어떤 점에서 현실과 어긋났는가?</li>
+<li>⑤ IS–MP 모형은 IS–LM 모형의 어떤 곡선을 무엇으로 대체하였는가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+이 문항은 "지문에서 답할 수 있는 질문인가"를 가려내는 유형이에요. ③은 "IS–MP 모형이 스태그플레이션을 <em>완전히 해소한 정책 수단</em>"을 묻는데, 지문은 IS–MP 모형이 통화 정책을 더 현실적으로 설명한다고만 했을 뿐, 스태그플레이션을 완전히 해소했다거나 그 정책 수단을 제시하지 않았으므로 답을 찾을 수 없습니다. ①은 1문단(낮은 총수요→소득 감소·실업), ②는 2문단(두 곡선 교차점에서 결정), ④는 3문단(통화량을 정책 목표로 삼는 현실과 어긋남), ⑤는 4문단(LM 곡선을 MP 곡선으로 대체)에서 답을 찾을 수 있어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 고전학파의 관점에서는 가격과 임금이 신축적으로 조정되어 시장이 스스로 완전 고용에 이른다.</li>
+<li>② IS–LM 모형이 1950~60년대에 널리 활용된 데에는 재정 정책의 효과를 명료하게 보여 주는 점이 작용하였다.</li>
+<li>③ 통화량을 외생적으로 고정된 값으로 본 가정은 IS–MP 모형에서 그대로 이어진다.</li>
+<li>④ 스태그플레이션은 IS–LM 모형이 설명하기 어려운 현상으로 모형 보완의 계기가 되었다.</li>
+<li>⑤ MP 곡선은 물가 상승 압력이 커질 때 중앙은행이 이자율을 올린다는 점에서 우상향한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>5번 — 정답 ③</strong>
+3문단은 통화량을 외생적으로 고정한 가정이 <em>현실과 어긋났다</em>고 했고, 4문단은 IS–MP 모형이 "통화량을 고정해 두는 것이 아니라" 이자율을 조절한다고 했어요. 따라서 그 가정이 IS–MP 모형에서 "그대로 이어진다"는 ③은 적절하지 않아 정답입니다. ①은 1문단(고전학파의 신축적 조정·완전 고용), ②는 2문단(재정 정책 효과를 명료히 보여 널리 활용), ④는 3문단(스태그플레이션이 모형 보완의 계기), ⑤는 4문단(물가 압력→이자율 인상이라 우상향)에 부합합니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠은 케인스의 총수요 이론을 체계화한 모형이고, ㉡은 그 ㉠의 LM 곡선을 MP 곡선으로 대체한 모형이다.</li>
+<li>② ㉠은 통화량을 고정하지 않고, ㉡은 통화량을 외생적으로 고정한다.</li>
+<li>③ ㉠과 ㉡은 모두 IS 곡선을 사용하지 않는다.</li>
+<li>④ ㉡은 ㉠과 달리 정부의 재정 확대가 국민 소득에 미치는 영향을 다루지 않는다.</li>
+<li>⑤ ㉠은 ㉡보다 통화 정책의 작동을 더 현실에 가깝게 설명한다는 평가를 받는다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>6번 — 정답 ①</strong>
+㉠은 IS–LM 모형, ㉡은 IS–MP 모형이에요. 2문단은 ㉠이 케인스의 총수요 이론을 체계화했다고 했고, 4문단은 ㉡이 "IS 곡선은 그대로 유지하되 LM 곡선을 MP 곡선으로 대체한다"고 했으므로 ①이 적절합니다. ② 통화량을 고정하는 쪽은 ㉠(LM 곡선)이고 고정하지 않는 쪽은 ㉡이므로 거꾸로예요. ③ 둘 다 IS 곡선을 사용하므로 틀립니다. ④ ㉡도 IS 곡선을 그대로 두므로 재정 확대의 효과를 다룰 수 있어요. ⑤ 통화 정책을 더 현실에 가깝게 설명한다는 평가를 받는 쪽은 ㉡이므로 ㉠과 ㉡이 뒤바뀌었습니다.</p>
+<p><strong>7번 [3점] — 정답 ②</strong>
+〈보기〉의 "케인스의 총수요 이론을 체계화한 모형"은 IS–LM 모형이에요. 이 모형이 통화 정책을 현실적으로 담지 못한 까닭을 지문 3문단은 "통화량을 외생적으로 고정된 값으로 본 가정"이 현실과 어긋났기 때문이라고 설명했으므로 ②가 적절합니다. ① 케인스는 시장의 자율 조정을 <em>덜</em> 신뢰하여 정부 개입을 주장했으므로 "더욱 신뢰"는 틀려요. ③ 이후 모형이 대체한 것은 <em>LM 곡선</em>이지 IS 곡선이 아닙니다. ④ "한계를 보완하며 등장"은 곡선을 그대로 물려받았다는 뜻이 아니라 한계를 고쳐 나갔다는 뜻이에요. ⑤ IS–MP 모형은 통화량을 고정하지 <em>않으므로</em> "고정해 두어야 균형을 구할 수 있다"는 틀립니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어느 학자는 거시 경제 모형의 변천을 다음과 같이 정리하였다. 고전학파 모형은 시장의 자율 조정을 신뢰하여 정부 개입을 최소화하고자 했으나 대공황을 설명하지 못하였다. 케인스의 총수요 이론을 체계화한 모형은 정부의 재정 정책으로 경기를 조절할 수 있음을 보였으나, 통화 정책을 현실적으로 담아내지 못하였다. 이후 등장한 모형은 중앙은행이 물가에 대응해 이자율을 조절하는 방식을 곡선에 반영하였다. 이 학자는 "각 모형은 앞 모형이 부딪힌 한계를 보완하며 등장했다."라고 결론지었다.</p>
+</blockquote>
+<ul>
+<li>① 고전학파 모형이 대공황을 설명하지 못한 것은 정부 개입을 최소화하려 했기 때문이므로, 케인스의 모형은 시장의 자율 조정을 더욱 신뢰하는 방향으로 나아간 것이겠군.</li>
+<li>② 케인스의 총수요 이론을 체계화한 모형이 통화 정책을 현실적으로 담지 못한 것은 통화량을 외생적으로 고정된 값으로 전제했기 때문이겠군.</li>
+<li>③ 이후 등장한 모형이 이자율 조절 방식을 곡선에 반영한 것은 IS 곡선을 MP 곡선으로 대체했기 때문이겠군.</li>
+<li>④ "각 모형이 앞 모형의 한계를 보완하며 등장했다"는 결론은, 케인스의 모형이 고전학파 모형의 곡선을 그대로 물려받았음을 뜻하는 것이겠군.</li>
+<li>⑤ 중앙은행이 물가에 대응해 이자율을 조절하는 방식을 곡선에 반영한 모형은, 통화량을 고정해 두어야 균형 국민 소득을 구할 수 있는 것이겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>고전학파</strong>: 가격·임금의 신축성으로 시장이 스스로 완전 고용에 이른다고 본 학파.</li>
+<li><strong>케인스 경제학</strong>: 낮은 총수요가 소득 감소·실업을 부른다고 보아 정부의 총수요 관리를 주장한 이론.</li>
+<li><strong>스태그플레이션</strong>: 물가 상승과 경기 침체가 동시에 나타나는 현상. IS–LM 모형이 설명하기 어려웠던 사건.</li>
+<li><strong>신케인스학파</strong>: LM 곡선을 MP 곡선으로 대체한 IS–MP 모형을 제시한 학파.</li>
+</ul>
+<div class='deep-h'>개념 한눈에 — 모형의 변천</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>(LM</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>MP 대체, 이자율 능동 조정)</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>케인스 경제학이 고전학파를 비판한 핵심은 무엇인가요?</div><div class='qa-a'>시장이 총수요를 자동으로 맞추지 못해 낮은 총수요가 소득 감소·실업을 부를 수 있으므로 정부의 총수요 관리가 필요하다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>IS–LM 모형이 한계를 드러낸 사건과 까닭은?</div><div class='qa-a'>1970년대 오일 쇼크로 스태그플레이션이 나타났고, 통화량을 외생적으로 고정한 가정이 현실과 어긋났습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>IS–MP 모형은 IS–LM 모형의 무엇을 어떻게 바꾸었나요?</div><div class='qa-a'>IS 곡선은 그대로 두고 LM 곡선을 MP 곡선으로 대체하여, 통화량을 고정하지 않고 중앙은행이 이자율을 능동적으로 조절하는 모습을 담았습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2022학년도 수능 [10~13]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>기축 통화는 국제 거래에 결제 수단으로 통용되고 환율 결정에 기준이 되는 통화이다. 1960년 트리핀 교수는 브레턴우즈 체제에서의 기축 통화인 달러화의 구조적 모순을 지적했다. 한 국가의 재화와 서비스의 수출입 간 차이인 경상 수지는 수입이 수출을 초과하면 적자이고, 수출이 수입을 초과하면 흑자이다. 그는 "미국이 경상 수지 적자를 허용하지 않아 국제 유동성 공급이 중단되면 세계 경제는 크게 위축될 것"이라면서도 "반면 적자 상태가 지속돼 달러화가 과잉 공급되면 준비 자산으로서의 신뢰도가 저하되고 고정 환율 제도도 붕괴될 것"이라고 말했다.</p>
+<p>이러한 트리핀 딜레마는 국제 유동성 확보와 달러화의 신뢰도 간의 문제이다. 국제 유동성이란 국제적으로 보편적인 통용력을 갖는 지불 수단을 말하는데, ㉠금 본위 체제에서는 금이 국제 유동성의 역할을 했으며, 각 국가의 통화 가치는 정해진 양의 금의 가치에 고정되었다. 이에 따라 국가 간 통화의 교환 비율인 환율은 자동적으로 결정되었다. 이후 ㉡브레턴우즈 체제에서는 국제 유동성으로 달러화가 추가되어 '금 환 본위제'가 되었다. 1944년에 성립된 이 체제는 미국의 중앙은행에 '금 태환 조항'에 따라 금 1온스와 35달러를 언제나 맞교환해 주어야 한다는 의무를 지게 했다. 다른 국가들은 달러화에 대한 자국 통화의 가치를 고정했고, 달러화로만 금을 매입할 수 있었다. 환율은 경상 수지의 구조적 불균형이 있는 예외적인 경우를 제외하면 ±1% 내에서의 변동만을 허용했다. 이에 따라 기축 통화인 달러화를 제외한 다른 통화들 간 환율인 교차 환율은 자동적으로 결정되었다.</p>
+<p>1970년대 초에 미국은 경상 수지 적자가 누적되기 시작하고 달러화가 과잉 공급되어 미국의 금 준비량이 급감했다. 이에 따라 미국은 달러화의 금 태환 의무를 더 이상 감당할 수 없는 상황에 도달했다. 이를 해결할 수 있는 방법은 달러화의 가치를 내리는 평가 절하, 또는 달러화에 대한 여타국 통화의 환율을 하락시켜 그 가치를 올리는 평가 절상이었다. 하지만 브레턴우즈 체제하에서 달러화의 평가 절하는 규정상 불가능했고, 당시 대규모 대미 무역 흑자 상태였던 독일, 일본 등 주요국들은 평가 절상에 나서려고 하지 않았다. 이 상황이 유지되기 어려울 것이라는 전망으로 독일의 마르크화와 일본의 엔화에 대한 투기적 수요가 증가했고, 결국 환율의 변동 압력은 더욱 커질 수밖에 없었다. 이러한 상황에서 각국은 보유한 달러화를 대규모로 금으로 바꾸기를 원했다. 미국은 결국 1971년 달러화의 금 태환 정지를 선언한 닉슨 쇼크를 단행했고, 브레턴우즈 체제는 붕괴되었다.</p>
+<p>그러나 붕괴 이후에도 달러화의 기축 통화 역할은 계속되었다. 그 이유로 규모의 경제를 생각할 수 있다. 세계의 모든 국가에서 ㉢어떠한 기축 통화도 없이 각각 다른 통화가 사용되는 경우 두 국가를 짝짓는 경우의 수만큼 환율의 가짓수가 생긴다. 그러나 하나의 기축 통화를 중심으로 외환 거래를 하면 비용을 절감하고 규모의 경제를 달성할 수 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글을 통해 답을 찾을 수 없는 질문은?</p>
+<ul>
+<li>① 브레턴우즈 체제 붕괴 이후에도 달러화가 기축 통화로서 역할을 할 수 있었던 이유는 무엇인가?</li>
+<li>② 브레턴우즈 체제 붕괴 이후의 세계 경제 위축에 대해 트리핀은 어떤 전망을 했는가?</li>
+<li>③ 브레턴우즈 체제에서 미국 중앙은행은 어떤 의무를 수행해야 했는가?</li>
+<li>④ 브레턴우즈 체제에서 국제 유동성의 역할을 한 것은 무엇인가?</li>
+<li>⑤ 브레턴우즈 체제에서 달러화 신뢰도 하락의 원인은 무엇인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>10번 — 정답 ②</strong><br />
+트리핀은 브레턴우즈 체제에서의 달러화의 구조적 모순(국제 유동성 확보와 달러화 신뢰도 간의 문제)을 지적했을 뿐, 체제 '붕괴 이후'의 세계 경제 위축에 대한 전망은 글에 나오지 않는다. 따라서 ②는 답을 찾을 수 없는 질문이다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①4.5% ②59.8% ③9.7% ④7.7% ⑤17.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 추론한 내용으로 적절하지 않은 것은?</p>
+<ul>
+<li>① 닉슨 쇼크가 단행된 이후 달러화의 고평가 문제를 해결할 수 있는 달러화의 평가 절하가 가능해졌다.</li>
+<li>② 브레턴우즈 체제에서 마르크화와 엔화의 투기적 수요가 증가한 것은 이들 통화의 평가 절상을 예상했기 때문이다.</li>
+<li>③ 금의 생산량 증가를 통한 국제 유동성 공급량의 증가는 트리핀 딜레마 상황을 완화하는 한 가지 방법이 될 수 있다.</li>
+<li>④ 트리핀 딜레마는 달러화를 통한 국제 유동성 공급을 중단할 수도 없고 공급량을 무한정 늘릴 수도 없는 상황을 말한다.</li>
+<li>⑤ 브레턴우즈 체제에서 마르크화가 달러화에 대해 평가 절상되면, 같은 금액의 마르크화로 구입 가능한 금의 양은 감소한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>11번 — 정답 ⑤</strong><br />
+평가 절상은 자국 통화의 대외 가치를 높이는 것이고, 브레턴우즈 체제에서 금 1온스와 35달러의 비율은 고정되어 있었다. 마르크화가 달러화에 대해 평가 절상되면 같은 금액의 마르크화에 대응하는 달러화 금액이 커지므로 구입 가능한 금의 양은 오히려 '많아'진다. 따라서 감소한다고 한 ⑤가 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①14.1% ②23.8% ③15.9% ④10.0% ⑤35.7%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>미국을 포함한 세 국가가 존재하고 각각 다른 통화를 사용할 때, ㉠~㉢에 대한 설명으로 적절한 것은?</p>
+<ul>
+<li>① ㉠에서 자동적으로 결정되는 환율의 가짓수는 금에 자국 통화의 가치를 고정한 국가 수보다 하나 적다.</li>
+<li>② ㉡이 붕괴된 이후에도 여전히 달러화가 기축 통화라면 ㉡에 비해 교차 환율의 가짓수는 적어진다.</li>
+<li>③ ㉢에서 국가 수가 하나씩 증가할 때마다 환율의 전체 가짓수도 하나씩 증가한다.</li>
+<li>④ ㉠에서 ㉡으로 바뀌면 자동적으로 결정되는 환율의 가짓수가 많아진다.</li>
+<li>⑤ ㉡에서 교차 환율의 가짓수는 ㉢에서 생기는 환율의 가짓수보다 적다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>12번 — 정답 ⑤</strong><br />
+교차 환율은 기축 통화(달러화)를 제외한 통화들 간 환율이므로, 세 국가 조건에서 ㉡의 교차 환율 가짓수는 1이다. ㉢에서는 두 국가를 짝짓는 경우의 수만큼 환율이 생기므로 가짓수는 3이다. 따라서 ㉡의 교차 환율 가짓수(1)는 ㉢의 환율 가짓수(3)보다 적다(⑤).</p>
+<p><em>선택률</em> — 응시 98,566명 — ①5.1% ②13.9% ③13.2% ④18.4% ⑤49.8%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+브레턴우즈 체제가 붕괴된 이후 두 차례의 석유 가격 급등을 겪으면서 기축 통화국인 A국의 금리는 인상되었고 통화 공급은 감소했다. 여기에 A국 정부의 소득세 감면과 군비 증대는 A국의 금리를 인상시켰으며, 높은 금리로 인해 대량으로 외국 자본이 유입되었다. A국은 이로 인한 상황을 해소하기 위한 국제적 합의를 주도하여, 서로 교역을 하며 각각 다른 통화를 사용하는 세 국가 A, B, C는 외환 시장에 대한 개입을 합의했다. 이로 인해 A국 통화에 대한 B국 통화와 C국 통화의 환율은 각각 50%, 30% 하락했다.</p>
+</blockquote>
+<ul>
+<li>① A국의 금리 인상과 통화 공급 감소로 인해 A국 통화의 신뢰도가 낮아진 것은 외국 자본이 대량으로 유입되었기 때문이겠군.</li>
+<li>② 국제적 합의로 인한 A국 통화에 대한 B국 통화의 환율 하락으로 국제 유동성 공급량이 증가하여 A국 통화의 가치가 상승했겠군.</li>
+<li>③ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국 통화의 환율과 B국 통화에 대한 C국 통화의 환율은 모두 하락했겠군.</li>
+<li>④ 다른 모든 조건이 변하지 않았다면, 국제적 합의로 인해 A국 통화에 대한 B국과 C국 통화의 환율이 하락하여, B국에 대한 C국의 경상 수지는 개선되었겠군.</li>
+<li>⑤ 다른 모든 조건이 변하지 않았다면, A국의 소득세 감면과 군비 증대로 A국의 경상 수지가 악화되며, 그 완화 방안 중 하나는 A국 통화에 대한 B국 통화의 환율을 상승시키는 것이겠군.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong><br />
+A국 통화에 대한 환율 하락 폭이 B국 통화(50%)가 C국 통화(30%)보다 크므로, 합의 이후 B국 통화의 가치는 C국 통화에 비해 상대적으로 더 높게 평가된다. 그 결과 B국 통화에 대한 C국 통화의 환율은 상승하고, 이에 따라 B국에 대한 C국의 수출은 늘고 수입은 줄어 C국의 경상 수지는 개선된다(④).</p>
+<p><em>선택률</em> — 응시 98,574명 — ①10.0% ②24.5% ③18.3% ④32.2% ⑤16.0%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p>통화 정책은 중앙은행이 물가 안정과 같은 경제적 목적을 이루기 위해 이자율이나 통화량을 조절하는 것이다. 거시 경제 모형에서 중앙은행의 이자율 조정은 곡선의 이동으로 나타나는데, 중앙은행이 같은 소득 수준에서 더 낮은 이자율을 유지하기로 하면 균형 국민 소득이 늘어 경기가 ⓐ활성화되고 물가 상승 압력이 커진다. 반대로 이자율을 더 높게 유지하면 경기가 위축되고 물가 상승 압력이 줄어든다. 이처럼 중앙은행의 이자율 결정은 국민 소득과 물가에 ⓑ파급되므로, 통화 정책이 의도한 효과를 거두려면 정책의 운용 방식이 적절해야 한다.</p>
+<p>중앙은행의 통화 정책이 의도한 효과를 얻기 위한 요건 중에는 정책 신뢰성이 있다. 통화 정책은 민간의 신뢰가 없이는 성공을 거두기 어렵기 때문이다. 그런데 어떻게 통화 정책이 민간의 신뢰를 얻을 수 있는지에 대해서는 견해 차이가 있다. 일부 경제학자들은 중앙은행이 물가 상승률에 어떻게 대응할지를 미리 정한 규칙을 ‘준칙’으로 삼아 민간에 약속하고 어떤 상황에서도 이를 지키는 ㉠준칙주의를 ⓒ지지한다. 가령 중앙은행이 물가 상승률 목표치와 그에 따른 이자율 대응 규칙을 민간에 약속하고 이를 일관되게 지키면, 민간의 물가 불안 심리가 진정되어 정책 효과가 안정적으로 나타난다는 것이다. 준칙주의자들은 물가가 안정된 뒤 중앙은행이 경기 부양을 위해 약속을 어기고 싶은 유인이 생기더라도, 애초의 약속을 일관되게 지키는 편이 신뢰 유지에 ⓓ유리하다고 본다.</p>
+<p>그러나 민간이 사후 결과만으로는 중앙은행이 준칙을 지키려 했는지 판단하기 어렵고, 중앙은행에 준칙을 지킬 것을 강제할 수도 없다. 준칙주의와 대비되는 ㉡재량주의에서는 경제 여건 변화에 따른 신축적인 정책 대응을 지지하며, 준칙주의의 엄격한 실천은 현실적으로 어렵다고 본다. 예상보다 큰 경제 변동이 닥치면 사전에 정해 둔 준칙이 오히려 ⓔ장애가 될 수 있기 때문이다. 정책 신뢰성은 중요하지만, 이를 위해 중앙은행이 반드시 준칙에 얽매일 필요는 없다는 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>윗글에서 사용한 설명 방식에 해당하지 않는 것은?</p>
+<ul>
+<li>① 통화 정책의 신뢰 확보 방법을 둘러싼 두 견해의 차이를 드러내고 있다.</li>
+<li>② 중앙은행의 이자율 조정이 경기와 물가에 미치는 영향을 인과적으로 설명하고 있다.</li>
+<li>③ 준칙주의가 신뢰를 얻는 과정을 구체적인 예를 들어 설명하고 있다.</li>
+<li>④ 통화 정책의 주요 개념을 정의한 뒤 그에 바탕하여 논의를 전개하고 있다.</li>
+<li>⑤ 통화 정책의 목적을 시대별로 구분하여 그 변화 과정을 제시하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>8번 — 정답 ⑤</strong>
+이 글은 통화 정책의 개념을 정의하고(1문단), 신뢰 확보를 둘러싼 준칙주의와 재량주의의 견해 차이를 드러내며(2·3문단), 그 과정에서 인과 설명과 예시를 씁니다. 그런데 "통화 정책의 목적을 <em>시대별로 구분하여 변화 과정</em>"을 제시한 부분은 글에 없으므로 ⑤가 해당하지 않아 정답이에요. ①은 2·3문단(준칙주의 대 재량주의), ②는 1문단(이자율 조정→경기·물가의 인과), ③은 2문단("가령 ~ 약속하고 이를 일관되게 지키면" 예시), ④는 1문단(개념 정의 후 논의 전개)에서 확인됩니다.</p>
+<p><strong>9번 [3점] — 정답 ①</strong>
+㉠ 준칙주의는 약속한 규칙을 <em>어떤 상황에서도</em> 지키는 입장이에요. 〈보기〉의 준칙은 "목표치 2%를 넘으면 초과분 1%p마다 이자율 0.5%p 인상"입니다. 물가 상승률이 4%이니 초과분은 2%p, 따라서 이자율은 0.5%p×2 = 1%p 올라야 하고, 현재 3%이므로 4%가 됩니다. 그러므로 ①이 적절해요. ②는 경기 부양을 위해 규칙을 어기는 것이니 재량주의에 가깝고, ③은 인상을 하지 않은 것, ④는 규칙대로면 1%p 올려야 하는데 0.5%p만 올린 것이라 준칙 위반이며, ⑤는 미달이 아니라 초과 상황이므로 모두 ㉠의 대응이 아닙니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해할 때, ‘중앙은행’이 ㉠에 따라 취할 대응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 가상의 경제에서 중앙은행은 "물가 상승률이 목표치인 2%를 넘으면 그 초과분 1%p마다 이자율을 0.5%p 올리고, 2%에 못 미치면 그 미달분 1%p마다 이자율을 0.5%p 내린다"라는 준칙을 민간에 약속하였다. 현재 이자율은 3%이다. 그런데 일시적 호황으로 물가 상승률이 4%까지 올랐고, 중앙은행은 이를 정확히 파악하였다. 한편 중앙은행 내부에서는 "지금 경기를 더 부양하려면 이자율을 오히려 2%로 내리는 편이 낫다"라는 의견도 제기되었다.</p>
+</blockquote>
+<ul>
+<li>① 물가 상승률이 목표치를 2%p 초과했으므로, 이자율을 4%로 올린다.</li>
+<li>② 물가 상승률이 목표치를 2%p 초과했으나, 경기 부양을 위해 이자율을 2%로 내린다.</li>
+<li>③ 물가 상승률이 목표치를 2%p 초과했으므로, 이자율을 3%로 그대로 유지한다.</li>
+<li>④ 물가 상승률이 목표치를 2%p 초과했으나, 약속을 어겨 이자율을 3.5%로만 올린다.</li>
+<li>⑤ 물가 상승률이 목표치에 2%p 미달했으므로, 이자율을 2%로 내린다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>윗글의 ㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠에서는 물가가 안정된 뒤 경기 부양의 유인이 생기더라도 애초의 약속을 지키는 편이 바람직하다고 본다.</li>
+<li>② ㉡에서는 중앙은행이 스스로 정한 준칙을 어떤 상황에서도 지키는 것이 가능하다고 본다.</li>
+<li>③ ㉠에서는 ㉡과 달리, 통화 정책에서 민간의 신뢰 확보를 중요하게 여기지 않는다.</li>
+<li>④ ㉡에서는 ㉠과 달리, 경제 여건이 변해도 신축적인 정책 대응은 효과가 없다고 본다.</li>
+<li>⑤ ㉠에서는 ㉡과 달리, 큰 경제 변동이 닥치면 사전에 정한 준칙이 장애가 된다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>10번 — 정답 ①</strong>
+2문단에서 준칙주의자들은 "물가가 안정된 뒤 ... 약속을 어기고 싶은 유인이 생기더라도, 애초의 약속을 일관되게 지키는 편이" 낫다고 본다고 했으므로 ①이 적절합니다. ② 스스로 정한 준칙을 어떤 상황에서도 지키는 것이 가능하다고 보는 쪽은 ㉠(준칙주의)이지 ㉡이 아니에요. ③ ㉠도 신뢰 확보를 중요하게 여기므로 "중요하게 여기지 않는다"는 틀립니다. ④ ㉡(재량주의)은 신축적 대응을 <em>지지</em>하므로 "효과가 없다"는 거꾸로예요. ⑤ 큰 변동에서 준칙이 장애가 된다고 보는 쪽은 ㉡(재량주의)이므로 ㉠과 ㉡이 뒤바뀌었습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>ⓐ~ⓔ의 문맥적 의미를 활용하여 만든 문장으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 축제가 열리자 거리의 상권이 다시 활성화되었다.</li>
+<li>② ⓑ: 작은 소문이 마을 전체로 파급되는 데는 하루도 걸리지 않았다.</li>
+<li>③ ⓒ: 많은 시민이 그 후보의 공약을 지지하였다.</li>
+<li>④ ⓓ: 그는 경기 침체기에도 자금이 넉넉하여 새 사업을 시작하기에 유리하였다.</li>
+<li>⑤ ⓔ: 폭설이 구조대의 접근에 큰 장애가 되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>11번 — 정답 ④</strong>
+ⓓ의 '유리하다'는 "이롭다, 형편이 좋다"라는 <em>형용사</em>로, 글에서는 "신뢰 유지에 유리하다"처럼 어떤 일에 이로움을 나타내요. ④는 '유리하다'를 "새 사업을 시작하기에 유리하였다"처럼 자연스러운 문장에 넣은 것처럼 보이지만, 그 앞에서 '자금이 넉넉하여'라는 <em>수단·여건</em>을 든 뒤 다시 "유리하였다"로 맺어 무엇에 견주어 유리한지가 분명하지 않습니다. 본래 '유리하다'는 비교 대상이 전제될 때 그에 견주어 형편이 좋음을 뜻하는데, ④는 그 비교 기준 없이 단지 여건이 좋다는 의미로 쓰여 ⓓ의 문맥적 의미(신뢰 유지라는 목적에 <em>견주어</em> 일관된 준수가 더 이롭다)와 어긋납니다. 따라서 ④가 적절하지 않아 정답이에요. ① 활성화되다(활발해지다), ② 파급되다(영향이 퍼지다), ③ 지지하다(편들어 도와 힘을 보태다), ⑤ 장애(가로막아 거치적거리는 것)는 각각 ⓐ·ⓑ·ⓒ·ⓔ의 문맥적 의미에 맞게 쓰였습니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>통화 정책</strong>: 중앙은행이 물가 안정 등을 위해 이자율이나 통화량을 조절하는 정책.</li>
+<li><strong>정책 신뢰성</strong>: 통화 정책이 효과를 거두려면 민간이 정책을 믿어야 한다는 요건.</li>
+<li><strong>준칙주의</strong>: 미리 정한 규칙(준칙)을 어떤 상황에서도 지켜 신뢰를 얻으려는 입장.</li>
+<li><strong>재량주의</strong>: 경제 여건 변화에 따라 신축적으로 대응해야 한다는 입장.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>준칙주의(㉠)</th>
+<th>재량주의(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핵심 주장</td>
+<td>정한 규칙을 일관되게 지킨다</td>
+<td>여건에 따라 신축적으로 대응한다</td>
+</tr>
+<tr>
+<td>신뢰 확보 방법</td>
+<td>약속을 지켜 불안 심리 진정</td>
+<td>상황에 맞는 적절한 대응</td>
+</tr>
+<tr>
+<td>약점 지적</td>
+<td>큰 변동 시 준칙이 장애가 될 수 있음</td>
+<td>준칙을 지켰는지 판단·강제가 어려움</td>
+</tr>
+<tr>
+<td>신뢰성에 대한 태도</td>
+<td>모두 중요하게 여김 (대응 방식이 다를 뿐)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>통화 정책에 '정책 신뢰성'이 왜 필요한가요?</div><div class='qa-a'>민간이 정책을 믿어야 물가 불안 심리가 진정되어 정책이 의도한 효과를 거둘 수 있기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>준칙주의자들은 물가가 안정된 뒤에도 왜 약속을 지키라고 하나요?</div><div class='qa-a'>약속을 어기는 비일관성을 민간이 알아채면 신뢰가 훼손되므로, 일관되게 지키는 편이 신뢰 유지에 낫기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>재량주의가 준칙주의를 비판하는 핵심은?</div><div class='qa-a'>준칙을 지켰는지 판단·강제하기 어렵고, 예상보다 큰 변동이 오면 사전에 정한 준칙이 오히려 걸림돌이 될 수 있다는 점입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2018학년도 6월 [22~25]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>통화 정책은 중앙은행이 물가 안정과 같은 경제적 목적의 달성을 위해 이자율이나 통화량을 조절하는 것이다. 대표적인 통화 정책 수단인 ‘공개 시장 운영’은 중앙은행이 민간 금융 기관을 상대로 채권을 매매해 금융 시장의 이자율을 정책적으로 결정한 기준 금리 수준으로 접근시키는 것이다. 중앙은행이 채권을 매수하면 이자율은 하락하고, 채권을 매도하면 이자율은 상승한다. 이자율이 하락하면 소비와 투자가 확대되어 경기가 활성화되고 물가 상승률이 오르며, 이자율이 상승하면 경기가 위축되고 물가 상승률이 떨어진다. 이와 같이 공개 시장 운영의 영향은 경제 전반에 ⓐ파급된다.</p>
+<p>중앙은행의 통화 정책이 의도한 효과를 얻기 위한 요건 중에는 ‘선제성’과 ‘정책 신뢰성’이 있다. 먼저 통화 정책이 선제적이라는 것은 중앙은행이 경제 변동을 예측해 이에 미리 대처한다는 것이다. 기준 금리를 결정하고 공개 시장 운영을 실시하여 그 효과가 실제로 나타날 때까지는 시차가 발생하는데 이를 ‘정책 외부 시차’라 하며, 이 때문에 선제성이 문제가 된다. 예를 들어 중앙은행이 경기 침체 국면에 들어서야 비로소 기준 금리를 인하한다면, 정책 외부 시차로 인해 경제가 스스로 침체 국면을 벗어난 다음에야 정책 효과가 ⓑ발현될 수도 있다. 이 경우 경기 과열과 같은 부작용이 ⓒ수반될 수 있다. 따라서 중앙은행은 통화 정책을 선제적으로 운용하는 것이 바람직하다.</p>
+<p>또한 통화 정책은 민간의 신뢰가 없이는 성공을 거둘 수 없다. 따라서 중앙은행은 정책 신뢰성이 손상되지 않게 ⓓ유의해야 한다. 그런데 어떻게 통화 정책이 민간의 신뢰를 얻을 수 있는지에 대해서는 견해 차이가 있다. 경제학자 프리드먼은 중앙은행이 특정한 정책 목표나 운용 방식을 ‘준칙’으로 삼아 민간에 약속하고 어떤 상황에서도 이를 지키는 ㉠‘준칙주의’를 주장한다. 가령 중앙은행이 물가 상승률 목표치를 민간에 약속했다고 하자. 민간이 이 약속을 신뢰하면 물가 불안 심리가 진정된다. 그런데 물가가 일단 안정되고 나면 중앙은행으로서는 이제 경기를 ⓔ부양하는 것도 고려해 볼 수 있다. 문제는 민간이 이 비일관성을 인지하면 중앙은행에 대한 신뢰가 훼손된다는 점이다. 준칙주의자들은 이런 경우에 중앙은행이 애초의 약속을 일관되게 지키는 편이 바람직하다고 주장한다.</p>
+<p>그러나 민간이 사후적인 결과만으로는 중앙은행이 준칙을 지키려 했는지 판단하기 어렵고, 중앙은행에 준칙을 지킬 것을 강제할 수 없는 것도 사실이다. 준칙주의와 대비되는 ㉡‘재량주의’에서는 경제 여건 변화에 따른 신축적인 정책 대응을 지지하며 준칙주의의 엄격한 실천은 현실적으로 어렵다고 본다. 아울러 준칙주의가 최선인지에 대해서도 물음을 던진다. 예상보다 큰 경제 변동이 있으면 사전에 정해 둔 준칙이 장애물이 될 수 있기 때문이다. 정책 신뢰성은 중요하지만, 이를 위해 중앙은행이 반드시 준칙에 얽매일 필요는 없다는 것이다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>22</div><div class='q-stem'></div></div>
+<p>윗글에서 사용한 설명 방식에 해당하지 않는 것은?</p>
+<ul>
+<li>① 통화 정책의 목적을 유형별로 나누어 제시하고 있다.</li>
+<li>② 통화 정책에서 선제적 대응의 필요성을 예를 들어 설명하고 있다.</li>
+<li>③ 공개 시장 운영이 경제 전반에 영향을 미치는 과정을 인과적으로 설명하고 있다.</li>
+<li>④ 관련된 주요 용어의 정의를 바탕으로 통화 정책의 대표적인 수단을 설명하고 있다.</li>
+<li>⑤ 통화 정책의 신뢰성 확보를 위해 준칙을 지켜야 하는지에 대한 두 견해의 차이를 드러내고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>22번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>23</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해할 때 ‘경제학자 병’이 제안한 내용으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+어떤 가상의 경제에서 20○○년 1월 1일부터 9월 30일까지 3개 분기 동안 중앙은행의 기준 금리가 4%로 유지되는 가운데 다양한 물가 변동 요인의 영향으로 물가 상승률은 아래 표와 같이 나타났다. 단, 각 분기의 물가 변동 요인은 서로 관련이 없다고 한다.</p>
+<table>
+<thead>
+<tr>
+<th>기간</th>
+<th>1/1∼3/31<br>1분기</th>
+<th>4/1∼6/30<br>2분기</th>
+<th>7/1∼9/30<br>3분기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>물가 상승률</td>
+<td>2%</td>
+<td>3%</td>
+<td>3%</td>
+</tr>
+</tbody>
+</table>
+<p>경제학자 병은 1월 1일에 위 표의 내용을 예측할 수 있었고 국민들의 생활 안정을 위해 물가 상승률을 매 분기 2%로 유지해야 한다고 주장하였다. 이를 위해 다음 사항을 고려한 선제적 통화 정책을 제안했으나 받아들여지지 않았다.</p>
+<p><strong><span class="boxmark">[경제학자 병의 고려 사항]</span></strong>
+기준 금리가 4%로부터 1.5%p*만큼 변하면 물가 상승률은 위 표의 각 분기 값을 기준으로 1%p만큼 달라지며, 기준 금리 조정과 공개 시장 운영은 1월 1일과 4월 1일에 수행된다. 정책 외부 시차는 1개 분기이며 기준 금리 조정에 따른 물가 상승률 변동 효과는 1개 분기 동안 지속된다.</p>
+<p>* %p는 퍼센트 간의 차이를 말한다. 예를 들어 1%에서 2%로 변화하면 이는 1%p 상승한 것이다.</p>
+</blockquote>
+<ul>
+<li>① 중앙은행은 기준 금리를 1월 1일에 2.5%로 인하하고 4월 1일에도 이를 2.5%로 유지해야 한다.</li>
+<li>② 중앙은행은 기준 금리를 1월 1일에 2.5%로 인하하고 4월 1일에는 이를 4%로 인상해야 한다.</li>
+<li>③ 중앙은행은 기준 금리를 1월 1일에 4%로 유지하고 4월 1일에는 이를 5.5%로 인상해야 한다.</li>
+<li>④ 중앙은행은 기준 금리를 1월 1일에 5.5%로 인상하고 4월 1일에는 이를 4%로 인하해야 한다.</li>
+<li>⑤ 중앙은행은 기준 금리를 1월 1일에 5.5%로 인상하고 4월 1일에도 이를 5.5%로 유지해야 한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>23번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>24</div><div class='q-stem'></div></div>
+<p>윗글의 ㉠과 ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠에서는 중앙은행이 정책 운용에 관한 준칙을 지키느라 경제 변동에 신축적인 대응을 못해도 이를 바람직하다고 본다.</li>
+<li>② ㉡에서는 중앙은행이 스스로 정한 준칙을 지키는 것은 얼마든지 가능하다고 본다.</li>
+<li>③ ㉠에서는 ㉡과 달리, 정책 운용에 관한 준칙을 지키지 않아도 민간의 신뢰를 확보할 수 있다고 본다.</li>
+<li>④ ㉡에서는 ㉠과 달리, 통화 정책에서 민간의 신뢰 확보를 중요하게 여기지 않는다.</li>
+<li>⑤ ㉡에서는 ㉠과 달리, 경제 상황 변화에 대한 통화 정책의 탄력적 대응이 효과적이지 않다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>24번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>25</div><div class='q-stem'></div></div>
+<p>ⓐ~ⓔ의 문맥적 의미를 활용하여 만든 문장으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 그의 노력으로 소비자 운동이 전국적으로 파급되었다.</li>
+<li>② ⓑ: 의병 활동은 민중의 애국 애족 의식이 발현한 것이다.</li>
+<li>③ ⓒ: 이 질병은 구토와 두통 증상을 수반하는 경우가 많다.</li>
+<li>④ ⓓ: 기온과 습도가 높은 요즘 건강관리에 유의해야 한다.</li>
+<li>⑤ ⓔ: 장남인 그가 늙으신 부모와 어린 동생들을 부양하고 있다.</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>25번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>거시 경제 이론의 변천 및 IS–LM과 IS–MP 모형 비교·분석 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='거시 경제 이론의 변천 및 IS–LM과 IS–MP 모형 비교·분석 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>

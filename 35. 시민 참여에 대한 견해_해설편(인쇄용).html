@@ -1,0 +1,345 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>시민 참여에 대한 견해 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr><tr><td>정답</td>
+<td><b>②</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>②</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>②</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ②</strong>
+이 글은 1문단에서 시민 참여를 긍정하는 관점을 소개하고, 2·3문단에서 루소와 밀이라는 고전 이론가의 견해를 차례로 설명한 뒤, 4문단에서 그 견해가 참여 민주주의 이론으로 이어지는 과정을 서술하고 있어요. 곧 고전 이론가의 견해가 후대 이론으로 발전하는 흐름을 보여 주므로 ②가 적절합니다. 두 관점은 상반된 것이 아니라 같은 방향(참여 긍정)의 견해라 ①의 ‘상반·절충’은 맞지 않고, 사회적 배경을 시대순으로 분석하거나(③) 사례를 유형별로 분류하거나(④) 논쟁의 한계를 평가하는(⑤) 전개는 나타나지 않아요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ⑤</strong>
+㉠은 루소를 가리키는 표지예요. 루소는 시민 참여가 시민적 자질을 ‘길러 내는’ 교육적 기능을 한다고 보았죠(2문단). 그런데 ⑤는 참여가 자질을 기르기보다 ‘이미 갖춘 자질을 확인하는’ 데 의의가 있다고 하여 루소의 견해를 정반대로 뒤집었으므로 적절하지 않아 정답입니다. ①은 루소의 ‘사회적·정치적 행동의 개발’(2문단), ②는 루소의 ‘일반 의지의 대표 불가능성’(2문단), ③은 루소의 ‘공동체 소속감’(2문단), ④는 루소의 ‘대의제하의 제한된 자유’(2문단)에 각각 부합하는 적절한 진술입니다.</p></div>
+<div class='exp'><p><strong>3번 — 정답 ③</strong>
+4문단에서 참여 민주주의 이론은 루소가 강조한 직접적 의사 결정 참여와 밀이 강조한 일상 영역의 참여를 ‘대규모 현대 사회에 맞게 결합’하며 두 사람의 가정을 계승한다고 했으므로 ③이 적절해 정답입니다. ①은 참여의 영역을 정치에 ‘한정’한 것이 아니라 작업장·지역 공동체로 ‘넓혔다’고 했으니 반대이고, ②는 참여를 결정의 수단으로만 보지 않고 시민적 자질을 기르는 과정으로 본다고 했으므로 어긋나며, ④의 ‘대의제 부정·모든 결정의 직접 처리’나 ⑤의 ‘자질의 사전 완성 강조’는 지문에 없는 내용입니다.</p></div>
+<div class='exp'><p><strong>4번 — 정답 ⑤</strong>
+루소는 일반 의지가 대표될 수 없다는 점을(2문단), 밀은 참여의 교육적 효과가 지방 수준에서 더 크다는 점을(3문단) 각각 참여 강조의 근거로 들었으므로 ⑤가 적절해 정답입니다. ①은 참여의 자질 함양 효과를 루소도 강조했으므로 ‘루소와 달리 밀’이 틀렸고, ②는 대규모 사회에서 대의제를 이상적이라 본 사람은 루소가 아니라 밀이므로 주체를 맞바꾸었으며, ③은 두 사람 모두 참여 자체를 강조했지 자질의 선천적 우열을 성패의 관건으로 보지 않았고, ④는 지방 수준의 교육 효과는 밀의 견해일 뿐 루소는 그렇게 한정하지 않았습니다.</p>
+<p><strong>5번 [3점] — 정답 ①</strong>
+밀은 참여의 교육적 효과가 ‘중앙 단위에서보다 지방 수준에서 더 크다’고 보아 지방 자치를 중시했어요(3문단). 그런데 ①은 ‘중앙 정부가 일괄로 정해 통보하는 방식’을 들어 밀이 ‘중앙 단위의 참여를 더 중시했다’고 했으니, 밀의 견해를 정반대로 적용한 것이라 적절하지 않아 정답입니다. 게다가 〈보기〉에서 책임감을 더 느낀 것은 주민이 ‘직접 정한 결정’ 쪽이지 통보 방식이 아니므로 사실 관계도 어긋나요. ②는 교육적 기능, ③은 지방적 수준의 이슈(밀), ④는 참여를 통한 자질 함양, ⑤는 의사 결정 참여(루소)에 각각 들어맞는 적절한 이해입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>일반 의지</strong>: 개인의 사사로운 이익이 아니라 공동의 이익을 바라는 마음. 루소는 이것이 남에 의해 대표될 수 없다고 보았어요.</li>
+<li><strong>대의제</strong>: 시민이 대표(의원)를 뽑아 그들이 시민의 뜻을 대신 결정하게 하는 제도.</li>
+<li><strong>참여의 교육적 기능</strong>: 참여하는 과정 자체가 시민의 책임감·공동체 의식·정치적 능력을 길러 준다는 생각.</li>
+<li><strong>참여 민주주의</strong>: 루소·밀의 견해를 이어받아, 시민이 다양한 영역의 결정과 집행에 직접 참여하는 것을 중시하는 이론.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>루소</th>
+<th>밀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>참여의 의미</td>
+<td>의사 결정에의 직접 참여</td>
+<td>통치에의 실제 참여</td>
+</tr>
+<tr>
+<td>이상적 통치 형태</td>
+<td>직접 민주주의</td>
+<td>(대규모 사회에서는) 대의제</td>
+</tr>
+<tr>
+<td>특별히 강조한 것</td>
+<td>일반 의지·직접 참여</td>
+<td>지방 자치의 교육적 효과</td>
+</tr>
+<tr>
+<td>공통점</td>
+<td>참여의 교육적 기능 강조</td>
+<td>시민적 자질의 함양 중시</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>루소가 직접 민주주의를 주장한 까닭은 무엇인가요?</div><div class='qa-a'>공동의 이익을 바라는 ‘일반 의지’는 타인이 대신 표현할 수 없으므로, 시민이 직접 결정에 참여해야 한다고 보았기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>밀이 지방 자치를 중시한 까닭은?</div><div class='qa-a'>참여의 교육적 효과가 중앙보다 지방 수준에서 더 크고, 일상에 영향을 주는 이슈가 지방에서 다루어지기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>참여 민주주의 이론은 루소·밀과 어떻게 이어지나요?</div><div class='qa-a'>두 사람의 참여 강조와 교육적 기능 중시를 계승하되, 참여의 영역을 정치 밖 일상으로까지 넓혀 현대 사회에 맞게 발전시켰습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 9월 [38~42] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>38번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>39번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>40번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>41번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>42번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+3문단에서 루소의 직접 민주주의는 ‘모든 시민이 한자리에 모여 직접 참여할 수 있을 만큼 사회의 규모가 작아야’ 실현되며, 그래서 큰 사회에 그대로 적용하기 어렵다고 했어요. 그런데 ⑤는 ‘규모가 클수록 실현 조건이 더 잘 갖추어진다’고 하여 정반대로 말했으므로 일치하지 않아 정답입니다. ①은 1문단(대표 불가능성), ②는 1문단(선거 기간에만 자유), ③은 2문단(절차이자 일체화 과정), ④는 4문단(자질 함양의 공통 인정)에서 그대로 확인됩니다.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+루소는 일반 의지가 대표될 수 없다는 전제를 끝까지 고수한 인물이에요. 큰 사회에서 ‘직접 참여를 포기하고 일반 의지의 대표를 허용’하는 방식은 루소가 아니라 그를 비판하며 갈라져 나온 다른 견해 쪽이므로(3문단), ①은 루소의 견해로 적절하지 않아 정답입니다. ②는 ‘대표에게 의지를 맡기면 부자유’(1문단), ③은 ‘직접 참여 시 일반 의지의 왜곡 없는 실현’(2문단), ④는 ‘참여 과정의 행동 개발’(2문단), ⑤는 ‘의지는 양도·대리할 수 없다’(1문단)에 각각 부합합니다.</p></div>
+<div class='exp'><p><strong>8번 — 정답 ④</strong>
+㉠은 루소를 가리키는 표지예요. 루소는 시민의 직접 참여를 통해 일반 의지가 실현되는 것을 이상으로 보았으므로(2문단) ④가 적절해 정답입니다. ①은 루소가 대표 가능성을 ‘부정’하고 대의제를 ‘비판’했으므로 반대이고, ②는 루소가 참여의 교육적 기능을 ‘중시’했으므로 어긋나며, ③·⑤는 루소가 참여를 통해 공동체 소속감이 ‘강해지고’ 공·사 영역의 갈등을 ‘느끼지 않게 된다’고 본 것을 정반대로 뒤집은 진술입니다.</p></div>
+<div class='exp'><p><strong>9번 — 정답 ⑤</strong>
+‘다른 견해’는 ‘규모가 큰 사회에서 참여를 어떻게 실현할 것인가’라는 물음에서 루소와 갈라져 나온 입장이에요(3문단). 따라서 루소에게 던질 수 있는 의문은 큰 사회에서 직접 참여를 어떻게 실현하느냐는 ⑤가 가장 적절해 정답입니다. ①·③·④는 두 견해가 ‘공유하는’ 전제(교육적 과정·참여의 핵심성·일체화)를 의문인 양 제기한 것이라 부적절하고, ②는 일반 의지가 ‘공동의 이익’을 추구한다는 지문의 정의를 뒤집은 잘못된 전제에서 출발한 의문입니다.</p></div>
+<div class='exp'><p><strong>10번 — 정답 ③</strong>
+루소는 일반 의지의 대표 불가능성을 근거로 직접 민주주의를(본문), 밀은 규모의 제약을 근거로 큰 사회에서의 대의제를(〈보기〉) 각각 이상적이라고 보았으므로 ③이 적절해 정답입니다. ①은 큰 사회에서 대의제를 받아들인 쪽은 루소가 아니라 밀이므로 주체가 뒤바뀌었고, ②는 밀도 참여의 교육적 효과를 인정했으므로 틀렸으며, ④는 밀이 교육적 효과를 ‘지방 수준에서 더 크다’고 보았으므로 반대이고, ⑤는 밀이 큰 사회에서 ‘대의제’라는 다른 방식을 택했을 뿐 참여 자체를 포기하지는 않았습니다.</p>
+<p><strong>11번 [3점] — 정답 ④</strong>
+루소는 대의제하의 시민이 ‘선거가 이루어지는 동안에만 자유로울 뿐’이라고 보았어요(1문단). 갑시의 일부 주민이 ‘의사가 충분히 반영되지 못했다’고 느낀 것은 오히려 루소의 이러한 지적을 뒷받침하는 사례인데, ④는 이를 ‘그 까닭이 사라졌음을 보여 준다’고 거꾸로 해석했으므로 적절하지 않아 정답입니다. ①은 직접 참여(루소), ②는 참여를 통한 일체화, ③은 큰 사회에서의 대의(다른 견해), ⑤는 직접 민주주의의 규모 제약(3문단)에 각각 들어맞는 적절한 이해입니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>일반 의지</strong>: 공동의 이익을 바라는 마음. 루소는 이것이 양도·대리될 수 없다고 보았어요.</li>
+<li><strong>직접 민주주의</strong>: 대표를 거치지 않고 시민이 결정에 직접 참여하는 방식.</li>
+<li><strong>규모의 제약</strong>: 사회가 너무 크면 모든 시민이 한자리에 모여 직접 참여하기 어렵다는 한계.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>├─▶ 루소: 일반 의지는 대표될 수 없다</span><span class='fs-sub'>작은 공동체에서 설득력, 큰 사회엔 적용 난점</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>직접 민주주의 고수</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>루소가 대의제를 비판한 까닭은?</div><div class='qa-a'>일반 의지는 대표될 수 없는데, 대의제에서는 시민이 대표에게 의지를 맡겨 선거 기간에만 자유롭기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>‘다른 견해’는 루소와 어디에서 갈라지나요?</div><div class='qa-a'>규모가 큰 사회에서 직접 참여를 어떻게 실현할 것인가라는 물음에서 갈라져, 직접 참여의 이상을 인정하되 규모의 제약을 받아들입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 견해가 그래도 함께 인정하는 것은?</div><div class='qa-a'>시민 참여가 민주주의의 핵심이며, 참여가 시민적 자질을 기르는 교육적 과정이라는 점입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2018학년도 6월 [16~21] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>17번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>18번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>19번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>21번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>12번 — 정답 ②</strong>
+이 글은 참여의 교육적 기능에 관한 루소의 통찰을 밀이 ‘이어받아’ 조건을 더 살피고, 다시 후대 이론가들이 이를 ‘종합’하는 흐름으로 짜여 있어요. 곧 여러 견해를 선행 논의와 연결하여 설명하므로 ②가 적절합니다. 분류 기준의 문제점 검토(①), 상반된 견해의 우열 평가(③), 사회적 배경의 시대순 분석(④), 난관과 극복 과정 소개(⑤)는 이 글에 나타나지 않아요.</p></div>
+<div class='exp'><p><strong>13번 — 정답 ④</strong>
+3문단에서 후대 이론가들은 참여의 교육적 효과가 ‘정치 영역에만 한정되지 않는다’고 보아, 작업장·지역 공동체 등 일상의 여러 영역으로 넓혔어요. 그런데 ④는 그 효과가 ‘정치 영역에만 한정된다’고 정반대로 말했으므로 적절하지 않아 정답입니다. ①은 루소의 ‘행동 개발’(1문단), ②는 밀의 ‘계몽이라는 일차 과제’(2문단), ③은 밀의 ‘지방 참여 없으면 보통 선거도 무용’(2문단), ⑤는 후대 이론가들의 ‘자질의 전이’(3문단)에 각각 부합합니다.</p>
+<p><strong>14번 [3점] — 정답 ⑤</strong>
+후대 이론가들은 참여의 교육적 효과가 여러 영역에 걸쳐 나타나며 한 영역의 자질이 다른 영역으로 옮아간다고 보았어요(3문단). 또 밀은 그 효과가 ‘중앙 단위에서보다 지방 수준에서 더 크다’고 보았죠(2문단). 그런데 ⑤는 그 효과가 ‘중앙 단위에 한정될 때 비로소 나타난다’고 하여 두 서술을 모두 뒤집었으므로 적절하지 않아 정답입니다. ①은 일상의 이슈 참여, ②는 자질을 기르는 교육적 과정, ③은 자질의 전이, ④는 정치 영역 밖의 교육적 효과에 각각 들어맞는 적절한 추론입니다.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong>
+ⓑ ‘받게’는 ‘느낌을 받게 되어’의 맥락으로, 어떤 감정이나 인상을 가지게 된다는 뜻이에요. 반면 ‘수취(收取)하다’는 ‘거두어들이다’의 뜻으로 돈이나 물건을 받아 챙기는 맥락에 쓰이므로, 추상적인 ‘느낌’과는 호응하지 않아 바꿔 쓰기에 적절하지 않습니다. ⓐ ‘비롯되어’는 ‘연원(淵源)하여’, ⓒ ‘주목하였다’는 ‘착안(着眼)하였다’, ⓓ ‘주어지기’는 ‘부여(附與)되기’, ⓔ ‘삼았다’는 ‘설정(設定)하였다’로 각각 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>참여의 교육적 기능</strong>: 참여하는 행위 자체가 시민의 책임감·정치적 능력·공동체 의식을 길러 준다는 생각.</li>
+<li><strong>자질의 전이</strong>: 한 영역의 참여에서 기른 능력이 다른 영역의 참여에도 발휘되는 현상.</li>
+<li><strong>시민적 자질</strong>: 민주주의가 잘 굴러가는 데 필요한, 정치에 관한 지식과 민주주의에 대한 신념 같은 시민의 됨됨이.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>누가</th>
+<th>무엇을 강조했나</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>출발</td>
+<td>루소</td>
+<td>참여는 사회적·정치적 행동을 기르고 공동체 소속감을 키운다</td>
+</tr>
+<tr>
+<td>발전</td>
+<td>밀</td>
+<td>교육적 효과의 ‘조건’ — 지방 자치에서 효과가 가장 크다</td>
+</tr>
+<tr>
+<td>종합</td>
+<td>후대 이론가</td>
+<td>참여를 시민을 기르는 핵심 과정으로, 정치 밖 일상 영역까지 확장</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참여의 교육적 기능이라는 한 가지 생각이 <strong>루소 → 밀 → 후대 이론가</strong>로 이어지며 점점 더 넓고 정교해지는 흐름을 잡아 보세요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>루소는 참여의 교육적 기능을 어떻게 보았나요?</div><div class='qa-a'>참여 과정에서 책임 있는 행동이 길러지고, 시민이 공동체 소속감을 더 강하게 느끼게 된다고 보았습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>밀이 지방 자치를 중시한 까닭은?</div><div class='qa-a'>참여의 교육적 효과가 중앙보다 지방 수준에서 더 크고, 일상의 이슈가 지방에서 다루어지기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>후대 이론가들은 참여의 영역을 어떻게 넓혔나요?</div><div class='qa-a'>정치 영역을 넘어 작업장·지역 공동체 등 일상의 여러 영역으로 넓혀, 그곳의 참여도 시민적 자질을 기른다고 보았습니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2024학년도 6월 [4~7] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>4번 — 정답 ②</strong><br />
+재니스는 기존 연구에서 다루지 않았던 설득 효과에 주목했고, 레벤달은 재니스의 연구를 비판하며 진척시켰으며, 위티는 선행 연구들을 종합해 결론을 도출했다. 즉 공포 소구에 대한 연구들을 선행 연구와 연결하여 설명하고 있으므로 ②가 적절하다. 사회적 배경 분석(①), 분류 기준의 문제점 검토(③), 남겨진 연구 과제 제시(④), 난관과 극복 과정 소개(⑤)는 나타나지 않는다.</p>
+<p><em>선택률</em> — 응시 98,574명 — ①1.1% ②90.5% ③2.6% ④3.2% ⑤2.4%</p></div>
+<div class='exp'><p><strong>5번 — 정답 ④</strong><br />
+위티에 따르면 권고를 따르게 되는 위험 통제 반응은 위협과 효능감의 수준이 모두 높을 때 작동하며, 위협의 수준이 높으려면 수용자가 위험을 자신이 겪을 수 있고 그 정도가 크다고 느껴야 한다. 위험을 느끼지 않으면 위협 수준이 낮아 반응 자체가 없게 되므로 ④는 적절하지 않다. ①은 1문단의 세 수준 실험, ②는 2문단의 비판 근거, ③은 2문단의 두 반응 서술, ⑤는 3문단에서 위협과 효능감이 각각 독립적으로 정의된다는 점과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①1.4% ②1.3% ③5.0% ④86.0% ⑤7.1%</p></div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong><br />
+위험 통제 반응이 작동한 집단3은 위협·효능감이 모두 높고, 공포 통제 반응이 작동한 집단4는 위협은 높지만 효능감이 낮다. 따라서 두 집단의 효능감 수준은 서로 다르므로 ⑤가 적절하지 않다. 반응이 없었던 집단1·2는 위협의 수준이 낮았던 집단(①), 집단3의 효능감은 높음(②), 집단4는 위협 높음·효능감 낮음(③), 집단2(위협 낮음)와 집단4(위협 높음)는 위협 수준이 다름(④).</p>
+<p><em>선택률</em> — 응시 98,571명 — ①1.1% ②2.9% ③4.8% ④4.5% ⑤87.3%</p></div>
+<div class='exp'><p><strong>7번 — 정답 ⑤</strong><br />
+‘기여(寄與)하다’는 ‘도움이 되도록 이바지하다’의 뜻인데, ‘아무 영향을 주지 않는다’의 ‘주다’는 도움의 의미를 내포하지 않으므로 ⑤는 바꾸어 쓰기에 적절하지 않다. ‘편향되다(한쪽으로 치우치게 되다)’, ‘명명하다(이름을 지어 붙이다)’, ‘경험하다(실제로 해 보거나 겪어 보다)’, ‘발송하다(우편 등으로 보내다)’는 각각 ㉠~㉣과 바꿔 쓸 수 있다.</p>
+<p><em>선택률</em> — 응시 98,572명 — ①2.0% ②8.4% ③2.2% ④2.4% ⑤86.2%</p></div>
+</div></div>
+</body></html>

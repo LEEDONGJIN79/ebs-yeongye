@@ -1,0 +1,341 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='preconnect' href='https://fonts.googleapis.com'><link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'><style>.printbar{position:sticky;top:0;z-index:9;background:#8e4a33;color:#fff;font-family:'Noto Sans KR',sans-serif;font-size:13px;text-align:center;padding:9px 14px}@media print{.printbar{display:none}} -webkit-print-color-adjust:exact;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style><style>
+
+@page{
+  size:A4; margin:18mm 16mm 20mm;
+  @bottom-center{content:counter(page) " / " counter(pages);
+    font-family:'Noto Sans KR';font-size:9pt;color:#a89a86;}
+  @top-right{content:string(doctitle);font-family:'Noto Sans KR';font-size:8.5pt;color:#bcae98;}
+}
+*{box-sizing:border-box}
+body{font-family:'Gowun Batang','Noto Serif KR',serif;color:#3d3630;font-size:10.5pt;line-height:1.65;margin:0}
+.doc-title{string-set:doctitle content();font-family:'Gowun Batang','Noto Serif KR';font-size:19pt;
+  color:#8e4a33;margin:0 0 2mm;border-bottom:2.5pt solid #b0654a;padding-bottom:3mm}
+.doc-sub{font-family:'Noto Sans KR';font-size:9.5pt;color:#6e6258;margin:0 0 6mm}
+h2.sec{font-family:'Gowun Batang','Noto Serif KR';font-size:13pt;color:#8e4a33;margin:6mm 0 2mm}
+.intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:3mm 5mm;margin:3mm 0;font-family:'Noto Sans KR';font-size:9.8pt;line-height:1.6}
+.intro-box table{font-size:9pt}
+table{border-collapse:collapse;width:100%;margin:2.5mm 0;font-family:'Noto Sans KR';font-size:9pt}
+th,td{border:0.6pt solid #d9cfbb;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}
+th{background:#f6efe1;color:#8e4a33}
+pre{background:#fbf6ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 4mm;
+  font-family:'Noto Sans KR',monospace;font-size:8.4pt;line-height:1.45;white-space:pre-wrap;page-break-inside:avoid;break-inside:avoid}
+.set{margin:5mm 0;page-break-inside:auto}
+.set-banner{font-family:'Gowun Batang','Noto Serif KR';font-size:12.5pt;color:#fff;padding:2.4mm 5mm;border-radius:4pt 4pt 0 0}
+.s1 .set-banner{background:#b0654a}.s2 .set-banner{background:#6b7d5e}.s3 .set-banner{background:#b08e4f}
+.passage{border:0.6pt solid #e5dccb;border-top:none;border-left:3pt solid #b0654a;
+  padding:3.5mm 5mm;line-height:1.85;font-size:10.2pt;margin-bottom:3mm;border-radius:0 0 4pt 4pt}
+.s2 .passage{border-left-color:#6b7d5e}.s3 .passage{border-left-color:#b08e4f}
+.passage p{margin:.5em 0}
+.boxmark{border:0.8pt solid #6e6258;border-radius:2pt;padding:0 2.4pt;white-space:nowrap}
+.ablock{background:#faf5ea;border-left:2.4pt solid #6e6258;padding:2.4mm 3.4mm;margin:2.4mm 0;border-radius:2pt;font-size:9.8pt}
+.atag{font-weight:700;color:#8e4a33;margin-right:4px}
+.q{margin:6.5mm 0;page-break-inside:avoid;break-inside:avoid;border-bottom:0.5pt dotted #e5dccb;padding-bottom:5mm}
+.q:last-child{border-bottom:none}
+.q-stem{font-family:'Noto Sans KR';font-weight:700;font-size:10.3pt;margin-bottom:1mm}
+.q-num{display:inline-block;min-width:5.5mm;height:5.5mm;line-height:5.5mm;text-align:center;
+  background:#b0654a;color:#fff;border-radius:50%;font-size:8.6pt;margin-right:2mm;font-family:'Noto Sans KR'}
+.s2 .q-num{background:#6b7d5e}.s3 .q-num{background:#b08e4f}
+.pts{color:#8e4a33;font-weight:700;font-size:8.6pt}
+.q ul{list-style:none;padding-left:3mm;margin:1.5mm 0;font-family:'Noto Sans KR';font-size:9.9pt}
+.q ul li{margin:1mm 0;line-height:1.55}
+.q blockquote{background:#f6efe1;border:0.6pt solid #e5dccb;border-radius:3pt;margin:2mm 0;
+  padding:2.6mm 4mm;font-family:'Noto Sans KR';font-size:9.3pt}
+.q blockquote p{margin:.3em 0}
+.exp{margin:2.5mm 0;page-break-inside:avoid;break-inside:avoid;font-size:10pt;line-height:1.62}
+.exp p{margin:.4em 0}
+.akey{margin:3mm 0 5mm}
+.akey table{font-size:10pt;width:auto}
+.akey td,.akey th{padding:2mm 5mm;text-align:center}
+.deep{background:#faf5ea;border:0.6pt solid #e5dccb;border-radius:3pt;padding:3mm 5mm;margin:3mm 0;
+  font-family:'Noto Sans KR';font-size:9.6pt}
+.deep .dh{color:#b08e4f;font-size:9pt;letter-spacing:.05em;margin-bottom:1.5mm}
+
+.umap{margin:3mm 0 2mm;page-break-inside:avoid;break-inside:avoid}
+.umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:2.6mm 6mm;font-family:'Gowun Batang','Noto Serif KR';font-size:11.5pt;color:#8e4a33;line-height:1.4}
+.umap-center small{display:block;font-family:'Noto Sans KR';font-size:8.6pt;color:#6e6258;margin-top:1mm}
+.umap-stem{width:1pt;height:4mm;background:#b08e4f;margin:0 auto}
+.umap-grid{display:flex;gap:3mm;margin-top:1mm}
+.umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:2.6mm 3.4mm}
+.umap-card:nth-child(1){border-top:2.4pt solid #b0654a}
+.umap-card:nth-child(2){border-top:2.4pt solid #6b7d5e}
+.umap-card:nth-child(3){border-top:2.4pt solid #b08e4f}
+.umap-card h4{margin:0 0 1.4mm;font-family:'Gowun Batang','Noto Serif KR';font-size:10pt;color:#8e4a33}
+.umap-card p{margin:0;font-family:'Noto Sans KR';font-size:8.8pt;line-height:1.5;color:#3d3630}
+.umap-note{margin:2.5mm 0 0;font-family:'Noto Sans KR';font-size:9.3pt;color:#6e6258}
+.intro-box.unit{background:transparent;border:none;border-left:none;padding:0}
+
+.deep-h{font-weight:700;color:#8e4a33;font-size:9.8pt;margin:3mm 0 1.2mm;font-family:'Gowun Batang','Noto Serif KR'}
+.deep ul{margin:1mm 0;padding-left:5mm}
+.deep ul li{margin:0.6mm 0;font-size:9.4pt;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:1.6mm;margin:1.6mm 0 1mm;page-break-inside:avoid;break-inside:avoid}
+.flow-step{flex:1 1 0;min-width:19mm;background:#fff;border:0.6pt solid #e5dccb;border-top:2pt solid #b0654a;
+  border-radius:3pt;padding:1.8mm 1.2mm;text-align:center}
+.flow-step.step-c0{border-top-color:#b0654a}.flow-step.step-c1{border-top-color:#6b7d5e}.flow-step.step-c2{border-top-color:#b08e4f}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR';font-weight:600;font-size:8.8pt;display:block}
+.fs-sub{font-size:7.3pt;color:#6e6258;display:block;margin-top:0.5mm}
+.flow-arrow{color:#b08e4f;font-weight:700;font-size:11pt;align-self:center}
+.qa{margin:1mm 0}
+.qa-item{background:#fff;border:0.6pt solid #e5dccb;border-left:2pt solid #b08e4f;border-radius:3pt;padding:1.6mm 3mm;margin:1.4mm 0;page-break-inside:avoid;break-inside:avoid}
+.qa-q{font-weight:600;font-size:9.3pt;line-height:1.5}
+.qa-q::before{content:"Q. ";color:#8e4a33}
+.qa-a{font-size:9pt;color:#8e4a33;margin-top:0.6mm}
+.qa-a::before{content:"A. ";color:#b08e4f;font-weight:700}
+
+/* 도입부 1쪽 자동맞춤 영역 (루트 font-size로 전체 스케일) */
+.introzone{line-height:1.6;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone h2.sec{font-size:1.24em;color:#8e4a33;margin:.7em 0 .3em;font-family:'Gowun Batang','Noto Serif KR'}
+.introzone .intro-box{background:#f6efe1;border:0.6pt solid #e5dccb;border-left:3pt solid #b0654a;
+  border-radius:3pt;padding:.55em 1.1em;margin:.4em 0;font-family:'Noto Sans KR';font-size:.96em;line-height:1.55}
+.introzone .intro-box p{margin:.35em 0}
+.introzone table{border-collapse:collapse;width:100%;margin:.5em 0;font-family:'Noto Sans KR';font-size:.84em}
+.introzone th,.introzone td{border:0.6pt solid #d9cfbb;padding:.35em .55em;vertical-align:top;text-align:left}
+.introzone th{background:#f6efe1;color:#8e4a33}
+.introzone .umap{margin:.5em 0 .3em}
+.introzone .umap-center{max-width:120mm;margin:0 auto;text-align:center;background:#f6efe1;border:1pt solid #b08e4f;
+  border-radius:4pt;padding:.5em 1.4em;font-family:'Gowun Batang','Noto Serif KR';font-size:1.12em;color:#8e4a33;line-height:1.35}
+.introzone .umap-center small{display:block;font-family:'Noto Sans KR';font-size:.72em;color:#6e6258;margin-top:.3em}
+.introzone .umap-stem{width:1pt;height:.9em;background:#b08e4f;margin:0 auto}
+.introzone .umap-grid{display:flex;gap:2mm;margin-top:.3em}
+.introzone .umap-card{flex:1;background:#fff;border:0.6pt solid #e5dccb;border-radius:4pt;padding:.5em .75em}
+.introzone .umap-card:nth-child(1){border-top:2.2pt solid #b0654a}
+.introzone .umap-card:nth-child(2){border-top:2.2pt solid #6b7d5e}
+.introzone .umap-card:nth-child(3){border-top:2.2pt solid #b08e4f}
+.introzone .umap-card h4{margin:0 0 .3em;font-family:'Gowun Batang','Noto Serif KR';font-size:.96em;color:#8e4a33}
+.introzone .umap-card p{margin:0;font-family:'Noto Sans KR';font-size:.8em;line-height:1.45;color:#3d3630}
+.introzone .umap-note{margin:.5em 0 0;font-family:'Noto Sans KR';font-size:.86em;color:#6e6258}
+
+.set.exam .set-banner.exam-bnr{background:#8a7a9f}
+.set.exam .q-num{background:#8a7a9f}
+.set.exam .passage.exam-ps{border-left-color:#8a7a9f}
+.set-break{page-break-before:always;break-before:page}
+
+</style></head><body><div class='printbar'>🖨 인쇄용 A4 · 브라우저에서 <b>Ctrl+P</b> → 대상 <b>'PDF로 저장'</b> · 여백 <b>기본</b> · 배율 <b>100%</b> · 배경 그래픽 <b>켜기</b></div>
+<div class='doc-title'>역노화 기술 — EBS 연계 학습</div><div class='doc-sub'>EBS 연계 독서 학습지 · 정답과 해설 (A4)</div>
+<div class='akey'><table><tr><th>문항</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+</tr><tr><td>정답</td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>④</b></td>
+<td><b>③</b></td>
+<td><b>④</b></td>
+<td><b>⑤</b></td>
+<td><b>①</b></td>
+<td><b>③</b></td>
+<td><b>①</b></td>
+<td><b>②</b></td>
+<td><b>②</b></td>
+<td><b>③</b></td>
+<td><b>⑤</b></td>
+</tr></table></div>
+<div class='set s1 '>
+<div class='set-banner'>세트 1 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>1번 — 정답 ⑤</strong>
+3문단에서 약물·생활 습관 개선 같은 방법은 "손상이 쌓이는 속도를 늦출 뿐 이미 늙은 세포를 젊게 되돌리지는 못한다"라고 했어요. 그러니 늙은 세포를 젊은 상태로 되돌린다고 한 ⑤가 글과 어긋나 정답입니다. ①은 1문단(줄기세포의 분화 능력), ②는 2문단(역분화), ③은 1문단(복구 효율 저하 → 유전체 불안정성), ④는 1문단(줄기세포 고갈 → 재생 능력 저하)에 그대로 나오는 적절한 내용이에요.</p></div>
+<div class='exp'><p><strong>2번 — 정답 ①</strong>
+㉠은 세포에 넣어 형질을 바꾸는 야마나카 인자(유전자)이고, ㉡은 정체성을 잃은 세포가 비정상 증식해 만드는 기형종이에요. 야마나카 인자는 세포에 넣어 형질을 변화시키는 데 쓰이지만 테라토마는 그렇지 않으니 ①이 정답입니다. ② 역분화를 일으키는 것은 ㉠(야마나카 인자)이지 ㉡이 아니고, ③ 비정상적으로 만들어지는 것은 ㉡(테라토마)이라 주체가 뒤바뀌었으며, ④ 테라토마는 정체성 상실의 결과이지 기능을 유지하도록 돕는 물질이 아니에요. ⑤ 둘 다 손상된 DNA를 직접 복구한다는 서술은 지문에 없습니다.</p>
+<p><strong>3번 [3점] — 정답 ④</strong>
+㉮는 환자 본인 세포를 세포 리프로그래밍으로 되돌린 역노화 세포예요. 그런데 기사 속 방식 역시 세포 리프로그래밍을 쓰므로, 4문단에서 말한 "회귀 시 정체성 상실 → 기형종 위험"을 <em>처음부터 갖지 않는다</em>고 단정할 수는 없어요. 그래서 ④가 적절하지 않아 정답입니다. ① 본인 세포를 쓰면 면역 반응 위험이 낮아지고(3문단의 주입형 한계와 대비), ② 약물 방식은 복구를 돕는 데 그치는 반면 ㉮는 세포 자체를 되돌리며, ③ 생활 습관 개선은 축적 속도만 늦추는 데 비해 ㉮는 거기 머물지 않고, ⑤ ㉮는 늙은 세포 자체를 바꾸는 근본적 접근이라 모두 적절해요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>4번 — 정답 ③</strong>
+3문단에서 외부 줄기세포 주입은 "새로운 세포를 보충해 주지만 … 늙은 세포 자체를 바꾸지는 못한다"라고 했어요. 그러니 주입된 세포가 늙은 세포 자체를 젊게 바꾼다고 한 ③은 글과 정반대라 정답입니다. ① 복구 효율이 유지되면 유전체 불안정성이 더디게 진행된다는 것은 1문단의 인과를 뒤집어 추론한 적절한 내용이고, ②는 4문단(회귀 시 기능 상실), ④는 4문단(정체성 유지 시 기형종 위험 감소), ⑤는 4문단(완전한 방법 부재 → 목적에 따른 선택)에서 끌어낼 수 있는 적절한 추론이에요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>유전체 불안정성</strong>: 나이가 들어 DNA 손상 복구 시스템의 효율이 떨어지면서, 고치지 못한 유전체 손상(절단·변이 등)이 쌓이는 현상. 노화의 근본 원인.</li>
+<li><strong>세포 리프로그래밍</strong>: 세포에 특정 유전자(야마나카 인자)나 화학 물질을 넣어 분화된 세포를 줄기세포로 되돌리는 것.</li>
+<li><strong>유도 만능 줄기세포(iPSC)</strong>: 세포 리프로그래밍으로 체세포를 역분화시켜 만든 줄기세포.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>노화를 늦추거나 되돌리는 시도</th>
+<th>무엇을 하나</th>
+<th>한계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>약물·생활 습관 개선</td>
+<td>손상 복구를 돕거나 축적을 늦춤</td>
+<td>늙은 세포 자체는 못 되돌림</td>
+</tr>
+<tr>
+<td>외부 줄기세포 주입</td>
+<td>새 세포를 보충</td>
+<td>자리 못 잡거나 면역 반응 / 늙은 세포 못 바꿈</td>
+</tr>
+<tr>
+<td>세포 리프로그래밍</td>
+<td>늙은 세포 자체를 젊게 되돌림</td>
+<td>정체성 상실 → 기형종 위험</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>세 방법은 "어디까지 손대느냐"가 달라요. 리프로그래밍은 가장 근본적이지만, 그만큼 정체성 상실이라는 새로운 위험을 안습니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>나이가 들면 왜 유전체 손상이 쌓이나요?</div><div class='qa-a'>DNA 손상 복구 시스템의 효율성이 떨어져 손상을 다 고치지 못하기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>세포 리프로그래밍이 약물·주입 방식과 가장 다른 점은?</div><div class='qa-a'>늙은 세포 자체의 노화 징후를 되돌린다는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>야마나카 인자로 완전히 되돌린 세포가 안는 위험은?</div><div class='qa-a'>정체성을 잃고 비정상 증식하여 기형종(테라토마)이 될 수 있다는 점입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 수능 [26~29] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>26번 — 정답 ⑤</strong><br />
+4문단에서 레트로바이러스는 ‘자신의’ 역전사 효소를 갖고 있어 역전사 과정을 통해 RNA를 DNA로 바꾼다고 했다. 따라서 ‘숙주 세포의 역전사 효소를 이용’한다고 본 ⑤는 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,605명 — ①1.5% ②2.9% ③13.5% ④21.8% ⑤56.0%</p></div>
+<div class='exp'><p><strong>27번 — 정답 ①</strong><br />
+2문단에서 ‘전자 기기 인공 장기’의 정기적 부품 교체는 단점으로 제시되었다. 따라서 이상적인 이식편은 정기 교체라는 단점을 갖지 않아야 하므로, 비용을 낮춰 정기 교체를 용이하게 한다는 ①은 조건으로 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,603명 — ①52.9% ②9.1% ③10.4% ④19.4% ⑤5.7%</p></div>
+<div class='exp'><p><strong>28번 — 정답 ③</strong><br />
+내인성 레트로바이러스 문제는 이종 이식에서 나타나는 것이고, 동종 이식편은 본래 이를 제거할 필요가 없다. 따라서 ㉮가 ‘동종 이식편과 달리 내인성 레트로바이러스를 제거할 필요가 없다’고 본 ③은 적절하지 않다.</p>
+<p><em>선택률</em> — 응시 98,603명 — ①4.4% ②5.5% ③70.7% ④10.6% ⑤4.8%</p></div>
+<div class='exp'><p><strong>29번 — 정답 ①</strong><br />
+내인성 레트로바이러스(㉠)는 감염되고도 살아남은 생식 세포로부터 유래된 자손의 ‘모든 세포’가 갖게 된 것이므로 그 생명체의 모든 세포 DNA에 존재한다. 반면 레트로바이러스(㉡)는 다른 생명체 세포에 들어가 특정 세포를 감염시킬 뿐이므로 모든 세포에 존재하지 않는다. 따라서 ①이 적절하다.</p>
+<p><em>선택률</em> — 응시 98,605명 — ①36.8% ②9.0% ③7.9% ④36.4% ⑤6.7%</p></div>
+</div></div>
+<div class='set s2 set-break'>
+<div class='set-banner'>세트 2 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>5번 — 정답 ④</strong>
+3문단에서 부분적 리프로그래밍은 인자를 "2~4일 정도", 2문단에서 완전 리프로그래밍은 "2~3주 동안" 발현시킨다고 했어요. 그러니 완전 쪽이 <em>더 긴</em> 기간 발현시키는데, ④는 완전이 <em>더 짧다</em>고 했으니 정반대라 정답입니다. ①은 1문단(네 인자), ②는 2문단(분화 능력 회복), ③은 3문단(정체성 유지+개선), ⑤는 1문단(발현 시 핵 구조·발현 양상 변화)에 부합하는 적절한 내용이에요.</p></div>
+<div class='exp'><p><strong>6번 — 정답 ⑤</strong>
+3문단에서 회춘 지점에 이르는 발현 기간이 "세포마다 달라" 정밀하게 맞추기 어렵다고 했어요. 그런데 ⑤는 모든 세포에서 동일하게 정해져 있다고 했으니 글과 어긋나 정답입니다. ①②③④는 모두 3문단(중간 단계까지 진행, 2~4일 발현, 핵 구조 회복·손상 감소, 체세포 자리에 둔 채 개선)에 그대로 나오는 적절한 설명이에요.</p></div>
+<div class='exp'><p><strong>7번 — 정답 ①</strong>
+[A]를 빈칸에 대보면 돼요. (A) 발현 기간을 늘리면 노화 개선의 폭은 <em>커지고</em>, (B) 동시에 정체성 상실·종양 위험도 <em>커진다</em>고 했어요. 또 (C) c-Myc를 빼면 효율은 <em>다소 떨어지지만</em> 종양 위험은 낮아진다고 했죠. 따라서 커지지만·커진다·다소 떨어지지만의 ①이 정답입니다. '작아지지만'이나 '다소 높아지지만'을 넣은 다른 선지는 [A]의 서술과 어긋나요.</p>
+<p><strong>8번 [3점] — 정답 ③</strong>
+㉰는 ㉯와 발현 기간이 같지만 종양 위험을 높이는 c-Myc를 빼서, [A]에 따라 종양 발생 위험이 ㉯보다 낮을 것으로 기대돼요. 그래서 ③이 정답입니다. ① 발현 기간이 <em>짧을수록</em> 노화 개선 폭은 <em>작아</em>지므로 ㉮가 ㉯보다 크다는 것은 거꾸로이고, ② 발현 기간이 길수록 정체성 상실 위험은 <em>커</em>지므로 ㉯가 ㉮보다 낮다는 것도 반대예요. ④ ㉮·㉰는 발현 기간이 다르고(짧음 vs 김) ㉰는 c-Myc도 뺐으니 인자가 같다는 전제부터 틀렸고, ⑤ c-Myc를 빼면 효율은 <em>떨어지므로</em> ㉮보다 높다는 것은 [A]와 어긋납니다.</p></div>
+<div class='exp'></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>완전 리프로그래밍</strong>: 야마나카 인자를 2~3주간 발현시켜 체세포를 줄기세포(iPSC)로 <em>완전히</em> 되돌리는 방식. 노화 징후는 사라지지만 정체성을 잃는다.</li>
+<li><strong>부분적 리프로그래밍</strong>: 인자를 2~4일만 일시 발현시켜 <em>중간까지만</em> 되돌리는 방식. 정체성을 지킨 채 노화를 개선한다.</li>
+<li><strong>회춘 지점</strong>: 부분적 리프로그래밍에서 노화가 개선되는 지점. 여기에 이르는 발현 기간은 세포마다 달라 맞추기 어렵다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>완전 리프로그래밍</th>
+<th>부분적 리프로그래밍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>발현 기간</td>
+<td>2~3주(주기 완료)</td>
+<td>2~4일(중간 단계)</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>줄기세포(iPSC)로 회귀</td>
+<td>체세포 자리에서 젊어짐</td>
+</tr>
+<tr>
+<td>정체성</td>
+<td>잃음</td>
+<td>유지</td>
+</tr>
+<tr>
+<td>위험</td>
+<td>기형종(테라토마) 큼</td>
+<td>상대적으로 낮음(c-Myc 제외로 더 낮춤)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>발현 기간을 늘리면 노화 개선 폭은 커지지만 위험도 함께 커져요. 그래서 "얼마나, 어떤 인자로" 되돌릴지를 신중히 고릅니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>완전 리프로그래밍의 가장 큰 약점은?</div><div class='qa-a'>체세포가 줄기세포로 회귀하며 정체성과 기능을 잃어 기형종 위험이 생기는 점입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>부분적 리프로그래밍은 어떻게 그 약점을 줄이나요?</div><div class='qa-a'>인자를 2~4일만 일시 발현시켜 중간 단계까지만 진행함으로써 정체성을 유지합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>c-Myc를 제외하면 무엇을 얻고 무엇을 잃나요?</div><div class='qa-a'>종양 발생 위험을 낮추는 대신 리프로그래밍의 효율은 다소 떨어집니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2022학년도 6월 [14~17] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>14번 — 정답 ①</strong><br />
+프라이머는 표적 DNA의 일부분과 ‘동일한’ 염기 서열로 이루어지고 표적 DNA는 주형 DNA의 일부이므로, 주형 DNA에는 프라이머와 정확히 일치하는 염기 서열이 존재한다. 따라서 ‘찾을 수 없다’는 ①이 적절하지 않다. 정답 ①.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①56.3% ②8.4% ③11.9% ④16.2% ⑤8.4%</p></div>
+<div class='exp'><p><strong>15번 — 정답 ②</strong><br />
+㉠(이중 가닥 DNA 특이 염료)은 새로 생성된 이중 가닥 표적 DNA에 결합한 채 발색한다. 반면 ㉡(형광 표식 탐침)은 표적 DNA와의 결합이 끊어지고 분해되어 형광·소광 물질이 분리될 때 발색한다. 따라서 ②가 적절하다. 정답 ②.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①16.4% ②47.2% ③9.9% ④12.2% ⑤15.4%</p></div>
+<div class='exp'><p><strong>16번 — 정답 ④</strong><br />
+프라이머는 표적 DNA의 일부분과 동일한 염기 서열로 만들어지므로, 표적 DNA의 염기 서열이 알려져 있어야 프라이머를 제작해 감염 여부를 분석할 수 있다. 정답 ④.</p>
+<p><em>선택률</em> — 응시 98,575명 — ①13.6% ②11.5% ③10.0% ④45.1% ⑤19.3%</p></div>
+<div class='exp'><p><strong>17번 — 정답 ②</strong><br />
+표적 DNA는 사이클마다 2배씩 증폭되므로 초기 농도가 높은 ⓐ는 시간당 증가량이 ⓑ보다 많다(㉮: ⓑ보다 많겠군). Ct값에서의 발색도는 표적 DNA를 검출했다고 판단하는 동일 발색도이므로 ⓐ·ⓑ가 같다(㉯: ⓑ와 같겠군). 초기 농도가 높은 ⓐ가 일정 발색도에 더 빨리 도달하므로 Ct값은 작다(㉰: ⓑ보다 작겠군). 정답 ②.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①18.9% ②27.8% ③23.7% ④12.2% ⑤16.7%</p></div>
+</div></div>
+<div class='set s3 set-break'>
+<div class='set-banner'>세트 3 · 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>9번 — 정답 ①</strong>
+1문단에서 분화는 줄기세포가 "피부 세포·신경 세포·간세포처럼 특정 기능을 수행하는 세포로 바뀌는 과정"이라고 했으니 ①이 정답이에요. ② 회귀 여부는 발현 기간에 따라 갈리므로(완전 vs 부분) "무관하게 완전히 회귀"는 틀렸고, ③ 부분적 리프로그래밍은 줄기세포로 <em>회귀하기 전에 멈춰</em> 개선하는 것이며(5문단), ④ 회춘 지점에 이르는 기간은 "세포마다 달라"(5문단) 일정하지 않고, ⑤ 정체성을 유지하는 것은 <em>부분적</em> 리프로그래밍이라 완전 리프로그래밍에 대한 ⑤는 어긋나요.</p>
+<p><strong>10번 [3점] — 정답 ②</strong>
+순서도에서 Ⓐ는 "정체성을 지키며 노화만 개선하려는가?"를 묻고, '예'면 부분적 리프로그래밍(Ⓑ·Ⓒ)으로 분기해요. 곧 정체성을 지키며 노화만 개선하려는 경우라 '예'로 가는 것이므로 ②가 정답입니다. ① Ⓔ의 세포는 노화 징후가 <em>사라지고</em> 다시 분화할 수 있으며(4문단), ③ Ⓑ는 주기를 완료하지 않고 2~4일만 발현시키는 단계라 "끝까지 완료"가 틀렸고, ④ 회춘 지점의 발현 기간은 세포마다 달라 "똑같이 맞추기만 하면 된다"는 어긋나며, ⑤ Ⓓ(완전 리프로그래밍)는 정체성을 <em>잃고</em> 줄기세포가 되므로 "정체성을 유지한 채"가 틀렸어요.</p></div>
+<div class='exp'></div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+주기를 끝까지 완료하는 것은 완전 리프로그래밍인데, 3·4문단에서 이 경우 세포가 정체성을 잃는다고 했어요. 그러니 "정체성을 잃지 않으면서 노화 징후를 없앤다"고 한 ②는 글과 어긋나 정답입니다. ①은 2문단(통념의 전복), ③은 3문단(회귀 정도↑ → 정체성 유지↓), ④는 5문단(회춘 지점이 세포마다 다름), ⑤는 3·5문단(정체성 유지하려면 완료 전 멈춤)에서 끌어낼 수 있는 적절한 추론이에요.</p></div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong>
+〈보기〉의 연구진은 정체성 유지를 가장 중시하고 줄기세포로의 완전 회귀는 원하지 않으면서 노화 개선도 바라요. 5문단에서 부분적 리프로그래밍은 인자를 2~4일만 일시 발현시켜 정체성을 지킨 채 노화를 개선한다고 했으니, ③이 적절합니다. ① 주기 완료는 정체성을 <em>잃는</em> 완전 리프로그래밍이라 반대고, ② 외부 줄기세포 주입은 노화 징후 개선 방법이 아니며, ④ 이미 만들어진 iPSC는 이미 정체성을 잃은 세포이고, ⑤ 정함 없이 계속 발현시키면 주기가 완료돼 정체성을 잃게 되므로 모두 부적절해요.</p></div>
+<div class='exp'><p><strong>13번 — 정답 ⑤</strong>
+ⓔ '정하는'은 발현을 멈출 시점을 가려 정한다는 뜻인데, ⑤ '방치(放置)하는'은 손대지 않고 그대로 내버려 둔다는 뜻이라 시점을 '정밀하게 정하는' 맥락과 정반대로 호응하지 않아 바꿔 쓰기에 적절하지 않으므로 정답이에요. ① ⓐ '바뀌는'은 다른 상태로 옮겨 가는 것이라 '전환되는'으로, ② ⓑ '뒤집혔다'는 뒤집혀 무너지는 것이라 '전복되었다'로, ③ ⓒ '높이면'은 정도를 끌어올리는 것이라 '제고하면'으로, ④ ⓓ '만드는'은 새로 생겨나게 하는 것이라 '형성하는'으로 각각 자연스럽게 바꿔 쓸 수 있어요.</p></div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>정체성</strong>: 분화가 끝난 체세포가 자신이 맡은 기능을 수행하는 성질. 줄기세포로 회귀하면 잃게 된다.</li>
+<li><strong>역분화</strong>: 야마나카 인자를 넣어 분화된 체세포를 줄기세포로 되돌리는 일. 분화의 비가역성이라는 통념을 뒤집었다.</li>
+<li><strong>회춘 지점</strong>: 부분적 리프로그래밍에서 노화가 개선되는 지점. 거기에 이르는 발현 기간은 세포마다 다르다.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<div class='flow'>
+<span class='flow-step step-c0'><span class='fs-main'>· 노화 징후 사라짐 / 정체성 잃음</span><span class='fs-sub'>인자 2~4일, 중간서 멈춤</span></span>
+<span class='flow-arrow'>→</span>
+<span class='flow-step step-c1'><span class='fs-main'>기형종 위험</span></span>
+</div>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>분화가 비가역적이라는 통념은 왜 뒤집혔나요?</div><div class='qa-a'>야마나카 인자를 넣으면 분화된 세포가 줄기세포로 회귀(역분화)할 수 있다는 사실이 밝혀졌기 때문입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>완전 리프로그래밍과 부분적 리프로그래밍은 무엇이 갈리나요?</div><div class='qa-a'>주기를 끝까지 진행하면 정체성을 잃고, 중간까지만 진행하면 정체성을 지킨 채 노화만 개선됩니다.</div></div>
+<div class='qa-item'><div class='qa-q'>부분적 리프로그래밍의 관건은 무엇인가요?</div><div class='qa-a'>회춘 지점에 이르는 발현 기간이 세포마다 달라, 언제 멈출지를 정밀하게 정하는 일입니다.</div></div>
+</div></div>
+</div></div>
+<div class='set exam set-break'>
+<div class='set-banner exam-bnr'>연계 수능 기출 · 2020학년도 6월 [37~42] — 정답과 해설</div>
+<div style='padding:2mm 1mm'>
+<div class='exp'><p><strong>37번 — 정답 ③</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>38번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>39번 — 정답 ⑤</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>40번 — 정답 ②</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>41번 — 정답 ①</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+<div class='exp'><p><strong>42번 — 정답 ④</strong><br />
+<em>— 원문에 해설이 수록되어 있지 않습니다.</em></p></div>
+</div></div>
+</body></html>

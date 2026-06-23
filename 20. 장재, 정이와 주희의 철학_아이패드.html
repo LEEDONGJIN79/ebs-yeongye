@@ -1,0 +1,853 @@
+<!DOCTYPE html><!--V10--><html lang='ko'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>장재, 정이와 주희의 철학 — EBS 연계 학습</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;600&display=swap' rel='stylesheet'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'></script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fdfaf3;--ink:#3d3630;--ink-soft:#6e6258;
+  --terra:#b0654a;--terra-deep:#8e4a33;--sage:#6b7d5e;
+  --plum:#8a7a9f;--ochre:#b08e4f;--line:#e5dccb;--cream:#f6efe1;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding:28px 14px 60px;color:var(--ink);
+  font-family:'Noto Sans KR','Noto Sans CJK KR',sans-serif;
+  font-size:17px;line-height:1.78;
+  background:#f0e8d9;
+  background-image:radial-gradient(circle at 20% 18%,#f7f0e1 0,transparent 45%),
+                   radial-gradient(circle at 82% 82%,#efe5d2 0,transparent 50%);
+}
+.sheet{
+  max-width:820px;margin:0 auto;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 8px 34px rgba(90,70,40,.10);
+  padding:42px 38px 50px;position:relative;overflow:hidden;
+}
+.sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:linear-gradient(90deg,var(--terra),var(--ochre),var(--sage),var(--plum));}
+h1,h2,h3,.serif,.passage,.q-stem,.sec-title{font-family:'Gowun Batang','Noto Serif KR','Noto Serif CJK KR',serif;}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:5px 14px;margin-bottom:14px;}
+h1{font-size:30px;line-height:1.35;margin:.1em 0 .35em;color:var(--ink)}
+.subtitle{color:var(--ink-soft);font-size:16px;margin:0 0 18px}
+.intro-quote{background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--terra);
+  border-radius:10px;padding:16px 20px;color:var(--ink);margin:18px 0;font-size:16.5px}
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.chip{font-size:13.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 13px;color:var(--ink-soft)}
+.orna{text-align:center;color:var(--ochre);letter-spacing:.5em;margin:34px 0;font-size:15px}
+.sec-head{margin:14px 0 6px}
+.sec-num{font-size:13.5px;letter-spacing:.12em;color:var(--terra-deep)}
+.sec-title{font-size:22px;margin:.1em 0}
+.talk p{margin:.5em 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--terra-deep);font-weight:600}
+pre{background:#fbf6ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow:auto;
+  font-family:'Noto Sans KR',monospace;font-size:13.5px;line-height:1.6;color:var(--ink-soft)}
+code{font-family:inherit}
+.set{margin:30px 0}
+.set-banner{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:20px}
+.set1 .set-banner{background:linear-gradient(100deg,var(--terra),var(--terra-deep))}
+.set2 .set-banner{background:linear-gradient(100deg,var(--sage),#52614a)}
+.set3 .set-banner{background:linear-gradient(100deg,var(--ochre),#8a6d36)}
+.passage-wrap{border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:6px 20px 16px;margin-bottom:18px}
+.passage{line-height:2.0;font-size:16.5px}
+.passage p{margin:.7em 0}
+.set1 .passage{border-left:4px solid var(--terra)}
+.set2 .passage{border-left:4px solid var(--sage)}
+.set3 .passage{border-left:4px solid var(--ochre)}
+.passage{padding-left:16px;border-left:4px solid var(--line)}
+.boxmark{border:1.2px solid var(--ink-soft);border-radius:4px;padding:0 5px;white-space:nowrap;font-weight:500}
+.ablock{background:#faf5ea;border-left:3px solid var(--ink-soft);padding:10px 14px;margin:12px 0;border-radius:6px;font-size:16px}
+.atag{font-weight:700;color:var(--terra-deep);margin-right:6px}
+.q{border:1px solid var(--line);border-radius:12px;background:#fff;padding:18px 20px;margin:30px 0}
+.q:first-of-type{margin-top:18px}
+.q-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:4px}
+.q-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--terra);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+.set2 .q-num{background:var(--sage)} .set3 .q-num{background:var(--ochre)}
+.q-stem{font-size:17px;font-weight:600;padding-top:3px}
+.pts{color:var(--terra-deep);font-weight:700;font-size:14px;margin-left:4px}
+.q ul{list-style:none;padding-left:6px;margin:8px 0}
+.q ul li{margin:5px 0;line-height:1.7}
+.q blockquote{background:var(--cream);border:1px solid var(--line);border-radius:8px;
+  margin:10px 0;padding:12px 16px;font-size:15.5px;color:var(--ink)}
+.q blockquote p{margin:.4em 0}
+details.ans{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.ans summary{cursor:pointer;list-style:none;font-size:14.5px;font-weight:600;color:var(--terra-deep);
+  background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 15px;display:inline-block}
+.set2 details.ans summary{color:#52614a}.set3 details.ans summary{color:#8a6d36}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans[open] summary{margin-bottom:10px}
+.ans-key{font-weight:700;color:var(--terra-deep);margin:6px 0}
+.exp{font-size:15.5px;line-height:1.75;color:var(--ink)}
+.exp p{margin:.5em 0}
+.deep{background:#faf5ea;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 0}
+.deep h4{margin:.2em 0;font-size:15px;color:var(--terra-deep)}
+.deep .dh{font-size:14px;letter-spacing:.1em;color:var(--ochre);margin-bottom:8px}
+.deep p,.deep li{font-size:15.5px}
+
+.deep-h{font-weight:700;color:var(--terra-deep);margin:16px 0 7px;font-size:15.5px;font-family:'Gowun Batang','Noto Serif KR',serif}
+.deep ul{margin:6px 0;padding-left:20px}
+.deep ul li{margin:4px 0;font-size:15.5px;line-height:1.65}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:10px 0 4px}
+.flow-step{flex:1 1 0;min-width:96px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--terra);
+  border-radius:11px;padding:11px 8px;text-align:center;display:flex;flex-direction:column;justify-content:center;box-shadow:0 1px 4px rgba(120,90,50,.06)}
+.flow-step.step-c0{border-top-color:var(--terra)}
+.flow-step.step-c1{border-top-color:var(--sage)}
+.flow-step.step-c2{border-top-color:var(--ochre)}
+.fs-main{font-family:'Gowun Batang','Noto Serif KR',serif;font-weight:700;font-size:14.5px;color:var(--ink)}
+.fs-sub{font-size:12px;color:var(--ink-soft);margin-top:4px}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--ochre);font-weight:700;font-size:18px;flex:0 0 auto}
+.qa{margin:6px 0 2px}
+.qa-item{background:#fff;border:1px solid var(--line);border-left:3px solid var(--ochre);border-radius:9px;padding:11px 15px;margin:9px 0}
+.qa-q{font-weight:600;font-size:15px;line-height:1.55}
+.qa-q::before{content:"Q. ";color:var(--terra-deep);font-weight:700}
+.qa-a{font-size:14.5px;color:var(--terra-deep);margin-top:5px}
+.qa-a::before{content:"A. ";color:var(--ochre);font-weight:700}
+
+.examzone{margin:22px 0 4px;border:1.5px dashed var(--plum);border-radius:14px;padding:6px 16px 16px;background:#faf7fb}
+.exam-banner{font-family:'Gowun Batang','Noto Serif KR',serif;color:#5d4f70;font-size:15.5px;font-weight:700;
+  margin:12px 0 8px;padding:7px 14px;background:#efe9f3;border:1px solid #ddd0e6;border-radius:9px;display:inline-block}
+.exam-ps{border-left-color:var(--plum)!important}
+.exam-q .q-num{background:var(--plum)}
+.exam-q details.ans summary{color:#5d4f70}
+.outro{margin-top:34px;color:var(--ink-soft);font-size:15px;text-align:center}
+.credit{text-align:center;color:#a89a86;font-size:12.5px;margin-top:18px}
+.btn-row{text-align:center;margin:0 auto 22px;max-width:820px}
+
+.umap{margin:18px 0 6px}
+.umap-center{max-width:560px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#fff,var(--cream));
+  border:1.5px solid var(--ochre);border-radius:14px;padding:14px 22px;font-family:'Gowun Batang','Noto Serif KR',serif;
+  font-size:18px;color:var(--terra-deep);box-shadow:0 3px 12px rgba(140,100,50,.10);line-height:1.5}
+.umap-center small{display:block;font-size:14px;color:var(--ink-soft);margin-top:4px;font-family:'Noto Sans KR',sans-serif}
+.umap-stem{width:2px;height:22px;background:var(--ochre);margin:0 auto;opacity:.6}
+.umap-grid{display:flex;gap:14px;flex-wrap:wrap}
+.umap-card{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.umap-card:nth-child(1){border-top:4px solid var(--terra)}
+.umap-card:nth-child(2){border-top:4px solid var(--sage)}
+.umap-card:nth-child(3){border-top:4px solid var(--ochre)}
+.umap-card h4{margin:0 0 6px;font-family:'Gowun Batang','Noto Serif KR',serif;font-size:16px}
+.umap-card:nth-child(1) h4{color:var(--terra-deep)}
+.umap-card:nth-child(2) h4{color:#52614a}
+.umap-card:nth-child(3) h4{color:#8a6d36}
+.umap-card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.umap-note{margin:14px 0 0;color:var(--ink-soft);font-size:15px}
+#pngBtn{font-family:inherit;font-size:14px;background:var(--terra);color:#fff;border:none;
+  border-radius:999px;padding:10px 22px;cursor:pointer;box-shadow:0 3px 10px rgba(140,80,50,.25)}
+</style></head><body>
+<div class='btn-row'><button id='pngBtn' data-html2canvas-ignore>📷 이미지로 저장(PNG)</button></div>
+<div class='sheet' id='sheet'>
+<div class='eyebrow'>EBS 연계 독서 학습</div>
+<h1>장재, 정이와 주희의 철학 — EBS 연계 학습</h1>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 개념, 쉽게 알아보기</div></div>
+<div class='talk'><p>여러분, 똑같은 한 그릇의 비빔밥을 두고도 "재료가 좋아야 맛있다"는 사람과 "비비는 솜씨가 핵심"이라는 사람이 갈리죠? 그런데 한참 듣다 보면 결국 "좋은 재료를 솜씨 있게 비벼야 한다"로 모이게 됩니다. 옛 동아시아 철학자들도 비슷한 다툼을 벌였어요. 세상 만물과 사람의 마음은 무엇으로 이루어졌고, 사람은 왜 착하게 살아야 하는가 — 이 큰 물음을 두고 <strong>장재·정이·주희</strong> 세 사람이 서로 다른 답을 내놓았고, 마지막 사람(주희)이 앞 두 사람의 답을 골라 합쳤습니다. 그 이야기가 이 단원의 주인공인 <strong>성리학</strong>이에요.</p>
+<p>핵심 낱말은 딱 두 개, <strong>‘기(氣)’와 ‘이(理)’</strong>입니다. 어렵게 들리지만 비유로 풀면 쉬워요. <strong>‘기’는 세상을 이루는 ‘재료·기운’</strong> — 흙·물·바람처럼 실제로 굴러다니며 모이고 흩어져 만물을 만들어 내는 힘입니다. <strong>‘이’는 그 재료가 따라야 할 ‘이치·질서’</strong> — 물이 위에서 아래로 흐르는 법칙처럼, 눈에 보이진 않지만 모든 것이 그렇게 되도록 하는 원리예요. 세 철학자는 이 둘 중 무엇이 더 근본인지, 둘이 어떤 사이인지를 두고 입장이 갈립니다.</p>
+<ul>
+<li><strong>장재</strong>는 <strong>‘기’가 먼저</strong>라고 본 사람이에요. 우주는 텅 빈 배경이 아니라 ‘기’로 꽉 찬 살아 있는 실체이고, 이 ‘기’가 쉼 없이 변하며 만물을 낳고 기른다(이를 ‘화육’이라 해요)고 했죠. ‘이’는 ‘기’ 바깥의 딴 존재가 아니라 ‘기’ 속에 깃든 질서일 뿐이라고요.</li>
+<li><strong>정이</strong>는 반대로 <strong>‘이’가 먼저</strong>라고 봤어요. 만물과 사람의 참된 본질은 ‘이’이고, ‘기’는 그 ‘이’가 현실에 드러나는 수단일 뿐. 그래서 사람은 마음속 ‘이’를 지키고 사사로운 욕망(‘기’에서 비롯돼요)을 덜어 내야 한다고 가르쳤습니다.</li>
+<li><strong>주희</strong>는 두 사람의 답을 <strong>골라서 합친</strong> 종합자예요. ‘이’를 근본(본체)으로 삼되 ‘기’도 버리지 않고, "‘이’와 ‘기’는 떨어지지 않으면서도 ‘이’가 위"라는 절묘한 위계를 세웠죠. 이것이 동아시아 사상의 큰 줄기가 된 <strong>이기론</strong>입니다.</li>
+</ul>
+<blockquote>
+<p>한마디로: <strong>‘재료(기)’가 먼저냐 ‘이치(이)’가 먼저냐</strong> — 장재는 기, 정이는 이, 그리고 주희가 "둘 다 있되 이치가 위"로 둘을 묶었다. 이 세 입장의 같고 다름을 가려내는 것이 이 단원의 핵심입니다.</p>
+</blockquote></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='sec-head'><div class='sec-num'>길잡이 ―</div><div class='sec-title'>이 단원에서 배울 것</div></div>
+<div class='talk'><p>이 단원의 중심에는 <strong>성리학의 ‘이’와 ‘기’, 그리고 세 철학자의 입장 비교</strong>가 있습니다. 같은 낱말(이·기)을 쓰면서도 누가 무엇을 더 근본으로 두느냐가 갈리기 때문에, "누가 무엇에 동의하고 무엇에 반대할까"를 정확히 가려내는 연습이 핵심이에요. 세 세트는 이 큰 그림을 서로 다른 각도에서 비춥니다.</p></div>
+<div class='umap'>
+<div class='umap-center'>성리학 — ‘이(理)’와 ‘기(氣)’<small>"재료가 먼저냐 이치가 먼저냐, 둘은 어떤 사이냐"</small></div><div class='umap-stem'></div>
+<div class='umap-grid'>
+<div class='umap-card'><h4>세트 1</h4><p>한 입장이 앞선 입장을 이어받아 고치고 비판하는 <strong>연쇄 구조</strong>를 따라갑니다. ‘기’ 중심·‘이’ 중심·종합이라는 세 자리가 서로 어떻게 맞물리는지를 잡는 연습이에요.</p></div>
+<div class='umap-card'><h4>세트 2</h4><p>‘기’와 ‘이’ 중 무엇이 근본인가라는 <strong>논쟁</strong>과, 거기서 나오는 도덕 수양의 길을 들여다봅니다. 한 입장이 다른 입장의 약점을 짚는 ‘비판’ 문항이 핵심이에요.</p></div>
+<div class='umap-card'><h4>세트 3</h4><p>장재·정이의 사상과 주희의 종합을 <strong>(가)·(나) 두 편의 글</strong>로 나란히 놓고, 새로운 평가자의 눈으로 세 사람을 견주어 봅니다. 입장과 입장을 짝지어 판단하는 연습이에요.</p></div>
+</div></div>
+<div class='umap-note'><p>세 세트를 차례로 풀고 나면, "이·기 논쟁에서 누가 무엇을 주장했고 누가 누구를 어떻게 비판·종합했는가"를 스스로 정리해 말할 수 있게 될 거예요.</p></div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set1'>
+<div class='set-banner'>세트 1</div>
+<div class='passage-wrap'><div class='passage'><p>동아시아 철학에서 만물과 인간을 이루는 근원을 설명할 때 쓰는 두 핵심 개념이 ‘이(理)’와 ‘기(氣)’이다. ‘기’는 만물을 이루며 끊임없이 모이고 흩어지는 물질적 근원이고, ‘이’는 그 만물이 따르는 보편적 이치이다. 무엇이 더 근원적인가, 둘은 어떤 관계인가를 두고 학자마다 견해가 갈렸다. 이 물음에 대한 한 견해는 다른 견해를 이어받아 고치거나 반박하는 방식으로 전개되었으며, 그 흐름은 후대에 성리학이라는 이름으로 체계화되었다.</p>
+<p>‘기’를 근원으로 본 학자들은 우주를 ‘기’로 충만한 실체로 이해한다. 이들에 따르면 우주는 단순한 배경이나 빈 공간이 아니라 스스로 변화하고 생성하는 역동적 과정이며, 이 과정을 통해 만물을 낳고 기르는 작용을 멈추지 않는다. 이러한 자생적 생성과 성장의 운동을 화육(化育)이라 하는데, 변화시켜 생겨나게 하는 작용과 그것을 길러 성숙하게 하는 작용을 아우른 말이다. 이 견해에서 ‘이’는 ‘기’와 분리된 독립적 실체가 아니라 ‘기’ 안에 내재하여 그 작용이 질서 있게 드러나도록 하는 원리일 뿐이다. 또한 이들은 ‘기’의 작용이 도덕적으로 드러난 것을 ‘인(仁)’이라 보아, 인간은 ‘인’의 본성을 가장 충만하게 타고난 존재이며 인간의 도덕 실천이 곧 우주의 질서를 완성하는 천도의 실현이라고 본다.</p>
+<p>㉠<u>‘이’를 근원으로 본 학자들은 이러한 견해를 뒤집는다. 이들에 따르면 ‘이’는 모든 존재와 인간 본성에 내재하는 선하고 보편적인 원리로서, 만물이 지닌 속성이나 덕목이 아니라 존재의 본질 그 자체이다. ‘이’가 본래 선하므로 인간의 본성 또한 본래 선하다. 이 견해에서 ‘기’는 ‘이’가 현실 세계에서 구체적으로 실현되는 수단이자 사물의 물질적 형체를 이루는 것이며, 인간의 감정과 욕망도 ‘기’를 통해 나타난다. ‘이’와 ‘기’는 분리되지 않지만 ‘이’가 ‘기’보다 존재론적으로 앞선다는 것이다. 이로부터 이들은 인간이 본성에 내재한 ‘이’를 보존하고 욕망을 일으키는 ‘기’를 경계하여 사사로운 욕망을 덜어 내야 한다는 수양론을 제시한다. 수련을 통한 도덕의 완성을 강조하는 성찰적 수양의 시각이다.</u></p>
+<p>두 견해를 선별적으로 받아들여 종합한 학자들은 ‘이’와 ‘기’를 체계적으로 설명하는 이기론을 세운다. 이들은 ‘기’를 근원으로 본 견해에서 우주를 ‘이’와 ‘기’가 살아 움직이며 만물을 낳고 기르는 생명적 체계로 보는 관점과, 도덕적 수양이 곧 우주의 도를 실현하는 과정이라는 관점을 받아들인다. 동시에 ‘이’를 근원으로 본 견해에서 ‘이’를 만물과 인간 본성의 근원적 본체로 보고 ‘기’를 그 실현 수단으로 보는 위계를 받아들인다. 이들에 따르면 ‘이’는 항상 선하고 불변하는 절대적 이치인 반면, ‘기’는 맑거나 탁한 정도에 따라 현상 세계에서 다양한 차이를 만들어 낸다. 그리하여 만물은 ‘이’를 본성으로 갖되 그것이 드러나는 양상은 ‘기’의 상태에 의해 달라진다. 인간도 본래의 ‘이’는 선하더라도 ‘기’가 탁하면 성정과 기질에 편차가 생겨 감정과 욕망이 치우치고 도덕적 결함이 생길 수 있다.</p>
+<p>다만 이 종합의 견해는 ‘이’만을 보존하고 ‘기’를 배제하지는 않는다. ‘기’는 우주와 인간의 변화를 실현하는 수단으로서 가치가 있기 때문이다. 이들은 ‘이’와 ‘기’를 모두 인정하되 ‘이’를 본체로 삼고 ‘기’를 그 발현 수단으로 보아 균형 있게 다루며, 둘을 구분하면서도 서로 떨어지지 않는 관계 속에서 위계를 설정한다. 이러한 관점은 ‘이’의 절대성과 ‘기’의 상대성을 함께 강조하면서 존재와 인간, 도덕과 우주를 두루 설명하는 종합 철학으로 평가된다. 결국 ‘기’ 중심의 견해와 ‘이’ 중심의 견해는 서로 맞서면서도, 그 종합을 통해 동아시아 철학의 주류를 이루는 한 체계로 이어진 것이다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>1</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하지 않는 것은?</p>
+<ul>
+<li>① ‘기’는 만물을 이루며 모이고 흩어지는 물질적 근원이다.</li>
+<li>② ‘기’를 근원으로 본 학자들은 우주를 ‘기’로 충만한 역동적 실체로 이해한다.</li>
+<li>③ ‘이’를 근원으로 본 학자들은 ‘이’를 만물이 지닌 덕목이 아니라 존재의 본질 자체로 본다.</li>
+<li>④ 두 견해를 종합한 학자들은 ‘기’를 배제하고 오직 ‘이’만을 보존해야 한다고 본다.</li>
+<li>⑤ 화육은 변화시켜 생겨나게 하는 작용과 그것을 길러 성숙하게 하는 작용을 아우른다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>1번 — 정답 ④</strong>
+4문단 끝과 5문단에 종합 견해는 "‘이’만을 보존하고 ‘기’를 배제하지는 않는다", "‘기’는 …수단으로서 가치가 있다"라고 분명히 적혀 있어요. 그런데 ④는 "‘기’를 배제하고 오직 ‘이’만"이라며 정반대로 말했으니 일치하지 않아 정답입니다. ①은 1문단, ②는 2문단, ③은 3문단, ⑤는 2문단(화육의 뜻)과 그대로 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>2</div><div class='q-stem'></div></div>
+<p>㉠에서 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① ‘기’의 작용이 도덕적으로 드러난 것을 무엇이라 부르는가?</li>
+<li>② ‘이’와 ‘기’ 가운데 존재론적으로 앞서는 것은 무엇인가?</li>
+<li>③ 우주가 만물을 낳고 기르는 작용을 가리키는 말은 무엇인가?</li>
+<li>④ ‘기’와 ‘이’를 종합하여 위계를 설정한 견해의 이름은 무엇인가?</li>
+<li>⑤ 인간이 우주의 작용이 가장 응축된 결과인 까닭은 무엇인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>2번 — 정답 ②</strong>
+㉠은 ‘이’ 중심 견해를 다루는 3문단 전체에 걸쳐 있어요. 그 안에 "‘이’가 ‘기’보다 존재론적으로 앞선다"라고 적혀 있으니, ②의 답은 ㉠에서 찾을 수 있어 정답입니다. ①(‘인’)은 2문단, ③(화육)도 2문단, ④(이기론·위계)는 4문단, ⑤(인간이 응축된 결과인 까닭)는 ㉠ 바깥의 ‘기’ 중심 견해 쪽 내용이라 ㉠에서는 답을 찾을 수 없어요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>3</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 아래의 핵심 쟁점에 대해 윗글에 제시된 세 견해가 보일 수 있는 입장을 정리해 봅시다.</p>
+<p><strong><span class="boxmark">[쟁점 1]</span> ‘이’와 ‘기’의 선후(先後)</strong>
+∙ ‘기’ 중심 견해: ‘이’는 ‘기’ 안에 내재할 뿐 ‘기’와 별개의 독립적 실체가 아니라고 본다. ·········· ①
+∙ ‘이’ 중심 견해: ‘이’가 ‘기’보다 존재론적으로 앞선다고 본다. ·········· ②</p>
+<p><strong><span class="boxmark">[쟁점 2]</span> ‘기’에 대한 태도</strong>
+∙ ‘이’ 중심 견해: ‘기’는 욕망을 일으키므로 경계해야 할 대상이라고 본다. ·········· ③
+∙ 종합 견해: ‘기’는 변화를 실현하는 수단으로서 가치가 있어 배제하지 않는다고 본다.</p>
+<p><strong><span class="boxmark">[쟁점 3]</span> 도덕 수양의 의미</strong>
+∙ ‘기’ 중심 견해, 종합 견해: 인간의 도덕적 수양을 우주의 도를 실현하는 과정과 연결한다. ·········· ④
+∙ ‘기’ 중심 견해: 본성에 내재한 ‘이’를 보존하고 사사로운 욕망을 덜어 내는 수양론을 제시한다. ·········· ⑤</p>
+</blockquote>
+<ul>
+<li>① ①</li>
+<li>② ②</li>
+<li>③ ③</li>
+<li>④ ④</li>
+<li>⑤ ⑤</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>3번 — 정답 ⑤</strong>
+⑤는 "본성에 내재한 ‘이’를 보존하고 사사로운 욕망을 덜어 내는 수양론"을 ‘기’ 중심 견해의 입장으로 적었는데, 이 수양론은 3문단의 ‘이’ 중심 견해가 제시한 것이에요. 입장을 잘못 짝지었으니 적절하지 않아 정답입니다. ①은 2문단, ②는 3문단, ③은 3문단, ④는 2·4문단(도덕 수양과 우주의 도 연결)과 맞아요.</p>
+<p><strong>4번 [3점] — 정답 ③</strong>
+〈보기〉의 갑은 ‘본성 자체가 서로 다르다’는 입장, 을은 ‘본성은 같고 드러나는 바탕(맑고 탁함)이 다르다’는 입장이에요. 4문단의 종합 견해는 "만물은 ‘이’를 본성으로 갖되 그것이 드러나는 양상은 ‘기’의 상태에 의해 달라진다"라고 했으니, 을의 입장과 정확히 맞습니다. 그래서 ③이 정답이에요. ①은 ‘기’ 중심 견해가 본성 차이를 다룬 바 없으므로 근거가 없고, ②는 ‘이’ 중심 견해도 "본성 또한 본래 선하다"라고 보므로 을을 옳다고 볼 것이라 반대예요. ④는 종합 견해가 본성을 ‘이’로 보아 본래 선하다고 하므로 갑을 옳다고 볼 수 없고, ⑤는 ‘이’ 중심 견해에서도 ‘기’가 본성의 발현 수단이라는 점은 인정하므로 을의 설명이 ‘이’ 우선 주장과 어긋나지 않아 틀렸습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>4</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑: 같은 부모에게서 난 형제인데도 한 사람은 너그럽고 한 사람은 거칠다면, 그것은 타고난 본성 자체가 서로 다르기 때문이야. 본성에는 애초에 선한 본성과 그렇지 않은 본성이 따로 있어서, 사람마다 다른 본성을 받고 태어나는 거지.
+을: 그렇지 않아. 두 사람이 받은 본성은 똑같이 선해. 다만 그 본성이 드러날 때 거쳐 가는 바탕이 한쪽은 맑고 한쪽은 탁해서, 같은 본성이 너그러움과 거침으로 다르게 나타나는 것일 뿐이야.</p>
+</blockquote>
+<ul>
+<li>① ‘기’ 중심 견해에 따르면, 형제의 차이를 타고난 본성 자체의 차이로 본 갑의 입장은 옳겠군.</li>
+<li>② ‘이’ 중심 견해에 따르면, 두 사람이 받은 본성이 본래 선하다고 본 을의 입장은 옳지 않겠군.</li>
+<li>③ 종합 견해에 따르면, 같은 ‘이’를 본성으로 받아도 ‘기’의 맑고 탁함에 따라 다르게 드러난다고 본 을의 입장은 옳겠군.</li>
+<li>④ 종합 견해에 따르면, 선한 본성과 그렇지 않은 본성이 따로 있다고 본 갑의 입장은 옳겠군.</li>
+<li>⑤ ‘이’ 중심 견해에 따르면, 본성이 드러나는 차이를 바탕의 맑고 탁함으로 설명한 을의 입장은 ‘이’가 ‘기’보다 앞선다는 주장과 어긋나므로 옳지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>기(氣)</strong>: 만물을 이루며 모이고 흩어지는 물질적 근원이자 변화의 힘. ‘재료·기운’으로 생각하면 쉬워요.</li>
+<li><strong>이(理)</strong>: 만물이 따르는 보편적 이치·질서. 눈에 안 보이지만 모든 것을 그렇게 되게 하는 원리예요.</li>
+<li><strong>화육(化育)</strong>: 우주가 스스로 변화하며 만물을 낳고(化) 길러 성숙시키는(育) 작용.</li>
+<li><strong>이기론</strong>: ‘이’와 ‘기’를 모두 인정하되 ‘이’를 본체, ‘기’를 발현 수단으로 두어 위계를 세운 종합 체계.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>견해</th>
+<th>무엇이 근원인가</th>
+<th>‘이’와 ‘기’의 관계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘기’ 중심</td>
+<td>‘기’</td>
+<td>‘이’는 ‘기’ 안에 내재한 질서일 뿐</td>
+</tr>
+<tr>
+<td>‘이’ 중심</td>
+<td>‘이’</td>
+<td>‘이’가 ‘기’보다 앞섬, ‘기’는 실현 수단</td>
+</tr>
+<tr>
+<td>종합</td>
+<td>‘이’(본체) + ‘기’(수단)</td>
+<td>떨어지지 않되 ‘이’가 위인 위계</td>
+</tr>
+</tbody>
+</table>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>‘기’ 중심 견해에서 ‘이’는 ‘기’와 별개의 독립적 실체인가요?</div><div class='qa-a'>아니요. ‘기’ 안에 내재하여 그 작용이 질서 있게 드러나도록 하는 원리일 뿐입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>종합 견해는 ‘기’를 어떻게 다루나요?</div><div class='qa-a'>배제하지 않습니다. ‘이’를 본체로 삼되 ‘기’도 변화를 실현하는 수단으로서 가치를 인정해 균형 있게 다룹니다.</div></div>
+<div class='qa-item'><div class='qa-q'>같은 ‘이’를 받았는데 사람마다 도덕적 차이가 나는 까닭은?</div><div class='qa-a'>종합 견해에 따르면 ‘기’가 맑거나 탁한 정도가 달라, 같은 본성이 다르게 드러나기 때문입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2026학년도 수능 [14~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>철학에서 특정한 개인으로서의 인간을 ‘인격’, 그중 ‘나’를 ‘자아’라고 한다. 인격의 동일성은 모든 생각의 기반이다. 우리는 과거의 내가 현재의 나와 동일한 인격이기에 과거에 내가 한 약속을 현재의 내가 지켜야 한다고 판단한다. 칸트 이전까지 인격의 동일성을 설명하는 유력한 견해는, ‘생각하는 나’인 영혼이 단일한 주관으로서 시간의 흐름 속에 지속한다는 것이었다. ‘주관’은 인식의 주체를 가리키며, ‘인식’은 ‘앎’을 말한다.</p>
+<p>그러나 칸트는 ‘나는 생각한다.’, 즉 ‘자기의식’은 인식이 이루어지는 것을 가능하게 하는 조건 중 하나에 불과하다고 본다. 그러한 조건 자체는 무언가가 실재함을 보장하지 않는다. 그렇기에 자기의식은 ‘생각하는 나’가 단일한 주관으로서 실제로 존재한다는 것, 즉 ‘영혼의 실재함’을 보장하지 않고, ‘영혼이 실재할 가능성’을 열어둘 뿐이다.</p>
+<div class="ablock"><span class="atag">[A]</span><p>이를 바탕으로 칸트는 영혼이 인격이라는 견해를 반박한다. 칸트는 ‘시간의 흐름 속에서 스스로의 동일성을 의식하는 것은 인격이다.’와 ‘영혼이 자기의식을 한다.’라는 두 전제 모두 납득할 수 있다고 보지만, 그 전제들로부터 ‘영혼이 인격이다.’라는 결론은 도출되지 않는다고 지적한다. 첫 번째 전제에 등장하는 ‘의식’은 실제로 존재하는 무언가에 대해 의식한다는 뜻이지만, ‘생각하는 나는 생각한다.’와 다름없는 두 번째 전제에 등장하는 ‘의식’은 무언가가 꼭 실재함을 뜻하지는 않기 때문이다.</p></div>
+
+<p>칸트는 통시적으로 동일한 인격의 존재를 직접 증명하는 대신 ‘시간의 흐름 속에서 마주치는 복수의 주관이 동일한 인격으로 인식된다.’라는 가정이 반드시 선행되어야 한다고 제안한다. 그래야 경험적 판단, 윤리적 판단 등의 생각이 가능하기 때문이다. 생각의 구성은 시간의 흐름을 따르는데, 이러한 구성은 통시적으로 동일한 인격을 반드시 필요로 한다는 것이다.</p>
+<p>스트로슨은 자아를 인식하는 방식이 경험적 인식의 방식과 구별된다는 칸트의 견해에 동의하지만, 복수의 주관이 동일한 인격으로 인식된다고 가정하는 것은 철학적 상상에 불과하다고 칸트를 비판한다. 인격의 문제에서 신체를 간과한 칸트와 달리, 스트로슨은 인격을 의식과 신체의 복합체로 본다. 스트로슨에 따르면, 시공간적 세계 안에서 우리의 신체를 매개로 대상이 경험된다는 것은 과학적 사실이며 자아에 대한 인식은 경험적 인식들로부터 추상화되는 것이다. 그러므로 시공간적 세계에서의 경험이 인격의 통시적 동일성을 뒷받침한다고 그는 주장한다. 자기의식도 마찬가지로 경험에 의존하기에, 자기의식이 인식을 가능하게 하는 조건이라는 칸트의 견해는 잘못이라는 것이다.</p>
+<p>롱게네스는 통시적으로 동일한 자아가 없이는 경험적 인식이 성립할 수조차 없으므로, 자아에 대한 인식은 경험으로부터 추상화된 것이 아니라고 본다. 하지만 그는 자아와 인격이 시공간적 세계를 경험하는 인간에만 적용되는 개념이라고 주장한다. 롱게네스는 인간은 도덕적 존재이며 도덕적 존재로서의 인간은 자율성을 지닌 존재라는 칸트의 견해를 인정한다. 그러나 자율성을 지닌다는 것은 시공간적 세계를 살아가는 동안 경험하는 것들 사이에서 스스로 선택한다는 것을 뜻한다. 그러려면 신체가 있고 살아 있어야 하므로, 인격의 동일성의 기준은 각자가 자신의 것이라고 통시적으로 인식하는 신체라고 롱게네스는 주장한다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>윗글의 내용과 일치하는 것은?</p>
+<ul>
+<li>① 칸트에 따르면 자기의식은 영혼의 실재를 보장한다.</li>
+<li>② 칸트에 따르면 생각의 구성은 시간의 흐름과 독립적이다.</li>
+<li>③ 스트로슨에 따르면 자기의식은 인식을 가능하게 하는 조건이다.</li>
+<li>④ 스트로슨에 따르면 의식을 매개로 대상이 경험된다는 것은 과학적 사실이다.</li>
+<li>⑤ 롱게네스에 따르면 살아 있다는 것은 시공간적 세계 안에서의 선택에 필수적이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>14번 — 정답 ⑤</strong><br />
+6문단에서 롱게네스는 시공간적 세계에서 경험하는 것들 사이에서 스스로 선택하려면 신체가 있고 살아 있어야 한다고 보았으므로 ⑤가 일치한다. ① 칸트에게 자기의식은 영혼의 실재함을 보장하지 않음(2문단), ② 생각의 구성은 시간의 흐름을 따름(4문단), ③ 스트로슨은 자기의식이 인식의 조건이라는 칸트의 견해를 잘못이라 봄(5문단), ④ 과학적 사실은 ‘신체를 매개로’ 대상이 경험된다는 것(5문단)이므로 일치하지 않는다.</p>
+<p><em>선택률</em> — 응시 98,555명 — ①2.0% ②6.7% ③11.3% ④17.3% ⑤63.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>[A]에서 답을 찾을 수 있는 질문으로 가장 적절한 것은?</p>
+<ul>
+<li>① ‘두 전제’를 연결하는 개념의 함의는 실재성과 관련하여 어떤 점에서 서로 다를까?</li>
+<li>② ‘복수의 주관이 동일한 인격으로 인식된다.’라는 가정은 어떤 점에서 반박되고 있을까?</li>
+<li>③ ‘영혼이 실재할 가능성’이 열려 있다는 것이 납득할 수 없는 견해인 근거는 무엇일까?</li>
+<li>④ 인격의 통시적 동일성이 ‘직접 증명’될 수 있다는 견해를 받아들여야 하는 근거는 무엇일까?</li>
+<li>⑤ ‘영혼이 자기의식을 한다.’라는 전제가 ‘생각하는 나는 생각한다.’라는 전제와 다름없는 근거는 무엇일까?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>15번 — 정답 ①</strong><br />
+[A]에서 칸트는 두 전제를 연결하는 개념인 ‘의식’의 함의를 실재성과 관련해 구분한다 — 첫 번째 전제의 ‘의식’은 실재하는 무언가에 대한 의식이지만, 두 번째 전제의 ‘의식’은 실재를 꼭 뜻하지 않는다. 따라서 ①의 답을 [A]에서 찾을 수 있다. ②의 가정에 대한 반박은 5문단(스트로슨), ③의 ‘영혼이 실재할 가능성’은 2문단의 칸트가 수용하는 견해, ④는 칸트가 직접 증명 대신 가정의 선행을 제안(4문단), ⑤의 재진술 근거는 1·2문단에서 확인되므로 [A]에서 답을 찾을 수 없다.</p>
+<p><em>선택률</em> — 응시 98,559명 — ①40.5% ②10.1% ③17.3% ④9.4% ⑤23.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>다음은 윗글을 읽고 학생이 작성한 학습 활동지이다. 윗글을 바탕으로 할 때, 적절하지 않은 것은?</p>
+<blockquote>
+<p>□ 아래의 핵심 개념에 대해 윗글에 제시된 학자들이 보일 수 있는 입장을 작성해 봅시다.</p>
+<p><strong><span class="boxmark">[핵심 개념 1]</span> 자아에 대한 인식과 경험적 인식</strong>
+∙ 칸트: 자아를 인식하는 방식과 시공간적 세계의 대상들을 경험적으로 인식하는 방식은 다르다고 본다. ·········· ①
+∙ 스트로슨: 시공간적 세계에서 이루어지는 경험적 인식은 자아에 대한 인식에 의존한다고 본다. ·········· ②</p>
+<p><strong><span class="boxmark">[핵심 개념 2]</span> 추상화 과정</strong>
+∙ 스트로슨: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의하지 않는다.
+∙ 롱게네스: 경험으로부터의 추상화 과정을 거치지 않고서 ‘나’를 인식할 수 있다는 것에 동의한다. ·········· ③</p>
+<p><strong><span class="boxmark">[핵심 개념 3]</span> 통시적 인격과 도덕적 존재</strong>
+∙ 칸트, 롱게네스: 도덕적 존재로서의 인간이 자율성을 지닌다는 것을 수용한다. ·········· ④
+∙ 칸트, 스트로슨, 롱게네스: ‘시간의 흐름 속 동일한 인격으로서의 나’라는 개념을 수용한다. ·········· ⑤</p>
+</blockquote>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+5문단에서 스트로슨은 자아에 대한 인식이 신체를 매개로 한 경험적 인식들로부터 추상화되는 것이라고 보았다. 즉 경험적 인식이 자아에 대한 인식에 의존하는 것이 아니라 그 반대이므로 ②가 적절하지 않다. ①은 스트로슨이 동의한 칸트의 견해(5문단 첫 문장), ③은 6문단 첫 문장, ④는 6문단(칸트의 견해 인정), ⑤는 세 학자 모두 통시적 동일성 논의를 전개한다는 점(4·5·6문단)에서 적절하다.</p>
+<p><em>선택률</em> — 응시 98,556명 — ①3.9% ②51.1% ③17.8% ④10.6% ⑤16.0%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 〈보기〉를 이해한 반응으로 가장 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+갑: 두뇌에서 일어나는 의식을 스캔하여 프로그램으로 재현한다고 상상해 보자. 그런 경우, 본래의 자신과 재현된 의식은 동일한 인격이 아니야. 두뇌에서 일어나는 의식은 신체 전체의 기여로 일어난 것이기 때문이지. 즉, 프로그램으로 재현된 의식은 인격일 수 없어. ‘생각하는 나’의 지속만으로는 인격의 동일성이 보장될 수 없고, 살아 있는 신체도 인격의 구성 요소에 포함되어야 하거든.
+을: 그렇지 않아. 프로그램으로 재현된 의식은 본래의 자신과 동일한 인격이야. 비록 프로그램은 신체가 없지만 우리 두뇌와 프로그램이 수행하는 사고 기능에는 근본적인 차이가 없거든. 인격의 동일성은 어떤 가정도 두지 않고 이러한 사고 기능의 동일성만을 기준으로 판단해야 해.</p>
+</blockquote>
+<ul>
+<li>① 롱게네스의 견해에 의하면, 프로그램으로 재현된 의식만으로 인격이 될 수 있다는 갑의 입장은 옳겠군.</li>
+<li>② 스트로슨의 견해에 의하면, 신체를 지니지 않은 존재에게 인격이 귀속될 수 없다는 을의 입장은 옳지 않겠군.</li>
+<li>③ 칸트 이전까지 유력했던 견해에 의하면, ‘생각하는 나’의 지속만으로는 인격의 동일성을 보장하지 않는다는 갑의 입장은 옳지 않겠군.</li>
+<li>④ 칸트의 견해에 의하면, 인격의 통시적 동일성은 그것에 대한 가정이 선행될 필요 없이 사고 기능의 동일성을 통해 판단된다는 을의 입장은 옳겠군.</li>
+<li>⑤ 롱게네스의 견해에 의하면, 인간과 상이한 존재에 의해서도 동일하게 수행될 수 있는 사고 기능이 인격의 동일성을 판단하는 기준이라는 을의 입장은 옳겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>17번 — 정답 ③</strong><br />
+칸트 이전까지 유력했던 견해는 ‘생각하는 나’인 영혼이 단일한 주관으로서 시간의 흐름 속에 지속한다는 것으로, 이 견해에서는 ‘생각하는 나’의 지속이 곧 인격의 동일성을 설명한다. 따라서 그 지속만으로는 동일성이 보장될 수 없다는 갑의 입장을 옳지 않다고 볼 것이므로 ③이 적절하다. ① 롱게네스는 인격을 인간에만 적용되는 개념으로 봄 — 갑의 입장이 아니라도 재현된 의식만으로는 인격이 될 수 없다고 볼 것. ② 스트로슨은 인격을 의식과 신체의 복합체로 보므로 을의 입장을 옳다고 볼 것. ④ 칸트는 가정의 선행이 반드시 필요하다고 봄. ⑤ 롱게네스에게 동일성의 기준은 통시적으로 인식하는 신체다.</p>
+<p><em>선택률</em> — 응시 98,565명 — ①7.6% ②14.1% ③42.0% ④24.4% ⑤11.9%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set2'>
+<div class='set-banner'>세트 2</div>
+<div class='passage-wrap'><div class='passage'><p>만물과 인간을 이루는 근원을 묻는 동아시아 철학에서 ‘이(理)’와 ‘기(氣)’는 가장 핵심적인 두 개념이다. ‘기’는 만물을 이루며 변화하는 물질적 근원이고 ‘이’는 그 만물이 따르는 이치인데, 둘 중 무엇이 더 근원적인가를 두고 견해가 ⓐ<u>갈린다</u>. 한 학자는 ‘기’를 근원으로 보아 존재를 설명하였고, 다른 학자는 ‘이’를 근원으로 보아 이를 비판하며 다른 길을 열었다.</p>
+<p>㉠<u>‘기’를 근원으로 본 학자</u>는 ‘기’를 단순한 물질적 요소가 아니라 우주의 근원이자 존재의 근원으로 ⓑ<u>파악한다</u>. 그에 따르면 우주는 빈 공간이 아니라 ‘기’로 충만한 실체이며, 스스로 끊임없이 변화하고 생성하는 역동적 과정을 통해 만물을 낳고 기르는 작용을 멈추지 않는다. 이러한 자생적 생성과 성장의 운동이 화육(化育)이며, 모든 존재는 화육의 산물이다. 그는 인간을 이 우주의 작용이 가장 응축된 결과로 보아 화육의 정수(精髓)라 일컫는다. 이 견해에서 ‘이’는 ‘기’와 분리된 독립적 실체가 아니라 ‘기’ 안에 내재하여 그 작용이 질서 있게 드러나도록 하는 원리이다.</p>
+<p>이 학자는 ‘기’의 작용이 도덕적으로 드러난 것을 ‘인(仁)’이라 본다. ‘인’은 존재를 존재하게 하고 살게 하는 근원적 성질로서, 인간은 ‘인’의 본성을 가장 충만하게 타고난 존재이며 이 본성이 도덕의 근간이 된다. 인간을 화육의 정수로 보는 그는 인간의 도덕 실천이 곧 천도의 실현이라는 ‘천인합일(天人合一)’의 관점을 강조한다. 도덕의 실천을 통해 인간이 우주와 합일할 수 있으며, 도덕은 ‘인’의 발현이자 우주의 질서를 구현하는 길이라는 것이다. 인간의 도덕적 행위는 곧 우주의 질서를 완성하는 행위가 된다.</p>
+<p>㉡<u>‘이’를 근원으로 본 학자</u>는 이러한 ‘기’ 중심의 설명을 받아들이지 않는다. 그는 ‘이’가 인간을 비롯한 만물의 본질이라고 본다. ‘이’는 모든 존재와 인간 본성에 내재하는 선하고 보편적인 원리로, 속성이나 덕목이 아니라 존재의 본질 그 자체이며, 본래 선하므로 인간의 본성 또한 본래 선하다. 그는 ‘이’가 현실 세계에서 구체적으로 실현되는 수단을 ‘기’라고 본다. ‘기’는 사물의 물질적 형체를 이루며, 인간의 감정과 욕망도 ‘기’를 통해 나타난다. ‘이’와 ‘기’는 분리되지 않지만 ‘이’가 ‘기’보다 존재론적으로 앞선다는 입장이다.</p>
+<p>이 학자는 여기서 한 걸음 더 나아가 수양의 길을 ⓒ<u>제시한다</u>. 인간은 본성 안에 내재한 ‘이’를 보존하고, 감정과 욕망을 유발하는 근원인 ‘기’를 경계하여 사사로운 욕망을 덜어 내는 데 힘써야 한다는 것이다. 이는 수련을 통한 도덕의 완성을 ⓓ<u>강조하는</u> 성찰적 수양의 시각이다. ‘기’ 중심의 학자가 ‘기’의 작용 속에서 도덕을 찾고 인간을 우주와의 합일로 이끄는 데 견주어, ‘이’ 중심의 학자는 마음속 ‘이’를 지키고 욕망을 다스리는 내면의 수양을 도덕의 핵심으로 삼는다. 두 학자는 ‘이’와 ‘기’를 모두 다루면서도, 무엇을 근원으로 두고 어디에서 도덕의 근거를 찾는가에서 뚜렷이 ⓔ<u>갈라진다</u>.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>5</div><div class='q-stem'></div></div>
+<p>윗글에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① ‘기’를 근원으로 본 학자는 우주를 ‘기’로 충만한 실체로 본다.</li>
+<li>② ‘기’를 근원으로 본 학자는 인간을 화육의 정수로 본다.</li>
+<li>③ ‘이’를 근원으로 본 학자는 인간의 본성이 본래 선하다고 본다.</li>
+<li>④ ‘이’를 근원으로 본 학자는 ‘기’를 ‘이’가 실현되는 수단으로 본다.</li>
+<li>⑤ ‘이’를 근원으로 본 학자는 ‘이’와 ‘기’가 서로 분리된다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>5번 — 정답 ⑤</strong>
+4문단에 ‘이’ 중심 학자는 "‘이’와 ‘기’는 분리되지 않지만 ‘이’가 ‘기’보다 …앞선다"라고 못 박혀 있어요. 그런데 ⑤는 "서로 분리된다"라며 정반대로 말했으니 적절하지 않아 정답입니다. ①은 2문단, ②는 2문단, ③은 4문단, ④는 4문단과 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>6</div><div class='q-stem'></div></div>
+<p>㉠, ㉡에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 ‘인’을 ‘기’의 작용이 도덕적으로 드러난 것으로 보고, ㉡은 ‘이’를 만물의 본질로 본다.</li>
+<li>② ㉠은 ‘이’를 ‘기’보다 앞서는 것으로 보고, ㉡은 ‘기’를 우주의 근원으로 본다.</li>
+<li>③ ㉠은 도덕을 욕망의 제거에서 찾고, ㉡은 도덕을 천인합일에서 찾는다.</li>
+<li>④ ㉠과 ㉡은 모두 ‘이’를 ‘기’ 안에 내재하는 원리로 본다.</li>
+<li>⑤ ㉠과 ㉡은 모두 인간의 감정과 욕망이 ‘이’를 통해 나타난다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>6번 — 정답 ①</strong>
+㉠(‘기’ 중심)은 3문단에서 "‘인’은 …‘기’의 작용이 도덕적으로 드러난 것"이라 했고, ㉡(‘이’ 중심)은 4문단에서 "‘이’가 …만물의 본질"이라 했으니, 둘을 정확히 옮긴 ①이 정답입니다. ②는 ㉠·㉡의 입장을 서로 뒤바꿨고, ③은 도덕을 찾는 자리를 ㉠(천인합일)·㉡(욕망 제거)과 반대로 적었어요. ④는 ‘이’를 ‘기’ 안에 내재한다고 보는 것은 ㉠뿐이고, ⑤는 감정·욕망이 ‘기’를 통해 나타난다고 본 것이지 ‘이’를 통해서가 아니므로 틀렸습니다.</p>
+<p><strong>7번 [3점] — 정답 ⑤</strong>
+〈보기〉의 앞 농부는 도움을 ‘우주의 질서 완성’으로 여기는 천인합일의 태도(㉠), 뒤 농부는 욕망부터 다스리는 성찰적 수양의 태도(㉡)예요. ⑤는 "두 농부의 도움이 모두 …욕망을 덜어 내는 수양에서 비롯되었다"라고 했는데, 앞 농부의 도움은 ㉠의 천인합일 관점에 해당하지 욕망 제거의 수양이 아니에요. 그래서 두 입장이 모두 그렇게 보지는 않으므로 ⑤가 적절하지 않아 정답입니다. ①②는 앞 농부를 ㉠의 천인합일·‘인’의 발현으로, ③④는 뒤 농부를 ㉡의 욕망 경계·내재한 ‘이’ 보존으로 정확히 연결한 적절한 반응이에요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>7</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 참고할 때, 〈보기〉에 대한 반응으로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 마을에 가뭄이 들자, 농부 둘이 서로 다른 마음으로 이웃을 도왔다. 한 사람은 "이웃을 살리는 일이 곧 하늘의 이치를 이 땅에 이루는 일"이라며 자신의 도움을 우주의 질서를 완성하는 행위로 여겼다. 다른 사람은 "내 안의 욕심이 앞서면 도움이 사사로워지니, 마음을 닦아 본래의 선함을 지켜야 한다"며 도움에 앞서 자신의 욕망부터 다스렸다.</p>
+</blockquote>
+<ul>
+<li>① ㉠의 학자라면, 앞 농부가 이웃을 살리는 일을 우주의 질서를 완성하는 행위로 여긴 것을 도덕 실천이 곧 천도의 실현이라는 관점으로 설명하겠군.</li>
+<li>② ㉠의 학자라면, 앞 농부의 도움을 ‘인’의 본성이 도덕으로 발현된 것으로 보겠군.</li>
+<li>③ ㉡의 학자라면, 뒤 농부가 욕망부터 다스린 것을 ‘기’를 경계하여 사사로운 욕망을 덜어 내는 수양으로 보겠군.</li>
+<li>④ ㉡의 학자라면, 뒤 농부가 지키려 한 ‘본래의 선함’을 본성에 내재한 ‘이’로 보겠군.</li>
+<li>⑤ ㉠과 ㉡의 학자라면 모두, 두 농부의 도움이 사사로운 욕망을 덜어 내는 수양에서 비롯되었다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>8</div><div class='q-stem'></div></div>
+<p>문맥상 ⓐ~ⓔ와 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓐ: 합치된다</li>
+<li>② ⓑ: 여긴다</li>
+<li>③ ⓒ: 내놓는다</li>
+<li>④ ⓓ: 부각하는</li>
+<li>⑤ ⓔ: 나뉜다</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>8번 — 정답 ①</strong>
+ⓐ ‘갈리다’는 "여러 갈래로 나뉘다"라는 뜻인데, ‘합치되다’는 "여럿이 하나로 일치하다"라는 정반대의 뜻이라 "견해가 ~"라는 맥락에 호응하지 않아요. 견해는 갈라지는(나뉘는) 것이지 합쳐지는 것이 아니므로, 바꿔 쓰기에 적절하지 않은 ①이 정답입니다. ② 파악한다→여긴다, ③ 제시한다→내놓는다, ④ 강조하는→부각하는, ⑤ 갈라진다→나뉜다는 모두 문맥에서 자연스럽게 호응합니다.</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>천인합일(天人合一)</strong>: 인간의 도덕 실천이 곧 하늘(우주)의 도를 이루는 일이 된다는 관점. ‘기’ 중심 견해가 강조해요.</li>
+<li><strong>인(仁)</strong>: ‘기’의 작용이 도덕적으로 드러난 것. 존재를 살게 하는 근원적 성질로, 인간이 가장 충만하게 타고난 본성이에요.</li>
+<li><strong>존천리 거인욕(存天理 去人欲)</strong>: 본성의 ‘이(天理)’를 보존하고 사사로운 욕망(人欲)을 덜어 내는 ‘이’ 중심 견해의 수양 방향이에요.</li>
+<li><strong>성찰적 수양</strong>: 마음을 닦아 욕망을 다스리고 내면의 ‘이’를 지키는 도덕 완성의 길.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<table>
+<thead>
+<tr>
+<th>비교 항목</th>
+<th>‘기’ 중심 학자(㉠)</th>
+<th>‘이’ 중심 학자(㉡)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>근원</td>
+<td>‘기’</td>
+<td>‘이’</td>
+</tr>
+<tr>
+<td>도덕의 근거</td>
+<td>‘인’의 발현·천인합일</td>
+<td>본성의 ‘이’ 보존·욕망 제거</td>
+</tr>
+<tr>
+<td>‘기’를 보는 눈</td>
+<td>도덕이 비롯되는 바탕</td>
+<td>경계해야 할 욕망의 근원</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>헷갈리기 쉬운 점: 두 학자 모두 ‘이’와 ‘기’를 <strong>함께</strong> 말하지만, <strong>무엇을 근원으로 두느냐</strong>가 정반대예요. ‘기’ 중심 학자에게 ‘이’는 ‘기’ 속 질서이고, ‘이’ 중심 학자에게 ‘기’는 ‘이’의 실현 수단입니다.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>‘기’ 중심 학자가 말하는 ‘인’은 무엇인가요?</div><div class='qa-a'>‘기’의 작용이 도덕적으로 드러난 것으로, 인간이 가장 충만하게 타고난 도덕의 근간이 되는 본성입니다.</div></div>
+<div class='qa-item'><div class='qa-q'>‘이’ 중심 학자는 욕망을 어떻게 다루라고 하나요?</div><div class='qa-a'>욕망을 일으키는 ‘기’를 경계하고 사사로운 욕망을 덜어 내며, 본성에 내재한 ‘이’를 보존하라고 합니다.</div></div>
+<div class='qa-item'><div class='qa-q'>두 학자의 가장 큰 차이는?</div><div class='qa-a'>도덕의 근거를 ‘기’ 중심 학자는 우주와의 합일(천인합일)에서, ‘이’ 중심 학자는 내면의 ‘이’를 지키는 수양에서 찾습니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2017학년도 수능 [16~20]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p>㉠논리실증주의자와 포퍼는 지식을 수학적 지식이나 논리학 지식처럼 경험과 무관한 것과 과학적 지식처럼 경험에 의존하는 것으로 구분한다. 그중 과학적 지식은 과학적 방법에 의해 누적된다고 주장한다. 가설은 과학적 지식의 후보가 되는 것인데, 그들은 가설로부터 논리적으로 도출된 예측을 관찰이나 실험 등의 경험을 통해 맞는지 틀리는지 판단함으로써 그 가설을 시험하는 과학적 방법을 제시한다. 논리실증주의자는 예측이 맞을 경우에, 포퍼는 예측이 틀리지 않는 한, 그 예측을 도출한 가설이 하나씩 새로운 지식으로 추가된다고 주장한다.</p>
+<p>하지만 ㉡콰인은 가설만 가지고서 예측을 논리적으로 도출할 수 없다고 본다. 예를 들어 ⓐ새로 발견된 금속 M은 열을 받으면 팽창한다는 가설만 가지고는 ⓑ열을 받은 M이 팽창할 것이라는 예측을 이끌어낼 수 없다. 먼저 지금까지 관찰한 모든 금속은 열을 받으면 팽창한다는 기존의 지식과 M에 열을 가했다는 조건 등이 필요하다. 이렇게 예측은 가설, 기존의 지식들, 여러 조건 등을 모두 합쳐야만 논리적으로 도출된다는 것이다. 그러므로 예측이 거짓으로 밝혀지면 정확히 무엇 때문에 예측에 실패한 것인지 알 수 없다는 것이다. 이로부터 콰인은 개별적인 가설뿐만 아니라 ⓒ기존의 지식들과 여러 조건 등을 모두 포함하는 전체 지식이 경험을 통한 시험의 대상이 된다는 총체주의를 제안한다.</p>
+<p>논리실증주의자와 포퍼는 수학적 지식이나 논리학 지식처럼 경험과 무관하게 참으로 판별되는 분석 명제와, 과학적 지식처럼 경험을 통해 참으로 판별되는 종합 명제를 서로 다른 종류라고 구분한다. 그러나 콰인은 총체주의를 정당화하기 위해 이 구분을 부정하는 논증을 다음과 같이 제시한다. 논리실증주의자와 포퍼의 구분에 따르면 “총각은 총각이다.”와 같은 동어 반복 명제와, “총각은 미혼의 성인 남성이다.”처럼 동어 반복 명제로 환원할 수 있는 것은 모두 분석 명제이다. 그런데 후자가 분석 명제인 까닭은 전자로 환원할 수 있기 때문이다. 이러한 환원이 가능한 것은 ‘총각’과 ‘미혼의 성인 남성’이 동의적 표현이기 때문인데 그게 왜 동의적 표현인지 물어보면, 이 둘을 서로 대체하더라도 명제의 참 또는 거짓이 바뀌지 않기 때문이라고 할 것이다. 하지만 이것만으로는 두 표현의 의미가 같다는 것을 보장하지 못해서, 동의적 표현은 언제나 반드시 대체 가능해야 한다는 필연성 개념에 다시 의존하게 된다. 이렇게 되면 동의적 표현이 동어 반복 명제로 환원 가능하게 하는 것이 되어, 필연성 개념은 다시 분석 명제 개념에 의존하게 되는 순환론에 빠진다. 따라서 콰인은 종합 명제와 구분되는 분석 명제가 존재한다는 주장은 근거가 없다는 결론에 ㉢도달한다.</p>
+<p>콰인은 분석 명제와 종합 명제로 지식을 엄격히 구분하는 대신, 경험과 직접 충돌하지 않는 중심부 지식과, 경험과 직접 충돌할 수 있는 주변부 지식을 상정한다. 경험과 직접 충돌하여 참과 거짓이 쉽게 바뀌는 주변부 지식과 달리 주변부 지식의 토대가 되는 중심부 지식은 상대적으로 견고하다. 그러나 이 둘의 경계를 명확히 나눌 수 없기 때문에, 콰인은 중심부 지식과 주변부 지식을 다른 종류라고 하지 않는다. 수학적 지식이나 논리학 지식은 중심부 지식의 한가운데에 있어 경험에서 가장 멀리 떨어져 있지만 그렇다고 경험과 무관한 것은 아니라는 것이다. 그런데 주변부 지식이 경험과 충돌하여 거짓으로 밝혀지면 전체 지식의 어느 부분을 수정해야 할지 고민하게 된다. 주변부 지식을 수정하면 전체 지식의 변화가 크지 않지만 중심부 지식을 수정하면 관련된 다른 지식이 많기 때문에 전체 지식도 크게 변화하게 된다. 그래서 대부분의 경우에는 주변부 지식을 수정하는 쪽을 선택하겠지만 실용적 필요 때문에 중심부 지식을 수정하는 경우도 있다. 그리하여 콰인은 중심부 지식과 주변부 지식이 원칙적으로 모두 수정의 대상이 될 수 있고, 지식의 변화도 더 이상 개별적 지식이 단순히 누적되는 과정이 아니라고 주장한다.</p>
+<p>총체주의는 특정 가설에 대해 제기되는 반박이 결정적인 것처럼 보이더라도 그 가설이 실용적으로 필요하다고 인정되면 언제든 그와 같은 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 그러나 총체주의는 “A이면서 동시에 A가 아닐 수는 없다.”와 같은 논리학의 법칙처럼 아무도 의심하지 않는 지식은 분석 명제로 분류해야 하는 것이 아니냐는 비판에 답해야 하는 어려움이 있다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 할 때, ㉠과 ㉡이 모두 ‘아니요’라고 답변할 질문은?</p>
+<ul>
+<li>① 과학적 지식은 개별적으로 누적되는가?</li>
+<li>② 경험을 통하지 않고 가설을 시험할 수 있는가?</li>
+<li>③ 경험과 무관하게 참이 되는 지식이 존재하는가?</li>
+<li>④ 예측은 가설로부터 논리적으로 도출될 수 있는가?</li>
+<li>⑤ 수학적 지식과 과학적 지식은 종류가 다른 것인가?</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>16번 — 정답 ②</strong><br />
+논리실증주의자와 포퍼는 가설로부터 도출된 예측을 경험을 통해 판단함으로써 가설을 시험하므로 ‘경험을 통하지 않고 가설을 시험할 수 있는가?’에 ‘아니요’로 답한다. 콰인도 가설을 포함한 전체 지식이 경험을 통한 시험의 대상이 된다고 보므로 같은 질문에 ‘아니요’로 답한다. 따라서 ㉠·㉡ 모두 ‘아니요’로 답할 질문은 ②. (①③④⑤는 한쪽이라도 ‘예’로 답한다.)</p>
+<p><em>선택률</em> — 응시 98,548명 — ①8.6% ②72.1% ③8.9% ④5.8% ⑤2.9%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>윗글에 대해 이해한 내용으로 가장 적절한 것은?</p>
+<ul>
+<li>① 포퍼가 제시한 과학적 방법에 따르면, 예측이 틀리지 않았을 경우보다는 맞을 경우에 그 예측을 도출한 가설이 지식으로 인정된다.</li>
+<li>② 논리실증주의자에 따르면, “총각은 미혼의 성인 남성이다.”가 분석 명제인 것은 총각을 한 명 한 명 조사해 보니 모두 미혼의 성인 남성으로 밝혀졌기 때문이다.</li>
+<li>③ 콰인은 관찰과 실험에 의존하는 지식이 관찰과 실험에 의존하지 않는 지식과 근본적으로 다르다고 한다.</li>
+<li>④ 콰인은 분석 명제가 무엇인지는 동의적 표현이란 무엇인지에 의존하고, 다시 이는 필연성 개념에, 필연성 개념은 다시 분석 명제 개념에 의존한다고 본다.</li>
+<li>⑤ 콰인은 어떤 명제에, 의미가 다를 뿐만 아니라 서로 대체할 경우 그 명제의 참 또는 거짓이 바뀌는 표현을 사용할 수 있으면, 그 명제는 동어 반복 명제라고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+3문단에서 콰인은 ‘분석 명제 → 동의적 표현 → 필연성 개념 → 분석 명제 개념’으로 의존이 순환됨을 지적하며 분석 명제가 존재한다는 주장의 근거가 없다고 본다. 이 순환 구조를 정확히 진술한 ④가 적절하다. ① 포퍼는 예측이 맞을 경우가 아니라 틀리지 않는 한 가설을 인정한다. ② 분석 명제는 경험과 무관하게 참으로 판별되므로 한 명씩 조사하는 경험적 확인 때문은 아니다. ③·⑤는 콰인의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①16.3% ②4.9% ③7.1% ④68.0% ⑤5.1%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>18</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 윗글을 바탕으로 총체주의의 입장에서 ⓐ～ⓒ에 대해 평가한 것으로 적절하지 않은 것은?</p>
+<ul>
+<li>① ⓑ가 거짓으로 밝혀지더라도 그것이 ⓐ 때문이라고 단정하지 못하겠군.</li>
+<li>② ⓑ가 거짓으로 밝혀지면 ⓒ의 어느 부분을 수정하느냐는 실용적 필요에 따라 달라지겠군.</li>
+<li>③ ⓑ는 ⓐ와 ⓒ로부터 논리적으로 도출된다고 하겠군.</li>
+<li>④ ⓑ가 거짓으로 밝혀지면 ⓑ는 ⓒ의 주변부에서 경험과 직접 충돌한 것이라고 하겠군.</li>
+<li>⑤ ⓑ가 거짓으로 밝혀지면 ⓒ를 수정하는 방법으로는 ⓐ를 받아들일 수 없다고 하겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>18번 — 정답 ⑤</strong><br />
+총체주의에서는 가설이 실용적으로 필요하다고 인정되면 제기된 반박을 피하는 방법을 강구하여 그 가설을 받아들일 수 있다. 따라서 ⓑ가 거짓으로 밝혀져도 실용적 필요에 따라 전체 지식 ⓒ를 수정함으로써 가설 ⓐ를 받아들일 수 있다. ‘ⓒ를 수정해도 ⓐ를 받아들일 수 없다’고 본 ⑤가 총체주의 입장과 어긋난다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①3.6% ②5.9% ③13.9% ④14.2% ⑤62.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>19</div><div class='q-stem'></div></div>
+<p>윗글의 총체주의에 대한 비판으로 가장 적절한 것은?</p>
+<ul>
+<li>① 가설로부터 논리적으로 도출된 예측이 경험과 충돌하더라도 그 충돌 때문에 가설이 틀렸다고 할 수 없다.</li>
+<li>② 논리학 지식이나 수학적 지식이 중심부 지식의 한가운데에 위치한다고 해서 경험과 무관한 것은 아니다.</li>
+<li>③ 전체 지식은 어떤 결정적인 반박일지라도 피할 수 있기 때문에 수정 대상을 주변부 지식으로 한정하는 것은 잘못이다.</li>
+<li>④ 중심부 지식을 수정하면 주변부 지식도 수정해야 하겠지만, 주변부 지식을 수정한다고 해서 중심부 지식을 수정해야 하는 것은 아니다.</li>
+<li>⑤ 중심부 지식과 주변부 지식 간의 경계가 불분명하다 해도 중심부 지식 중에는 주변부 지식들과 종류가 다른 지식이 존재한다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>19번 — 정답 ⑤</strong><br />
+5문단에서 총체주의는 ‘아무도 의심하지 않는 논리학 법칙 같은 지식은 분석 명제로 분류해야 하지 않느냐’는 비판에 답해야 하는 어려움이 있다고 했다. 곧 중심부 지식 중에는 주변부 지식과 종류가 다른(분석 명제와 같은) 지식이 존재한다는 비판이 가능하다. 이를 진술한 ⑤가 적절한 비판이다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①15.8% ②8.9% ③9.4% ④9.0% ⑤58.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>20</div><div class='q-stem'></div></div>
+<p>문맥상 ㉢과 바꿔 쓰기에 가장 적절한 것은?</p>
+<ul>
+<li>① 잇따른다</li>
+<li>② 다다른다</li>
+<li>③ 봉착한다</li>
+<li>④ 회귀한다</li>
+<li>⑤ 기인한다</li>
+</ul>
+<hr />
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>20번 — 정답 ②</strong><br />
+㉢‘도달하다’는 ‘목적한 곳이나 수준에 다다르다’의 의미이므로 ‘다다른다’(②)로 바꿔 쓰는 것이 가장 적절하다.</p>
+<p><em>선택률</em> — 응시 98,548명 — ①2.2% ②85.8% ③9.5% ④1.0% ⑤0.6%</p></div>
+</details></div>
+</div>
+</div>
+<div class='orna'>❖ ❖ ❖</div>
+<div class='set set3'>
+<div class='set-banner'>세트 3</div>
+<div class='passage-wrap'><div class='passage'><p><strong>(가)</strong></p>
+<p>성리학에서 ‘기(氣)’를 존재의 근원으로 삼은 학자들은 ‘기’를 단순한 물질적 요소가 아니라 우주의 근원이자 존재의 근원으로 보았다. 이들에게 우주는 배경이나 빈 공간이 아니라 ‘기’로 충만한 실체이며, 스스로 끊임없이 변화하고 생성하는 역동적 과정을 통해 만물을 낳고 기르는 작용을 멈추지 않는 것이다. 이 자생적 생성과 성장의 운동을 화육(化育)이라 하는데, 변화시켜 생겨나게 하는 작용과 그것을 길러 성숙하게 하는 작용을 아우른다. 이들은 모든 존재를 화육의 산물로 보았으며, 인간은 이 우주의 작용이 가장 응축된 결과인 화육의 정수라고 여겼다.</p>
+<p>이 견해에서 ‘이(理)’는 ‘기’와 분리된 독립적 실체가 아니라 ‘기’ 안에 내재하여 그 작용이 질서 있게 드러나도록 하는 원리이다. 이들은 ‘기’의 작용이 도덕적으로 드러난 것을 ‘인(仁)’이라 하여, 인간은 ‘인’의 본성을 가장 충만하게 타고난 존재이며 인간의 도덕 실천이 곧 우주의 질서를 완성하는 천도의 실현이라는 천인합일(天人合一)의 관점을 강조하였다. 한편 ‘이’를 존재의 근원으로 삼은 학자들은 이러한 견해와 달리 ‘이’를 만물의 본질 그 자체로 보았다. 이들에게 ‘이’는 모든 존재와 인간 본성에 내재하는 선하고 보편적인 원리이며, ‘기’는 ‘이’가 현실에서 실현되는 수단이자 감정과 욕망이 나타나는 통로이다. 이들은 ‘이’가 ‘기’보다 존재론적으로 앞선다고 보아, 본성에 내재한 ‘이’를 보존하고 ‘기’를 경계하여 사사로운 욕망을 덜어 내는 수양을 도덕 완성의 길로 삼았다.</p>
+<p><strong>(나)</strong></p>
+<p>후대의 한 학자는 ‘기’ 중심의 견해와 ‘이’ 중심의 견해를 선별적으로 수용한 다음, 이를 종합하여 ‘이’와 ‘기’를 체계적으로 설명하는 이기론을 세웠다. 그는 ‘기’ 중심의 견해로부터, 우주가 ‘이’와 ‘기’가 살아 움직이며 만물을 낳고 기르는 생명적 체계라는 관점과 인간의 도덕적 수양이 곧 우주의 도를 실현하고 완성하는 과정이라는 관점을 받아들였다. 동시에 ‘이’ 중심의 견해로부터, ‘이’를 만물과 인간 본성의 근원적 본체로 보고 ‘기’를 그 실현 수단으로 보는 위계를 받아들였다.</p>
+<p>이 학자에 따르면 ‘이’는 항상 선하고 불변하는 절대적 이치인 반면, ‘기’는 맑거나 탁한 정도에 따라 현상 세계에서 다양한 차이를 만들어 낸다. 만물은 ‘이’를 본성으로 갖지만 그것이 드러나는 양상은 ‘기’의 상태에 의해 달라진다. 인간도 본래의 ‘이’는 선하더라도 ‘기’가 탁하면 성정과 기질에 편차가 생겨 감정과 욕망이 치우치고 도덕적 결함이 생길 수 있다. 이러한 까닭에 그는 인간이 도덕적 존재로 완성되기 위해서는 무엇보다 마음을 다스려 ‘이’를 밝히는 것이 중요하다고 ㉠<u>강조하였다</u>.</p>
+<p>그렇다고 해서 그가 ‘이’만을 보존하고 ‘기’를 배제한 것은 아니다. ‘기’는 우주와 인간의 변화를 실현하는 수단으로서 가치가 있기 때문이다. 그는 ‘이’와 ‘기’를 모두 인정하되 ‘이’를 본체로 삼고 ‘기’를 그 발현 수단으로 보아 균형 있게 다루고자 하였다. 결국 그는 ‘이’와 ‘기’를 구분하되 서로 떨어지지 않는 관계 속에서 위계를 ㉡<u>설정하였다</u>. 이러한 관점은 ‘이’의 절대성과 ‘기’의 상대성을 함께 강조하면서 존재와 인간, 도덕과 우주를 두루 설명하는 종합 철학으로 평가되며, 여기에는 앞선 두 견해가 ㉢<u>기여한</u> 바가 크다.</p></div></div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>9</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 ‘기’ 중심과 ‘이’ 중심의 두 견해를 대비하여 제시하고 있다.</li>
+<li>② (가)는 ‘기’ 중심 견해의 한계를 ‘이’ 중심 견해가 보완하는 과정을 시간 순으로 서술하고 있다.</li>
+<li>③ (나)는 하나의 견해가 다른 견해로 대체되어 폐기되는 과정을 설명하고 있다.</li>
+<li>④ (나)는 종합된 이기론의 내적 모순을 드러내어 그 한계를 지적하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두 두 견해 사이의 우열을 가려 하나를 옹호하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>9번 — 정답 ①</strong>
+(가)는 ‘기’ 중심 견해(1·2문단 앞부분)와 ‘이’ 중심 견해(2문단 뒷부분)를 나란히 놓아 대비하고 있어요. 이를 정확히 말한 ①이 정답입니다. ②는 (가)가 두 견해를 시간 순 보완 과정으로 서술하지 않았고, ③·④는 (나)가 견해를 폐기하거나 모순을 지적한 것이 아니라 종합한 것이라 반대예요. ⑤는 (가)·(나) 모두 우열을 가려 하나를 옹호하지 않으므로 틀렸습니다.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>10</div><div class='q-stem'></div></div>
+<p>(나)에 제시된 종합 견해의 학자에 대한 이해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 우주를 ‘이’와 ‘기’가 만물을 낳고 기르는 생명적 체계로 본다.</li>
+<li>② ‘이’는 불변하는 절대적 이치이고 ‘기’는 차이를 만들어 내는 것이라고 본다.</li>
+<li>③ 인간의 도덕적 결함은 ‘기’가 탁하여 생길 수 있다고 본다.</li>
+<li>④ ‘이’를 밝히는 일을 도덕적 완성을 위해 중요하게 본다.</li>
+<li>⑤ ‘기’를 배제하고 ‘이’만을 본체로 삼아야 한다고 본다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>10번 — 정답 ⑤</strong>
+(나) 마지막 문단에 종합 견해의 학자는 "‘이’만을 보존하고 ‘기’를 배제한 것은 아니다", "‘이’와 ‘기’를 모두 인정"한다고 분명히 했어요. 그런데 ⑤는 "‘기’를 배제하고 ‘이’만"이라며 정반대로 말했으니 적절하지 않아 정답입니다. ①은 1문단, ②·③은 2문단, ④는 2문단과 맞아요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>11</div><div class='q-stem'></div></div>
+<p>〈보기〉는 (가)의 두 견해를 (나)의 학자가 어떻게 수용했는지를 정리한 것이다. ⓐ～ⓒ에 들어갈 내용으로 적절한 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+<span class="boxmark">[그림: ‘이기론’의 종합 구도]</span> 가운데에 ‘종합 견해(이기론)’ 상자가 있고, 왼쪽의 ‘기’ 중심 견해 상자에서 화살표가, 오른쪽의 ‘이’ 중심 견해 상자에서 화살표가 각각 가운데 상자로 들어온다. 왼쪽 화살표에는 “수용한 것: ( ⓐ )”, 오른쪽 화살표에는 “수용한 것: ( ⓑ )”라는 꼬리표가 달려 있다. 가운데 상자 아래로 화살표가 나가 ‘귀결’ 상자로 이어지고, 그 화살표에는 “( ⓒ )”라는 꼬리표가 달려 있다.</p>
+</blockquote>
+<ul>
+<li>① ⓐ: ‘이’가 ‘기’보다 앞선다는 위계 — ⓑ: 우주를 생명적 체계로 보는 관점 — ⓒ: ‘기’를 배제하고 ‘이’만 남김</li>
+<li>② ⓐ: 우주를 생명적 체계로 보는 관점 — ⓑ: ‘이’를 근원적 본체로 보는 위계 — ⓒ: ‘이’를 본체, ‘기’를 발현 수단으로 보는 위계 설정</li>
+<li>③ ⓐ: ‘이’를 근원적 본체로 보는 위계 — ⓑ: 화육과 천인합일 — ⓒ: 두 견해를 모두 폐기함</li>
+<li>④ ⓐ: 욕망을 덜어 내는 수양론 — ⓑ: ‘기’를 우주의 근원으로 보는 관점 — ⓒ: ‘이’와 ‘기’를 분리함</li>
+<li>⑤ ⓐ: 우주를 생명적 체계로 보는 관점 — ⓑ: ‘기’를 ‘이’ 안에 내재시키는 관점 — ⓒ: ‘기’를 ‘이’보다 앞세움</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ②</div>
+<div class='exp'><p><strong>11번 — 정답 ②</strong>
+종합 견해의 학자는 ‘기’ 중심 견해에서 "우주가 …생명적 체계라는 관점"을(ⓐ), ‘이’ 중심 견해에서 "‘이’를 …근원적 본체로 보고 ‘기’를 그 실현 수단으로 보는 위계"를(ⓑ) 받아들였고(1문단), 그 결과 "‘이’를 본체로 삼고 ‘기’를 그 발현 수단으로 보아 …위계를 설정"하기에(ⓒ, 3문단) 이릅니다. 세 자리를 모두 바르게 채운 ②가 정답이에요. ①·③·④·⑤는 ⓐ·ⓑ에 들어갈 두 견해의 수용 내용을 서로 뒤바꾸거나(①③④), 종합의 귀결을 ‘폐기·분리·기 우선’으로 잘못 적어(①③④⑤) 지문과 어긋납니다.</p>
+<p><strong>12번 [3점] — 정답 ④</strong>
+〈보기〉의 비평가는 종합 견해가 두 견해를 엮은 점은 인정하되, ‘이’를 늘 위에 두는 위계 탓에 "‘기’ 자체의 생성하는 힘을 ‘기’ 중심 견해만큼 온전히 살리지는 못했다"라고 평가했어요. 그런데 ④는 종합 견해가 ‘기’의 힘을 ‘기’ 중심 견해보다 "더 온전히 살렸다"라며 비평가의 평가를 정반대로 뒤집었으니 적절하지 않아 정답입니다. ①(일부 수용 인정), ②(위계 유지), ③(‘기’가 ‘이’에 종속), ⑤(대등하게 두지 않음)는 모두 비평가의 평가와 지문 내용에 부합하는 적절한 이해예요.</p></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>윗글을 바탕으로 〈보기〉를 이해한 내용으로 적절하지 않은 것은? <span class="pts">[3점]</span></p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+한 비평가가 (나)의 종합 견해를 다음과 같이 평가하였다. "그는 앞선 두 견해의 좋은 점을 엮었으나, ‘이’를 늘 위에 두는 위계를 끝내 버리지 못했다. 그래서 ‘기’의 역동성을 ‘이’의 질서 아래 가두었으니, ‘기’ 자체의 생성하는 힘을 ‘기’ 중심 견해만큼 온전히 살리지는 못했다고 보아야 한다."</p>
+</blockquote>
+<ul>
+<li>① 비평가는 종합 견해가 ‘기’ 중심 견해의 관점을 일부 받아들였다는 점은 인정하겠군.</li>
+<li>② 비평가는 종합 견해가 ‘이’를 ‘기’보다 위에 두는 위계를 유지했다고 보겠군.</li>
+<li>③ 비평가는 종합 견해에서 ‘기’의 작용이 ‘이’의 질서에 종속된다고 보겠군.</li>
+<li>④ 비평가는 종합 견해가 ‘기’의 생성하는 힘을 ‘기’ 중심 견해보다 더 온전히 살렸다고 보겠군.</li>
+<li>⑤ 비평가는 종합 견해가 ‘이’와 ‘기’를 모두 인정하면서도 둘을 대등하게 두지는 않았다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'></div>
+</details>
+</div>
+<div class='q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>문맥상 ㉠～㉢과 바꿔 쓰기에 적절하지 않은 것은?</p>
+<ul>
+<li>① ㉠: 역설(力說)하였다</li>
+<li>② ㉡: 정립(定立)하였다</li>
+<li>③ ㉢: 봉착(逢着)한</li>
+<li>④ ㉡: 수립(樹立)하였다</li>
+<li>⑤ ㉢: 이바지한</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>13번 — 정답 ③</strong>
+㉢ ‘기여하다’는 "도움이 되도록 이바지하다"라는 뜻이라 ⑤ ‘이바지한’과는 호응하지만, ③ ‘봉착(逢着)하다’는 "어떤 처지나 상태에 부닥치다"라는 뜻이라 "앞선 두 견해가 ~한 바가 크다"라는 긍정적 맥락에 호응하지 않아요. 그래서 바꿔 쓰기에 적절하지 않은 ③이 정답입니다. ① ㉠ 강조하였다→역설(力說)하였다, ② ㉡ 설정하였다→정립(定立)하였다, ④ ㉡ 설정하였다→수립(樹立)하였다, ⑤ ㉢ 기여한→이바지한은 모두 문맥에서 자연스럽게 호응합니다.(㉡은 ②·④ 두 치환어가 모두 적절하며, 적절하지 않은 것은 ㉢을 바꾼 ③입니다.)</p></div>
+</details>
+</div>
+<div class='deep'><div class='dh'>❀ 개념 깊이 공부하기</div><div class='deep-h'>핵심 용어</div>
+<ul>
+<li><strong>이기론</strong>: ‘이’와 ‘기’를 모두 인정하되 ‘이’를 본체, ‘기’를 발현 수단으로 두어 위계를 세운 종합 체계.</li>
+<li><strong>본체와 수단</strong>: ‘이’는 만물의 근원적 본체(바탕), ‘기’는 그 ‘이’가 현실에 드러나는 수단. 떨어지지 않되 ‘이’가 위예요.</li>
+<li><strong>선별적 수용</strong>: 앞선 두 견해를 통째로 받거나 버리지 않고, 쓸 만한 관점만 골라 합치는 종합의 방식.</li>
+<li><strong>‘기’의 맑고 탁함</strong>: 같은 ‘이’를 받아도 ‘기’의 상태에 따라 드러나는 모습이 달라진다는 설명 장치.</li>
+</ul>
+<div class='deep-h'>개념 한눈에</div>
+<pre><code>[‘기’ 중심 견해]  ──(수용)──┐
+  · 우주=생명적 체계         │
+  · 수양=우주의 도 실현       ▼
+                        [종합: 이기론]  ──▶  ‘이’=본체 / ‘기’=발현 수단
+[‘이’ 중심 견해]  ──(수용)──┘            (떨어지지 않되 ‘이’가 위)
+  · ‘이’=근원적 본체
+  · ‘기’=실현 수단(위계)
+</code></pre>
+<blockquote>
+<p>주의: 종합 견해는 두 견해를 <strong>반반 섞은</strong> 것이 아니라, 각 견해에서 <strong>고른 관점만</strong> 받아 ‘이’ 우위의 위계로 엮은 것이에요. 그래서 ‘기’의 역동성은 ‘이’의 질서 아래 놓이게 됩니다 — 12번 〈보기〉의 비평은 바로 이 지점을 짚은 거예요.</p>
+</blockquote>
+<div class='deep-h'>확인 질문</div>
+<div class='qa'>
+<div class='qa-item'><div class='qa-q'>종합 견해는 ‘기’ 중심·‘이’ 중심 견해를 어떻게 받아들였나요?</div><div class='qa-a'>통째로 받지 않고, ‘기’ 중심에서는 우주를 생명적 체계로 보는 관점 등을, ‘이’ 중심에서는 ‘이’를 본체로 보는 위계를 골라 종합했습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>종합 견해에서 ‘이’와 ‘기’의 관계는?</div><div class='qa-a'>둘을 모두 인정하되 ‘이’를 본체, ‘기’를 발현 수단으로 두어 서로 떨어지지 않는 위계로 설정했습니다.</div></div>
+<div class='qa-item'><div class='qa-q'>비평가가 종합 견해의 약점으로 지적한 점은?</div><div class='qa-a'>‘이’를 늘 위에 두는 위계 탓에 ‘기’ 자체의 생성하는 힘을 ‘기’ 중심 견해만큼 온전히 살리지 못했다는 점입니다.</div></div>
+</div></div>
+<div class='examzone'>
+<div class='exam-banner'>이 세트가 본뜬 수능 기출 · 2024학년도 수능 [12~17]</div>
+<div class='passage-wrap'><div class='passage exam-ps'><p><strong>(가)</strong></p>
+<p>『한비자』는 중국 전국 시대의 한비자가 제시한 사상이 ⓐ담긴 저작이다. 여러 나라가 패권을 다투던 혼란기를 맞아 엄격한 법치를 통해 부국강병을 꾀한 한비자는 『노자』에 대한 해석을 통해 자신의 법치 사상을 뒷받침했고, 이러한 면모는 『한비자』의 「해로」, 「유로」 등에서 확인할 수 있다.</p>
+<p>『노자』에서 ‘도(道)’는 만물 생성의 근원으로 묘사된다. 도를 천지 만물의 존재와 본질의 근거라고 본 한비자의 이해도 이와 다르지 않다. 그는 자연과 인간 사회의 모든 현상은 도의 영향을 받지 않을 수 없다고 보고, 인간 사회의 일은 도에 따라 제대로 행했는가의 여부에 따라 그 성패가 드러나는 것이라고 이해했다.</p>
+<p>한비자는 『노자』에 제시된 영구불변하는 도의 항상성에 대해 도가 천지와 더불어 영원히 존재한다는 것을 의미하는 것이지, 도가 모습과 이치를 일정하게 유지하는 것은 아니라고 이해했다. 그리고 도는 형체가 없을 뿐 아니라 일정하게 고정되어 있지 않기 때문에 때와 상황에 따라 유연하게 변화하는 것이라고 파악했다. 도가 가변성을 가지고 있어야 도가 일정한 곳에만 있지 않게 되고, 그래야만 도가 모든 사물의 존재와 본질의 근거가 될 수 있다고 파악한 것이다. 그는 도가 가변적이기 때문에 통치술도 고정되어서는 안 된다고 주장했다.</p>
+<p>한편, 한비자는 도를 구체적인 사물과 사건에 내재한 개별 법칙의 통합으로 보고, 『노자』의 도에 시비 판단의 근거라는 새로운 의미를 부여했다. 항상 존재하는 도는 개별 법칙을 포괄하기 때문에 다양한 개별 사건의 시비를 판단하는 기준이 될 수 있고, 이러한 도에 근거해서 입법해야 다양한 사건을 판단할 수 있다고 본 것이다. 이러한 이해를 바탕으로 그는 만족을 모르는 인간의 욕망을 사회 혼란의 원인으로 지목한 『노자』의 견해에 동의하면서도, 『노자』에서처럼 욕망을 없애야 한다고 주장하지 않고 인간은 욕망을 필연적으로 가질 수밖에 없음을 지적하며 욕망을 제어하기 위해 법이 필요하다고 강조했다.</p>
+<p><strong>(나)</strong></p>
+<p>유학자들은 도를 인간 삶의 올바른 길을 의미하는 것이라고 보았다. 중국 송나라 이후, 유학자들은 이러한 유학의 도를 기반으로 현상 세계 너머의 근원으로서 도가의 도에 주목하여 『노자』 주석을 전개했다.</p>
+<p>혼란기를 거친 송나라 초기에 중앙집권화가 추진된 이후 정치적 갈등이 드러나면서 개혁의 분위기가 조성됐다. 이러한 분위기하에서 유학자이자 개혁 사상가인 왕안석은 『노자주』를 저술했다. 그는 『노자』의 도를 만물의 물질적 근원인 ‘기(氣)’라고 파악하고, 현상 세계에 앞서 존재하는 기의 작용에 의해 사물이 형성된다고 보았다. 그는 기가 시시각각 변화하듯 현상 세계도 변화한다고 이해했다. 인위적인 것을 제거해야만 도가 드러나고 인간 사회가 안정된다는 『노자』를 비판한 그는 자연과 달리 인간 사회의 안정을 위해서는 제도와 규범의 제정과 같은 인간의 적극적인 개입이 필요하다고 주장했다. 지혜와 덕이 뛰어난 사람이 제정한 사회 제도와 규범도 현실 사회의 변화에 따라 새롭게 해야 한다고 주장한 것이다. 『노자』의 이상 정치가 실현되려면 유학 이념이 실질적 수단으로 사용되어야 한다고 주장하는 등 왕안석은 『노자』를 유학의 실천적 측면과 결부하여 이해했다.</p>
+<p>송 이후 원나라에 이르러 성행하던 도교는 유학과 불교 등을 받아들여 체계화되었지만, 오징에게는 주술적인 종교에 불과했다. ㉠유학자의 입장에서 그는 잘못된 가르침을 펴는 도교에 사람들이 빠지는 것을 경계했다. 그는 도교의 시조로 간주된 노자의 가르침이 공자의 학문과 크게 다르지 않음을 밝히고자 『도덕진경주』를 저술했다. 그는 도와 유학 이념을 관련짓는 구절을 추가하는 등 『노자』의 일부 내용을 바꾸고 기존 구성 체제를 재편했다. 『노자』의 도를 근원적인 불변하는 도로 본 그는 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 이해했다. 이런 관점에서 그는 유학의 인의예지가 도의 쇠퇴 때문에 나타난 것이라는 『노자』와 달리 도가 현실화하여 드러난 것으로 해석하고, 인간이 마땅히 따라야 할 사회 규범과 사회 질서 체계도 도가 현실화한 결과로 파악했다.</p>
+<p>원이 쇠퇴하고 명나라가 들어선 이후 유학과 도가 등 여러 사상이 합류하는 사조가 무르익는 가운데, 유학자인 설혜는 자신의 ㉡학문적 소신에 따라 『노자』를 주석한 『노자집해』를 저술했다. 그는 공자도 존중했던 스승이 노자이므로 노자 사상에 대한 오해를 불식해야 한다고 보았다. 그는 기존의 주석서가 『노자』의 진정한 의미를 제대로 밝히지 못했기 때문에 유학자들이 노자 사상을 이단으로 치부했다고 파악한 것이다. 다양한 경전을 인용하여 『노자』를 해석하면서 그는 『노자』의 도를 인간의 도덕 본성과 그것의 근거인 천명으로 이해하고, 본성과 천명의 이치를 탐구한다는 점에서 노자 사상과 유학이 다르지 않다고 보았다. 또한 그는 『노자』에서 인의 등을 비판한 것은 도덕을 근본으로 삼게 하기 위한 충고라고 파악했다.</p></div></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>12</div><div class='q-stem'></div></div>
+<p>(가), (나)에 대한 설명으로 가장 적절한 것은?</p>
+<ul>
+<li>① (가)는 『한비자』의 철학사적 의의를 설명하고 『한비자』와 『노자』의 사회적 파급력을 비교하고 있다.</li>
+<li>② (가)는 한비자가 추구한 이상적인 사회를 소개하고 그 실현을 위해 『노자』를 수용한 입장의 한계를 설명하고 있다.</li>
+<li>③ (나)는 특정 개념을 중심으로 『노자』에 대한 여러 학자의 견해를 시간의 흐름에 따라 제시하고 있다.</li>
+<li>④ (나)는 여러 유학자가 『노자』를 해석한 의도를 각각 제시하고 그 차이로 인해 발생한 학자 간의 이견을 절충하고 있다.</li>
+<li>⑤ (가)와 (나)는 모두, 『노자』에 대해 다양한 시각에서 제시된 비판이 심화되는 과정을 구체적 사례와 함께 설명하고 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ③</div>
+<div class='exp'><p><strong>12번 — 정답 ③</strong><br />
+(나)는 ‘도’라는 특정 개념을 중심으로 송나라 왕안석 → 원나라 오징 → 명나라 설혜의 『노자』 해석을 시간의 흐름에 따라 제시한다. ①은 사회적 파급력 비교가 없고, ④는 학자 간 이견을 절충하지 않으며, ⑤는 (가)가 한비자의 견해만 제시하므로 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,626명 — ①3.3% ②4.8% ③77.8% ④6.6% ⑤7.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>13</div><div class='q-stem'></div></div>
+<p>(가)에 제시된 한비자의 견해로 적절하지 않은 것은?</p>
+<ul>
+<li>① 사건의 시비에 따라 달라지는 도에 근거하여 법이 제정되어야 한다.</li>
+<li>② 인간은 무엇을 가지거나 누리고자 하는 마음에서 벗어날 수 없다.</li>
+<li>③ 도는 고정된 모습 없이 때와 형편에 따라 변화하며 영원히 존재한다.</li>
+<li>④ 인간 사회의 흥망성쇠는 사람이 도에 따라 올바르게 행하였는가의 여부에 좌우되는 것이다.</li>
+<li>⑤ 도는 만물의 근원이면서 동시에 현실 사회의 개별 사물과 사건에 내재한 법칙을 포괄하는 것이다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ①</div>
+<div class='exp'><p><strong>13번 — 정답 ①</strong><br />
+4문단에서 한비자는 항상 존재하는 도가 개별 법칙을 포괄하기에 다양한 개별 사건의 시비를 판단하는 ‘기준’이 된다고 보았다. 도가 사건의 시비에 따라 달라지는 것이 아니므로 ①이 부적절하다. ②는 욕망의 필연성(4문단), ③은 도의 가변성과 항상성(3문단), ④는 성패가 도에 따라 행했는가에 좌우됨(2문단), ⑤는 2·4문단에서 확인된다.</p>
+<p><em>선택률</em> — 응시 98,624명 — ①51.6% ②6.6% ③7.2% ④18.4% ⑤16.5%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>14</div><div class='q-stem'></div></div>
+<p>㉠과 ㉡에 대한 이해로 가장 적절한 것은?</p>
+<ul>
+<li>① ㉠은 유학 덕목의 등장을 긍정적으로 평가한 『노자』의 견해를 수용하는, ㉡은 유학 덕목에 대한 『노자』의 비판에 담긴 긍정적 의도를 밝히려는 것으로 표출되었다.</li>
+<li>② ㉠은 유학에 유입되고 있는 주술성을 제거하는, ㉡은 노자 사상이 탐구하는 대상에 대한 이해를 근거로 노자 사상과 유학의 공통점을 제시하려는 것으로 표출되었다.</li>
+<li>③ ㉠은 유학의 가르침을 차용한 종교가 사람들을 현혹하는 상황에 대응하는, ㉡은 『노자』를 해석한 경전들을 참고하여 유학 이론의 독창성을 밝히려는 것으로 표출되었다.</li>
+<li>④ ㉠은 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인하는, ㉡은 유학에서 이단으로 치부하는 사상의 진의를 밝혀 오해를 바로잡으려는 것으로 표출되었다.</li>
+<li>⑤ ㉠은 특정 종교에서 추앙하는 사상가와 유학 이론의 관련성을 제시하는, ㉡은 유학의 사상적 우위를 입증하여 다른 학문을 통합할 수 있는 근거를 제시하려는 것으로 표출되었다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>14번 — 정답 ④</strong><br />
+㉠(오징)은 노자의 가르침이 공자의 학문과 다르지 않음을 밝히고 인의예지·사회 규범을 도의 현실화로 해석했으므로, 유학을 노자 사상과 연관 지어 유교적 사회 질서의 정당성을 확인한 것이다. ㉡(설혜)은 이단으로 치부된 노자 사상의 진정한 의미를 밝혀 오해를 불식하고자 했다. ②는 주술성이 유학에 유입된 것이 아니고, ⑤는 설혜가 유학의 사상적 우위를 입증하려 한 것이 아니어서 부적절하다.</p>
+<p><em>선택률</em> — 응시 98,620명 — ①5.3% ②26.1% ③10.0% ④47.9% ⑤11.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>15</div><div class='q-stem'></div></div>
+<p>(나)의 왕안석과 오징의 입장에서 다음의 ㄱ～ㄹ에 대해 판단한 것으로 가장 적절한 것은?</p>
+<blockquote>
+<p>ㄱ. 도는 만물을 통해 드러나는 것이지 만물에 앞서서 존재하는 것은 아니다.
+ㄴ. 인간 사회의 규범은 이치를 내재한 근원적 존재인 도가 현실에 드러난 것이다.
+ㄷ. 도는 현상 세계의 너머에만 머물러 있지 않고 세상일과 유기적으로 관련되는 것이다.
+ㄹ. 도가 변화하듯이 현상 세계가 변하니, 현실 사회의 변화에 따라 인간 사회의 규범도 변해야 한다.</p>
+</blockquote>
+<ul>
+<li>① 왕안석은 ㄱ에 동의하지 않고 ㄴ에 동의하겠군.</li>
+<li>② 왕안석은 ㄴ과 ㄹ에 동의하겠군.</li>
+<li>③ 왕안석은 ㄷ에 동의하고 ㄹ에 동의하지 않겠군.</li>
+<li>④ 오징은 ㄱ과 ㄹ에 동의하지 않겠군.</li>
+<li>⑤ 오징은 ㄴ에 동의하고 ㄷ에 동의하지 않겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>15번 — 정답 ④</strong><br />
+오징은 모든 이치를 내재한 도가 현실화하여 천지 만물이 생성된다고 보므로 ㄱ(도가 만물에 앞서 존재하지 않음)에 동의하지 않고, 도를 근원적인 불변하는 도로 보므로 ㄹ(도의 변화)에도 동의하지 않는다. 왕안석은 기(도)가 현상 세계에 앞서 존재한다고 보아 ㄱ에 동의하지 않고, 규범은 인간의 적극적 개입으로 제정된다고 보아 ㄴ에 동의하지 않으며, ㄹ에는 동의한다.</p>
+<p><em>선택률</em> — 응시 98,649명 — ①11.1% ②22.0% ③10.5% ④34.8% ⑤21.2%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>16</div><div class='q-stem'></div></div>
+<p><span class="pts">[3점]</span> 〈보기〉를 참고할 때, (가), (나)의 사상가에 대한 왕부지의 평가로 적절하지 않은 것은?</p>
+<blockquote>
+<p><strong>〈보기〉</strong>
+청나라 초기의 유학자 왕부지는 『노자』의 본래 뜻을 드러내어 노자 사상을 비판하고자 『노자연』을 저술했다. 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하고자 했던 그는 기존의 『노자』 주석서가 노자 사상이 아닌 사상을 기준으로 삼았기 때문에 『노자』뿐만 아니라 주석자의 사상마저 왜곡했다고 비판했다. 『노자』에서 아무런 행동을 하지 않아도 천하가 다스려진다고 한 것 등을 비판한 그는, 『노자』에서처럼 단순히 인간의 이기적 욕망을 없애는 것이 아니라 사회 질서 유지를 위해 유학 규범을 활용해야 한다고 강조했다.</p>
+</blockquote>
+<ul>
+<li>① 왕부지는 인간의 욕망에 대한 『노자』의 대응 방식을 부정적으로 보았으므로, (가)의 한비자가 『노자』와 달리 사회에 대한 인위적 개입이 필요하다고 한 것에 대해서는 수긍하겠군.</li>
+<li>② 왕부지는 『노자』에 제시된 소극적인 삶의 태도를 부정적으로 보았으므로, (나)의 왕안석이 사회 제도에 대한 『노자』의 견해를 비판하며 유학 이념의 활용을 주장한 것은 긍정하겠군.</li>
+<li>③ 왕부지는 『노자』의 본래 뜻을 파악해야 한다고 보았으므로, (나)의 오징이 『노자』를 주석하면서 자신의 이해에 따라 원문의 구성과 내용을 수정한 것이 잘못이라고 보겠군.</li>
+<li>④ 왕부지는 주석자가 유학을 기준으로 『노자』를 이해하면 주석자의 사상도 왜곡된다고 보았으므로, (나)의 오징이 유학의 인의예지를 『노자』의 도가 현실화한 것으로 본 것을 비판하겠군.</li>
+<li>⑤ 왕부지는 『노자』에 담긴 비현실성을 드러내야 한다고 보았으므로, (나)의 설혜가 기존의 『노자』 주석서들을 비판하며 드러낸 학문적 입장이 유학의 실용적 가치를 부각한다고 보겠군.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ⑤</div>
+<div class='exp'><p><strong>16번 — 정답 ⑤</strong><br />
+설혜의 학문적 입장은 노자 사상과 유학이 다르지 않음을 밝혀 노자 사상에 대한 오해를 불식하려는 것으로, 노자 사상의 비현실성을 드러내어 유학의 실용적 가치를 부각하려 한 왕부지의 시각과 대비된다. 따라서 ⑤가 부적절하다. ①~④는 각각 욕망 제어를 위한 법의 필요(한비자), 유학 이념의 실질적 수단화(왕안석), 원문 수정(오징), 유학 기준의 해석(오징)에 대한 왕부지의 입장과 부합한다.</p>
+<p><em>선택률</em> — 응시 98,629명 — ①6.5% ②9.0% ③19.6% ④21.2% ⑤43.4%</p></div>
+</details></div>
+<div class='q exam-q'>
+<div class='q-head'><div class='q-num'>17</div><div class='q-stem'></div></div>
+<p>ⓐ와 문맥상 의미가 가장 가까운 것은?</p>
+<ul>
+<li>① 과일이 접시에 예쁘게 담겨 있다.</li>
+<li>② 상자에 탁구공이 가득 담겨 있다.</li>
+<li>③ 시원한 계곡물에 수박이 담겨 있다.</li>
+<li>④ 화폭에 봄 경치가 그대로 담겨 있다.</li>
+<li>⑤ 매실이 설탕물에 한 달째 담겨 있다.</li>
+</ul>
+<details class='ans'><summary>정답·해설 보기</summary>
+<div class='ans-key'>정답 ④</div>
+<div class='exp'><p><strong>17번 — 정답 ④</strong><br />
+ⓐ ‘담긴’은 ‘어떤 내용이나 사상이 그림, 글, 말 따위 속에 포함되거나 반영되다’의 의미로, ④의 ‘화폭에 봄 경치가 담겨 있다’와 같다. ①·②는 그릇 따위에 넣어지다, ③은 액체 속에 넣어지다, ⑤는 익거나 삭도록 보관되다의 의미이다.</p>
+<p><em>선택률</em> — 응시 98,622명 — ①1.4% ②0.6% ③1.0% ④95.0% ⑤2.5%</p></div>
+</details></div>
+</div>
+</div>
+<div class='outro'>한 세트씩 천천히, 직접 풀어 보고 펼쳐 확인하세요.</div>
+<div class='credit'>장재, 정이와 주희의 철학 — EBS 연계 학습 · EBS 연계 독서 학습지</div>
+</div>
+
+<script>
+document.getElementById('pngBtn').addEventListener('click',function(){
+  document.querySelectorAll('details.ans').forEach(function(d){d.open=true;});
+  var el=document.getElementById('sheet');
+  html2canvas(el,{scale:2,backgroundColor:'#fdfaf3'}).then(function(c){
+    var a=document.createElement('a');a.download='장재, 정이와 주희의 철학 — EBS 연계 학습_학습지.png';
+    a.href=c.toDataURL('image/png');a.click();
+  });
+});
+</script>
+
+</body></html>
